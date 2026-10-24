@@ -98,4 +98,4 @@ python3 scripts/verify-harness.py --tier native
 
 Quick 不覆盖数据库和音频；原生媒体需 macOS 平台，offscreen 通过不能替代音频验收。其他 Qt 用例位于 `tests/*.pro`，按需在独立构建目录运行 qmake/make。内存测量工具为 `scripts/macos_memory_profile.py`；旧客户端样本不能代表当前后台和数据库的总内存。
 
-实际结果以 [开发进度](docs/DEVELOPMENT_PROGRESS.md)和各次冻结报告为准。工程测试不换算 Agent 总体完成率或推荐准确率；新版独立语义效果还需单独评测。真实模型评测须有明确预算。CI 目前仅配置，未在云端执行。
+实际结果以 [开发进度](docs/DEVELOPMENT_PROGRESS.md)和各次冻结报告为准。工程测试不换算 Agent 总体完成率或推荐准确率；新版独立语义效果还需单独评测。真实模型评测须有明确预算。每次云端快速门禁的状态见 [GitHub Actions](https://github.com/zij30548/Tango/actions/workflows/harness.yml)，本机记录不能替代远端结果。

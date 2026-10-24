@@ -30,6 +30,9 @@ jobs:
         run: |
           python -m pip install --disable-pip-version-check uv==0.12.7
           uv sync --project backend_py --python 3.12 --frozen
+      - name: 安装锁定的设备侧曲库依赖
+        # 真实模块加载测试需要包文件；禁止依赖生命周期脚本，不启动服务或访问曲库。
+        run: npm ci --prefix service --omit=dev --ignore-scripts --no-audit --no-fund
       - name: 运行无密钥离线门禁
         # Ubuntu 24.04 runner 提供 Node；入口验证 >=20，缺失直接失败。
         # 本任务不提供模型密钥，不启动应用/MySQL，不宣称 Qt 或音频已验收。

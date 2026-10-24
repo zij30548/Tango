@@ -2,6 +2,8 @@
 
 日期：2026-10-25。新仓库：[zij30548/Tango](https://github.com/zij30548/Tango)，自有代码采用 [MIT](../LICENSE)，依赖许可见 [第三方说明](../THIRD_PARTY_NOTICES.md)。
 
+源码基线 [209f75e](https://github.com/zij30548/Tango/commit/209f75efc3fd09f0eddb394dd80e300baf60f140) 已推送并公开，默认分支为 `main`。已从远端重新克隆核对 654 个文件及完整树哈希，并在内存逐一比较本机配置的 3 个密钥值，零匹配；无用户数据库或旧提交。无需认证的网页返回 200，旧仓库仍为私有。后续文档与 CI 修复沿此干净基线提交。
+
 ## 这一步解决什么
 
 把当前 Qt＋Python/LangGraph＋MySQL/Redis 版本作为可阅读、可构建、可测试的源码发布。开源不等于已完成公网服务上线、安装包签名公证或推荐质量验收；当前能力和缺口继续见 [Agent 设计](AGENT_DESIGN.md)与 [能力清单](HARNESS_STATUS.json)。
@@ -29,6 +31,10 @@
 本次未修改播放、存储或 Agent 执行逻辑，因此不重复数据库和原生桌面验收。最近版本的分层与真实效果记录见 [身份补充诊断](AGENT_IDENTITY_FOLLOWUP_RESULTS.md)，不同版本和题集不合并成准确率。上述离线门禁也不代表完整安全审计或净机安装测试。
 
 新增发布导航时，结构检查首次发现 `AGENTS.md` 超过 10000 字节；缩短导航后通过，原大小限制与检查保留。原始失败和执行日志留在私有发布记录中。
+
+首个 [云端运行](https://github.com/zij30548/Tango/actions/runs/40111860306) 的 Python 阶段完成，Node 阶段失败：工作流只安装了 Python 依赖，未安装真实模块加载测试所需的 Node 包。本次补充按锁文件 `npm ci --ignore-scripts`，保留原测试和失败运行；后续结果以 [Actions](https://github.com/zij30548/Tango/actions/workflows/harness.yml) 为准。未因此跳过测试、放宽断言或访问真实曲库。
+
+已用干净克隆复现同一缺包错误：Node 60 通过、1 失败；独立临时副本按锁离线安装后为 61 通过、0 跳过。原有依赖目录和用户数据未改，修复不靠本机预装状态。
 
 ## 面试怎么讲
 
