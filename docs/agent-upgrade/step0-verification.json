@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "id": "tango_agent_upgrade_step0_verification_v1",
+  "createdAt": "2026-10-20T11:01:14.495Z",
+  "clientDate": "2026-10-20",
+  "sourceRevision": "bb6d0bc2e3573946b4996b163515b9c0b248022e",
+  "status": "stage0_engineering_and_contracts_complete",
+  "productionConversationUpgradeImplemented": false,
+  "eventIntegration": "contract_only",
+  "releaseReady": false,
+  "qualityGate": "blocked_pending_calibration_and_budget",
+  "strictAgentTaskCompletionRate": null,
+  "developmentTasksExecuted": 0,
+  "independentHoldoutTasks": 0,
+  "newProviderCalls": 0,
+  "realCatalogCalls": 0,
+  "humanAudioReviews": 0,
+  "historicalBudget": {
+    "maximum": 500,
+    "actual": 499,
+    "remaining": 1,
+    "newAuthorization": 0,
+    "ledger": "docs/agent-evaluation-cumulative-budget.json"
+  },
+  "sourceVerification": {
+    "matches": true,
+    "sourceCount": 249,
+    "added": [],
+    "removed": [],
+    "modified": []
+  },
+  "sourceGroups": {
+    "production": 106,
+    "stage0_contracts": 8,
+    "evaluation_and_runners": 42,
+    "engineering_tests": 93
+  },
+  "contractChecks": {
+    "protocol": "tango_upgrade_acceptance_v1",
+    "developmentSuite": "tango_upgrade_dev_v1",
+    "developmentCaseCount": 26,
+    "developmentCasesExecuted": 0,
+    "holdoutCases": 0,
+    "countsByFamily": {
+      "conversation": 5,
+      "routing": 5,
+      "mcp": 3,
+      "orchestration": 4,
+      "memory": 3,
+      "retrieval": 4,
+      "monitoring": 2
+    },
+    "currentRegressionCases": 11,
+    "targetNotImplementedCases": 15,
+    "eventTypes": 9,
+    "eventIntegration": "contract_only",
+    "qualityGate": "blocked_pending_calibration_and_budget",
+    "historicalModelCalls": 499,
+    "newProviderCalls": 0,
+    "meaning": "Contract validation only; no Agent task, model, catalog or audio evaluation was executed."
+  },
+  "nodeRuns": [
+    {
+      "id": "existing_backend_storage",
+      "command": "node scripts/test-storage-v1.mjs",
+      "log": "/tmp/tango-agent-step0-storage.log",
+      "logSha256": "eeebbc111302fa532de72dce96a19c11c3aa5d0c1a62161bd3124896138e3949",
+      "logCreatedAt": "2026-10-20T10:46:21.468Z",
+      "lastLogWriteAt": "2026-10-20T10:46:32.307Z",
+      "exitCode": 0,
+      "counts": {
+        "tests": 466,
+        "pass": 466,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 9907.361292
+      },
+      "meaning": "Existing backend plus storage tests; temporary PostgreSQL/Redis; this launch preceded the two newly added backend contract test files. Engineering evidence only."
+    },
+    {
+      "id": "new_contract_first_integration",
+      "command": "node --test backend/test/agent-event-contract.test.mjs backend/test/upgrade-protocol.test.mjs scripts/agent-upgrade-baseline.test.mjs",
+      "log": "/tmp/tango-agent-step0-contracts.log",
+      "logSha256": "4ff73effc60b97bd0e18840cd3597d1c5022014ad9a5db7d6a2d91084194c9ff",
+      "logCreatedAt": "2026-10-20T10:53:24.893Z",
+      "lastLogWriteAt": "2026-10-20T10:53:25.032Z",
+      "exitCode": 1,
+      "counts": {
+        "tests": 45,
+        "pass": 44,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 96.9905
+      },
+      "meaning": "First integration failed because a not-yet-implemented target was required to cite existing evidence. Preserved."
+    },
+    {
+      "id": "new_contract_after_evidence_fix",
+      "command": "same three contract test files",
+      "log": "/tmp/tango-agent-step0-contracts-final.log",
+      "logSha256": "02b9927356f0623f2cc22409477abeff07c6de88ee7e61e3a784f12e1321065e",
+      "logCreatedAt": "2026-10-20T10:55:38.583Z",
+      "lastLogWriteAt": "2026-10-20T10:55:38.732Z",
+      "exitCode": 0,
+      "counts": {
+        "tests": 47,
+        "pass": 47,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 115.279125
+      },
+      "meaning": "47-test intermediate run, before additional review-driven nested-source/staged-change tests."
+    },
+    {
+      "id": "new_contract_review_integration",
+      "command": "same three contract test files",
+      "log": "/tmp/tango-agent-step0-contracts-reviewed.log",
+      "logSha256": "429b1449a7e890b85e316bd00006da796d665aa34b77576a278e2cebd56dfb5e",
+      "logCreatedAt": "2026-10-20T10:59:14.451Z",
+      "lastLogWriteAt": "2026-10-20T10:59:14.738Z",
+      "exitCode": 1,
+      "counts": {
+        "tests": 49,
+        "pass": 48,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 235.133916
+      },
+      "meaning": "48/49: a directory-symlink test expected an old error wording after earlier symlink rejection was added. Preserved."
+    },
+    {
+      "id": "new_contract_accepted",
+      "command": "node --test backend/test/agent-event-contract.test.mjs backend/test/upgrade-protocol.test.mjs scripts/agent-upgrade-baseline.test.mjs",
+      "log": "/tmp/tango-agent-step0-contracts-accepted.log",
+      "logSha256": "d298cd22187bf8eb7b3cce4c31a3cdc893a6cc2befa653282e529bbfdfcdbec9",
+      "logCreatedAt": "2026-10-20T10:59:47.200Z",
+      "lastLogWriteAt": "2026-10-20T10:59:47.446Z",
+      "exitCode": 0,
+      "counts": {
+        "tests": 49,
+        "pass": 49,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 206.556459
+      },
+      "meaning": "Final 49-test event/privacy, scoring/split and baseline-integrity contract run. No development Agent task executed."
+    },
+    {
+      "id": "service_and_report_regression",
+      "command": "node --test service/test/*.test.mjs scripts/render-agent-*.test.mjs",
+      "log": "/tmp/tango-agent-step0-adapters.log",
+      "logSha256": "59db2af4b23e70f09b61d4d3362a500497b7a8745ec8df1c36931153912037f0",
+      "logCreatedAt": "2026-10-20T10:53:24.894Z",
+      "lastLogWriteAt": "2026-10-20T10:53:25.360Z",
+      "exitCode": 0,
+      "counts": {
+        "tests": 65,
+        "pass": 65,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "duration_ms": 426.139709
+      },
+      "meaning": "Local service routes and evaluation-report rendering engineering regression."
+    }
+  ],
+  "qtEvidence": {
+    "firstRun": "docs/agent-upgrade/step0-qt-verification.json",
+    "firstRunStatus": "failed_or_blocked",
+    "firstRunSourcesUnchanged": false,
+    "diagnosis": "docs/agent-upgrade/step0-qt-diagnosis.json",
+    "correctedMedia": "docs/agent-upgrade/step0-qt-media-validation.json",
+    "correctedMediaStatus": "passed",
+    "firstResultsPreserved": true,
+    "notBestOfN": true,
+    "nonMediaFunctional": {
+      "passed": 116,
+      "failed": 0,
+      "skipped": 0
+    },
+    "firstMediaFunctional": {
+      "passed": 1,
+      "failed": 1,
+      "skipped": 0
+    },
+    "correctedMediaFunctional": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "isolation": "sandbox allows loopback, denies external network, real user cache and production state; temporary fixture data only",
+    "explanation": "macOS offscreen stalled basic WAV playback; a controlled cocoa comparison and one complete corrected media run passed. Results are separate."
+  },
+  "criticalSafetyAssessment": "Existing named engineering regressions and new contract guards only; not an online zero-risk or new-architecture quality claim.",
+  "evidencePolicy": {
+    "retainFirstFailures": true,
+    "doNotSumEngineeringAsAgentTasks": true,
+    "logsRemainLocalTemporary": true,
+    "sourceBaselineNotOverwritten": true
+  },
+  "artifacts": [
+    {
+      "path": "docs/agent-upgrade/baseline-v1.json",
+      "sha256": "3c6ee0068bfe628871cdfd838f8fe2d63dc2f09ade1649f2d4409549177273a6"
+    },
+    {
+      "path": "docs/agent-upgrade/acceptance-v1.json",
+      "sha256": "40df207f025c93b6e2e75394eef23d03da5a8765f069f28980a5d7df4e3c7056"
+    },
+    {
+      "path": "backend/evaluation/agent-upgrade-dev-v1.json",
+      "sha256": "bcdf76fcbcb1df4dba6c02d779e4b498b553d03879f291d078dc6e879f454b37"
+    },
+    {
+      "path": "docs/agent-upgrade/step0-qt-verification.json",
+      "sha256": "2f1e29d05a8502b56b6139eab0d4db57aed9f76c220d6ce66c5f9ab215eb5323"
+    },
+    {
+      "path": "docs/agent-upgrade/step0-qt-diagnosis.json",
+      "sha256": "bb2a6dff832fc56b83544f5476ef7e5c059744c7ed17cb9d25dc02aff100f9c1"
+    },
+    {
+      "path": "docs/agent-upgrade/step0-qt-media-validation.json",
+      "sha256": "57ce2aebc4686d8f398949f2267ff5b15c577358da40f7b6d7dcc5c632dcf5af"
+    },
+    {
+      "path": "docs/AGENT_STEP_0_BASELINE.md",
+      "sha256": "338091aeb2eacaeb202eafa4a45d8785262a5a1d4fdef12fa79ae7cbccc42403"
+    }
+  ],
+  "nextStage": 1
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "version": "v7",
+  "kind": "known_regression_repair_acceptance",
+  "conclusion": "本轮发现的澄清续接故障、发行查询取消识别及超限回答先写入问题已修复；艺人别名判据已改为有工具凭据的身份核验。单次已见回归2/2任务、3/3轮、45/45冻结条件通过。",
+  "releaseDecision": "本机后台已重启加载修复。该结果仅验收已知问题，不据此宣称最终版本已有可信的总体准确率或已完成公开上线验收。",
+  "fixes": [
+    {
+      "problem": "缺歌手的首次澄清，后轮误走已确认需求补丁，阻止承接原日期和发行意图。",
+      "change": "持久保存待澄清状态与服务端消息来源；首次续接重建并校验完整需求，已有预览修改保持原补丁规则。",
+      "code": ["backend/task-pending-request.mjs", "backend/task-model.mjs", "backend/task-runtime.mjs"]
+    },
+    {
+      "problem": "取消发行作品查询的表达被误判为新发行要求。",
+      "change": "统一发行作品词法，按可信用户来源顺序处理取消和纠正；引用和工具文本不能授予新权限。",
+      "code": ["backend/task-release-intent.mjs"]
+    },
+    {
+      "problem": "来源超6条、合计超4000字或来源失真时，报错前已改变任务状态。",
+      "change": "先构建并验证候选状态，再取消旧执行与持久化；拒绝时revision、messages、budget与request ledger保持不变。",
+      "code": ["backend/task-runtime.mjs", "backend/task-pending-request.mjs"]
+    },
+    {
+      "problem": "G.E.M.与邓紫棋的严格字符串比较产生误判。",
+      "change": "新题显式声明身份金标，联合允许别名、冻结曲库ID和当前运行与证据代次的已接受工具结果验证；错误ID、过期结果和模型自报ID不能通过。",
+      "code": ["backend/evaluation/agent-artist-identity.mjs", "backend/evaluation/agent-suite-schema.mjs"]
+    }
+  ],
+  "knownRegression": {
+    "tasks": 2,
+    "completed": 2,
+    "intentRounds": 3,
+    "intentMatched": 3,
+    "criteriaPassed": 45,
+    "criteriaFailed": 0,
+    "criteriaUnverified": 0,
+    "newHoldoutCases": 0,
+    "actualProviderCalls": 7,
+    "maximumProviderCalls": 8,
+    "sourcesUnchangedDuringRun": true,
+    "automaticCaseRetries": 0,
+    "bestOfN": false,
+    "manifest": "docs/agent-repair-v7-manifest.json",
+    "raw": "docs/agent-repair-v7-live.json"
+  },
+  "budget": {
+    "priorActual": 492,
+    "actualThisVersion": 7,
+    "cumulativeActual": 499,
+    "maximum": 500,
+    "remaining": 1,
+    "remainingNotAutomaticallySpent": true,
+    "ledger": "docs/agent-evaluation-cumulative-budget.json"
+  },
+  "offlineVerification": "docs/agent-repair-v7-offline.json",
+  "sourceArchive": "docs/evaluation-versions/v7-source/snapshot-manifest.json",
+  "measurementCaveats": [
+    "两题都是已见失败或误判任务，不是最终修复版的独立新题。",
+    "v7身份判据在调用前冻结，与v6严格字符串金标不同，不能直接相减声称提升百分点。",
+    "原v6的1/3任务、2/4轮、52/68条件和金标保持不变。",
+    "363后端、19整合、47身份等测试存在重叠，不能相加当成独立任务数。",
+    "真实模型配合受控合成曲库，未测试音频听感、真实曲库完整召回或代表性线上流量。",
+    "日期窗口沿用原有边界定义，未额外验证截止日全天召回。"
+  ],
+  "independentReviews": [
+    "docs/agent-repair-v7-independent-review.json",
+    "docs/evaluation-versions/v7-checks/independent-runtime-review.log"
+  ],
+  "historicalArtifacts": [
+    "docs/agent-new-v6-live.json",
+    "docs/agent-new-v6-summary.json",
+    "docs/agent-new-v6-failure-review.json",
+    "docs/agent-new-v6-alias-review.json"
+  ]
+}

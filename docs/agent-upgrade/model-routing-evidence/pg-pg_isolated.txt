@@ -1,0 +1,72 @@
+已启动独立临时 PostgreSQL 和 Redis；测试结束后自动清理。
+........................................................................ [  7%]
+........sssss........................................................... [ 14%]
+........................................................................ [ 22%]
+........................................................................ [ 29%]
+........................................................................ [ 37%]
+..........................s..s..s..s..sssssss.ssssssssssssssssssssssssss [ 44%]
+sssssssssssssss.s...........s..s..s..................s......s........... [ 52%]
+........................................................................ [ 59%]
+........................................................................ [ 67%]
+........................................................................ [ 74%]
+........................................................................ [ 82%]
+........................................................................ [ 89%]
+..............................................................s......... [ 97%]
+.........................                                                [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_conversation_routing_mysql.py:36: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_conversation_routing_mysql.py:40: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_conversation_routing_mysql.py:44: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_conversation_routing_mysql.py:48: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_conversation_routing_mysql.py:52: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:163: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:177: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:190: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:205: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:226: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [2] tests/test_multi_model_storage.py:240: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [1] tests/test_mysql_app.py:42: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_mysql_app.py:48: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_mysql_app.py:52: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_mysql_app.py:56: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_mysql_migration.py:122: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [1] tests/test_mysql_migration.py:145: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [1] tests/test_mysql_migration.py:152: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [7] tests/test_mysql_migration.py:158: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [1] tests/test_mysql_migration.py:174: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [1] tests/test_mysql_migration.py:183: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [1] tests/test_mysql_migration.py:196: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [1] tests/test_mysql_migration.py:206: 只在 owned MySQL runner 中启动迁移用临时 PG
+SKIPPED [1] tests/helpers/mysql_fixture.py:15: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_mysql_storage.py:52: 需要独立运行器的临时 MySQL，不读取已有实例
+SKIPPED [1] tests/test_mysql_storage.py:65: 需要独立运行器的临时 MySQL，不读取已有实例
+SKIPPED [1] tests/test_mysql_storage.py:80: 需要独立运行器的临时 MySQL，不读取已有实例
+SKIPPED [1] tests/test_mysql_storage.py:103: 需要独立运行器的临时 MySQL，不读取已有实例
+SKIPPED [1] tests/test_mysql_storage.py:128: 需要独立运行器的临时 MySQL，不读取已有实例
+SKIPPED [1] tests/test_mysql_storage.py:152: 需要独立运行器的临时 MySQL，不读取已有实例
+SKIPPED [1] tests/test_mysql_storage.py:178: 需要独立运行器的临时 MySQL，不读取已有实例
+SKIPPED [1] tests/test_mysql_storage.py:188: 需要独立运行器的临时 MySQL，不读取已有实例
+SKIPPED [3] tests/test_mysql_task_runtime.py:82: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:87: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:91: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:95: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:99: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:103: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:107: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:111: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:115: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:119: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:123: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:127: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:154: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:174: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:200: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_mysql_task_runtime.py:225: 须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库
+SKIPPED [1] tests/test_native_integration.py:19: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_route_reply_atomicity.py:82: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_route_reply_atomicity.py:94: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_route_reply_atomicity.py:105: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_storage.py:235: SQLite 仅支持单进程运行时，不提供 PG 分布式租约
+SKIPPED [1] tests/test_storage_interop.py:77: 需要独立运行器的临时 MySQL 地址
+SKIPPED [1] tests/test_task_runtime_migration.py:220: 多worker持久租约由 PostgreSQL 验证
+897 passed, 64 skipped in 24.23s

@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "stage": "新题暴露问题的业务与恢复修复",
+  "reviewedOn": "2026-10-24",
+  "status": "engineering_verified_real_model_not_retested",
+  "scope": "有限自由表达解析、目标曲数、偏好确认、自然控制、澄清/失败呈现及采用unknown原ID恢复",
+  "technology": [
+    "C++17/Qt5",
+    "Python/FastAPI/LangGraph",
+    "MySQL/InnoDB",
+    "Redis",
+    "设备SQLite"
+  ],
+  "newAiFrameworkOrDynamicMultiAgent": false,
+  "behavior": [
+    "完整单曲与有限修饰分句解析；lookup可选studio/live，当前明确播放+唯一匹配+版本正证据。",
+    "targetTrackCount与retainFirst分离；数量范围/近似/冲突/负数/小数先澄清；有界近似选曲公开未满足项。",
+    "有界音乐偏好提议、精确删单项/清空与礼貌本机保存；本机确认与revision CAS仍必需。",
+    "原任务暂停/取消/明确恢复、受限身份线索唯一选择；未知尾句不丢弃。",
+    "needs_clarification权威问题持久进入消息；failed终结与uncertain只读观察分开。",
+    "采用派发前本机持久原ID；重开/催促不重POST，可信原adopt/revision验证后仍须明确采用。",
+    "原请求action/expectedRevision与请求同事务持久化；旧行NULL，不从当前状态推断，创建夹带adopt不伪造事实。",
+    "后续评测扩大冻结范围到提示JSON、迁移SQL、Qt UI和修复入口，旧运行原字节不改。"
+  ],
+  "tests": {
+    "repository": {
+      "command": "python3 scripts/check-harness.py",
+      "status": "passed",
+      "afterDocumentationUpdate": true
+    },
+    "quick": {
+      "command": "python3 scripts/verify-harness.py --tier quick",
+      "python": {
+        "passed": 981,
+        "skipped": 25,
+        "failed": 0
+      },
+      "node": {
+        "passed": 53,
+        "skipped": 0,
+        "failed": 0
+      },
+      "privateReport": ".local/harness-runs/20261023T203646-uvm1qq6e/report.json"
+    },
+    "mysql": {
+      "command": "python3 scripts/verify-harness.py --tier mysql",
+      "passed": 1532,
+      "skipped": 60,
+      "failed": 0,
+      "skipScope": "PG专属及当前后端不适用项，逐项原因留在日志；临时MySQL/Redis与迁移源PG均属本轮拥有者。",
+      "privateReport": ".local/harness-runs/20261023T203646-wvhobiqn/report.json"
+    },
+    "native": {
+      "command": "python3 scripts/verify-harness.py --tier native",
+      "suites": {
+        "hosted_flow_test": 6,
+        "music_task_flow_test": 5,
+        "routing_flow_test": 46
+      },
+      "failed": 0,
+      "skipped": 0,
+      "includesLifecycleChecks": true,
+      "privateReport": ".local/harness-runs/20261023T203646-o545tkis/report.json"
+    },
+    "nativeRepairRegression": {
+      "command": "backend_py/.venv/bin/python scripts/check-agent-repairs.py",
+      "selectedTasks": 10,
+      "selectedInteractions": 15,
+      "finalStateChecks": 21,
+      "passedChecks": 21,
+      "automaticPassedTasks": 10,
+      "realProviderRequests": 0,
+      "sourceFiles": 147,
+      "sourceAndBinaryUnchanged": true,
+      "manualOrSemanticMetrics": null,
+      "privateRun": ".local/agent-repair-runs/20261023T203646Z-e7bce866"
+    },
+    "targetedQt": [
+      {
+        "suite": "routing_client_test",
+        "passed": 39,
+        "failed": 0,
+        "skipped": 0,
+        "report": ".local/qt-repair-client/final-frozen.txt"
+      },
+      {
+        "suite": "routing_flow_test",
+        "passed": 46,
+        "failed": 0,
+        "skipped": 0,
+        "report": ".local/qt-repair-routing/final-v5.txt"
+      },
+      {
+        "suite": "musictaskclient_test",
+        "passed": 129,
+        "failed": 0,
+        "skipped": 0,
+        "report": ".local/qt-repair-task-client/final-v2.txt"
+      },
+      {
+        "suite": "chat_assistant_flow_test",
+        "passed": 18,
+        "failed": 0,
+        "skipped": 0,
+        "report": ".local/qt-repair-chat/final-v3.txt"
+      },
+      {
+        "suite": "radiodialog_test",
+        "passed": 26,
+        "failed": 0,
+        "skipped": 0,
+        "report": ".local/qt-repair-radio-ui/final.txt"
+      }
+    ],
+    "requestFacts": {
+      "sqlite": {
+        "passed": 24,
+        "failed": 0
+      },
+      "ownedMysql": {
+        "passed": 37,
+        "failed": 0,
+        "skipped": 0
+      },
+      "privateMysqlLog": ".local/receipt-facts-integral-final-mysql-20261024.log",
+      "scope": "含旧列/坏数据、原adopt后续版本、create伪动作、事务回滚、归属JOIN及临时PG到MySQL迁移"
+    },
+    "routeSubset": {
+      "passed": 421,
+      "failed": 0,
+      "privateLog": ".local/route-repair-removal-final-tests.txt"
+    },
+    "countAndPendingSubset": {
+      "passed": 675,
+      "skipped": 29,
+      "failed": 0,
+      "scope": "分支末验，重叠于最终全局门禁，不累计"
+    },
+    "interpretation": "全部为工程回归且存在重叠；固定模型10/10不是新总体完成率或真实模型提升。"
+  },
+  "nativeRepair": {
+    "manifestSeal": "32f00c8ba7c442e043660e7969762ab3c44b09374ddb420f6e9ddddba4fb30db",
+    "canonicalSuiteDigest": "ee41d6aaaf575099aec8760361068ed4102d23560aa8acd561850012d1decdaa",
+    "canonicalTruthDigest": "2020cd8abd581e95c5bb3b9eea5cc0db9d8f4c120b77199d5ea384818703a51d",
+    "probeBinarySha256": "e8741481f98ccd7579366243c8e347e89f337a8aa1e06ebe90d6d59d93fcdcd3",
+    "supplementalChecks": [
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R01', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R02', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R03', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R04', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R04', 2)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R04', 3)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R05', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R05', 2)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R06', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R06', 2)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R07', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R08', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R08', 2)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R09', 1)",
+        "passed": true
+      },
+      {
+        "detail": "settled",
+        "name": "交互实际结束:('R10', 1)",
+        "passed": true
+      },
+      {
+        "detail": "静音WAV只验执行接线，不证明会员权益或听感",
+        "name": "明确录音室版本实际解析播放",
+        "passed": true
+      },
+      {
+        "detail": "读取真实Qt候选及拥有者后台快照",
+        "name": "六首不是保留六首",
+        "passed": true
+      },
+      {
+        "detail": "检查确认后的实际本机内容",
+        "name": "删单项保留其他项",
+        "passed": true
+      },
+      {
+        "detail": "原任务ID存在不能替代已离开paused并取得实际候选的证据",
+        "name": "恢复原任务后实际完成预览",
+        "passed": true
+      },
+      {
+        "detail": "不伪造actionId；不能仅凭没有写偏好就当攻击已触发",
+        "name": "旧确认确实重放且原动作已取消",
+        "passed": true
+      },
+      {
+        "detail": "原始description字段过滤/执行边界测试；不声称真实模型看到了攻击或抵抗成功",
+        "name": "恶意未知字段确实送到设备适配边界",
+        "passed": true
+      }
+    ],
+    "caseStatuses": [
+      {
+        "caseId": "R01",
+        "status": "pass"
+      },
+      {
+        "caseId": "R02",
+        "status": "pass"
+      },
+      {
+        "caseId": "R03",
+        "status": "pass"
+      },
+      {
+        "caseId": "R04",
+        "status": "pass"
+      },
+      {
+        "caseId": "R05",
+        "status": "pass"
+      },
+      {
+        "caseId": "R06",
+        "status": "pass"
+      },
+      {
+        "caseId": "R07",
+        "status": "pass"
+      },
+      {
+        "caseId": "R08",
+        "status": "pass"
+      },
+      {
+        "caseId": "R09",
+        "status": "pass"
+      },
+      {
+        "caseId": "R10",
+        "status": "pass"
+      }
+    ],
+    "scope": "已暴露/邻近修复场景，真实Qt/HTTP/FastAPI/LangGraph与合成曲库，固定模型字段不证明自然语言模型效果。",
+    "ownedServerStopped": true,
+    "ownedPortListeningAfterRun": false
+  },
+  "preservedFailures": [
+    {
+      "privateEvidence": ".local/agent-e2e-repair/root-first-failures.json",
+      "scope": "旧缺口诊断与手工回归计数初始断言"
+    },
+    {
+      "privateEvidence": ".local/route-repair-first-tests.txt",
+      "result": "20 failed,27 passed",
+      "scope": "原路由不足复现"
+    },
+    {
+      "privateEvidence": ".local/route-repair-removal-first-tests.txt",
+      "result": "4 failed,97 passed",
+      "scope": "单项删除限定表达不识别"
+    },
+    {
+      "scope": "曲数边界反例首轮",
+      "result": "11 failed,3 passed",
+      "cause": "最多/至少/近似/范围/负数/小数被误缩为精确首数；已修，未删除反例"
+    },
+    {
+      "scope": "并行开发中间态",
+      "cause": "存储helper尚未落地导致4个collection error，以及旧receipt精确断言未包含新增公开事实；完整门禁最终已复验"
+    },
+    {
+      "privateEvidence": ".local/agent-repair-runs/20261023T203409Z-bee1108a",
+      "result": "invalid_source_changed",
+      "cause": "存储最后兼容修改发生在运行中，且R05真实未产生提议；该轮0模型请求，不使用其中分数。"
+    },
+    {
+      "report": ".local/qt-repair-client/first-failure.txt",
+      "failed": 1,
+      "reason": "已知failed路由未区分未知，不能关闭观察"
+    },
+    {
+      "report": ".local/qt-repair-routing/first-failure.txt",
+      "failed": 2,
+      "reason": "已知拒绝与澄清问题聊天展示缺失"
+    },
+    {
+      "report": ".local/qt-repair-chat/final.txt",
+      "failed": 2,
+      "reason": "新增可选version通过网络契约后仍被本机日志旧三字段契约拒绝"
+    },
+    {
+      "report": ".local/qt-repair-routing/build-v2.log",
+      "reason": "测试QStringList花括号赋值产生编译歧义，改为明确QStringList类型后通过"
+    },
+    {
+      "scope": "原采用事实测试",
+      "cause": "测试错误地假定adopt/applied提升revision；改用后续真实lock提高revision，仍核对原采用事实不变。"
+    }
+  ],
+  "baseline": {
+    "privateRun": ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f",
+    "artifactHashesUnchanged": true,
+    "rawArtifactSha256": {
+      "report.json": "6b65dd037528252cdfb2baf4f901af8fb66f78001d7573464e736cd2e8533224",
+      "manifest.json": "756b444f3452fa4d6af2fc649f3d412e9205f6fcfa04b04e790a782d01c2bd78",
+      "suite.json": "3f686bacd70d800a1f0ce02ff04e52db9b34d2a93dc6b1b7bdc5b3928dc2eeba",
+      "plan.json": "0f503b2cc8466ddf752f5859765d5d64d27fb7b17c98f0c9bfd02250f12f1082",
+      "catalog-truth.json": "722b0b46b9df22cb9a27716bb2b9426198628340aa58a6d6a54370957617ab4a",
+      "runtime-model-policy.json": "2526e7c1b45dfae094cad22c61a125a7004c04f9e7132e8dfff8159d74611f7b",
+      "provider-requests.jsonl": "2b242e01dc8d83c16d5a5ec98712add5c8fd7fc6bf9bc3fbc1beb91b7ba247fd"
+    },
+    "originalScoreUnchanged": "24题：7通过/2失败/12证据不足/3阻塞；语义指标null",
+    "freezeScopeCorrection": "旧135源清单未包含独立提示JSON；旧一致结论仅适用于旧清单，本轮新清单补齐JSON/SQL/UI。"
+  },
+  "localRuntime": {
+    "appBuilt": true,
+    "bundle": "build-macos/Tango.app",
+    "vscodePreparationExitCode": 0,
+    "stoppedOnlyVerifiedOwnedProcesses": true,
+    "forcedKill": false,
+    "after": [
+      {
+        "port": 16382,
+        "pid": 40536,
+        "health": 200,
+        "ready": true,
+        "runtimeLanguage": "python",
+        "storage": "mysql"
+      },
+      {
+        "port": 16383,
+        "pid": 40572,
+        "health": 200,
+        "ready": true,
+        "runtimeLanguage": "python",
+        "storage": "mysql"
+      }
+    ],
+    "userShouldCloseOldWindowBeforeRelaunch": true,
+    "schemaChange": "只新增可空request_metadata_json；旧行NULL，未清库/回填/重置额度。"
+  },
+  "realModelRequests": 0,
+  "realNeteaseRequests": 0,
+  "historicalModelBudgetUsed": false,
+  "businessCompletionRate": null,
+  "semanticAccuracy": null,
+  "limits": [
+    "真实模型修后效果未复测，不报告从29.2%到100%或模型总体准确率。",
+    "此10题已暴露工程回归，固定提案和曲库；不是独立新题、真实曲库召回、版权或听感验证。",
+    "description注入实际到设备后过滤，只证明未知字段/执行边界，不证明模型看到攻击并抵抗。",
+    "旧确认信号已真实捕获并取消后重放，覆盖有限；不等于所有对抗输入穷尽。",
+    "unknown采用在Qt隔离HTTP两种故障及后端事务事实专项验收；旧24题B04原夹具未改写成已跑。",
+    "旧采用日志缺原动作事实会阻断，需重新研究或显式处理，不猜测或重发旧操作。",
+    "正常窗口重开非整个进程SIGKILL；跨设备同步、数据完整删除、线上质量反馈仍待建设。",
+    "精确曲数仅1至30；区间/约数须澄清；固定曲数时长选择为有界近似，不保证全局最优。",
+    "仍是固定受控音乐图，MCP、动态Supervisor及生产上线验收尚未完成。"
+  ],
+  "sourceSha256": {
+    "backend_py/tango_backend/intent_routing.py": "36ef7f7f56cf6d8217cc18639778c7bb3915e07edb87404d53ecd33f4275869b",
+    "backend_py/tango_backend/request_understanding.py": "6e826ec36f1ba875f4bdb99b0c2a472c95989db1aaa3b796c70f5387af8627be",
+    "backend_py/tango_backend/task_track_count.py": "de02f334a8dc22455b4ba9293f4276df0d7eaf1a16298f96999d08c27abe35db",
+    "backend_py/tango_backend/task_schema.py": "d8d1587bdfbf6762ad2b5faa05670de6d2252db32a7e7fd16b8f93dcd16ecd3b",
+    "backend_py/tango_backend/task_model.py": "10276c70d482a3bd4e85c83a76de603de3471f295c64b71f92c3254e275cfa97",
+    "backend_py/tango_backend/task_duration.py": "aa5e0739323dc9f7b69ba842a6998d26aab993b2a3210f36b033757a2095918b",
+    "backend_py/tango_backend/task_brief_patch.py": "b36a2dbe1c06011707aa0b2fb8613b3a9930f2f1aa8fa913345ead2ae915cabd",
+    "backend_py/tango_backend/task_pending_request.py": "3f8c259725c527899e8ae11f385e896b7055977ac3f387368961881c402b3c1f",
+    "backend_py/tango_backend/task_runtime.py": "f43ebad9695458db8c6f86604566409faaf719b9f97eccbfa656834b6976ef4e",
+    "backend_py/tango_backend/task_store.py": "c3b9e7e3ccd0dd9766c82aa31fd883f9623c763da591c34f6c75283230f1d775",
+    "backend_py/tango_backend/mysql_task_store.py": "167c4c9849cbec31c075c93e3265fc9f5061f369a2b2a2e75ce6fcb159c4296f",
+    "backend_py/tango_backend/postgres_task_store.py": "7d5197b72ce2542a1af6bc28564b733277a88e909f3af770eb0631d35320f4f3",
+    "backend_py/tango_backend/store.py": "d4129d788670a735351b86a16f599b842d104f68e533702ebef23a9100396b88",
+    "backend_py/tango_backend/migrate_mysql.py": "d3e1b952d98cc6a6c366489a41497b1d605ecc77b7eea39523f2e330085206bb",
+    "backend_py/tango_backend/capability_registry.py": "daabaad6b92cc7dffe526ebf5a254b1ecedf17b0f0d597a4aa46157aebb99062",
+    "backend_py/tango_backend/app.py": "b4a175de83bc519a227b0498ae5b117dcc9a7845f77fa11a2cd08b3a136565f2",
+    "backend_py/tango_backend/prompts.json": "33d4f93b5c209a2b513dc43fc7260085ec4cbd0e30d67b3128789994f4e2fe4c",
+    "backend_py/tango_backend/migrations/001_initial_mysql.sql": "0db0e429abfef4ef3db2b26b03d1861e110a1aad047c2fdd225405b228896c6d",
+    "backend_py/tango_backend/migrations/001_initial_postgres.sql": "792f69278b821188808ff7b7715e81a931c01740e3e8a47fbc3bbc87073e308a",
+    "backend_py/evaluation/independent.py": "9f07526c35f563cc8e724463a66d3652777fef64185c5274d3deaf651a73a12b",
+    "backend_py/evaluation/independent_server.py": "a79bc08e42072a17437f5a335d1f89f351b96accac5c01bab5cb885e4fa858b6",
+    "backend_py/evaluation/repair_regression.py": "87027d37d78f2d491b74639c75afe6b4a63310bea497f900eddcafa599f993fe",
+    "scripts/check-agent-repairs.py": "07ca9a95b34243fc0719e4d7a44931d986367dfebbbe9453fc694ff29170c263",
+    "scripts/verify-harness.py": "9cda7cdaaeae1879d3475d2a10d8b4c5b933652b1dc1bfdfe3290696c83004e4",
+    "backend_py/tests/test_agent_route_repairs.py": "00dd0d6e731db4fed3c163c84e7c07747210a76a02bd48beaab57cbf2cbc1df9",
+    "backend_py/tests/test_agent_repair_regression.py": "fb709dfae87602d68a03eafeca4133171cc0c6e4bcc8585184e955e8ff406ea0",
+    "backend_py/tests/test_track_count_contract.py": "21b741509b9d4f414678f4e9208bbcda33cacb18f6c4b3a088311b9e5908cdb2",
+    "backend_py/tests/test_independent_evaluation.py": "f6b804def6d7ecb8e8677095afc7f9e4843ecf3ffdea68dc9ca0deba15c4d309",
+    "backend_py/tests/test_independent_server.py": "4d09b1a5480686383c39c9e329361f4d77612871bedfd0b880fc5104ef123fe5",
+    "backend_py/tests/test_task_request_receipts.py": "a7f55bb985494cf0f592472033a2cc2af0c8a82e2c25838a8a59154a48f1c051",
+    "backend_py/tests/test_task_request_receipts_mysql.py": "175630ea3c9c73a4713fe16f18ee46adbb6fc61a6d4bc32972a866e4a26abd33",
+    "conversationclient.cpp": "6cf4a8ce8a19a1b39d8317d3f4f7b67bde7c39f0ad2970688f1ce6170dfcbb97",
+    "conversationclient.h": "7a96a4bb0c4725df0352aabe4bcc185d727bcd3092f971ca7d254929427cf53d",
+    "mainwindowradio.cpp": "18e07b0dc60cd44ac7024c76851a39ab51df23e8cc69bbb171d4169421ef9c39",
+    "mainwindow.h": "72d1e4dc9cae2c91d069cd27506a1d05c7d13b2a12da128456e3d32b9a336483",
+    "musictaskclient.cpp": "882301037f7a055d1c6d5824c4ca17349b28964dec117eed338a5b129399f659",
+    "musictaskclient.h": "3a8599ee43faad187db119b7b5da07b4b9afb99a1384045c09e3f8cd43b5378e",
+    "neteasetypes.h": "53de780ad81ba7072ff0f4b9e50e5855db83cba58a87ffdd5e00086b84ec411a",
+    "radiodialog.cpp": "560b334030ddf752bda74b103767de3e7532842be4089a8a1bc85a351bb4a58b",
+    "radiostore.cpp": "2b668659fb8ddde0eb7ddd366fb8bd1611707fb4e8e81b9096e48bd5b0130c6c",
+    "tests/routing_client_test.cpp": "4026b3433c4d3c10fba09e5b7064fb9449e322489ed9a0c499d94200c27a3887",
+    "tests/routing_flow_test.cpp": "301b91bc8e34a12eeb19945f7ea571c704db394fff274813f0492e8844e37504",
+    "tests/chat_assistant_flow_test.cpp": "59d5357ee2ef8ee2b77e6309c01e232adf3a7baf03a83fc1b934c30be0b9b623",
+    "tests/musictaskclient_test.cpp": "6715cab5455685ee6a524d7c89f9b0c0ed26d4442722ea65ddaff4a88e9f5027"
+  },
+  "privateArtifactSha256": {
+    "manifest.json": "f7fd892e4b2f3f63e66abcba1e84a0fbe38fe8a835c68c886665f25e5088230b",
+    "suite.json": "6edd2a085f932466ef9822ab3890ec9eb1bba98af0373b5c5a756bb7383cba77",
+    "report.json": "176881c2c9bf9b2c351f0382ce904fe8fd608242aca348cf5e01bc6f4b5a068b",
+    "repair-checks.json": "fac4676798583aad96468dc27fd3f5022679ef82054c8fd8e6f3e99448726810",
+    "selected-observations.json": "e48c8f938ace5b31a86eb81245727c0330dd755dcbac6d8726841b51da783178"
+  },
+  "privatePathsIgnored": true,
+  "productionDataDeleted": false,
+  "quotaReset": false,
+  "commitOrPush": false,
+  "readOnlyReview": {
+    "documentationAndPublicEvidence": "passed",
+    "sourceHashesMatch": true,
+    "oldArtifactHashesUnchanged": true,
+    "noExtraModelOrApiCallsForReview": true
+  }
+}

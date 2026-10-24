@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-21",
+  "afterFinalSourceRestart": true,
+  "endpoints": [
+    {
+      "port": 16382,
+      "app": "quiet-app-backend",
+      "runtimeLanguage": "python",
+      "runtimeVersion": 2,
+      "storage": "postgres",
+      "rateLimiter": "redis",
+      "developmentMode": false,
+      "routingFeaturesVersion": 1,
+      "ready": true
+    },
+    {
+      "port": 16383,
+      "app": "quiet-app-backend",
+      "runtimeLanguage": "python",
+      "runtimeVersion": 2,
+      "storage": "postgres",
+      "rateLimiter": "redis",
+      "developmentMode": true,
+      "routingFeaturesVersion": 1,
+      "ready": true
+    }
+  ],
+  "modelCalls": 0
+}

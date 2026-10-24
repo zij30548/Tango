@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "tier": "mysql",
+  "scope": "独立临时 MySQL/Redis 全回归（迁移用例另建 PG）；不读取应用库，不评价真实模型/曲库/音频。",
+  "startedAt": "2026-10-21T03:06:17.291655+00:00",
+  "status": "failed",
+  "reason": "command_failed",
+  "commands": [
+    {
+      "id": "repository",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/scripts/check-harness.py"
+      ],
+      "cwd": "<repo>",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.193
+    },
+    {
+      "id": "mysql_isolated",
+      "command": [
+        "<repo>/backend_py/.venv/bin/python",
+        "<repo>/backend_py/tests/run_mysql_suite.py",
+        "--log",
+        "<repo>/.local/harness-runs/20261021T030617-rg4cf9kh/mysql-pytest.log",
+        "--",
+        "tests",
+        "-q",
+        "-ra",
+        "-p",
+        "asyncio"
+      ],
+      "cwd": "<repo>/backend_py",
+      "exitCode": 1,
+      "reason": "command_failed",
+      "seconds": 48.418
+    }
+  ],
+  "finishedAt": "2026-10-21T03:16:02.791220+00:00"
+}

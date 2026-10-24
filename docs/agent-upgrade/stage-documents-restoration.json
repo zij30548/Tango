@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-21T08:31:09.561580+00:00",
+  "status": "passed",
+  "reason": "用户明确要求每阶段单独交付说明；此前文档清理误将这类学习记录合并，现恢复。",
+  "restored": [
+    {
+      "path": "docs/AGENT_STEP_0_BASELINE.md",
+      "sha256": "92422a580cff8751c962d2a2300a4ece91e1237dff9726ada0d7345e4a9ce57c",
+      "restoredFromArchiveWithoutChanges": true
+    },
+    {
+      "path": "docs/AGENT_STEP_1_CONVERSATION.md",
+      "sha256": "7ff97bdbc8e10e3e03c7a8de30de77fcb2405b2138b75384aa474cb7e3a97aa3",
+      "restoredFromArchiveWithoutChanges": true
+    },
+    {
+      "path": "docs/AGENT_STEP_2_ROUTING.md",
+      "sha256": "6847bc48414651f50ca5713833d9532e1b2d8fc07a06afa01518a1fd9b2a2a66",
+      "restoredFromArchiveWithoutChanges": true
+    },
+    {
+      "path": "docs/PYTHON_BACKEND_MIGRATION.md",
+      "sha256": "7a0205c2566e1b4f60b4fd6656e9995c58b9e9269266b8ce4439476b7381ebe7",
+      "restoredFromArchiveWithoutChanges": true
+    },
+    {
+      "path": "docs/LEGACY_CLEANUP.md",
+      "sha256": "6bd2e267557631e95469ccad015bad8153a7755d25e1e24b8e47a8576337c854",
+      "restoredFromArchiveWithoutChanges": true
+    }
+  ],
+  "originalArchive": ".local/document-cleanup/20261021T062925Z/documents-before.tar.gz",
+  "originalArchiveSha256": "d358646a3038f3e1fb37df80e14adca4e8c05c13b112fbe604e5c86ea59499de",
+  "stageIndex": "docs/STAGE_DELIVERIES.md",
+  "currentOverview": "docs/AGENT_DESIGN.md",
+  "policy": "每阶段保留独立作用、流程、技术栈、代码、测试结果、局限与面试问答；总览不替代阶段说明。",
+  "scope": "仅恢复文档并修正导航；不改运行代码，不调用真实模型或曲库。",
+  "priorCleanup": "docs/agent-upgrade/document-cleanup-verification.json；保留原报告，不把当时删除数量改写为恢复后的状态。",
+  "validation": {
+    "restoredFilesMatchedPreCleanupHashes": 5,
+    "currentMarkdownFiles": 19,
+    "validLocalLinks": 201,
+    "brokenLinks": 0,
+    "repositoryGate": {
+      "ok": true,
+      "checks": {
+        "manifest": 5,
+        "navigation": 20,
+        "architecture": [
+          53,
+          59
+        ]
+      },
+      "errors": [],
+      "scope": "repository-contracts-only; no model calls, private configuration, databases or services"
+    },
+    "quick": {
+      "python": {
+        "passed": 236,
+        "failed": 0,
+        "skipped": 0
+      },
+      "serviceAndScripts": {
+        "passed": 53,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "frozenHistoricalReportsUnchanged": 171,
+    "priorCleanupReportSha256": "c9e7f1512805e3953c131a16430ed5544c924d0b51888db04eb821b36f96fee9",
+    "registeredCodeAndDependencyFilesUnchanged": 213,
+    "diffCheck": "passed",
+    "mysqlAndNative": "本轮仅恢复文档与导航，未重复存储/原生桌面业务测试。",
+    "realModelRequests": 0,
+    "realCatalogRequests": 0,
+    "committed": false,
+    "pushed": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/agent-upgrade/stage-restoration-evidence/report.json",
+      "sha256": "738fb42a41210f4dd6906a13286c4c443d197147052790d291b4fafa324c7177"
+    },
+    {
+      "path": "docs/agent-upgrade/stage-restoration-evidence/repository.txt",
+      "sha256": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c"
+    },
+    {
+      "path": "docs/agent-upgrade/stage-restoration-evidence/python_offline.txt",
+      "sha256": "7a5d437c2b8dfb7e75bc4b31091b30c787d447377bfa8d4ffab8c22ed2847a12"
+    },
+    {
+      "path": "docs/agent-upgrade/stage-restoration-evidence/service_offline.txt",
+      "sha256": "3b8852773f53752531cf4999c9698cf988cf1773e8af8f7f762c1dd6ba83afd1"
+    }
+  ],
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "c8d9597539f19ecb81725c347e16c893f7125fa07b289508a7e584b9059fafa7"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6bea96b1ff03d85bf56160599ecae73bf07bc0d74d191df09c44dce2c325f8e9"
+    },
+    {
+      "path": "backend_py/README.md",
+      "sha256": "50151aa5fa24d8c99c5f017e12a7c2c83252bbdb20b130f27b9738dce1648297"
+    },
+    {
+      "path": "backend_py/tests/fixtures/README.md",
+      "sha256": "a71aa4e9a6eeecafd4e3444f9c9999360d28d8d690179ad600e34640311c4d3e"
+    },
+    {
+      "path": "docs/AGENT_DESIGN.md",
+      "sha256": "323318f1ec817318b1460e1b2e0cec15e35d16dbda4512b5802b51d3b5fa2ada"
+    },
+    {
+      "path": "docs/AGENT_STEP_0_BASELINE.md",
+      "sha256": "92422a580cff8751c962d2a2300a4ece91e1237dff9726ada0d7345e4a9ce57c"
+    },
+    {
+      "path": "docs/AGENT_STEP_1_CONVERSATION.md",
+      "sha256": "7ff97bdbc8e10e3e03c7a8de30de77fcb2405b2138b75384aa474cb7e3a97aa3"
+    },
+    {
+      "path": "docs/AGENT_STEP_2_ROUTING.md",
+      "sha256": "6847bc48414651f50ca5713833d9532e1b2d8fc07a06afa01518a1fd9b2a2a66"
+    },
+    {
+      "path": "docs/AGENT_UPGRADE_ROADMAP.md",
+      "sha256": "57e9ef219ff0884afdceb9295f207bd8f60c81402b0fc5779d373cad54cec614"
+    },
+    {
+      "path": "docs/BETA_ACCESS_AND_QUOTAS.md",
+      "sha256": "5c7b74a7e00c251aa4bb5915eaca7361b4c4d8e4ae25181608d9a5cf819c23bd"
+    },
+    {
+      "path": "docs/DEVELOPMENT_MODE.md",
+      "sha256": "4db0ab1c80c5572a03abfdf6a1f4191ec2a3992938b88d83a7e8e6e8cf08eb02"
+    },
+    {
+      "path": "docs/DEVELOPMENT_PROGRESS.md",
+      "sha256": "df5ede9168fb8743c068f710b1e3ddb7e009ac12934c42947c4a626413199655"
+    },
+    {
+      "path": "docs/HARNESS_ENGINEERING.md",
+      "sha256": "e183150ff903710c95e49523859d82ea93f6b7db62a4f1b24bd70e062c3fc1cc"
+    },
+    {
+      "path": "docs/LEGACY_CLEANUP.md",
+      "sha256": "6bd2e267557631e95469ccad015bad8153a7755d25e1e24b8e47a8576337c854"
+    },
+    {
+      "path": "docs/MYSQL_MIGRATION.md",
+      "sha256": "da0d4a256e4fbc5e3906205ccc32011ab3334603a10ea4c7eb9961019ee88560"
+    },
+    {
+      "path": "docs/NETEASE_SERVICE.md",
+      "sha256": "4197b7e62777478fd915e7b643a2c4a62013dab557bd7827568d7cc7ab0577c1"
+    },
+    {
+      "path": "docs/PYTHON_BACKEND_MIGRATION.md",
+      "sha256": "7a0205c2566e1b4f60b4fd6656e9995c58b9e9269266b8ce4439476b7381ebe7"
+    },
+    {
+      "path": "docs/STAGE_DELIVERIES.md",
+      "sha256": "0df193b6216dc30f7749abf5723b241ac2629e8b9f04f22a6952ca81ba10b47b"
+    },
+    {
+      "path": "docs/exec-plans/active/mcp-tools.md",
+      "sha256": "28d4d07ff155d96f3e3b463b061f32bce1842deed32c5f85fad2f1e9f2b031d6"
+    }
+  ]
+}

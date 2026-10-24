@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 1,
+  "version": "v4",
+  "title": "探歌修复新题验收 v4",
+  "conclusion": "本轮未见新题5/8，通过已见回归2/2。真实曲库1/2，全部失败保留。",
+  "releaseDecision": "新题仍发现语言、锁定无操作与首部数量解析缺口；真实曲库记录证明候选详情选择遗漏。继续有限定位修复，不宣称已达到上线标准。",
+  "primary": {
+    "tasks": 10,
+    "completed": 7,
+    "strictCompletionRate": 0.7,
+    "completionInterval95": {
+      "level": 0.95,
+      "lower": 0.39677814746114537,
+      "upper": 0.8922087325936989,
+      "method": "Wilson score; fixed diagnostic sample only"
+    },
+    "completeIntentMatch": {
+      "metricLabel": "complete_annotated_intent_match",
+      "rounds": 16,
+      "passed": 11,
+      "rate": 0.6875,
+      "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+    },
+    "criterionCounts": {
+      "passed": 189,
+      "failed": 10,
+      "unverified": 32,
+      "not_applicable": 0
+    },
+    "conservativeGoldAccuracy": 0.8181818181818182,
+    "observedGoldAccuracy": 0.949748743718593,
+    "evidenceCoverage": 0.8614718614718615,
+    "caseMacroAccuracy": 0.8999922221358017
+  },
+  "bySplit": {
+    "challenge": {
+      "tasks": 2,
+      "completed": 2,
+      "strictCompletionRate": 1,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.34238022750665303,
+        "upper": 1,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 4,
+        "passed": 4,
+        "rate": 1,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 60,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 1,
+      "observedGoldAccuracy": 1,
+      "evidenceCoverage": 1,
+      "caseMacroAccuracy": 1
+    },
+    "holdout": {
+      "tasks": 8,
+      "completed": 5,
+      "strictCompletionRate": 0.625,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.30574239460262737,
+        "upper": 0.8631557141764026,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 12,
+        "passed": 7,
+        "rate": 0.5833333333333334,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 129,
+        "failed": 10,
+        "unverified": 32,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 0.7543859649122807,
+      "observedGoldAccuracy": 0.9280575539568345,
+      "evidenceCoverage": 0.8128654970760234,
+      "caseMacroAccuracy": 0.8749902776697519
+    }
+  },
+  "byFamily": {
+    "language": {
+      "tasks": 1,
+      "completed": 1,
+      "strictCompletionRate": 1,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.20654931437723745,
+        "upper": 1,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 1,
+        "passed": 1,
+        "rate": 1,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 14,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 1,
+      "observedGoldAccuracy": 1,
+      "evidenceCoverage": 1,
+      "caseMacroAccuracy": 1
+    },
+    "language_context": {
+      "tasks": 1,
+      "completed": 1,
+      "strictCompletionRate": 1,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.20654931437723745,
+        "upper": 1,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 1,
+        "passed": 1,
+        "rate": 1,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 13,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 1,
+      "observedGoldAccuracy": 1,
+      "evidenceCoverage": 1,
+      "caseMacroAccuracy": 1
+    },
+    "language_polarity": {
+      "tasks": 3,
+      "completed": 2,
+      "strictCompletionRate": 0.6666666666666666,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.2076596008020477,
+        "upper": 0.9385080552796037,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 3,
+        "passed": 2,
+        "rate": 0.6666666666666666,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 39,
+        "failed": 1,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 0.975,
+      "observedGoldAccuracy": 0.975,
+      "evidenceCoverage": 1,
+      "caseMacroAccuracy": 0.9743589743589745
+    },
+    "release_research": {
+      "tasks": 1,
+      "completed": 1,
+      "strictCompletionRate": 1,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.20654931437723745,
+        "upper": 1,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 1,
+        "passed": 1,
+        "rate": 1,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 14,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 1,
+      "observedGoldAccuracy": 1,
+      "evidenceCoverage": 1,
+      "caseMacroAccuracy": 1
+    },
+    "source_style": {
+      "tasks": 1,
+      "completed": 1,
+      "strictCompletionRate": 1,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.20654931437723745,
+        "upper": 1,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 1,
+        "passed": 1,
+        "rate": 1,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 15,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 1,
+      "observedGoldAccuracy": 1,
+      "evidenceCoverage": 1,
+      "caseMacroAccuracy": 1
+    },
+    "three_turn_language_lock": {
+      "tasks": 1,
+      "completed": 0,
+      "strictCompletionRate": 0,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0,
+        "upper": 0.7934506856227626,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 3,
+        "passed": 1,
+        "rate": 0.3333333333333333,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 22,
+        "failed": 5,
+        "unverified": 16,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 0.5116279069767442,
+      "observedGoldAccuracy": 0.8148148148148148,
+      "evidenceCoverage": 0.627906976744186,
+      "caseMacroAccuracy": 0.5116279069767442
+    },
+    "three_turn_lock": {
+      "tasks": 1,
+      "completed": 0,
+      "strictCompletionRate": 0,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0,
+        "upper": 0.7934506856227626,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 3,
+        "passed": 1,
+        "rate": 0.3333333333333333,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 26,
+        "failed": 4,
+        "unverified": 16,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 0.5652173913043478,
+      "observedGoldAccuracy": 0.8666666666666667,
+      "evidenceCoverage": 0.6521739130434783,
+      "caseMacroAccuracy": 0.5652173913043478
+    },
+    "three_turn_reference": {
+      "tasks": 1,
+      "completed": 1,
+      "strictCompletionRate": 1,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.20654931437723745,
+        "upper": 1,
+        "method": "Wilson score; fixed diagnostic sample only"
+      },
+      "completeIntentMatch": {
+        "metricLabel": "complete_annotated_intent_match",
+        "rounds": 3,
+        "passed": 3,
+        "rate": 1,
+        "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+      },
+      "criterionCounts": {
+        "passed": 46,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 1,
+      "observedGoldAccuracy": 1,
+      "evidenceCoverage": 1,
+      "caseMacroAccuracy": 1
+    }
+  },
+  "actualProviderCalls": 47,
+  "priorCumulativeCalls": 388,
+  "nativeCalls": 16,
+  "cumulativeCalls": 451,
+  "authorizedMaximumCalls": 500,
+  "faults": {
+    "tasks": 24,
+    "completed": 24,
+    "strictCompletionRate": 1,
+    "completionInterval95": {
+      "level": 0.95,
+      "lower": 0.8620237953250198,
+      "upper": 1,
+      "method": "Wilson score; fixed diagnostic sample only"
+    },
+    "completeIntentMatch": {
+      "metricLabel": "complete_annotated_intent_match",
+      "rounds": 0,
+      "passed": 0,
+      "rate": null,
+      "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+    },
+    "criterionCounts": {
+      "passed": 24,
+      "failed": 0,
+      "unverified": 0,
+      "not_applicable": 24
+    },
+    "conservativeGoldAccuracy": 1,
+    "observedGoldAccuracy": 1,
+    "evidenceCoverage": 1,
+    "caseMacroAccuracy": 1
+  },
+  "sourcesUnchangedDuringRun": true,
+  "failureCases": [
+    {
+      "id": "v4_positive_after_negative",
+      "status": "failed",
+      "criteria": [
+        {
+          "id": "round_1.brief.catalogLanguage",
+          "status": "failed",
+          "expected": "en",
+          "actual": "any"
+        }
+      ]
+    },
+    {
+      "id": "v4_three_turn_language_then_lock",
+      "status": "failed",
+      "criteria": [
+        {
+          "id": "round_2.status",
+          "status": "failed",
+          "expected": [
+            "preview"
+          ],
+          "actual": "failed"
+        },
+        {
+          "id": "round_2.brief.targetMinutes",
+          "status": "failed",
+          "expected": 28,
+          "actual": 24
+        },
+        {
+          "id": "round_2.brief.catalogLanguage",
+          "status": "failed",
+          "expected": "zh",
+          "actual": "en"
+        },
+        {
+          "id": "round_2.preview.duration",
+          "status": "failed",
+          "expected": {
+            "targetMs": 1680000,
+            "toleranceMs": 168000
+          },
+          "actual": 1440000,
+          "detail": "Duration is independently summed from the frozen catalog."
+        },
+        {
+          "id": "round_2.preview.language",
+          "status": "failed",
+          "expected": "zh",
+          "actual": [
+            "en",
+            "en",
+            "en",
+            "en",
+            "en",
+            "en"
+          ]
+        },
+        {
+          "id": "round_3.status",
+          "status": "unverified",
+          "expected": [
+            "preview"
+          ],
+          "actual": null,
+          "detail": "No observation was supplied for this frozen turn."
+        },
+        {
+          "id": "round_3.brief.requireReleases",
+          "status": "unverified",
+          "expected": false,
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.targetMinutes",
+          "status": "unverified",
+          "expected": 28,
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.catalogLanguage",
+          "status": "unverified",
+          "expected": "zh",
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.retainFirst",
+          "status": "unverified",
+          "expected": 2,
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.avoidPrevious",
+          "status": "unverified",
+          "expected": true,
+          "actual": null
+        },
+        {
+          "id": "round_3.briefConcept.exercise",
+          "status": "unverified",
+          "expected": {
+            "id": "exercise",
+            "fields": [
+              "scene",
+              "styles",
+              "queries"
+            ],
+            "anyOf": [
+              "运动",
+              "健身",
+              "锻炼",
+              "exercise",
+              "workout"
+            ]
+          },
+          "actual": [],
+          "detail": "Handwritten semantic aliases cover this annotated request facet; ambiguous lexical judgments require independent review."
+        },
+        {
+          "id": "round_3.preview.nonempty",
+          "status": "unverified",
+          "expected": "at least one real candidate",
+          "actual": 0
+        },
+        {
+          "id": "round_3.preview.catalog_ids",
+          "status": "unverified",
+          "expected": "unique IDs supplied to this case/round or previously observed",
+          "actual": []
+        },
+        {
+          "id": "round_3.preview.metadata_integrity",
+          "status": "unverified",
+          "expected": "title, artist credit and duration unchanged",
+          "actual": []
+        },
+        {
+          "id": "round_3.preview.reported_total_integrity",
+          "status": "unverified",
+          "expected": {
+            "knownSumMs": null,
+            "unknownDurationTracks": null,
+            "uncertaintyRequired": false
+          },
+          "actual": {
+            "reportedTotalDurationMs": null,
+            "uncertaintyDeclared": false
+          },
+          "detail": "Reported total must equal the independently summed catalog durations. Zero-duration unknowns also require an explicit uncertainty marker."
+        },
+        {
+          "id": "round_3.preview.max_tracks",
+          "status": "unverified",
+          "expected": 30,
+          "actual": 0
+        },
+        {
+          "id": "round_3.preview.duration",
+          "status": "unverified",
+          "expected": {
+            "targetMs": 1680000,
+            "toleranceMs": 168000
+          },
+          "actual": null,
+          "detail": "Duration is independently summed from the frozen catalog."
+        },
+        {
+          "id": "round_3.preview.language",
+          "status": "unverified",
+          "expected": "zh",
+          "actual": []
+        },
+        {
+          "id": "round_3.preview.locked_prefix",
+          "status": "unverified",
+          "expected": [
+            913000001,
+            913000002
+          ],
+          "actual": []
+        },
+        {
+          "id": "round_3.preview.avoid_previous",
+          "status": "unverified",
+          "expected": [
+            913000003,
+            913000004,
+            913000005,
+            913000006
+          ],
+          "actual": []
+        }
+      ]
+    },
+    {
+      "id": "v4_three_turn_fixed_prefix",
+      "status": "failed",
+      "criteria": [
+        {
+          "id": "round_2.status",
+          "status": "failed",
+          "expected": [
+            "preview"
+          ],
+          "actual": "failed"
+        },
+        {
+          "id": "round_2.brief.retainFirst",
+          "status": "failed",
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "id": "round_2.brief.avoidPrevious",
+          "status": "failed",
+          "expected": true,
+          "actual": false
+        },
+        {
+          "id": "round_2.preview.avoid_previous",
+          "status": "failed",
+          "expected": [
+            911000002,
+            911000003,
+            911000004,
+            911000005,
+            911000006,
+            911000007
+          ],
+          "actual": [
+            911000001,
+            911000002,
+            911000003,
+            911000004,
+            911000005,
+            911000006,
+            911000007
+          ]
+        },
+        {
+          "id": "round_3.status",
+          "status": "unverified",
+          "expected": [
+            "preview"
+          ],
+          "actual": null,
+          "detail": "No observation was supplied for this frozen turn."
+        },
+        {
+          "id": "round_3.brief.requireReleases",
+          "status": "unverified",
+          "expected": false,
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.requiredArtist",
+          "status": "unverified",
+          "expected": "陶喆",
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.artistOnly",
+          "status": "unverified",
+          "expected": true,
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.targetMinutes",
+          "status": "unverified",
+          "expected": 24,
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.retainFirst",
+          "status": "unverified",
+          "expected": 1,
+          "actual": null
+        },
+        {
+          "id": "round_3.brief.avoidPrevious",
+          "status": "unverified",
+          "expected": true,
+          "actual": null
+        },
+        {
+          "id": "round_3.preview.nonempty",
+          "status": "unverified",
+          "expected": "at least one real candidate",
+          "actual": 0
+        },
+        {
+          "id": "round_3.preview.catalog_ids",
+          "status": "unverified",
+          "expected": "unique IDs supplied to this case/round or previously observed",
+          "actual": []
+        },
+        {
+          "id": "round_3.preview.metadata_integrity",
+          "status": "unverified",
+          "expected": "title, artist credit and duration unchanged",
+          "actual": []
+        },
+        {
+          "id": "round_3.preview.reported_total_integrity",
+          "status": "unverified",
+          "expected": {
+            "knownSumMs": null,
+            "unknownDurationTracks": null,
+            "uncertaintyRequired": false
+          },
+          "actual": {
+            "reportedTotalDurationMs": null,
+            "uncertaintyDeclared": false
+          },
+          "detail": "Reported total must equal the independently summed catalog durations. Zero-duration unknowns also require an explicit uncertainty marker."
+        },
+        {
+          "id": "round_3.preview.max_tracks",
+          "status": "unverified",
+          "expected": 30,
+          "actual": 0
+        },
+        {
+          "id": "round_3.preview.duration",
+          "status": "unverified",
+          "expected": {
+            "targetMs": 1440000,
+            "toleranceMs": 144000
+          },
+          "actual": null,
+          "detail": "Duration is independently summed from the frozen catalog."
+        },
+        {
+          "id": "round_3.preview.artist",
+          "status": "unverified",
+          "expected": {
+            "artist": "陶喆",
+            "only": true
+          },
+          "actual": null
+        },
+        {
+          "id": "round_3.preview.locked_prefix",
+          "status": "unverified",
+          "expected": [
+            911000001
+          ],
+          "actual": []
+        },
+        {
+          "id": "round_3.preview.avoid_previous",
+          "status": "unverified",
+          "expected": [
+            911000002,
+            911000003,
+            911000004,
+            911000005,
+            911000006,
+            911000007
+          ],
+          "actual": []
+        }
+      ]
+    }
+  ],
+  "scope": "8新题与2已见回归分开报告；非线上总体准确率。",
+  "comparability": "不同题集不能将百分比之差当配对提升。",
+  "sourceArchive": "docs/evaluation-versions/v4-source/snapshot-manifest.json",
+  "recordedAt": "2026-10-19T10:10:29.233135+00:00"
+}

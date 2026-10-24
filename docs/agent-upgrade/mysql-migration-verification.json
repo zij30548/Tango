@@ -1,0 +1,627 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-20T17:09:27.094032+00:00",
+  "runtime": {
+    "language": "python",
+    "python": "3.12.14",
+    "mysql": "8.4.11",
+    "packages": {
+      "fastapi": "0.154.0",
+      "uvicorn": "0.54.0",
+      "langgraph": "1.2.16",
+      "asyncmy": "0.2.16",
+      "cryptography": "47.0.0",
+      "redis": "7.4.1",
+      "asyncpg": "0.32.0"
+    }
+  },
+  "scope": {
+    "backendDatabase": "mysql",
+    "redis": "rate limits, bounded tool cache, progress notifications",
+    "desktopDatabase": "sqlite",
+    "postgres": "retained migration source and historical compatibility only",
+    "agentSemanticCapabilitiesChanged": false
+  },
+  "tests": {
+    "mysqlFullSuite": {
+      "passed": 656,
+      "failed": 0,
+      "skipped": 30,
+      "seconds": 29.08,
+      "skipReasons": {
+        "postgresCompatibilityNeedsSeparateRunner": 28,
+        "sqliteDistributedNotApplicable": 2
+      },
+      "note": "Overall engineering regression includes pure logic, SQLite comparisons, Redis, real MySQL, PG-to-MySQL migration and real Qt HTTP integration; not 656 independent model tasks."
+    },
+    "pgCompatibilitySuite": {
+      "passed": 56,
+      "failed": 0,
+      "skipped": 5,
+      "seconds": 7.82,
+      "skipReasons": {
+        "mysqlRunsInMainSuite": 3,
+        "sqliteDistributedNotApplicable": 2
+      }
+    },
+    "mysqlFocusedCasesIncludedInFullSuite": {
+      "storage": 8,
+      "taskRuntime": 18,
+      "conversationRouting": 5,
+      "httpApp": 4,
+      "routeReplyAtomicity": 3,
+      "processRestart": 1,
+      "nativeQtClient": 1,
+      "postgresToMysqlMigration": 15
+    },
+    "realModelRequests": 0,
+    "realCatalogRequests": 0,
+    "audioPlaybackEvaluation": false,
+    "initialFullSuite": {
+      "passed": 648,
+      "failed": 2,
+      "skipped": 30,
+      "cause": "Target transaction SET guard rejected migration; fixed explicit strict-mode validation before final run."
+    }
+  },
+  "fixesObservedDuringMigration": [
+    "Added cryptography for caching_sha2_password without weakening authentication",
+    "Moved cross-column CHECK to table level",
+    "Specified JSON_TYPE comparison collation",
+    "Committed route replies atomically with final route guard",
+    "Removed transaction SET and acquired source snapshot after locks",
+    "Preserved existing tango_storage_imports audit table",
+    "Preflighted report destination and distinguished post-commit report failure"
+  ],
+  "localCutover": {
+    "executed": true,
+    "verified": true,
+    "tablesVerified": 17,
+    "rowsVerified": 31,
+    "tableSummaries": {
+      "users": {
+        "count": 2,
+        "sha256": "9fbda22ae746da802529a966ae1b03fbe408fb9bbd037f602e2b6fb5d7877bd9"
+      },
+      "sessions": {
+        "count": 6,
+        "sha256": "597d1c4cb107bfcb64965f34b73c055caf2a98933da0586d4ec3cc4235e61c28"
+      },
+      "ai_usage": {
+        "count": 3,
+        "sha256": "8f35c4523ea575ba4269ee33ec96270fb8236ae8567036c0136843dcf36b7efe"
+      },
+      "music_account_quota": {
+        "count": 1,
+        "sha256": "c0beb8c9b9410554209aa713c240efc53e32868e3801eed73bde7997cde08904"
+      },
+      "music_registration_invites": {
+        "count": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "music_registration_invite_uses": {
+        "count": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "music_tasks": {
+        "count": 1,
+        "sha256": "8714e72f119d3419929f018df0883e1e3ab8e1328b91d37839d6da92eb32c872"
+      },
+      "music_task_requests": {
+        "count": 4,
+        "sha256": "8380ce26d152129e6148e61207be13d66d194363f2fe1d6b831cf825da8e9855"
+      },
+      "music_task_calls": {
+        "count": 10,
+        "sha256": "4fe4f7c605343ded08ba5c2e706947b7b6838a87f6630cbba38440c70770ec42"
+      },
+      "music_task_global_usage": {
+        "count": 2,
+        "sha256": "9d4353a5f5f70fa5673989955966ef3fd63a8d4643ee4d4f097bea1c6dfe6ae9"
+      },
+      "music_task_account_leases": {
+        "count": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "music_task_model_slots": {
+        "count": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "development_identities": {
+        "count": 1,
+        "sha256": "acd52b2401957d44ae29f3d9c3ab993303a48004f50a428c7110249d6214dbfe"
+      },
+      "music_conversations": {
+        "count": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "music_conversation_routes": {
+        "count": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "music_conversation_route_attempts": {
+        "count": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tango_storage_imports": {
+        "count": 1,
+        "sha256": "c938a4776376ff2f8bd561e70b04cb623828741a86bc1f37cb0d35bf6e37fcbb"
+      }
+    },
+    "backup": {
+      "private": true,
+      "sha256": "dec1fcf5b497b46e5203a4a629ae160c576300106ed65aec30e9a09f895aaa6b",
+      "bytes": 58557,
+      "pgRestoreListValidated": true
+    },
+    "sourceRetained": true,
+    "oldOwnedPostgresAndRedisStopped": true,
+    "activeDriver": "mysql",
+    "checks": {
+      "ok": true,
+      "endpoints": [
+        {
+          "port": 16382,
+          "storage": "mysql",
+          "rateLimiter": "redis",
+          "developmentMode": false,
+          "ready": true,
+          "unauthorizedBlocked": true
+        },
+        {
+          "port": 16383,
+          "storage": "mysql",
+          "rateLimiter": "redis",
+          "developmentMode": true,
+          "ready": true,
+          "unauthorizedBlocked": true
+        }
+      ],
+      "existingUsersQuotasAndLedgersPreserved": true,
+      "developmentBootstrapProtectedAndWorking": true,
+      "modelConfigured": true,
+      "capabilitiesAvailable": true,
+      "realModelCalls": 0,
+      "newPaidAttempts": 0,
+      "readyAfterLegacyInfrastructureStopped": true
+    },
+    "note": "Migration counts and hashes were verified before normal session writes resumed; no credentials, row contents or backup files are included."
+  },
+  "evidence": [
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-full-first.txt",
+      "sha256": "f5d307fbe2935e923967a68e2473c6b29d522cc2b8dd457bb408b71bdd7fa0f1"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-full-final.txt",
+      "sha256": "c5c57dd6c61acc8be6e9a3200b2f11f8ac04b9b9254a24ca3b88c5e3c433661a"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-pg-compat-final.txt",
+      "sha256": "baabcd2168639cbd9b1c047f8ae5d86b7bd98f63ce4b3aa87f3a7ad91d20e19f"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-root-first.txt",
+      "sha256": "674e0522acae6cd2fbfb246ce87a2af6b0882c036b6e4f6e491de1d1b808b078"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-process-first.txt",
+      "sha256": "c29966ed8ce7f13239fdbbc2025365baed757f71eb8ad5c1296066f1dec50d6b"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-task-first.txt",
+      "sha256": "5ee8bd4488f2f0b819245e31de950465f72763f5354fbc26777c97fb7c493114"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-task-second.txt",
+      "sha256": "85b54103a8312539e975c5a2dcb5b9063bcf4f559292e1ee949d7d3f5509c9c7"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-task-third.txt",
+      "sha256": "70dcef09af310478d7a6159a8fc6ab89abc6e8f46509fc4ada50be878ed28cb7"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-task-fourth.txt",
+      "sha256": "b5357ec45f9aef928be612036b65a8d07243fc61a140c8db3f10347b6da3edb5"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-storage-first.txt",
+      "sha256": "0aa50fd8c38ce26a02a4945028d828d9eb76b5067dd4476d8dba6b3831109161"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-storage-audit-final.txt",
+      "sha256": "f83fda94cd3ec7d81b3dc157a82a1a06b0170efc57fe4262f47bccfd580f15c4"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-storage-compat.txt",
+      "sha256": "bc3153ea5a7c4924525537d0a17d4f57cddbdc2e1c518341e844967f613977a5"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-route-reply-atomicity-before.txt",
+      "sha256": "c86befd5db5c54c21037ab4a585a86614907ead0bb789397541fbc16e3c074bc"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-route-reply-atomicity-sqlite-after.txt",
+      "sha256": "59670cfa67c1a4f9521d0633cbd38ca6d316372c31b56d19b630df0b5fa408bb"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-mysql-route-atomicity-after.txt",
+      "sha256": "fce6e475d22816941e637bfc06dcece2ce3e2f0c13c765c15138413f7562f870"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-pg-route-atomicity-after.txt",
+      "sha256": "bbee8bcf99e3ea096473c3f070fd47e98bad611747786a516b31093baab2c046"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-pg-mysql-migration-first.txt",
+      "sha256": "85794147ce8c49c6b6d833727eb100bad78e485810165f79ff3ec92535163195"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-pg-mysql-migration-guards-fixed.txt",
+      "sha256": "f9e82f787fb87f34f1165b1fe6043f39fd1a9b13114feca6ec704694a5eefb75"
+    },
+    {
+      "path": "docs/agent-upgrade/mysql-migration-evidence/tango-pg-mysql-migration-audit-final.txt",
+      "sha256": "b42facd581e11baf8a6f32949c8f3124191ffe84be79631ffea8b021239c51ff"
+    }
+  ],
+  "sources": [
+    {
+      "path": "backend_py/tango_backend/__init__.py",
+      "sha256": "fa7c26f3d8e27490ec61a2d3900b343f038b0978c645bc67c1e0efa56e6596f1"
+    },
+    {
+      "path": "backend_py/tango_backend/account_quota.py",
+      "sha256": "4da0bafd43b84e7ea759063e122d5b157c18fe459eee6ab528f1fc10f864c4c6"
+    },
+    {
+      "path": "backend_py/tango_backend/admin.py",
+      "sha256": "57f0fa9241ca1f87416e43101289a9dda28a08bc9ddd0ce82c134afd0f791bf7"
+    },
+    {
+      "path": "backend_py/tango_backend/app.py",
+      "sha256": "a887a8003aba7929302ad592f5d597f92178f320969038ffbd95d05b098d9b77"
+    },
+    {
+      "path": "backend_py/tango_backend/assistant_model.py",
+      "sha256": "3394aa55f8854d354b7e50b94679360f5c34030a94339c3408a1209e4c55068c"
+    },
+    {
+      "path": "backend_py/tango_backend/capability_registry.py",
+      "sha256": "03c4239fea3208aabf6ab3447c968bc5aaa2281bb3013fdbbe7fbd59b5cd8386"
+    },
+    {
+      "path": "backend_py/tango_backend/compat.py",
+      "sha256": "8461edfba7ba2d14c16f972f3c6c5ea3664556d5315f4727b6912bbcd7234e06"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_route_store.py",
+      "sha256": "f8941af8310aab705e37a56507accd317c16f6c504e0e88df5fb6817adf1fa21"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_router.py",
+      "sha256": "7779a30cbd6f707f69457aa7d83e96a423c4d87928ca5625ef453db24641d036"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_store.py",
+      "sha256": "57009b5e45e00a386e382e489964dd6790704c6d023228f89ed8d7c35786d71f"
+    },
+    {
+      "path": "backend_py/tango_backend/development_config.py",
+      "sha256": "7f2cf4d5b8867d8fe2eb866062f0dd15119ef7bfa7f2d39c8cd2b93dcd96e7b2"
+    },
+    {
+      "path": "backend_py/tango_backend/development_session.py",
+      "sha256": "519466529acb7f3ff651ca2fd2912414fe5d6150ac4b457efe88079672d34489"
+    },
+    {
+      "path": "backend_py/tango_backend/ensure_storage.py",
+      "sha256": "3a4cf12799e124251d5921e1969df17318922e345b12c140a88e67efbe32d554"
+    },
+    {
+      "path": "backend_py/tango_backend/errors.py",
+      "sha256": "1bdf5af4208e1161ec50d971f5e38660c43deae2007c08931cca1347dd087b5e"
+    },
+    {
+      "path": "backend_py/tango_backend/http_protocol.py",
+      "sha256": "2039ca6f46c203f3979c7631d0bfd85e93dbc57874f069db9acd59ee04272213"
+    },
+    {
+      "path": "backend_py/tango_backend/intent_routing.py",
+      "sha256": "fcf5356e8ed7d3a5af9c0a2c348510583463602853f7ee3e6f0d80a4ee42222a"
+    },
+    {
+      "path": "backend_py/tango_backend/invite_store.py",
+      "sha256": "96a63fadb8c03b02a75729c6228290c436166e190b432ad749d7ff7009a0f06c"
+    },
+    {
+      "path": "backend_py/tango_backend/launch_local.py",
+      "sha256": "1efcb72236fa96d47ca6ed847b1e4402fa178136aa833e6acb8c63090d845be6"
+    },
+    {
+      "path": "backend_py/tango_backend/migrate_mysql.py",
+      "sha256": "554135a34fd9fc63b94e2ea132590c0e6c620f51d56b9eb461c267359b63592e"
+    },
+    {
+      "path": "backend_py/tango_backend/model.py",
+      "sha256": "0268000794716730985634afb3fde811b67c92d57603fb68199d152e7de8e618"
+    },
+    {
+      "path": "backend_py/tango_backend/model_common.py",
+      "sha256": "164e722476a036fa4a9542e02194bd0a27cfdddc6f054437e8e56ba38cf6ad3b"
+    },
+    {
+      "path": "backend_py/tango_backend/model_transport.py",
+      "sha256": "6d1516b19179b830cf8b29cf903f03d6312e973181c3d593b04205f3780e2e7a"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_infra.py",
+      "sha256": "779c376adf3c1ac4988fb480b75b501298ed303e7cbb47d27bdf49ab949cf8d5"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_store.py",
+      "sha256": "beae11bca12038cbf08e8dcf1d2673f3100dee487a1e90571d9baf3a0dec0e7a"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_task_store.py",
+      "sha256": "7f8549bdab567e8df5ad9493911e4436ac4377e7a7ef0357cc3bb8780ad82993"
+    },
+    {
+      "path": "backend_py/tango_backend/postgres_store.py",
+      "sha256": "7ec4037819a36479bf798b95c5718ded3a3ba4bb7e0ba65133c3dbf86bd089ee"
+    },
+    {
+      "path": "backend_py/tango_backend/postgres_task_store.py",
+      "sha256": "be6dbe6711102be51bf1f7d16697a666ad7ccfca51dded57a746f742e964b2cf"
+    },
+    {
+      "path": "backend_py/tango_backend/radio_model.py",
+      "sha256": "8c1cd7c8b9495f4c17be6b0a92b18196506007d3fa4aa90c0ac01b46ed6ae7dd"
+    },
+    {
+      "path": "backend_py/tango_backend/redis_limiter.py",
+      "sha256": "c1a06ebfdf1418b4ad218ab3779bdb4747713266a49530a95c802191897f5011"
+    },
+    {
+      "path": "backend_py/tango_backend/registration_service.py",
+      "sha256": "2f42c60ce2ec02723a404ded6104b2dfde890694412da389dd5634ce8bec1aed"
+    },
+    {
+      "path": "backend_py/tango_backend/security_config.py",
+      "sha256": "7edbc069aa22116ecd432c00f4d5d32cfcd9a11e61604cea8096e6f3751e9789"
+    },
+    {
+      "path": "backend_py/tango_backend/server.py",
+      "sha256": "4388100304262a2beeda9f9435339c55e9beeee18e28d06965e40765a1da71a4"
+    },
+    {
+      "path": "backend_py/tango_backend/service_config.py",
+      "sha256": "5e80571910077aa219d1355f3614cb62a4616ab0d912d3bd4339ccccf247857f"
+    },
+    {
+      "path": "backend_py/tango_backend/storage.py",
+      "sha256": "5ed23959a3b59e3dbf4bfd4da1ee4c9a6268d44f6c0cd6d14f811774b3d79db5"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_auth.py",
+      "sha256": "ed9e56c0907945ec2962fc94e1f5468dfc8379be74f08407910a1ed6c2f0e6f9"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_db.py",
+      "sha256": "21f844112f2bd9867275812813eeebae391208a8a675871330cfb95f2de1b1b4"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_postgres.py",
+      "sha256": "93c81a3626f11f22472877ffbea040d617fb8be90d0723f449452126d3a184fe"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_profile.py",
+      "sha256": "a5407e8065ab3e966ac85d0f89f85cf20b72b3915d613846169f277ffc28d582"
+    },
+    {
+      "path": "backend_py/tango_backend/store.py",
+      "sha256": "63e4e5683049ffb85f2903d3efe8ab71de72a2e97f8b4b2e58e8b29b20674c62"
+    },
+    {
+      "path": "backend_py/tango_backend/task_brief_patch.py",
+      "sha256": "4e76a9802a1cb900865d86756fab896d2cb4b5fcb1fa3b54a8615132db76609e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_duration.py",
+      "sha256": "40233800dfab28649d3066ab8c15187a19c6945d32fb0afc5961cb6ef7cb801e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_language.py",
+      "sha256": "8b10cccff9df41817c22731a8f33ce5dafe3ae94a1771e5d7c672494b4e7160f"
+    },
+    {
+      "path": "backend_py/tango_backend/task_model.py",
+      "sha256": "c25c2d45a22acfeaefb2a9d16ece45233d47e009bf6d9c71929f4fa6e03fd2b0"
+    },
+    {
+      "path": "backend_py/tango_backend/task_pending_request.py",
+      "sha256": "75412e266312a5141b056ae7900df91c4519bef50ed982831016be9955442bcb"
+    },
+    {
+      "path": "backend_py/tango_backend/task_progress.py",
+      "sha256": "de4b0a71dacfcc4424649edca527abf8cdaa6ccdfe09d3bdef857ad5accb88b4"
+    },
+    {
+      "path": "backend_py/tango_backend/task_query_coverage.py",
+      "sha256": "6aa7d5481baa1ec9721e78ecbe504225f591176e81bd425836d6d255bd5a1d6e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_release_intent.py",
+      "sha256": "a26cfa83cb5889057daf75d5e488a18e316cb946bfed73ba4befd79a3efc8e18"
+    },
+    {
+      "path": "backend_py/tango_backend/task_runtime.py",
+      "sha256": "4e56a2d164683335ec36982730003b3833a4c7b74c118fdc38a144c690e2df00"
+    },
+    {
+      "path": "backend_py/tango_backend/task_schema.py",
+      "sha256": "bcbe554ddd93f2f59f311c52fbd2c1ca7bfca8f50d02f6010b7425cf717477a6"
+    },
+    {
+      "path": "backend_py/tango_backend/task_store.py",
+      "sha256": "7d04d9eb701e936f1e8364b4c9a7bdd88a30df4fe06cc3bec2225e3a5057bb12"
+    },
+    {
+      "path": "backend_py/tango_backend/task_style_evidence.py",
+      "sha256": "ac092fb97b308314e8e38496854b4f3da03777744ac2ebaa999252fd5e8248f2"
+    },
+    {
+      "path": "backend_py/tango_backend/task_tool_cache.py",
+      "sha256": "d497042451726af0223a34447c1b95f9301b2e46059e79fcf6ceb176a18fb726"
+    },
+    {
+      "path": "backend_py/tango_backend/task_tool_evidence.py",
+      "sha256": "18c21d6bab090d815ac66cb8bed39fe946d2b0230f86f95cfadc414b3744a610"
+    },
+    {
+      "path": "backend_py/tango_backend/migrations/001_initial_mysql.sql",
+      "sha256": "ba1af9ef9822c2f0de31dfea3de38bc780255c8fc2d860b024a90658f434e3d5"
+    },
+    {
+      "path": "backend_py/tango_backend/migrations/001_initial_postgres.sql",
+      "sha256": "22b75c4b27c8db9fff74c1c01a897327b8a29f3e3d4f8ec5d997627170afc5ca"
+    },
+    {
+      "path": "backend_py/tests/run_mysql_suite.py",
+      "sha256": "20d1b9d62b7bda733789b321b4edeaccdbff5048dc47a1ef1aa1ec25e448d065"
+    },
+    {
+      "path": "backend_py/tests/run_storage_suite.py",
+      "sha256": "9a730fc4146de9bb2df925c602d287104e5d0f537d333cba902fa787e041e5b4"
+    },
+    {
+      "path": "backend_py/tests/test_admin.py",
+      "sha256": "6bbda41b62ebbe5e631b2df37cf66b4031b60badc0e0b6de315fb29107a9132a"
+    },
+    {
+      "path": "backend_py/tests/test_app.py",
+      "sha256": "05b889ffb4e0970f9183649b12966de1e5104d17751c72fb58dac27283a6b337"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing.py",
+      "sha256": "a8ba093eb7213f0df4b2e8de5fb8a8e439a986e2e23eb5df084e0c54e0fe1307"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing_mysql.py",
+      "sha256": "86b16d7676dd0a5f2e404ac302d9ae1b05703d5cdaddbf1143e7bd85d524ea21"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing_postgres.py",
+      "sha256": "9e2e4cebf57689eda31176849778bfd9e46cebab22cd3158935b694b3fa0f0c5"
+    },
+    {
+      "path": "backend_py/tests/test_http_protocol.py",
+      "sha256": "27cdbb373b5e8a5d641d3f1e1cc1721393bdc8a25ecfb6e464cf03e61d1c0e03"
+    },
+    {
+      "path": "backend_py/tests/test_launch_local.py",
+      "sha256": "4b7f1d5ffcaa4b469cdb0cb273cab0a62c16093f755ee56762fcf2a770b44032"
+    },
+    {
+      "path": "backend_py/tests/test_models.py",
+      "sha256": "6032993fd1fc15eee5476eb5852591480da52d83a10905b4d8d649da62982718"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_app.py",
+      "sha256": "dc95ddcaeceb8c45c949c715fa1cbb7b9caf0e3894436722ae9f1e9f4540641d"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_migration.py",
+      "sha256": "8d7f1cf835b794e154497e094943d86db595408d1496e283682d4a0d4983852c"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_server_process.py",
+      "sha256": "866936cd5671ff2220c6c6e909120f05cdd43586ffe95637da98dba675bb2e73"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_storage.py",
+      "sha256": "4f083b14f595deda359ef5b4efcc7a09b8324518966952218b142ebd5bf49b89"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_task_runtime.py",
+      "sha256": "331eebc08c1aaad1873b1ee2b60e280e88e1581aedf14ffec8bf84508d33f818"
+    },
+    {
+      "path": "backend_py/tests/test_native_integration.py",
+      "sha256": "ad90abe025000be5cdeb6a6f71828926cb4f7a86db3ed8f8b2623550a4d45f74"
+    },
+    {
+      "path": "backend_py/tests/test_redis_features.py",
+      "sha256": "a35bc6f9d445a3ed396e6eac1889cc3ebe831e0866325da5e01a6d66f61380fa"
+    },
+    {
+      "path": "backend_py/tests/test_route_reply_atomicity.py",
+      "sha256": "3297e908cad9ae2d45ce7efa41deede5bf5f181c5fba4e067bec9781010d1788"
+    },
+    {
+      "path": "backend_py/tests/test_server_process.py",
+      "sha256": "a2cf80c596b8fe8aa499e82084652888e59f6fbd0473cf782a1ea71fa3df7605"
+    },
+    {
+      "path": "backend_py/tests/test_storage.py",
+      "sha256": "6a90d487dd72c2caae2f1ac1d74b31d03d19bb14455b588beb757bf8b75f6216"
+    },
+    {
+      "path": "backend_py/tests/test_storage_interop.py",
+      "sha256": "0c22a308108b9f2ef7c8b1167a95da68581eca6cf9c9791d11e0f816f2f8c6c3"
+    },
+    {
+      "path": "backend_py/tests/test_storage_profile.py",
+      "sha256": "2629b9be5bab051d567638e4a481d9a11647c6bf5c3ebf3b69eb196e06bb8fac"
+    },
+    {
+      "path": "backend_py/tests/test_task_helper_parity.py",
+      "sha256": "b38ceaf6df7226108a23007f802f3416502c02358a2647088738db4baca2f5b4"
+    },
+    {
+      "path": "backend_py/tests/test_task_runtime_migration.py",
+      "sha256": "bf4abd8a31d4ce5bcdf32655bae61c9ad2d0dbb1763fefda0f9bd2bbbc3caccc"
+    },
+    {
+      "path": "backend_py/tests/helpers/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend_py/tests/helpers/mysql_fixture.py",
+      "sha256": "0edc4509c56a8e0372a43fbdc7e633e7a42cc5ba1323e3670b6c44e98dc5ddac"
+    },
+    {
+      "path": "backend_py/tests/helpers/process_fixture.py",
+      "sha256": "de8e9f3559d6ba6c265ff41b7b58f2cdd4c45553d04f51461be96fe326dd63c1"
+    },
+    {
+      "path": "backend_py/pyproject.toml",
+      "sha256": "99ec18a59c29e6ebd8835320a48834d0cf853548095df15b99e7cbe7c9b6ab94"
+    },
+    {
+      "path": "backend_py/uv.lock",
+      "sha256": "a237f7daed2802f3ca5fdd12f817716ce5834471e985f21b1d8067fe6baa563f"
+    },
+    {
+      "path": "scripts/ensure-app-backend.sh",
+      "sha256": "6cc96cef140b63be5615a11643b95294a9796b2bc78670ea60a6f2c0e7d34270"
+    },
+    {
+      "path": "scripts/start-app-backend.sh",
+      "sha256": "29a3c27da1273b43d97a4676151038eeb9f2f528d4e97f45de562a6d2b7366b6"
+    },
+    {
+      "path": "backend/.env.example",
+      "sha256": "fcbcc855d8adac28a6460f5dde8f51c4c74fc80925503b775460619340b21d0c"
+    },
+    {
+      "path": "tests/python_backend_integration_test.cpp",
+      "sha256": "580339b4d3b8136f0bdd0118ef1f58213e9657303219a636616042dd90cf0484"
+    },
+    {
+      "path": "tests/python_backend_integration_test.pro",
+      "sha256": "737ba18b132d3f90cf524cb4fa398651b069ffa5f116240162f35bf3b887fbd3"
+    }
+  ],
+  "testEvidenceContainsPrivateApplicationLogs": false
+}

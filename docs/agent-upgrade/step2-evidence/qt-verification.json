@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-20",
+  "scope": "Qt unified typed routing integration; offline engineering regression, not model-quality evaluation",
+  "paidModelCalls": 0,
+  "realCatalogCalls": 0,
+  "audio": "synthetic muted WAV only in existing native Node end-to-end recovery/adoption regression",
+  "environment": {
+    "sandbox": "/tmp/tango-step0-qt-cfinbz84/offline.sb",
+    "network": "loopback only",
+    "data": "owned QTemporaryDir fixtures only",
+    "qt": "5.15.19",
+    "nativePlatform": "cocoa"
+  },
+  "results": [
+    {
+      "evidence": "client/test-routing-final.xml",
+      "sha256": "1ecaec97a3b1b00b31b0598cb76a0b2cda1d914cde601965f95beb2409267457",
+      "qt_pass": 22,
+      "qt_fail": 0,
+      "functional_pass": 20
+    },
+    {
+      "evidence": "flow/test-guards-final.xml",
+      "sha256": "dee7277cfbd6a9fb4c2003b9482eaa371f32c61a0f8e404dfd4df22875388535",
+      "qt_pass": 14,
+      "qt_fail": 0,
+      "functional_pass": 12
+    },
+    {
+      "evidence": "client/test-compat-first.xml",
+      "sha256": "f161f9ea61206932bc5808b4095bab12c8dc73bf1245e90189a654ac3b50f52c",
+      "qt_pass": 21,
+      "qt_fail": 0,
+      "functional_pass": 19
+    },
+    {
+      "evidence": "dialog/test-compat-first.xml",
+      "sha256": "b731e241e7073500fba5c6ad441a449048095d9a02bef688099e41ad9c1a3ab5",
+      "qt_pass": 21,
+      "qt_fail": 0,
+      "functional_pass": 19
+    },
+    {
+      "evidence": "flow/test-node-corrected-fixture.xml",
+      "sha256": "8a9cd3fa17a677dcbedcb79f8cd1f6fcfab54dbfddbf23c374b6992755f3c5ed",
+      "qt_pass": 4,
+      "qt_fail": 0,
+      "functional_pass": 2
+    }
+  ],
+  "totals": {
+    "qt_pass": 82,
+    "qt_fail": 0,
+    "functional_pass": 72
+  },
+  "preservedFailures": [
+    {
+      "evidence": "client/build-first.log",
+      "cause": "Compile failure: local variable named slots collided with Qt macro; renamed routeSlots."
+    },
+    {
+      "evidence": "flow/test-node-first.log",
+      "cause": "Legacy fake model remember branch intercepted research for compound instruction, returning wrong research shape; removed obsolete fixture branch, production validation retained."
+    },
+    {
+      "evidence": "flow/test-node-diagnostic.log",
+      "cause": "Diagnostic reproduction retained INVALID_TASK_MODEL before the fixture correction."
+    }
+  ],
+  "sourceSha256": {
+    "appbackendclient.h": "44c804467f05980cd7e02419523ed27e47338d80e16ef67124f0845c80ba3518",
+    "appbackendclient.cpp": "4ade4feb055a91cb703409f0600a7cd8adc5afdf1fa54587896cab9fff8c8b8d",
+    "conversationclient.h": "d9a03feaaa2ee7e87da231a67c4c3e126d065b9b709fa652d7a69012a2add382",
+    "conversationclient.cpp": "536f445af429ef50fa3ee2e97b1d277cb31fa236f0d72ca872ca54cb9fc35eba",
+    "mainwindow.h": "c911fd8de314655d9c335e8055b54c1e9d5d7ae5c5eee0a00c4711e1e8f72cca",
+    "mainwindowradio.cpp": "7bad36766e70c1821ba7d23b7344741021a75d06b43ba0d48a72fce9b3f967ca",
+    "musictaskclient.h": "8d6c72f78f497fb467ac345593e642d07134344eb9002cbb1ea2d37cc67011ab",
+    "musictaskclient.cpp": "a30f46d85abe9ffd95bfea91423c927c4f939a627a1f29bc133036343462b923",
+    "radiodialog.h": "121733ceb0ba0b0790694a4bab162637cb87951f5eac69f9d1393adcf6f677f3",
+    "radiodialog.cpp": "138d40d9fed68d60b9da76614818791c1ca1f9e23d7c6c1d5509c3e9d34c64ae",
+    "tests/routing_fixtures.h": "e99083371a510c3d9e08084020796a43488f29835a7a4f16997973f3261054ac",
+    "tests/routing_client_test.cpp": "181e1c0c13a57061ff0ced4f0bb8612e59f3110ed43e698b4fcb33ae0f88d5a9",
+    "tests/routing_flow_test.cpp": "3ed83241ab8a38953d0644cf09314cfb670c473d3a7c431a98562cbc876d3802",
+    "tests/music_task_flow_test.cpp": "e13fb76cef7e6f97e462fc3b85d42d3893c239f39d0576c24f2a83d3e803a338"
+  },
+  "limitations": [
+    "No real Qwen quality/accuracy/completion measurement; all provider responses deterministic fixtures.",
+    "Router state observation and historical restoration do not automatically execute actions or resurrect memory confirmations.",
+    "Action accepted means task/control HTTP accepted, not completed musical research; task state remains separate."
+  ]
+}

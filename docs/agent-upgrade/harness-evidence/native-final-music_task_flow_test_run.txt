@@ -1,0 +1,17 @@
+********* Start testing of MusicTaskFlowTest *********
+Config: Using QtTest library 5.15.19, Qt 5.15.19 (arm64-little_endian-lp64 shared (dynamic) release build; by Clang 21.0.0 (clang-2100.0.123.102) (Apple)), osx 26.6
+INFO   : MusicTaskFlowTest::initTestCase() entering
+PASS   : MusicTaskFlowTest::initTestCase()
+INFO   : MusicTaskFlowTest::compositeTaskModificationRecoveryAndAccountIsolation() entering
+INFO   : MusicTaskFlowTest::compositeTaskModificationRecoveryAndAccountIsolation() testdata ../backend_py/tango_backend/server.py was located at <repo>/tests/../backend_py/tango_backend/server.py
+   Loc: [../../../../tests/music_task_flow_test.cpp(299)]
+2026-10-21 13:33:39.951 music_task_flow_test[19109:8926575] error messaging the mach port for IMKCFRunLoopWakeUpReliable
+PASS   : MusicTaskFlowTest::compositeTaskModificationRecoveryAndAccountIsolation()
+INFO   : MusicTaskFlowTest::expiredLocalLeasesPauseAndResumeWithoutServerRestart() entering
+INFO   : MusicTaskFlowTest::expiredLocalLeasesPauseAndResumeWithoutServerRestart() testdata ../backend_py/tango_backend/server.py was located at <repo>/tests/../backend_py/tango_backend/server.py
+   Loc: [../../../../tests/music_task_flow_test.cpp(556)]
+PASS   : MusicTaskFlowTest::expiredLocalLeasesPauseAndResumeWithoutServerRestart()
+INFO   : MusicTaskFlowTest::cleanupTestCase() entering
+PASS   : MusicTaskFlowTest::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 13769ms
+********* Finished testing of MusicTaskFlowTest *********

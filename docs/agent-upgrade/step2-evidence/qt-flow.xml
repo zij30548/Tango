@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase name="RoutingFlowTest">
+<Environment>
+    <QtVersion>5.15.19</QtVersion>
+    <QtBuild>Qt 5.15.19 (arm64&#x002D;little_endian&#x002D;lp64 shared (dynamic) release build; by Clang 21.0.0 (clang&#x002D;2100.0.123.102) (Apple))</QtBuild>
+    <QTestVersion>5.15.19</QTestVersion>
+</Environment>
+<TestFunction name="initTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.04075"/>
+</TestFunction>
+<TestFunction name="helpKeepsPreviewAndReplyAppearsOnce">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="1183.39"/>
+</TestFunction>
+<TestFunction name="cancelMemoryStillFindsIndependentMusic">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="974.65"/>
+</TestFunction>
+<TestFunction name="confirmedMemoryContinuesDependentMusicOnceWithEditedValue">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="886.054"/>
+</TestFunction>
+<TestFunction name="cancellingDependencySkipsOnlyDependentAction">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="879.175"/>
+</TestFunction>
+<TestFunction name="clearPreferenceRequiresConfirmationAndKeepsIndependentMusic">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="837.477"/>
+</TestFunction>
+<TestFunction name="continueAndNewUseDifferentTaskOperations">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="1419.19"/>
+</TestFunction>
+<TestFunction name="controlRequiresExactTaskVersionAndStableRequestId">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="1387.11"/>
+</TestFunction>
+<TestFunction name="invalidRouteDoesNotUseLegacyOrStartMusic">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="590.078"/>
+</TestFunction>
+<TestFunction name="olderConfirmationCannotReplaceNewerMusicTurn">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="1167.92"/>
+</TestFunction>
+<TestFunction name="staleMemorySummaryCannotOverwriteNewLocalPreference">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="869.66"/>
+</TestFunction>
+<TestFunction name="delayedContinueRequiresServerBoundTaskRevision">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="1248.06"/>
+</TestFunction>
+<TestFunction name="accountSwitchInvalidatesPendingConfirmation">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="1124.03"/>
+</TestFunction>
+<TestFunction name="cleanupTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.019625"/>
+</TestFunction>
+<Duration msecs="12567.1"/>
+</TestCase>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleExecutable</key>
+    <string>${EXECUTABLE_NAME}</string>
+    <key>CFBundleName</key>
+    <string>Tango</string>
+    <key>CFBundleDisplayName</key>
+    <string>探歌 · Tango</string>
+    <!-- Preserve the installed identity when changing the product name. -->
+    <key>CFBundleIdentifier</key>
+    <string>com.yourcompany.MusicPlayer2</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleSignature</key>
+    <string>${QMAKE_PKGINFO_TYPEINFO}</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>${MACOSX_DEPLOYMENT_TARGET}</string>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>en</string>
+    <key>CFBundleAllowMixedLocalizations</key>
+    <true/>
+</dict>
+</plist>

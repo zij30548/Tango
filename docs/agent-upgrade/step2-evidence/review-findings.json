@@ -1,0 +1,14 @@
+{
+  "kind": "observed_pure_function_summary_not_raw_log",
+  "scope": "Read-only review before the control-clause guard correction",
+  "method": "validateRouteProposal called directly with an owned synthetic task and a deliberately incorrect task.control proposal",
+  "modelCalls": 0,
+  "observedAcceptedBeforeFix": [
+    {"instruction": "我不需要取消任务。", "source": "取消任务", "action": "cancel"},
+    {"instruction": "我没有让你取消任务。", "source": "取消任务", "action": "cancel"},
+    {"instruction": "继续解释一下推荐依据。", "source": "继续", "action": "resume"}
+  ],
+  "resultFields": {"taskId": "fixture_task_id", "expectedRevision": 1},
+  "evidenceLocation": "Original JSON output exists in the review tool conversation; this file is an explicit summary, not a captured raw transcript",
+  "regression": "backend/test/intent-routing.test.mjs: negated, indirectly reported and truncated non-control phrases cannot authorize task mutations"
+}

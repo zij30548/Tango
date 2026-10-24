@@ -1,0 +1,23 @@
+........................................................................ [ 16%]
+........................................................................ [ 33%]
+........................................................................ [ 50%]
+........................................................................ [ 66%]
+........................................................................ [ 83%]
+........s.s.s....ssss.........................ss.ss.ss.ss.ssss........   [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_multi_model_runtime.py:206: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_multi_model_runtime.py:231: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_multi_model_runtime.py:244: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [4] tests/test_multi_model_runtime.py:257: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_multi_model_storage.py:163: 需要 owned PG runner 提供临时实例；不读取用户配置
+SKIPPED [1] tests/test_multi_model_storage.py:163: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:177: 需要 owned PG runner 提供临时实例；不读取用户配置
+SKIPPED [1] tests/test_multi_model_storage.py:177: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:190: 需要 owned PG runner 提供临时实例；不读取用户配置
+SKIPPED [1] tests/test_multi_model_storage.py:190: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:205: 需要 owned PG runner 提供临时实例；不读取用户配置
+SKIPPED [1] tests/test_multi_model_storage.py:205: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [1] tests/test_multi_model_storage.py:226: 需要 owned PG runner 提供临时实例；不读取用户配置
+SKIPPED [1] tests/test_multi_model_storage.py:226: 需要独立 MySQL runner；禁止读取当前应用用户库
+SKIPPED [2] tests/test_multi_model_storage.py:240: 只在 owned MySQL runner 中启动迁移用临时 PG
+411 passed, 19 skipped in 11.91s

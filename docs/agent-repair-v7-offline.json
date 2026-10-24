@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "version": "v7",
+  "recordedAt": "2026-10-19T12:11:41.972256+00:00",
+  "actualProviderCalls": 0,
+  "backend": {
+    "command": "node24 --test test/*.test.mjs (cwd backend)",
+    "passed": 363,
+    "failed": 0
+  },
+  "clarificationIntegration": {
+    "command": "node24 --test test/task-clarification-continuation.test.mjs (cwd backend)",
+    "passed": 19,
+    "failed": 0,
+    "includedInBackendCount": true,
+    "coverage": [
+      "initial missing-artist continuation and dates",
+      "latest correction/cancellation and negated cancellation",
+      "source tampering and forged input",
+      "source count6 and total4000 bounds before persistence",
+      "pause/resume and restart without replay",
+      "late cancellation response, account ownership and idempotency",
+      "existing preview locks and confirmed edit separation"
+    ]
+  },
+  "identitySchemaCli": {
+    "passed": 47,
+    "failed": 0,
+    "includedInBackendCount": true
+  },
+  "nativeFlow": {
+    "command": "/tmp/tango-music-task-flow-build/music_task_flow_test",
+    "passed": 4,
+    "failed": 0,
+    "usesRealProvider": false,
+    "limits": "Two business Qt flows plus init/cleanup; loopback fixtures, no real music playback."
+  },
+  "namedFaults": {
+    "passed": 24,
+    "failed": 0,
+    "artifact": "docs/agent-repair-v7-faults.json"
+  },
+  "reportTests": {
+    "command": "node24 --test scripts/render-agent-repair-v7-report.test.mjs",
+    "passed": 4,
+    "failed": 0
+  },
+  "independentRuntimeReview": {
+    "passed": 19,
+    "failed": 0,
+    "overlapsClarificationIntegration": true
+  },
+  "intermediateFailuresRetained": [
+    {
+      "failure": "First complete run362/363: tampered-context integration expected async task.failed, while hardened turn correctly rejected synchronously before mutation.",
+      "resolution": "Strengthened test to assert synchronous rejection plus exact checkpoint, revision, messages and budget unchanged; final363/363.",
+      "log": "docs/evaluation-versions/v7-checks/initial-full-sync-rejection.log"
+    },
+    {
+      "failure": "Development continuation integration exposed source-count and4000-length validation after state mutation.",
+      "resolution": "Construct and validate candidate state before abort, assignment or persistence. Original failing evidence retained.",
+      "log": "docs/evaluation-versions/v7-checks/initial-contract-integration.log"
+    }
+  ],
+  "logs": [
+    {
+      "kind": "backend",
+      "path": "docs/evaluation-versions/v7-checks/backend.log",
+      "sha256": "b6f1987d80de02b88ab89e3786ff89b331fe218611aa205c0c3efebec034c177"
+    },
+    {
+      "kind": "clarification-integration",
+      "path": "docs/evaluation-versions/v7-checks/clarification-integration.log",
+      "sha256": "6bb943b5fd13ce294884c942366a83883e4e919136c7e109ba39e2f656da40d3"
+    },
+    {
+      "kind": "native-flow",
+      "path": "docs/evaluation-versions/v7-checks/native-flow.log",
+      "sha256": "4c123831eb2db4253a098bcfca231902bd113de6e6ee96f938e8f60b77800e16"
+    },
+    {
+      "kind": "identity-scorer",
+      "path": "docs/evaluation-versions/v7-checks/identity-scorer.log",
+      "sha256": "b88c29cf86182ae7f3c6edb4de684d381d1d35792b74eec1782b4c3812686642"
+    },
+    {
+      "kind": "report",
+      "path": "docs/evaluation-versions/v7-checks/report.log",
+      "sha256": "c120c0ce2629e4279496e77d5fe008e9a21678ead5fb7f3d2f7731cd654eea40"
+    },
+    {
+      "kind": "faults",
+      "path": "docs/evaluation-versions/v7-checks/faults.log",
+      "sha256": "f5783c35b2640f4bdfe4639a65122da5cb4bdaca96e2c34fe4c4a59714f0c558"
+    },
+    {
+      "kind": "independent-runtime-review",
+      "path": "docs/evaluation-versions/v7-checks/independent-runtime-review.log",
+      "sha256": "011855609f57077387baceabedff83a29c275c93e2dadaea67e5c1c5c50cec0e"
+    },
+    {
+      "kind": "initial-full-sync-rejection",
+      "path": "docs/evaluation-versions/v7-checks/initial-full-sync-rejection.log",
+      "sha256": "8ddb9ce80545265326b197a14c053717c5c1e5231bd36d157337ecd793957e3d"
+    },
+    {
+      "kind": "initial-contract-integration",
+      "path": "docs/evaluation-versions/v7-checks/initial-contract-integration.log",
+      "sha256": "b3cdf448277b446865caa0ab3d1d56e93cf069a539f2e0adbcc69450413c6369"
+    }
+  ],
+  "localBackendActivation": {
+    "at": "2026-10-19T12:11:41.972264+00:00",
+    "oldOwnedPid": 48739,
+    "newPid": 52044,
+    "health": "quiet-app-backend version1",
+    "ownershipChecked": "ps exact Node server command and project backend cwd",
+    "modelRequestSentByVerification": false,
+    "desktopRestartNeededForTheseBackendChanges": false
+  },
+  "limits": [
+    "Counts overlap; do not sum as independent agent tasks.",
+    "No final-version fresh holdout, real catalog recall or human audio test.",
+    "No C++ change; existing native binary reused for flow regression."
+  ]
+}

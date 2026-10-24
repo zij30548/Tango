@@ -1,0 +1,686 @@
+{
+  "schemaVersion": 1,
+  "version": "v7",
+  "recordedAt": "2026-10-19T12:12:17.694503+00:00",
+  "baseArchive": "docs/evaluation-versions/v6-source/snapshot-manifest.json",
+  "scope": "Frozen runtime/evaluation mapping plus targeted regression tests and report source. Unchanged files refer to verified immutable historical archives; changed/new files copied. No secrets or account data.",
+  "liveReport": "docs/agent-repair-v7-live.json",
+  "liveReportSha256": "1c012e53594a2de7d9a57432af8ecb71eb74785be73b695170c862b4224b6f6d",
+  "sourcesUnchangedDuringRun": true,
+  "sources": [
+    {
+      "path": "README.md",
+      "sha256": "1ab25dd956b27ce65cfff5328018cd75c8b529507677ee44c268249b9216ef5c",
+      "archivedPath": "docs/evaluation-versions/v7-source/README.md",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "aboutdialog.cpp",
+      "sha256": "6af96e571cf7cc354250580d715ae87832e960510501bedaff2b0e66020a8cb0",
+      "archivedPath": "docs/evaluation-versions/v5-source/aboutdialog.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "aboutdialog.h",
+      "sha256": "8ea40d8df464a10b96670bb3ff09e46261ff218a133fff3dbd5c36b39892ad23",
+      "archivedPath": "docs/evaluation-versions/v5-source/aboutdialog.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "appbackendclient.cpp",
+      "sha256": "ac4be852188c744039870bed1d971899e51ef9dadc20effce3881ec07f827a5e",
+      "archivedPath": "docs/evaluation-versions/v5-source/appbackendclient.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "appbackendclient.h",
+      "sha256": "ec8590979b2975dbbc6555b07c09dfa3f58af31300d47c1d0dc620c5322cd689",
+      "archivedPath": "docs/evaluation-versions/v5-source/appbackendclient.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "artwork.pri",
+      "sha256": "047041b720d0dae8df3d48f55589a0ab3f0e0a58677ad5d1fa2ea363ca5d0489",
+      "archivedPath": "docs/evaluation-versions/v5-source/artwork.pri",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "assistanttypes.h",
+      "sha256": "62a9ef8450724d9890f8a030197b45baa1bfb9ddb3c2a14a2924de9cb656815b",
+      "archivedPath": "docs/evaluation-versions/v5-source/assistanttypes.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/agent-evaluation-cli.mjs",
+      "sha256": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/agent-evaluation-cli.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/errors.mjs",
+      "sha256": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/errors.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-artist-identity.mjs",
+      "sha256": "582793b2fcee9c143236ed017bd9ba4a6820fbc8591ea854b8d45a785a5ba74f",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/evaluation/agent-artist-identity.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/evaluation/agent-evaluation-runner.mjs",
+      "sha256": "22baa52e297457e4039a4eb5b6cb61221869981d86ad4c65baf993edae4bd465",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/evaluation/agent-evaluation-runner.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-fault-checks.mjs",
+      "sha256": "90509e4faa669526bece35b68e58efdca2bca974558eaa44952f79d6747c73bb",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/evaluation/agent-fault-checks.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-observation-assertions.mjs",
+      "sha256": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/evaluation/agent-observation-assertions.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-suite-schema.mjs",
+      "sha256": "ceb2b049da4f7992f982540ce9bae6da4e29a687ac4d47861b1d447bed0d0438",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/evaluation/agent-suite-schema.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/evaluation/agent-suite-v1.json",
+      "sha256": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v1.json",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-suite-v2.json",
+      "sha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v2.json",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-suite-v3-holdout.json",
+      "sha256": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v3-holdout.json",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-suite-v4-holdout.json",
+      "sha256": "31b9e0290087c3deb8b84774ae89473fbdabdc48f3c2dea939926b875e9fae77",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v4-holdout.json",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-suite-v5-regression.json",
+      "sha256": "fd9c6680789f8abb09c6037f55f1b7442a86652168604469570e19c1a9679079",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v5-regression.json",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-suite-v6-holdout.json",
+      "sha256": "37f2fa6dc77885f916b147ae8f08699c7a6a48172984cf440a837ca714a47f3b",
+      "archivedPath": "docs/evaluation-versions/v6-source/backend/evaluation/agent-suite-v6-holdout.json",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/evaluation/agent-suite-v7-regression.json",
+      "sha256": "d3d14686f4ae22654a4cc1275a0bc0169ef03b153c34d88f45e4629d33bd2158",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/evaluation/agent-suite-v7-regression.json",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/model-transport.mjs",
+      "sha256": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/model-transport.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/package-lock.json",
+      "sha256": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/package-lock.json",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/package.json",
+      "sha256": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/package.json",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/store.mjs",
+      "sha256": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/store.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-brief-patch.mjs",
+      "sha256": "c829c661e8826ba0e62c9b8e41c47c7eda9ca108c38ac7cf08814621237379cf",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-brief-patch.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-duration.mjs",
+      "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-duration.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-evaluation-cli.mjs",
+      "sha256": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-evaluation-cli.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-evaluation.mjs",
+      "sha256": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-evaluation.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-language.mjs",
+      "sha256": "2849dc86830be7d00233219ca8386ac1d5d232f569ec3cd505462c11c3bb59f8",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-language.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-model.mjs",
+      "sha256": "c2b6c6d89b0144ab46386482a879159742c4fcfe638faf2b4c14293987233671",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/task-model.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/task-pending-request.mjs",
+      "sha256": "5cf3f3d7fe9b9c8c6587917d222e305fabf560b8a2e7dd98bac6d9023c394bb2",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/task-pending-request.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/task-query-coverage.mjs",
+      "sha256": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-query-coverage.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-release-intent.mjs",
+      "sha256": "2b593a723f7ded52cc0dc9840c4e139f40c0700fbedec4bcbb0cd2152b6ad306",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/task-release-intent.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/task-runtime.mjs",
+      "sha256": "1c6694e8616c7d0bb1f477ab238328dea9ed996d58482ec7c952e19e776d027e",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/task-runtime.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/task-schema.mjs",
+      "sha256": "8aed0ffce9f34537059017b07e2453879058b239eb5b102e8a4646ba454764ee",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-schema.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-store.mjs",
+      "sha256": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-store.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-style-evidence.mjs",
+      "sha256": "526768166a781498425b23a42c98d75373afd6931fe91e33665a5417db164aed",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-style-evidence.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/task-tool-evidence.mjs",
+      "sha256": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/task-tool-evidence.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/test/agent-artist-identity.test.mjs",
+      "sha256": "473b1a87b6a480dece8c4e17361e226bb3c5a04d864efdd7a3a3a16bf5b8c68b",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/test/agent-artist-identity.test.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/test/agent-suite-schema.test.mjs",
+      "sha256": "635b4a819c25205a81e4788b9c6df503f1da5dd686a4521891753ba328834130",
+      "archivedPath": "docs/evaluation-versions/v6-source/backend/test/agent-suite-schema.test.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/test/native-catalog-observation.test.mjs",
+      "sha256": "6034f96ca139b40e59284673b25f9e8b1c31bcc3302f65f3fb730f8964e248de",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/test/native-catalog-observation.test.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/test/task-brief-patch.test.mjs",
+      "sha256": "5445306d3d5a9c10b8fd69722791a15bb00c9b47d620fbd69d7360915cfa4a23",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/test/task-brief-patch.test.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/test/task-clarification-continuation.test.mjs",
+      "sha256": "7e93c0609790be804c693a9aa0a389ed70746caeef1f531fcdfaddac93755d5e",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/test/task-clarification-continuation.test.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/test/task-clarification-release-contract.test.mjs",
+      "sha256": "84f96903472d435dfa9f8d06dcf190738b63f40c21126def486d0fdbf21c6f1f",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/test/task-clarification-release-contract.test.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/test/task-language.test.mjs",
+      "sha256": "5effa0c16c693ce224b0c331a3566afa9f006ba4a63c1e72cdfd96c130749057",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/test/task-language.test.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "backend/test/task-pending-request.test.mjs",
+      "sha256": "ad6ea6593d1cbf10bf073981b73099044aa204be32d5ab6699067c59f57598fb",
+      "archivedPath": "docs/evaluation-versions/v7-source/backend/test/task-pending-request.test.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "backend/test/task-style-evidence.test.mjs",
+      "sha256": "56eabe58a8c4b1995a9f8d0cd658655cbab966dde4541a87686f961050f74e08",
+      "archivedPath": "docs/evaluation-versions/v5-source/backend/test/task-style-evidence.test.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "coverartcache.cpp",
+      "sha256": "f07e91d423c82606b4af5c2d9155cd854f9c929bbf601b3dc0bdc2bb130491de",
+      "archivedPath": "docs/evaluation-versions/v5-source/coverartcache.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "coverartcache.h",
+      "sha256": "b53383f2a3e5389a5725759baf6a328033c88d301537e37b408e555dd09fb431",
+      "archivedPath": "docs/evaluation-versions/v5-source/coverartcache.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "dialogstyle.h",
+      "sha256": "22327544a22518505d60dcf05556aaef2ac8a1db1c210db413eb5262e387f769",
+      "archivedPath": "docs/evaluation-versions/v5-source/dialogstyle.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focus.pri",
+      "sha256": "b76ad57e6d05c92a151fd9efa063cc30093f7cad41443e9737d97c6b84fa3e66",
+      "archivedPath": "docs/evaluation-versions/v5-source/focus.pri",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focuscore.cpp",
+      "sha256": "bfc0777609d1fac2d21d3e6fff611bb242a457496bae9c5f3797b5dd9dcaa9c3",
+      "archivedPath": "docs/evaluation-versions/v5-source/focuscore.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focuscore.h",
+      "sha256": "b4e278653bd959b395000359b0d39529b89bcb1341934ac84910867164d8e140",
+      "archivedPath": "docs/evaluation-versions/v5-source/focuscore.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focusdialog.cpp",
+      "sha256": "7ef35839efa21351053b0e70a8bb4ffe0ea0c304853e23f027ed2b0ce39224f6",
+      "archivedPath": "docs/evaluation-versions/v5-source/focusdialog.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focusdialog.h",
+      "sha256": "4ef5df4e11b92708dc650573b17f47f27cad3b9e6c987db5be53adf8bef8cbd5",
+      "archivedPath": "docs/evaluation-versions/v5-source/focusdialog.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focusmodelclient.cpp",
+      "sha256": "e56bb1e6ecfaf5720fb62fd9dcd9d1f9edc7eacad34426771f95fb6e0c0ad50b",
+      "archivedPath": "docs/evaluation-versions/v5-source/focusmodelclient.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focusmodelclient.h",
+      "sha256": "5d2e676dd675ec17e900c17975a7507010e4f9f2e7163b7339cc99e611e6f163",
+      "archivedPath": "docs/evaluation-versions/v5-source/focusmodelclient.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focussession.cpp",
+      "sha256": "19b4a6315705e4394312510f2dea3f16db5d408fe0dc820db6d08c70ca47ff23",
+      "archivedPath": "docs/evaluation-versions/v5-source/focussession.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "focussession.h",
+      "sha256": "13100e5d549d98165a401fdbcebf64b2a55e430661296584de0e4064152b4064",
+      "archivedPath": "docs/evaluation-versions/v5-source/focussession.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "historysong.cpp",
+      "sha256": "108946a1a9a3aea785a750f71217d98c9db9ee21a28b8e86a542cee9f5fd0941",
+      "archivedPath": "docs/evaluation-versions/v5-source/historysong.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "historysong.h",
+      "sha256": "7e1e0a303dc6d14ed5801f4ec844bb7d56e490cd29bcdfb9fac3e766bf09e5ce",
+      "archivedPath": "docs/evaluation-versions/v5-source/historysong.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "likesong.cpp",
+      "sha256": "9d760e2fcca598c60a30efb6d23f8755f6d03205de2c794c9b5baa0345fa014e",
+      "archivedPath": "docs/evaluation-versions/v5-source/likesong.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "likesong.h",
+      "sha256": "9c3533464a9c302e3bb0775899ef678760a4c7c5fd7f2fc2a2d732a80e82558d",
+      "archivedPath": "docs/evaluation-versions/v5-source/likesong.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "lyricswidget.cpp",
+      "sha256": "e7d4da3fa98b6edb3278c7d0800c0142508a84a4117b1ef5e735eb17a9c8da1b",
+      "archivedPath": "docs/evaluation-versions/v5-source/lyricswidget.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "lyricswidget.h",
+      "sha256": "ec5f8f5262d0f8451c55d7f335af7aaeec61c4c464f81b089e2d253286d75229",
+      "archivedPath": "docs/evaluation-versions/v5-source/lyricswidget.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "main.cpp",
+      "sha256": "02de01df84df49cf1dc9b170a5edaf2af0856f98dd7d7f9041908adf83dc4281",
+      "archivedPath": "docs/evaluation-versions/v5-source/main.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "mainwindow.cpp",
+      "sha256": "6fa818850588dc4e8cd44c7e861ca25e1199910220d965f11259b15674666afe",
+      "archivedPath": "docs/evaluation-versions/v5-source/mainwindow.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "mainwindow.h",
+      "sha256": "332fd83c2e8750b74d0d2e2aeeefbce5e18e22cf5270e460439243ded73f330c",
+      "archivedPath": "docs/evaluation-versions/v5-source/mainwindow.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "mainwindowfocus.cpp",
+      "sha256": "2488a375dfbad8ba0ed380e85aa30e905d9f5591c5d6086a2ca58d7fc26de2df",
+      "archivedPath": "docs/evaluation-versions/v5-source/mainwindowfocus.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "mainwindowradio.cpp",
+      "sha256": "660d51e5c6e3dd5a45d1897a6c12ef0f6709d1b09af84454e55b385fc8f9b31f",
+      "archivedPath": "docs/evaluation-versions/v5-source/mainwindowradio.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "musictaskclient.cpp",
+      "sha256": "2c51e057ee852d1465fcdbb30bdca4ad40c5e9f1299b61b690f8a4e49203de38",
+      "archivedPath": "docs/evaluation-versions/v5-source/musictaskclient.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "musictaskclient.h",
+      "sha256": "f32871dadd9eb0f693dc2297432197d8d901866f91bb3227f7cc39bbb7dee22a",
+      "archivedPath": "docs/evaluation-versions/v5-source/musictaskclient.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "neteaseclient.cpp",
+      "sha256": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96",
+      "archivedPath": "docs/evaluation-versions/v5-source/neteaseclient.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "neteaseclient.h",
+      "sha256": "ee5c8da7360bf177d3b1b0d456d0feaca82c97a181e5af8a02558fdb248cc1bf",
+      "archivedPath": "docs/evaluation-versions/v5-source/neteaseclient.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "neteasedialogs.cpp",
+      "sha256": "ea4374cf50620e7f4552ba3275500c0a8786c7970e5708bb648e0ba6aa3b6578",
+      "archivedPath": "docs/evaluation-versions/v5-source/neteasedialogs.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "neteasedialogs.h",
+      "sha256": "0f8ea93c0c8f6420e764a07e509650b7460e013e84515cedd112867e7b412b86",
+      "archivedPath": "docs/evaluation-versions/v5-source/neteasedialogs.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "neteasetypes.h",
+      "sha256": "c52873fa3524683de790dc44b94041e1c2792290e1e77028f6e73799cbfe504a",
+      "archivedPath": "docs/evaluation-versions/v5-source/neteasetypes.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "playerwindowview.cpp",
+      "sha256": "26c5b52540223d657ec8263870242f7844f86001882b288c261d961059725752",
+      "archivedPath": "docs/evaluation-versions/v5-source/playerwindowview.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "playerwindowview.h",
+      "sha256": "4c7e4347285220ca80c65e0c61d4baf5dc86cf9bccb4afbb6b501714e720a0b5",
+      "archivedPath": "docs/evaluation-versions/v5-source/playerwindowview.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "radio.pri",
+      "sha256": "4b12f203af91be24462c1534af13e4538982cfbe35f53522154ff605f764d6e9",
+      "archivedPath": "docs/evaluation-versions/v5-source/radio.pri",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "radioclient.cpp",
+      "sha256": "1c47c72ca50df567b7b7057c607df3dfeb6765cab4c8cc9116a663a45cbb0286",
+      "archivedPath": "docs/evaluation-versions/v5-source/radioclient.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "radioclient.h",
+      "sha256": "a59fcb91fccec9c3092d83b72f37072af9463e367fd55254106ee047eaef78be",
+      "archivedPath": "docs/evaluation-versions/v5-source/radioclient.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "radiodialog.cpp",
+      "sha256": "b96d04b1c2572a2521abc43a2a244cc6cbb3569125681394e9c82f947086f5ab",
+      "archivedPath": "docs/evaluation-versions/v5-source/radiodialog.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "radiodialog.h",
+      "sha256": "3882eb1f7c6e360e6e0614e2e283ea75b5d7d1fdad28930e0a91c78e9d5b5d8c",
+      "archivedPath": "docs/evaluation-versions/v5-source/radiodialog.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "radiostore.cpp",
+      "sha256": "456b29bb78f0c5210939708f332cbe4cbc48a269946b8f4af3fcbc8a086f3591",
+      "archivedPath": "docs/evaluation-versions/v5-source/radiostore.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "radiostore.h",
+      "sha256": "f83340ff75d4ec2cb5acd140a98c1303f05783982d7607db99e2f8df0799b145",
+      "archivedPath": "docs/evaluation-versions/v5-source/radiostore.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "radiotypes.h",
+      "sha256": "dcafe173d2a31ec6c5d7a6c6ee83f70ad30cc21d4c6372a82370154b6e8a3b23",
+      "archivedPath": "docs/evaluation-versions/v5-source/radiotypes.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "ranklist.cpp",
+      "sha256": "444768534cee04c7de52ae658339b031868bb077dfbf5ce099d287633edafd4b",
+      "archivedPath": "docs/evaluation-versions/v5-source/ranklist.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "ranklist.h",
+      "sha256": "7fbdd481acfa9e862fcf07415993f5e2d6509a06ac8023119c8b61c4538ee9af",
+      "archivedPath": "docs/evaluation-versions/v5-source/ranklist.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "redisconnection.h",
+      "sha256": "9999ed3a6ea3d28bd8fbea659f53a5ee16bdd3c3d7e8c9a067f642b5662afec4",
+      "archivedPath": "docs/evaluation-versions/v5-source/redisconnection.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/evaluate-agent.mjs",
+      "sha256": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd",
+      "archivedPath": "docs/evaluation-versions/v5-source/scripts/evaluate-agent.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/music-task-live-catalog-audit.mjs",
+      "sha256": "677d47798978400b799d2adb0cd118373722cc4227d9f7f8d59c0c47e78e50be",
+      "archivedPath": "docs/evaluation-versions/v5-source/scripts/music-task-live-catalog-audit.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/music-task-live-music-service.mjs",
+      "sha256": "4cf3b9c8019602e753ac1e4dbf2afb5cf0865d5c3d50ee887f3e3c846029c961",
+      "archivedPath": "docs/evaluation-versions/v5-source/scripts/music-task-live-music-service.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/music-task-live-probe-audit.mjs",
+      "sha256": "fc2201a870b9ccdb3ce2d163bef7c4a87444c9dd927d2f941e60bf2db0ccba0e",
+      "archivedPath": "docs/evaluation-versions/v5-source/scripts/music-task-live-probe-audit.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/render-agent-new-report.mjs",
+      "sha256": "08a8292cd31d0b0b22282d15140dc4f1a04a9b9c9b6c50ad4ab3771ab2d97f80",
+      "archivedPath": "docs/evaluation-versions/v6-source/scripts/render-agent-new-report.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/render-agent-new-report.test.mjs",
+      "sha256": "067417b35bddcc3d9d291d4256f2f647cee603d60a89a7f2e274667ce3586d33",
+      "archivedPath": "docs/evaluation-versions/v6-source/scripts/render-agent-new-report.test.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/render-agent-repair-report.mjs",
+      "sha256": "4a71bdc76f790d872ad468e5f9158030aad351c3ba2c2a0c5c3464c94a36cb70",
+      "archivedPath": "docs/evaluation-versions/v5-source/scripts/render-agent-repair-report.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/render-agent-repair-report.test.mjs",
+      "sha256": "3747719134ae07d77adbb707f1e9811e0c071f574c5e7be592bae0367dbd666c",
+      "archivedPath": "docs/evaluation-versions/v5-source/scripts/render-agent-repair-report.test.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "scripts/render-agent-repair-v7-report.mjs",
+      "sha256": "61d34870ff7122c1a7fd10cad6966ac2f3ddc27b227c2237debca43f5d41675e",
+      "archivedPath": "docs/evaluation-versions/v7-source/scripts/render-agent-repair-v7-report.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "scripts/render-agent-repair-v7-report.test.mjs",
+      "sha256": "b269bd309313d19457debc4601e0665b41774aec47ba397423d95f2b8e37f579",
+      "archivedPath": "docs/evaluation-versions/v7-source/scripts/render-agent-repair-v7-report.test.mjs",
+      "inheritedUnchangedFromV6Mapping": false
+    },
+    {
+      "path": "service/app.mjs",
+      "sha256": "6a5c3a84d25a4f0da61b5408dbb6afd7c334040b1c56933f12e91775c09d8cb3",
+      "archivedPath": "docs/evaluation-versions/v5-source/service/app.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "service/upstream.mjs",
+      "sha256": "a0807f85acab3609414c9b78205f258eeb1e5910a81b3974ef6c9b454ed101cd",
+      "archivedPath": "docs/evaluation-versions/v5-source/service/upstream.mjs",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "signin.cpp",
+      "sha256": "284b87fbc4076b84a6fe66047d5a1d9c6bbb905ad489e9d9235fe7b264f1a20d",
+      "archivedPath": "docs/evaluation-versions/v5-source/signin.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "signin.h",
+      "sha256": "32c6958374d016aa086b3912b6b873c0d5ce7135035462e3b9a062f738bdd3e2",
+      "archivedPath": "docs/evaluation-versions/v5-source/signin.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "signup.cpp",
+      "sha256": "f3e4075730a3cf344a7d77cb5f2def28394e12888ad8bda1b0454100e3997352",
+      "archivedPath": "docs/evaluation-versions/v5-source/signup.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "signup.h",
+      "sha256": "e9d6fd44c523d17437cdd1d87ebe69f25b91d9cc50e5647c25b60da6983b6d24",
+      "archivedPath": "docs/evaluation-versions/v5-source/signup.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "songlistdelegate.cpp",
+      "sha256": "3d7a4edcb107f3eff3932b733dd3e91c15e05faf4a9dcc3c40f730fe3b476e0e",
+      "archivedPath": "docs/evaluation-versions/v5-source/songlistdelegate.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "songlistdelegate.h",
+      "sha256": "ee66dc2799b978edc6fd15ce40f52025aa4dd3300891b0b59f086f3af3755402",
+      "archivedPath": "docs/evaluation-versions/v5-source/songlistdelegate.h",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "tests/music_task_live_probe.cpp",
+      "sha256": "31bc04e358695c1bb232799491714d53b7ed39e8cd71354b9087479113217be7",
+      "archivedPath": "docs/evaluation-versions/v5-source/tests/music_task_live_probe.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "tests/music_task_live_probe.pro",
+      "sha256": "76158281c4fde05c21fc0a8170b37235d8133a7d1a8f5d3be61024711d472e38",
+      "archivedPath": "docs/evaluation-versions/v5-source/tests/music_task_live_probe.pro",
+      "inheritedUnchangedFromV6Mapping": true
+    },
+    {
+      "path": "tests/musictaskclient_test.cpp",
+      "sha256": "bb513053dcbe4f83002e11577042adc8ffd9a8ade53e4b434295403923140c0c",
+      "archivedPath": "docs/evaluation-versions/v5-source/tests/musictaskclient_test.cpp",
+      "inheritedUnchangedFromV6Mapping": true
+    }
+  ],
+  "copiedFiles": 14,
+  "inheritedFiles": 98
+}

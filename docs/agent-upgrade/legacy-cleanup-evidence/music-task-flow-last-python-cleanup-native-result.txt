@@ -1,0 +1,8 @@
+********* Start testing of MusicTaskFlowTest *********
+Config: Using QtTest library 5.15.19, Qt 5.15.19 (arm64-little_endian-lp64 shared (dynamic) release build; by Clang 21.0.0 (clang-2100.0.123.102) (Apple)), osx 26.6
+PASS   : MusicTaskFlowTest::initTestCase()
+PASS   : MusicTaskFlowTest::compositeTaskModificationRecoveryAndAccountIsolation()
+PASS   : MusicTaskFlowTest::expiredLocalLeasesPauseAndResumeWithoutServerRestart()
+PASS   : MusicTaskFlowTest::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 13458ms
+********* Finished testing of MusicTaskFlowTest *********

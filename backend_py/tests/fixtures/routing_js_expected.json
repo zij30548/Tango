@@ -1,0 +1,918 @@
+{
+  "source": "backend/intent-routing.mjs + capability-registry.mjs",
+  "scope": "same-input contract parity, not semantic model evaluation",
+  "cases": [
+    {
+      "id": "help",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_help",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "help"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_9e2f8ab06124f8b8aaa013c23867247a",
+            "capability": "assistant.reply",
+            "source": "你能做什么？",
+            "dependsOn": [],
+            "parameters": {
+              "kind": "help",
+              "text": "你可以描述心情或场景找歌、指定歌手查新作、连续调整当前歌单，也可以问推荐依据。长期口味会先展示提议，由你确认后保存在本机。生成的是预览，点击采用后才播放。支持暂停、取消、恢复和撤回当前音乐任务。"
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "hello",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_hello",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "help"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_33cd1bc9010d1f05a3a6e928139a5048",
+            "capability": "assistant.reply",
+            "source": "hello",
+            "dependsOn": [],
+            "parameters": {
+              "kind": "help",
+              "text": "你可以描述心情或场景找歌、指定歌手查新作、连续调整当前歌单，也可以问推荐依据。长期口味会先展示提议，由你确认后保存在本机。生成的是预览，点击采用后才播放。支持暂停、取消、恢复和撤回当前音乐任务。"
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "free",
+      "ok": true,
+      "result": null
+    },
+    {
+      "id": "pronoun",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_pronoun",
+        "planner": "model",
+        "strategy": "clarify",
+        "intents": [
+          "explain_result"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_b088013309ef6be09d1c327fb673f1fb",
+            "capability": "assistant.reply",
+            "source": "为什么推荐这首歌？",
+            "dependsOn": [],
+            "parameters": {
+              "kind": "clarify",
+              "text": "你指哪一首？请说歌名或它在当前歌单中的序号。"
+            }
+          }
+        ],
+        "missingSlots": [
+          {
+            "intent": "explain_result",
+            "slot": "reference",
+            "question": "你指哪一首？请说歌名或它在当前歌单中的序号。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "no_task",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_no_task",
+        "planner": "model",
+        "strategy": "clarify",
+        "intents": [
+          "task_control"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_3cb59c176693962d60398045b64a82df",
+            "capability": "assistant.reply",
+            "source": "取消任务。",
+            "dependsOn": [],
+            "parameters": {
+              "kind": "clarify",
+              "text": "当前没有可操作的音乐任务。请先描述想听的音乐。"
+            }
+          }
+        ],
+        "missingSlots": [
+          {
+            "intent": "task_control",
+            "slot": "task",
+            "question": "当前没有可操作的音乐任务。请先描述想听的音乐。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "direct_5",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_direct_5",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "task_control"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_49a25cd5725dc2c10a8f2f9efbd6497f",
+            "capability": "task.control",
+            "source": "暂停任务。",
+            "dependsOn": [],
+            "parameters": {
+              "action": "pause",
+              "taskId": "owned_task_contract_001",
+              "expectedRevision": 7
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "direct_6",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_direct_6",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "task_control"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_20bf11d59b867e2d2e05f5e9436553e5",
+            "capability": "task.control",
+            "source": "取消任务。",
+            "dependsOn": [],
+            "parameters": {
+              "action": "cancel",
+              "taskId": "owned_task_contract_001",
+              "expectedRevision": 7
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "direct_7",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_direct_7",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "task_control"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_7412664c852e36798f2405aac960436b",
+            "capability": "task.control",
+            "source": "继续任务。",
+            "dependsOn": [],
+            "parameters": {
+              "action": "resume",
+              "taskId": "owned_task_contract_001",
+              "expectedRevision": 7
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "direct_8",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_direct_8",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "task_control"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_2462c740eb584a5e4b00640c2dd475de",
+            "capability": "task.control",
+            "source": "撤回刚才的修改。",
+            "dependsOn": [],
+            "parameters": {
+              "action": "undo",
+              "taskId": "owned_task_contract_001",
+              "expectedRevision": 7
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "single_music",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_single_music",
+        "planner": "model",
+        "strategy": "single_agent",
+        "intents": [
+          "scene_research"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_35f6f1f781a6fbaae9b99014dcca3c67",
+            "capability": "music.task",
+            "source": "读书时听二十分钟纯音乐。",
+            "dependsOn": [],
+            "parameters": {
+              "mode": "new"
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "continue_bound",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_continue_bound",
+        "planner": "model",
+        "strategy": "single_agent",
+        "intents": [
+          "scene_research"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_7539d46537ce5a24907c856348ad4bdb",
+            "capability": "music.task",
+            "source": "改成更轻快。",
+            "dependsOn": [],
+            "parameters": {
+              "mode": "continue",
+              "taskId": "owned_task_contract_001",
+              "expectedRevision": 7
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "continue_missing",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "compound",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_compound",
+        "planner": "model",
+        "strategy": "single_agent",
+        "intents": [
+          "preference_proposal",
+          "scene_research",
+          "release_research"
+        ],
+        "slots": {
+          "artist": "邓紫棋",
+          "targetMinutes": 40
+        },
+        "actions": [
+          {
+            "id": "route_b3980e873c8fc7c5d4d2a0f32b5cd585",
+            "capability": "memory.propose",
+            "source": "记住我喜欢粤语 R&B",
+            "dependsOn": [],
+            "parameters": {
+              "operation": "set",
+              "preference": "喜欢粤语 R&B"
+            }
+          },
+          {
+            "id": "route_a8efc01c26b0e5bc9029dc72c27da8df",
+            "capability": "music.task",
+            "source": "确认后找四十分钟微醺歌单，加邓紫棋近半年新歌",
+            "dependsOn": [
+              "route_b3980e873c8fc7c5d4d2a0f32b5cd585"
+            ],
+            "parameters": {
+              "mode": "new"
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "extra_id",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "artist_id",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unknown_mode",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "bad_source_16",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "bad_source_17",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "bad_source_18",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "bad_dependency_19",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "bad_dependency_20",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "bad_dependency_21",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "bad_dependency_22",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unknown_capability",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "two_music",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "duration_25",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "duration_26",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "duration_27",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "duration_28",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "duration_29",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "duration_30",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_duration_30",
+        "planner": "model",
+        "strategy": "single_agent",
+        "intents": [
+          "scene_research"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 40
+        },
+        "actions": [
+          {
+            "id": "route_288115bad810d33d28f70305c3273f48",
+            "capability": "music.task",
+            "source": "读书时听二十分钟纯音乐。",
+            "dependsOn": [],
+            "parameters": {
+              "mode": "new"
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "unauthorized_control_31",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unauthorized_control_32",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unauthorized_control_33",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unauthorized_control_34",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unauthorized_memory_35",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unauthorized_memory_36",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unauthorized_memory_37",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "unauthorized_memory_38",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "memory_payload_39",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_memory_payload_39",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "preference_proposal"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_890262e8b47938eacf0e1fdf36163fd2",
+            "capability": "memory.propose",
+            "source": "记住我喜欢爵士。",
+            "dependsOn": [],
+            "parameters": {
+              "operation": "set",
+              "preference": "喜欢爵士"
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "memory_payload_40",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "memory_payload_41",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "partial_delete_set",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_partial_delete_set",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "preference_deletion"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_c05a63cc56524ed41599537b268314a4",
+            "capability": "memory.propose",
+            "source": "删除爵士偏好",
+            "dependsOn": [],
+            "parameters": {
+              "operation": "set",
+              "preference": "喜欢粤语歌曲"
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "partial_delete_clear",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "clear_all",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_clear_all",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "preference_deletion"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_a2304b3fc893dc4bffddb3e4630fb198",
+            "capability": "memory.propose",
+            "source": "清空全部音乐偏好。",
+            "dependsOn": [],
+            "parameters": {
+              "operation": "clear",
+              "preference": ""
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "clarify_artist",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_clarify_artist",
+        "planner": "model",
+        "strategy": "clarify",
+        "intents": [
+          "release_research",
+          "clarification"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_e4f6fa29878a946a0c4f746bfaadfb85",
+            "capability": "assistant.reply",
+            "source": "最近半年的新专辑。",
+            "dependsOn": [],
+            "parameters": {
+              "kind": "clarify",
+              "text": "想查哪位歌手？"
+            }
+          }
+        ],
+        "missingSlots": [
+          {
+            "intent": "release_research",
+            "slot": "artist",
+            "question": "想查哪位歌手？"
+          }
+        ]
+      }
+    },
+    {
+      "id": "clarify_scope",
+      "ok": false,
+      "code": "INVALID_ROUTE_PLAN"
+    },
+    {
+      "id": "grounded_explanation",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_grounded_explanation",
+        "planner": "model",
+        "strategy": "direct",
+        "intents": [
+          "explain_result"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_d1083af099ce95de8860faba8f13b728",
+            "capability": "assistant.reply",
+            "source": "解释当前歌单。",
+            "dependsOn": [],
+            "parameters": {
+              "kind": "explain",
+              "text": "第 1 首《离线曲目一》（测试演奏者）来自本次曲库候选，按“阅读、纯音乐”筛选和编排。已读取来源：离线来源。依据是曲库信息、来源文字与已核验约束；未分析音频，不能据此保证听感、人声比例或完整播放权益。",
+              "trackIndex": 1
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    },
+    {
+      "id": "cancel_then_new",
+      "ok": true,
+      "result": {
+        "version": 1,
+        "messageId": "route_contract_cancel_then_new",
+        "planner": "model",
+        "strategy": "single_agent",
+        "intents": [
+          "task_control",
+          "scene_research"
+        ],
+        "slots": {
+          "artist": "",
+          "targetMinutes": 0
+        },
+        "actions": [
+          {
+            "id": "route_0073c1f0518182842348e15b1035e85f",
+            "capability": "task.control",
+            "source": "取消任务",
+            "dependsOn": [],
+            "parameters": {
+              "action": "cancel",
+              "taskId": "owned_task_contract_001",
+              "expectedRevision": 7
+            }
+          },
+          {
+            "id": "route_6936d435dd84a3a9938cb5363c5ee9e9",
+            "capability": "music.task",
+            "source": "再找纯音乐",
+            "dependsOn": [
+              "route_0073c1f0518182842348e15b1035e85f"
+            ],
+            "parameters": {
+              "mode": "new"
+            }
+          }
+        ],
+        "missingSlots": []
+      }
+    }
+  ],
+  "capabilities": {
+    "version": 1,
+    "capabilities": [
+      {
+        "name": "music.task",
+        "version": 1,
+        "description": "找歌、新作核验和当前歌单修改，合并为一个音乐任务",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "mode"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "enum": [
+                "new",
+                "continue"
+              ]
+            },
+            "taskId": {
+              "type": "string",
+              "description": "Server-bound for continue only"
+            },
+            "expectedRevision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "output": "task_preview",
+        "permission": "owned_account_and_device",
+        "confirmation": "adoption_before_playback",
+        "timeoutMs": 15000,
+        "modelBudget": "existing_task_budget",
+        "dependencies": [
+          "memory.propose:confirmed",
+          "task.control:accepted"
+        ],
+        "acceptance": [
+          "scene_and_releases_share_one_task",
+          "new_topic_does_not_revise_old_task",
+          "preview_does_not_play"
+        ]
+      },
+      {
+        "name": "memory.propose",
+        "version": 1,
+        "description": "提出当前账号本机偏好变更，确认后才保存",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "operation",
+            "preference"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "operation": {
+              "enum": [
+                "set",
+                "clear"
+              ]
+            },
+            "preference": {
+              "type": "string",
+              "maxLength": 500
+            }
+          }
+        },
+        "output": "local_confirmation",
+        "permission": "current_turn_explicit_permission",
+        "confirmation": "explicit_local_confirmation",
+        "timeoutMs": 0,
+        "modelBudget": 0,
+        "dependencies": [],
+        "acceptance": [
+          "quoted_or_negated_command_rejected",
+          "cancel_keeps_memory",
+          "confirmation_is_account_scoped"
+        ]
+      },
+      {
+        "name": "task.control",
+        "version": 1,
+        "description": "暂停、取消、恢复或撤回当前音乐任务",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "action",
+            "taskId",
+            "expectedRevision"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "action": {
+              "enum": [
+                "pause",
+                "cancel",
+                "resume",
+                "undo"
+              ]
+            },
+            "taskId": {
+              "type": "string"
+            },
+            "expectedRevision": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "output": "task_state",
+        "permission": "owned_task_and_revision",
+        "confirmation": "current_turn_request",
+        "timeoutMs": 15000,
+        "modelBudget": "resume_uses_existing_task_budget",
+        "dependencies": [],
+        "acceptance": [
+          "stale_target_rejected",
+          "control_does_not_create_research",
+          "request_id_is_idempotent"
+        ]
+      },
+      {
+        "name": "assistant.reply",
+        "version": 1,
+        "description": "版本化产品帮助、依据已有证据的解释或必要追问",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "kind",
+            "text"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "help",
+                "explain",
+                "clarify",
+                "unsupported"
+              ]
+            },
+            "text": {
+              "type": "string",
+              "maxLength": 1200
+            },
+            "trackIndex": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 30
+            }
+          }
+        },
+        "output": "conversation_answer",
+        "permission": "owned_conversation_context",
+        "confirmation": "none",
+        "timeoutMs": 0,
+        "modelBudget": 0,
+        "dependencies": [],
+        "acceptance": [
+          "help_has_no_catalog_call",
+          "explanation_uses_existing_evidence",
+          "answer_preserves_preview"
+        ]
+      }
+    ]
+  }
+}

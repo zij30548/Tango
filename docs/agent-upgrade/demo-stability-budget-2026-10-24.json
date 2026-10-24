@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "scope": "2026-10-24今晚六任务及单次路由契约复验；与旧350/200/80预算分开",
+  "maximum": 60,
+  "started": 8,
+  "responded": 8,
+  "failedTransport": 0,
+  "unknownTransport": 0,
+  "remaining": 52,
+  "roles": {
+    "route:flash": 2,
+    "task:flash": 6
+  },
+  "allRolesFailuresAndUnknownCount": true,
+  "automaticRetry": false,
+  "automaticRerun": false,
+  "remainingCarriesAutomatically": false,
+  "costAmount": null,
+  "tokens": {
+    "completion_tokens": 1038,
+    "prompt_tokens": 16185,
+    "total_tokens": 17223
+  },
+  "qualityNote": "响应成功不等于业务通过；4流程通过/1版本未核/1发行失败",
+  "evidence": "docs/agent-upgrade/demo-stability-live-verification.json"
+}

@@ -1,0 +1,1018 @@
+{
+  "schemaVersion": 1,
+  "stage": "多轮单曲候选与只读指代",
+  "reviewedOn": "2026-10-24",
+  "status": "bounded_engineering_verified_real_model_and_catalog_not_retested",
+  "scope": "当前可见序号、已知版本、排除版本、明确歌手及另一个歌手；完整来源链、幂等、根期限、跨话题/会话/账号/重开/迟到保护",
+  "technology": [
+    "C++/Qt5",
+    "Python/FastAPI/LangGraph",
+    "MySQL/InnoDB",
+    "Redis",
+    "本机SQLite日志及短期内存候选"
+  ],
+  "contract": {
+    "registryVersion": 3,
+    "capability": "music.refine",
+    "operations": [
+      "select",
+      "version",
+      "exclude_version",
+      "artist",
+      "other_artist"
+    ],
+    "maximumRows": 20,
+    "maximumVisible": 12,
+    "maximumContextUtf8Bytes": 12288,
+    "rootTtlMs": 600000,
+    "maximumSourceDepth": 32,
+    "contextSentToModel": false,
+    "inheritedPlaybackPermission": false,
+    "sourceAuthenticity": "设备呈报；后台验证来源路由与派生关系，不独立认证网易云字段",
+    "unknownGender": "clarify_before_any_partial_selection",
+    "versionEvidence": "缺失或冲突保持unknown，排除live不能推断studio"
+  },
+  "tests": {
+    "repository": {
+      "command": "python3 scripts/check-harness.py",
+      "status": "passed",
+      "afterDocumentationUpdate": true
+    },
+    "quick": {
+      "command": "python3 scripts/verify-harness.py --tier quick",
+      "python": {
+        "passed": 1103,
+        "skipped": 25,
+        "failed": 0
+      },
+      "node": {
+        "passed": 53,
+        "skipped": 0,
+        "failed": 0
+      },
+      "privateReport": ".local/harness-runs/20261024T075355-g2d6u9bf/report.json"
+    },
+    "mysql": {
+      "command": "python3 scripts/verify-harness.py --tier mysql",
+      "passed": 1654,
+      "skipped": 60,
+      "failed": 0,
+      "skipScope": "PG专属及当前后端不适用；拥有者MySQL/Redis，迁移另建临时PG",
+      "privateReport": ".local/harness-runs/20261024T075355-1sf2xfhl/report.json"
+    },
+    "native": {
+      "command": "python3 scripts/verify-harness.py --tier native",
+      "suites": {
+        "hosted_flow_test": 6,
+        "music_task_flow_test": 5,
+        "routing_flow_test": 55,
+        "lookup_context_flow_test": 26
+      },
+      "failed": 0,
+      "skipped": 0,
+      "includesLifecycleChecks": true,
+      "privateReport": ".local/harness-runs/20261024T075631-8yt881m4/report.json"
+    },
+    "lookupNativeE2e": {
+      "command": "backend_py/.venv/bin/python scripts/check-lookup-context.py",
+      "selectedTasks": 12,
+      "selectedInteractions": 31,
+      "finalChecks": 135,
+      "passedChecks": 135,
+      "automaticPassedTasks": 12,
+      "realProviderRequests": 0,
+      "sourceFiles": 151,
+      "sourceAndBinaryUnchanged": true,
+      "manifestSeal": "a7660514e551223e1540be49b58f25c1282044570771b55dfc6d8cfd5e368d8e",
+      "privateRun": ".local/lookup-context-runs/20261024T075724Z-b52bcfe2",
+      "checks": [
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L01:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L01:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L01:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L01:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L01:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L01:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L01:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L01:3",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L01:3",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L01:3",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L01:3",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L02:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L02:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L02:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L02:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L02:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L02:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L02:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L03:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L03:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L03:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L03:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L03:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L03:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L03:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L04:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L04:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L04:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L04:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L04:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L04:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L04:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L04:3",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L04:3",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L04:3",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L04:3",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L05:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L05:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L05:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L05:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L05:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L05:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L05:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L05:3",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L05:3",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L05:3",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L05:3",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L06:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L06:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L06:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L06:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L06:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L06:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L06:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L07:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L07:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L07:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L07:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L07:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L07:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L07:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L08:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L08:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L08:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L08:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L08:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L08:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L08:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L08:3",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L08:3",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L08:3",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L08:3",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L09:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L09:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L09:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L09:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L09:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L09:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L09:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L09:3",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L09:3",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L09:3",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L09:3",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L10:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L10:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L10:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L10:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L10:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L10:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L10:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L10:3",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L10:3",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L10:3",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L10:3",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L11:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L11:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L11:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L11:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L11:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L11:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L11:2",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L11:3",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L11:3",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L11:3",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L11:3",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L12:1",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L12:1",
+          "passed": true
+        },
+        {
+          "detail": "先建立实际搜索候选，不能将缺少前置条件的后续失败当作测试通过",
+          "name": "首轮真实候选及来源:L12:1",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "实际交互结束:L12:2",
+          "passed": true
+        },
+        {
+          "detail": "检查实际播放队列、解析调用及本机偏好，不以助手自述判定",
+          "name": "播放及偏好均无副作用:L12:2",
+          "passed": true
+        },
+        {
+          "detail": "仅允许筛选原候选池；缺少HTTP观察不能通过",
+          "name": "后续指代不重新搜索或请求播放:L12:2",
+          "passed": true
+        },
+        {
+          "detail": "澄清、历史与筛选均不能误派场景任务",
+          "name": "后续指代不创建音乐任务:L12:2",
+          "passed": true
+        },
+        {
+          "detail": "核对界面候选、当前受限上下文及路由完成事实",
+          "name": "真实候选筛选:L01:2",
+          "passed": true
+        },
+        {
+          "detail": "纠正基于原池，成功后形成新集合和本轮来源，不扩大播放权限",
+          "name": "原池保留且来源更新:L01:2",
+          "passed": true
+        },
+        {
+          "detail": "核对界面候选、当前受限上下文及路由完成事实",
+          "name": "真实候选筛选:L01:3",
+          "passed": true
+        },
+        {
+          "detail": "纠正基于原池，成功后形成新集合和本轮来源，不扩大播放权限",
+          "name": "原池保留且来源更新:L01:3",
+          "passed": true
+        },
+        {
+          "detail": "核对界面候选、当前受限上下文及路由完成事实",
+          "name": "真实候选筛选:L02:2",
+          "passed": true
+        },
+        {
+          "detail": "纠正基于原池，成功后形成新集合和本轮来源，不扩大播放权限",
+          "name": "原池保留且来源更新:L02:2",
+          "passed": true
+        },
+        {
+          "detail": "核对界面候选、当前受限上下文及路由完成事实",
+          "name": "真实候选筛选:L03:2",
+          "passed": true
+        },
+        {
+          "detail": "纠正基于原池，成功后形成新集合和本轮来源，不扩大播放权限",
+          "name": "原池保留且来源更新:L03:2",
+          "passed": true
+        },
+        {
+          "detail": "核对界面候选、当前受限上下文及路由完成事实",
+          "name": "真实候选筛选:L04:2",
+          "passed": true
+        },
+        {
+          "detail": "纠正基于原池，成功后形成新集合和本轮来源，不扩大播放权限",
+          "name": "原池保留且来源更新:L04:2",
+          "passed": true
+        },
+        {
+          "detail": "核对界面候选、当前受限上下文及路由完成事实",
+          "name": "真实候选筛选:L04:3",
+          "passed": true
+        },
+        {
+          "detail": "纠正基于原池，成功后形成新集合和本轮来源，不扩大播放权限",
+          "name": "原池保留且来源更新:L04:3",
+          "passed": true
+        },
+        {
+          "detail": "核对界面候选、当前受限上下文及路由完成事实",
+          "name": "真实候选筛选:L05:3",
+          "passed": true
+        },
+        {
+          "detail": "纠正基于原池，成功后形成新集合和本轮来源，不扩大播放权限",
+          "name": "原池保留且来源更新:L05:3",
+          "passed": true
+        },
+        {
+          "detail": "性别未知、转述与条件均不能部分满足或悄悄缩小结果",
+          "name": "无依据条件保留原候选并澄清:L05:2",
+          "passed": true
+        },
+        {
+          "detail": "性别未知、转述与条件均不能部分满足或悄悄缩小结果",
+          "name": "无依据条件保留原候选并澄清:L06:2",
+          "passed": true
+        },
+        {
+          "detail": "性别未知、转述与条件均不能部分满足或悄悄缩小结果",
+          "name": "无依据条件保留原候选并澄清:L08:2",
+          "passed": true
+        },
+        {
+          "detail": "性别未知、转述与条件均不能部分满足或悄悄缩小结果",
+          "name": "无依据条件保留原候选并澄清:L08:3",
+          "passed": true
+        },
+        {
+          "detail": "原版本缺失保留unknown；不能用没有Live字样推出录音室",
+          "name": "未知版本不伪造录音室证据",
+          "passed": true
+        },
+        {
+          "detail": "切话题、新对话与重开只恢复历史，新的指代必须重新建立来源",
+          "name": "失效指代不恢复旧候选:L09",
+          "passed": true
+        },
+        {
+          "detail": "切话题、新对话与重开只恢复历史，新的指代必须重新建立来源",
+          "name": "失效指代不恢复旧候选:L10",
+          "passed": true
+        },
+        {
+          "detail": "切话题、新对话与重开只恢复历史，新的指代必须重新建立来源",
+          "name": "失效指代不恢复旧候选:L11",
+          "passed": true
+        },
+        {
+          "detail": "上轮播放存在歧义，本轮只有版本选择，没有新播放授权",
+          "name": "历史播放授权未传给筛选",
+          "passed": true
+        }
+      ],
+      "semanticAccuracy": null
+    },
+    "previousRepairRegression": {
+      "command": "backend_py/.venv/bin/python scripts/check-agent-repairs.py --residual",
+      "selectedTasks": 15,
+      "selectedInteractions": 25,
+      "finalChecks": 37,
+      "passedChecks": 37,
+      "realProviderRequests": 0,
+      "privateRun": ".local/agent-repair-runs/20261024T075848Z-77fd560b",
+      "sameSourceAndBinaryAsLookupE2e": true
+    },
+    "targeted": [
+      {
+        "scope": "Python相关组合",
+        "passed": 393,
+        "skipped": 0,
+        "failed": 0,
+        "newLookupContractCases": 65,
+        "privateLog": ".local/lookup-context-frozen-subset.log"
+      },
+      {
+        "scope": "新候选Qt客户端",
+        "passed": 28,
+        "skipped": 0,
+        "failed": 0,
+        "privateLog": ".local/lookup-context-client/first.txt"
+      },
+      {
+        "scope": "原任务Qt客户端",
+        "passed": 193,
+        "skipped": 0,
+        "failed": 0,
+        "privateLog": ".local/lookup-context-upgrade/legacy-client.txt"
+      },
+      {
+        "scope": "观测与诊断",
+        "passed": 76,
+        "skipped": 0,
+        "failed": 0,
+        "privateLog": ".local/lookup-context-upgrade/observation-final.txt"
+      },
+      {
+        "scope": "启动及HTTP兼容",
+        "passed": 44,
+        "skipped": 0,
+        "failed": 0,
+        "privateLog": ".local/lookup-context-upgrade/startup-final.txt"
+      },
+      {
+        "scope": "独立临时SQLite审查",
+        "passed": 9,
+        "failed": 0,
+        "privateEvidence": ".local/lookup-context-acceptance/independent-state-audit.json"
+      }
+    ],
+    "counting": "各套重叠不累计；已暴露题固定模型/曲库工程验收，不是总体完成率/语义准确率；未执行真实Cloud、听感或生产验收"
+  },
+  "preservedFailures": [
+    {
+      "scope": "原后续指代无路由",
+      "failed": 3,
+      "privateLog": ".local/lookup-context-first-failure.log"
+    },
+    {
+      "scope": "旧偏好/任务误入新分支退化",
+      "failed": 13,
+      "privateLog": ".local/lookup-context-targeted-expanded.log"
+    },
+    {
+      "scope": "Qt无上下文和新会话残留",
+      "failed": 2,
+      "passed": 2,
+      "privateLog": ".local/lookup-context-qt/first-failure.txt"
+    },
+    {
+      "scope": "Qt日志白名单未接新capability",
+      "privateLog": ".local/lookup-context-qt/expanded-first.txt"
+    },
+    {
+      "scope": "旧后台启动协议尚未升级",
+      "failed": 4,
+      "passed": 40,
+      "privateLog": ".local/lookup-context-upgrade/startup-first-failure.txt"
+    },
+    {
+      "scope": "新capability被追踪/诊断过滤",
+      "failed": 2,
+      "privateLog": ".local/lookup-context-upgrade/diagnostics-first-failure.txt"
+    },
+    {
+      "scope": "新失效机器码被云摘要隐藏",
+      "failed": 2,
+      "privateLog": ".local/lookup-context-upgrade/trace-errors-first-failure.txt"
+    }
+  ],
+  "testHarnessCorrections": [
+    "独立suite的unknown作品使用新固定70013；旧5001专辑名含录音室，不能伪作unknown，旧题不改。",
+    "Qt合成短actionId改为新合同长度；真实生产始终route_32hex，未为测试放宽权限。",
+    "Qt异步appendLocalReply过早读取及缺头文件编译失败保留；没有把夹具时序或编译失误当产品语义失败。",
+    "补跑原任务客户端首次命令工作目录不存在，未启动测试；改正目录后193通过，不计产品失败或重试取优。"
+  ],
+  "baselinePreservation": {
+    "verifiedArtifacts": 44,
+    "allUnchanged": true,
+    "artifactSha256": {
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/manifest.json": "f7fd892e4b2f3f63e66abcba1e84a0fbe38fe8a835c68c886665f25e5088230b",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/repair-checks.json": "8c4e7b70a9bd4e54517743e6f38e3d648202ec546c971abeadb13efc8d7ce733",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/runtime-model-policy.json": "f1392e29dc89c84c47c6b6232c8784772e46fd4c2bab87722f09d99ed04e90d2",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/plan.json": "bb46b48b0682c12d730aae433c371fbeeeafd0b5396f0c02136953a360330fc1",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/manifest.json": "e00cf7ea6a53e1dce7bf9da8095faafe4c2330ed6e80e06e1f48a3291b54c379",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/suite.json": "3f686bacd70d800a1f0ce02ff04e52db9b34d2a93dc6b1b7bdc5b3928dc2eeba",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/runtime-model-policy.json": "2f83a4a9996746a1fe34a0798e1c013f619559b3cc12aa7cd19896e644bff717",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/catalog-truth.json": "722b0b46b9df22cb9a27716bb2b9426198628340aa58a6d6a54370957617ab4a",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/review.html": "42c558af73166bf488c5559b313fee79a2ed1916445d2997e2e92120505fc78f",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/selected-observations.json": "e653b9e488471134a3641daf04e6ab509491163970b8e32dc13d66b387aa77bf",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/review.html": "b34e0da2b43b63554950e019192fbf480c596fb4166474b8a8b9894937d001aa",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/selected-observations.json": "e48c8f938ace5b31a86eb81245727c0330dd755dcbac6d8726841b51da783178",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/review-data.json": "d6a5c81b4725dd074116b0b6637c1a7fe37fe4947c9e8e17f6ca1b5099f3cd2a",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/report.json": "6b65dd037528252cdfb2baf4f901af8fb66f78001d7573464e736cd2e8533224",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/execution-lock.json": "7b67df1b59dc4bb52b5cd48ef3fa796772f92ebf9d8b5be88057381f86873065",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/selected-observations.json": "41e8f498635510424fae53d9c6f0f161aa0bb62c637a303607a016bfa4f2b106",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/suite.json": "6edd2a085f932466ef9822ab3890ec9eb1bba98af0373b5c5a756bb7383cba77",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/catalog-truth.json": "b1773664f62a5cf86a14770f89481d71c9515e3bcbf81c173eca5622055da98a",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/ready.json": "ff122d93d45f9c4fe322505975d1abcb7e2b077ca1f933df71298ac396c3f826",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/human-review.json": "289301efc25c7acaf6e70259b295c281025c12b18daba7fbf196c1c14ef59179",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/suite.json": "86ee8f8bff5941c6edfe4a4be575e167dae13973fe28068d1f921f456a0de1eb",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/review-data.json": "f853e2b83bfefcbec2b00732b2d8a35cf7641a411ffd919219b6ccb77462a903",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/catalog-truth.json": "1d9eba4a1ea25a2468f6716d66caeb63bcd9aec8405578d4f88af8ecf7d57f54",
+      "docs/agent-upgrade/independent-e2e-verification.json": "4eb191915506ef40be5b4fb79a6a87977074bf4c3e3811e399f00283636091b7",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/observations.json": "d39357bda962cb4103259f29edc9677a782093fe7452d24af93da2eaff56d439",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/report.json": "176881c2c9bf9b2c351f0382ce904fe8fd608242aca348cf5e01bc6f4b5a068b",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/execution-lock.json": "90a5ecdb5486ffeb976405c56678b9c7547a0350ff7d25b546cf6c90d38f94f3",
+      "docs/agent-upgrade/agent-e2e-repair-verification.json": "771b7d1cd4a3c614e667445248867f1cac17dce0a34551b92e1c50bfb3fae3c5",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/review-data.json": "6b7c815a93b9c4e493801f533fc808eaf2de585058baeca2e687267c191e4ba9",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/plan.json": "0f503b2cc8466ddf752f5859765d5d64d27fb7b17c98f0c9bfd02250f12f1082",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/report.json": "d7737f1bf2d2360a3a84633046f870c48f9128b092da69b646e0ea3bc3df7ce6",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/manifest.json": "756b444f3452fa4d6af2fc649f3d412e9205f6fcfa04b04e790a782d01c2bd78",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/execution-lock.json": "f3a60047ffa2474aee4bbe39262563b58dfc3bd6ea5dc2b3074dede1c95740ab",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/runtime-model-policy.json": "2526e7c1b45dfae094cad22c61a125a7004c04f9e7132e8dfff8159d74611f7b",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/ready.json": "7cc78e6f6482a6aee046448844010c72a19fa5314da513e6a1b86fe3a75af40f",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/human-review.json": "4695676b29a5ab8c14df82bdd8b564af11a62e912be720664813e39ba0fcf735",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/review.html": "24b504589117e557cd5597db1f87d60871fad90a7c50aba67ad966ae3c28ef43",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/ready.json": "6484b8779229358c720ab1f7596014408c58c64c430c11f502b78463da0b9b48",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/human-review.json": "c78f36ccefbfb2b2e1efe97c42d49d5c91f5d92127efc1feac81196f828fbf22",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/observations.json": "9caecc236dff81cfb5cd072c6aa9b67be3dfadf878594256b300ad1b8de78e07",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/repair-checks.json": "fac4676798583aad96468dc27fd3f5022679ef82054c8fd8e6f3e99448726810",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/plan.json": "9037893b42694913eec67a149d3bec762afe81683eafe528c270534c1979777b",
+      "docs/agent-upgrade/agent-residual-repair-verification.json": "0b7b7a81c19e0949c0692d2b260d28df9712076bae57354fcd22cf12b2f23855",
+      ".local/agent-repair-runs/20261024T064715Z-fd11ee74/observations.json": "a62b3447b8c2be343136ccfd82fbd1187efe144fea5b20450a51534da1ce6dca"
+    },
+    "old24QuestionGoldAndScoresModified": false,
+    "old15TaskScoreOverwritten": false
+  },
+  "runtime": {
+    "appRebuilt": true,
+    "prepareMacosExitCode": 0,
+    "ownedBackendsNormalRestart": [
+      {
+        "port": 16382,
+        "development": false,
+        "oldPid": 55334,
+        "verifiedOwner": true,
+        "normalStop": true,
+        "health": {
+          "httpStatus": 200,
+          "ready": null,
+          "runtimeLanguage": "python",
+          "storage": "mysql",
+          "lookupContextVersion": 1
+        },
+        "ready": {
+          "httpStatus": 200,
+          "ready": true,
+          "runtimeLanguage": null,
+          "storage": "mysql",
+          "lookupContextVersion": null
+        }
+      },
+      {
+        "port": 16383,
+        "development": true,
+        "oldPid": 55352,
+        "verifiedOwner": true,
+        "normalStop": true,
+        "health": {
+          "httpStatus": 200,
+          "ready": null,
+          "runtimeLanguage": "python",
+          "storage": "mysql",
+          "lookupContextVersion": 1
+        },
+        "ready": {
+          "httpStatus": 200,
+          "ready": true,
+          "runtimeLanguage": null,
+          "storage": "mysql",
+          "lookupContextVersion": null
+        }
+      }
+    ],
+    "newFeatureHealthVersion": 1,
+    "userDataOrQuotaReset": false
+  },
+  "privacyAndBudget": {
+    "newRealModelRequests": 0,
+    "newRealCatalogRequests": 0,
+    "newTracingCloudRequestsInTests": 0,
+    "unusedHistoricalBudgetsUsed": false,
+    "commitOrPush": false
+  },
+  "limits": [
+    "有限明确指代表达已验工程接线，任意自由口语/真实模型效果未复测",
+    "没有音频分析或可靠人声性别；缺失/冲突版本不承诺可筛出指定版本",
+    "原P03女声复合条件按新工程契约先澄清，不改原金标、不宣称原24题全部完成",
+    "重开候选执行上下文不自动重建；超过根10分钟或32层需重新搜索",
+    "后台不独立认证设备曲目元数据；真实曲库、听感、会员权益未验",
+    "艺人发展资料、真实MCP、动态Supervisor、反馈告警、生产部署及备份恢复仍待做"
+  ],
+  "businessCompletionRate": null,
+  "semanticAccuracy": null,
+  "sourceSha256": {
+    "backend_py/tango_backend/lookup_context.py": "44c490352360f0643669f6511bb6921852f31f967dbed69920028925813c3a1f",
+    "backend_py/tango_backend/conversation_router.py": "4ec5a4680c06d478856d3364a084c5d5baf27794acc83e780aefe681662539d3",
+    "backend_py/tango_backend/intent_routing.py": "6afea476371b02c97fd85f336355291f99bc9ce2f301f687b87b97cda63e9568",
+    "backend_py/tango_backend/capability_registry.py": "fe4afeb8b59f828dfd078c23a0acc93ce0bbd46b2068b264662a4a8ab40cd392",
+    "backend_py/tango_backend/launch_local.py": "cf0266caf1ed5adf08ae97eb60895910ea3af0cfd5cd6e26969d012c147f2ef7",
+    "backend_py/tango_backend/app.py": "8b735cbb6248838795a2b1447761bb61920d7513fac2a34a36553a2b91b3ccb4",
+    "backend_py/tango_backend/agent_tracing.py": "03d7904f41a7dcbf6132a2ced9ad4fdb92e296d3a825bad218c4372fdb88e083",
+    "backend_py/tango_backend/diagnostics.py": "c4d422f4e87a6d16761228dffacf099d7433502a8238d13496d55374ea26b14e",
+    "backend_py/evaluation/lookup_regression.py": "8202bb8dce2500aa2b13b9050de1fef14a133e2a9ea9007af243e35380f5d2fd",
+    "backend_py/evaluation/independent.py": "2c0f3961b84ec3c23bb593a991f27bcf5eac91c5e0069a3939ba72371cc6889f",
+    "lookupcontext.h": "bdf0fb1e35942b17e9d3454ae74af8d9116c20c2edd31ce0920ca3652c9c5339",
+    "mainwindowradio.cpp": "819bc9aee34578da067ede2c553bd537e02095331001de30427d7dff8d55aa96",
+    "mainwindow.h": "afd45f3a1b7758bb5c4b9309b12269c53ba3dfd7a8791489533ecb62fd2cd05a",
+    "conversationclient.cpp": "bc577d9c439e6be4ae931308886d31af6b03e3edab7fae99e215b0ddadb00beb",
+    "conversationclient.h": "0e5ff2c95130f5aa28c87f5959070fcc45ea62f4eb3162c96c42235c2a658c35",
+    "appbackendclient.cpp": "2eedf50d63d72f8fd97d4adb3e6f33952f4efe80bb92234a1c44479b82e1278c",
+    "radiostore.cpp": "48743252e68987c24201cfc8c6594774031b27b5989240fd84bdb32ae63446ef",
+    "scripts/verify-harness.py": "f984c7c083ce39ae43f561752b6659747c8611b7bb045aec81523405e0993db1",
+    "scripts/check-lookup-context.py": "a40420e10390a4a2559cb1741077aebea87047fabb28adb00b597b17bc5f1a98",
+    "tests/independent_e2e_probe.cpp": "5e48c4264a3f39512bd43fcd3eeaf13df3074dcd649645c4fd1a5ae681432ac3",
+    "backend_py/tests/test_lookup_context.py": "db5efecb7c5b68251bf613be673d2cdffcfe1b3045b39e2d6948419e66ea4146",
+    "backend_py/tests/test_lookup_regression.py": "a1f794366cc00aae51e66f4085450dda7823c117ff1704bd9b139f17e825e814",
+    "tests/lookup_context_flow_test.cpp": "4e2bab335a1300a1f12c3972ca9abd83257d19310206fc47a80f33deb4201109",
+    "tests/lookup_context_client_test.cpp": "f6265df876a35f809699ff48bee6a002d180c4cc7dd9ff70368548dbdd49e41d"
+  },
+  "artifactSha256": {
+    "lookup/manifest.json": "263514237ad2954dcc7ae30450b53123fc8a7687ef0e12dbd0765c7db5985b4d",
+    "lookup/report.json": "001a38e2dcd86e45266884278d21b2ffb30ca5aebd0695432c6b4c35db6a6fcf",
+    "lookup/lookup-checks.json": "b0a909aaf909d0f55e72d50b28cb6b14be943849542ab26216cce2c535d8fbf7",
+    "lookup/selected-observations.json": "9aed328edaeb12a0867bf3b9e39a2ab3adbf671398007a79771e3269f60ed211"
+  }
+}

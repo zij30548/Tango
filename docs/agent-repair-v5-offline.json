@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "version": "v5",
+  "recordedAt": "2026-10-19T10:21:11.904932+00:00",
+  "runtime": "Node 24.20.0; Qt 5.15.19; macOS 26.6 arm64",
+  "backend": {
+    "command": "node --test test/*.test.mjs (cwd backend)",
+    "passed": 315,
+    "failed": 0,
+    "skipped": 0
+  },
+  "qtClient": {
+    "passed": 67,
+    "failed": 0,
+    "includesInitAndCleanup": true
+  },
+  "nativeFlow": {
+    "passed": 4,
+    "failed": 0,
+    "includesInitAndCleanup": true
+  },
+  "namedFaults": {
+    "passed": 24,
+    "artifact": "docs/agent-repair-v5-faults.json"
+  },
+  "nativeAuditSelfTest": {
+    "passed": 42,
+    "externalCalls": 0
+  },
+  "reportRenderer": {
+    "passed": 6,
+    "externalCalls": 0
+  },
+  "manualAudio": "not_measured",
+  "providerCalls": 0,
+  "appBuild": {
+    "succeeded": true,
+    "path": "build-macos/Tango.app",
+    "binarySha256": "fa58ec3a17e886ee551156f10b6e2f8731cdac5955bc38004bcdb0664c97398b",
+    "limits": "Local arm64 build/run only; Qt SDK compatibility and hiredis deployment-target warnings remain. No distribution or older macOS compatibility validation."
+  },
+  "intermediateFailuresRetained": [
+    {
+      "failure": "Native audit export test used cwd-relative path and failed under backend npm test.",
+      "fix": "Resolve script with import.meta.url; isolated six-check rerun and complete 315-check suite pass.",
+      "log": "docs/evaluation-versions/v5-checks/initial-cwd-failure.log"
+    }
+  ],
+  "logs": [
+    {
+      "kind": "backend",
+      "path": "docs/evaluation-versions/v5-checks/backend.log",
+      "sha256": "771187c2e7ae19e0b7625e4d432a7872f5237a4ec236ed0437031c552570128a"
+    },
+    {
+      "kind": "qt-client",
+      "path": "docs/evaluation-versions/v5-checks/qt-client.log",
+      "sha256": "7de817dbc8fc1fcea53649c21e22a4ed2fd8d6df79e021e60c5861675708db2c"
+    },
+    {
+      "kind": "native-flow",
+      "path": "docs/evaluation-versions/v5-checks/native-flow.log",
+      "sha256": "4301b21e6d97889cc806f0f3b75335bc67725bdf815b708cfbf84002209bf86a"
+    },
+    {
+      "kind": "app-build",
+      "path": "docs/evaluation-versions/v5-checks/app-build.log",
+      "sha256": "4f369c3b5dfb95df8a1b78865e5a8b7f909837ef3ed7636252e29d89c7cf1703"
+    },
+    {
+      "kind": "patch-independent-review",
+      "path": "docs/evaluation-versions/v5-checks/patch-independent-review.log",
+      "sha256": "bd29afbd18b2d4a7128d5cab5a36f8449684f77ad13290d20cde0891e3093272"
+    },
+    {
+      "kind": "initial-cwd-failure",
+      "path": "docs/evaluation-versions/v5-checks/initial-cwd-failure.log",
+      "sha256": "256b104beea700fdb6f373cd9172d674c82e642f2a08729571aa31d58bb05cca"
+    }
+  ],
+  "localBackendActivation": {
+    "at": "2026-10-19T10:23:43.726216+00:00",
+    "oldOwnedPid": 38219,
+    "newPid": 48739,
+    "health": "quiet-app-backend version 1",
+    "modelRequestSentByVerification": false,
+    "desktopRestartNeededForNewNativeClient": true
+  }
+}

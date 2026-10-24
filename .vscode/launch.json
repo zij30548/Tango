@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "探歌 · Tango · Mac",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build-macos/Tango.app/Contents/MacOS/Tango",
+      "cwd": "${workspaceFolder}",
+      "args": [],
+      "env": {
+        "MUSICPLAYER_BACKEND_URL": "http://127.0.0.1:16383",
+        "MUSICPLAYER_DEVELOPMENT_MODE": "1",
+        "MUSICPLAYER_DEVELOPMENT_TOKEN_FILE": "${workspaceFolder}/.local/development/session.token"
+      },
+      "preLaunchTask": "准备运行 · macOS"
+    }
+  ]
+}

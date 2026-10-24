@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-19T12:11:41.968613+00:00",
+  "authorization": "Original user authorization for at most 500 actual model requests; failed or uncertain started requests count.",
+  "maximum": 500,
+  "actual": 499,
+  "remaining": 1,
+  "phases": [
+    {
+      "id": "v2_primary",
+      "artifact": "docs/agent-evaluation-live-v2-primary.json",
+      "artifactSha256": "6585396e60300501b8d532199267f12e0a9c1d50d8483c4fd893f1cdaf3091d0",
+      "actualProviderTransmissionAttempts": 229
+    },
+    {
+      "id": "v2_fixed",
+      "artifact": "docs/agent-evaluation-live-v2-fixed.json",
+      "artifactSha256": "0a6ee0e71bf9a8305c29420b72c04cf90b8d2d51fc75a085336a0637944bf35f",
+      "actualProviderTransmissionAttempts": 23
+    },
+    {
+      "id": "v2_reading",
+      "artifact": "docs/agent-evaluation-real-reading-v2.json",
+      "artifactSha256": "c6952aac9cedefe09062e2d8eaff4c78b254850742efca7881b8ff02dd2500f0",
+      "actualProviderTransmissionAttempts": 8
+    },
+    {
+      "id": "v2_commute",
+      "artifact": "docs/agent-evaluation-real-commute-v2.json",
+      "artifactSha256": "d816136a203e58eb71823b324f22703aec33443d190e000b6d12ab440d6e27c4",
+      "actualProviderTransmissionAttempts": 8
+    },
+    {
+      "id": "v3_primary",
+      "artifact": "docs/agent-repair-v3-live.json",
+      "artifactSha256": "3ae3b12b476ab7158fafd6718af451e2131de8dab733cb3c197249d71c6a34e7",
+      "actualProviderTransmissionAttempts": 104
+    },
+    {
+      "id": "v3_reading",
+      "artifact": "docs/agent-repair-v3-real-reading.json",
+      "artifactSha256": "280cc269ab332298911dff2bc8c4daf0ae51731af2333c1bb6a23303c7bb449e",
+      "actualProviderTransmissionAttempts": 8
+    },
+    {
+      "id": "v3_commute",
+      "artifact": "docs/agent-repair-v3-real-commute.json",
+      "artifactSha256": "aca408c446cf8b0f5459ea6d44ccd2eced0597e94027ae71d28efc3e3f4a2dcf",
+      "actualProviderTransmissionAttempts": 8
+    },
+    {
+      "id": "v4_primary",
+      "artifact": "docs/agent-repair-v4-live.json",
+      "artifactSha256": "f92692a8a550558949fd1b2e929561fd8bd40846b105f689e3956f64d16f9540",
+      "actualProviderTransmissionAttempts": 47
+    },
+    {
+      "id": "v4_reading",
+      "artifact": "docs/agent-repair-v4-real-reading.json",
+      "artifactSha256": "b80220178a7a1f000861f28f254d5e43ded1891456613f7ad7659f801f667169",
+      "actualProviderTransmissionAttempts": 8
+    },
+    {
+      "id": "v4_commute",
+      "artifact": "docs/agent-repair-v4-real-commute.json",
+      "artifactSha256": "981de93ccd68f0db69e0dc65e0249d1047b4471068f393c5f1b685af6107f795",
+      "actualProviderTransmissionAttempts": 8
+    },
+    {
+      "id": "v5_primary",
+      "artifact": "docs/agent-repair-v5-live.json",
+      "artifactSha256": "33632fe8b7ceec2e2a10aa78c564bb9a94b242b8aa6d261f110fef5c5418eb95",
+      "actualProviderTransmissionAttempts": 23
+    },
+    {
+      "id": "v5_reading",
+      "artifact": "docs/agent-repair-v5-real-reading.json",
+      "artifactSha256": "20f5dcc8d7a8700e10492819aaed4ca188d40ab240bf289b2a9d493f462ab068",
+      "actualProviderTransmissionAttempts": 8
+    },
+    {
+      "id": "v6_unseen_combinations",
+      "artifact": "docs/agent-new-v6-live.json",
+      "artifactSha256": "6c87521f11f0b800a553ae502adc8be9f71b1f2255928fbb658520982e4fdf53",
+      "actualProviderTransmissionAttempts": 10,
+      "maximumProviderCalls": 18,
+      "kind": "first_execution_new_combinations"
+    },
+    {
+      "id": "v7_known_repairs",
+      "artifact": "docs/agent-repair-v7-live.json",
+      "artifactSha256": "1c012e53594a2de7d9a57432af8ecb71eb74785be73b695170c862b4224b6f6d",
+      "actualProviderTransmissionAttempts": 7,
+      "maximumProviderCalls": 8,
+      "kind": "known_regression_single_execution"
+    }
+  ],
+  "offlineProviderCalls": 0,
+  "policy": "All historical phases retained. Known regressions and new cases stay separate; no automatic case retries or best-of-N. Unused allocation does not trigger new calls.",
+  "initialPlan": "docs/agent-evaluation-call-budget.json",
+  "repairProtocols": [
+    "docs/agent-repair-v3-protocol.json",
+    "docs/agent-repair-v4-protocol.json",
+    "docs/agent-repair-v5-protocol.json",
+    "docs/agent-repair-v7-protocol.json"
+  ],
+  "evaluationProtocols": [
+    "docs/agent-repair-v3-protocol.json",
+    "docs/agent-repair-v4-protocol.json",
+    "docs/agent-repair-v5-protocol.json",
+    "docs/agent-new-v6-protocol.json",
+    "docs/agent-repair-v7-protocol.json"
+  ],
+  "previousSnapshot": "docs/evaluation-versions/v7-checks/cumulative-budget-before-v7.json"
+}

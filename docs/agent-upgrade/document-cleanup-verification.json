@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "scope": "当前重做版本的Markdown合并与旧文档清理；不改产品代码、配置、数据库、历史成绩和失败。",
+  "privateBackup": {
+    "archive": ".local/document-cleanup/20261021T062925Z/documents-before.tar.gz",
+    "sha256": "d358646a3038f3e1fb37df80e14adca4e8c05c13b112fbe604e5c86ea59499de",
+    "verifiedFiles": 18,
+    "scope": "公开说明文档原文备份；无配置、数据库、Cookie或应用日志"
+  },
+  "retired": [
+    {
+      "path": "docs/FOCUS_AGENT.md",
+      "sha256": "a9852e816f84b0caa8c1f673775ccb6b73f20ef574aaa3e5c05d1b6f1a7988fd",
+      "bytes": 10407,
+      "action": "retire",
+      "reasonAndDestination": "当前专注功能与边界合入README；旧模型/Node验收叙述归档。"
+    },
+    {
+      "path": "docs/LOGIC_IMPROVEMENTS.md",
+      "sha256": "c03772bdd4daafe9b6a89bfd9195d3f0cafaed77d3b0c6712864169a5a255854",
+      "bytes": 20574,
+      "action": "retire",
+      "reasonAndDestination": "功能演进流水账归档；当前任务边界与对照限制合入Agent设计。"
+    },
+    {
+      "path": "docs/PERFORMANCE_BASELINE.md",
+      "sha256": "a516e22528e46cc1c3c829bc627e505215af23314b59dec40d4d3191a680d6d9",
+      "bytes": 7411,
+      "action": "retire",
+      "reasonAndDestination": "旧客户端18个原始样本与方法原文归档，不作为当前总内存指标。"
+    },
+    {
+      "path": "docs/STORAGE_UPGRADE_V1.md",
+      "sha256": "5ceb3b1e9e2ad57a8a24e6d7221f2f0a5bb8c3bbc1b18e626d3fbfe52d1d41dd",
+      "bytes": 17333,
+      "action": "retire",
+      "reasonAndDestination": "已退役Node/PG运行手册归档；当前运行使用Python后台及MySQL说明。"
+    },
+    {
+      "path": "docs/MACOS_VALIDATION.md",
+      "sha256": "62961cebc783155d87aaa98501a84c5d38ff28001179ce955fa6db80b9f966ab",
+      "bytes": 19685,
+      "action": "retire",
+      "reasonAndDestination": "多阶段旧验收归档；现行原生媒体要求和测试入口保留于README及Harness。"
+    },
+    {
+      "path": "docs/NETEASE_VALIDATION.md",
+      "sha256": "175d2b77c59eca72918d900aa224b1eb55a06131bb68c3d08d072556cf7d86f7",
+      "bytes": 8990,
+      "action": "retire",
+      "reasonAndDestination": "历史匿名查询和单曲会员联调归档；当前接口与权益边界保留于网易云服务说明。"
+    },
+    {
+      "path": "docs/AGENT_STEP_0_BASELINE.md",
+      "sha256": "92422a580cff8751c962d2a2300a4ece91e1237dff9726ada0d7345e4a9ce57c",
+      "bytes": 9097,
+      "action": "retire",
+      "reasonAndDestination": "当前验收原则归入Harness；原基线与开发题JSON保持原样。"
+    },
+    {
+      "path": "docs/AGENT_STEP_1_CONVERSATION.md",
+      "sha256": "7ff97bdbc8e10e3e03c7a8de30de77fcb2405b2138b75384aa474cb7e3a97aa3",
+      "bytes": 9496,
+      "action": "retire",
+      "reasonAndDestination": "会话/消息/任务、幂等与恢复合入AGENT_DESIGN；历史验收JSON保留。"
+    },
+    {
+      "path": "docs/AGENT_STEP_2_ROUTING.md",
+      "sha256": "6847bc48414651f50ca5713833d9532e1b2d8fc07a06afa01518a1fd9b2a2a66",
+      "bytes": 10062,
+      "action": "retire",
+      "reasonAndDestination": "类型化路由、授权、确认与限制合入AGENT_DESIGN；历史验收JSON保留。"
+    },
+    {
+      "path": "docs/PYTHON_BACKEND_MIGRATION.md",
+      "sha256": "7a0205c2566e1b4f60b4fd6656e9995c58b9e9269266b8ce4439476b7381ebe7",
+      "bytes": 8137,
+      "action": "retire",
+      "reasonAndDestination": "C++经HTTP/JSON及SSE接入Python的现行设计合并；旧PG迁移结果保留JSON。"
+    },
+    {
+      "path": "docs/LEGACY_CLEANUP.md",
+      "sha256": "6bd2e267557631e95469ccad015bad8153a7755d25e1e24b8e47a8576337c854",
+      "bytes": 5779,
+      "action": "retire",
+      "reasonAndDestination": "已退役JS与保留Node服务边界合并；源代码清理明细保留原JSON。"
+    }
+  ],
+  "replacements": {
+    "agentDesign": "docs/AGENT_DESIGN.md",
+    "currentRuntime": "README.md; backend_py/README.md; docs/NETEASE_SERVICE.md",
+    "storage": "docs/MYSQL_MIGRATION.md",
+    "rulesAndProgress": "AGENTS.md; docs/HARNESS_ENGINEERING.md; docs/HARNESS_STATUS.json; docs/DEVELOPMENT_PROGRESS.md",
+    "historicalEvidence": "原有JSON/HTML/TXT保留原字节；历史源路径表示当时版本，不要求旧文档继续在源码树。",
+    "memorySamples": "PERFORMANCE_BASELINE.md的18个旧客户端样本、方法和二进制哈希保存在经验证的私有原文归档；未声称当前总内存收益。"
+  },
+  "validation": {
+    "status": "passed",
+    "repositoryGate": {
+      "principles": 5,
+      "navigationReferences": 18,
+      "pythonProductModules": 53,
+      "qtProductFiles": 59
+    },
+    "markdownLinks": {
+      "files": 13,
+      "localLinks": 120,
+      "brokenLinks": 0,
+      "referencesToRetiredMarkdown": 0,
+      "scope": "当前Markdown本地文件引用；不联网验证URL和外部网页，冻结历史JSON路径不改写。"
+    },
+    "quick": {
+      "python": {
+        "passed": 236,
+        "failed": 0,
+        "skipped": 0
+      },
+      "node": {
+        "passed": 53,
+        "failed": 0,
+        "skipped": 0
+      },
+      "report": "document-cleanup-evidence/report.json",
+      "scope": "离线契约、模拟模型/曲库、临时 SQLite 与本机 HTTP；不覆盖 MySQL、Qt 音频或真实模型效果。"
+    },
+    "frozenHistoricalFilesUnchanged": 171,
+    "registeredPublicCodeAndDependencyFilesUnchanged": 213,
+    "privateArchiveHashAndMembersVerified": true,
+    "privateArchiveTrackedByGit": false,
+    "diffCheck": "passed",
+    "mysqlAndNative": "本轮仅文档改动，未重复数据库与桌面验收；既有结果仅见原报告。",
+    "realModelRequests": 0,
+    "realCatalogRequests": 0,
+    "runtimeCodeChanged": false,
+    "committed": false,
+    "pushed": false
+  },
+  "at": "2026-10-21T06:35:01.967134+00:00",
+  "documentCounts": {
+    "before": 23,
+    "retired": 11,
+    "newCanonicalDesign": 1,
+    "after": 13,
+    "linesBefore": 2399,
+    "linesAfter": 1147
+  },
+  "currentDocuments": [
+    "AGENTS.md",
+    "README.md",
+    "backend_py/README.md",
+    "backend_py/tests/fixtures/README.md",
+    "docs/AGENT_DESIGN.md",
+    "docs/AGENT_UPGRADE_ROADMAP.md",
+    "docs/BETA_ACCESS_AND_QUOTAS.md",
+    "docs/DEVELOPMENT_MODE.md",
+    "docs/DEVELOPMENT_PROGRESS.md",
+    "docs/HARNESS_ENGINEERING.md",
+    "docs/MYSQL_MIGRATION.md",
+    "docs/NETEASE_SERVICE.md",
+    "docs/exec-plans/active/mcp-tools.md"
+  ],
+  "artifacts": [
+    {
+      "path": "docs/agent-upgrade/document-cleanup-evidence/report.json",
+      "sha256": "8ae91a7474190556d835d44f87692b42d089107e12d14f8959bfea9d5af4610a"
+    },
+    {
+      "path": "docs/agent-upgrade/document-cleanup-evidence/repository.txt",
+      "sha256": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c"
+    },
+    {
+      "path": "docs/agent-upgrade/document-cleanup-evidence/python_offline.txt",
+      "sha256": "d6df38b9a78b88ac299ede6d27844f4939b64b328de301eaf551c08f1101c92a"
+    },
+    {
+      "path": "docs/agent-upgrade/document-cleanup-evidence/service_offline.txt",
+      "sha256": "6591f9355fa8f5a3910ecc9f02f4f871488de2754b7d39de768579c44d49843a"
+    }
+  ],
+  "sources": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "4bf47b335358e287c4acf7ede8b9da8bf42c782d81d9584a80a9bfcb448c89e2"
+    },
+    {
+      "path": "README.md",
+      "sha256": "91bee4e6b7096a27586c3be063dbf0f70edb8c015ec483b8e7a137314a074449"
+    },
+    {
+      "path": "backend_py/README.md",
+      "sha256": "50151aa5fa24d8c99c5f017e12a7c2c83252bbdb20b130f27b9738dce1648297"
+    },
+    {
+      "path": "backend_py/tests/fixtures/README.md",
+      "sha256": "a71aa4e9a6eeecafd4e3444f9c9999360d28d8d690179ad600e34640311c4d3e"
+    },
+    {
+      "path": "docs/AGENT_DESIGN.md",
+      "sha256": "323318f1ec817318b1460e1b2e0cec15e35d16dbda4512b5802b51d3b5fa2ada"
+    },
+    {
+      "path": "docs/AGENT_UPGRADE_ROADMAP.md",
+      "sha256": "701133319cfea25a8c9a237f65c489eb0e683d842b5d811c746b0f7d769c0b09"
+    },
+    {
+      "path": "docs/BETA_ACCESS_AND_QUOTAS.md",
+      "sha256": "5c7b74a7e00c251aa4bb5915eaca7361b4c4d8e4ae25181608d9a5cf819c23bd"
+    },
+    {
+      "path": "docs/DEVELOPMENT_MODE.md",
+      "sha256": "4db0ab1c80c5572a03abfdf6a1f4191ec2a3992938b88d83a7e8e6e8cf08eb02"
+    },
+    {
+      "path": "docs/DEVELOPMENT_PROGRESS.md",
+      "sha256": "21485346aae13c7ec5faf6418a88545ce528d6a8a174dcfd67c0551690b556e8"
+    },
+    {
+      "path": "docs/HARNESS_ENGINEERING.md",
+      "sha256": "db68c8686388fa9dfdcb526cb33dda4dc469d441128078d8c8e24234139bab93"
+    },
+    {
+      "path": "docs/MYSQL_MIGRATION.md",
+      "sha256": "da0d4a256e4fbc5e3906205ccc32011ab3334603a10ea4c7eb9961019ee88560"
+    },
+    {
+      "path": "docs/NETEASE_SERVICE.md",
+      "sha256": "4197b7e62777478fd915e7b643a2c4a62013dab557bd7827568d7cc7ab0577c1"
+    },
+    {
+      "path": "docs/exec-plans/active/mcp-tools.md",
+      "sha256": "28d4d07ff155d96f3e3b463b061f32bce1842deed32c5f85fad2f1e9f2b031d6"
+    },
+    {
+      "path": "docs/HARNESS_STATUS.json",
+      "sha256": "3ff1a9b15e1a37515101f202c8fe5535b554c34f7cc573bdf8ee5a1a7722bf20"
+    }
+  ]
+}

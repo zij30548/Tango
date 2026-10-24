@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "tier": "native",
+  "scope": "macOS 原生 Qt 两套流程顺序运行；模拟模型/曲库、临时 SQLite 和生成 WAV，不是会员音乐验收。",
+  "startedAt": "2026-10-21T05:33:13.686522+00:00",
+  "status": "passed",
+  "reason": "selected_tier_completed",
+  "commands": [
+    {
+      "id": "repository",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/scripts/check-harness.py"
+      ],
+      "cwd": "<repo>",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.181
+    },
+    {
+      "id": "hosted_flow_test_configure",
+      "command": [
+        "/opt/homebrew/opt/qt@5/bin/qmake",
+        "<repo>/tests/hosted_flow_test.pro"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T053313-uhvwh19k/hosted_flow_test",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.657
+    },
+    {
+      "id": "hosted_flow_test_build",
+      "command": [
+        "/usr/bin/make",
+        "-j4"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T053313-uhvwh19k/hosted_flow_test",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 8.334
+    },
+    {
+      "id": "hosted_flow_test_run",
+      "command": [
+        "<repo>/.local/harness-runs/20261021T053313-uhvwh19k/hosted_flow_test/hosted_flow_test",
+        "-v1"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T053313-uhvwh19k/hosted_flow_test",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 6.53
+    },
+    {
+      "id": "music_task_flow_test_configure",
+      "command": [
+        "/opt/homebrew/opt/qt@5/bin/qmake",
+        "<repo>/tests/music_task_flow_test.pro"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T053313-uhvwh19k/music_task_flow_test",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.454
+    },
+    {
+      "id": "music_task_flow_test_build",
+      "command": [
+        "/usr/bin/make",
+        "-j4"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T053313-uhvwh19k/music_task_flow_test",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 8.83
+    },
+    {
+      "id": "music_task_flow_test_run",
+      "command": [
+        "<repo>/.local/harness-runs/20261021T053313-uhvwh19k/music_task_flow_test/music_task_flow_test",
+        "-v1"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T053313-uhvwh19k/music_task_flow_test",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 14.342
+    }
+  ],
+  "finishedAt": "2026-10-21T05:33:53.016665+00:00"
+}

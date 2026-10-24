@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "version": "v4",
+  "createdAt": "2026-10-19T10:03:23.611669+00:00",
+  "purpose": "v3新失败的后续修复；保留v2/v3全部原结果。新样本与已见回归分开统计。",
+  "authorization": {
+    "source": "沿用同一次最多500次请求授权，不重置累计。",
+    "maximumCumulativeCalls": 500,
+    "alreadyUsed": 388,
+    "remainingBeforeThisVersion": 112
+  },
+  "allocations": [
+    {
+      "id": "new_and_known_diagnostic",
+      "maximumProviderCalls": 96,
+      "cases": 10,
+      "turns": 16,
+      "newHoldoutCases": 8,
+      "newHoldoutTurns": 12,
+      "knownRegressionCases": 2,
+      "knownRegressionTurns": 4,
+      "suite": "backend/evaluation/agent-suite-v4-holdout.json",
+      "suiteSha256": "31b9e0290087c3deb8b84774ae89473fbdabdc48f3c2dea939926b875e9fae77"
+    },
+    {
+      "id": "reading_known_regression",
+      "maximumProviderCalls": 8
+    },
+    {
+      "id": "commute_known_regression",
+      "maximumProviderCalls": 8
+    }
+  ],
+  "maximumAdditionalCalls": 112,
+  "maximumCumulativeAfterAllocation": 500,
+  "policy": {
+    "automaticCaseRetries": 0,
+    "bestOfN": false,
+    "failuresRetained": true,
+    "freezeBeforeCalls": true,
+    "noProductionOrGoldChangesDuringRun": true,
+    "knownRegressionsNotHoldout": true
+  },
+  "previousResult": "docs/agent-repair-v3-summary.json",
+  "plannedArtifacts": {
+    "live": "docs/agent-repair-v4-live.json",
+    "manifest": "docs/agent-repair-v4-manifest.json",
+    "reading": "docs/agent-repair-v4-real-reading.json",
+    "commute": "docs/agent-repair-v4-real-commute.json",
+    "offline": "docs/agent-repair-v4-faults.json"
+  },
+  "notMeasured": [
+    "音频听感/音频语种或版本",
+    "真实曲库完整召回",
+    "长期偏好推荐收益",
+    "全体生产用户准确率",
+    "进程/磁盘灾难恢复"
+  ]
+}

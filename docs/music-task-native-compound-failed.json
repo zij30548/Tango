@@ -1,0 +1,84 @@
+{
+  "audioRequested": false,
+  "automaticTaskRetries": 0,
+  "finishedAt": "2026-10-19T04:27:33.997Z",
+  "hardChecks": {
+    "allSongsMatchRequestedArtist": null,
+    "artistRequirementRequested": false,
+    "matchingArtistCount": 0,
+    "modelCallCount": 4,
+    "modelCallsWithinLimit": true,
+    "noAudio": true,
+    "noHardConstraintUnmet": true,
+    "previewProduced": false,
+    "releasesRequired": true,
+    "requestedArtist": {
+      "publicTextOmitted": true
+    },
+    "songCount": 0,
+    "targetDurationMs": 2400000,
+    "verifiedReleasesPresent": false,
+    "withinTargetDurationTolerance": false
+  },
+  "kind": "native-live-probe-v1",
+  "maximumModelCalls": 6,
+  "nativeBinarySha256": "a355a052f73ecf1adff12029425fe7a80a2e3e2730e6f1a20a10a8c365a13b08",
+  "nativeCompiledAt": "Oct 19 2026 12:26:35",
+  "nativePathConfirmed": true,
+  "passed": false,
+  "realAnonymousCatalog": true,
+  "realModel": true,
+  "realUserDataAccessed": false,
+  "sourcePolicy": {
+    "publicTextOmitted": true
+  },
+  "sourceSha256AfterExecution": {
+    "backend/task-model.mjs": "d2a7149e1c4df4ce8e4f4e43892f2aaa8b553ea1d3f9cb4ccd2a3f61c98bf65c",
+    "backend/task-runtime.mjs": "cfff5889940d4ee274d05d820d1d7a006b2ec4e094b8b8d5c55f8503c9c050d5",
+    "backend/task-schema.mjs": "709cb90dd26228615b1cf8cb07818002ed663f6bf8ecfe8679c36c306665c85d",
+    "mainwindowradio.cpp": "58c62e38052134a43fe172dcc68893d00eea2bf12b519e6c1a24e2710839d686",
+    "musictaskclient.cpp": "3ef2f8ee8e4b08a4a7ce6db0ad945749a1138ca436e18ca0b1121e1209733514",
+    "neteaseclient.cpp": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96"
+  },
+  "sourceSha256BeforeExecution": {
+    "backend/task-model.mjs": "d2a7149e1c4df4ce8e4f4e43892f2aaa8b553ea1d3f9cb4ccd2a3f61c98bf65c",
+    "backend/task-runtime.mjs": "cfff5889940d4ee274d05d820d1d7a006b2ec4e094b8b8d5c55f8503c9c050d5",
+    "backend/task-schema.mjs": "709cb90dd26228615b1cf8cb07818002ed663f6bf8ecfe8679c36c306665c85d",
+    "mainwindowradio.cpp": "58c62e38052134a43fe172dcc68893d00eea2bf12b519e6c1a24e2710839d686",
+    "musictaskclient.cpp": "3ef2f8ee8e4b08a4a7ce6db0ad945749a1138ca436e18ca0b1121e1209733514",
+    "neteaseclient.cpp": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96"
+  },
+  "sourcesUnchangedDuringRun": true,
+  "startedAt": "2026-10-19T04:27:15.257Z",
+  "uiChecks": {
+    "publicTextOmitted": true
+  },
+  "originalFailureRecorded": false,
+  "publicationMetadata": {
+    "sourceKind": "sanitized-public-extract",
+    "notice": "此文件是公开脱敏摘要，不是完整冻结原报告；原始请求响应及运行状态仅保留在本机私有备份中。原成绩、失败、跳过和不确定性未改写。",
+    "privateOriginalSha256": "6924c573eb867adef184c1e7214f39869fca7df80c7bd64c878406acc5624a16",
+    "privateOriginalBytes": 86826,
+    "privateOriginalPreserved": true,
+    "originalVerdictsUnchanged": true,
+    "metricScalarValuesVerified": 13,
+    "rawEvidencePrivate": true,
+    "fullReplayAvailableInPublicRepository": false,
+    "redactedJsonPaths": [
+      "/catalogAudit",
+      "/checkpointAudit",
+      "/explicitActions",
+      "/failure",
+      "/hardChecks/requestedArtist",
+      "/instruction",
+      "/lastSnapshot",
+      "/nativeErrors",
+      "/snapshots",
+      "/sourcePolicy",
+      "/uiChecks",
+      "/uiSummary",
+      "/verdictPolicy",
+      "/visibleSongRows"
+    ]
+  }
+}

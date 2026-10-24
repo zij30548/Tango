@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "id": "tango-v6-clarification-carry-failure-review",
+  "generatedAt": "2026-10-19T11:10:22.895Z",
+  "language": "zh-CN",
+  "scope": {
+    "caseId": "v6_clarification_date_carry",
+    "source": "docs/agent-new-v6-live.json",
+    "sourceSha256": "6c87521f11f0b800a553ae502adc8be9f71b1f2255928fbb658520982e4fdf53",
+    "reviewMode": "Read-only diagnosis of one completed frozen task and existing provider responses; two local deterministic validator replays only.",
+    "providerCallsDuringReview": 0,
+    "productionModified": false,
+    "goldModified": false,
+    "originalScoresModified": false
+  },
+  "originalOutcome": {
+    "status": "failed",
+    "taskCompleted": false,
+    "counts": {
+      "passed": 5,
+      "failed": 7,
+      "unverified": 8,
+      "not_applicable": 0
+    },
+    "roundStatus": [
+      "needs_clarification",
+      "failed"
+    ],
+    "actualProviderRequestsForThisTask": 3,
+    "toolsExecuted": 0,
+    "previewCreated": false
+  },
+  "conclusion": "主要失败是澄清续接与已确认需求补丁的合同不匹配。模型两次都从历史恢复了正确日期；当前brief却只有默认值，后台既不接受本轮“沿用上一条”作为发行依据，也不接受原始上一轮用户引文。不是模型忘记日期，也不是曲库/会员/工具调用失败。",
+  "observedSequence": [
+    {
+      "sequence": 1,
+      "stage": "initial clarification",
+      "instruction": "请查这位歌手在2026年8月1日至9月30日发行的作品，只看这段日期内的，先给预览。",
+      "proposal": {
+        "kind": "clarify",
+        "question": "请问您指的‘这位歌手’具体是哪位？"
+      },
+      "persistedBrief": {
+        "title": "待补充的音乐任务",
+        "scene": "",
+        "styles": [],
+        "queries": [],
+        "artist": "",
+        "requiredArtist": "",
+        "artistOnly": false,
+        "since": null,
+        "until": null,
+        "targetMinutes": 0,
+        "excludeLive": false,
+        "avoidPrevious": false,
+        "excludedArtists": [],
+        "requireReleases": false,
+        "retainFirst": 0,
+        "removeIds": [],
+        "adjustment": "",
+        "kind": "clarify",
+        "question": "请问您指的‘这位歌手’具体是哪位？",
+        "catalogLanguage": "unknown"
+      },
+      "observation": "正确追问缺失歌手，未执行工具；原始日期只保存在用户消息历史，没有结构化的待补齐需求。"
+    },
+    {
+      "sequence": 2,
+      "stage": "clarification reply interpreted as normal patch",
+      "instruction": "我指的是邓紫棋，日期就按上一条给的范围。",
+      "currentBrief": {
+        "title": "待补充的音乐任务",
+        "scene": "",
+        "styles": [],
+        "queries": [],
+        "artist": "",
+        "requiredArtist": "",
+        "artistOnly": false,
+        "since": null,
+        "until": null,
+        "targetMinutes": 0,
+        "excludeLive": false,
+        "avoidPrevious": false,
+        "excludedArtists": [],
+        "requireReleases": false,
+        "retainFirst": 0,
+        "adjustment": "",
+        "kind": "clarify",
+        "question": "请问您指的‘这位歌手’具体是哪位？",
+        "catalogLanguage": "unknown"
+      },
+      "historyIncludedInitialDate": true,
+      "proposal": {
+        "kind": "research",
+        "changes": [
+          {
+            "field": "artist",
+            "op": "set",
+            "value": "邓紫棋",
+            "evidence": "我指的是邓紫棋"
+          },
+          {
+            "field": "requiredArtist",
+            "op": "set",
+            "value": "邓紫棋",
+            "evidence": "我指的是邓紫棋"
+          },
+          {
+            "field": "since",
+            "op": "set",
+            "value": "2026-08-01",
+            "evidence": "日期就按上一条给的范围"
+          },
+          {
+            "field": "until",
+            "op": "set",
+            "value": "2026-09-30",
+            "evidence": "日期就按上一条给的范围"
+          },
+          {
+            "field": "requireReleases",
+            "op": "set",
+            "value": true,
+            "evidence": "日期就按上一条给的范围"
+          }
+        ],
+        "question": "",
+        "adjustment": "明确了歌手为邓紫棋，并沿用之前的发行日期范围（2026年8月1日至9月30日）进行新歌查询。"
+      },
+      "observedRejection": "AI 的多轮修改无效：新作查询缺少明确依据。请只修改用户明确要求的字段，其他条件由程序保留。",
+      "observation": "since/until已正确恢复为2026-08-01和2026-09-30；requireReleases证据“日期就按上一条给的范围”逐字属于本轮，却没有发行词，触发字段证据规则。"
+    },
+    {
+      "sequence": 3,
+      "stage": "single bounded correction",
+      "validationFeedback": {
+        "invalidReason": "AI 的多轮修改无效：新作查询缺少明确依据。请只修改用户明确要求的字段，其他条件由程序保留。",
+        "previousProposal": "{\"kind\":\"research\",\"changes\":[{\"field\":\"artist\",\"op\":\"set\",\"value\":\"邓紫棋\",\"evidence\":\"我指的是邓紫棋\"},{\"field\":\"requiredArtist\",\"op\":\"set\",\"value\":\"邓紫棋\",\"evidence\":\"我指的是邓紫棋\"},{\"field\":\"since\",\"op\":\"set\",\"value\":\"2026-08-01\",\"evidence\":\"日期就按上一条给的范围\"},{\"field\":\"until\",\"op\":\"set\",\"value\":\"2026-09-30\",\"evidence\":\"日期就按上一条给的范围\"},{\"field\":\"requireReleases\",\"op\":\"set\",\"value\":true,\"evidence\":\"日期就按上一条给的范围\"}],\"question\":\"\",\"adjustment\":\"明确了歌手为邓紫棋，并沿用之前的发行日期范围（2026年8月1日至9月30日）进行新歌查询。\"}",
+        "instruction": "只纠正上次提案的字段与语义；保持用户约束，不猜测歌手ID。此次纠正计入同一任务预算。"
+      },
+      "proposal": {
+        "kind": "research",
+        "changes": [
+          {
+            "field": "artist",
+            "op": "set",
+            "value": "邓紫棋",
+            "evidence": "我指的是邓紫棋"
+          },
+          {
+            "field": "since",
+            "op": "set",
+            "value": "2026-08-01",
+            "evidence": "日期就按上一条给的范围"
+          },
+          {
+            "field": "until",
+            "op": "set",
+            "value": "2026-09-30",
+            "evidence": "日期就按上一条给的范围"
+          },
+          {
+            "field": "requireReleases",
+            "op": "set",
+            "value": true,
+            "evidence": "请查这位歌手在2026年8月1日至9月30日发行的作品，只看这段日期内的"
+          }
+        ],
+        "question": "",
+        "adjustment": "明确了歌手为邓紫棋，并沿用之前的发行日期范围（2026年8月1日至9月30日）进行新歌查询。"
+      },
+      "observedRejection": {
+        "code": "INVALID_TASK_MODEL",
+        "message": "AI 的多轮修改无效：每项修改须唯一并引用本轮用户原文。请只修改用户明确要求的字段，其他条件由程序保留。"
+      },
+      "observation": "修正保留正确日期，并用原始历史用户请求证明发行意图；引文不在最新instruction中，触发严格的本轮引文检查。没有第二次工具执行或预览。"
+    }
+  ],
+  "causalContributors": [
+    {
+      "kind": "primary_contract_limitation",
+      "fact": "requireReleases新增必须引用本轮含发行语义的evidence；历史用户授权与当前对它的指代没有可追溯的结构化续接通道。",
+      "source": [
+        "backend/task-brief-patch.mjs:191",
+        "backend/task-brief-patch.mjs:257",
+        "backend/task-brief-patch.mjs:295"
+      ]
+    },
+    {
+      "kind": "state_representation_gap",
+      "fact": "首次clarify只含question；clarificationBrief初始使用默认since/until=null、requireReleases=false。安全地避免把澄清参数提交执行状态，但没有另存pendingBrief/缺失字段/用户证据来源。",
+      "source": [
+        "backend/task-schema.mjs:96",
+        "backend/task-schema.mjs:112",
+        "backend/task-runtime.mjs:336"
+      ]
+    },
+    {
+      "kind": "routing_gap",
+      "fact": "currentBrief非空即进入FOLLOWUP_PLAN/mergeBriefPatch，未区分“已确认歌单编辑”与“首次任务等待歌手补齐”；历史虽然进入模型，补丁校验只承认当前instruction。",
+      "source": [
+        "backend/task-model.mjs:128",
+        "backend/task-runtime.mjs:318"
+      ]
+    },
+    {
+      "kind": "not_primary_model_issue",
+      "fact": "sequence2额外设置了requiredArtist=邓紫棋，这个冗余字段在sequence3已去掉；实际反馈显示它不是首次拦截原因。"
+    }
+  ],
+  "notSupportedByEvidence": [
+    "不能归因为模型没有拿到历史或忘记日期：两次返回的日期都正确。",
+    "不能归因为预算耗尽：该任务仅3次调用，无budget_exhausted状态。",
+    "没有发起发行工具，不能据此评价这道题的曲库召回或日期过滤效果。",
+    "原始失败和下游未知维持不变，诊断不构成反事实完成或事后加分。"
+  ],
+  "offlineReplay": [
+    {
+      "sequence": 2,
+      "providerCalls": 0,
+      "existingProposalOnly": true,
+      "contextUnchanged": true,
+      "error": {
+        "code": "INVALID_TASK_MODEL",
+        "message": "AI 的多轮修改无效：新作查询缺少明确依据。请只修改用户明确要求的字段，其他条件由程序保留。"
+      }
+    },
+    {
+      "sequence": 3,
+      "providerCalls": 0,
+      "existingProposalOnly": true,
+      "contextUnchanged": true,
+      "error": {
+        "code": "INVALID_TASK_MODEL",
+        "message": "AI 的多轮修改无效：每项修改须唯一并引用本轮用户原文。请只修改用户明确要求的字段，其他条件由程序保留。"
+      }
+    }
+  ],
+  "sourceEvidence": [
+    {
+      "path": "backend/task-schema.mjs",
+      "sha256": "8aed0ffce9f34537059017b07e2453879058b239eb5b102e8a4646ba454764ee",
+      "matchesFrozenRun": true
+    },
+    {
+      "path": "backend/task-model.mjs",
+      "sha256": "b3f194fe666d67b170ef0fb0b8e2166385c5afb9d57378f936cddc2097470527",
+      "matchesFrozenRun": true
+    },
+    {
+      "path": "backend/task-brief-patch.mjs",
+      "sha256": "c829c661e8826ba0e62c9b8e41c47c7eda9ca108c38ac7cf08814621237379cf",
+      "matchesFrozenRun": true
+    },
+    {
+      "path": "backend/task-runtime.mjs",
+      "sha256": "15d6ff0579645047847ece123acc85a0cf29ae0cad0d7e536c111ed99fd76ffa",
+      "matchesFrozenRun": true
+    }
+  ],
+  "suggestedNextStep": {
+    "implemented": false,
+    "description": "把未完成的首次需求保存在不具执行权限的pendingBrief中，标明缺失artist、已给日期、原始用户messageId/片段；澄清回复只补缺口，经程序验证后一次性形成可执行brief。正常编辑继续使用当前轮严格补丁。",
+    "safetyBoundary": "不能简单放开任意历史、助手、工具或来源文字作为授权，也不能因保存pending字段就立即执行。",
+    "verificationNeeded": [
+      "跨轮日期/歌手补齐的正向任务",
+      "用户纠正或撤销之前范围",
+      "工具和引用文本冒充历史授权的反例",
+      "多次澄清、取消及恢复后仍保持消息来源和任务版本"
+    ]
+  }
+}

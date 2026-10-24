@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "version": "storage-v1",
+  "recordedAt": "2026-10-19T13:24:17.131978+00:00",
+  "status": "completed",
+  "kind": "engineering_acceptance_not_model_quality_score",
+  "scope": [
+    "Backend PostgreSQL accounts, sessions, task checkpoints, idempotent requests, provider reservation ledger and daily quota",
+    "Async storage boundaries with SQLite compatibility for explicit offline regression",
+    "CAS state versions, worker fencing leases and heartbeat, shared per-account and global model slots",
+    "Redis atomic deployment-scoped authentication and AI windows with fail-closed behavior",
+    "Safe offline SQLite backup/import/rollback and local startup activation"
+  ],
+  "verification": {
+    "oneCommand": {
+      "command": "cd backend && npm run test:storage",
+      "passed": 427,
+      "failed": 0,
+      "skipped": 0,
+      "containsBackendAndMigrationCounts": true,
+      "realIsolatedPostgresAndRedis": true,
+      "createsOwnTemporaryServicesAndCleansThem": true
+    },
+    "backend": {
+      "passed": 420,
+      "failed": 0,
+      "skipped": 0
+    },
+    "migrationAndInfrastructure": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0
+    },
+    "nativeFlow": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "businessFlows": 2,
+      "includesInitAndCleanup": true,
+      "usesLoopbackFixtures": true
+    },
+    "targetedChecksAlreadyIncluded": {
+      "postgresHttpAndSigkill": 7,
+      "repositoryAndHandoffReview": 26,
+      "actualServerProcesses": 2
+    },
+    "newPaidProviderAttempts": 0,
+    "historicalAuthorizedAttemptsRemain": 499,
+    "historicalMaximum": 500
+  },
+  "observedCases": [
+    "Two HTTP instances use the same tasks and Redis windows",
+    "Two actual server processes share PostgreSQL login sessions",
+    "Starting another instance leaves live-owner tasks running",
+    "Concurrent same-revision edits cannot overwrite one another",
+    "Concurrent repeated request IDs resolve to the original task",
+    "Final tool completion fences a still-running dispatch owner before observation handoff",
+    "Old-worker results cannot overwrite a cancellation or recovered state",
+    "Real SIGKILL retains a paid-call reservation as uncertain and requires explicit resume",
+    "User/global slots and durable daily usage prevent over-admission across instances",
+    "Redis failure returns a sanitized503 without memory fallback",
+    "Schema additions and changed target content block import rollback or reapply",
+    "Startup refuses the wrong storage mode and checks dependency readiness"
+  ],
+  "activation": {
+    "status": "active_on_local_backend",
+    "previousOwnedPid": 52044,
+    "currentPid": 58127,
+    "health": {
+      "storage": "postgres",
+      "rateLimiter": "redis",
+      "storageVersion": 1
+    },
+    "ready": true,
+    "sourceSqliteRetained": true,
+    "consistentBackupRetained": true,
+    "allSevenTableContentHashesMatched": true,
+    "preActivationRollbackRehearsalPassed": true,
+    "reimportAfterRehearsalPassed": true,
+    "privateReceiptsDirectory": ".local/storage-v1",
+    "credentialsOrUserRowsPublished": false,
+    "desktopRebuildRequired": false
+  },
+  "intermediateIssuesRetained": [
+    {
+      "issue": "Async runtime conversion made the old restart fault check inspect the immediate accepted response instead of its persisted waiting state.",
+      "resolution": "Keep the lease, budget and state assertions; await the actual asynchronous dispatch.",
+      "log": "docs/evaluation-versions/storage-v1-checks/initial-async-adaptation.txt"
+    },
+    {
+      "issue": "Concurrent identical creates could be rejected as busy when the first commit landed between replay lookup and availability check.",
+      "resolution": "Recheck persisted idempotency on the busy/revision-conflict paths.",
+      "log": "docs/evaluation-versions/storage-v1-checks/initial-concurrency-failure.txt"
+    },
+    {
+      "issue": "Final tool result could arrive before the previous dispatch worker released ownership, leaving observation unscheduled.",
+      "foundBy": "Independent code review and controlled reproduction",
+      "resolution": "Atomic phase transition and lease invalidation, then new-owner scheduling. Same-instance and cross-instance gated regression included."
+    },
+    {
+      "issue": "Rollback could ignore new target columns and delete data added after import.",
+      "foundBy": "Independent code review",
+      "resolution": "Validate full business, coordination and import-ledger column sets before snapshot/import/rollback; preserve extended data by refusing."
+    }
+  ],
+  "notClaimed": [
+    "No new real-model task completion or recommendation accuracy estimate",
+    "No human listening or live music catalog recall rerun",
+    "No public internet load, capacity, cross-region failover or recovery SLA",
+    "Docker Compose supplied but not run on this Mac without Docker",
+    "No exactly-once external provider billing guarantee; uncertain started calls remain counted",
+    "No reverse migration of post-cutover PostgreSQL writes into SQLite"
+  ],
+  "sourceArchive": "docs/evaluation-versions/storage-v1-source/snapshot-manifest.json",
+  "logs": [
+    {
+      "kind": "one-command",
+      "path": "docs/evaluation-versions/storage-v1-checks/one-command.txt",
+      "sha256": "46c866679fd7a30dbadcfba8e12d6db45ad309d91de05ed020b934347e42eebc",
+      "redactions": 0
+    },
+    {
+      "kind": "backend",
+      "path": "docs/evaluation-versions/storage-v1-checks/backend.txt",
+      "sha256": "7febe865add6b7ea75f2fbcdc1f6aaf4e772a658253d8f38f951b336cd718d48",
+      "redactions": 0
+    },
+    {
+      "kind": "migration-infra",
+      "path": "docs/evaluation-versions/storage-v1-checks/migration-infra.txt",
+      "sha256": "0d10102d63fdd02a7bb172e1a4d41fd9606c2cf004377372e5364233b7ec8889",
+      "redactions": 0
+    },
+    {
+      "kind": "native-flow",
+      "path": "docs/evaluation-versions/storage-v1-checks/native-flow.txt",
+      "sha256": "af85233350e460b49ac0e6e12e1c1d0633fa47dd9259c253ce7923dbffbbcc26",
+      "redactions": 0
+    },
+    {
+      "kind": "handoff-review",
+      "path": "docs/evaluation-versions/storage-v1-checks/handoff-review.txt",
+      "sha256": "1c685f3687cb9ad749cad4c98e0100b24ea90d99a5ce6e53cb9ffb1c6d8b20f7",
+      "redactions": 0
+    },
+    {
+      "kind": "two-server-processes",
+      "path": "docs/evaluation-versions/storage-v1-checks/two-server-processes.txt",
+      "sha256": "f83d35e1f3be44948048e8017f52e4fefc0efdf44422fdece507dc1c8a65f4da",
+      "redactions": 0
+    },
+    {
+      "kind": "initial-concurrency-failure",
+      "path": "docs/evaluation-versions/storage-v1-checks/initial-concurrency-failure.txt",
+      "sha256": "d32b20fdc5ed43ab81bf433dbf86b333682d4e85d08689b5dfc8ced2f83d2586",
+      "redactions": 0
+    },
+    {
+      "kind": "initial-async-adaptation",
+      "path": "docs/evaluation-versions/storage-v1-checks/initial-async-adaptation.txt",
+      "sha256": "af6b8c03ba8ca2a15dc8f6709b2ae15804d18aa7c6cc45c13af9ede49c73dc78",
+      "redactions": 0
+    }
+  ],
+  "operatorGuide": "docs/STORAGE_UPGRADE_V1.md",
+  "updatedAgentGuide": {
+    "path": "docs/Tango_Agent与测试说明.docx",
+    "sha256": "c6a27b3b449b77c1a8497941c7b8037ccb16a5c35d7a892ef65cb5fa838ac72d",
+    "pagesVisuallyVerified": 3
+  },
+  "historyPreserved": {
+    "originalV2ToV7ArtifactsAndHashesMatch": true,
+    "budgetLedger": "docs/agent-evaluation-cumulative-budget.json"
+  }
+}

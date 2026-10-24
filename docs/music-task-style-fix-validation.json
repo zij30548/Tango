@@ -1,0 +1,106 @@
+{
+  "testedAt": "2026-10-19T05:06:41.318529+00:00",
+  "targetedFixAccepted": true,
+  "fullProductAccepted": false,
+  "status": "targeted_runtime_retrieval_and_source_supported_adjustment_verified",
+  "actualProviderAttemptsThisFix": 48,
+  "previousDebugAttempts": 30,
+  "cumulativeDebugAttempts": 78,
+  "noMorePaidCallsThisRun": true,
+  "records": [
+    {
+      "file": "music-task-style-reading-initial-failed.json",
+      "case": "index_full_permutation_first_attempt",
+      "actualProviderAttempts": 8,
+      "rawReportedPassed": false,
+      "acceptedForStatedScope": false,
+      "note": "排序漏项；新风格来源没有召回",
+      "sourcesUnchangedDuringRun": true,
+      "automaticTaskRetries": 0,
+      "sha256": "f518ee876bca502e04aeaca7bc31d5497e08956af3d4dff36782caaae95a5325"
+    },
+    {
+      "file": "music-task-style-commute-initial-failed.json",
+      "case": "commute_first_attempt",
+      "actualProviderAttempts": 8,
+      "rawReportedPassed": false,
+      "acceptedForStatedScope": false,
+      "note": "排序漏项，宽泛保留风格挤占轻快目标",
+      "sourcesUnchangedDuringRun": true,
+      "automaticTaskRetries": 0,
+      "sha256": "8764c0a5aa133132198a0423e6f2a3cc2441b13c5bcd1f009272c6247c519dd3"
+    },
+    {
+      "file": "music-task-style-reading-final.json",
+      "case": "reading_source_evidence_before_language_fix",
+      "actualProviderAttempts": 8,
+      "rawReportedPassed": true,
+      "acceptedForStatedScope": true,
+      "note": "来源支持与锁定通过；早于语言保留修复",
+      "sourcesUnchangedDuringRun": true,
+      "automaticTaskRetries": 0,
+      "sha256": "00c9bd082e3715ca7e33ee159ae347c4208412a44459bf3df92fd027996dd9d8"
+    },
+    {
+      "file": "music-task-style-commute-language-failed.json",
+      "case": "commute_narrow_gate_missed_language",
+      "actualProviderAttempts": 8,
+      "rawReportedPassed": true,
+      "acceptedForStatedScope": false,
+      "note": "原窄门槛通过，但人工复核发现华语要求丢失、混入明确英文来源",
+      "sourcesUnchangedDuringRun": true,
+      "automaticTaskRetries": 0,
+      "sha256": "531dc68717fdb324ded4fa46c074f798e497b5184ad03aa05466ed1cca81721f"
+    },
+    {
+      "file": "music-task-style-reading-verified.json",
+      "case": "current_source_reading",
+      "actualProviderAttempts": 8,
+      "rawReportedPassed": true,
+      "acceptedForStatedScope": true,
+      "note": "当前源码，真实双轮流程及来源证据通过",
+      "sourcesUnchangedDuringRun": true,
+      "automaticTaskRetries": 0,
+      "sha256": "d2077526e56f23dedc8eb80404f7ee9a34ccf3136f66e871e1fe73bbdc47d4c5"
+    },
+    {
+      "file": "music-task-style-commute-verified.json",
+      "case": "current_source_commute_zh_gold",
+      "actualProviderAttempts": 8,
+      "rawReportedPassed": true,
+      "acceptedForStatedScope": true,
+      "note": "当前源码，双轮华语约束、来源证据、时长与锁定通过",
+      "sourcesUnchangedDuringRun": true,
+      "automaticTaskRetries": 0,
+      "sha256": "ff9db5997ca72058003af77acfdb3c6b56d948b05b9b9e78c8027064add84520"
+    }
+  ],
+  "offlineTests": {
+    "backend": 150,
+    "musicService": 49,
+    "qtMusicTaskClient": 35,
+    "qtMusicTaskDialog": 17,
+    "nativeFullFlow": 4,
+    "independentProbeAudit": 23,
+    "equalInputDurationAblation": 16
+  },
+  "currentSourceCases": [
+    "music-task-style-reading-verified.json",
+    "music-task-style-commute-verified.json"
+  ],
+  "languageMissRetrospective": "music-task-style-language-retrospective.json",
+  "scope": "真实 MainWindow / RadioDialog / MusicTaskClient / Node / Qwen / 匿名网易云；隔离临时账号与数据库；无真实用户数据库、Cookie 或音频请求",
+  "limitations": [
+    "通过的是定向重复回归，不是独立留出集，不能推断泛化成功率。",
+    "轻快依据实际歌单名称与标签；未测量听感、BPM、人声或音频语种。",
+    "语言检查保证结构化要求保留并排除来源明确相反的候选；未知或混合来源不被伪称为音频语种识别。",
+    "约定时长容差为 ±max(60秒,10%)；偏好策略允许牺牲毫秒精度，不能宣称精确计时或一定改善听感。",
+    "没有证明新模型排序或多 Agent 优于其他推荐方法；组件等输入对照单独报告，未新增模型调用。",
+    "未完成公网部署、签名发布或完整产品验收。"
+  ],
+  "comparisons": [
+    "music-task-duration-ablation-reading-verified.json",
+    "music-task-duration-ablation-commute-verified.json"
+  ],
+  "comparisonConclusion": "两组同输入对照的轻快来源覆盖率均为100%，没有覆盖率提升；偏好策略选择更靠前的候选，但时长误差更大，通勤曲目更少。没有证明听感或总体推荐效果更好。"
+}

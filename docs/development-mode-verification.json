@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-20",
+  "scope": "本机开发自动进入专用身份；正式认证保留；离线工程验证",
+  "realModelCalls": 0,
+  "realMusicRequests": 0,
+  "realUserDatabaseAccess": false,
+  "productionDeployment": false,
+  "backendFull": {
+    "log": "/tmp/tango-development-storage-final.log",
+    "sha256": "6f9e5b6aaf67b6381bfb143015f7df9bb97047eb2c59f05a11b706d202909118",
+    "passed": 597,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "backend test files plus real temporary PostgreSQL/Redis and storage migration/infra suites"
+  },
+  "targetedFinal": {
+    "log": "/tmp/tango-development-targeted-final.log",
+    "sha256": "d82958e01345b93d61064ac468682bb192aa8d742f6df1ddcc3301e8c0b0a950",
+    "passed": 22,
+    "failed": 0,
+    "skipped": 0,
+    "overlapsBackendFull": true,
+    "scope": "config, real spawned server, launcher and shell environment"
+  },
+  "qtClient": {
+    "log": "/var/folders/kv/5jn370b96ksbczl73y3z1ybw0000gn/T/tango-development-qt-dm7_xrof/client/test-first.log",
+    "sha256": "96c8cefc2e121495a571a1bbd4abe0145b3e38cacd478f2b5f40c67df78c9dfa",
+    "passed": 29,
+    "functional": 27,
+    "failed": 0,
+    "skipped": 0
+  },
+  "qtWindow": {
+    "log": "/var/folders/kv/5jn370b96ksbczl73y3z1ybw0000gn/T/tango-development-qt-dm7_xrof/flow/test-corrected-fixture.log",
+    "sha256": "18bb53f1cf595000b0981441aa6e20a51e468dc544239b2845e781ba4335877b",
+    "passed": 6,
+    "functional": 4,
+    "failed": 0,
+    "skipped": 0
+  },
+  "build": {
+    "log": "/tmp/tango-development-build.log",
+    "sha256": "2c8fdf24b36172a583245335269537bf7648ee247bd12853e1787609027969f8",
+    "result": "success",
+    "artifact": "build-macos/Tango.app"
+  },
+  "retainedFailure": {
+    "log": "/var/folders/kv/5jn370b96ksbczl73y3z1ybw0000gn/T/tango-development-qt-dm7_xrof/flow/test-first.log",
+    "diagnostic": "/var/folders/kv/5jn370b96ksbczl73y3z1ybw0000gn/T/tango-development-qt-dm7_xrof/flow/diagnostic-lldb-cocoa.log",
+    "finding": "新增测试在第二个窗口场景按不存在的objectName查找QLabel后解引用空指针。首个场景已通过。修正测试查找后4个功能场景全部通过；没有为此更改产品析构。"
+  },
+  "priorRuns": [
+    {
+      "log": "/tmp/tango-development-backend-tests.log",
+      "sha256": "83147e0b4092296dfabf385aa10a5142ae4cd07d553d3a027ad128150031a5bd",
+      "passed": 531,
+      "failed": 0,
+      "skipped": 48,
+      "note": "initial direct test run without temporary integration services; final full run above resolves skips"
+    },
+    {
+      "log": "/tmp/tango-development-storage-full.log",
+      "sha256": "719925543c3d1df07870454173a85620407cb6b3681cf2aca060c0532d76f62d",
+      "passed": 589,
+      "failed": 0,
+      "skipped": 0,
+      "note": "before token format/FIFO/fingerprint and launcher follow-up; not final result"
+    },
+    {
+      "log": "/tmp/tango-development-server-integration-first.tap",
+      "sha256": "7cd75c89c61aee89fc1b44545e0ab0386cfe6ab8aa0d35789df41636f040575f",
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "validated": [
+    "自动进入后助手输入可用，正常鉴权API可用",
+    "连接失败重试，窗口销毁后迟到回包不建立身份",
+    "真实账号与开发身份不混用；重启身份稳定且用量不清零",
+    "默认服务开发入口404；production、外网绑定、跨站、代理头和错误令牌拒绝",
+    "令牌文件权限/格式/链接/FIFO拒绝；启动器拒绝旧令牌和不匹配开发模式",
+    "打开应用和bootstrap不创建模型请求"
+  ],
+  "limits": [
+    "开发账号初始10000/日、累计100000；历史政策不自动覆盖",
+    "保留全站与单任务预算和并发限制",
+    "本机与当前系统用户为信任边界；不是公开游客模式",
+    "未测真实模型、音乐推荐听感、公网负载或供应商账单；工程计数不代表Agent准确率"
+  ],
+  "sourceSha256": {
+    "appbackendclient.cpp": "45c68dc98e9f329da113364cc922b09aa1f9acaa06f62b271bb9d2facd77a524",
+    "appbackendclient.h": "47205f0e26b6f4e4df844cebbde2a56659abd32ddd8aa0d3e08360c0c9691f19",
+    "mainwindow.cpp": "e836445ee18d8b51d4b7dbdecf02be1df2db104292d170de0485f03dfb85fba4",
+    "mainwindow.h": "de0f97f5d0dfec2e0a4cdc119cf810985b2debeb8d53e9fb2b80b30b74e75134",
+    "backend/app.mjs": "44f116a270bb05a79935c086e53923fd2c2af1ba05fcd8353de5f641f7bfcdcf",
+    "backend/server.mjs": "5aae25562202b0fc285e39bae1efedbcc49e30b9ee2aa2a4d2b2675dd161e0dd",
+    "backend/launch-local.mjs": "8eb60ef90078ad44ce24870ad77b970299642f41fa9eeed7584da635071e546c",
+    "backend/development-config.mjs": "0bd95610ec8cf79a5c6e47494d2e653398d09c8b780e26c9c96a7e2dc2666032",
+    "backend/development-session.mjs": "a2b3c5ddb987a653097ca94bfb6ce3c95fb3d89cda102bbb34fee05c3da30682",
+    "scripts/development-env.sh": "df290391a71aad908874c518125ec2e4e845d51f22b702a8d4c27d3d412f23f3",
+    "scripts/run-macos.sh": "9a7123bc592d28b0e893536ead3ed7c52d4820af946a49f5b1d0c40a2ab62ca0",
+    "scripts/prepare-macos.sh": "354dd57f92a1932509c0350bc144750ba28c3481a610693f7cb3b0345a31e6f7",
+    ".vscode/launch.json": "5dc42d018c446cdeb3d585eeb931a701e6170a36406322ad68b27c1fc099e597",
+    "backend/test/development-config.test.mjs": "e82e0496d31d1fe8f96a04a7713ecd288c2476d8b4df6e64d03b0b0b958e8787",
+    "backend/test/development-session.test.mjs": "dc982b5ee0dd20d1b9594b846758736aa0867a650fae16f1745f2cb9d4169554",
+    "backend/test/development-server-integration.test.mjs": "c1d1d8259c0450946462c61ed93b49d2089f737386021876e52af5953db93e6a",
+    "backend/test/launch-storage-profile.test.mjs": "e87d190459790d0c51adb671313420743e031fd023beef4bd86a7d0f2817bcd5",
+    "scripts/development-env.test.mjs": "d3dd9c4b177fb06990de8222e902ea3f41e6d1637993e2a3c87646d22ac3460b",
+    "tests/development_session_client_test.cpp": "8ce85b92d6583b99cdc001fcc4e1dfb6a8ee0306000fd3d305958e56d93ccaa6",
+    "tests/development_session_flow_test.cpp": "88d953e9d541fde37dc6d2159b729cfe75fd44839da9ecccc247563ed06d871a",
+    "tests/development_session_fixtures.h": "9e7ad506154291ed1991b83695f7e1f842555a27ecf2e86baaaabf1bcfa2eb35"
+  }
+}

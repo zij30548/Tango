@@ -1,0 +1,675 @@
+FFFFFFFFFFFFFF..F.                                                       [100%]
+=================================== FAILURES ===================================
+_______________ test_mysql_complete_lock_turn_undo_adopt[fixed] ________________
+tests/test_mysql_task_runtime.py:84: in test_mysql_complete_lock_turn_undo_adopt
+    await migration.test_actual_langgraph_complete_lock_turn_undo_and_adopt(f, strategy)
+tests/test_task_runtime_migration.py:111: in test_actual_langgraph_complete_lock_turn_undo_and_adopt
+    runtime=await f.runtime(strategy=strategy);created=await runtime.create(f.user,body())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+____________ test_mysql_complete_lock_turn_undo_adopt[single_agent] ____________
+tests/test_mysql_task_runtime.py:84: in test_mysql_complete_lock_turn_undo_adopt
+    await migration.test_actual_langgraph_complete_lock_turn_undo_and_adopt(f, strategy)
+tests/test_task_runtime_migration.py:111: in test_actual_langgraph_complete_lock_turn_undo_and_adopt
+    runtime=await f.runtime(strategy=strategy);created=await runtime.create(f.user,body())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+_____________ test_mysql_complete_lock_turn_undo_adopt[dual_agent] _____________
+tests/test_mysql_task_runtime.py:84: in test_mysql_complete_lock_turn_undo_adopt
+    await migration.test_actual_langgraph_complete_lock_turn_undo_and_adopt(f, strategy)
+tests/test_task_runtime_migration.py:111: in test_actual_langgraph_complete_lock_turn_undo_and_adopt
+    runtime=await f.runtime(strategy=strategy);created=await runtime.create(f.user,body())
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+_ test_mysql_cancel_retains_inflight_slot_and_late_completion_cannot_overwrite _
+tests/test_mysql_task_runtime.py:88: in test_mysql_cancel_retains_inflight_slot_and_late_completion_cannot_overwrite
+    await migration.test_cancel_keeps_paid_slot_until_model_settles_and_rejects_old_completion(f)
+tests/test_task_runtime_migration.py:137: in test_cancel_keeps_paid_slot_until_model_settles_and_rejects_old_completion
+    runtime=await f.runtime();f.model.gate=asyncio.Event();created=await runtime.create(f.user,body())
+            ^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+________________ test_mysql_task_budget_is_not_reset_by_resume _________________
+tests/test_mysql_task_runtime.py:92: in test_mysql_task_budget_is_not_reset_by_resume
+    await migration.test_budget_reservation_failure_and_explicit_resume_do_not_reset_total(f)
+tests/test_task_runtime_migration.py:153: in test_budget_reservation_failure_and_explicit_resume_do_not_reset_total
+    runtime=await f.runtime(maxRunCalls=1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+_______ test_mysql_tool_identity_revision_replay_and_idempotency_guards ________
+tests/test_mysql_task_runtime.py:96: in test_mysql_tool_identity_revision_replay_and_idempotency_guards
+    await migration.test_tool_lease_result_injection_and_idempotency_guards(f)
+tests/test_task_runtime_migration.py:161: in test_tool_lease_result_injection_and_idempotency_guards
+    runtime=await f.runtime();request=body();created=await runtime.create(f.user,request)
+            ^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+________ test_mysql_restore_is_observation_only_and_tool_timeout_pauses ________
+tests/test_mysql_task_runtime.py:100: in test_mysql_restore_is_observation_only_and_tool_timeout_pauses
+    await migration.test_tool_timeout_and_restart_are_observation_only_until_resume(f)
+tests/test_task_runtime_migration.py:181: in test_tool_timeout_and_restart_are_observation_only_until_resume
+    runtime=await f.runtime();created=await runtime.create(f.user,body());waiting=await until(runtime,created['id'],f.user,'waiting_tools','failed')
+            ^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+____ test_mysql_invalid_observer_degrades_and_provider_failure_is_explicit _____
+tests/test_mysql_task_runtime.py:104: in test_mysql_invalid_observer_degrades_and_provider_failure_is_explicit
+    await migration.test_invalid_observer_is_explicitly_degraded_but_provider_errors_fail(f)
+tests/test_task_runtime_migration.py:196: in test_invalid_observer_is_explicitly_degraded_but_provider_errors_fail
+    runtime=await f.runtime();f.model.invalid_observer=True
+            ^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+_______ test_mysql_concurrent_scene_release_handoff_and_artist_evidence ________
+tests/test_mysql_task_runtime.py:108: in test_mysql_concurrent_scene_release_handoff_and_artist_evidence
+    await migration.test_release_branches_concurrent_handoff_and_verified_artist(f)
+tests/test_task_runtime_migration.py:210: in test_release_branches_concurrent_handoff_and_verified_artist
+    runtime=await f.runtime(strategy='dual_agent',maxRunCalls=8)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+________ test_mysql_cross_worker_provider_exclusion_and_lease_recovery _________
+tests/test_mysql_task_runtime.py:112: in test_mysql_cross_worker_provider_exclusion_and_lease_recovery
+    await migration.test_pg_two_workers_do_not_overlap_provider_or_recover_fresh_lease(f)
+tests/test_task_runtime_migration.py:221: in test_pg_two_workers_do_not_overlap_provider_or_recover_fresh_lease
+    runtime=await f.runtime(workerId='worker-one');f.model.gate=asyncio.Event()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+__ test_mysql_unknown_attempt_remains_charged_and_never_replays_automatically __
+tests/test_mysql_task_runtime.py:116: in test_mysql_unknown_attempt_remains_charged_and_never_replays_automatically
+    await migration.test_restart_preserves_unknown_call_charge_and_never_replays_without_resume(f)
+tests/test_task_runtime_migration.py:237: in test_restart_preserves_unknown_call_charge_and_never_replays_without_resume
+    runtime=await f.runtime();runtime.schedule=lambda _:None
+            ^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+_______ test_mysql_artist_choice_cannot_inject_resolved_catalog_identity _______
+tests/test_mysql_task_runtime.py:120: in test_mysql_artist_choice_cannot_inject_resolved_catalog_identity
+    await migration.test_artist_choice_is_catalog_bound_and_mismatched_identity_cannot_enter_evidence(f)
+tests/test_task_runtime_migration.py:257: in test_artist_choice_is_catalog_bound_and_mismatched_identity_cannot_enter_evidence
+    runtime=await f.runtime();created=await runtime.create(f.user,body(instruction='查邓紫棋最近的新歌'))
+            ^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+_______________ test_mysql_matches_same_input_frozen_js_workflow _______________
+tests/test_mysql_task_runtime.py:124: in test_mysql_matches_same_input_frozen_js_workflow
+    await migration.test_same_input_full_workflow_matches_frozen_js_langgraph_runtime(f)
+tests/test_task_runtime_migration.py:282: in test_same_input_full_workflow_matches_frozen_js_langgraph_runtime
+    f.time[0]=gold['now'];runtime=await f.runtime();created=await runtime.create(f.user,gold['request'])
+                                  ^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+______ test_mysql_old_owner_fence_cannot_write_heartbeat_release_or_spend ______
+tests/test_mysql_task_runtime.py:128: in test_mysql_old_owner_fence_cannot_write_heartbeat_release_or_spend
+    runtime = await f.runtime(workerId="fence-one")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+_______ test_mysql_checkpoint_cas_and_stranded_json_recovery_are_atomic ________
+tests/test_mysql_task_runtime.py:201: in test_mysql_checkpoint_cas_and_stranded_json_recovery_are_atomic
+    runtime = await f.runtime()
+              ^^^^^^^^^^^^^^^^^
+tests/test_mysql_task_runtime.py:61: in runtime
+    await value.initialize()
+tango_backend/task_runtime.py:271: in initialize
+    await self.recoverExpired()
+tango_backend/task_runtime.py:294: in recoverExpired
+    for task in await self.store.interrupted(options):
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/mysql_task_store.py:142: in interrupted
+    rows = await self.db.fetchall(
+tango_backend/storage_db.py:180: in fetchall
+    return (await self.execute(sql, params)).rows
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:170: in execute
+    return await self._run(connection, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tango_backend/storage_db.py:140: in _run
+    await cursor.execute(sql, tuple(values))
+asyncmy/cursors.pyx:245: in execute
+    ???
+asyncmy/cursors.pyx:490: in _query
+    ???
+asyncmy/connection.pyx:754: in query
+    ???
+asyncmy/connection.pyx:1146: in _read_query_result
+    ???
+asyncmy/connection.pyx:1683: in read
+    ???
+asyncmy/connection.pyx:1101: in read_packet
+    ???
+asyncmy/protocol.pyx:956: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/protocol.pyx:957: in asyncmy.protocol.MysqlPacket.raise_for_error
+    ???
+asyncmy/errors.pyx:141: in asyncmy.errors.raise_mysql_exception
+    ???
+asyncmy/errors.pyx:156: in asyncmy.errors.raise_mysql_exception
+    ???
+E   asyncmy.errors.OperationalError: (1267, "Illegal mix of collations (utf8mb4_bin,COERCIBLE) and (utf8mb4_0900_bin,COERCIBLE) for operation '='")
+=========================== short test summary info ============================
+FAILED tests/test_mysql_task_runtime.py::test_mysql_complete_lock_turn_undo_adopt[fixed]
+FAILED tests/test_mysql_task_runtime.py::test_mysql_complete_lock_turn_undo_adopt[single_agent]
+FAILED tests/test_mysql_task_runtime.py::test_mysql_complete_lock_turn_undo_adopt[dual_agent]
+FAILED tests/test_mysql_task_runtime.py::test_mysql_cancel_retains_inflight_slot_and_late_completion_cannot_overwrite
+FAILED tests/test_mysql_task_runtime.py::test_mysql_task_budget_is_not_reset_by_resume
+FAILED tests/test_mysql_task_runtime.py::test_mysql_tool_identity_revision_replay_and_idempotency_guards
+FAILED tests/test_mysql_task_runtime.py::test_mysql_restore_is_observation_only_and_tool_timeout_pauses
+FAILED tests/test_mysql_task_runtime.py::test_mysql_invalid_observer_degrades_and_provider_failure_is_explicit
+FAILED tests/test_mysql_task_runtime.py::test_mysql_concurrent_scene_release_handoff_and_artist_evidence
+FAILED tests/test_mysql_task_runtime.py::test_mysql_cross_worker_provider_exclusion_and_lease_recovery
+FAILED tests/test_mysql_task_runtime.py::test_mysql_unknown_attempt_remains_charged_and_never_replays_automatically
+FAILED tests/test_mysql_task_runtime.py::test_mysql_artist_choice_cannot_inject_resolved_catalog_identity
+FAILED tests/test_mysql_task_runtime.py::test_mysql_matches_same_input_frozen_js_workflow
+FAILED tests/test_mysql_task_runtime.py::test_mysql_old_owner_fence_cannot_write_heartbeat_release_or_spend
+FAILED tests/test_mysql_task_runtime.py::test_mysql_checkpoint_cas_and_stranded_json_recovery_are_atomic
+15 failed, 3 passed in 1.60s

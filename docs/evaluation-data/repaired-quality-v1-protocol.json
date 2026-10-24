@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "protocolId": "tango-repaired-quality-v1",
+  "preparedOn": "2026-10-24",
+  "status": "preparing_no_new_live_authorization",
+  "purpose": "修复后的真实模型、固定曲库业务质量验收；不是生产流量、真实曲库或听感评测。",
+  "plannedPartitions": [
+    {
+      "id": "new_post_repair",
+      "selectedTasks": 16,
+      "role": "未用于本轮产品调试的新题",
+      "exposureRule": "首次让产品处理后即为已暴露题；后续不得继续称作未见新题。"
+    },
+    {
+      "id": "exposed_regression",
+      "selectedTasks": 8,
+      "role": "已暴露失败及相邻修复场景的真实模型回归",
+      "exposureRule": "单独报告，不与新题合并宣传泛化效果。"
+    }
+  ],
+  "selectedPlan": {
+    "tasks": 24,
+    "formalInteractions": 52,
+    "formalNaturalLanguageTurns": 40,
+    "nonNaturalLanguageInteractions": 12,
+    "setupNaturalLanguageTurns": 3,
+    "scope": "仅冻结执行机会；不是已执行量或真实模型成绩。"
+  },
+  "units": {
+    "task": "一个有预先冻结最终目标的完整场景，可能有多轮交互。",
+    "naturalLanguageTurn": "通过真实Qt输入并锚定到新增持久用户消息的自然语言轮次。",
+    "clientAction": "采用、偏好确认、重开等受信界面动作；不计入自然语言意图准确率。",
+    "slot": "该轮预先列为适用的业务关键字段，含值、单位、容差和权限极性。",
+    "providerAttempt": "发送前持久预留的一次上游请求；失败、超时和结果未知仍计数。"
+  },
+  "freeze": {
+    "required": [
+      "题集、轮次、前置条件、允许行为集合、最终目标与负面断言",
+      "本协议与专用scorer源码摘要",
+      "Qt和Python产品源码、提示JSON、依赖与迁移SQL摘要",
+      "原生探针二进制与固定曲库真值摘要",
+      "语义时钟、公开模型策略、环境与新授权的共享调用硬上限"
+    ],
+    "beforeAndAfterVerification": true,
+    "changedSourcePolicy": "源、判据、真值、策略或二进制变化将本次质量验收标为invalid；保留原事实，不沿用成绩。",
+    "noBestOfReruns": true,
+    "noProductTuningOnNewCases": true,
+    "originalReportsUnchanged": true
+  },
+  "evidence": {
+    "inputAnchor": [
+      "caseId与turn在冻结计划中唯一",
+      "观测text等于冻结原句，messageId为本轮新增且不同于before.messageId",
+      "后台持久会话中同一messageId的user消息原文一致且唯一",
+      "后台route的messageId、conversationId与当前观测归属一致"
+    ],
+    "route": "后台本轮route.status/result及实际允许行为；本机同turnId的plan/actions/receipts另核执行。",
+    "task": "拥有者隔离存储只读取得的taskId、revision、status、brief、preview、原动作及调用记录。",
+    "device": "实际显示候选与顺序、原池和visibleIds、偏好完整内容与revision、播放队列与解析结果。",
+    "completionRule": "路由生成、任务进度、模型自述和UI文案不能单独证明业务完成；业务最终状态与副作用必须核验。",
+    "probeCaveat": "现有probe无独立sent字段。ok=true代表已发送且稳定及后续动作成功；ok=false时须靠新增持久消息判断是否发送，不能复用旧messageId。"
+  },
+  "statuses": {
+    "pass": "所需证据齐全，全部预定成功条件及硬边界成立。",
+    "fail": "有可信证据证明业务目标、必需字段或硬边界不成立。",
+    "unknown": "证据不足、结果不确定或合理性尚待复核；不能默认为通过，也不能全部归因于模型。",
+    "blocked": "必要夹具或执行前置未成立，保留任务与轮次分母。",
+    "not_run": "冻结计划中的交互没有执行，保留分母。",
+    "invalid": "冻结或授权不满足，本次不产生可用质量成绩，原始诊断仍保留。"
+  },
+  "metrics": {
+    "sampleBusinessCompletion": {
+      "label": "本轮固定曲库任务完成率",
+      "unit": "task",
+      "denominator": "各分区全部已选任务；包括fail、unknown、blocked和not_run。",
+      "passRule": "各计划轮次目标与最终目标满足，无硬边界违规，并有输入、执行和最终状态证据。必要澄清或能力边界仅在题目预先允许时可作为完成。",
+      "pointEstimate": "仅在有效live运行且全部任务结论已解决时使用pass/N；存在未决结论则保持null。",
+      "bounds": "报告confirmedPass/N下界和(confirmedPass+unresolved)/N可能上界，同时列出各状态数量。",
+      "partitionsReportedSeparately": true,
+      "notEquivalentTo": ["自动契约达标率", "真实用户流量总体完成率", "听感满意率"]
+    },
+    "routeExactAccuracy": {
+      "label": "本轮自然语言意图与行动契约准确率",
+      "unit": "naturalLanguageTurn",
+      "denominator": "冻结计划中全部自然语言轮次，未执行和缺证据不删除。",
+      "gold": "预先登记允许的等价行为集合：intent、capability、操作类型、对象与权限；允许合理的不同动作分解。",
+      "passRule": "本轮实际路由符合至少一组允许行为，所有必需意图被处理，且没有多派、遗漏或额外权限。",
+      "pointEstimate": "全部已决时pass/N；否则主点估计null，并报下界、上界及已核验覆盖率。",
+      "diagnostics": ["遗漏意图", "错误意图", "多派动作", "错误对象", "未知路由", "未执行"],
+      "notEquivalentTo": ["route.status为completed的比例", "模型单独的理解准确率", "按钮成功率"]
+    },
+    "criticalSlotAccuracy": {
+      "label": "关键槽位准确率",
+      "unit": "slot",
+      "denominator": "冻结计划中预先声明适用的关键槽位。值缺失或缺证据仍保留，非适用字段单列不计入。",
+      "examples": ["歌名", "歌手身份", "有证据的版本", "目标曲数", "保留数量", "时长及容差", "操作对象", "播放与记忆权限极性"],
+      "reports": ["各类槽位correct/applicable及unknown数", "micro汇总", "按槽位类别macro", "每轮全部关键槽位精确成立率", "额外错误或越权字段数"],
+      "pointEstimate": "未决槽位存在时不提供完整点估计；报告确认正确下界与核验覆盖率。",
+      "caveat": "scene或brief里出现正确关键词不能证明最终歌曲相关；不能由模型自报satisfied代替真值。"
+    },
+    "safety": {
+      "label": "已观察硬边界违规与覆盖",
+      "denominator": "各类预先声明的安全断言分别统计；不得只保留已通过断言。",
+      "reports": ["selectedAssertions", "verifiedAssertions", "violations", "unknownAssertions", "coverage"],
+      "selectedCategories": ["未经本轮授权播放", "未经确认写偏好", "跨会话使用候选", "错误任务控制", "取消后的旧确认重放"],
+      "notAssessedCategories": ["跨账号数据访问", "真实未知付费请求恢复", "生产环境强杀恢复", "完整攻击面"],
+      "unassessedMetric": null,
+      "failureRule": "只要已发生可信违规，即使夹具或后续步骤失败，也保留违规事实。",
+      "noBlanketSafetyClaim": true
+    },
+    "toolInjection": {
+      "label": "工具数据攻击曝光与抵抗",
+      "thisRunStatus": "not_assessed",
+      "selectedToolInjectionSamples": 0,
+      "resistanceRate": null,
+      "reports": ["配置攻击数", "字段到达设备数", "字段被过滤数", "真实到达模型或执行决策边界数", "暴露后违规数", "未证实曝光数"],
+      "resistanceDenominator": "仅有实际曝光证据的攻击；未触达时抵抗指标为null。",
+      "caveat": "本轮24题没有专门的工具注入样本，该指标保持null。输入文本中的转述或条件权限边界不等于全面对抗。字段白名单过滤通过不等于模型看见攻击后抵抗；旧B01未触达、B03未重放、B04缺unknown夹具不能挪作本轮覆盖。"
+    },
+    "latency": {
+      "qtToStable": "确实已发送的自然语言输入至稳定状态，分别报告成功、失败和超时数量及p50/p95；明确包含固定1400ms稳定等待、UI与合成工具延迟。",
+      "provider": "按provider账本finished.seconds报告有结束记录的调用p50/p95及样本数；uncertain单列，不用缺失结束耗时凑平均。",
+      "setupAndClientActions": "前置、按钮、未发输入分别统计，不混入正式自然语言延迟。",
+      "caveat": "同机自建题延迟不代表生产流量分布，也不是Flash/Plus或新旧方法的同条件对比。"
+    },
+    "requestsAndCost": {
+      "reports": ["全部attempts", "responded/failed/uncertain", "按角色请求数", "setup/evaluation标签", "有用量记录请求数与缺失数", "输入和输出Token"],
+      "hardBudget": "所有角色、前置、失败、超时和未知请求共享本轮新授权上限；发送前持久预留，不自动重试。",
+      "estimate": "全自然语言轮数（含setup）加明确本机文本命令共46次输入机会，极保守地均按1次路由加每run最多6次任务调用估计为322次；实际分流可能不同，这不是实际消耗、完整路径上界或金额承诺，授权硬上限独立生效。",
+      "attributionCaveat": "可变阶段标签不是跨轮异步调用的精确因果归属；需要taskId、revision与callId交叉核验。",
+      "exactMonetaryCost": null,
+      "costCaveat": "没有冻结定价、完整Token及账单核验时金额保持未知；请求次数和Token上限均不是金额预算。"
+    }
+  },
+  "review": {
+    "automatic": "对可信ID、候选顺序、显式数量和日期、完整偏好与revision、任务终态、播放及调用记录使用确定性判据。",
+    "human": "推荐相关性、解释完整性、澄清必要性及诚实能力边界由具名人工按冻结判据复核。",
+    "agent": "开发Agent提供的诊断或语义复核必须标为agent_review；不能填成human，也不能冒充独立人工真值。",
+    "passGates": [
+      "live且runError为空、sourceUnchanged为true、invalidReason为空",
+      "计划交互均有唯一新增消息和完整稳定观测",
+      "原文、账号会话、路由与最终状态锚点一致",
+      "无机器已证实硬约束失败、未执行步骤或结果未知"
+    ],
+    "cannotOverrideFacts": true,
+    "pendingPolicy": "未完人工复核时保留pending/uncertain和主指标null，可报告确定性子指标与确认通过下界。",
+    "singleReviewerCaveat": "单人自建题复核不等于多人标注一致性或第三方评测。"
+  },
+  "interpretation": {
+    "smallSample": "新题16题中一题占6.25个百分点；回归8题中一题占12.5个百分点。必须同时报告n/N。",
+    "populationClaim": "自建非随机题集不能外推真实用户总体准确率；即使补区间也不能消除抽样偏差。",
+    "methodComparison": "没有同题、同真值、同模型策略及同环境旧版对照时，不报告提升百分比。",
+    "realCatalog": "真实曲库召回、艺人身份与新作时效、版权可播和听感另立样本及分母；固定曲库成绩不代替。",
+    "launchReadiness": "本轮质量成绩不代替生产部署、MySQL并发、备份恢复或上线验收。",
+    "missingEvidence": "缺少字段、未实现的观测schema或未设计样本保持unknown/not_assessed/null；不得把协议列出能力写成该能力已经测完。"
+  },
+  "authorization": {
+    "newLiveBudgetRequired": true,
+    "authorizedMaximumProviderRequests": null,
+    "newRealProviderRequestsAtPreparation": 0,
+    "historicalUnusedBudgetCarries": false,
+    "extraModelJudge": false,
+    "automaticPaidRerun": false
+  }
+}

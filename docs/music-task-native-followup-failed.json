@@ -1,0 +1,107 @@
+{
+  "audioRequested": false,
+  "automaticTaskRetries": 0,
+  "finishedAt": "2026-10-19T04:31:05.983Z",
+  "followupChecks": {
+    "firstPreviewValidated": false,
+    "firstThreeOrderPreserved": true,
+    "passed": false,
+    "preserveFirstThreeRequested": true,
+    "requested": true,
+    "revisionAdvanced": true,
+    "sameTask": true,
+    "submitted": true
+  },
+  "hardChecks": {
+    "allSongsMatchRequestedArtist": true,
+    "artistRequirementRequested": true,
+    "matchingArtistCount": 10,
+    "modelCallCount": 8,
+    "modelCallsWithinLimit": true,
+    "noAudio": true,
+    "noHardConstraintUnmet": false,
+    "previewProduced": false,
+    "releasesRequired": false,
+    "requestedArtist": {
+      "publicTextOmitted": true
+    },
+    "songCount": 10,
+    "targetDurationMs": 2400000,
+    "totalDurationMs": 2649474,
+    "verifiedReleasesPresent": false,
+    "withinTargetDurationTolerance": false
+  },
+  "kind": "native-live-probe-v1",
+  "maximumModelCalls": 8,
+  "nativeBinarySha256": "611ef66b7f7a4b6a639eb92edae56f527e5223c0cf7ceade0cc0fcc804a1ec26",
+  "nativeCompiledAt": "Oct 19 2026 12:28:39",
+  "nativePathConfirmed": true,
+  "passed": false,
+  "realAnonymousCatalog": true,
+  "realModel": true,
+  "realUserDataAccessed": false,
+  "sourcePolicy": {
+    "publicTextOmitted": true
+  },
+  "sourceSha256AfterExecution": {
+    "backend/task-model.mjs": "d2a7149e1c4df4ce8e4f4e43892f2aaa8b553ea1d3f9cb4ccd2a3f61c98bf65c",
+    "backend/task-runtime.mjs": "a7561d47968da0487306e774f510c036b256c4b3d41ee0654691e94a2afb1190",
+    "backend/task-schema.mjs": "15dc8ed50042f516c0431a27f9ed40ee920c95df7ce89546279f949f098f0338",
+    "mainwindowradio.cpp": "4c55447d35dbb10c73980a2a9f2413cf4c5a0d0875197f2e3c59c73874fa9817",
+    "musictaskclient.cpp": "cd5160c6347725a17d196c02934d3181182bf107ce83818c2c441ad2ff5bdec0",
+    "neteaseclient.cpp": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96",
+    "scripts/music-task-live-music-service.mjs": "af945ed1172d8898625f42245e0617196eb6c189c1933f109554673c0edf50f0",
+    "scripts/music-task-live-probe-audit.mjs": "5cedf64a4bd612806e1c0365641d24c0b9654b8d2138413fcba7f72ced9231f3",
+    "tests/music_task_live_probe.cpp": "90199abd0de00fc609177a88fb4cced16096b74216374f3bc041b5cdc3bfae55"
+  },
+  "sourceSha256BeforeExecution": {
+    "backend/task-model.mjs": "d2a7149e1c4df4ce8e4f4e43892f2aaa8b553ea1d3f9cb4ccd2a3f61c98bf65c",
+    "backend/task-runtime.mjs": "a7561d47968da0487306e774f510c036b256c4b3d41ee0654691e94a2afb1190",
+    "backend/task-schema.mjs": "15dc8ed50042f516c0431a27f9ed40ee920c95df7ce89546279f949f098f0338",
+    "mainwindowradio.cpp": "4c55447d35dbb10c73980a2a9f2413cf4c5a0d0875197f2e3c59c73874fa9817",
+    "musictaskclient.cpp": "cd5160c6347725a17d196c02934d3181182bf107ce83818c2c441ad2ff5bdec0",
+    "neteaseclient.cpp": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96",
+    "scripts/music-task-live-music-service.mjs": "af945ed1172d8898625f42245e0617196eb6c189c1933f109554673c0edf50f0",
+    "scripts/music-task-live-probe-audit.mjs": "5cedf64a4bd612806e1c0365641d24c0b9654b8d2138413fcba7f72ced9231f3",
+    "tests/music_task_live_probe.cpp": "90199abd0de00fc609177a88fb4cced16096b74216374f3bc041b5cdc3bfae55"
+  },
+  "sourcesUnchangedDuringRun": true,
+  "startedAt": "2026-10-19T04:30:43.207Z",
+  "uiChecks": {
+    "publicTextOmitted": true
+  },
+  "originalFailureRecorded": false,
+  "publicationMetadata": {
+    "sourceKind": "sanitized-public-extract",
+    "notice": "此文件是公开脱敏摘要，不是完整冻结原报告；原始请求响应及运行状态仅保留在本机私有备份中。原成绩、失败、跳过和不确定性未改写。",
+    "privateOriginalSha256": "9f06d1eaa08c8e6d55f5b3d7a5a226e8b35266b7fc6b947816b124cb4511a594",
+    "privateOriginalBytes": 196386,
+    "privateOriginalPreserved": true,
+    "originalVerdictsUnchanged": true,
+    "metricScalarValuesVerified": 22,
+    "rawEvidencePrivate": true,
+    "fullReplayAvailableInPublicRepository": false,
+    "redactedJsonPaths": [
+      "/catalogAudit",
+      "/checkpointAudit",
+      "/executionRounds",
+      "/explicitActions",
+      "/failure",
+      "/followupChecks/finalThreeIds",
+      "/followupChecks/firstTaskId",
+      "/followupChecks/firstThreeIds",
+      "/followupChecks/lastTaskId",
+      "/hardChecks/requestedArtist",
+      "/instruction",
+      "/lastSnapshot",
+      "/nativeErrors",
+      "/snapshots",
+      "/sourcePolicy",
+      "/terminalRounds",
+      "/uiChecks",
+      "/uiSummary",
+      "/verdictPolicy",
+      "/visibleSongRows"
+    ]
+  }
+}

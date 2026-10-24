@@ -1,0 +1,23 @@
+********* Start testing of HostedFlowTest *********
+Config: Using QtTest library 5.15.19, Qt 5.15.19 (arm64-little_endian-lp64 shared (dynamic) release build; by Clang 21.0.0 (clang-2100.0.123.102) (Apple)), osx 26.6
+INFO   : HostedFlowTest::initTestCase() entering
+PASS   : HostedFlowTest::initTestCase()
+INFO   : HostedFlowTest::realBackendAccountsModelPreviewPlaybackAndLogout() entering
+INFO   : HostedFlowTest::realBackendAccountsModelPreviewPlaybackAndLogout() testdata ../backend_py/tango_backend/server.py was located at <repo>/tests/../backend_py/tango_backend/server.py
+   Loc: [../../../../tests/hosted_flow_test.cpp(264)]
+FAIL!  : HostedFlowTest::realBackendAccountsModelPreviewPlaybackAndLogout() QTestLib: This test case check ("((ownedPythonBackendReady(backend.process, backendPort)))") failed because the requested timeout (5000 ms) was too short, 5450 ms would have been sufficient this time.
+   Loc: [../../../../tests/hosted_flow_test.cpp(285)]
+INFO   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace() entering
+INFO   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(corrupted guest file) testdata ../backend_py/tango_backend/server.py was located at <repo>/tests/../backend_py/tango_backend/server.py
+   Loc: [../../../../tests/hosted_flow_test.cpp(530)]
+PASS   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(corrupted guest file)
+INFO   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(read-only guest file) testdata ../backend_py/tango_backend/server.py was located at <repo>/tests/../backend_py/tango_backend/server.py
+   Loc: [../../../../tests/hosted_flow_test.cpp(530)]
+PASS   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(read-only guest file)
+INFO   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(unavailable data directory) testdata ../backend_py/tango_backend/server.py was located at <repo>/tests/../backend_py/tango_backend/server.py
+   Loc: [../../../../tests/hosted_flow_test.cpp(530)]
+PASS   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(unavailable data directory)
+INFO   : HostedFlowTest::cleanupTestCase() entering
+PASS   : HostedFlowTest::cleanupTestCase()
+Totals: 5 passed, 1 failed, 0 skipped, 0 blacklisted, 68904ms
+********* Finished testing of HostedFlowTest *********

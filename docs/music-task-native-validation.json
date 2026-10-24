@@ -1,0 +1,69 @@
+{
+  "testedAt": "2026-10-19T04:41:04.562Z",
+  "overallAccepted": false,
+  "status": "partial_functionality_verified_ai_adjustment_not_accepted",
+  "totalActualProviderAttempts": 30,
+  "noMorePaidCallsThisRun": true,
+  "records": [
+    {
+      "file": "music-task-real-plan-failure.json",
+      "calls": 2,
+      "technicalPassed": false,
+      "scope": "真实Qwen意图复现，未接曲库"
+    },
+    {
+      "file": "music-task-native-reading.json",
+      "calls": 4,
+      "technicalPassed": true,
+      "scope": "陶喆阅读单轮"
+    },
+    {
+      "file": "music-task-native-compound-failed.json",
+      "calls": 4,
+      "technicalPassed": false,
+      "scope": "复合需求，重复歌手澄清"
+    },
+    {
+      "file": "music-task-native-compound-fixed.json",
+      "calls": 4,
+      "technicalPassed": true,
+      "scope": "确定性选择歌手后复合需求"
+    },
+    {
+      "file": "music-task-native-followup-failed.json",
+      "calls": 8,
+      "technicalPassed": false,
+      "scope": "多轮修改，时长越界及排序校验失败"
+    },
+    {
+      "file": "music-task-native-followup-final.json",
+      "calls": 8,
+      "technicalPassed": true,
+      "scope": "多轮时长与锁定通过；两轮排序降级，整份歌单未改变"
+    }
+  ],
+  "technicalScope": "真实Qt界面→当前MusicTaskClient→自建临时Node后台→真实Qwen与匿名网易云目录；无真实用户数据库或Cookie；不请求音频",
+  "semanticLimitations": [
+    "最后两轮模型排序均含未知ID，使用明确标注的检索顺序与时长降级。",
+    "两轮完整歌单相同，未达到后半段更轻快的效果验收。",
+    "风格、场景、满意度及会员音频权益未在本轮验收。",
+    "这些是暴露问题后的定向回归，不是独立留出集，不可推断泛化成功率。"
+  ],
+  "priorComparison": {
+    "file": "music-task-live-evaluation.json",
+    "scope": "旧版真实Qwen配合成曲库，1个复合样例及一次修改；不能作为当前真实产品质量对比",
+    "fixed": {
+      "modelCalls": 4,
+      "newReleases": "unmet"
+    },
+    "single": {
+      "modelCalls": 6,
+      "newReleases": "unmet"
+    },
+    "dual": {
+      "modelCalls": 12,
+      "newReleases": "satisfied"
+    }
+  },
+  "methodCountingFix": "离线新版逐轮记录并累计工具调用，预览与完整约束满足分开；旧实测不改写。"
+}

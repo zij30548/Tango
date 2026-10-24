@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "id": "tango-agent-evaluation-protocol-2026-10-19",
+  "language": "zh-CN",
+  "purpose": "在明确能力范围、冻结样本和可复核执行证据内评价探歌 Agent；不以自动化测试通过率冒充全体线上用户任务完成率或音乐听感准确率。",
+  "statusAtProtocolPreparation": {
+    "externalProviderCallsInThisEvaluationWork": 0,
+    "liveExecutionStatus": "用户已授权最多500次真实模型请求；协议更新时尚未开始冻结样本的真实模型执行。",
+    "authorizedMaximumProviderRequests": 500,
+    "allocatedMaximumProviderRequests": 496,
+    "allocation": {
+      "primary53TaskControlledCatalog": 408,
+      "pairedFixedBaselineSubset": 72,
+      "nativeRealCatalogTwoCases": 16,
+      "unallocatedReserveNotAutomaticallySpent": 4
+    },
+    "localFixtureRequests": "CLI 的调用限额、密钥回显和中断留档测试使用本机 HTTP 假供应商；这些请求不属于外部模型调用。",
+    "historicalCalls": "此前调试记录独立保留，不计入本轮冻结评测分子、分母或模型调用量。",
+    "temporalScope": "本对象记录协议编制时的状态；后续真实执行状态以带时间戳、冻结清单和供应商调用台账的运行报告为准。"
+  },
+  "implementationReferences": {
+    "suite": "backend/evaluation/agent-suite-v2.json",
+    "suiteId": "tango-agent-balanced-v2-2026-10-19",
+    "scorer": "backend/evaluation/agent-suite-schema.mjs",
+    "executor": "backend/evaluation/agent-evaluation-runner.mjs",
+    "measuredAssertions": "backend/evaluation/agent-observation-assertions.mjs",
+    "faultExecutor": "backend/evaluation/agent-fault-checks.mjs",
+    "generatedBoundaryTests": "backend/test/agent-adversarial-boundaries.test.mjs",
+    "cli": "backend/agent-evaluation-cli.mjs",
+    "launcher": "scripts/evaluate-agent.mjs",
+    "hashAuthority": "正式运行前 --prepare 生成的清单记录最终套件、评分器、执行器和生产代码 SHA-256；本协议不替代该清单。"
+  },
+  "evaluationPopulation": {
+    "target": "探歌已注册音乐任务操作的固定、分层能力诊断题集。",
+    "sampling": "人工构造、按能力分层的非概率抽样；不代表真实流量频率。",
+    "noAbsoluteCoverageClaim": "任何有限题集都不能覆盖所有自然语言、攻击方式、曲库变化、网络故障或用户音乐偏好。报告必须同时列出已测范围、未测范围和证据缺口。",
+    "units": [
+      {
+        "mode": "live_model_controlled_catalog",
+        "namedTasks": 53,
+        "annotatedTurns": 68,
+        "maximumObservedTurnsPerTask": 2,
+        "model": "执行时调用真实已配置模型。",
+        "catalog": "预先冻结的合成曲目、来源和独立元数据真值；不是实际网易云搜索结果。",
+        "establishes": ["已标注意图理解", "多轮条件保留与修改", "实际工具请求相关性", "受限编排", "可核对预览与边界披露"],
+        "doesNotEstablish": ["真实曲库检索召回率", "版权与播放权益", "实际可播放率", "音频版本识别", "主观推荐质量", "生产环境延迟"]
+      },
+      {
+        "mode": "deterministic_fault",
+        "namedTasks": 24,
+        "model": "进程内可控替身，不调用真实模型。",
+        "establishes": ["已命名故障下的账号隔离", "预算与并发边界", "幂等", "过期结果拒绝", "恢复行为", "畸形输出处理"],
+        "doesNotEstablish": ["真实模型理解准确率", "线上故障发生概率", "所有可能故障均已覆盖"]
+      },
+      {
+        "mode": "human_audio",
+        "namedTasks": 2,
+        "status": "未实施真实盲听时保持 unverified。",
+        "establishes": "只有独立听众的实际评分和随机化过程被保存后，才评价场景适合度或调整后的听感。"
+      },
+      {
+        "mode": "generated_contract_samples",
+        "generatedSamples": 784,
+        "randomizedValidSamples": 704,
+        "distinctAdversarialVectors": 80,
+        "seed": "0x5a17c0de",
+        "generator": "xorshift32",
+        "scope": "输入、动作、工具元数据、需求结构、补丁及排序编号的有限契约边界。",
+        "countingPolicy": "不把 784 个生成值计为 784 个用户任务，不与 53 个真实模型任务或 24 个命名故障任务合并分母；断言次数也不等于样本数。"
+      }
+    ],
+    "modePoolingPolicy": "对外主报告分别列出各 mode。summarizeAgentScores 的 overall 仅可用于单一 mode 的选定运行；若一个文件含多种 mode，应读取 byMode，不把混合 overall 当产品质量。",
+    "splitPolicy": "holdout、challenge、manual 分开报告；题目用于调试或修复后必须标为已使用诊断题，后续泛化验证重新冻结未用于调试的题集。"
+  },
+  "primaryMetrics": [
+    {
+      "id": "strict_task_completion_rate",
+      "label": "严格任务完成率",
+      "reportPath": "summary.byMode.live_model_controlled_catalog.strictCompletionRate",
+      "unit": "一个完整命名任务；多轮任务的全部已冻结轮次属于同一任务。",
+      "numerator": "该任务所有适用 gold 检查均为 passed 的任务数。",
+      "denominator": "冻结清单中本次选定的全部真实模型任务数，包含失败、中断和尚未尝试任务。",
+      "formula": "completed / selected_tasks",
+      "failurePolicy": "任一适用检查 failed 则任务失败；没有 failed 但存在 unverified 则任务未核验，不计完成。not_applicable 不进入适用检查数。",
+      "includes": ["期望任务状态", "已标注意图字段与语义概念", "实际派发的查询概念", "预览约束", "显式登记且具有执行证据的安全断言"],
+      "notEquivalentTo": ["只生成预览", "只返回合法 JSON", "只完成 HTTP 请求", "所有歌曲听起来合适"]
+    },
+    {
+      "id": "complete_annotated_intent_match",
+      "label": "完整已标注意图匹配率",
+      "reportPath": "summary.byMode.live_model_controlled_catalog.completeIntentMatch",
+      "unit": "一个已冻结、已标注的用户轮次。",
+      "numerator": "该轮全部已标注 brief、briefIncludes、briefDate、briefConcept、question、question_concepts 检查均通过的轮数。",
+      "denominator": "选定真实模型任务的全部已冻结轮数；缺失轮次作为 unverified，不从分母删除。",
+      "formula": "passed_annotated_intent_turns / selected_annotated_turns",
+      "excludes": ["终态是否成功", "实际工具查询是否相关", "预览是否满足约束"],
+      "reasonForSeparateReporting": "可以理解正确却执行失败，也可以偶然产出可用歌单但理解漏条件。两者必须分开评价。",
+      "annotationLimit": "完整是指全部已标注条件匹配，不保证所有未标注意图、自由文本细微含义或真实心理意图均被识别。别名和关键词匹配是有限代理，语义争议须独立复核。"
+    }
+  ],
+  "secondaryMetrics": [
+    {
+      "id": "conservative_gold_accuracy",
+      "label": "保守 gold 检查通过率",
+      "formula": "passed_checks / (passed_checks + failed_checks + unverified_checks)",
+      "reportField": "conservativeGoldAccuracy",
+      "interpretation": "未知证据保留在分母；这是一组冻结检查的通过比例，不是总体用户意图准确率。"
+    },
+    {
+      "id": "observed_gold_accuracy",
+      "label": "已观测 gold 检查通过率",
+      "formula": "passed_checks / (passed_checks + failed_checks)",
+      "reportField": "observedGoldAccuracy",
+      "interpretation": "排除了 unverified，必须同时公布 coverage；不能单独展示以隐藏证据缺口。"
+    },
+    {
+      "id": "evidence_coverage",
+      "label": "证据覆盖率",
+      "formula": "(passed_checks + failed_checks) / (passed_checks + failed_checks + unverified_checks)",
+      "reportField": "evidenceCoverage"
+    },
+    {
+      "id": "case_macro_accuracy",
+      "label": "任务宏平均检查通过率",
+      "formula": "mean(per_task_conservative_accuracy)",
+      "reportField": "caseMacroAccuracy",
+      "interpretation": "每个任务权重相同；与检查数较多任务权重更大的微平均 gold 检查通过率一起报告。"
+    },
+    {
+      "id": "operational_measurements",
+      "measurements": ["每任务和每轮模型请求数", "成功、失败和不确定调用数", "输入输出 token", "提交至终态耗时分布", "真实工具调用与重试数", "模型排序降级率", "条件满足、失败和未知数量"],
+      "costPolicy": "保存供应商实际返回 token。金额只在有可核验计费单价和适用日期时计算；不能由调用次数推定费用。",
+      "latencyPolicy": "受控曲库耗时不是公网曲库和播放链路耗时；样本不足时不以单个 P95 数字宣称线上性能。"
+    }
+  ],
+  "uncertainty": {
+    "completionInterval": "评分器对任务级二元完成率计算 95% Wilson 区间。非概率诊断题集上的区间仅作描述，不是对全部用户流量的有效总体推断。",
+    "intentInterval": "当前评分器输出已标注轮次匹配率，没有为该指标自动计算置信区间。同任务多轮相关，后续区间分析应按任务聚类，而非把每轮当独立用户。",
+    "goldCheckInterval": "同任务多个检查高度相关，不把每个检查当独立伯努利样本制造过窄的区间。",
+    "zeroDenominator": "分母为零输出 null，不输出 0% 或 100%。",
+    "prohibitedClaims": ["本项目总体线上准确率已达到某值", "所有攻击均已通过", "自动化来源标签证明听感提升", "少量开发题通过率代表用户任务成功率"]
+  },
+  "independentEvidenceRules": {
+    "gold": "执行前人工标注并冻结；评分器独立读取冻结元数据真值，不能把生产返回的 satisfied 标签直接当正确答案。",
+    "catalogGrounding": "歌曲编号须存在于本轮实际交付给执行器的候选或先前已观测曲目；不能从套件其他题目的曲库泄漏候选。",
+    "queryRelevance": "只检查实际派发并交付结果的工具步骤输入，未使用的计划或最终 brief 不算工具请求已处理条件。",
+    "metadataIntegrity": "歌名、歌手和时长与冻结候选逐项比较；时长独立求和，允许误差沿用现有业务契约 max(60000ms, 目标时长的10%)。",
+    "versionTruth": "已知合成版本真值用于结果评分；真实曲库无 Live 字样不等于已经证明不是现场录音。",
+    "secretDisclosure": "在 HTTP 原始请求消息和响应正文脱敏前检测真实配置密钥及 JSON 转义形式，只记录泄露布尔值和计数；未完整观测的响应保持未知。授权头不是交给模型的输入。",
+    "sideEffects": "以受控执行器事件和临时 SQLite 写入审计为证据，不能仅凭 task.status 声称无副作用；物理播放、系统操作及客户端偏好库不在该后端审计范围。",
+    "memory": "长期记忆权限或未写入断言需要偏好内容快照、摘要或完整写入审计；没有可用观测则 unverified，不能从没有看到变化推断通过。"
+  },
+  "freezeAndExecution": {
+    "manifestBeforeFirstRequest": ["套件与评分器 SHA-256", "生产任务代码、传输适配、执行器和 CLI SHA-256", "固定 case ID 和顺序", "每任务轮数和最大调用预算", "策略、种子、Node 版本和系统架构"],
+    "liveGate": "--live 必须显式传入正调用上限并验证冻结清单；实际请求上限不能超过该清单。启动器只让真实执行子进程加载后台配置，不打印地址或密钥。",
+    "boundedRecovery": "生产中已有的一次计划格式纠正及受限工具补查仍执行，但每次模型请求均计入同一预算；没有隐藏的整题重跑或 best-of-N。",
+    "requestDurability": "每次可能发出的模型请求先原子持久保存 started 记录，再发送。硬中断后保留不确定请求，不把可能已计费调用删除或自动重放。",
+    "checkpointing": "保存逐请求台账和逐任务原始执行证据；正常失败、格式降级、预算中断和未知证据全部留档。",
+    "interruption": "剩余未运行题仍保留冻结分母并产生 unverified 评分；中断报告不能只对已成功完成题重新计算总体。",
+    "sourceIntegrity": "执行前后比较源文件和套件哈希；发生变化时该次报告标为源变化无效，保留原始调用记录。",
+    "failureRetention": "修复后的重测生成新的清单和报告，旧失败报告继续存在；不能改原 gold 或删除失败题使原版本通过。",
+    "budgetAllocation": "先依据逐轮最多六次模型请求预留样本，得到完整任务覆盖的最大预算，再在用户同意的额度内执行；实际调用数以 HTTP 台账为准。"
+  },
+  "methodComparison": {
+    "question": "比较固定流程、单 Agent 协调或其他候选编排，是否在本能力诊断集上改善完成率，并付出多少延迟与调用成本。",
+    "preregisteredFixedBaselineSubset": {
+      "tasks": 9,
+      "turns": 12,
+      "maximumProviderRequests": 72,
+      "selection": "执行前按功能挑选的配对子集；不是随机抽取的真实用户任务。",
+      "ids": ["initial_tao_36", "initial_library_35", "clarify_conflicting_artist", "release_last_halfyear", "turn_style_fresh_sources", "turn_revoke_artist", "turn_lock_then_replace", "inject_tool_fake_system", "boundary_unknown_duration"]
+    },
+    "pairedDesign": ["执行前冻结同一组配对任务 ID、相同多轮输入、gold、固定时钟和曲库候选", "除待比较编排外保持模型版本、提示词合同、输入权限、工具接口和评分器一致", "各策略独立设置物理调用上限，所有策略上限之和不超过用户批准额度", "每策略每题保存一次正式结果，不选择最好的一次", "策略顺序预先随机或交错安排，并记录执行时间以减少服务状态偏差"],
+    "pairedMetrics": ["两种方法都完成、都未完成、仅方法A完成、仅方法B完成的任务数", "严格完成率的配对差值", "完整已标注意图匹配差值", "每任务延迟、模型请求和 token 的配对差值", "降级、未知和安全失败分布"],
+    "analysis": "区间或显著性检验按配对任务进行；样本小、差异少或多重比较时如实说明不确定性，不凭单一百分比宣布优越。",
+    "budgetStop": "两种方法任何一方未完成时，主配对集合仍按预注册分母报告未核验，并另列完整配对的敏感性分析；不能只保留双方都成功的任务。",
+    "historicalRestriction": "旧版模拟流程85%或90%的预览产出率、旧调试题和当前真实模型严格完成率口径不同，禁止直接作为新方法优越性的对照。"
+  },
+  "remainingValidation": {
+    "blindListening": "先冻结场景、匿名曲目或片段、评价问题和分析方法；随机展示策略和顺序，听众不知道来源，允许无差别及不确定。分别报告场景相关性、偏好与调整方向，并记录评价人数和一致性；不得用来源标签代替听众评分。",
+    "realRetrieval": "单独对真实曲库保存查询时间、账号权益条件、实际请求、返回结果和可核验来源；由独立人员标注相关候选，再评价检索相关性、覆盖及最终预览。没有可枚举相关全集时不声称测得真正 Recall@K。",
+    "playback": "另测预览采用至实际首音、完整播放权益、试听识别、失效地址恢复和账号隔离；这些不在受控曲库预览完成率内。",
+    "onlineSampling": "上线内测后经合适的数据授权，定义目标用户、任务边界和时间窗口；对真实任务按已知概率随机抽样，纳入放弃、错误和中断，按用户或会话聚类，并保存必要而脱敏的审计证据。",
+    "onlineGold": "独立评审人员在看不到策略和模型结论的条件下标注任务要求与结果，分歧保留并仲裁；分别统计简单、多轮、复杂和不支持请求，报告真实分层权重与总体估计。",
+    "launchDecision": "通过阈值需依据业务损失、用户目标、历史基线和风险容忍预注册。本协议不凭空给出上线百分比阈值。"
+  }
+}

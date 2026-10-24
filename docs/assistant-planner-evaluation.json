@@ -1,0 +1,217 @@
+{
+  "testedAt": "2026-10-18T13:04:34.679Z",
+  "result": "completed",
+  "modelRequestLimit": 12,
+  "modelRequestsAttempted": 12,
+  "design": "paired: one common planner draft per fixture; same model independent critic adds one sequential call",
+  "limitations": "Six representative intent fixtures, one run each; not a statistically reliable quality benchmark. Measures planning only, not catalog recall or listening satisfaction.",
+  "originalDatabasesAccessed": false,
+  "fixtures": [
+    {
+      "name": "drinking_scene_is_not_permanent_memory",
+      "input": {
+        "instruction": "我现在在喝酒，你能推荐一些喝酒的时候听的歌曲吗",
+        "history": [],
+        "preference": ""
+      },
+      "single": {
+        "passed": true,
+        "elapsedMs": 1698,
+        "output": {
+          "kind": "radio",
+          "title": "微醺时刻适合听的歌曲推荐",
+          "queries": [
+            "微醺 酒馆 氛围感",
+            "独酌 夜晚 舒缓"
+          ],
+          "excludedArtists": [],
+          "note": "根据用户当前在喝酒的场景，推荐适合放松、微醺氛围的歌曲。"
+        }
+      },
+      "plannerPlusCritic": {
+        "passed": true,
+        "elapsedMs": 3355,
+        "output": {
+          "kind": "radio",
+          "title": "微醺时刻适合听的歌曲推荐",
+          "queries": [
+            "微醺 酒馆 氛围感",
+            "独酌 夜晚 舒缓"
+          ],
+          "excludedArtists": [],
+          "note": "根据用户当前在喝酒的场景，推荐适合放松、微醺氛围的歌曲。"
+        }
+      }
+    },
+    {
+      "name": "artist_latest_requires_live_catalog",
+      "input": {
+        "instruction": "最近邓紫棋有没有发新歌，帮我找最近的专辑和新歌",
+        "history": [],
+        "preference": ""
+      },
+      "single": {
+        "passed": true,
+        "elapsedMs": 938,
+        "output": {
+          "kind": "releases",
+          "artist": "邓紫棋",
+          "note": "用户查询邓紫棋最近的专辑和新歌，需调用曲库工具获取最新发行信息。"
+        }
+      },
+      "plannerPlusCritic": {
+        "passed": true,
+        "elapsedMs": 1789,
+        "output": {
+          "kind": "releases",
+          "artist": "邓紫棋",
+          "note": "用户查询邓紫棋最近的专辑和新歌，需调用曲库工具获取最新发行信息。"
+        }
+      }
+    },
+    {
+      "name": "explicit_memory_merges_existing_preference",
+      "input": {
+        "instruction": "记住我喜欢爵士，以后也按这个口味推荐",
+        "history": [],
+        "preference": "不要现场版"
+      },
+      "single": {
+        "passed": true,
+        "elapsedMs": 1338,
+        "output": {
+          "kind": "remember",
+          "preference": "不要现场版；喜欢爵士风格，以后按此口味推荐。",
+          "note": "已合并用户明确要求：保留原有偏好'不要现场版'，新增长期偏好'喜欢爵士'并作为后续推荐基调。"
+        }
+      },
+      "plannerPlusCritic": {
+        "passed": true,
+        "elapsedMs": 2433,
+        "output": {
+          "kind": "remember",
+          "preference": "不要现场版；喜欢爵士风格，以后按此口味推荐。",
+          "note": "已合并用户明确要求：保留原有偏好'不要现场版'，新增长期偏好'喜欢爵士'并作为后续推荐基调。"
+        }
+      }
+    },
+    {
+      "name": "session_artist_exclusion_is_not_memory",
+      "input": {
+        "instruction": "这次别给我周杰伦，还是喝酒听",
+        "history": [],
+        "preference": ""
+      },
+      "single": {
+        "passed": true,
+        "elapsedMs": 2041,
+        "output": {
+          "kind": "radio",
+          "title": "微醺时刻非周杰伦风格歌曲推荐",
+          "queries": [
+            "微醺 夜晚 氛围感",
+            "爵士 慵懒 饮酒"
+          ],
+          "excludedArtists": [
+            "周杰伦"
+          ],
+          "note": "用户当前处于饮酒场景，偏好轻松或氛围感的音乐，明确排除周杰伦。根据 instruction 和 history（为空），生成针对微醺场景且不含周杰伦的歌单主题。"
+        }
+      },
+      "plannerPlusCritic": {
+        "passed": true,
+        "elapsedMs": 3594,
+        "output": {
+          "kind": "radio",
+          "title": "微醺时刻非周杰伦风格歌曲推荐",
+          "queries": [
+            "微醺 夜晚 氛围感",
+            "爵士 慵懒 饮酒"
+          ],
+          "excludedArtists": [
+            "周杰伦"
+          ],
+          "note": "用户当前处于饮酒场景，偏好轻松或氛围感的音乐，明确排除周杰伦。根据 instruction 和 history（为空），生成针对微醺场景且不含周杰伦的歌单主题。"
+        }
+      }
+    },
+    {
+      "name": "followup_keeps_scene_and_adjusts_vocals",
+      "input": {
+        "instruction": "换一批，少点人声",
+        "history": [
+          "我现在喝酒，推荐华语舒缓的歌曲"
+        ],
+        "preference": ""
+      },
+      "single": {
+        "passed": true,
+        "elapsedMs": 2396,
+        "output": {
+          "kind": "radio",
+          "title": "微醺氛围纯音乐 舒缓器乐",
+          "queries": [
+            "微醺 纯音乐 舒缓",
+            "夜晚 轻音乐 无歌词"
+          ],
+          "excludedArtists": [],
+          "note": "结合上一轮'喝酒'和'华语'的语境，本次请求要求'少点人声'，因此将主题调整为以器乐、纯音乐为主的舒缓氛围歌单，保留微醺与夜晚的场景感，排除以人声演唱为主的曲目。"
+        }
+      },
+      "plannerPlusCritic": {
+        "passed": true,
+        "elapsedMs": 4126,
+        "output": {
+          "kind": "radio",
+          "title": "微醺氛围纯音乐 舒缓器乐",
+          "queries": [
+            "微醺 纯音乐 舒缓",
+            "夜晚 轻音乐 无歌词"
+          ],
+          "excludedArtists": [],
+          "note": "结合上一轮'喝酒'和'华语'的语境，本次请求要求'少点人声'，因此将主题调整为以器乐、纯音乐为主的舒缓氛围歌单，保留微醺与夜晚的场景感，排除以人声演唱为主的曲目。"
+        }
+      }
+    },
+    {
+      "name": "ambiguous_latest_artist_needs_clarification",
+      "input": {
+        "instruction": "他最近有新歌吗",
+        "history": [],
+        "preference": ""
+      },
+      "single": {
+        "passed": true,
+        "elapsedMs": 867,
+        "output": {
+          "kind": "clarify",
+          "note": "请问您指的是哪位歌手？请提供具体歌手名称以便查询。"
+        }
+      },
+      "plannerPlusCritic": {
+        "passed": true,
+        "elapsedMs": 1601,
+        "output": {
+          "kind": "clarify",
+          "note": "请问您指的是哪位歌手？请提供具体歌手名称以便查询。"
+        }
+      }
+    }
+  ],
+  "single": {
+    "correct": 6,
+    "cases": 6,
+    "calls": 6,
+    "elapsedMs": 9278,
+    "averageLatencyMs": 1546
+  },
+  "plannerPlusCritic": {
+    "correct": 6,
+    "cases": 6,
+    "calls": 12,
+    "elapsedMs": 16898,
+    "averageLatencyMs": 2816
+  },
+  "model": "qwen3.7-flash-2026-07-15",
+  "decision": "No correctness gain in this small diagnostic; retain the single planner and deterministic tool/schema checks."
+}

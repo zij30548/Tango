@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-19T11:07:38.303846+00:00",
+  "providerCalls": 0,
+  "evaluationRegressionTests": {
+    "passed": 44,
+    "failed": 0,
+    "log": "docs/evaluation-versions/v6-preflight/evaluator-tests.log",
+    "sha256": "5713f65d860347c75341e30eae99faff9c6758b3c349f01c48fa3c0f90b2a0da"
+  },
+  "independentSchemaReview": {
+    "passed": 30,
+    "failed": 0
+  },
+  "preExecutionGoldReview": true,
+  "allBusinessAndPromptSourcesUnchangedFromV5": true,
+  "evaluationOnlyChange": "Null-safe missing preview ranking getter; no historical rescoring.",
+  "allTasksSelected": true,
+  "selectedTaskCount": 3,
+  "selectedTurns": 4,
+  "actualLiveCap": 18,
+  "selectionReserve": 24,
+  "feasibilityWitnesses": {
+    "v6_distinct_artist_roles": [
+      910000001,
+      924000001,
+      910000002
+    ],
+    "v6_clarification_date_carry": [
+      926000008
+    ],
+    "v6_segmented_background_duration": [
+      914000001,
+      914000002,
+      914000003,
+      914000004,
+      914000005,
+      914000006
+    ]
+  }
+}

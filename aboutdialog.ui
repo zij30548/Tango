@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+ <class>AboutDialog</class>
+ <widget class="QDialog" name="AboutDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>623</width>
+    <height>456</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>账户管理</string>
+  </property>
+  <layout class="QVBoxLayout" name="rootLayout">
+   <property name="leftMargin">
+    <number>24</number>
+   </property>
+   <property name="topMargin">
+    <number>24</number>
+   </property>
+   <property name="rightMargin">
+    <number>24</number>
+   </property>
+   <property name="bottomMargin">
+    <number>24</number>
+   </property>
+   <property name="spacing">
+    <number>16</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="groupBox_usersList">
+     <property name="title">
+      <string>账户管理</string>
+     </property>
+     <layout class="QVBoxLayout" name="groupBox_usersListLayout">
+      <property name="spacing">
+       <number>16</number>
+      </property>
+      <item>
+       <widget class="QTableWidget" name="tableWidget_usersList" />
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_UserHint">
+     <property name="text">
+      <string>本机账户 · 右键账户可删除</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>subtitle</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="footerLayout">
+     <item>
+      <spacer name="footerSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_CloseW">
+       <property name="text">
+        <string>关闭</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources />
+ <connections />
+</ui>

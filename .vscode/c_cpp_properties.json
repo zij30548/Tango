@@ -1,0 +1,34 @@
+{
+  "version": 4,
+  "configurations": [
+    {
+      "name": "Mac ARM64 · Qt 5",
+      "compilerPath": "/usr/bin/clang++",
+      "intelliSenseMode": "macos-clang-arm64",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/build-macos",
+        "/opt/homebrew/opt/hiredis/include",
+        "/opt/homebrew/opt/qt@5/lib/QtCore.framework/Headers",
+        "/opt/homebrew/opt/qt@5/lib/QtGui.framework/Headers",
+        "/opt/homebrew/opt/qt@5/lib/QtWidgets.framework/Headers",
+        "/opt/homebrew/opt/qt@5/lib/QtMultimedia.framework/Headers",
+        "/opt/homebrew/opt/qt@5/lib/QtNetwork.framework/Headers",
+        "/opt/homebrew/opt/qt@5/lib/QtSql.framework/Headers"
+      ],
+      "compilerArgs": [
+        "-F/opt/homebrew/opt/qt@5/lib"
+      ],
+      "defines": [
+        "QT_WIDGETS_LIB",
+        "QT_GUI_LIB",
+        "QT_CORE_LIB",
+        "QT_MULTIMEDIA_LIB",
+        "QT_NETWORK_LIB",
+        "QT_SQL_LIB"
+      ]
+    }
+  ]
+}

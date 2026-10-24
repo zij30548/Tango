@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "authorization": "用户明确授权本轮最多80次模型请求，失败、超时、未知也计数",
+  "maximum": 80,
+  "started": 61,
+  "remaining": 19,
+  "runs": [
+    {
+      "id": "20261023T083918Z-325cea1f",
+      "kind": "single_formal_development_calibration",
+      "started": 38,
+      "maximum": 80,
+      "summary": "docs/agent-upgrade/conversation-calibration-live-v1.json"
+    },
+    {
+      "id": "run-20261023T093440Z-317b6ac9",
+      "kind": "known_failure_repair_regression",
+      "started": 8,
+      "maximum": 18,
+      "summary": "docs/agent-upgrade/chat-repair-verification.json"
+    },
+    {
+      "id": "memory-diag-20261023T094011Z-cb3ea176",
+      "kind": "single_rejected_proposal_diagnosis",
+      "started": 1,
+      "maximum": 1,
+      "summary": "docs/agent-upgrade/chat-repair-verification.json"
+    },
+    {
+      "id": "live-desktop-20261023T113027Z-9a1d1e42",
+      "kind": "actual_qt_real_catalog_demonstration",
+      "started": 14,
+      "maximum": 18,
+      "summary": "docs/agent-upgrade/demo-release-verification.json"
+    }
+  ],
+  "historicalLedgerUnchanged": "docs/agent-evaluation-cumulative-budget.json",
+  "noAutomaticSpendOfRemaining": true
+}

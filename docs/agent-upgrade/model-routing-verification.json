@@ -1,0 +1,1362 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-21T13:07:03.558169+00:00",
+  "status": "offline_engineering_passed",
+  "scope": "Flash/Plus按任务模型路由的配置、HTTP能力、调用审计、预算和恢复工程验收；真实Plus联通和推荐收益尚未验证。",
+  "implementation": {
+    "default": "flash_only; Plus disabled; 未改私有.env，未自动重启应用后台",
+    "strategies": {
+      "flash_only": "全部音乐模型步骤与路由Flash",
+      "task_split": "意图Flash，复杂plan/research可Plus，observe/compose Flash",
+      "plus_only": "音乐任务四种模型步骤Plus，意图路由仍Flash，非所有后台请求Plus"
+    },
+    "selection": "可信结构化意图、依赖、续问、已确认修订、多类约束；不是句长或模型自报confidence",
+    "plusModel": "qwen3.7-plus; 思考/SSE/JSON; 模板总Token上限8192，超时60000ms，未实际连接供应商",
+    "credentialBoundary": "规范化同base才自动继承Key，不同端点必须显式Plus Key；公开描述不含凭据或URL",
+    "executionBoundary": "原额度/槽位/CAS/owner/lease保留；未知调用不自动重发或换模型",
+    "recovery": "策略快照仅含当前策略使用的profile，Key不入指纹；缺旧记录保持unknown，多模型旧任务不静默迁移",
+    "persistence": "两类账本各幂等加model_selection_json/model_metadata_json可空列，新增列不猜测旧模型；迁移仅放行这两项已知扩展",
+    "startupGuard": "health.modelRoutingVersion=1，启动器拒绝旧实例；环境配置变更仍需重启"
+  },
+  "tests": {
+    "quick": {
+      "python": {
+        "passed": 411,
+        "failed": 0,
+        "skipped": 19
+      },
+      "serviceAndScripts": {
+        "passed": 53,
+        "failed": 0,
+        "skipped": 0
+      },
+      "skips": "模型新增专项需要独立MySQL/PG runner，已在下列层级分别验证"
+    },
+    "mysql": {
+      "passed": 919,
+      "failed": 0,
+      "skipped": 42,
+      "skipReasons": {
+        "postgresOnly": 40,
+        "sqliteUnsupportedDistributedLease": 2
+      }
+    },
+    "pg": {
+      "passed": 897,
+      "failed": 0,
+      "skipped": 64,
+      "skipReasons": {
+        "mysqlOnly": 62,
+        "sqliteUnsupportedDistributedLease": 2
+      }
+    },
+    "native": {
+      "hosted": {
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0
+      },
+      "musicTask": {
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0
+      },
+      "businessCases": 6,
+      "lifecycleChecks": 4,
+      "platform": "macOS Qt5 native; mock providers/catalog; generated silent WAV"
+    },
+    "countPolicy": "各层及专项高度重叠，不相加成独立用户任务数或总体准确率。",
+    "realModelRequests": 0,
+    "realCatalogRequests": 0,
+    "cloudCI": "not_executed",
+    "repositoryFinal": {
+      "ok": true,
+      "checks": {
+        "manifest": 5,
+        "navigation": 21,
+        "architecture": [
+          54,
+          59
+        ]
+      },
+      "errors": [],
+      "scope": "repository-contracts-only; no model calls, private configuration, databases or services"
+    },
+    "currentDocumentation": {
+      "markdownFiles": 20,
+      "validLocalLinks": 214,
+      "brokenLinks": 0
+    }
+  },
+  "reviewFindingsResolved": [
+    "模型JSON通过但业务校验失败时，research/observe/plan保留已获得的usage与provider元数据；compose降级也保留审计。",
+    "可选上游标识的净化规则与账本统一，脏metadata丢弃而不把合法业务错误写失败。",
+    "缺失/部分/无效Token保持unknown，不把缺失值补零；次数额度仍记录尝试。",
+    "不使用的Plus配置变更不影响Flash-only恢复；不同端点不能隐式发送Flash Key。"
+  ],
+  "developmentFailures": [
+    {
+      "type": "test_fixture",
+      "source": "model-routing-evidence/first-failure-summary.txt",
+      "result": {
+        "failed": 1,
+        "passed": 25,
+        "skipped": 3
+      },
+      "fix": "使用符合runtime构造合同的未打开临时Store；不放宽产品断言",
+      "evidenceKind": "tool_output_transcript_summary"
+    },
+    {
+      "type": "test_fixture",
+      "source": "model-routing-evidence/route-fixture-query-failure-summary.txt",
+      "result": {
+        "failed": 2,
+        "passed": 27,
+        "skipped": 3
+      },
+      "fix": "从调用尝试表读取审计字段，原错误查询了route计划表；断言保留",
+      "evidenceKind": "tool_output_transcript_summary"
+    },
+    {
+      "type": "test_fixture",
+      "source": "代理开发工具记录；未保存完整原始日志",
+      "failed": 1,
+      "fix": "存储测试把中文文案预期改为AI_TOTAL_LIMIT错误码，业务限额断言保留",
+      "evidenceKind": "agent_report_only"
+    }
+  ],
+  "limitations": {
+    "providerCompatibility": "真实qwen3.7-plus Key/权限/端点、SSE与JSON联通未实测；仅官方说明与模拟验证",
+    "semanticTaskCompletionRate": null,
+    "semanticAccuracy": null,
+    "qualityCostLatencyComparison": null,
+    "moneyBudget": "未实现价格冻结及原子金额预留；现有次数与Token边界不能当作金额硬预算",
+    "architecture": "固定LangGraph，无新增MCP、动态Supervisor或Agent角色；不宣称可上线",
+    "modelIdentity": "providerModel仅供应商返回标识，不能独立证明远端权重版本"
+  },
+  "privacyAndProvenance": {
+    "readPrivateModelConfig": false,
+    "modifiedPrivateModelConfig": false,
+    "usedRealUserDatabaseForTests": false,
+    "restartedUserBackend": false,
+    "actualUserDbSchemaUpgradedByThisTask": false,
+    "committed": false,
+    "pushed": false,
+    "frozenHistoricalFilesUnchanged": 171,
+    "registeredQtProductFilesUnchanged": 59
+  },
+  "runs": [
+    {
+      "tier": "quick",
+      "status": "passed",
+      "scope": "离线契约、模拟模型/曲库、临时 SQLite 与本机 HTTP；不覆盖 MySQL、Qt 音频或真实模型效果。",
+      "startedAt": "2026-10-21T12:58:42.908061+00:00",
+      "finishedAt": "2026-10-21T12:58:55.966806+00:00",
+      "steps": [
+        {
+          "id": "repository",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 0.234
+        },
+        {
+          "id": "node_version",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 0.036
+        },
+        {
+          "id": "python_offline",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 12.234
+        },
+        {
+          "id": "service_offline",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 0.553
+        }
+      ]
+    },
+    {
+      "tier": "mysql",
+      "status": "passed",
+      "scope": "独立临时 MySQL/Redis 全回归（迁移用例另建 PG）；不读取应用库，不评价真实模型/曲库/音频。",
+      "startedAt": "2026-10-21T12:58:42.908072+00:00",
+      "finishedAt": "2026-10-21T12:59:26.031326+00:00",
+      "steps": [
+        {
+          "id": "repository",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 0.233
+        },
+        {
+          "id": "mysql_isolated",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 42.89
+        }
+      ]
+    },
+    {
+      "tier": "pg",
+      "status": "passed",
+      "scope": "独立临时 PostgreSQL/Redis 兼容回归；不能与 MySQL 测试数量相加。",
+      "startedAt": "2026-10-21T12:58:42.908109+00:00",
+      "finishedAt": "2026-10-21T12:59:08.837606+00:00",
+      "steps": [
+        {
+          "id": "repository",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 0.233
+        },
+        {
+          "id": "pg_isolated",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 25.696
+        }
+      ]
+    },
+    {
+      "tier": "native",
+      "status": "passed",
+      "scope": "macOS 原生 Qt 两套流程顺序运行；模拟模型/曲库、临时 SQLite 和生成 WAV，不是会员音乐验收。",
+      "startedAt": "2026-10-21T13:00:33.644016+00:00",
+      "finishedAt": "2026-10-21T13:01:13.559070+00:00",
+      "steps": [
+        {
+          "id": "repository",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 0.179
+        },
+        {
+          "id": "hosted_flow_test_configure",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 0.777
+        },
+        {
+          "id": "hosted_flow_test_build",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 8.649
+        },
+        {
+          "id": "hosted_flow_test_run",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 6.641
+        },
+        {
+          "id": "music_task_flow_test_configure",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 0.496
+        },
+        {
+          "id": "music_task_flow_test_build",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 9.362
+        },
+        {
+          "id": "music_task_flow_test_run",
+          "exitCode": 0,
+          "reason": "passed",
+          "seconds": 13.798
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/quick-run.json",
+      "sha256": "526e0dcbf3ba4e9dde0a9e72ceb098104e50993e86af971c0a4d2ceb88bd6cf9",
+      "source": "20261021T125842-qrl0t9zr/report.json; 仅测试元数据，工作区路径替换"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/quick-repository.txt",
+      "sha256": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c",
+      "source": "20261021T125842-qrl0t9zr/repository.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/quick-python_offline.txt",
+      "sha256": "eba8b1a1f69e0bf5688d8f541d119dacc12f87b03fda9208d48e78f99fed4f0e",
+      "source": "20261021T125842-qrl0t9zr/python_offline.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/quick-service_offline.txt",
+      "sha256": "fb92f55a90e5183c77a2dfcfdf8282e875a59daf8f8938f33f3cead7dcbfbdb5",
+      "source": "20261021T125842-qrl0t9zr/service_offline.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/mysql-run.json",
+      "sha256": "f3cf289416e7ed6a810fa7eb4070039c9007a866627f06fa6c7891dfd8be05ba",
+      "source": "20261021T125842-r6b7kqqw/report.json; 仅测试元数据，工作区路径替换"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/mysql-repository.txt",
+      "sha256": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c",
+      "source": "20261021T125842-r6b7kqqw/repository.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/mysql-mysql_isolated.txt",
+      "sha256": "5859290c8b34901e2af32df7c4d2fb570bdcb05a0bab1037fcfeb08cf0208ec9",
+      "source": "20261021T125842-r6b7kqqw/mysql_isolated.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/pg-run.json",
+      "sha256": "1a41967d26fac49b632d77ba2febbf9fb8015f8ae9c69b71cc65f86d65090794",
+      "source": "20261021T125842-zkmgsb3q/report.json; 仅测试元数据，工作区路径替换"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/pg-repository.txt",
+      "sha256": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c",
+      "source": "20261021T125842-zkmgsb3q/repository.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/pg-pg_isolated.txt",
+      "sha256": "9caa18d76a359fe86a037a81a8842a58d1a56c03f6ec6ecb7ba70408f46ec5fb",
+      "source": "20261021T125842-zkmgsb3q/pg_isolated.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/native-run.json",
+      "sha256": "0a8951e44d798ab2b8abb334cf3510889752bba645603ed8a126c24cbffa3118",
+      "source": "20261021T130033-mif7ansm/report.json; 仅测试元数据，工作区路径替换"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/native-repository.txt",
+      "sha256": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c",
+      "source": "20261021T130033-mif7ansm/repository.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/native-hosted_flow_test_run.txt",
+      "sha256": "8bf52359fb224587e653b0133b19a812f27d59de8c0c922da10927e1d8d4e3ef",
+      "source": "20261021T130033-mif7ansm/hosted_flow_test_run.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/native-music_task_flow_test_run.txt",
+      "sha256": "97135b9de91e8d3fc0adabd59b930be57d45f80ce30070012557f14242aa487d",
+      "source": "20261021T130033-mif7ansm/music_task_flow_test_run.log; 隔离测试输出"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/first-failure-summary.txt",
+      "sha256": "7febe403f2de6bcd34bd8d8bf688e343e2c7429d6eb526683d627aaaeaf1aeaf",
+      "source": "代理工具输出的转录摘要；不是完整原始pytest日志"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/route-fixture-query-failure-summary.txt",
+      "sha256": "859af7d34163d5bac9bcccc3de126c0c8e9c11e857513f17733bc677b20cf37b",
+      "source": "代理工具输出的转录摘要；不是完整原始pytest日志"
+    },
+    {
+      "path": "docs/agent-upgrade/model-routing-evidence/repository-final.json",
+      "sha256": "2e5f8a470b1151db5c4801b0885478b614f03f6244f765446f1634aebe0254ed",
+      "source": "阶段文档与清单完成后的最终只读门禁"
+    }
+  ],
+  "sources": [
+    {
+      "path": ".github/workflows/harness.yml",
+      "sha256": "d95d827012b3af7efd6326acd84e677fb9b1ac68e61400b95f1f74da401e0785"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "66ac22898049b030836b84744e820063e30978d4e5f211dcd9797bfcf8c636fc"
+    },
+    {
+      "path": "MusicPlayer2.pro",
+      "sha256": "61207596a38797664a7ef3bda33d02100fceae24eaf034b0be691dbf4ee0f07f"
+    },
+    {
+      "path": "README.md",
+      "sha256": "97a88e39a4abd98f31e8e38577790851d2cefd5d5c3053a7f512f830e9658dfc"
+    },
+    {
+      "path": "aboutdialog.cpp",
+      "sha256": "6af96e571cf7cc354250580d715ae87832e960510501bedaff2b0e66020a8cb0"
+    },
+    {
+      "path": "aboutdialog.h",
+      "sha256": "8ea40d8df464a10b96670bb3ff09e46261ff218a133fff3dbd5c36b39892ad23"
+    },
+    {
+      "path": "appbackendclient.cpp",
+      "sha256": "4ade4feb055a91cb703409f0600a7cd8adc5afdf1fa54587896cab9fff8c8b8d"
+    },
+    {
+      "path": "appbackendclient.h",
+      "sha256": "44c804467f05980cd7e02419523ed27e47338d80e16ef67124f0845c80ba3518"
+    },
+    {
+      "path": "artwork.pri",
+      "sha256": "047041b720d0dae8df3d48f55589a0ab3f0e0a58677ad5d1fa2ea363ca5d0489"
+    },
+    {
+      "path": "assistanttypes.h",
+      "sha256": "62a9ef8450724d9890f8a030197b45baa1bfb9ddb3c2a14a2924de9cb656815b"
+    },
+    {
+      "path": "backend_py/.env.example",
+      "sha256": "3b6d8b100423105a06df47f614927a4929bc6b53e16f500afdc85bd61b226663"
+    },
+    {
+      "path": "backend_py/README.md",
+      "sha256": "5f50ab9c13c9eb3c268b656bcf4108a77aca2ff91cce705e42804ad61f139ae9"
+    },
+    {
+      "path": "backend_py/pyproject.toml",
+      "sha256": "99ec18a59c29e6ebd8835320a48834d0cf853548095df15b99e7cbe7c9b6ab94"
+    },
+    {
+      "path": "backend_py/tango_backend/__init__.py",
+      "sha256": "fa7c26f3d8e27490ec61a2d3900b343f038b0978c645bc67c1e0efa56e6596f1"
+    },
+    {
+      "path": "backend_py/tango_backend/account_quota.py",
+      "sha256": "4da0bafd43b84e7ea759063e122d5b157c18fe459eee6ab528f1fc10f864c4c6"
+    },
+    {
+      "path": "backend_py/tango_backend/admin.py",
+      "sha256": "57f0fa9241ca1f87416e43101289a9dda28a08bc9ddd0ce82c134afd0f791bf7"
+    },
+    {
+      "path": "backend_py/tango_backend/app.py",
+      "sha256": "f533d1f06448c5ad659ff731d31b8d306937ff142a214a1c008a7551c9b779de"
+    },
+    {
+      "path": "backend_py/tango_backend/assistant_model.py",
+      "sha256": "3394aa55f8854d354b7e50b94679360f5c34030a94339c3408a1209e4c55068c"
+    },
+    {
+      "path": "backend_py/tango_backend/capability_registry.py",
+      "sha256": "03c4239fea3208aabf6ab3447c968bc5aaa2281bb3013fdbbe7fbd59b5cd8386"
+    },
+    {
+      "path": "backend_py/tango_backend/compat.py",
+      "sha256": "8461edfba7ba2d14c16f972f3c6c5ea3664556d5315f4727b6912bbcd7234e06"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_route_store.py",
+      "sha256": "2a0cc5925cf101e0c42921637d80b5fcd9317237f254f075f5e09f9a58587389"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_router.py",
+      "sha256": "0d573f79525e7d45b1e64a7e71725cd3c40c10ff0cd6514932c7acceb386d646"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_store.py",
+      "sha256": "57009b5e45e00a386e382e489964dd6790704c6d023228f89ed8d7c35786d71f"
+    },
+    {
+      "path": "backend_py/tango_backend/development_config.py",
+      "sha256": "7f2cf4d5b8867d8fe2eb866062f0dd15119ef7bfa7f2d39c8cd2b93dcd96e7b2"
+    },
+    {
+      "path": "backend_py/tango_backend/development_session.py",
+      "sha256": "519466529acb7f3ff651ca2fd2912414fe5d6150ac4b457efe88079672d34489"
+    },
+    {
+      "path": "backend_py/tango_backend/ensure_storage.py",
+      "sha256": "3f6e51bcf36c7d2bfa7f9cbcd2a3fc79a7b6babce68ee6947f41e136466c9abd"
+    },
+    {
+      "path": "backend_py/tango_backend/errors.py",
+      "sha256": "1bdf5af4208e1161ec50d971f5e38660c43deae2007c08931cca1347dd087b5e"
+    },
+    {
+      "path": "backend_py/tango_backend/http_protocol.py",
+      "sha256": "2039ca6f46c203f3979c7631d0bfd85e93dbc57874f069db9acd59ee04272213"
+    },
+    {
+      "path": "backend_py/tango_backend/intent_routing.py",
+      "sha256": "ce405e795056469d1e09dde443e6a6721dedce58f459be75c86761d8c96901f1"
+    },
+    {
+      "path": "backend_py/tango_backend/invite_store.py",
+      "sha256": "96a63fadb8c03b02a75729c6228290c436166e190b432ad749d7ff7009a0f06c"
+    },
+    {
+      "path": "backend_py/tango_backend/launch_local.py",
+      "sha256": "d003bd85eae2a7f4149e4a4d2ad66ed55e26cdfaf3b4df1312bfc87fdab66a68"
+    },
+    {
+      "path": "backend_py/tango_backend/migrate_mysql.py",
+      "sha256": "86429c99215695ffe2ac9fb743d4b9b45e8e6e26fb5a4a0ca4d013c6f312962b"
+    },
+    {
+      "path": "backend_py/tango_backend/migrations/001_initial_mysql.sql",
+      "sha256": "ba1af9ef9822c2f0de31dfea3de38bc780255c8fc2d860b024a90658f434e3d5"
+    },
+    {
+      "path": "backend_py/tango_backend/migrations/001_initial_postgres.sql",
+      "sha256": "22b75c4b27c8db9fff74c1c01a897327b8a29f3e3d4f8ec5d997627170afc5ca"
+    },
+    {
+      "path": "backend_py/tango_backend/model.py",
+      "sha256": "0268000794716730985634afb3fde811b67c92d57603fb68199d152e7de8e618"
+    },
+    {
+      "path": "backend_py/tango_backend/model_common.py",
+      "sha256": "164e722476a036fa4a9542e02194bd0a27cfdddc6f054437e8e56ba38cf6ad3b"
+    },
+    {
+      "path": "backend_py/tango_backend/model_profiles.py",
+      "sha256": "c1d76aeaf7a4282c6bb918b9434768591017ff94e3ce34922f918a50fffa9478"
+    },
+    {
+      "path": "backend_py/tango_backend/model_transport.py",
+      "sha256": "0678594674c74dd1cd30d9772b2c819d2adaa51bfabc48929a474ebb0b4bab9a"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_infra.py",
+      "sha256": "779c376adf3c1ac4988fb480b75b501298ed303e7cbb47d27bdf49ab949cf8d5"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_store.py",
+      "sha256": "beae11bca12038cbf08e8dcf1d2673f3100dee487a1e90571d9baf3a0dec0e7a"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_task_store.py",
+      "sha256": "bae0665f25f6cc890a207727c4905e954f1e6148c9b7729211605e284ad1fc7f"
+    },
+    {
+      "path": "backend_py/tango_backend/postgres_store.py",
+      "sha256": "7ec4037819a36479bf798b95c5718ded3a3ba4bb7e0ba65133c3dbf86bd089ee"
+    },
+    {
+      "path": "backend_py/tango_backend/postgres_task_store.py",
+      "sha256": "c595f7075e5baff800f797948f38e67d53320e8561514e5bd78b189183257869"
+    },
+    {
+      "path": "backend_py/tango_backend/prompts.json",
+      "sha256": "9b9dcb85424a50ee2e138467d9e656ed2dcd3ed20ab86474037ea4be4e52527f"
+    },
+    {
+      "path": "backend_py/tango_backend/radio_model.py",
+      "sha256": "8c1cd7c8b9495f4c17be6b0a92b18196506007d3fa4aa90c0ac01b46ed6ae7dd"
+    },
+    {
+      "path": "backend_py/tango_backend/redis_limiter.py",
+      "sha256": "c1a06ebfdf1418b4ad218ab3779bdb4747713266a49530a95c802191897f5011"
+    },
+    {
+      "path": "backend_py/tango_backend/registration_service.py",
+      "sha256": "2f42c60ce2ec02723a404ded6104b2dfde890694412da389dd5634ce8bec1aed"
+    },
+    {
+      "path": "backend_py/tango_backend/security_config.py",
+      "sha256": "7edbc069aa22116ecd432c00f4d5d32cfcd9a11e61604cea8096e6f3751e9789"
+    },
+    {
+      "path": "backend_py/tango_backend/server.py",
+      "sha256": "11c500a318f4965ccf9e1f6f934835af51ce561ad9a8655f3b4b5bd9753b9be9"
+    },
+    {
+      "path": "backend_py/tango_backend/service_config.py",
+      "sha256": "5e80571910077aa219d1355f3614cb62a4616ab0d912d3bd4339ccccf247857f"
+    },
+    {
+      "path": "backend_py/tango_backend/storage.py",
+      "sha256": "5ed23959a3b59e3dbf4bfd4da1ee4c9a6268d44f6c0cd6d14f811774b3d79db5"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_auth.py",
+      "sha256": "ed9e56c0907945ec2962fc94e1f5468dfc8379be74f08407910a1ed6c2f0e6f9"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_db.py",
+      "sha256": "21f844112f2bd9867275812813eeebae391208a8a675871330cfb95f2de1b1b4"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_postgres.py",
+      "sha256": "93c81a3626f11f22472877ffbea040d617fb8be90d0723f449452126d3a184fe"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_profile.py",
+      "sha256": "a5407e8065ab3e966ac85d0f89f85cf20b72b3915d613846169f277ffc28d582"
+    },
+    {
+      "path": "backend_py/tango_backend/store.py",
+      "sha256": "dc76199a64f840d6e9ea15b4405e2d99dbba2f3639405bef94e9bb580c4d9c7a"
+    },
+    {
+      "path": "backend_py/tango_backend/task_brief_patch.py",
+      "sha256": "4e76a9802a1cb900865d86756fab896d2cb4b5fcb1fa3b54a8615132db76609e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_duration.py",
+      "sha256": "40233800dfab28649d3066ab8c15187a19c6945d32fb0afc5961cb6ef7cb801e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_language.py",
+      "sha256": "8b10cccff9df41817c22731a8f33ce5dafe3ae94a1771e5d7c672494b4e7160f"
+    },
+    {
+      "path": "backend_py/tango_backend/task_model.py",
+      "sha256": "2dede1bd9a353f977541f209f7d7326edb3335ddf05a330e3ec8e7f5efdaece3"
+    },
+    {
+      "path": "backend_py/tango_backend/task_pending_request.py",
+      "sha256": "75412e266312a5141b056ae7900df91c4519bef50ed982831016be9955442bcb"
+    },
+    {
+      "path": "backend_py/tango_backend/task_progress.py",
+      "sha256": "de4b0a71dacfcc4424649edca527abf8cdaa6ccdfe09d3bdef857ad5accb88b4"
+    },
+    {
+      "path": "backend_py/tango_backend/task_query_coverage.py",
+      "sha256": "6aa7d5481baa1ec9721e78ecbe504225f591176e81bd425836d6d255bd5a1d6e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_release_intent.py",
+      "sha256": "a26cfa83cb5889057daf75d5e488a18e316cb946bfed73ba4befd79a3efc8e18"
+    },
+    {
+      "path": "backend_py/tango_backend/task_runtime.py",
+      "sha256": "1769aba6506927f53136428b45196f057168ae618e52d209a5f88ba78633ad1f"
+    },
+    {
+      "path": "backend_py/tango_backend/task_schema.py",
+      "sha256": "bcbe554ddd93f2f59f311c52fbd2c1ca7bfca8f50d02f6010b7425cf717477a6"
+    },
+    {
+      "path": "backend_py/tango_backend/task_store.py",
+      "sha256": "1cc3be9eaf09cc257c66fd1d201f5faa5c00882aed1dc745ed0e2105b056e4b3"
+    },
+    {
+      "path": "backend_py/tango_backend/task_style_evidence.py",
+      "sha256": "ac092fb97b308314e8e38496854b4f3da03777744ac2ebaa999252fd5e8248f2"
+    },
+    {
+      "path": "backend_py/tango_backend/task_tool_cache.py",
+      "sha256": "d497042451726af0223a34447c1b95f9301b2e46059e79fcf6ceb176a18fb726"
+    },
+    {
+      "path": "backend_py/tango_backend/task_tool_evidence.py",
+      "sha256": "18c21d6bab090d815ac66cb8bed39fe946d2b0230f86f95cfadc414b3744a610"
+    },
+    {
+      "path": "backend_py/tests/fixtures/README.md",
+      "sha256": "a71aa4e9a6eeecafd4e3444f9c9999360d28d8d690179ad600e34640311c4d3e"
+    },
+    {
+      "path": "backend_py/tests/fixtures/digest_js_v1.json",
+      "sha256": "8aa49a316d37c0a077e5e70b66db2b0e460b7bd2b5d7c18c0cca987c0c60d5b3"
+    },
+    {
+      "path": "backend_py/tests/fixtures/routing_contract_cases.json",
+      "sha256": "330c600f4a7b11e13a2f1ef29a7eeb38951bc3a55489d64b6873aa11df16dce1"
+    },
+    {
+      "path": "backend_py/tests/fixtures/routing_js_expected.json",
+      "sha256": "892ccea946f7fe5500ca023edef72c1ebabcdf9705b5ffca95925ff6caf93418"
+    },
+    {
+      "path": "backend_py/tests/fixtures/storage_js_v1.json",
+      "sha256": "0c816758bc5bba120a724262ce540441f75c5acecf8858b0b89e40fe7d0d5eaa"
+    },
+    {
+      "path": "backend_py/tests/fixtures/task_helpers_js_v1.json",
+      "sha256": "f11fc6d88e9c0e00a71d7ecabed34931edfdebeebfdc0b0f56099cb22b2230b9"
+    },
+    {
+      "path": "backend_py/tests/fixtures/task_runtime_js_v1.json",
+      "sha256": "7a19026f079914a9e10827bfdc4a326f8a3010533956934da7982a37bfb5fa32"
+    },
+    {
+      "path": "backend_py/tests/helpers/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend_py/tests/helpers/mysql_fixture.py",
+      "sha256": "0edc4509c56a8e0372a43fbdc7e633e7a42cc5ba1323e3670b6c44e98dc5ddac"
+    },
+    {
+      "path": "backend_py/tests/helpers/process_fixture.py",
+      "sha256": "de8e9f3559d6ba6c265ff41b7b58f2cdd4c45553d04f51461be96fe326dd63c1"
+    },
+    {
+      "path": "backend_py/tests/run_mysql_suite.py",
+      "sha256": "20d1b9d62b7bda733789b321b4edeaccdbff5048dc47a1ef1aa1ec25e448d065"
+    },
+    {
+      "path": "backend_py/tests/run_storage_suite.py",
+      "sha256": "9a730fc4146de9bb2df925c602d287104e5d0f537d333cba902fa787e041e5b4"
+    },
+    {
+      "path": "backend_py/tests/test_admin.py",
+      "sha256": "6bbda41b62ebbe5e631b2df37cf66b4031b60badc0e0b6de315fb29107a9132a"
+    },
+    {
+      "path": "backend_py/tests/test_app.py",
+      "sha256": "05b889ffb4e0970f9183649b12966de1e5104d17751c72fb58dac27283a6b337"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing.py",
+      "sha256": "a8ba093eb7213f0df4b2e8de5fb8a8e439a986e2e23eb5df084e0c54e0fe1307"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing_mysql.py",
+      "sha256": "86b16d7676dd0a5f2e404ac302d9ae1b05703d5cdaddbf1143e7bd85d524ea21"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing_postgres.py",
+      "sha256": "9e2e4cebf57689eda31176849778bfd9e46cebab22cd3158935b694b3fa0f0c5"
+    },
+    {
+      "path": "backend_py/tests/test_harness_repository.py",
+      "sha256": "6cf77439a6d739b4d70ca4aa24b6656eaf8f848a6444f6a4b5cf4b5a81bb6a1f"
+    },
+    {
+      "path": "backend_py/tests/test_http_protocol.py",
+      "sha256": "27cdbb373b5e8a5d641d3f1e1cc1721393bdc8a25ecfb6e464cf03e61d1c0e03"
+    },
+    {
+      "path": "backend_py/tests/test_launch_local.py",
+      "sha256": "17f77ed120cbeee04b950bfd8dd04073f431b60c68406607525fb836b7aa4c5c"
+    },
+    {
+      "path": "backend_py/tests/test_model_profiles.py",
+      "sha256": "5947f54fee2ca43f9519d8162f85a30e69fe4a2ed2d96e18c1095381e2a4ea22"
+    },
+    {
+      "path": "backend_py/tests/test_models.py",
+      "sha256": "52aa6b19e7a96aef4e2e41a6b07bb53c041f4d745e0ccaf0d49dc725e63dfd8c"
+    },
+    {
+      "path": "backend_py/tests/test_multi_model_runtime.py",
+      "sha256": "3effed207d3e5b1a11a4b349f139c986fc70569d92ed94e998d87b5af07c54b9"
+    },
+    {
+      "path": "backend_py/tests/test_multi_model_server.py",
+      "sha256": "eeff93f2bda5da34a70048f45a2d499a0d9a835ed56ea61c765f4364bb3d48bb"
+    },
+    {
+      "path": "backend_py/tests/test_multi_model_storage.py",
+      "sha256": "f3f6184a7d7cfdab7aa85ee72304e8e2f04abaf073c671062afd2a46a04456e6"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_app.py",
+      "sha256": "dc95ddcaeceb8c45c949c715fa1cbb7b9caf0e3894436722ae9f1e9f4540641d"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_migration.py",
+      "sha256": "8d7f1cf835b794e154497e094943d86db595408d1496e283682d4a0d4983852c"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_server_process.py",
+      "sha256": "866936cd5671ff2220c6c6e909120f05cdd43586ffe95637da98dba675bb2e73"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_storage.py",
+      "sha256": "4f083b14f595deda359ef5b4efcc7a09b8324518966952218b142ebd5bf49b89"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_task_runtime.py",
+      "sha256": "331eebc08c1aaad1873b1ee2b60e280e88e1581aedf14ffec8bf84508d33f818"
+    },
+    {
+      "path": "backend_py/tests/test_native_integration.py",
+      "sha256": "ad90abe025000be5cdeb6a6f71828926cb4f7a86db3ed8f8b2623550a4d45f74"
+    },
+    {
+      "path": "backend_py/tests/test_redis_features.py",
+      "sha256": "a35bc6f9d445a3ed396e6eac1889cc3ebe831e0866325da5e01a6d66f61380fa"
+    },
+    {
+      "path": "backend_py/tests/test_route_reply_atomicity.py",
+      "sha256": "3297e908cad9ae2d45ce7efa41deede5bf5f181c5fba4e067bec9781010d1788"
+    },
+    {
+      "path": "backend_py/tests/test_server_process.py",
+      "sha256": "a2cf80c596b8fe8aa499e82084652888e59f6fbd0473cf782a1ea71fa3df7605"
+    },
+    {
+      "path": "backend_py/tests/test_storage.py",
+      "sha256": "6a90d487dd72c2caae2f1ac1d74b31d03d19bb14455b588beb757bf8b75f6216"
+    },
+    {
+      "path": "backend_py/tests/test_storage_interop.py",
+      "sha256": "bf89bd36e10bb2f5fdc91af3408345d43e5186e077f9cef2766781a47a143d44"
+    },
+    {
+      "path": "backend_py/tests/test_storage_profile.py",
+      "sha256": "5b361764b8714b207969a96dc9343d991098a88334c29fa547d3200ba588ea45"
+    },
+    {
+      "path": "backend_py/tests/test_task_helper_parity.py",
+      "sha256": "b38ceaf6df7226108a23007f802f3416502c02358a2647088738db4baca2f5b4"
+    },
+    {
+      "path": "backend_py/tests/test_task_runtime_migration.py",
+      "sha256": "bf4abd8a31d4ce5bcdf32655bae61c9ad2d0dbb1763fefda0f9bd2bbbc3caccc"
+    },
+    {
+      "path": "backend_py/tests/test_verify_harness.py",
+      "sha256": "31ea8aa653e2ea695be0ea486f60f2645171b68c2731bc1bb7ca40e8f6f18ca9"
+    },
+    {
+      "path": "backend_py/uv.lock",
+      "sha256": "a237f7daed2802f3ca5fdd12f817716ce5834471e985f21b1d8067fe6baa563f"
+    },
+    {
+      "path": "conversationclient.cpp",
+      "sha256": "536f445af429ef50fa3ee2e97b1d277cb31fa236f0d72ca872ca54cb9fc35eba"
+    },
+    {
+      "path": "conversationclient.h",
+      "sha256": "d9a03feaaa2ee7e87da231a67c4c3e126d065b9b709fa652d7a69012a2add382"
+    },
+    {
+      "path": "coverartcache.cpp",
+      "sha256": "f07e91d423c82606b4af5c2d9155cd854f9c929bbf601b3dc0bdc2bb130491de"
+    },
+    {
+      "path": "coverartcache.h",
+      "sha256": "b53383f2a3e5389a5725759baf6a328033c88d301537e37b408e555dd09fb431"
+    },
+    {
+      "path": "dialogstyle.h",
+      "sha256": "22327544a22518505d60dcf05556aaef2ac8a1db1c210db413eb5262e387f769"
+    },
+    {
+      "path": "docs/AGENT_DESIGN.md",
+      "sha256": "536c26df48384be2d9127509458feba1d5933aeb4007c6129666f52f3aba8ae2"
+    },
+    {
+      "path": "docs/AGENT_STEP_0_BASELINE.md",
+      "sha256": "92422a580cff8751c962d2a2300a4ece91e1237dff9726ada0d7345e4a9ce57c"
+    },
+    {
+      "path": "docs/AGENT_STEP_1_CONVERSATION.md",
+      "sha256": "7ff97bdbc8e10e3e03c7a8de30de77fcb2405b2138b75384aa474cb7e3a97aa3"
+    },
+    {
+      "path": "docs/AGENT_STEP_2_ROUTING.md",
+      "sha256": "6847bc48414651f50ca5713833d9532e1b2d8fc07a06afa01518a1fd9b2a2a66"
+    },
+    {
+      "path": "docs/AGENT_UPGRADE_ROADMAP.md",
+      "sha256": "7214dc02dbe8f9e7123cf74cc80916979a67a502c4f29a0f407b823fb83bbdf8"
+    },
+    {
+      "path": "docs/BETA_ACCESS_AND_QUOTAS.md",
+      "sha256": "5c7b74a7e00c251aa4bb5915eaca7361b4c4d8e4ae25181608d9a5cf819c23bd"
+    },
+    {
+      "path": "docs/DEVELOPMENT_MODE.md",
+      "sha256": "4db0ab1c80c5572a03abfdf6a1f4191ec2a3992938b88d83a7e8e6e8cf08eb02"
+    },
+    {
+      "path": "docs/DEVELOPMENT_PROGRESS.md",
+      "sha256": "6cdd641ee4ce90608dd869aa2db9aafb52aa31218f6bfefbd3755338983c5d9a"
+    },
+    {
+      "path": "docs/HARNESS_ENGINEERING.md",
+      "sha256": "e183150ff903710c95e49523859d82ea93f6b7db62a4f1b24bd70e062c3fc1cc"
+    },
+    {
+      "path": "docs/HARNESS_STATUS.json",
+      "sha256": "334db708f90a96f54fa72cc9a380831700cfec2b69f01aaf247d7a05595c5181"
+    },
+    {
+      "path": "docs/LEGACY_CLEANUP.md",
+      "sha256": "6bd2e267557631e95469ccad015bad8153a7755d25e1e24b8e47a8576337c854"
+    },
+    {
+      "path": "docs/MODEL_ROUTING.md",
+      "sha256": "4c19009b980b115a1ca1bb2f0e0ed4868d566217ce0cb0e79521b5906f1f7b08"
+    },
+    {
+      "path": "docs/MYSQL_MIGRATION.md",
+      "sha256": "da0d4a256e4fbc5e3906205ccc32011ab3334603a10ea4c7eb9961019ee88560"
+    },
+    {
+      "path": "docs/NETEASE_SERVICE.md",
+      "sha256": "4197b7e62777478fd915e7b643a2c4a62013dab557bd7827568d7cc7ab0577c1"
+    },
+    {
+      "path": "docs/PYTHON_BACKEND_MIGRATION.md",
+      "sha256": "7a0205c2566e1b4f60b4fd6656e9995c58b9e9269266b8ce4439476b7381ebe7"
+    },
+    {
+      "path": "docs/STAGE_DELIVERIES.md",
+      "sha256": "7a9ef98be8ccf0ad94f082f0128aa2c720373069fe2ccb173ae04a1e6d6808b2"
+    },
+    {
+      "path": "docs/exec-plans/active/mcp-tools.md",
+      "sha256": "28d4d07ff155d96f3e3b463b061f32bce1842deed32c5f85fad2f1e9f2b031d6"
+    },
+    {
+      "path": "focus.pri",
+      "sha256": "b76ad57e6d05c92a151fd9efa063cc30093f7cad41443e9737d97c6b84fa3e66"
+    },
+    {
+      "path": "focuscore.cpp",
+      "sha256": "bfc0777609d1fac2d21d3e6fff611bb242a457496bae9c5f3797b5dd9dcaa9c3"
+    },
+    {
+      "path": "focuscore.h",
+      "sha256": "b4e278653bd959b395000359b0d39529b89bcb1341934ac84910867164d8e140"
+    },
+    {
+      "path": "focusdialog.cpp",
+      "sha256": "7ef35839efa21351053b0e70a8bb4ffe0ea0c304853e23f027ed2b0ce39224f6"
+    },
+    {
+      "path": "focusdialog.h",
+      "sha256": "4ef5df4e11b92708dc650573b17f47f27cad3b9e6c987db5be53adf8bef8cbd5"
+    },
+    {
+      "path": "focusmodelclient.cpp",
+      "sha256": "e56bb1e6ecfaf5720fb62fd9dcd9d1f9edc7eacad34426771f95fb6e0c0ad50b"
+    },
+    {
+      "path": "focusmodelclient.h",
+      "sha256": "5d2e676dd675ec17e900c17975a7507010e4f9f2e7163b7339cc99e611e6f163"
+    },
+    {
+      "path": "focussession.cpp",
+      "sha256": "19b4a6315705e4394312510f2dea3f16db5d408fe0dc820db6d08c70ca47ff23"
+    },
+    {
+      "path": "focussession.h",
+      "sha256": "13100e5d549d98165a401fdbcebf64b2a55e430661296584de0e4064152b4064"
+    },
+    {
+      "path": "historysong.cpp",
+      "sha256": "108946a1a9a3aea785a750f71217d98c9db9ee21a28b8e86a542cee9f5fd0941"
+    },
+    {
+      "path": "historysong.h",
+      "sha256": "7e1e0a303dc6d14ed5801f4ec844bb7d56e490cd29bcdfb9fac3e766bf09e5ce"
+    },
+    {
+      "path": "likesong.cpp",
+      "sha256": "9d760e2fcca598c60a30efb6d23f8755f6d03205de2c794c9b5baa0345fa014e"
+    },
+    {
+      "path": "likesong.h",
+      "sha256": "9c3533464a9c302e3bb0775899ef678760a4c7c5fd7f2fc2a2d732a80e82558d"
+    },
+    {
+      "path": "lyricswidget.cpp",
+      "sha256": "e7d4da3fa98b6edb3278c7d0800c0142508a84a4117b1ef5e735eb17a9c8da1b"
+    },
+    {
+      "path": "lyricswidget.h",
+      "sha256": "ec5f8f5262d0f8451c55d7f335af7aaeec61c4c464f81b089e2d253286d75229"
+    },
+    {
+      "path": "main.cpp",
+      "sha256": "02de01df84df49cf1dc9b170a5edaf2af0856f98dd7d7f9041908adf83dc4281"
+    },
+    {
+      "path": "mainwindow.cpp",
+      "sha256": "e836445ee18d8b51d4b7dbdecf02be1df2db104292d170de0485f03dfb85fba4"
+    },
+    {
+      "path": "mainwindow.h",
+      "sha256": "c911fd8de314655d9c335e8055b54c1e9d5d7ae5c5eee0a00c4711e1e8f72cca"
+    },
+    {
+      "path": "mainwindowfocus.cpp",
+      "sha256": "2488a375dfbad8ba0ed380e85aa30e905d9f5591c5d6086a2ca58d7fc26de2df"
+    },
+    {
+      "path": "mainwindowradio.cpp",
+      "sha256": "7bad36766e70c1821ba7d23b7344741021a75d06b43ba0d48a72fce9b3f967ca"
+    },
+    {
+      "path": "musictaskclient.cpp",
+      "sha256": "a30f46d85abe9ffd95bfea91423c927c4f939a627a1f29bc133036343462b923"
+    },
+    {
+      "path": "musictaskclient.h",
+      "sha256": "8d6c72f78f497fb467ac345593e642d07134344eb9002cbb1ea2d37cc67011ab"
+    },
+    {
+      "path": "neteaseclient.cpp",
+      "sha256": "f890c0788256e0334076ef98b19f515ec327163d2972e7ba1da8152379e2ae1c"
+    },
+    {
+      "path": "neteaseclient.h",
+      "sha256": "fd8ac465e4a62b8d60274d95db74100b8b9985417bc5e6dbeb6c8e19eacb46ae"
+    },
+    {
+      "path": "neteasedialogs.cpp",
+      "sha256": "ea4374cf50620e7f4552ba3275500c0a8786c7970e5708bb648e0ba6aa3b6578"
+    },
+    {
+      "path": "neteasedialogs.h",
+      "sha256": "0f8ea93c0c8f6420e764a07e509650b7460e013e84515cedd112867e7b412b86"
+    },
+    {
+      "path": "neteasetypes.h",
+      "sha256": "c52873fa3524683de790dc44b94041e1c2792290e1e77028f6e73799cbfe504a"
+    },
+    {
+      "path": "passwordvisibility.h",
+      "sha256": "f74195531248ab455aefcb2f823572f18b7f7f7c514b2530ceabc2ddaf1a20dc"
+    },
+    {
+      "path": "playerwindowview.cpp",
+      "sha256": "26c5b52540223d657ec8263870242f7844f86001882b288c261d961059725752"
+    },
+    {
+      "path": "playerwindowview.h",
+      "sha256": "4c7e4347285220ca80c65e0c61d4baf5dc86cf9bccb4afbb6b501714e720a0b5"
+    },
+    {
+      "path": "radio.pri",
+      "sha256": "cc28752e2ed31a042805885e96dbf6c1b115eb244f9cc6e323a56d3fa11ca025"
+    },
+    {
+      "path": "radioclient.cpp",
+      "sha256": "1c47c72ca50df567b7b7057c607df3dfeb6765cab4c8cc9116a663a45cbb0286"
+    },
+    {
+      "path": "radioclient.h",
+      "sha256": "a59fcb91fccec9c3092d83b72f37072af9463e367fd55254106ee047eaef78be"
+    },
+    {
+      "path": "radiodialog.cpp",
+      "sha256": "138d40d9fed68d60b9da76614818791c1ca1f9e23d7c6c1d5509c3e9d34c64ae"
+    },
+    {
+      "path": "radiodialog.h",
+      "sha256": "121733ceb0ba0b0790694a4bab162637cb87951f5eac69f9d1393adcf6f677f3"
+    },
+    {
+      "path": "radiostore.cpp",
+      "sha256": "456b29bb78f0c5210939708f332cbe4cbc48a269946b8f4af3fcbc8a086f3591"
+    },
+    {
+      "path": "radiostore.h",
+      "sha256": "f83340ff75d4ec2cb5acd140a98c1303f05783982d7607db99e2f8df0799b145"
+    },
+    {
+      "path": "radiotypes.h",
+      "sha256": "dcafe173d2a31ec6c5d7a6c6ee83f70ad30cc21d4c6372a82370154b6e8a3b23"
+    },
+    {
+      "path": "ranklist.cpp",
+      "sha256": "444768534cee04c7de52ae658339b031868bb077dfbf5ce099d287633edafd4b"
+    },
+    {
+      "path": "ranklist.h",
+      "sha256": "7fbdd481acfa9e862fcf07415993f5e2d6509a06ac8023119c8b61c4538ee9af"
+    },
+    {
+      "path": "redisconnection.h",
+      "sha256": "9999ed3a6ea3d28bd8fbea659f53a5ee16bdd3c3d7e8c9a067f642b5662afec4"
+    },
+    {
+      "path": "scripts/check-harness.py",
+      "sha256": "d38ed1fb7a1cdfdd0a80957269b8b03ef1a1c797d413af54d30cd57458baf041"
+    },
+    {
+      "path": "scripts/development-env.test.mjs",
+      "sha256": "d3dd9c4b177fb06990de8222e902ea3f41e6d1637993e2a3c87646d22ac3460b"
+    },
+    {
+      "path": "scripts/verify-harness.py",
+      "sha256": "e3a2611bb3dabcc2dd2b380db624a2b766b4d7e19d19957eb910a7bdacc26a57"
+    },
+    {
+      "path": "service/app.mjs",
+      "sha256": "0866931a17aecfc56671b3be1237a13e8d94d4285210da6a6ed055b7974b020f"
+    },
+    {
+      "path": "service/credentials.mjs",
+      "sha256": "80f4ccb3e728f11c882fa3f5ecdff7c3afb97da844bce5433b836e34b896a2dc"
+    },
+    {
+      "path": "service/launch.mjs",
+      "sha256": "246594fb995b8891ce93eeb380b190db6ff3dcee293c054cfe0b1c16f97c1c83"
+    },
+    {
+      "path": "service/package-lock.json",
+      "sha256": "2d27cabee20367312012513a1b3a322ee3da328ccac1bbbcd949cea318afd379"
+    },
+    {
+      "path": "service/package.json",
+      "sha256": "df74c8ca8032c632bc306bd8aedad112b532484b06a8b783c623507118cf9d98"
+    },
+    {
+      "path": "service/server.mjs",
+      "sha256": "66c9f2a478b65a9c31e144afd5599df44c9c94b3d9e8d6eda3b8a41cc3593d35"
+    },
+    {
+      "path": "service/test/app.test.mjs",
+      "sha256": "919f827ecb9343b831cf9399cac2a458135bc9135df687a0912b46c4aad7ae0f"
+    },
+    {
+      "path": "service/test/assistant.test.mjs",
+      "sha256": "e717961a84a243e5daa6c8f0ab2a74e8481e0199adbebb18b4b638b53ab05382"
+    },
+    {
+      "path": "service/upstream.mjs",
+      "sha256": "db3e8a3c22934f79f102f95195de7230f9f0a27c29528ba1e937d4e1b053c3cf"
+    },
+    {
+      "path": "signin.cpp",
+      "sha256": "77efe67aa366b730726f4d2634d1cfdb4699717aeb2926894933263d306d2344"
+    },
+    {
+      "path": "signin.h",
+      "sha256": "f1c3b8ecf145edc2f37767b27b93f98376884a105e981bff937482bbc18134d3"
+    },
+    {
+      "path": "signup.cpp",
+      "sha256": "58de621129356285ee1fd4cf9e2727d730c7f8b7a9098628a9d2b51d56101b60"
+    },
+    {
+      "path": "signup.h",
+      "sha256": "44e45905abb8afb6ccaca2eda315b613175b756eccdfba0c6f9d91bc240dfbf1"
+    },
+    {
+      "path": "songlistdelegate.cpp",
+      "sha256": "3d7a4edcb107f3eff3932b733dd3e91c15e05faf4a9dcc3c40f730fe3b476e0e"
+    },
+    {
+      "path": "songlistdelegate.h",
+      "sha256": "ee66dc2799b978edc6fd15ce40f52025aa4dd3300891b0b59f086f3af3755402"
+    },
+    {
+      "path": "tests/assistant_flow_test.cpp",
+      "sha256": "d9b7c1c34ab4b2cf2e063c2bbcdc9a56a3c7e1b03294e62a64719c36c6c97a51"
+    },
+    {
+      "path": "tests/assistant_flow_test.pro",
+      "sha256": "7dcf7e768cecb57464095b557101d59df7f7dd091fb3b688e560ab30389d4986"
+    },
+    {
+      "path": "tests/conversationclient_test.cpp",
+      "sha256": "b81b43e9d2b7299356aa87f736186ba43f2e414b5f5ac09404a56f19cdb56204"
+    },
+    {
+      "path": "tests/conversationclient_test.pro",
+      "sha256": "80c752b05f739d7794de4b793a587eed77d07e84496108b1035d39c61b86e876"
+    },
+    {
+      "path": "tests/coverart_test.cpp",
+      "sha256": "667e57cb2ef2d2ebfd25f996dedf18232fed6a1dcc5845b49db61dee0a7dbff0"
+    },
+    {
+      "path": "tests/coverart_test.pro",
+      "sha256": "e67e46993b8ab9978651d42e1c7447432b7ab52371463289d5bb224b348d5917"
+    },
+    {
+      "path": "tests/development_session_client_test.cpp",
+      "sha256": "8ce85b92d6583b99cdc001fcc4e1dfb6a8ee0306000fd3d305958e56d93ccaa6"
+    },
+    {
+      "path": "tests/development_session_client_test.pro",
+      "sha256": "25c1921f93b4c6bfa8559dc5a9e960049e2ee1b8c56af6758e6ae35582bd246f"
+    },
+    {
+      "path": "tests/development_session_fixtures.h",
+      "sha256": "9e7ad506154291ed1991b83695f7e1f842555a27ecf2e86baaaabf1bcfa2eb35"
+    },
+    {
+      "path": "tests/development_session_flow_test.cpp",
+      "sha256": "88d953e9d541fde37dc6d2159b729cfe75fd44839da9ecccc247563ed06d871a"
+    },
+    {
+      "path": "tests/development_session_flow_test.pro",
+      "sha256": "8371a042e75b56568a0f1f4e1134cdcca8c98b1e0512599009a7ac680bf5d524"
+    },
+    {
+      "path": "tests/dialogs_test.cpp",
+      "sha256": "fa62a0a81ed55f56c574e2c2fba4668aa362224ed52d4c3d18b1ab3d33a7b437"
+    },
+    {
+      "path": "tests/dialogs_test.pro",
+      "sha256": "e26cb6a9fc6ae33bd9ddf6ab64b069db9fefa6caced6af2af89a989498443a10"
+    },
+    {
+      "path": "tests/focuscore_test.cpp",
+      "sha256": "465a57697a2ce2f5f66fb5aafd8772557e470244e08637b51c24f4f29115f58d"
+    },
+    {
+      "path": "tests/focuscore_test.pro",
+      "sha256": "73477dbc4b5bb4ae37d40aeecaeebb89d9888a09f34dd374f9b048bff8fab091"
+    },
+    {
+      "path": "tests/focusdialog_test.cpp",
+      "sha256": "b7055ff48f402bd8743d90a49303903b7c3c008f0208bb97d66fd40cc9fdac49"
+    },
+    {
+      "path": "tests/focusdialog_test.pro",
+      "sha256": "fceb3cfddd8efbfff9c484f8eb78bb338a47519e64177e75874f668a26931af2"
+    },
+    {
+      "path": "tests/focusmodel_test.cpp",
+      "sha256": "98ed5bab8cae654277adad66c6867339b1907826abe035bdea0c875082d0e418"
+    },
+    {
+      "path": "tests/focusmodel_test.pro",
+      "sha256": "67e55054cef35ddccfbf5174eb85231e35dd8e1b6e33f65b32e742a508a90f61"
+    },
+    {
+      "path": "tests/focussession_test.cpp",
+      "sha256": "a63cb42a815da0b54a663bfe80b169bc8ac0f06542984cdd303b27c3a8492ecd"
+    },
+    {
+      "path": "tests/focussession_test.pro",
+      "sha256": "f15ed8da93baf195a2c12f2884eea6683bf79ee906d6bb67c8b5029f1eb0cef2"
+    },
+    {
+      "path": "tests/hosted_auth_dialogs_test.cpp",
+      "sha256": "cf816292b8f91a0df80de3b7fe308fe902efaabfca07a3ca2f57b5c6ca77e78b"
+    },
+    {
+      "path": "tests/hosted_auth_dialogs_test.pro",
+      "sha256": "7a4fd2743c432f98b2f6e71c237bbee40fe7a538a40de7f1446627e5b0821e48"
+    },
+    {
+      "path": "tests/hosted_flow_test.cpp",
+      "sha256": "037445a595516ecc2eb00107029ab5cdb555bfc803c4ae087959c15c47fb9f34"
+    },
+    {
+      "path": "tests/hosted_flow_test.pro",
+      "sha256": "bdef90c88158643743d4c8533fe5ced8f6d6524353274640ad723b81aafb23a8"
+    },
+    {
+      "path": "tests/lyrics_test.cpp",
+      "sha256": "adefa8c23dc1ea0ef03282b7e19910a721235fd7969d7abd61201dded7cb79e7"
+    },
+    {
+      "path": "tests/lyrics_test.pro",
+      "sha256": "05c3180eedcd44f274bf9117d95a6e68f5a2239587c4afb0faaa7e93f7cf3d54"
+    },
+    {
+      "path": "tests/macos_smoke.cpp",
+      "sha256": "22f6cb0210b0daf18ae8be8c9a3ccb06821feb3c131fcb82ef0fc6ec1bd43cf9"
+    },
+    {
+      "path": "tests/macos_smoke.pro",
+      "sha256": "0945a9ade58ad63736d6323b961d48677f8d02f2a1abeeb6b612ce13a58d0943"
+    },
+    {
+      "path": "tests/music_task_dialog_test.cpp",
+      "sha256": "5474dbe7b42055b632b1ef663f330f3c57e4d6f47db4fc569911220ff11bc60e"
+    },
+    {
+      "path": "tests/music_task_dialog_test.pro",
+      "sha256": "06621d81910706c59a2179d6cf3f3ae4cdc8cef715e22e01454f753e46d9aa56"
+    },
+    {
+      "path": "tests/music_task_flow_test.cpp",
+      "sha256": "a00dda4d4f25025105c8cfa4425e4b70dbfd1379bc8acd5e48df1f01679d4ea7"
+    },
+    {
+      "path": "tests/music_task_flow_test.pro",
+      "sha256": "ec0d3adcd450128bdcbed56297d654b35930b91a86714fb0e4415964da5ce29d"
+    },
+    {
+      "path": "tests/musictaskclient_test.cpp",
+      "sha256": "31702108fb4d3a97f6fee38268a98fbe87beeeb4cab8334ab8122c6535875097"
+    },
+    {
+      "path": "tests/musictaskclient_test.pro",
+      "sha256": "e433ad4f20cc6883bb215a8b1537214f5eddc7fd0fc713e75aa62109d7a851c0"
+    },
+    {
+      "path": "tests/navigation_test.cpp",
+      "sha256": "4bece604db6a574950456926abc02ff094b70b312ac10ca63ab43f997017f45e"
+    },
+    {
+      "path": "tests/navigation_test.pro",
+      "sha256": "01efc77d5dc6626595c12aa6309418e63f52143e388ff24c85289ea5190f5fae"
+    },
+    {
+      "path": "tests/netease_dialogs_test.cpp",
+      "sha256": "2538f17ed88892101dc5c898d715794bb9d97d3cf785ae144bd24f4bd799203b"
+    },
+    {
+      "path": "tests/netease_dialogs_test.pro",
+      "sha256": "a4537d0a3393732632010df22822ef1dc572f911212ee947bb98b630abe7fcef"
+    },
+    {
+      "path": "tests/netease_integration_test.cpp",
+      "sha256": "4eedcac695e86d1587cc3a60d99e03eed9c261c18edcc45bdfa5f13d30fe2ff6"
+    },
+    {
+      "path": "tests/netease_integration_test.pro",
+      "sha256": "bcc3960db2b4db6ed8b46f429a6f36b7af1ed06b9bcf441f186653f2f366b2be"
+    },
+    {
+      "path": "tests/netease_profile_test.cpp",
+      "sha256": "f8e08aefe191b5455b5717e766f5dbd227096f8c2cf894029b8c719ca9518af8"
+    },
+    {
+      "path": "tests/netease_profile_test.pro",
+      "sha256": "5c00784683b8a55c06342925ba27fdfbc5dbe2a495ad94a457400f09eb68a090"
+    },
+    {
+      "path": "tests/preferenceitems_test.cpp",
+      "sha256": "0414ebe09e044b59a32827c5d7dc461506dfd140cc1e8b2186a641cd72f8f5ec"
+    },
+    {
+      "path": "tests/preferenceitems_test.pro",
+      "sha256": "b72dca7c19bd1c8cb8c47cad50f338dab56c8d9975367876938b2eb30cfb6ec7"
+    },
+    {
+      "path": "tests/python_backend_fixture.h",
+      "sha256": "5e5a393f476f7b041c262aa2d991801453b2e9456932dc633174c1b9490e1d1b"
+    },
+    {
+      "path": "tests/python_backend_integration_test.cpp",
+      "sha256": "580339b4d3b8136f0bdd0118ef1f58213e9657303219a636616042dd90cf0484"
+    },
+    {
+      "path": "tests/python_backend_integration_test.pro",
+      "sha256": "737ba18b132d3f90cf524cb4fa398651b069ffa5f116240162f35bf3b887fbd3"
+    },
+    {
+      "path": "tests/radioclient_test.cpp",
+      "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+    },
+    {
+      "path": "tests/radioclient_test.pro",
+      "sha256": "939ae4c4f8fc8fc313829094b477e2fc4c1487b2509a1a1668b0dad86be8358e"
+    },
+    {
+      "path": "tests/radiodialog_test.cpp",
+      "sha256": "c771d1c4960dc010a42463ea2f3dca3e9dfe72837865fb0e1e43d1fc25c985cb"
+    },
+    {
+      "path": "tests/radiodialog_test.pro",
+      "sha256": "906e85770d994d0da3659affc2776a78fc3522f39431f16e434ec855db1c9ecc"
+    },
+    {
+      "path": "tests/routing_client_test.cpp",
+      "sha256": "181e1c0c13a57061ff0ced4f0bb8612e59f3110ed43e698b4fcb33ae0f88d5a9"
+    },
+    {
+      "path": "tests/routing_client_test.pro",
+      "sha256": "503fa59ef82caad60ab379b635651e1a513addf48657bf4a7ccf0a98cfe947f0"
+    },
+    {
+      "path": "tests/routing_fixtures.h",
+      "sha256": "e99083371a510c3d9e08084020796a43488f29835a7a4f16997973f3261054ac"
+    },
+    {
+      "path": "tests/routing_flow_test.cpp",
+      "sha256": "3ed83241ab8a38953d0644cf09314cfb670c473d3a7c431a98562cbc876d3802"
+    },
+    {
+      "path": "tests/routing_flow_test.pro",
+      "sha256": "9765c497ef5699785ae12961de6dbc026f5d2772c2d1ce2315733cec61b7bcd8"
+    }
+  ],
+  "delivery": "docs/MODEL_ROUTING.md; docs/STAGE_DELIVERIES.md"
+}

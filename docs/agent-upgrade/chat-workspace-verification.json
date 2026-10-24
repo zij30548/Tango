@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "stage": "chat-workspace",
+  "date": "2026-10-24",
+  "status": "completed_engineering_scope",
+  "requirements": {
+    "userRightAssistantLeftFramedBubbles": true,
+    "accountScopedPersistentClearAll": true,
+    "clickRecommendationToPlayOne": true
+  },
+  "stack": [
+    "C++17 / Qt5 Widgets / QTextBrowser / QNetworkAccessManager",
+    "Python3.12 / FastAPI",
+    "MySQL8.4 / InnoDB / Redis",
+    "SQLite local profile / QSaveFile / QLockFile"
+  ],
+  "realModelRequests": 0,
+  "realCatalogRequests": 0,
+  "cloudEvaluationRequests": 0,
+  "gates": {
+    "quick": {
+      "report": ".local/harness-runs/20261024T132725-6h03wobj/report.json",
+      "pythonPassed": 1774,
+      "pythonSkipped": 35,
+      "nodePassed": 53,
+      "failed": 0
+    },
+    "mysql": {
+      "report": ".local/harness-runs/20261024T132231-4la_7q94/report.json",
+      "passed": 2339,
+      "skipped": 64,
+      "failed": 0,
+      "environment": "owned temporary MySQL / Redis; migration tests own PG"
+    },
+    "native": {
+      "report": ".local/harness-runs/20261024T133240-pe9otyfv/report.json",
+      "suites": {
+        "hosted_flow_test": {
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0
+        },
+        "music_task_flow_test": {
+          "passed": 5,
+          "failed": 0,
+          "skipped": 0
+        },
+        "routing_flow_test": {
+          "passed": 57,
+          "failed": 0,
+          "skipped": 0
+        },
+        "lookup_context_flow_test": {
+          "passed": 27,
+          "failed": 0,
+          "skipped": 0
+        },
+        "chat_workspace_flow_test": {
+          "passed": 14,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "newBusinessCases": 12,
+      "newLifecycleChecks": 2,
+      "environment": "real macOS Qt; fixed HTTP fixtures and generated WAV"
+    },
+    "dialogUnit": {
+      "log": ".local/chat-ui-unit/final-tests.txt",
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0
+    },
+    "conversationClientUnit": {
+      "log": ".local/chat-ui/client-unit/result-complete.txt",
+      "passed": 21,
+      "failed": 0,
+      "skipped": 0
+    },
+    "overlap": "分层套件覆盖重叠，不能相加为总体准确率或完成率"
+  },
+  "firstFailuresAndFindings": [
+    {
+      "evidence": ".local/chat-ui-unit/first-tests.txt",
+      "cause": "原测试要求旧纯文本控件可见，改为验证真实可见的气泡浏览器及发送/清除布局；原断言目的保留"
+    },
+    {
+      "evidence": ".local/chat-workspace-acceptance/acceptance-summary.json",
+      "cause": "初期曲库夹具不同标题被正确筛选、队列songId列读错；修正夹具/读取列，未放宽产品匹配"
+    },
+    {
+      "report": ".local/harness-runs/20261024T131824-y820cmao/report.json",
+      "passed": 2335,
+      "failed": 2,
+      "skipped": 64,
+      "cause": "旧schema固定18表与迁移夹具缺真实清除回执行；改精确19表集合并保留全表非空/hash，另补旧列旧表迁移"
+    },
+    {
+      "report": ".local/harness-runs/20261024T131921-kxiaa4ob/report.json",
+      "cause": "Routing首项120秒超时；原因未确定。原二进制单项复查3通过，最终整套57通过；未将复查宣称根因已修",
+      "singleCaseFollowup": ".local/chat-ui/routing-hang-check.log"
+    },
+    {
+      "finding": "清除递增epoch导致额度刷新句柄悬挂",
+      "fix": "同取消timer/context/pending，清除结束重新刷新",
+      "evidence": ".local/chat-workspace-acceptance/quota-regression-first.txt"
+    },
+    {
+      "finding": "跨客户端旧回执误删较新编号，以及磁盘回执移除后内存未知编号被旋转",
+      "fix": "QLockFile短锁+磁盘编号重读核对+已有内存编号优先重放；锁不跨网络",
+      "evidence": ".local/chat-workspace-acceptance/clear-race-ordered.txt",
+      "firstFixtureFailure": ".local/chat-workspace-acceptance/clear-race-first.txt"
+    },
+    {
+      "evidence": ".local/chat-ui/backend-clear-first-failure.log",
+      "cause": "旧任务resume先走状态分支，墓碑守卫前移后统一CONVERSATION_CLEARED"
+    },
+    {
+      "evidence": ".local/chat-ui/launcher-clear-first-failure.log",
+      "cause": "启动器fixtures未带新能力字段；升级fixture并补缺失/0/2/string/bool拒绝"
+    }
+  ],
+  "clearSemantics": {
+    "scope": "current Tango account, all devices persistent conversation journals",
+    "confirmation": "Yes/Cancel; Cancel default; recheck identity after dialog",
+    "preserved": [
+      "confirmed music preferences",
+      "play queue and local files",
+      "quota and call/token ledger",
+      "task/adoption audit",
+      "awaiting_apply original acknowledgement facts"
+    ],
+    "lateResults": "conversation tombstone, generation/epoch invalidation and account lock guard",
+    "retries": "persistent same requestId; unknown is not a new destructive action",
+    "localCleanup": "current profile route journal only after verified remote acknowledgement",
+    "limits": [
+      "不是全部个人数据物理删除",
+      "其他设备现有显示缓存不实时擦除",
+      "已有任务审计、备份和观测不在按钮清理范围"
+    ]
+  },
+  "visualQA": {
+    "screenshots": [
+      ".local/chat-workspace-acceptance/chat-integrated.png",
+      ".local/chat-workspace-acceptance/chat-integrated.png.songs.png"
+    ],
+    "reviewed": true,
+    "finding": "用户靠右/助手靠左，有底色和边框，清除按钮/输入/歌曲元数据可见，无截断重叠"
+  },
+  "integration": {
+    "app": "build-macos/Tango.app",
+    "prepareExitCode": 0,
+    "prepareLog": ".local/chat-ui/app-prepare-complete.log",
+    "backendRestart": [
+      {
+        "oldPid": 77670,
+        "port": 16382,
+        "identityVerified": true,
+        "signal": "SIGTERM",
+        "stopped": true
+      },
+      {
+        "oldPid": 77672,
+        "port": 16383,
+        "identityVerified": true,
+        "signal": "SIGTERM",
+        "stopped": true
+      }
+    ],
+    "readiness": [
+      {
+        "port": 16382,
+        "healthStatus": 200,
+        "readyStatus": 200,
+        "ready": true,
+        "storage": "mysql",
+        "rateLimiter": "redis",
+        "conversationClearVersion": 1,
+        "developmentMode": false
+      },
+      {
+        "port": 16383,
+        "healthStatus": 200,
+        "readyStatus": 200,
+        "ready": true,
+        "storage": "mysql",
+        "rateLimiter": "redis",
+        "conversationClearVersion": 1,
+        "developmentMode": true
+      }
+    ],
+    "noDatabaseWipeOrQuotaReset": true
+  },
+  "sourceHashes": {
+    "appbackendclient.cpp": "b38d601995ee01bb59237018ee73c6e3230eb42fbd11413dbda2b95cdc6b4a9c",
+    "appbackendclient.h": "269671d8eb1258180e8a408267bb002dfc631fe597e07b0d8ace260d2976c66f",
+    "conversationclient.cpp": "3a402cb770e2ccba1eaea8c8ab0648578c805657039f9450d423c11d156353d1",
+    "conversationclient.h": "2f8bf1f8206b6d193eba0fdd2003e28d1e9b6d1ff52a98dea2c2e82c5ef14482",
+    "mainwindow.h": "6ee6a61b6a9a033ac6936e67951a8c17c68ff6fcc282299422e1d9f71b9337b2",
+    "mainwindowradio.cpp": "06f7d550069522a76b4f58dd30e5c0a1745ac5390233d0e6fa9b551ad0d1e001",
+    "radiodialog.cpp": "9ab20ecdece0226d2d23a985bf6450b1187fa357394bff3619a611ab2347aef1",
+    "radiodialog.h": "9ac0692f67344927f8dd09bcfe30d8aa487399737a04473a1e85761d67e5c6d5",
+    "radiostore.cpp": "f36068c6c0c3efa3c111349aadf59d67ae4c6264870fd9c3a2bac0703167a9b4",
+    "radiostore.h": "15475ed69097288b980bc80ec4141211eae866d7ee32b215b53d22e7a03e2214",
+    "backend_py/tango_backend/app.py": "080c2daf40df87bd173a2207ef3d96bc69dd2942fa01a3aa1cf9f2af92971abb",
+    "backend_py/tango_backend/conversation_store.py": "9608cd314ead65939171bb52a124390e333ef9d8b9534e8ca70c1ba6d6748701",
+    "backend_py/tango_backend/conversation_route_store.py": "68ef4e183ad3b1226c15668d5105d0347ac713edf680dfb76d288ce154935287",
+    "backend_py/tango_backend/task_store.py": "a6274418fc302ffaac65d981db11f13e37a66a8de5ce9a2f6d2f063d0f577022",
+    "backend_py/tango_backend/task_runtime.py": "6934a752151043abcea2cc12c36a849eb0dc0a777b4bc7841e0a0e4fa9874bdb",
+    "backend_py/tango_backend/mysql_task_store.py": "eae1c2d11f9cc5ffd6973fdcf4ce7f799ca4b1a2af4459ca0f9bd6c1a93ecbc4",
+    "backend_py/tango_backend/postgres_task_store.py": "ab57a5355a6e002819861146db980bb92adf2b590c9126af096253f37632499a",
+    "backend_py/tango_backend/store.py": "49e6791d01ffdf8ea85536c5dc72f96b04c61795a672b5c33c0253e1ff42880a",
+    "backend_py/tango_backend/launch_local.py": "5cd06a12d922b5c0d034a2b851074860bc53ffb305a8944ccc59d747fc3bd51d",
+    "backend_py/tango_backend/migrate_mysql.py": "5bd24bda584abf1247a0b19322db182250c2c934e70adecb8aa8ffbc38f50bd8",
+    "backend_py/tango_backend/migrations/001_initial_mysql.sql": "04493e405963214e2752bdc025d7987379193e1c797f62f0e3aa9d24120509b0",
+    "backend_py/tests/test_chat_clear.py": "a093155f0c1b15a1dcb0414a6c6d48c9fab2d0ea877f7b32d1106a280339ec10",
+    "backend_py/tests/test_mysql_app.py": "ad488df61ac6b90be8dd25e43ec23f3603074182ed454876385d967e457481f3",
+    "backend_py/tests/test_mysql_storage.py": "36fac7b849e4e629556477ae87a9bd2af3b537f71b2b5195d05f46cadca8d57b",
+    "backend_py/tests/test_mysql_migration.py": "90e8284fe088c7973e86231c6717436a98ad322b55a86ce7efe5440452eacd1e",
+    "backend_py/tests/test_launch_local.py": "a43a24c89639480a64f410807a0286196984a62058d56e347868e1bc618814f1",
+    "tests/radiodialog_test.cpp": "a27c1c32afa2d1933c60f425460c048a3bad42d406fa9e69b12343ecab3edbb1",
+    "tests/chat_workspace_flow_test.cpp": "a1e1b74fa9edb5cf907a1075308460b51372d707520095ad4ffe9020336d0635",
+    "tests/chat_workspace_flow_test.pro": "63106c90ad24a831d81afb0aeff8f03b05cb06965a2ac16916081d9f099f02a8",
+    "scripts/verify-harness.py": "3966e7e9dc6d6592761c3d3af716e19ff3de1189412843b22502eb5f38c93e80",
+    "build-macos/Tango.app/Contents/MacOS/Tango": "32bd21416cec776df83e936e55e4e421b35bcceaa5567e11fd44c689d7fd7278"
+  },
+  "changedSourceArchive": ".local/chat-ui/changed-source-v1",
+  "limitations": [
+    "模拟曲库/生成WAV仅验证点击播放链路，不证明真实推荐质量、完整歌曲或会员权益",
+    "本阶段无新增真实模型/网易云测评，不修改旧语义成绩与预算",
+    "首次原生超时原因未知，保留为限制；修后最终完整桌面门禁通过",
+    "当前能力清单五类仍partial，不能外推生产上线"
+  ],
+  "versionControl": {
+    "committed": false,
+    "pushed": false,
+    "privateRuntimeArtifactsIgnored": true
+  }
+}

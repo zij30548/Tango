@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "status": "actual_startup_recovered",
+  "initialObservedFailure": "构建成功，准备脚本因旧后台版本检查失败退出1，Qt窗口未启动。",
+  "rootCause": "16382/16383仍驻留2026-10-21启动的本项目旧Python后台，未提供modelRoutingVersion=1。",
+  "originalChecksRetained": true,
+  "ownershipVerification": [
+    "相同当前用户",
+    "相同Python解释器",
+    "-m tango_backend.server精确参数",
+    "本项目backend_py工作目录",
+    "指定端口唯一监听进程"
+  ],
+  "repair": "仅对核实的两个旧进程发送SIGTERM，正常退出后由原启动器分别启动普通和开发后台。",
+  "oldHealth": [
+    {
+      "port": 16382,
+      "health": {
+        "app": "quiet-app-backend",
+        "runtimeLanguage": "python",
+        "runtimeVersion": 2,
+        "storage": "mysql",
+        "modelRoutingVersion": null,
+        "developmentMode": false
+      }
+    },
+    {
+      "port": 16383,
+      "health": {
+        "app": "quiet-app-backend",
+        "runtimeLanguage": "python",
+        "runtimeVersion": 2,
+        "storage": "mysql",
+        "modelRoutingVersion": null,
+        "developmentMode": true
+      }
+    }
+  ],
+  "newHealthAndReady": [
+    {
+      "port": 16382,
+      "health": {
+        "app": "quiet-app-backend",
+        "runtimeLanguage": "python",
+        "runtimeVersion": 2,
+        "storage": "mysql",
+        "rateLimiter": "redis",
+        "modelRoutingVersion": 1,
+        "developmentMode": false
+      },
+      "ready": true
+    },
+    {
+      "port": 16383,
+      "health": {
+        "app": "quiet-app-backend",
+        "runtimeLanguage": "python",
+        "runtimeVersion": 2,
+        "storage": "mysql",
+        "rateLimiter": "redis",
+        "modelRoutingVersion": 1,
+        "developmentMode": true
+      },
+      "ready": true
+    }
+  ],
+  "verification": {
+    "normalBackendLauncherExit": 0,
+    "runMacos": "已通过完整入口实际打开Tango主窗口，进程继续运行供用户使用。",
+    "nativeUi": "CUA观察到探歌Tango主窗口、音乐库、播放栏及“本机开发测试已就绪”；不是仅后台HTTP检查。",
+    "vscodePrepareScriptExit": 0,
+    "actualVscodeDebuggerF5": "未直接操作调试器，仅验证其preLaunchTask使用的脚本。",
+    "quick": {
+      "pythonPassed": 435,
+      "pythonSkipped": 19,
+      "nodePassed": 53,
+      "failed": 0,
+      "scope": "本次仅操作本机进程并更新文档；隔离回归与真实窗口验证分开。"
+    },
+    "privateQuickReport": ".local/harness-runs/20261023T090536-l986g9vv/report.json"
+  },
+  "dataReset": false,
+  "credentialsChanged": false,
+  "productSourceChanged": false,
+  "newProviderRequests": 0,
+  "modelEvaluationPausedForRepair": true,
+  "privateEvidence": {
+    "launcher-first.log": "e99170ab86a8851c7da613e7244cc49c877996750a690ef7dcbfb7b4b975ac9a",
+    "normal-backend-after.log": "126c574d119cdf63d7bb207d9c3515cdcd7d3709f7366bdb17acee6059dc8cd2",
+    "launcher-after.log": "17a87c8874427cb3f2e81834c21098ee7ea43b72de51477a95d6904910f9bc74",
+    "launcher-reuse.log": "998d05d7b79f9ab6a5445f893419b6764dbf8b3b878212fef23980e40e16753a",
+    "verified-old-backends.json": "e38126dfdf1b979078db8f986e167a9d3e79e01f56ec963a3a4cd8ffe701be51",
+    "new-backends-ready.json": "325bffc1deca99c312a6a0840792f1e9ad0abcb22bb8385f000920cfacd523a2"
+  },
+  "privateDirectory": ".local/startup-repair-20261023",
+  "publication": {
+    "committed": false,
+    "pushed": false
+  }
+}

@@ -1,0 +1,68 @@
+.F.........F                                                             [100%]
+=================================== FAILURES ===================================
+_______ test_real_pg_to_mysql_preserves_all_tables_auth_json_and_ledger ________
+
+pair = namespace(source=<tango_backend.store.PostgresStore object at 0x10d155ee0>, target=<tango_backend.store.MySQLStore obj...0/backups'), calls=['98cacde2-89fc-49d3-b62f-bcb67887ecf9', 'fe09d49b-8b6a-4aa1-b239-9dc66abf4f99'], now=1792515721636)
+
+    async def test_real_pg_to_mysql_preserves_all_tables_auth_json_and_ledger(pair):
+        report = pair.backup.parent / 'report.json'
+>       result = await migration.migrate(pair.source_env,pair.target_env,execute=True,backup_directory=pair.backup,report=report)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_mysql_migration.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tango_backend/migrate_mysql.py:197: in migrate
+    await target.db.execute("SET SESSION sql_mode=CONCAT(@@sql_mode,',STRICT_ALL_TABLES')")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tango_backend.storage_db.Database object at 0x10d44db20>
+sql = "SET SESSION sql_mode=CONCAT(@@sql_mode,',STRICT_ALL_TABLES')"
+params = ()
+
+    async def execute(self, sql, params=()):
+        await self.initialize()
+        state = self._current()
+        if self.dialect == "mysql" and state:
+            head = re.sub(r"/\*[\s\S]*?\*/|--[^\n]*", "", sql).lstrip().split(None, 1)[0].upper()
+            if head in {"CREATE", "ALTER", "DROP", "TRUNCATE", "RENAME", "GRANT", "REVOKE", "LOCK", "UNLOCK", "SET"}:
+>               raise TypeError("MySQL implicit-commit SQL is forbidden inside a business transaction")
+E               TypeError: MySQL implicit-commit SQL is forbidden inside a business transaction
+
+tango_backend/storage_db.py:165: TypeError
+________ test_digest_failure_rolls_back_every_target_table_and_keeps_pg ________
+
+pair = namespace(source=<tango_backend.store.PostgresStore object at 0x10d557e30>, target=<tango_backend.store.MySQLStore obj...0/backups'), calls=['149334ba-9834-4725-9071-d0bed06d1f33', '75171ff7-658c-4d7a-b944-61c1ec0a8203'], now=1792515725752)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10d557fe0>
+
+    async def test_digest_failure_rolls_back_every_target_table_and_keeps_pg(pair,monkeypatch):
+        original = migration._insert_value
+        def corrupt(column,value):
+            return original(column,value).replace('粤语😀','错误内容') if column=='snapshot_json' else original(column,value)
+        monkeypatch.setattr(migration,'_insert_value',corrupt)
+        with pytest.raises(migration.MigrationError) as error:
+>           await migration.migrate(pair.source_env,pair.target_env,execute=True,backup_directory=pair.backup)
+
+tests/test_mysql_migration.py:176: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tango_backend/migrate_mysql.py:197: in migrate
+    await target.db.execute("SET SESSION sql_mode=CONCAT(@@sql_mode,',STRICT_ALL_TABLES')")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tango_backend.storage_db.Database object at 0x10d604350>
+sql = "SET SESSION sql_mode=CONCAT(@@sql_mode,',STRICT_ALL_TABLES')"
+params = ()
+
+    async def execute(self, sql, params=()):
+        await self.initialize()
+        state = self._current()
+        if self.dialect == "mysql" and state:
+            head = re.sub(r"/\*[\s\S]*?\*/|--[^\n]*", "", sql).lstrip().split(None, 1)[0].upper()
+            if head in {"CREATE", "ALTER", "DROP", "TRUNCATE", "RENAME", "GRANT", "REVOKE", "LOCK", "UNLOCK", "SET"}:
+>               raise TypeError("MySQL implicit-commit SQL is forbidden inside a business transaction")
+E               TypeError: MySQL implicit-commit SQL is forbidden inside a business transaction
+
+tango_backend/storage_db.py:165: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_mysql_migration.py::test_real_pg_to_mysql_preserves_all_tables_auth_json_and_ledger
+FAILED tests/test_mysql_migration.py::test_digest_failure_rolls_back_every_target_table_and_keeps_pg
+2 failed, 10 passed in 5.28s

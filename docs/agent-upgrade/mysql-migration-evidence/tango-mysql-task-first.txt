@@ -1,0 +1,958 @@
+EEEEEEEEEEEEEEEEEE                                                       [100%]
+==================================== ERRORS ====================================
+______ ERROR at setup of test_mysql_complete_lock_turn_undo_adopt[fixed] _______
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'y%\x01(\x1f\x13-\x1c7%d\x1b\x078\x0c\x11\rE@\t'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+___ ERROR at setup of test_mysql_complete_lock_turn_undo_adopt[single_agent] ___
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'g)\x01M1cT%\\\x1bz/%BDx\x05\x13H?'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+____ ERROR at setup of test_mysql_complete_lock_turn_undo_adopt[dual_agent] ____
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'A\\\x0bT\x104<0`W4\x18:|J6]\x1eSQ'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_cancel_retains_inflight_slot_and_late_completion_cannot_overwrite _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'\x0b&vv`L()f6p4\x1fl*\x15Qj\x1b#'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_______ ERROR at setup of test_mysql_task_budget_is_not_reset_by_resume ________
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'\x18I\x1dGa:#=\x1b\x7fRC"Ee\x0bHYHu'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_tool_identity_revision_replay_and_idempotency_guards _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'\x17;\x19g5\x10\x0bNTIt\x12.Q7\x16(bjO'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_restore_is_observation_only_and_tool_timeout_pauses _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'I\x7f\x06\x17 D\x04W\x02oS\x1f~iJ\x1b(__\x0c'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_invalid_observer_degrades_and_provider_failure_is_explicit _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'{bRP\x01p\rh\x06?H-X.*%x\x16qw'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_concurrent_scene_release_handoff_and_artist_evidence _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'>K&my~=\x12ed?%\x01gwK\nz1R'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_cross_worker_provider_exclusion_and_lease_recovery _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b"X'%\n\x0bB-wftWsE\x13Bx%*\x06U"
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_unknown_attempt_remains_charged_and_never_replays_automatically _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'\x0c\x13.\ro\x1b4U\x18?R?eh txb45'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_artist_choice_cannot_inject_resolved_catalog_identity _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'\x0c\x18\nn3\x7fIi\x1cu4cZ\x05|\x0c<-\x0bF'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+______ ERROR at setup of test_mysql_matches_same_input_frozen_js_workflow ______
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b"\x14KGgZ'>f{\x1aA~@\x7fr)\x15zQ\x04"
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_old_owner_fence_cannot_write_heartbeat_release_or_spend _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b']sA\x01\x07!(J\x10;0uokkd)\x1e\x1c\x07'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_global_concurrency_is_shared_across_workers_and_legacy _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'Yx+)\x19\x14A?P9(\x161x\x028t |9'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_global_budget_race_and_account_rejection_rollback _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'\x1b\x05\x17C)caH|R\x10a*}\x0fI0~ 5'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_checkpoint_cas_and_stranded_json_recovery_are_atomic _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b'Nr\x02)40y\x1f^"\x0e\x1e]MY6d\x0b:\x7f'
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+_ ERROR at setup of test_mysql_account_daily_total_and_disable_are_enforced_before_paid_attempt _
+
+    @pytest.fixture
+    async def f():
+        url = os.environ.get("TANGO_MYSQL_TEST_URL")
+        if not url:
+            pytest.skip("须通过独立 runner 显式提供临时 MySQL，禁止使用真实数据库")
+        import asyncmy
+        from tango_backend.store import MysqlStore
+    
+        parsed = urlsplit(url)
+        # 只接受 runner 的本机临时入口，逐例建库，绝不清理调用方给出的库。
+        assert parsed.hostname in ("127.0.0.1", "localhost", "::1")
+>       admin = await asyncmy.connect(
+            host=parsed.hostname, port=parsed.port or 3306,
+            user=unquote(parsed.username or ""), password=unquote(parsed.password or ""),
+            autocommit=True, charset="utf8mb4",
+        )
+
+tests/test_mysql_task_runtime.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+asyncmy/connection.pyx:2094: in _connect
+    ???
+asyncmy/connection.pyx:990: in connect
+    ???
+asyncmy/connection.pyx:968: in asyncmy.connection.Connection.connect
+    ???
+asyncmy/connection.pyx:1346: in _request_authentication
+    ???
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:245: in caching_sha2_password_auth
+    data = sha2_rsa_encrypt(conn._password, conn.salt, conn._server_public_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+password = b'[临时凭据已隐藏]'
+salt = b"#\x1cy{\x11.u\n=\x13nqp\x12\x13V'\x07l2"
+public_key = b'-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA18/hUmsfXSb4K9fIaY8v\nQ4HQrUgDuGFbRc64DS84yV...3tD9Q6FenAF4St\nEMlhGvf8XrUYF+nHwZxaYjSMylvxqyki1ZG3Zf2pSqkZ+4Y0Rf5sLtGh96Lo+37+\nBQIDAQAB\n-----END PUBLIC KEY-----\n'
+
+    def sha2_rsa_encrypt(password, salt, public_key):
+        """
+        Encrypt password with salt and public_key.
+    
+        Used for sha256_password and caching_sha2_password.
+        """
+        if not _have_cryptography:
+>           raise RuntimeError(
+                "'cryptography' package is required for sha256_password "
+                "or caching_sha2_password auth methods"
+            )
+E           RuntimeError: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+
+.venv/lib/python3.12/site-packages/asyncmy/auth.py:140: RuntimeError
+=========================== short test summary info ============================
+ERROR tests/test_mysql_task_runtime.py::test_mysql_complete_lock_turn_undo_adopt[fixed]
+ERROR tests/test_mysql_task_runtime.py::test_mysql_complete_lock_turn_undo_adopt[single_agent]
+ERROR tests/test_mysql_task_runtime.py::test_mysql_complete_lock_turn_undo_adopt[dual_agent]
+ERROR tests/test_mysql_task_runtime.py::test_mysql_cancel_retains_inflight_slot_and_late_completion_cannot_overwrite
+ERROR tests/test_mysql_task_runtime.py::test_mysql_task_budget_is_not_reset_by_resume
+ERROR tests/test_mysql_task_runtime.py::test_mysql_tool_identity_revision_replay_and_idempotency_guards
+ERROR tests/test_mysql_task_runtime.py::test_mysql_restore_is_observation_only_and_tool_timeout_pauses
+ERROR tests/test_mysql_task_runtime.py::test_mysql_invalid_observer_degrades_and_provider_failure_is_explicit
+ERROR tests/test_mysql_task_runtime.py::test_mysql_concurrent_scene_release_handoff_and_artist_evidence
+ERROR tests/test_mysql_task_runtime.py::test_mysql_cross_worker_provider_exclusion_and_lease_recovery
+ERROR tests/test_mysql_task_runtime.py::test_mysql_unknown_attempt_remains_charged_and_never_replays_automatically
+ERROR tests/test_mysql_task_runtime.py::test_mysql_artist_choice_cannot_inject_resolved_catalog_identity
+ERROR tests/test_mysql_task_runtime.py::test_mysql_matches_same_input_frozen_js_workflow
+ERROR tests/test_mysql_task_runtime.py::test_mysql_old_owner_fence_cannot_write_heartbeat_release_or_spend
+ERROR tests/test_mysql_task_runtime.py::test_mysql_global_concurrency_is_shared_across_workers_and_legacy
+ERROR tests/test_mysql_task_runtime.py::test_mysql_global_budget_race_and_account_rejection_rollback
+ERROR tests/test_mysql_task_runtime.py::test_mysql_checkpoint_cas_and_stranded_json_recovery_are_atomic
+ERROR tests/test_mysql_task_runtime.py::test_mysql_account_daily_total_and_disable_are_enforced_before_paid_attempt
+18 errors in 0.28s

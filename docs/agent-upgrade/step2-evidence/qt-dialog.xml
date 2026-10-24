@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase name="RadioDialogTest">
+<Environment>
+    <QtVersion>5.15.19</QtVersion>
+    <QtBuild>Qt 5.15.19 (arm64&#x002D;little_endian&#x002D;lp64 shared (dynamic) release build; by Clang 21.0.0 (clang&#x002D;2100.0.123.102) (Apple))</QtBuild>
+    <QTestVersion>5.15.19</QTestVersion>
+</Environment>
+<TestFunction name="initTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.176791"/>
+</TestFunction>
+<TestFunction name="availabilityProtectsEveryGenerationEntry">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="70.966"/>
+</TestFunction>
+<TestFunction name="accountQuotaShowsVerifiedCountsWithoutChangingTheDraft">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.49196"/>
+</TestFunction>
+<TestFunction name="accountQuotaRejectsUnknownOrMalformedCounts">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.12908"/>
+</TestFunction>
+<TestFunction name="accountQuotaDisabledAndResetPreserveHistoryAndPlayback">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="4.80237"/>
+</TestFunction>
+<TestFunction name="composerKeyboardImeAndLengthBoundary">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="20.2663"/>
+</TestFunction>
+<TestFunction name="draftReceiptsDoNotLoseEditsOrCrossAccounts">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.80054"/>
+</TestFunction>
+<TestFunction name="journalIsNotOverwrittenAndReadingPositionIsPreserved">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="18.1728"/>
+</TestFunction>
+<TestFunction name="newConversationIsExplicitAndDisabledForPendingSubmission">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.1735"/>
+</TestFunction>
+<TestFunction name="busyCancellationAndRecovery">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.71096"/>
+</TestFunction>
+<TestFunction name="recommendationsPreserveMetadataAndRequireExplicitPlayback">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.97308"/>
+</TestFunction>
+<TestFunction name="recommendationsAndConversationAreBoundedPlainText">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="14.6716"/>
+</TestFunction>
+<TestFunction name="feedbackAndPreferenceSignalsAreExplicit">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.91363"/>
+</TestFunction>
+<TestFunction name="closingCancelsWorkWithoutStartingMusic">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.21188"/>
+</TestFunction>
+<TestFunction name="accountResetClearsAllPrivatePresentation">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.345"/>
+</TestFunction>
+<TestFunction name="compactWindowFitsItsMinimumSize">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="5.12367"/>
+</TestFunction>
+<TestFunction name="assistantExamplesRouteThroughTheSameChat">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.60979"/>
+</TestFunction>
+<TestFunction name="artistChoicesAreBoundedAndRequireExplicitSelection">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.05658"/>
+</TestFunction>
+<TestFunction name="preferenceReviewIsEditableBoundedAndExplicit">
+<Message type="qwarn" file="" line="0">
+    <Description><![CDATA[This plugin does not support propagateSizeHints()]]></Description>
+</Message>
+<Message type="qwarn" file="" line="0">
+    <Description><![CDATA[This plugin does not support propagateSizeHints()]]></Description>
+</Message>
+<Message type="qwarn" file="" line="0">
+    <Description><![CDATA[This plugin does not support propagateSizeHints()]]></Description>
+</Message>
+<Message type="qwarn" file="" line="0">
+    <Description><![CDATA[This plugin does not support propagateSizeHints()]]></Description>
+</Message>
+<Message type="qwarn" file="" line="0">
+    <Description><![CDATA[This plugin does not support propagateSizeHints()]]></Description>
+</Message>
+<Message type="qwarn" file="" line="0">
+    <Description><![CDATA[This plugin does not support propagateSizeHints()]]></Description>
+</Message>
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="7.1525"/>
+</TestFunction>
+<TestFunction name="stalePreferenceEditorCannotSaveIntoAnotherAccount">
+<Message type="qwarn" file="" line="0">
+    <Description><![CDATA[This plugin does not support propagateSizeHints()]]></Description>
+</Message>
+<Message type="qwarn" file="" line="0">
+    <Description><![CDATA[This plugin does not support propagateSizeHints()]]></Description>
+</Message>
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="3.97783"/>
+</TestFunction>
+<TestFunction name="cleanupTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.004833"/>
+</TestFunction>
+<Duration msecs="184.023"/>
+</TestCase>

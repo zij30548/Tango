@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-21T13:15:25.098966+00:00",
+  "scope": "中文注释约定及公开模板/脚本说明维护，不是新增Agent阶段或业务改动。",
+  "policy": "新增/修改的自有解释性注释和模块、类、函数文档字符串统一中文；技术标识、工具指令、第三方许可原文保留。",
+  "files": [
+    {
+      "path": "backend_py/.env.example",
+      "beforeSha256": "3b6d8b100423105a06df47f614927a4929bc6b53e16f500afdc85bd61b226663",
+      "afterSha256": "94d88541e5ce654fe5e961bba0f1d43dc14b48d02517599285f28f75cdb721b7"
+    },
+    {
+      "path": "scripts/macos_memory_profile.py",
+      "beforeSha256": "dd7977e636a780e79e362184a7559019914b0c3a9a487dd02b4371717a86589a",
+      "afterSha256": "7303c2656b8783c05437cecdc303f111d09f64bfb2f52ec033688450c805afaf"
+    },
+    {
+      "path": "scripts/development-env.sh",
+      "beforeSha256": "df290391a71aad908874c518125ec2e4e845d51f22b702a8d4c27d3d412f23f3",
+      "afterSha256": "be1fc7646c13a443fecd6f3d97b6c17e67c3d6e50d6a6e2be2d46f8a6c82433b"
+    },
+    {
+      "path": "scripts/run-agent-macos.sh",
+      "beforeSha256": "1b3045af3e7636825e00cad9b22aa2cdc5e1c097087a8f2f6381b0d16dd5d98d",
+      "afterSha256": "f43e00bf92ef0110f6bec4968906517602a22eabbf822d22879ef1fb87a1b573"
+    }
+  ],
+  "validation": {
+    "pythonAstUnchanged": true,
+    "shellOperationalLinesUnchanged": true,
+    "shellSyntaxPassed": 2,
+    "publicEnvironmentValuesUnchanged": true,
+    "auditedMultiModelPythonFiles": 18,
+    "englishExplanationCommentsOrDocstringsInAuditedFiles": 0,
+    "quickPython": {
+      "passed": 411,
+      "failed": 0,
+      "skipped": 19
+    },
+    "quickNode": {
+      "passed": 53,
+      "failed": 0,
+      "skipped": 0
+    },
+    "skipScope": "需要独立数据库的专项；本次注释维护未重复数据库/原生桌面回归。",
+    "realModelRequests": 0,
+    "privateEnvironmentReadOrModified": false,
+    "committed": false,
+    "pushed": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/agent-upgrade/chinese-comments-followup-evidence/report.json",
+      "sha256": "cb82151d8fb7e0a26773b251bbfa2193f29fad1b3f89c348a6405a2fbe3747db"
+    },
+    {
+      "path": "docs/agent-upgrade/chinese-comments-followup-evidence/python_offline.txt",
+      "sha256": "259b6c6c33251c1c6c0980e84404dea79ea090d8dd964664b3340cd0670094b2"
+    },
+    {
+      "path": "docs/agent-upgrade/chinese-comments-followup-evidence/service_offline.txt",
+      "sha256": "3390c6a4d20d404c4a3644796c4d0142c6aea971315a3d5d54d5d898914a2dc1"
+    }
+  ],
+  "policyDocuments": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "8773141f939876d4dc1ecce52ab7848c9aa4d4697bb49cbd356e2d9b1587072e"
+    },
+    {
+      "path": "docs/HARNESS_ENGINEERING.md",
+      "sha256": "5deb1c96f315369122e649bfe11d4c8df2888f2302bf664f848ae31433cd52ad"
+    },
+    {
+      "path": "docs/DEVELOPMENT_PROGRESS.md",
+      "sha256": "98296a4c6bd74779efc3a902ab3fe1745132c6d521f5d2b05b703a86b7a42d99"
+    }
+  ]
+}

@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+ <class>SignUp</class>
+ <widget class="QDialog" name="SignUp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>注册</string>
+  </property>
+  <layout class="QVBoxLayout" name="rootLayout">
+   <property name="leftMargin">
+    <number>24</number>
+   </property>
+   <property name="topMargin">
+    <number>24</number>
+   </property>
+   <property name="rightMargin">
+    <number>24</number>
+   </property>
+   <property name="bottomMargin">
+    <number>24</number>
+   </property>
+   <property name="spacing">
+    <number>16</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>创建账户</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>heading</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_AccountHint">
+     <property name="text">
+      <string>账户数据保存在本机账户服务中。</string>
+     </property>
+     <property name="role" stdset="0">
+      <string>subtitle</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QFormLayout" name="accountForm">
+     <property name="horizontalSpacing">
+      <number>16</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>18</number>
+     </property>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>用户名</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_Id">
+       <property name="placeholderText">
+        <string>输入用户名</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>密码</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_Password">
+       <property name="placeholderText">
+        <string>输入密码</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_ConfirmPassword">
+       <property name="text"><string>确认密码</string></property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_ConfirmPassword">
+       <property name="placeholderText"><string>再次输入密码</string></property>
+       <property name="echoMode"><enum>QLineEdit::Password</enum></property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_InviteCode">
+       <property name="text"><string>内测码</string></property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_InviteCode">
+       <property name="placeholderText"><string>输入内测邀请代码</string></property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>性别</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <layout class="QHBoxLayout" name="genderLayout">
+       <item>
+        <widget class="QRadioButton" name="radioButton_man">
+         <property name="text">
+          <string>男</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_woman">
+         <property name="text">
+          <string>女</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="genderSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="footerLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_Back">
+       <property name="text">
+        <string>返回</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="footerSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_SignUp">
+       <property name="text">
+        <string>注册</string>
+       </property>
+       <property name="role" stdset="0">
+        <string>primary</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources />
+ <connections />
+</ui>

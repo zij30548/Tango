@@ -1,0 +1,370 @@
+{
+  "testedAt": "2026-10-18T13:15:57.530Z",
+  "result": "passed",
+  "isolated": true,
+  "anonymous": true,
+  "modelRequestLimit": 3,
+  "modelRequestsAttempted": 3,
+  "http": [
+    {
+      "stage": "register",
+      "status": 201
+    },
+    {
+      "stage": "agent_status",
+      "status": 200
+    },
+    {
+      "stage": "anonymous_status",
+      "status": 200
+    },
+    {
+      "stage": "drinking_assistant_plan",
+      "status": 200
+    },
+    {
+      "stage": "playlist_search",
+      "status": 200
+    },
+    {
+      "stage": "playlist_candidates",
+      "status": 200
+    },
+    {
+      "stage": "playlist_search",
+      "status": 200
+    },
+    {
+      "stage": "playlist_candidates",
+      "status": 200
+    },
+    {
+      "stage": "drinking_radio_select",
+      "status": 200
+    },
+    {
+      "stage": "releases_assistant_plan",
+      "status": 200
+    },
+    {
+      "stage": "artist_search",
+      "status": 200
+    },
+    {
+      "stage": "artist_releases",
+      "status": 200
+    },
+    {
+      "stage": "album_tracks",
+      "status": 200
+    },
+    {
+      "stage": "album_tracks",
+      "status": 200
+    },
+    {
+      "stage": "album_tracks",
+      "status": 200
+    }
+  ],
+  "drinking": {
+    "input": "我现在在喝酒，你能推荐一些喝酒的时候的歌曲吗。",
+    "playlists": [
+      {
+        "id": 9162541359,
+        "title": "情侣办事歌单 微醺氛围感 夜晚浪漫性感情调"
+      },
+      {
+        "id": 12936726471,
+        "title": "咖啡馆轻音乐 钢琴曲 舒缓放松 放松音乐"
+      }
+    ],
+    "candidates": [
+      {
+        "id": 2150833615,
+        "title": "Sinking into the deep sea",
+        "artist": "Sally"
+      },
+      {
+        "id": 2124074,
+        "title": "How Can I Be Sure",
+        "artist": "Anomie Belle"
+      },
+      {
+        "id": 1368327725,
+        "title": "...baby one more time",
+        "artist": "The Marías"
+      },
+      {
+        "id": 1804362955,
+        "title": "i love you baby",
+        "artist": "Emilee"
+      },
+      {
+        "id": 1138293,
+        "title": "No Words Necessary",
+        "artist": "Ben Tankard"
+      },
+      {
+        "id": 520460161,
+        "title": "I Like It",
+        "artist": "The Marías"
+      },
+      {
+        "id": 1336856614,
+        "title": "youcomeandbemyflower",
+        "artist": "Blue.D"
+      },
+      {
+        "id": 1924644563,
+        "title": "Not About Us",
+        "artist": "Alis Shuka"
+      },
+      {
+        "id": 2025082445,
+        "title": "Moonlight",
+        "artist": "Kali Uchis"
+      },
+      {
+        "id": 1858667949,
+        "title": "Give me your love",
+        "artist": "ZIV / Whencent"
+      },
+      {
+        "id": 1432701364,
+        "title": "More Than Enough",
+        "artist": "Alina Baraz"
+      },
+      {
+        "id": 1467453419,
+        "title": "Take Me Away",
+        "artist": "Lvyan"
+      },
+      {
+        "id": 1890365896,
+        "title": "Hrs & Hrs",
+        "artist": "Muni Long"
+      },
+      {
+        "id": 1930267006,
+        "title": "i need you more (Feat. Suyo)",
+        "artist": "Sweet The Kid / Suyo"
+      },
+      {
+        "id": 1919354369,
+        "title": "More Than Love",
+        "artist": "MALIA"
+      },
+      {
+        "id": 3369793361,
+        "title": "指缝划过的时光",
+        "artist": "诗漫钢琴"
+      },
+      {
+        "id": 3368804479,
+        "title": "银河舒眠曲",
+        "artist": "林小棠"
+      },
+      {
+        "id": 3360076396,
+        "title": "思念心口难开",
+        "artist": "寻梦旅记"
+      },
+      {
+        "id": 3360046634,
+        "title": "春挽冬留",
+        "artist": "Vicky颖"
+      },
+      {
+        "id": 3372520563,
+        "title": "路过人间看烟火",
+        "artist": "苏清梦"
+      },
+      {
+        "id": 3369793837,
+        "title": "明夕何夕已陌路",
+        "artist": "诗漫钢琴"
+      },
+      {
+        "id": 3368804478,
+        "title": "夏夜星空",
+        "artist": "林小棠"
+      },
+      {
+        "id": 3360047354,
+        "title": "巷陌重逢",
+        "artist": "Vicky颖"
+      },
+      {
+        "id": 3366041476,
+        "title": "唯你，情所钟",
+        "artist": "言夕Eva"
+      },
+      {
+        "id": 3370806527,
+        "title": "寂寞年华",
+        "artist": "雨作霖"
+      },
+      {
+        "id": 3366040619,
+        "title": "疏影残雪落",
+        "artist": "言夕Eva"
+      },
+      {
+        "id": 3366041478,
+        "title": "坠入梦云间",
+        "artist": "言夕Eva"
+      },
+      {
+        "id": 3360869426,
+        "title": "深海孤独的鲸",
+        "artist": "羽清弦"
+      },
+      {
+        "id": 3360046637,
+        "title": "烟火一夜",
+        "artist": "Vicky颖"
+      },
+      {
+        "id": 3360047352,
+        "title": "暮色十里",
+        "artist": "Vicky颖"
+      }
+    ],
+    "selected": [
+      {
+        "id": 2150833615,
+        "title": "Sinking into the deep sea",
+        "reason": "来自「情侣办事歌单 微醺氛围感 夜晚浪漫性感情调」歌单：Sally · Sinking into the deep sea。"
+      },
+      {
+        "id": 2025082445,
+        "title": "Moonlight",
+        "reason": "来自「情侣办事歌单 微醺氛围感 夜晚浪漫性感情调」歌单：Kali Uchis · Moonlight。"
+      },
+      {
+        "id": 1890365896,
+        "title": "Hrs & Hrs",
+        "reason": "来自「情侣办事歌单 微醺氛围感 夜晚浪漫性感情调」歌单：Muni Long · Hrs & Hrs。"
+      },
+      {
+        "id": 1432701364,
+        "title": "More Than Enough",
+        "reason": "来自「情侣办事歌单 微醺氛围感 夜晚浪漫性感情调」歌单：Alina Baraz · More Than Enough。"
+      },
+      {
+        "id": 2124074,
+        "title": "How Can I Be Sure",
+        "reason": "来自「情侣办事歌单 微醺氛围感 夜晚浪漫性感情调」歌单：Anomie Belle · How Can I Be Sure。"
+      },
+      {
+        "id": 1368327725,
+        "title": "...baby one more time",
+        "reason": "来自「情侣办事歌单 微醺氛围感 夜晚浪漫性感情调」歌单：The Marías · ...baby one more time。"
+      },
+      {
+        "id": 3369793361,
+        "title": "指缝划过的时光",
+        "reason": "来自「咖啡馆轻音乐 钢琴曲 舒缓放松 放松音乐」歌单：诗漫钢琴 · 指缝划过的时光。"
+      },
+      {
+        "id": 3368804479,
+        "title": "银河舒眠曲",
+        "reason": "来自「咖啡馆轻音乐 钢琴曲 舒缓放松 放松音乐」歌单：林小棠 · 银河舒眠曲。"
+      }
+    ],
+    "plan": {
+      "kind": "radio",
+      "title": "微醺时刻的陪伴音乐",
+      "queries": [
+        "微醺 夜晚 氛围感",
+        "饮酒 放松 轻音乐"
+      ],
+      "excludedArtists": [],
+      "note": "将按场景和风格寻找公开歌单，实际曲目由曲库提供，未进行音频分析。"
+    },
+    "passed": true
+  },
+  "releases": {
+    "input": "最近邓紫棋有没有发新歌",
+    "artist": {
+      "id": 7763,
+      "name": "G.E.M.邓紫棋"
+    },
+    "albums": [
+      {
+        "id": 398617121,
+        "title": "自由的你",
+        "type": "Single",
+        "publishTime": 1791216000000,
+        "date": "2026-10-06"
+      },
+      {
+        "id": 351088947,
+        "title": "Sacrifice (Anyma Remix)",
+        "type": "Single",
+        "publishTime": 1763654400000,
+        "date": "2025-11-21"
+      },
+      {
+        "id": 287955140,
+        "title": "Sacrifice",
+        "type": "Single",
+        "publishTime": 1760284800000,
+        "date": "2025-10-13"
+      },
+      {
+        "id": 282980763,
+        "title": "Still Breathing",
+        "type": "Single",
+        "publishTime": 1756396800000,
+        "date": "2025-08-29"
+      },
+      {
+        "id": 274821019,
+        "title": "I AM GLORIA",
+        "type": "专辑",
+        "publishTime": 1749657600000,
+        "date": "2025-06-12"
+      },
+      {
+        "id": 188209036,
+        "title": "Amazing Grace",
+        "type": "Single",
+        "publishTime": 1709827200000,
+        "date": "2024-03-08"
+      }
+    ],
+    "selected": [
+      {
+        "id": 3436855494,
+        "title": "自由的你",
+        "artist": "G.E.M.邓紫棋",
+        "albumId": 398617121,
+        "album": "自由的你",
+        "publishTime": 1791216000000,
+        "hasCover": true
+      }
+    ],
+    "plan": {
+      "kind": "releases",
+      "artist": "邓紫棋",
+      "note": "将查询曲库中的专辑与歌曲，并按可核验的发行时间排列。"
+    },
+    "checkedAt": "2026-10-18T13:16:08.978Z",
+    "rejectedAlbums": [
+      {
+        "id": 351088947,
+        "reason": "ALBUM_IDENTITY_OR_DATE_MISMATCH"
+      },
+      {
+        "id": 287955140,
+        "reason": "ALBUM_IDENTITY_OR_DATE_MISMATCH"
+      }
+    ],
+    "passed": true
+  },
+  "audioRequested": false,
+  "existingUserDatabasesAccessed": false,
+  "cleanedUp": true
+}

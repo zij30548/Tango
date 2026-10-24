@@ -1,0 +1,71 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "构建播放器 · macOS",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args": [
+        "${workspaceFolder}/scripts/build-macos.sh"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "准备运行 · macOS",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args": [
+        "${workspaceFolder}/scripts/prepare-macos.sh"
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ]
+    },
+    {
+      "label": "运行播放器 · macOS",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args": [
+        "${workspaceFolder}/scripts/run-macos.sh"
+      ],
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "运行播放器（后台 AI）· macOS",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args": ["${workspaceFolder}/scripts/run-agent-macos.sh"],
+      "problemMatcher": ["$gcc"],
+      "presentation": {"reveal": "always", "panel": "dedicated"}
+    },
+    {
+      "label": "运行探歌后台 · 本机",
+      "type": "shell",
+      "command": "/bin/bash",
+      "args": ["${workspaceFolder}/scripts/start-app-backend.sh"],
+      "problemMatcher": [],
+      "presentation": {"reveal": "always", "panel": "dedicated"}
+    },
+    {
+      "label": "编辑 Qt 辅助界面",
+      "type": "process",
+      "command": "/opt/homebrew/opt/qt@5/bin/designer",
+      "args": [
+        "${workspaceFolder}/signin.ui"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

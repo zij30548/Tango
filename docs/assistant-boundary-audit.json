@@ -1,0 +1,202 @@
+{
+  "testedAt": "2026-10-18T17:34:38.333Z",
+  "datasetVersion": "memory-proposal-boundaries-v1",
+  "sourceSha256": "0278e50c27d88bfed272475e35dd9f3bda340803f032dc08897726e0741c4eab",
+  "scope": "Offline validation of deliberately supplied memory proposals, not model intent accuracy or actual storage writes.",
+  "limitations": [
+    "Adversarial convenience sample, not a representative estimate of production error frequency.",
+    "No live model was called; this does not show that a model actually generates these wrong proposals.",
+    "Native preference editing still requires explicit user confirmation before writing or clearing storage."
+  ],
+  "externalRequests": 0,
+  "realUserDataAccessed": false,
+  "productionCodeChanged": false,
+  "summary": {
+    "cases": 20,
+    "matchedExpectation": 20,
+    "forbiddenProposalsAccepted": 0,
+    "explicitProposalsRejected": 0
+  },
+  "results": [
+    {
+      "id": "remember-direct",
+      "instruction": "记住我喜欢爵士",
+      "proposedKind": "remember",
+      "expectedAccepted": true,
+      "accepted": true,
+      "matchedExpectation": true,
+      "rejectionCode": null
+    },
+    {
+      "id": "remember-persistent-exclusion",
+      "instruction": "以后不要给我现场版",
+      "proposedKind": "remember",
+      "expectedAccepted": true,
+      "accepted": true,
+      "matchedExpectation": true,
+      "rejectionCode": null
+    },
+    {
+      "id": "remember-scene-only",
+      "instruction": "我现在在喝酒，推荐点歌",
+      "proposedKind": "remember",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "remember-direct-negation",
+      "instruction": "不要记住我喜欢爵士",
+      "proposedKind": "remember",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "remember-indirect-negation",
+      "instruction": "我不想让你记住我喜欢爵士",
+      "proposedKind": "remember",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "remember-quoted-request",
+      "instruction": "朋友说“记住我喜欢爵士”，这句话是什么意思",
+      "proposedKind": "remember",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "remember-temporary-correction",
+      "instruction": "以后不要误会，我只是今晚想听爵士",
+      "proposedKind": "remember",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "remember-capability-question",
+      "instruction": "你可以记住我喜欢爵士吗",
+      "proposedKind": "remember",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "forget-direct",
+      "instruction": "清空我的音乐偏好",
+      "proposedKind": "forget",
+      "expectedAccepted": true,
+      "accepted": true,
+      "matchedExpectation": true,
+      "rejectionCode": null
+    },
+    {
+      "id": "forget-all-saved",
+      "instruction": "忘掉全部已保存的偏好",
+      "proposedKind": "forget",
+      "expectedAccepted": true,
+      "accepted": true,
+      "matchedExpectation": true,
+      "rejectionCode": null
+    },
+    {
+      "id": "forget-object-first-delete",
+      "instruction": "把我的音乐偏好全部删除",
+      "proposedKind": "forget",
+      "expectedAccepted": true,
+      "accepted": true,
+      "matchedExpectation": true,
+      "rejectionCode": null
+    },
+    {
+      "id": "forget-object-first-clear",
+      "instruction": "将已保存偏好全部清除",
+      "proposedKind": "forget",
+      "expectedAccepted": true,
+      "accepted": true,
+      "matchedExpectation": true,
+      "rejectionCode": null
+    },
+    {
+      "id": "forget-partial-delete",
+      "instruction": "只删除我的偏好里的爵士，其他喜好保留",
+      "proposedKind": "forget",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "forget-negation-with-adverb",
+      "instruction": "别再清空我的音乐偏好",
+      "proposedKind": "forget",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "forget-indirect-negation",
+      "instruction": "我不想让你清空我的音乐偏好",
+      "proposedKind": "forget",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "forget-capability-question",
+      "instruction": "我能否清空全部音乐偏好？",
+      "proposedKind": "forget",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "forget-topic-only",
+      "instruction": "忘记刚才的话题，不是清空我的音乐偏好",
+      "proposedKind": "forget",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "forget-direct-negation",
+      "instruction": "不要清空我的音乐偏好",
+      "proposedKind": "forget",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "forget-non-memory-topic",
+      "instruction": "忘掉刚才喝酒的话题",
+      "proposedKind": "forget",
+      "expectedAccepted": false,
+      "accepted": false,
+      "matchedExpectation": true,
+      "rejectionCode": "INVALID_ASSISTANT_RESPONSE"
+    },
+    {
+      "id": "forget-explicit-all",
+      "instruction": "请清空全部音乐偏好",
+      "proposedKind": "forget",
+      "expectedAccepted": true,
+      "accepted": true,
+      "matchedExpectation": true,
+      "rejectionCode": null
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "fixtureVersion": 1,
+  "provenance": {
+    "generatedBy": "Original Node digest executed on synthetic inputs only; no network or model.",
+    "sourceFiles": {
+      "backend/storage-task-helpers.mjs": "39454eed18a336b709b0549e275fab0ee212554ef792ddb0742153e74ea338f0"
+    }
+  },
+  "cases": [
+    {
+      "input": {
+        "b": [
+          true,
+          "\u7ca4\u8bed\ud83d\ude00"
+        ],
+        "a": 1.0
+      },
+      "digest": "7c4835e1dcd7d279b95756ff8be7e6932e7498dbd6dcfece8150ed0c5e7f42a3"
+    },
+    {
+      "input": {
+        "\ud83d\ude00": 1,
+        "\ue000": 2,
+        "2": 2,
+        "10": 10,
+        "01": 1
+      },
+      "digest": "7666151b0b620a1cc62975e0a4ed57bf65c8caecf42693db471af49937dbe170"
+    },
+    {
+      "input": {
+        "values": [
+          1e-07,
+          1e-06,
+          1e+20,
+          1e+21,
+          -0.0,
+          1e-11,
+          1.25e-10,
+          123.45
+        ]
+      },
+      "digest": "d21e6f1460a09f4cc5ddc79e43aa221cf0553c2e7d723991529a2b040b215525"
+    },
+    {
+      "input": {
+        "nested": {
+          "2": true,
+          "10": false
+        },
+        "surrogate": "\ud800"
+      },
+      "digest": "6b8aae7942a433835e23ee816754adb842b7447e0f28f5736d7fb1a937ce0437"
+    }
+  ]
+}

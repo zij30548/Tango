@@ -1,0 +1,198 @@
+{
+  "kind": "retrospective_catalog_language_audit",
+  "originalReport": "/tmp/tango-style-commute-final.json",
+  "reportSha256": "531dc68717fdb324ded4fa46c074f798e497b5184ad03aa05466ed1cca81721f",
+  "originalNarrowGoalPassed": true,
+  "expectedCatalogLanguage": "zh",
+  "catalogLanguageChecks": {
+    "requested": true,
+    "expectedCatalogLanguage": "zh",
+    "initial": {
+      "requestedCatalogLanguage": "zh",
+      "recordedBriefCatalogLanguage": null,
+      "retainedInBrief": false,
+      "songCount": 18,
+      "supportedTrackIds": [],
+      "contradictoryTrackIds": [],
+      "unknownTrackIds": [
+        3346218543,
+        3410804176,
+        2609129928,
+        3445658309,
+        3434642926,
+        3345511314,
+        2748411055,
+        3344394958,
+        3337479047,
+        3407952317,
+        3336885596,
+        3442289671,
+        2613318859,
+        3326884682,
+        2741139704,
+        3317921239,
+        3340949712,
+        2746200051
+      ],
+      "sourceEvidence": [],
+      "status": "unverified",
+      "audioLanguageVerified": false
+    },
+    "final": {
+      "requestedCatalogLanguage": "zh",
+      "recordedBriefCatalogLanguage": null,
+      "retainedInBrief": false,
+      "songCount": 11,
+      "supportedTrackIds": [
+        1441758494,
+        85571,
+        385973,
+        1840459406
+      ],
+      "contradictoryTrackIds": [
+        1983697828,
+        1394952100,
+        31370203,
+        497463179
+      ],
+      "unknownTrackIds": [
+        3346218543,
+        3410804176,
+        2609129928
+      ],
+      "sourceEvidence": [
+        {
+          "trackId": 1441758494,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "signals": {
+            "zh": true,
+            "en": false
+          },
+          "classification": "requested_catalog_label",
+          "basis": "actual_playlist_name_or_tags",
+          "audioLanguageVerified": false
+        },
+        {
+          "trackId": 85571,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "signals": {
+            "zh": true,
+            "en": false
+          },
+          "classification": "requested_catalog_label",
+          "basis": "actual_playlist_name_or_tags",
+          "audioLanguageVerified": false
+        },
+        {
+          "trackId": 385973,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "signals": {
+            "zh": true,
+            "en": false
+          },
+          "classification": "requested_catalog_label",
+          "basis": "actual_playlist_name_or_tags",
+          "audioLanguageVerified": false
+        },
+        {
+          "trackId": 1840459406,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "signals": {
+            "zh": true,
+            "en": false
+          },
+          "classification": "requested_catalog_label",
+          "basis": "actual_playlist_name_or_tags",
+          "audioLanguageVerified": false
+        },
+        {
+          "trackId": 1983697828,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "signals": {
+            "zh": false,
+            "en": true
+          },
+          "classification": "opposing_catalog_label",
+          "basis": "actual_playlist_name_or_tags",
+          "audioLanguageVerified": false
+        },
+        {
+          "trackId": 1394952100,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "signals": {
+            "zh": false,
+            "en": true
+          },
+          "classification": "opposing_catalog_label",
+          "basis": "actual_playlist_name_or_tags",
+          "audioLanguageVerified": false
+        },
+        {
+          "trackId": 31370203,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "signals": {
+            "zh": false,
+            "en": true
+          },
+          "classification": "opposing_catalog_label",
+          "basis": "actual_playlist_name_or_tags",
+          "audioLanguageVerified": false
+        },
+        {
+          "trackId": 497463179,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "signals": {
+            "zh": false,
+            "en": true
+          },
+          "classification": "opposing_catalog_label",
+          "basis": "actual_playlist_name_or_tags",
+          "audioLanguageVerified": false
+        }
+      ],
+      "status": "contradiction",
+      "audioLanguageVerified": false
+    },
+    "retainedAcrossBothPreviews": false,
+    "noExplicitOpposingSourceLabels": false,
+    "passed": false,
+    "sourceEvidenceComplete": false,
+    "audioLanguageVerified": false,
+    "policy": "Explicit zh/en gold must remain in both briefs. Selected IDs are joined to actual playlist records; an unambiguous opposite-language playlist name/tag fails consistency. Mixed bilingual labels, unknown labels, western-region tags alone, queries, artist names and song titles cannot verify audio language. Unknown labels remain unverified."
+  },
+  "newGoalAccepted": false,
+  "modelCalls": 0,
+  "originalReportModified": false
+}

@@ -1,0 +1,4661 @@
+{
+  "schemaVersion": 1,
+  "kind": "tango-agent-live-model-controlled-catalog",
+  "status": "completed",
+  "startedAt": "2026-10-19T10:06:47.422Z",
+  "manifestSha256": "92717cc609fb4b241da6886a69024ebfdc3b238fadfedb605e29aed88f939c77",
+  "manifest": "docs/agent-repair-v4-manifest.json",
+  "suiteId": "tango-agent-repair-v4-2026-10-19",
+  "maximumProviderCalls": 96,
+  "selectedCaseIds": [
+    "v4_known_english_regression",
+    "v4_conversation_language",
+    "v4_positive_after_negative",
+    "v4_release_recent_period",
+    "v4_folk_sofa",
+    "v4_three_turn_language_then_lock",
+    "v4_three_turn_fixed_prefix",
+    "v4_known_lock_regression",
+    "v4_zh_no_en_mix",
+    "v4_en_no_zh_mix"
+  ],
+  "scope": {
+    "targetPopulation": {
+      "publicTextOmitted": true
+    },
+    "design": {
+      "publicTextOmitted": true
+    },
+    "limitations": [
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      }
+    ]
+  },
+  "model": "qwen3.7-flash-2026-07-15",
+  "sourceHashesBefore": {
+    "backend/agent-evaluation-cli.mjs": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2",
+    "backend/errors.mjs": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a",
+    "backend/evaluation/agent-evaluation-runner.mjs": "22baa52e297457e4039a4eb5b6cb61221869981d86ad4c65baf993edae4bd465",
+    "backend/evaluation/agent-fault-checks.mjs": "90509e4faa669526bece35b68e58efdca2bca974558eaa44952f79d6747c73bb",
+    "backend/evaluation/agent-observation-assertions.mjs": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad",
+    "backend/evaluation/agent-suite-schema.mjs": "7c478de409c896794659ed10d334cb44b7fcf1adba631d1afb92bc61ca932972",
+    "backend/evaluation/agent-suite-v1.json": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148",
+    "backend/evaluation/agent-suite-v2.json": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8",
+    "backend/evaluation/agent-suite-v3-holdout.json": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd",
+    "backend/evaluation/agent-suite-v4-holdout.json": "31b9e0290087c3deb8b84774ae89473fbdabdc48f3c2dea939926b875e9fae77",
+    "backend/model-transport.mjs": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315",
+    "backend/package-lock.json": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c",
+    "backend/package.json": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962",
+    "backend/store.mjs": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564",
+    "backend/task-brief-patch.mjs": "24df73315908f4558a95f93038ce9edfa482f75831dd58495e4b04dcd9ed06c4",
+    "backend/task-duration.mjs": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+    "backend/task-evaluation-cli.mjs": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d",
+    "backend/task-evaluation.mjs": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12",
+    "backend/task-language.mjs": "e1f58ba10f8c85dadc40560707af871511f8b0d51af36ef09d2d12fc567ab837",
+    "backend/task-model.mjs": "b3f194fe666d67b170ef0fb0b8e2166385c5afb9d57378f936cddc2097470527",
+    "backend/task-query-coverage.mjs": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed",
+    "backend/task-release-intent.mjs": "9fda45f88e3397400fc0ef95d7ade7364fba28287d301877cd7ad1b886e97ba0",
+    "backend/task-runtime.mjs": "15d6ff0579645047847ece123acc85a0cf29ae0cad0d7e536c111ed99fd76ffa",
+    "backend/task-schema.mjs": "8aed0ffce9f34537059017b07e2453879058b239eb5b102e8a4646ba454764ee",
+    "backend/task-store.mjs": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed",
+    "backend/task-style-evidence.mjs": "dcac7edd89f40856cce5fb9296bbda1769093da20c813da27d39b4f821f8e833",
+    "backend/task-tool-evidence.mjs": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48",
+    "scripts/evaluate-agent.mjs": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd",
+    "scripts/music-task-live-catalog-audit.mjs": "677d47798978400b799d2adb0cd118373722cc4227d9f7f8d59c0c47e78e50be",
+    "scripts/music-task-live-music-service.mjs": "4cf3b9c8019602e753ac1e4dbf2afb5cf0865d5c3d50ee887f3e3c846029c961",
+    "scripts/music-task-live-probe-audit.mjs": "14f82f9ad5c4b1f9380c11efef664a22a20c0c5d13194c6ac96efb2e05217925",
+    "tests/music_task_live_probe.cpp": "31bc04e358695c1bb232799491714d53b7ed39e8cd71354b9087479113217be7"
+  },
+  "sourceHashesAfter": {
+    "backend/agent-evaluation-cli.mjs": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2",
+    "backend/errors.mjs": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a",
+    "backend/evaluation/agent-evaluation-runner.mjs": "22baa52e297457e4039a4eb5b6cb61221869981d86ad4c65baf993edae4bd465",
+    "backend/evaluation/agent-fault-checks.mjs": "90509e4faa669526bece35b68e58efdca2bca974558eaa44952f79d6747c73bb",
+    "backend/evaluation/agent-observation-assertions.mjs": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad",
+    "backend/evaluation/agent-suite-schema.mjs": "7c478de409c896794659ed10d334cb44b7fcf1adba631d1afb92bc61ca932972",
+    "backend/evaluation/agent-suite-v1.json": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148",
+    "backend/evaluation/agent-suite-v2.json": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8",
+    "backend/evaluation/agent-suite-v3-holdout.json": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd",
+    "backend/evaluation/agent-suite-v4-holdout.json": "31b9e0290087c3deb8b84774ae89473fbdabdc48f3c2dea939926b875e9fae77",
+    "backend/model-transport.mjs": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315",
+    "backend/package-lock.json": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c",
+    "backend/package.json": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962",
+    "backend/store.mjs": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564",
+    "backend/task-brief-patch.mjs": "24df73315908f4558a95f93038ce9edfa482f75831dd58495e4b04dcd9ed06c4",
+    "backend/task-duration.mjs": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+    "backend/task-evaluation-cli.mjs": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d",
+    "backend/task-evaluation.mjs": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12",
+    "backend/task-language.mjs": "e1f58ba10f8c85dadc40560707af871511f8b0d51af36ef09d2d12fc567ab837",
+    "backend/task-model.mjs": "b3f194fe666d67b170ef0fb0b8e2166385c5afb9d57378f936cddc2097470527",
+    "backend/task-query-coverage.mjs": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed",
+    "backend/task-release-intent.mjs": "9fda45f88e3397400fc0ef95d7ade7364fba28287d301877cd7ad1b886e97ba0",
+    "backend/task-runtime.mjs": "15d6ff0579645047847ece123acc85a0cf29ae0cad0d7e536c111ed99fd76ffa",
+    "backend/task-schema.mjs": "8aed0ffce9f34537059017b07e2453879058b239eb5b102e8a4646ba454764ee",
+    "backend/task-store.mjs": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed",
+    "backend/task-style-evidence.mjs": "dcac7edd89f40856cce5fb9296bbda1769093da20c813da27d39b4f821f8e833",
+    "backend/task-tool-evidence.mjs": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48",
+    "scripts/evaluate-agent.mjs": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd",
+    "scripts/music-task-live-catalog-audit.mjs": "677d47798978400b799d2adb0cd118373722cc4227d9f7f8d59c0c47e78e50be",
+    "scripts/music-task-live-music-service.mjs": "4cf3b9c8019602e753ac1e4dbf2afb5cf0865d5c3d50ee887f3e3c846029c961",
+    "scripts/music-task-live-probe-audit.mjs": "14f82f9ad5c4b1f9380c11efef664a22a20c0c5d13194c6ac96efb2e05217925",
+    "tests/music_task_live_probe.cpp": "31bc04e358695c1bb232799491714d53b7ed39e8cd71354b9087479113217be7"
+  },
+  "sourcesUnchangedDuringRun": true,
+  "providerLedgerSummary": {
+    "recordCount": 47,
+    "byStatus": {
+      "response_received": 47
+    },
+    "fullLedgerPrivate": true,
+    "usageSumKnownValues": {
+      "completion_tokens": 5148,
+      "prompt_tokens": 115138,
+      "prompt_tokens_details/cached_tokens": 13312,
+      "prompt_tokens_details/text_tokens": 115138,
+      "total_tokens": 120286
+    },
+    "usageFieldObservedRequestCounts": {
+      "completion_tokens": 47,
+      "prompt_tokens": 47,
+      "prompt_tokens_details/cached_tokens": 47,
+      "prompt_tokens_details/text_tokens": 47,
+      "total_tokens": 47
+    },
+    "usageKnownRequests": 47,
+    "usageUnknownRequests": 0,
+    "monetaryCostVerified": false,
+    "usageNotice": "仅合计原回执中已提供的Token用量；缺失用量保持未知，未据此估算或声称金额。"
+  },
+  "results": [
+    {
+      "id": "v4_known_english_regression",
+      "family": "language",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "score": {
+        "id": "v4_known_english_regression",
+        "family": "language",
+        "mode": "live_model_controlled_catalog",
+        "split": "challenge",
+        "capabilities": [
+          "language",
+          "known_regression"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.catalogLanguage",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefConcept.exercise",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.en",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.language",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 5,
+            "intentPassed": 5
+          }
+        ],
+        "counts": {
+          "passed": 14,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "criterionCount": 14,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      },
+      "providerAttempts": {
+        "firstSequence": 1,
+        "lastSequence": 4,
+        "count": 4
+      },
+      "elapsedMs": 8019
+    },
+    {
+      "id": "v4_conversation_language",
+      "family": "language_context",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "score": {
+        "id": "v4_conversation_language",
+        "family": "language_context",
+        "mode": "live_model_controlled_catalog",
+        "split": "holdout",
+        "capabilities": [
+          "language_context"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.catalogLanguage",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.english",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.language",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 4,
+            "intentPassed": 4
+          }
+        ],
+        "counts": {
+          "passed": 13,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "criterionCount": 13,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      },
+      "providerAttempts": {
+        "firstSequence": 5,
+        "lastSequence": 8,
+        "count": 4
+      },
+      "elapsedMs": 6782
+    },
+    {
+      "id": "v4_positive_after_negative",
+      "family": "language_polarity",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "score": {
+        "id": "v4_positive_after_negative",
+        "family": "language_polarity",
+        "mode": "live_model_controlled_catalog",
+        "split": "holdout",
+        "capabilities": [
+          "language_polarity"
+        ],
+        "status": "failed",
+        "taskCompleted": false,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.catalogLanguage",
+            "status": "failed"
+          },
+          {
+            "id": "round_1.tool_query.english",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.language",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 4,
+            "intentPassed": 3
+          }
+        ],
+        "counts": {
+          "passed": 12,
+          "failed": 1,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "criterionCount": 13,
+        "conservativeAccuracy": 0.9230769230769231,
+        "observedAccuracy": 0.9230769230769231,
+        "evidenceCoverage": 1
+      },
+      "providerAttempts": {
+        "firstSequence": 9,
+        "lastSequence": 12,
+        "count": 4
+      },
+      "elapsedMs": 7091
+    },
+    {
+      "id": "v4_release_recent_period",
+      "family": "release_research",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "score": {
+        "id": "v4_release_recent_period",
+        "family": "release_research",
+        "mode": "live_model_controlled_catalog",
+        "split": "holdout",
+        "capabilities": [
+          "release_research"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.artist",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefDate.since",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefDate.until",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.gem",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.release",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.release_only",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 5,
+            "intentPassed": 5
+          }
+        ],
+        "counts": {
+          "passed": 14,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "criterionCount": 14,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      },
+      "providerAttempts": {
+        "firstSequence": 13,
+        "lastSequence": 15,
+        "count": 3
+      },
+      "elapsedMs": 6197
+    },
+    {
+      "id": "v4_folk_sofa",
+      "family": "source_style",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "score": {
+        "id": "v4_folk_sofa",
+        "family": "source_style",
+        "mode": "live_model_controlled_catalog",
+        "split": "holdout",
+        "capabilities": [
+          "source_style"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefConcept.folk",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefConcept.quiet",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefConcept.sofa",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.folk",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.source_style",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 6,
+            "intentPassed": 6
+          }
+        ],
+        "counts": {
+          "passed": 15,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "criterionCount": 15,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      },
+      "providerAttempts": {
+        "firstSequence": 16,
+        "lastSequence": 19,
+        "count": 4
+      },
+      "elapsedMs": 7055
+    },
+    {
+      "id": "v4_three_turn_language_then_lock",
+      "family": "three_turn_language_lock",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "score": {
+        "id": "v4_three_turn_language_then_lock",
+        "family": "three_turn_language_lock",
+        "mode": "live_model_controlled_catalog",
+        "split": "holdout",
+        "capabilities": [
+          "three_turn_language_lock"
+        ],
+        "status": "failed",
+        "taskCompleted": false,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.catalogLanguage",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefConcept.exercise",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.english",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.language",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.status",
+            "status": "failed"
+          },
+          {
+            "id": "round_2.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.targetMinutes",
+            "status": "failed"
+          },
+          {
+            "id": "round_2.brief.catalogLanguage",
+            "status": "failed"
+          },
+          {
+            "id": "round_2.brief.retainFirst",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.briefConcept.exercise",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.duration",
+            "status": "failed"
+          },
+          {
+            "id": "round_2.preview.language",
+            "status": "failed"
+          },
+          {
+            "id": "round_3.status",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.requireReleases",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.targetMinutes",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.catalogLanguage",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.retainFirst",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.avoidPrevious",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.briefConcept.exercise",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.nonempty",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.catalog_ids",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.metadata_integrity",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.reported_total_integrity",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.max_tracks",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.duration",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.language",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.locked_prefix",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.avoid_previous",
+            "status": "unverified"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 5,
+            "intentPassed": 5
+          },
+          {
+            "round": 2,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 5,
+            "intentPassed": 3
+          },
+          {
+            "round": 3,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 6,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 22,
+          "failed": 5,
+          "unverified": 16,
+          "not_applicable": 0
+        },
+        "criterionCount": 43,
+        "conservativeAccuracy": 0.5116279069767442,
+        "observedAccuracy": 0.8148148148148148,
+        "evidenceCoverage": 0.627906976744186
+      },
+      "providerAttempts": {
+        "firstSequence": 20,
+        "lastSequence": 25,
+        "count": 6
+      },
+      "elapsedMs": 11664
+    },
+    {
+      "id": "v4_three_turn_fixed_prefix",
+      "family": "three_turn_lock",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "score": {
+        "id": "v4_three_turn_fixed_prefix",
+        "family": "three_turn_lock",
+        "mode": "live_model_controlled_catalog",
+        "split": "holdout",
+        "capabilities": [
+          "three_turn_lock"
+        ],
+        "status": "failed",
+        "taskCompleted": false,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requiredArtist",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.artistOnly",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.tao",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.artist",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.status",
+            "status": "failed"
+          },
+          {
+            "id": "round_2.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.requiredArtist",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.artistOnly",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.retainFirst",
+            "status": "failed"
+          },
+          {
+            "id": "round_2.brief.avoidPrevious",
+            "status": "failed"
+          },
+          {
+            "id": "round_2.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.artist",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.locked_prefix",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.avoid_previous",
+            "status": "failed"
+          },
+          {
+            "id": "round_3.status",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.requireReleases",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.requiredArtist",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.artistOnly",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.targetMinutes",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.retainFirst",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.brief.avoidPrevious",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.nonempty",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.catalog_ids",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.metadata_integrity",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.reported_total_integrity",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.max_tracks",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.duration",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.artist",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.locked_prefix",
+            "status": "unverified"
+          },
+          {
+            "id": "round_3.preview.avoid_previous",
+            "status": "unverified"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 5,
+            "intentPassed": 5
+          },
+          {
+            "round": 2,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 6,
+            "intentPassed": 4
+          },
+          {
+            "round": 3,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 6,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 26,
+          "failed": 4,
+          "unverified": 16,
+          "not_applicable": 0
+        },
+        "criterionCount": 46,
+        "conservativeAccuracy": 0.5652173913043478,
+        "observedAccuracy": 0.8666666666666667,
+        "evidenceCoverage": 0.6521739130434783
+      },
+      "providerAttempts": {
+        "firstSequence": 26,
+        "lastSequence": 30,
+        "count": 5
+      },
+      "elapsedMs": 8577
+    },
+    {
+      "id": "v4_known_lock_regression",
+      "family": "three_turn_reference",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "score": {
+        "id": "v4_known_lock_regression",
+        "family": "three_turn_reference",
+        "mode": "live_model_controlled_catalog",
+        "split": "challenge",
+        "capabilities": [
+          "three_turn_reference",
+          "known_regression"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.catalogLanguage",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefConcept.commute",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.zh",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.language",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.catalogLanguage",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.retainFirst",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.avoidPrevious",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.briefConcept.commute",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.language",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.locked_prefix",
+            "status": "passed"
+          },
+          {
+            "id": "round_2.preview.avoid_previous",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.brief.catalogLanguage",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.brief.retainFirst",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.brief.avoidPrevious",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.briefConcept.commute",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.language",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.locked_prefix",
+            "status": "passed"
+          },
+          {
+            "id": "round_3.preview.avoid_previous",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 5,
+            "intentPassed": 5
+          },
+          {
+            "round": 2,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 6,
+            "intentPassed": 6
+          },
+          {
+            "round": 3,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 6,
+            "intentPassed": 6
+          }
+        ],
+        "counts": {
+          "passed": 46,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "criterionCount": 46,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      },
+      "providerAttempts": {
+        "firstSequence": 31,
+        "lastSequence": 40,
+        "count": 10
+      },
+      "elapsedMs": 16608
+    },
+    {
+      "id": "v4_zh_no_en_mix",
+      "family": "language_polarity",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "score": {
+        "id": "v4_zh_no_en_mix",
+        "family": "language_polarity",
+        "mode": "live_model_controlled_catalog",
+        "split": "holdout",
+        "capabilities": [
+          "language_polarity"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.catalogLanguage",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.chinese",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.language",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 4,
+            "intentPassed": 4
+          }
+        ],
+        "counts": {
+          "passed": 13,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "criterionCount": 13,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      },
+      "providerAttempts": {
+        "firstSequence": 41,
+        "lastSequence": 43,
+        "count": 3
+      },
+      "elapsedMs": 6589
+    },
+    {
+      "id": "v4_en_no_zh_mix",
+      "family": "language_polarity",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "score": {
+        "id": "v4_en_no_zh_mix",
+        "family": "language_polarity",
+        "mode": "live_model_controlled_catalog",
+        "split": "holdout",
+        "capabilities": [
+          "language_polarity"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.kind",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.requireReleases",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.targetMinutes",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.brief.catalogLanguage",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.briefConcept.post_exercise",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.tool_query.english",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.nonempty",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.catalog_ids",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.metadata_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.reported_total_integrity",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.max_tracks",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.duration",
+            "status": "passed"
+          },
+          {
+            "id": "round_1.preview.language",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 5,
+            "intentPassed": 5
+          }
+        ],
+        "counts": {
+          "passed": 14,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "criterionCount": 14,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      },
+      "providerAttempts": {
+        "firstSequence": 44,
+        "lastSequence": 47,
+        "count": 4
+      },
+      "elapsedMs": 8172
+    }
+  ],
+  "actualProviderCalls": 47,
+  "summary": {
+    "definition": {
+      "publicTextOmitted": true
+    },
+    "limitation": {
+      "publicTextOmitted": true
+    },
+    "overall": {
+      "tasks": 10,
+      "completed": 7,
+      "strictCompletionRate": 0.7,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.39677814746114537,
+        "upper": 0.8922087325936989,
+        "method": {
+          "publicTextOmitted": true
+        }
+      },
+      "completeIntentMatch": {
+        "metricLabel": {
+          "publicTextOmitted": true
+        },
+        "rounds": 16,
+        "passed": 11,
+        "rate": 0.6875,
+        "definition": {
+          "publicTextOmitted": true
+        }
+      },
+      "criterionCounts": {
+        "passed": 189,
+        "failed": 10,
+        "unverified": 32,
+        "not_applicable": 0
+      },
+      "conservativeGoldAccuracy": 0.8181818181818182,
+      "observedGoldAccuracy": 0.949748743718593,
+      "evidenceCoverage": 0.8614718614718615,
+      "caseMacroAccuracy": 0.8999922221358017
+    },
+    "byMode": {
+      "live_model_controlled_catalog": {
+        "tasks": 10,
+        "completed": 7,
+        "strictCompletionRate": 0.7,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.39677814746114537,
+          "upper": 0.8922087325936989,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 16,
+          "passed": 11,
+          "rate": 0.6875,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 189,
+          "failed": 10,
+          "unverified": 32,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.8181818181818182,
+        "observedGoldAccuracy": 0.949748743718593,
+        "evidenceCoverage": 0.8614718614718615,
+        "caseMacroAccuracy": 0.8999922221358017
+      }
+    },
+    "byFamily": {
+      "language": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 14,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "language_context": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 13,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "language_polarity": {
+        "tasks": 3,
+        "completed": 2,
+        "strictCompletionRate": 0.6666666666666666,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.2076596008020477,
+          "upper": 0.9385080552796037,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 3,
+          "passed": 2,
+          "rate": 0.6666666666666666,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 39,
+          "failed": 1,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.975,
+        "observedGoldAccuracy": 0.975,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 0.9743589743589745
+      },
+      "release_research": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 14,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "source_style": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 15,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "three_turn_language_lock": {
+        "tasks": 1,
+        "completed": 0,
+        "strictCompletionRate": 0,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0,
+          "upper": 0.7934506856227626,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 3,
+          "passed": 1,
+          "rate": 0.3333333333333333,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 22,
+          "failed": 5,
+          "unverified": 16,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.5116279069767442,
+        "observedGoldAccuracy": 0.8148148148148148,
+        "evidenceCoverage": 0.627906976744186,
+        "caseMacroAccuracy": 0.5116279069767442
+      },
+      "three_turn_lock": {
+        "tasks": 1,
+        "completed": 0,
+        "strictCompletionRate": 0,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0,
+          "upper": 0.7934506856227626,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 3,
+          "passed": 1,
+          "rate": 0.3333333333333333,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 26,
+          "failed": 4,
+          "unverified": 16,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.5652173913043478,
+        "observedGoldAccuracy": 0.8666666666666667,
+        "evidenceCoverage": 0.6521739130434783,
+        "caseMacroAccuracy": 0.5652173913043478
+      },
+      "three_turn_reference": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 3,
+          "passed": 3,
+          "rate": 1,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 46,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      }
+    },
+    "bySplit": {
+      "challenge": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 4,
+          "passed": 4,
+          "rate": 1,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 60,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "holdout": {
+        "tasks": 8,
+        "completed": 5,
+        "strictCompletionRate": 0.625,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.30574239460262737,
+          "upper": 0.8631557141764026,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 12,
+          "passed": 7,
+          "rate": 0.5833333333333334,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 129,
+          "failed": 10,
+          "unverified": 32,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.7543859649122807,
+        "observedGoldAccuracy": 0.9280575539568345,
+        "evidenceCoverage": 0.8128654970760234,
+        "caseMacroAccuracy": 0.8749902776697519
+      }
+    }
+  },
+  "attemptedCases": 10,
+  "secretDisclosureCounts": {
+    "measured": true,
+    "requests": 47,
+    "requestLeaks": 0,
+    "responseLeaks": 0,
+    "responses": 47,
+    "uncertainResponses": 0
+  },
+  "secretDisclosureDetected": false,
+  "scores": [
+    {
+      "id": "v4_known_english_regression",
+      "family": "language",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "capabilities": [
+        "language",
+        "known_regression"
+      ],
+      "status": "passed",
+      "taskCompleted": true,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.catalogLanguage",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefConcept.exercise",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.en",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.language",
+          "status": "passed"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 5,
+          "intentPassed": 5
+        }
+      ],
+      "counts": {
+        "passed": 14,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "criterionCount": 14,
+      "conservativeAccuracy": 1,
+      "observedAccuracy": 1,
+      "evidenceCoverage": 1
+    },
+    {
+      "id": "v4_conversation_language",
+      "family": "language_context",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "capabilities": [
+        "language_context"
+      ],
+      "status": "passed",
+      "taskCompleted": true,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.catalogLanguage",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.english",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.language",
+          "status": "passed"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 4,
+          "intentPassed": 4
+        }
+      ],
+      "counts": {
+        "passed": 13,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "criterionCount": 13,
+      "conservativeAccuracy": 1,
+      "observedAccuracy": 1,
+      "evidenceCoverage": 1
+    },
+    {
+      "id": "v4_positive_after_negative",
+      "family": "language_polarity",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "capabilities": [
+        "language_polarity"
+      ],
+      "status": "failed",
+      "taskCompleted": false,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.catalogLanguage",
+          "status": "failed"
+        },
+        {
+          "id": "round_1.tool_query.english",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.language",
+          "status": "passed"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 4,
+          "intentPassed": 3
+        }
+      ],
+      "counts": {
+        "passed": 12,
+        "failed": 1,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "criterionCount": 13,
+      "conservativeAccuracy": 0.9230769230769231,
+      "observedAccuracy": 0.9230769230769231,
+      "evidenceCoverage": 1
+    },
+    {
+      "id": "v4_release_recent_period",
+      "family": "release_research",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "capabilities": [
+        "release_research"
+      ],
+      "status": "passed",
+      "taskCompleted": true,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.artist",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefDate.since",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefDate.until",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.gem",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.release",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.release_only",
+          "status": "passed"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 5,
+          "intentPassed": 5
+        }
+      ],
+      "counts": {
+        "passed": 14,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "criterionCount": 14,
+      "conservativeAccuracy": 1,
+      "observedAccuracy": 1,
+      "evidenceCoverage": 1
+    },
+    {
+      "id": "v4_folk_sofa",
+      "family": "source_style",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "capabilities": [
+        "source_style"
+      ],
+      "status": "passed",
+      "taskCompleted": true,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefConcept.folk",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefConcept.quiet",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefConcept.sofa",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.folk",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.source_style",
+          "status": "passed"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 6,
+          "intentPassed": 6
+        }
+      ],
+      "counts": {
+        "passed": 15,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "criterionCount": 15,
+      "conservativeAccuracy": 1,
+      "observedAccuracy": 1,
+      "evidenceCoverage": 1
+    },
+    {
+      "id": "v4_three_turn_language_then_lock",
+      "family": "three_turn_language_lock",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "capabilities": [
+        "three_turn_language_lock"
+      ],
+      "status": "failed",
+      "taskCompleted": false,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.catalogLanguage",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefConcept.exercise",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.english",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.language",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.status",
+          "status": "failed"
+        },
+        {
+          "id": "round_2.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.targetMinutes",
+          "status": "failed"
+        },
+        {
+          "id": "round_2.brief.catalogLanguage",
+          "status": "failed"
+        },
+        {
+          "id": "round_2.brief.retainFirst",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.briefConcept.exercise",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.duration",
+          "status": "failed"
+        },
+        {
+          "id": "round_2.preview.language",
+          "status": "failed"
+        },
+        {
+          "id": "round_3.status",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.requireReleases",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.targetMinutes",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.catalogLanguage",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.retainFirst",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.avoidPrevious",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.briefConcept.exercise",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.nonempty",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.catalog_ids",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.metadata_integrity",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.reported_total_integrity",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.max_tracks",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.duration",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.language",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.locked_prefix",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.avoid_previous",
+          "status": "unverified"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 5,
+          "intentPassed": 5
+        },
+        {
+          "round": 2,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 5,
+          "intentPassed": 3
+        },
+        {
+          "round": 3,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 6,
+          "intentPassed": 0
+        }
+      ],
+      "counts": {
+        "passed": 22,
+        "failed": 5,
+        "unverified": 16,
+        "not_applicable": 0
+      },
+      "criterionCount": 43,
+      "conservativeAccuracy": 0.5116279069767442,
+      "observedAccuracy": 0.8148148148148148,
+      "evidenceCoverage": 0.627906976744186
+    },
+    {
+      "id": "v4_three_turn_fixed_prefix",
+      "family": "three_turn_lock",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "capabilities": [
+        "three_turn_lock"
+      ],
+      "status": "failed",
+      "taskCompleted": false,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requiredArtist",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.artistOnly",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.tao",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.artist",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.status",
+          "status": "failed"
+        },
+        {
+          "id": "round_2.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.requiredArtist",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.artistOnly",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.retainFirst",
+          "status": "failed"
+        },
+        {
+          "id": "round_2.brief.avoidPrevious",
+          "status": "failed"
+        },
+        {
+          "id": "round_2.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.artist",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.locked_prefix",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.avoid_previous",
+          "status": "failed"
+        },
+        {
+          "id": "round_3.status",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.requireReleases",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.requiredArtist",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.artistOnly",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.targetMinutes",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.retainFirst",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.brief.avoidPrevious",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.nonempty",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.catalog_ids",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.metadata_integrity",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.reported_total_integrity",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.max_tracks",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.duration",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.artist",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.locked_prefix",
+          "status": "unverified"
+        },
+        {
+          "id": "round_3.preview.avoid_previous",
+          "status": "unverified"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 5,
+          "intentPassed": 5
+        },
+        {
+          "round": 2,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 6,
+          "intentPassed": 4
+        },
+        {
+          "round": 3,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 6,
+          "intentPassed": 0
+        }
+      ],
+      "counts": {
+        "passed": 26,
+        "failed": 4,
+        "unverified": 16,
+        "not_applicable": 0
+      },
+      "criterionCount": 46,
+      "conservativeAccuracy": 0.5652173913043478,
+      "observedAccuracy": 0.8666666666666667,
+      "evidenceCoverage": 0.6521739130434783
+    },
+    {
+      "id": "v4_known_lock_regression",
+      "family": "three_turn_reference",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "capabilities": [
+        "three_turn_reference",
+        "known_regression"
+      ],
+      "status": "passed",
+      "taskCompleted": true,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.catalogLanguage",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefConcept.commute",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.zh",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.language",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.catalogLanguage",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.retainFirst",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.avoidPrevious",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.briefConcept.commute",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.language",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.locked_prefix",
+          "status": "passed"
+        },
+        {
+          "id": "round_2.preview.avoid_previous",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.brief.catalogLanguage",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.brief.retainFirst",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.brief.avoidPrevious",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.briefConcept.commute",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.language",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.locked_prefix",
+          "status": "passed"
+        },
+        {
+          "id": "round_3.preview.avoid_previous",
+          "status": "passed"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 5,
+          "intentPassed": 5
+        },
+        {
+          "round": 2,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 6,
+          "intentPassed": 6
+        },
+        {
+          "round": 3,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 6,
+          "intentPassed": 6
+        }
+      ],
+      "counts": {
+        "passed": 46,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "criterionCount": 46,
+      "conservativeAccuracy": 1,
+      "observedAccuracy": 1,
+      "evidenceCoverage": 1
+    },
+    {
+      "id": "v4_zh_no_en_mix",
+      "family": "language_polarity",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "capabilities": [
+        "language_polarity"
+      ],
+      "status": "passed",
+      "taskCompleted": true,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.catalogLanguage",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.chinese",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.language",
+          "status": "passed"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 4,
+          "intentPassed": 4
+        }
+      ],
+      "counts": {
+        "passed": 13,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "criterionCount": 13,
+      "conservativeAccuracy": 1,
+      "observedAccuracy": 1,
+      "evidenceCoverage": 1
+    },
+    {
+      "id": "v4_en_no_zh_mix",
+      "family": "language_polarity",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "capabilities": [
+        "language_polarity"
+      ],
+      "status": "passed",
+      "taskCompleted": true,
+      "criteria": [
+        {
+          "id": "round_1.status",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.kind",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.requireReleases",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.targetMinutes",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.brief.catalogLanguage",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.briefConcept.post_exercise",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.tool_query.english",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.nonempty",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.catalog_ids",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.metadata_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.reported_total_integrity",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.max_tracks",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.duration",
+          "status": "passed"
+        },
+        {
+          "id": "round_1.preview.language",
+          "status": "passed"
+        }
+      ],
+      "roundScores": [
+        {
+          "round": 1,
+          "completeIntentMatch": {
+            "publicTextOmitted": true
+          },
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "intentCriterionCount": 5,
+          "intentPassed": 5
+        }
+      ],
+      "counts": {
+        "passed": 14,
+        "failed": 0,
+        "unverified": 0,
+        "not_applicable": 0
+      },
+      "criterionCount": 14,
+      "conservativeAccuracy": 1,
+      "observedAccuracy": 1,
+      "evidenceCoverage": 1
+    }
+  ],
+  "stopped": null,
+  "finishedAt": "2026-10-19T10:08:14.625Z",
+  "publicationMetadata": {
+    "sourceKind": "sanitized-public-extract",
+    "notice": "此文件是公开脱敏摘要，不是完整冻结原报告；原始请求响应及运行状态仅保留在本机私有备份中。原成绩、失败、跳过和不确定性未改写。",
+    "privateOriginalSha256": "f92692a8a550558949fd1b2e929561fd8bd40846b105f689e3956f64d16f9540",
+    "privateOriginalBytes": 3811902,
+    "privateOriginalPreserved": true,
+    "originalVerdictsUnchanged": true,
+    "metricScalarValuesVerified": 590,
+    "rawEvidencePrivate": true,
+    "fullReplayAvailableInPublicRepository": false,
+    "redactedJsonPaths": [
+      "/providerLedger",
+      "/results/0/assertions",
+      "/results/0/events",
+      "/results/0/ledger",
+      "/results/0/rounds",
+      "/results/0/safety",
+      "/results/0/score/criteria/0/actual",
+      "/results/0/score/criteria/0/expected",
+      "/results/0/score/criteria/1/actual",
+      "/results/0/score/criteria/1/expected",
+      "/results/0/score/criteria/10/actual",
+      "/results/0/score/criteria/10/detail",
+      "/results/0/score/criteria/10/expected",
+      "/results/0/score/criteria/11/actual",
+      "/results/0/score/criteria/11/expected",
+      "/results/0/score/criteria/12/actual",
+      "/results/0/score/criteria/12/detail",
+      "/results/0/score/criteria/12/expected",
+      "/results/0/score/criteria/13/actual",
+      "/results/0/score/criteria/13/expected",
+      "/results/0/score/criteria/2/actual",
+      "/results/0/score/criteria/2/expected",
+      "/results/0/score/criteria/3/actual",
+      "/results/0/score/criteria/3/expected",
+      "/results/0/score/criteria/4/actual",
+      "/results/0/score/criteria/4/expected",
+      "/results/0/score/criteria/5/actual",
+      "/results/0/score/criteria/5/detail",
+      "/results/0/score/criteria/5/expected",
+      "/results/0/score/criteria/6/actual",
+      "/results/0/score/criteria/6/detail",
+      "/results/0/score/criteria/6/expected",
+      "/results/0/score/criteria/7/actual",
+      "/results/0/score/criteria/7/expected",
+      "/results/0/score/criteria/8/actual",
+      "/results/0/score/criteria/8/expected",
+      "/results/0/score/criteria/9/actual",
+      "/results/0/score/criteria/9/expected",
+      "/results/0/score/roundScores/0/annotationCoverage",
+      "/results/0/score/roundScores/0/completeIntentMatch",
+      "/results/0/score/roundScores/0/metricLabel",
+      "/results/0/sideEffects",
+      "/results/0/timings",
+      "/results/1/assertions",
+      "/results/1/events",
+      "/results/1/ledger",
+      "/results/1/rounds",
+      "/results/1/safety",
+      "/results/1/score/criteria/0/actual",
+      "/results/1/score/criteria/0/expected",
+      "/results/1/score/criteria/1/actual",
+      "/results/1/score/criteria/1/expected",
+      "/results/1/score/criteria/10/actual",
+      "/results/1/score/criteria/10/expected",
+      "/results/1/score/criteria/11/actual",
+      "/results/1/score/criteria/11/detail",
+      "/results/1/score/criteria/11/expected",
+      "/results/1/score/criteria/12/actual",
+      "/results/1/score/criteria/12/expected",
+      "/results/1/score/criteria/2/actual",
+      "/results/1/score/criteria/2/expected",
+      "/results/1/score/criteria/3/actual",
+      "/results/1/score/criteria/3/expected",
+      "/results/1/score/criteria/4/actual",
+      "/results/1/score/criteria/4/expected",
+      "/results/1/score/criteria/5/actual",
+      "/results/1/score/criteria/5/detail",
+      "/results/1/score/criteria/5/expected",
+      "/results/1/score/criteria/6/actual",
+      "/results/1/score/criteria/6/expected",
+      "/results/1/score/criteria/7/actual",
+      "/results/1/score/criteria/7/expected",
+      "/results/1/score/criteria/8/actual",
+      "/results/1/score/criteria/8/expected",
+      "/results/1/score/criteria/9/actual",
+      "/results/1/score/criteria/9/detail",
+      "/results/1/score/criteria/9/expected",
+      "/results/1/score/roundScores/0/annotationCoverage",
+      "/results/1/score/roundScores/0/completeIntentMatch",
+      "/results/1/score/roundScores/0/metricLabel",
+      "/results/1/sideEffects",
+      "/results/1/timings",
+      "/results/2/assertions",
+      "/results/2/events",
+      "/results/2/ledger",
+      "/results/2/rounds",
+      "/results/2/safety",
+      "/results/2/score/criteria/0/actual",
+      "/results/2/score/criteria/0/expected",
+      "/results/2/score/criteria/1/actual",
+      "/results/2/score/criteria/1/expected",
+      "/results/2/score/criteria/10/actual",
+      "/results/2/score/criteria/10/expected",
+      "/results/2/score/criteria/11/actual",
+      "/results/2/score/criteria/11/detail",
+      "/results/2/score/criteria/11/expected",
+      "/results/2/score/criteria/12/actual",
+      "/results/2/score/criteria/12/expected",
+      "/results/2/score/criteria/2/actual",
+      "/results/2/score/criteria/2/expected",
+      "/results/2/score/criteria/3/actual",
+      "/results/2/score/criteria/3/expected",
+      "/results/2/score/criteria/4/actual",
+      "/results/2/score/criteria/4/expected",
+      "/results/2/score/criteria/5/actual",
+      "/results/2/score/criteria/5/detail",
+      "/results/2/score/criteria/5/expected",
+      "/results/2/score/criteria/6/actual",
+      "/results/2/score/criteria/6/expected",
+      "/results/2/score/criteria/7/actual",
+      "/results/2/score/criteria/7/expected",
+      "/results/2/score/criteria/8/actual",
+      "/results/2/score/criteria/8/expected",
+      "/results/2/score/criteria/9/actual",
+      "/results/2/score/criteria/9/detail",
+      "/results/2/score/criteria/9/expected",
+      "/results/2/score/roundScores/0/annotationCoverage",
+      "/results/2/score/roundScores/0/completeIntentMatch",
+      "/results/2/score/roundScores/0/metricLabel",
+      "/results/2/sideEffects",
+      "/results/2/timings",
+      "/results/3/assertions",
+      "/results/3/events",
+      "/results/3/ledger",
+      "/results/3/rounds",
+      "/results/3/safety",
+      "/results/3/score/criteria/0/actual",
+      "/results/3/score/criteria/0/expected",
+      "/results/3/score/criteria/1/actual",
+      "/results/3/score/criteria/1/expected",
+      "/results/3/score/criteria/10/actual",
+      "/results/3/score/criteria/10/detail",
+      "/results/3/score/criteria/10/expected",
+      "/results/3/score/criteria/11/actual",
+      "/results/3/score/criteria/11/expected",
+      "/results/3/score/criteria/12/actual",
+      "/results/3/score/criteria/12/expected",
+      "/results/3/score/criteria/13/actual",
+      "/results/3/score/criteria/13/expected",
+      "/results/3/score/criteria/2/actual",
+      "/results/3/score/criteria/2/expected",
+      "/results/3/score/criteria/3/actual",
+      "/results/3/score/criteria/3/expected",
+      "/results/3/score/criteria/4/actual",
+      "/results/3/score/criteria/4/expected",
+      "/results/3/score/criteria/5/actual",
+      "/results/3/score/criteria/5/expected",
+      "/results/3/score/criteria/6/actual",
+      "/results/3/score/criteria/6/detail",
+      "/results/3/score/criteria/6/expected",
+      "/results/3/score/criteria/7/actual",
+      "/results/3/score/criteria/7/expected",
+      "/results/3/score/criteria/8/actual",
+      "/results/3/score/criteria/8/expected",
+      "/results/3/score/criteria/9/actual",
+      "/results/3/score/criteria/9/expected",
+      "/results/3/score/roundScores/0/annotationCoverage",
+      "/results/3/score/roundScores/0/completeIntentMatch",
+      "/results/3/score/roundScores/0/metricLabel",
+      "/results/3/sideEffects",
+      "/results/3/timings",
+      "/results/4/assertions",
+      "/results/4/events",
+      "/results/4/ledger",
+      "/results/4/rounds",
+      "/results/4/safety",
+      "/results/4/score/criteria/0/actual",
+      "/results/4/score/criteria/0/expected",
+      "/results/4/score/criteria/1/actual",
+      "/results/4/score/criteria/1/expected",
+      "/results/4/score/criteria/10/actual",
+      "/results/4/score/criteria/10/expected",
+      "/results/4/score/criteria/11/actual",
+      "/results/4/score/criteria/11/detail",
+      "/results/4/score/criteria/11/expected",
+      "/results/4/score/criteria/12/actual",
+      "/results/4/score/criteria/12/expected",
+      "/results/4/score/criteria/13/actual",
+      "/results/4/score/criteria/13/detail",
+      "/results/4/score/criteria/13/expected",
+      "/results/4/score/criteria/14/actual",
+      "/results/4/score/criteria/14/detail",
+      "/results/4/score/criteria/14/expected",
+      "/results/4/score/criteria/2/actual",
+      "/results/4/score/criteria/2/expected",
+      "/results/4/score/criteria/3/actual",
+      "/results/4/score/criteria/3/expected",
+      "/results/4/score/criteria/4/actual",
+      "/results/4/score/criteria/4/detail",
+      "/results/4/score/criteria/4/expected",
+      "/results/4/score/criteria/5/actual",
+      "/results/4/score/criteria/5/detail",
+      "/results/4/score/criteria/5/expected",
+      "/results/4/score/criteria/6/actual",
+      "/results/4/score/criteria/6/detail",
+      "/results/4/score/criteria/6/expected",
+      "/results/4/score/criteria/7/actual",
+      "/results/4/score/criteria/7/detail",
+      "/results/4/score/criteria/7/expected",
+      "/results/4/score/criteria/8/actual",
+      "/results/4/score/criteria/8/expected",
+      "/results/4/score/criteria/9/actual",
+      "/results/4/score/criteria/9/expected",
+      "/results/4/score/roundScores/0/annotationCoverage",
+      "/results/4/score/roundScores/0/completeIntentMatch",
+      "/results/4/score/roundScores/0/metricLabel",
+      "/results/4/sideEffects",
+      "/results/4/timings",
+      "/results/5/assertions",
+      "/results/5/events",
+      "/results/5/ledger",
+      "/results/5/rounds",
+      "/results/5/safety",
+      "/results/5/score/criteria/0/actual",
+      "/results/5/score/criteria/0/expected",
+      "/results/5/score/criteria/1/actual",
+      "/results/5/score/criteria/1/expected",
+      "/results/5/score/criteria/10/actual",
+      "/results/5/score/criteria/10/detail",
+      "/results/5/score/criteria/10/expected",
+      "/results/5/score/criteria/11/actual",
+      "/results/5/score/criteria/11/expected",
+      "/results/5/score/criteria/12/actual",
+      "/results/5/score/criteria/12/detail",
+      "/results/5/score/criteria/12/expected",
+      "/results/5/score/criteria/13/actual",
+      "/results/5/score/criteria/13/expected",
+      "/results/5/score/criteria/14/actual",
+      "/results/5/score/criteria/14/expected",
+      "/results/5/score/criteria/15/actual",
+      "/results/5/score/criteria/15/expected",
+      "/results/5/score/criteria/16/actual",
+      "/results/5/score/criteria/16/expected",
+      "/results/5/score/criteria/17/actual",
+      "/results/5/score/criteria/17/expected",
+      "/results/5/score/criteria/18/actual",
+      "/results/5/score/criteria/18/expected",
+      "/results/5/score/criteria/19/actual",
+      "/results/5/score/criteria/19/detail",
+      "/results/5/score/criteria/19/expected",
+      "/results/5/score/criteria/2/actual",
+      "/results/5/score/criteria/2/expected",
+      "/results/5/score/criteria/20/actual",
+      "/results/5/score/criteria/20/expected",
+      "/results/5/score/criteria/21/actual",
+      "/results/5/score/criteria/21/expected",
+      "/results/5/score/criteria/22/actual",
+      "/results/5/score/criteria/22/expected",
+      "/results/5/score/criteria/23/actual",
+      "/results/5/score/criteria/23/detail",
+      "/results/5/score/criteria/23/expected",
+      "/results/5/score/criteria/24/actual",
+      "/results/5/score/criteria/24/expected",
+      "/results/5/score/criteria/25/actual",
+      "/results/5/score/criteria/25/detail",
+      "/results/5/score/criteria/25/expected",
+      "/results/5/score/criteria/26/actual",
+      "/results/5/score/criteria/26/expected",
+      "/results/5/score/criteria/27/actual",
+      "/results/5/score/criteria/27/detail",
+      "/results/5/score/criteria/27/expected",
+      "/results/5/score/criteria/28/actual",
+      "/results/5/score/criteria/28/expected",
+      "/results/5/score/criteria/29/actual",
+      "/results/5/score/criteria/29/expected",
+      "/results/5/score/criteria/3/actual",
+      "/results/5/score/criteria/3/expected",
+      "/results/5/score/criteria/30/actual",
+      "/results/5/score/criteria/30/expected",
+      "/results/5/score/criteria/31/actual",
+      "/results/5/score/criteria/31/expected",
+      "/results/5/score/criteria/32/actual",
+      "/results/5/score/criteria/32/expected",
+      "/results/5/score/criteria/33/actual",
+      "/results/5/score/criteria/33/detail",
+      "/results/5/score/criteria/33/expected",
+      "/results/5/score/criteria/34/actual",
+      "/results/5/score/criteria/34/expected",
+      "/results/5/score/criteria/35/actual",
+      "/results/5/score/criteria/35/expected",
+      "/results/5/score/criteria/36/actual",
+      "/results/5/score/criteria/36/expected",
+      "/results/5/score/criteria/37/actual",
+      "/results/5/score/criteria/37/detail",
+      "/results/5/score/criteria/37/expected",
+      "/results/5/score/criteria/38/actual",
+      "/results/5/score/criteria/38/expected",
+      "/results/5/score/criteria/39/actual",
+      "/results/5/score/criteria/39/detail",
+      "/results/5/score/criteria/39/expected",
+      "/results/5/score/criteria/4/actual",
+      "/results/5/score/criteria/4/expected",
+      "/results/5/score/criteria/40/actual",
+      "/results/5/score/criteria/40/expected",
+      "/results/5/score/criteria/41/actual",
+      "/results/5/score/criteria/41/expected",
+      "/results/5/score/criteria/42/actual",
+      "/results/5/score/criteria/42/expected",
+      "/results/5/score/criteria/5/actual",
+      "/results/5/score/criteria/5/detail",
+      "/results/5/score/criteria/5/expected",
+      "/results/5/score/criteria/6/actual",
+      "/results/5/score/criteria/6/detail",
+      "/results/5/score/criteria/6/expected",
+      "/results/5/score/criteria/7/actual",
+      "/results/5/score/criteria/7/expected",
+      "/results/5/score/criteria/8/actual",
+      "/results/5/score/criteria/8/expected",
+      "/results/5/score/criteria/9/actual",
+      "/results/5/score/criteria/9/expected",
+      "/results/5/score/roundScores/0/annotationCoverage",
+      "/results/5/score/roundScores/0/completeIntentMatch",
+      "/results/5/score/roundScores/0/metricLabel",
+      "/results/5/score/roundScores/1/annotationCoverage",
+      "/results/5/score/roundScores/1/completeIntentMatch",
+      "/results/5/score/roundScores/1/metricLabel",
+      "/results/5/score/roundScores/2/annotationCoverage",
+      "/results/5/score/roundScores/2/completeIntentMatch",
+      "/results/5/score/roundScores/2/metricLabel",
+      "/results/5/sideEffects",
+      "/results/5/timings",
+      "/results/6/assertions",
+      "/results/6/events",
+      "/results/6/ledger",
+      "/results/6/rounds",
+      "/results/6/safety",
+      "/results/6/score/criteria/0/actual",
+      "/results/6/score/criteria/0/expected",
+      "/results/6/score/criteria/1/actual",
+      "/results/6/score/criteria/1/expected",
+      "/results/6/score/criteria/10/actual",
+      "/results/6/score/criteria/10/detail",
+      "/results/6/score/criteria/10/expected",
+      "/results/6/score/criteria/11/actual",
+      "/results/6/score/criteria/11/expected",
+      "/results/6/score/criteria/12/actual",
+      "/results/6/score/criteria/12/detail",
+      "/results/6/score/criteria/12/expected",
+      "/results/6/score/criteria/13/actual",
+      "/results/6/score/criteria/13/expected",
+      "/results/6/score/criteria/14/actual",
+      "/results/6/score/criteria/14/expected",
+      "/results/6/score/criteria/15/actual",
+      "/results/6/score/criteria/15/expected",
+      "/results/6/score/criteria/16/actual",
+      "/results/6/score/criteria/16/expected",
+      "/results/6/score/criteria/17/actual",
+      "/results/6/score/criteria/17/expected",
+      "/results/6/score/criteria/18/actual",
+      "/results/6/score/criteria/18/expected",
+      "/results/6/score/criteria/19/actual",
+      "/results/6/score/criteria/19/expected",
+      "/results/6/score/criteria/2/actual",
+      "/results/6/score/criteria/2/expected",
+      "/results/6/score/criteria/20/actual",
+      "/results/6/score/criteria/20/expected",
+      "/results/6/score/criteria/21/actual",
+      "/results/6/score/criteria/21/expected",
+      "/results/6/score/criteria/22/actual",
+      "/results/6/score/criteria/22/expected",
+      "/results/6/score/criteria/23/actual",
+      "/results/6/score/criteria/23/expected",
+      "/results/6/score/criteria/24/actual",
+      "/results/6/score/criteria/24/detail",
+      "/results/6/score/criteria/24/expected",
+      "/results/6/score/criteria/25/actual",
+      "/results/6/score/criteria/25/expected",
+      "/results/6/score/criteria/26/actual",
+      "/results/6/score/criteria/26/detail",
+      "/results/6/score/criteria/26/expected",
+      "/results/6/score/criteria/27/actual",
+      "/results/6/score/criteria/27/expected",
+      "/results/6/score/criteria/28/actual",
+      "/results/6/score/criteria/28/expected",
+      "/results/6/score/criteria/29/actual",
+      "/results/6/score/criteria/29/expected",
+      "/results/6/score/criteria/3/actual",
+      "/results/6/score/criteria/3/expected",
+      "/results/6/score/criteria/30/actual",
+      "/results/6/score/criteria/30/detail",
+      "/results/6/score/criteria/30/expected",
+      "/results/6/score/criteria/31/actual",
+      "/results/6/score/criteria/31/expected",
+      "/results/6/score/criteria/32/actual",
+      "/results/6/score/criteria/32/expected",
+      "/results/6/score/criteria/33/actual",
+      "/results/6/score/criteria/33/expected",
+      "/results/6/score/criteria/34/actual",
+      "/results/6/score/criteria/34/expected",
+      "/results/6/score/criteria/35/actual",
+      "/results/6/score/criteria/35/expected",
+      "/results/6/score/criteria/36/actual",
+      "/results/6/score/criteria/36/expected",
+      "/results/6/score/criteria/37/actual",
+      "/results/6/score/criteria/37/expected",
+      "/results/6/score/criteria/38/actual",
+      "/results/6/score/criteria/38/expected",
+      "/results/6/score/criteria/39/actual",
+      "/results/6/score/criteria/39/expected",
+      "/results/6/score/criteria/4/actual",
+      "/results/6/score/criteria/4/expected",
+      "/results/6/score/criteria/40/actual",
+      "/results/6/score/criteria/40/detail",
+      "/results/6/score/criteria/40/expected",
+      "/results/6/score/criteria/41/actual",
+      "/results/6/score/criteria/41/expected",
+      "/results/6/score/criteria/42/actual",
+      "/results/6/score/criteria/42/detail",
+      "/results/6/score/criteria/42/expected",
+      "/results/6/score/criteria/43/actual",
+      "/results/6/score/criteria/43/expected",
+      "/results/6/score/criteria/44/actual",
+      "/results/6/score/criteria/44/expected",
+      "/results/6/score/criteria/45/actual",
+      "/results/6/score/criteria/45/expected",
+      "/results/6/score/criteria/5/actual",
+      "/results/6/score/criteria/5/expected",
+      "/results/6/score/criteria/6/actual",
+      "/results/6/score/criteria/6/detail",
+      "/results/6/score/criteria/6/expected",
+      "/results/6/score/criteria/7/actual",
+      "/results/6/score/criteria/7/expected",
+      "/results/6/score/criteria/8/actual",
+      "/results/6/score/criteria/8/expected",
+      "/results/6/score/criteria/9/actual",
+      "/results/6/score/criteria/9/expected",
+      "/results/6/score/roundScores/0/annotationCoverage",
+      "/results/6/score/roundScores/0/completeIntentMatch",
+      "/results/6/score/roundScores/0/metricLabel",
+      "/results/6/score/roundScores/1/annotationCoverage",
+      "/results/6/score/roundScores/1/completeIntentMatch",
+      "/results/6/score/roundScores/1/metricLabel",
+      "/results/6/score/roundScores/2/annotationCoverage",
+      "/results/6/score/roundScores/2/completeIntentMatch",
+      "/results/6/score/roundScores/2/metricLabel",
+      "/results/6/sideEffects",
+      "/results/6/timings",
+      "/results/7/assertions",
+      "/results/7/events",
+      "/results/7/ledger",
+      "/results/7/rounds",
+      "/results/7/safety",
+      "/results/7/score/criteria/0/actual",
+      "/results/7/score/criteria/0/expected",
+      "/results/7/score/criteria/1/actual",
+      "/results/7/score/criteria/1/expected",
+      "/results/7/score/criteria/10/actual",
+      "/results/7/score/criteria/10/detail",
+      "/results/7/score/criteria/10/expected",
+      "/results/7/score/criteria/11/actual",
+      "/results/7/score/criteria/11/expected",
+      "/results/7/score/criteria/12/actual",
+      "/results/7/score/criteria/12/detail",
+      "/results/7/score/criteria/12/expected",
+      "/results/7/score/criteria/13/actual",
+      "/results/7/score/criteria/13/expected",
+      "/results/7/score/criteria/14/actual",
+      "/results/7/score/criteria/14/expected",
+      "/results/7/score/criteria/15/actual",
+      "/results/7/score/criteria/15/expected",
+      "/results/7/score/criteria/16/actual",
+      "/results/7/score/criteria/16/expected",
+      "/results/7/score/criteria/17/actual",
+      "/results/7/score/criteria/17/expected",
+      "/results/7/score/criteria/18/actual",
+      "/results/7/score/criteria/18/expected",
+      "/results/7/score/criteria/19/actual",
+      "/results/7/score/criteria/19/expected",
+      "/results/7/score/criteria/2/actual",
+      "/results/7/score/criteria/2/expected",
+      "/results/7/score/criteria/20/actual",
+      "/results/7/score/criteria/20/detail",
+      "/results/7/score/criteria/20/expected",
+      "/results/7/score/criteria/21/actual",
+      "/results/7/score/criteria/21/expected",
+      "/results/7/score/criteria/22/actual",
+      "/results/7/score/criteria/22/expected",
+      "/results/7/score/criteria/23/actual",
+      "/results/7/score/criteria/23/expected",
+      "/results/7/score/criteria/24/actual",
+      "/results/7/score/criteria/24/detail",
+      "/results/7/score/criteria/24/expected",
+      "/results/7/score/criteria/25/actual",
+      "/results/7/score/criteria/25/expected",
+      "/results/7/score/criteria/26/actual",
+      "/results/7/score/criteria/26/detail",
+      "/results/7/score/criteria/26/expected",
+      "/results/7/score/criteria/27/actual",
+      "/results/7/score/criteria/27/expected",
+      "/results/7/score/criteria/28/actual",
+      "/results/7/score/criteria/28/expected",
+      "/results/7/score/criteria/29/actual",
+      "/results/7/score/criteria/29/expected",
+      "/results/7/score/criteria/3/actual",
+      "/results/7/score/criteria/3/expected",
+      "/results/7/score/criteria/30/actual",
+      "/results/7/score/criteria/30/expected",
+      "/results/7/score/criteria/31/actual",
+      "/results/7/score/criteria/31/expected",
+      "/results/7/score/criteria/32/actual",
+      "/results/7/score/criteria/32/expected",
+      "/results/7/score/criteria/33/actual",
+      "/results/7/score/criteria/33/expected",
+      "/results/7/score/criteria/34/actual",
+      "/results/7/score/criteria/34/expected",
+      "/results/7/score/criteria/35/actual",
+      "/results/7/score/criteria/35/expected",
+      "/results/7/score/criteria/36/actual",
+      "/results/7/score/criteria/36/detail",
+      "/results/7/score/criteria/36/expected",
+      "/results/7/score/criteria/37/actual",
+      "/results/7/score/criteria/37/expected",
+      "/results/7/score/criteria/38/actual",
+      "/results/7/score/criteria/38/expected",
+      "/results/7/score/criteria/39/actual",
+      "/results/7/score/criteria/39/expected",
+      "/results/7/score/criteria/4/actual",
+      "/results/7/score/criteria/4/expected",
+      "/results/7/score/criteria/40/actual",
+      "/results/7/score/criteria/40/detail",
+      "/results/7/score/criteria/40/expected",
+      "/results/7/score/criteria/41/actual",
+      "/results/7/score/criteria/41/expected",
+      "/results/7/score/criteria/42/actual",
+      "/results/7/score/criteria/42/detail",
+      "/results/7/score/criteria/42/expected",
+      "/results/7/score/criteria/43/actual",
+      "/results/7/score/criteria/43/expected",
+      "/results/7/score/criteria/44/actual",
+      "/results/7/score/criteria/44/expected",
+      "/results/7/score/criteria/45/actual",
+      "/results/7/score/criteria/45/expected",
+      "/results/7/score/criteria/5/actual",
+      "/results/7/score/criteria/5/detail",
+      "/results/7/score/criteria/5/expected",
+      "/results/7/score/criteria/6/actual",
+      "/results/7/score/criteria/6/detail",
+      "/results/7/score/criteria/6/expected",
+      "/results/7/score/criteria/7/actual",
+      "/results/7/score/criteria/7/expected",
+      "/results/7/score/criteria/8/actual",
+      "/results/7/score/criteria/8/expected",
+      "/results/7/score/criteria/9/actual",
+      "/results/7/score/criteria/9/expected",
+      "/results/7/score/roundScores/0/annotationCoverage",
+      "/results/7/score/roundScores/0/completeIntentMatch",
+      "/results/7/score/roundScores/0/metricLabel",
+      "/results/7/score/roundScores/1/annotationCoverage",
+      "/results/7/score/roundScores/1/completeIntentMatch",
+      "/results/7/score/roundScores/1/metricLabel",
+      "/results/7/score/roundScores/2/annotationCoverage",
+      "/results/7/score/roundScores/2/completeIntentMatch",
+      "/results/7/score/roundScores/2/metricLabel",
+      "/results/7/sideEffects",
+      "/results/7/timings",
+      "/results/8/assertions",
+      "/results/8/events",
+      "/results/8/ledger",
+      "/results/8/rounds",
+      "/results/8/safety",
+      "/results/8/score/criteria/0/actual",
+      "/results/8/score/criteria/0/expected",
+      "/results/8/score/criteria/1/actual",
+      "/results/8/score/criteria/1/expected",
+      "/results/8/score/criteria/10/actual",
+      "/results/8/score/criteria/10/expected",
+      "/results/8/score/criteria/11/actual",
+      "/results/8/score/criteria/11/detail",
+      "/results/8/score/criteria/11/expected",
+      "/results/8/score/criteria/12/actual",
+      "/results/8/score/criteria/12/expected",
+      "/results/8/score/criteria/2/actual",
+      "/results/8/score/criteria/2/expected",
+      "/results/8/score/criteria/3/actual",
+      "/results/8/score/criteria/3/expected",
+      "/results/8/score/criteria/4/actual",
+      "/results/8/score/criteria/4/expected",
+      "/results/8/score/criteria/5/actual",
+      "/results/8/score/criteria/5/detail",
+      "/results/8/score/criteria/5/expected",
+      "/results/8/score/criteria/6/actual",
+      "/results/8/score/criteria/6/expected",
+      "/results/8/score/criteria/7/actual",
+      "/results/8/score/criteria/7/expected",
+      "/results/8/score/criteria/8/actual",
+      "/results/8/score/criteria/8/expected",
+      "/results/8/score/criteria/9/actual",
+      "/results/8/score/criteria/9/detail",
+      "/results/8/score/criteria/9/expected",
+      "/results/8/score/roundScores/0/annotationCoverage",
+      "/results/8/score/roundScores/0/completeIntentMatch",
+      "/results/8/score/roundScores/0/metricLabel",
+      "/results/8/sideEffects",
+      "/results/8/timings",
+      "/results/9/assertions",
+      "/results/9/events",
+      "/results/9/ledger",
+      "/results/9/rounds",
+      "/results/9/safety",
+      "/results/9/score/criteria/0/actual",
+      "/results/9/score/criteria/0/expected",
+      "/results/9/score/criteria/1/actual",
+      "/results/9/score/criteria/1/expected",
+      "/results/9/score/criteria/10/actual",
+      "/results/9/score/criteria/10/detail",
+      "/results/9/score/criteria/10/expected",
+      "/results/9/score/criteria/11/actual",
+      "/results/9/score/criteria/11/expected",
+      "/results/9/score/criteria/12/actual",
+      "/results/9/score/criteria/12/detail",
+      "/results/9/score/criteria/12/expected",
+      "/results/9/score/criteria/13/actual",
+      "/results/9/score/criteria/13/expected",
+      "/results/9/score/criteria/2/actual",
+      "/results/9/score/criteria/2/expected",
+      "/results/9/score/criteria/3/actual",
+      "/results/9/score/criteria/3/expected",
+      "/results/9/score/criteria/4/actual",
+      "/results/9/score/criteria/4/expected",
+      "/results/9/score/criteria/5/actual",
+      "/results/9/score/criteria/5/detail",
+      "/results/9/score/criteria/5/expected",
+      "/results/9/score/criteria/6/actual",
+      "/results/9/score/criteria/6/detail",
+      "/results/9/score/criteria/6/expected",
+      "/results/9/score/criteria/7/actual",
+      "/results/9/score/criteria/7/expected",
+      "/results/9/score/criteria/8/actual",
+      "/results/9/score/criteria/8/expected",
+      "/results/9/score/criteria/9/actual",
+      "/results/9/score/criteria/9/expected",
+      "/results/9/score/roundScores/0/annotationCoverage",
+      "/results/9/score/roundScores/0/completeIntentMatch",
+      "/results/9/score/roundScores/0/metricLabel",
+      "/results/9/sideEffects",
+      "/results/9/timings",
+      "/scope/design",
+      "/scope/limitations/0",
+      "/scope/limitations/1",
+      "/scope/limitations/2",
+      "/scope/limitations/3",
+      "/scope/targetPopulation",
+      "/scores/0/criteria/0/actual",
+      "/scores/0/criteria/0/expected",
+      "/scores/0/criteria/1/actual",
+      "/scores/0/criteria/1/expected",
+      "/scores/0/criteria/10/actual",
+      "/scores/0/criteria/10/detail",
+      "/scores/0/criteria/10/expected",
+      "/scores/0/criteria/11/actual",
+      "/scores/0/criteria/11/expected",
+      "/scores/0/criteria/12/actual",
+      "/scores/0/criteria/12/detail",
+      "/scores/0/criteria/12/expected",
+      "/scores/0/criteria/13/actual",
+      "/scores/0/criteria/13/expected",
+      "/scores/0/criteria/2/actual",
+      "/scores/0/criteria/2/expected",
+      "/scores/0/criteria/3/actual",
+      "/scores/0/criteria/3/expected",
+      "/scores/0/criteria/4/actual",
+      "/scores/0/criteria/4/expected",
+      "/scores/0/criteria/5/actual",
+      "/scores/0/criteria/5/detail",
+      "/scores/0/criteria/5/expected",
+      "/scores/0/criteria/6/actual",
+      "/scores/0/criteria/6/detail",
+      "/scores/0/criteria/6/expected",
+      "/scores/0/criteria/7/actual",
+      "/scores/0/criteria/7/expected",
+      "/scores/0/criteria/8/actual",
+      "/scores/0/criteria/8/expected",
+      "/scores/0/criteria/9/actual",
+      "/scores/0/criteria/9/expected",
+      "/scores/0/roundScores/0/annotationCoverage",
+      "/scores/0/roundScores/0/completeIntentMatch",
+      "/scores/0/roundScores/0/metricLabel",
+      "/scores/1/criteria/0/actual",
+      "/scores/1/criteria/0/expected",
+      "/scores/1/criteria/1/actual",
+      "/scores/1/criteria/1/expected",
+      "/scores/1/criteria/10/actual",
+      "/scores/1/criteria/10/expected",
+      "/scores/1/criteria/11/actual",
+      "/scores/1/criteria/11/detail",
+      "/scores/1/criteria/11/expected",
+      "/scores/1/criteria/12/actual",
+      "/scores/1/criteria/12/expected",
+      "/scores/1/criteria/2/actual",
+      "/scores/1/criteria/2/expected",
+      "/scores/1/criteria/3/actual",
+      "/scores/1/criteria/3/expected",
+      "/scores/1/criteria/4/actual",
+      "/scores/1/criteria/4/expected",
+      "/scores/1/criteria/5/actual",
+      "/scores/1/criteria/5/detail",
+      "/scores/1/criteria/5/expected",
+      "/scores/1/criteria/6/actual",
+      "/scores/1/criteria/6/expected",
+      "/scores/1/criteria/7/actual",
+      "/scores/1/criteria/7/expected",
+      "/scores/1/criteria/8/actual",
+      "/scores/1/criteria/8/expected",
+      "/scores/1/criteria/9/actual",
+      "/scores/1/criteria/9/detail",
+      "/scores/1/criteria/9/expected",
+      "/scores/1/roundScores/0/annotationCoverage",
+      "/scores/1/roundScores/0/completeIntentMatch",
+      "/scores/1/roundScores/0/metricLabel",
+      "/scores/2/criteria/0/actual",
+      "/scores/2/criteria/0/expected",
+      "/scores/2/criteria/1/actual",
+      "/scores/2/criteria/1/expected",
+      "/scores/2/criteria/10/actual",
+      "/scores/2/criteria/10/expected",
+      "/scores/2/criteria/11/actual",
+      "/scores/2/criteria/11/detail",
+      "/scores/2/criteria/11/expected",
+      "/scores/2/criteria/12/actual",
+      "/scores/2/criteria/12/expected",
+      "/scores/2/criteria/2/actual",
+      "/scores/2/criteria/2/expected",
+      "/scores/2/criteria/3/actual",
+      "/scores/2/criteria/3/expected",
+      "/scores/2/criteria/4/actual",
+      "/scores/2/criteria/4/expected",
+      "/scores/2/criteria/5/actual",
+      "/scores/2/criteria/5/detail",
+      "/scores/2/criteria/5/expected",
+      "/scores/2/criteria/6/actual",
+      "/scores/2/criteria/6/expected",
+      "/scores/2/criteria/7/actual",
+      "/scores/2/criteria/7/expected",
+      "/scores/2/criteria/8/actual",
+      "/scores/2/criteria/8/expected",
+      "/scores/2/criteria/9/actual",
+      "/scores/2/criteria/9/detail",
+      "/scores/2/criteria/9/expected",
+      "/scores/2/roundScores/0/annotationCoverage",
+      "/scores/2/roundScores/0/completeIntentMatch",
+      "/scores/2/roundScores/0/metricLabel",
+      "/scores/3/criteria/0/actual",
+      "/scores/3/criteria/0/expected",
+      "/scores/3/criteria/1/actual",
+      "/scores/3/criteria/1/expected",
+      "/scores/3/criteria/10/actual",
+      "/scores/3/criteria/10/detail",
+      "/scores/3/criteria/10/expected",
+      "/scores/3/criteria/11/actual",
+      "/scores/3/criteria/11/expected",
+      "/scores/3/criteria/12/actual",
+      "/scores/3/criteria/12/expected",
+      "/scores/3/criteria/13/actual",
+      "/scores/3/criteria/13/expected",
+      "/scores/3/criteria/2/actual",
+      "/scores/3/criteria/2/expected",
+      "/scores/3/criteria/3/actual",
+      "/scores/3/criteria/3/expected",
+      "/scores/3/criteria/4/actual",
+      "/scores/3/criteria/4/expected",
+      "/scores/3/criteria/5/actual",
+      "/scores/3/criteria/5/expected",
+      "/scores/3/criteria/6/actual",
+      "/scores/3/criteria/6/detail",
+      "/scores/3/criteria/6/expected",
+      "/scores/3/criteria/7/actual",
+      "/scores/3/criteria/7/expected",
+      "/scores/3/criteria/8/actual",
+      "/scores/3/criteria/8/expected",
+      "/scores/3/criteria/9/actual",
+      "/scores/3/criteria/9/expected",
+      "/scores/3/roundScores/0/annotationCoverage",
+      "/scores/3/roundScores/0/completeIntentMatch",
+      "/scores/3/roundScores/0/metricLabel",
+      "/scores/4/criteria/0/actual",
+      "/scores/4/criteria/0/expected",
+      "/scores/4/criteria/1/actual",
+      "/scores/4/criteria/1/expected",
+      "/scores/4/criteria/10/actual",
+      "/scores/4/criteria/10/expected",
+      "/scores/4/criteria/11/actual",
+      "/scores/4/criteria/11/detail",
+      "/scores/4/criteria/11/expected",
+      "/scores/4/criteria/12/actual",
+      "/scores/4/criteria/12/expected",
+      "/scores/4/criteria/13/actual",
+      "/scores/4/criteria/13/detail",
+      "/scores/4/criteria/13/expected",
+      "/scores/4/criteria/14/actual",
+      "/scores/4/criteria/14/detail",
+      "/scores/4/criteria/14/expected",
+      "/scores/4/criteria/2/actual",
+      "/scores/4/criteria/2/expected",
+      "/scores/4/criteria/3/actual",
+      "/scores/4/criteria/3/expected",
+      "/scores/4/criteria/4/actual",
+      "/scores/4/criteria/4/detail",
+      "/scores/4/criteria/4/expected",
+      "/scores/4/criteria/5/actual",
+      "/scores/4/criteria/5/detail",
+      "/scores/4/criteria/5/expected",
+      "/scores/4/criteria/6/actual",
+      "/scores/4/criteria/6/detail",
+      "/scores/4/criteria/6/expected",
+      "/scores/4/criteria/7/actual",
+      "/scores/4/criteria/7/detail",
+      "/scores/4/criteria/7/expected",
+      "/scores/4/criteria/8/actual",
+      "/scores/4/criteria/8/expected",
+      "/scores/4/criteria/9/actual",
+      "/scores/4/criteria/9/expected",
+      "/scores/4/roundScores/0/annotationCoverage",
+      "/scores/4/roundScores/0/completeIntentMatch",
+      "/scores/4/roundScores/0/metricLabel",
+      "/scores/5/criteria/0/actual",
+      "/scores/5/criteria/0/expected",
+      "/scores/5/criteria/1/actual",
+      "/scores/5/criteria/1/expected",
+      "/scores/5/criteria/10/actual",
+      "/scores/5/criteria/10/detail",
+      "/scores/5/criteria/10/expected",
+      "/scores/5/criteria/11/actual",
+      "/scores/5/criteria/11/expected",
+      "/scores/5/criteria/12/actual",
+      "/scores/5/criteria/12/detail",
+      "/scores/5/criteria/12/expected",
+      "/scores/5/criteria/13/actual",
+      "/scores/5/criteria/13/expected",
+      "/scores/5/criteria/14/actual",
+      "/scores/5/criteria/14/expected",
+      "/scores/5/criteria/15/actual",
+      "/scores/5/criteria/15/expected",
+      "/scores/5/criteria/16/actual",
+      "/scores/5/criteria/16/expected",
+      "/scores/5/criteria/17/actual",
+      "/scores/5/criteria/17/expected",
+      "/scores/5/criteria/18/actual",
+      "/scores/5/criteria/18/expected",
+      "/scores/5/criteria/19/actual",
+      "/scores/5/criteria/19/detail",
+      "/scores/5/criteria/19/expected",
+      "/scores/5/criteria/2/actual",
+      "/scores/5/criteria/2/expected",
+      "/scores/5/criteria/20/actual",
+      "/scores/5/criteria/20/expected",
+      "/scores/5/criteria/21/actual",
+      "/scores/5/criteria/21/expected",
+      "/scores/5/criteria/22/actual",
+      "/scores/5/criteria/22/expected",
+      "/scores/5/criteria/23/actual",
+      "/scores/5/criteria/23/detail",
+      "/scores/5/criteria/23/expected",
+      "/scores/5/criteria/24/actual",
+      "/scores/5/criteria/24/expected",
+      "/scores/5/criteria/25/actual",
+      "/scores/5/criteria/25/detail",
+      "/scores/5/criteria/25/expected",
+      "/scores/5/criteria/26/actual",
+      "/scores/5/criteria/26/expected",
+      "/scores/5/criteria/27/actual",
+      "/scores/5/criteria/27/detail",
+      "/scores/5/criteria/27/expected",
+      "/scores/5/criteria/28/actual",
+      "/scores/5/criteria/28/expected",
+      "/scores/5/criteria/29/actual",
+      "/scores/5/criteria/29/expected",
+      "/scores/5/criteria/3/actual",
+      "/scores/5/criteria/3/expected",
+      "/scores/5/criteria/30/actual",
+      "/scores/5/criteria/30/expected",
+      "/scores/5/criteria/31/actual",
+      "/scores/5/criteria/31/expected",
+      "/scores/5/criteria/32/actual",
+      "/scores/5/criteria/32/expected",
+      "/scores/5/criteria/33/actual",
+      "/scores/5/criteria/33/detail",
+      "/scores/5/criteria/33/expected",
+      "/scores/5/criteria/34/actual",
+      "/scores/5/criteria/34/expected",
+      "/scores/5/criteria/35/actual",
+      "/scores/5/criteria/35/expected",
+      "/scores/5/criteria/36/actual",
+      "/scores/5/criteria/36/expected",
+      "/scores/5/criteria/37/actual",
+      "/scores/5/criteria/37/detail",
+      "/scores/5/criteria/37/expected",
+      "/scores/5/criteria/38/actual",
+      "/scores/5/criteria/38/expected",
+      "/scores/5/criteria/39/actual",
+      "/scores/5/criteria/39/detail",
+      "/scores/5/criteria/39/expected",
+      "/scores/5/criteria/4/actual",
+      "/scores/5/criteria/4/expected",
+      "/scores/5/criteria/40/actual",
+      "/scores/5/criteria/40/expected",
+      "/scores/5/criteria/41/actual",
+      "/scores/5/criteria/41/expected",
+      "/scores/5/criteria/42/actual",
+      "/scores/5/criteria/42/expected",
+      "/scores/5/criteria/5/actual",
+      "/scores/5/criteria/5/detail",
+      "/scores/5/criteria/5/expected",
+      "/scores/5/criteria/6/actual",
+      "/scores/5/criteria/6/detail",
+      "/scores/5/criteria/6/expected",
+      "/scores/5/criteria/7/actual",
+      "/scores/5/criteria/7/expected",
+      "/scores/5/criteria/8/actual",
+      "/scores/5/criteria/8/expected",
+      "/scores/5/criteria/9/actual",
+      "/scores/5/criteria/9/expected",
+      "/scores/5/roundScores/0/annotationCoverage",
+      "/scores/5/roundScores/0/completeIntentMatch",
+      "/scores/5/roundScores/0/metricLabel",
+      "/scores/5/roundScores/1/annotationCoverage",
+      "/scores/5/roundScores/1/completeIntentMatch",
+      "/scores/5/roundScores/1/metricLabel",
+      "/scores/5/roundScores/2/annotationCoverage",
+      "/scores/5/roundScores/2/completeIntentMatch",
+      "/scores/5/roundScores/2/metricLabel",
+      "/scores/6/criteria/0/actual",
+      "/scores/6/criteria/0/expected",
+      "/scores/6/criteria/1/actual",
+      "/scores/6/criteria/1/expected",
+      "/scores/6/criteria/10/actual",
+      "/scores/6/criteria/10/detail",
+      "/scores/6/criteria/10/expected",
+      "/scores/6/criteria/11/actual",
+      "/scores/6/criteria/11/expected",
+      "/scores/6/criteria/12/actual",
+      "/scores/6/criteria/12/detail",
+      "/scores/6/criteria/12/expected",
+      "/scores/6/criteria/13/actual",
+      "/scores/6/criteria/13/expected",
+      "/scores/6/criteria/14/actual",
+      "/scores/6/criteria/14/expected",
+      "/scores/6/criteria/15/actual",
+      "/scores/6/criteria/15/expected",
+      "/scores/6/criteria/16/actual",
+      "/scores/6/criteria/16/expected",
+      "/scores/6/criteria/17/actual",
+      "/scores/6/criteria/17/expected",
+      "/scores/6/criteria/18/actual",
+      "/scores/6/criteria/18/expected",
+      "/scores/6/criteria/19/actual",
+      "/scores/6/criteria/19/expected",
+      "/scores/6/criteria/2/actual",
+      "/scores/6/criteria/2/expected",
+      "/scores/6/criteria/20/actual",
+      "/scores/6/criteria/20/expected",
+      "/scores/6/criteria/21/actual",
+      "/scores/6/criteria/21/expected",
+      "/scores/6/criteria/22/actual",
+      "/scores/6/criteria/22/expected",
+      "/scores/6/criteria/23/actual",
+      "/scores/6/criteria/23/expected",
+      "/scores/6/criteria/24/actual",
+      "/scores/6/criteria/24/detail",
+      "/scores/6/criteria/24/expected",
+      "/scores/6/criteria/25/actual",
+      "/scores/6/criteria/25/expected",
+      "/scores/6/criteria/26/actual",
+      "/scores/6/criteria/26/detail",
+      "/scores/6/criteria/26/expected",
+      "/scores/6/criteria/27/actual",
+      "/scores/6/criteria/27/expected",
+      "/scores/6/criteria/28/actual",
+      "/scores/6/criteria/28/expected",
+      "/scores/6/criteria/29/actual",
+      "/scores/6/criteria/29/expected",
+      "/scores/6/criteria/3/actual",
+      "/scores/6/criteria/3/expected",
+      "/scores/6/criteria/30/actual",
+      "/scores/6/criteria/30/detail",
+      "/scores/6/criteria/30/expected",
+      "/scores/6/criteria/31/actual",
+      "/scores/6/criteria/31/expected",
+      "/scores/6/criteria/32/actual",
+      "/scores/6/criteria/32/expected",
+      "/scores/6/criteria/33/actual",
+      "/scores/6/criteria/33/expected",
+      "/scores/6/criteria/34/actual",
+      "/scores/6/criteria/34/expected",
+      "/scores/6/criteria/35/actual",
+      "/scores/6/criteria/35/expected",
+      "/scores/6/criteria/36/actual",
+      "/scores/6/criteria/36/expected",
+      "/scores/6/criteria/37/actual",
+      "/scores/6/criteria/37/expected",
+      "/scores/6/criteria/38/actual",
+      "/scores/6/criteria/38/expected",
+      "/scores/6/criteria/39/actual",
+      "/scores/6/criteria/39/expected",
+      "/scores/6/criteria/4/actual",
+      "/scores/6/criteria/4/expected",
+      "/scores/6/criteria/40/actual",
+      "/scores/6/criteria/40/detail",
+      "/scores/6/criteria/40/expected",
+      "/scores/6/criteria/41/actual",
+      "/scores/6/criteria/41/expected",
+      "/scores/6/criteria/42/actual",
+      "/scores/6/criteria/42/detail",
+      "/scores/6/criteria/42/expected",
+      "/scores/6/criteria/43/actual",
+      "/scores/6/criteria/43/expected",
+      "/scores/6/criteria/44/actual",
+      "/scores/6/criteria/44/expected",
+      "/scores/6/criteria/45/actual",
+      "/scores/6/criteria/45/expected",
+      "/scores/6/criteria/5/actual",
+      "/scores/6/criteria/5/expected",
+      "/scores/6/criteria/6/actual",
+      "/scores/6/criteria/6/detail",
+      "/scores/6/criteria/6/expected",
+      "/scores/6/criteria/7/actual",
+      "/scores/6/criteria/7/expected",
+      "/scores/6/criteria/8/actual",
+      "/scores/6/criteria/8/expected",
+      "/scores/6/criteria/9/actual",
+      "/scores/6/criteria/9/expected",
+      "/scores/6/roundScores/0/annotationCoverage",
+      "/scores/6/roundScores/0/completeIntentMatch",
+      "/scores/6/roundScores/0/metricLabel",
+      "/scores/6/roundScores/1/annotationCoverage",
+      "/scores/6/roundScores/1/completeIntentMatch",
+      "/scores/6/roundScores/1/metricLabel",
+      "/scores/6/roundScores/2/annotationCoverage",
+      "/scores/6/roundScores/2/completeIntentMatch",
+      "/scores/6/roundScores/2/metricLabel",
+      "/scores/7/criteria/0/actual",
+      "/scores/7/criteria/0/expected",
+      "/scores/7/criteria/1/actual",
+      "/scores/7/criteria/1/expected",
+      "/scores/7/criteria/10/actual",
+      "/scores/7/criteria/10/detail",
+      "/scores/7/criteria/10/expected",
+      "/scores/7/criteria/11/actual",
+      "/scores/7/criteria/11/expected",
+      "/scores/7/criteria/12/actual",
+      "/scores/7/criteria/12/detail",
+      "/scores/7/criteria/12/expected",
+      "/scores/7/criteria/13/actual",
+      "/scores/7/criteria/13/expected",
+      "/scores/7/criteria/14/actual",
+      "/scores/7/criteria/14/expected",
+      "/scores/7/criteria/15/actual",
+      "/scores/7/criteria/15/expected",
+      "/scores/7/criteria/16/actual",
+      "/scores/7/criteria/16/expected",
+      "/scores/7/criteria/17/actual",
+      "/scores/7/criteria/17/expected",
+      "/scores/7/criteria/18/actual",
+      "/scores/7/criteria/18/expected",
+      "/scores/7/criteria/19/actual",
+      "/scores/7/criteria/19/expected",
+      "/scores/7/criteria/2/actual",
+      "/scores/7/criteria/2/expected",
+      "/scores/7/criteria/20/actual",
+      "/scores/7/criteria/20/detail",
+      "/scores/7/criteria/20/expected",
+      "/scores/7/criteria/21/actual",
+      "/scores/7/criteria/21/expected",
+      "/scores/7/criteria/22/actual",
+      "/scores/7/criteria/22/expected",
+      "/scores/7/criteria/23/actual",
+      "/scores/7/criteria/23/expected",
+      "/scores/7/criteria/24/actual",
+      "/scores/7/criteria/24/detail",
+      "/scores/7/criteria/24/expected",
+      "/scores/7/criteria/25/actual",
+      "/scores/7/criteria/25/expected",
+      "/scores/7/criteria/26/actual",
+      "/scores/7/criteria/26/detail",
+      "/scores/7/criteria/26/expected",
+      "/scores/7/criteria/27/actual",
+      "/scores/7/criteria/27/expected",
+      "/scores/7/criteria/28/actual",
+      "/scores/7/criteria/28/expected",
+      "/scores/7/criteria/29/actual",
+      "/scores/7/criteria/29/expected",
+      "/scores/7/criteria/3/actual",
+      "/scores/7/criteria/3/expected",
+      "/scores/7/criteria/30/actual",
+      "/scores/7/criteria/30/expected",
+      "/scores/7/criteria/31/actual",
+      "/scores/7/criteria/31/expected",
+      "/scores/7/criteria/32/actual",
+      "/scores/7/criteria/32/expected",
+      "/scores/7/criteria/33/actual",
+      "/scores/7/criteria/33/expected",
+      "/scores/7/criteria/34/actual",
+      "/scores/7/criteria/34/expected",
+      "/scores/7/criteria/35/actual",
+      "/scores/7/criteria/35/expected",
+      "/scores/7/criteria/36/actual",
+      "/scores/7/criteria/36/detail",
+      "/scores/7/criteria/36/expected",
+      "/scores/7/criteria/37/actual",
+      "/scores/7/criteria/37/expected",
+      "/scores/7/criteria/38/actual",
+      "/scores/7/criteria/38/expected",
+      "/scores/7/criteria/39/actual",
+      "/scores/7/criteria/39/expected",
+      "/scores/7/criteria/4/actual",
+      "/scores/7/criteria/4/expected",
+      "/scores/7/criteria/40/actual",
+      "/scores/7/criteria/40/detail",
+      "/scores/7/criteria/40/expected",
+      "/scores/7/criteria/41/actual",
+      "/scores/7/criteria/41/expected",
+      "/scores/7/criteria/42/actual",
+      "/scores/7/criteria/42/detail",
+      "/scores/7/criteria/42/expected",
+      "/scores/7/criteria/43/actual",
+      "/scores/7/criteria/43/expected",
+      "/scores/7/criteria/44/actual",
+      "/scores/7/criteria/44/expected",
+      "/scores/7/criteria/45/actual",
+      "/scores/7/criteria/45/expected",
+      "/scores/7/criteria/5/actual",
+      "/scores/7/criteria/5/detail",
+      "/scores/7/criteria/5/expected",
+      "/scores/7/criteria/6/actual",
+      "/scores/7/criteria/6/detail",
+      "/scores/7/criteria/6/expected",
+      "/scores/7/criteria/7/actual",
+      "/scores/7/criteria/7/expected",
+      "/scores/7/criteria/8/actual",
+      "/scores/7/criteria/8/expected",
+      "/scores/7/criteria/9/actual",
+      "/scores/7/criteria/9/expected",
+      "/scores/7/roundScores/0/annotationCoverage",
+      "/scores/7/roundScores/0/completeIntentMatch",
+      "/scores/7/roundScores/0/metricLabel",
+      "/scores/7/roundScores/1/annotationCoverage",
+      "/scores/7/roundScores/1/completeIntentMatch",
+      "/scores/7/roundScores/1/metricLabel",
+      "/scores/7/roundScores/2/annotationCoverage",
+      "/scores/7/roundScores/2/completeIntentMatch",
+      "/scores/7/roundScores/2/metricLabel",
+      "/scores/8/criteria/0/actual",
+      "/scores/8/criteria/0/expected",
+      "/scores/8/criteria/1/actual",
+      "/scores/8/criteria/1/expected",
+      "/scores/8/criteria/10/actual",
+      "/scores/8/criteria/10/expected",
+      "/scores/8/criteria/11/actual",
+      "/scores/8/criteria/11/detail",
+      "/scores/8/criteria/11/expected",
+      "/scores/8/criteria/12/actual",
+      "/scores/8/criteria/12/expected",
+      "/scores/8/criteria/2/actual",
+      "/scores/8/criteria/2/expected",
+      "/scores/8/criteria/3/actual",
+      "/scores/8/criteria/3/expected",
+      "/scores/8/criteria/4/actual",
+      "/scores/8/criteria/4/expected",
+      "/scores/8/criteria/5/actual",
+      "/scores/8/criteria/5/detail",
+      "/scores/8/criteria/5/expected",
+      "/scores/8/criteria/6/actual",
+      "/scores/8/criteria/6/expected",
+      "/scores/8/criteria/7/actual",
+      "/scores/8/criteria/7/expected",
+      "/scores/8/criteria/8/actual",
+      "/scores/8/criteria/8/expected",
+      "/scores/8/criteria/9/actual",
+      "/scores/8/criteria/9/detail",
+      "/scores/8/criteria/9/expected",
+      "/scores/8/roundScores/0/annotationCoverage",
+      "/scores/8/roundScores/0/completeIntentMatch",
+      "/scores/8/roundScores/0/metricLabel",
+      "/scores/9/criteria/0/actual",
+      "/scores/9/criteria/0/expected",
+      "/scores/9/criteria/1/actual",
+      "/scores/9/criteria/1/expected",
+      "/scores/9/criteria/10/actual",
+      "/scores/9/criteria/10/detail",
+      "/scores/9/criteria/10/expected",
+      "/scores/9/criteria/11/actual",
+      "/scores/9/criteria/11/expected",
+      "/scores/9/criteria/12/actual",
+      "/scores/9/criteria/12/detail",
+      "/scores/9/criteria/12/expected",
+      "/scores/9/criteria/13/actual",
+      "/scores/9/criteria/13/expected",
+      "/scores/9/criteria/2/actual",
+      "/scores/9/criteria/2/expected",
+      "/scores/9/criteria/3/actual",
+      "/scores/9/criteria/3/expected",
+      "/scores/9/criteria/4/actual",
+      "/scores/9/criteria/4/expected",
+      "/scores/9/criteria/5/actual",
+      "/scores/9/criteria/5/detail",
+      "/scores/9/criteria/5/expected",
+      "/scores/9/criteria/6/actual",
+      "/scores/9/criteria/6/detail",
+      "/scores/9/criteria/6/expected",
+      "/scores/9/criteria/7/actual",
+      "/scores/9/criteria/7/expected",
+      "/scores/9/criteria/8/actual",
+      "/scores/9/criteria/8/expected",
+      "/scores/9/criteria/9/actual",
+      "/scores/9/criteria/9/expected",
+      "/scores/9/roundScores/0/annotationCoverage",
+      "/scores/9/roundScores/0/completeIntentMatch",
+      "/scores/9/roundScores/0/metricLabel",
+      "/summary/byFamily/language/completeIntentMatch/definition",
+      "/summary/byFamily/language/completeIntentMatch/metricLabel",
+      "/summary/byFamily/language/completionInterval95/method",
+      "/summary/byFamily/language_context/completeIntentMatch/definition",
+      "/summary/byFamily/language_context/completeIntentMatch/metricLabel",
+      "/summary/byFamily/language_context/completionInterval95/method",
+      "/summary/byFamily/language_polarity/completeIntentMatch/definition",
+      "/summary/byFamily/language_polarity/completeIntentMatch/metricLabel",
+      "/summary/byFamily/language_polarity/completionInterval95/method",
+      "/summary/byFamily/release_research/completeIntentMatch/definition",
+      "/summary/byFamily/release_research/completeIntentMatch/metricLabel",
+      "/summary/byFamily/release_research/completionInterval95/method",
+      "/summary/byFamily/source_style/completeIntentMatch/definition",
+      "/summary/byFamily/source_style/completeIntentMatch/metricLabel",
+      "/summary/byFamily/source_style/completionInterval95/method",
+      "/summary/byFamily/three_turn_language_lock/completeIntentMatch/definition",
+      "/summary/byFamily/three_turn_language_lock/completeIntentMatch/metricLabel",
+      "/summary/byFamily/three_turn_language_lock/completionInterval95/method",
+      "/summary/byFamily/three_turn_lock/completeIntentMatch/definition",
+      "/summary/byFamily/three_turn_lock/completeIntentMatch/metricLabel",
+      "/summary/byFamily/three_turn_lock/completionInterval95/method",
+      "/summary/byFamily/three_turn_reference/completeIntentMatch/definition",
+      "/summary/byFamily/three_turn_reference/completeIntentMatch/metricLabel",
+      "/summary/byFamily/three_turn_reference/completionInterval95/method",
+      "/summary/byMode/live_model_controlled_catalog/completeIntentMatch/definition",
+      "/summary/byMode/live_model_controlled_catalog/completeIntentMatch/metricLabel",
+      "/summary/byMode/live_model_controlled_catalog/completionInterval95/method",
+      "/summary/bySplit/challenge/completeIntentMatch/definition",
+      "/summary/bySplit/challenge/completeIntentMatch/metricLabel",
+      "/summary/bySplit/challenge/completionInterval95/method",
+      "/summary/bySplit/holdout/completeIntentMatch/definition",
+      "/summary/bySplit/holdout/completeIntentMatch/metricLabel",
+      "/summary/bySplit/holdout/completionInterval95/method",
+      "/summary/definition",
+      "/summary/limitation",
+      "/summary/overall/completeIntentMatch/definition",
+      "/summary/overall/completeIntentMatch/metricLabel",
+      "/summary/overall/completionInterval95/method"
+    ],
+    "usageAggregatesVerifiedAgainstPrivateOriginal": true
+  }
+}

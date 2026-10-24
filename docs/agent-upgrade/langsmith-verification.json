@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-24",
+  "scope": "langsmith_cloud_explicit_business_observability",
+  "status": "passed_with_documented_limits",
+  "quick": {
+    "passedPython": 652,
+    "skippedPython": 22,
+    "passedNode": 53,
+    "failed": 0,
+    "privateReport": ".local/harness-runs/20261023T164403-0gfvy5du/report.json",
+    "sha256": "b8354b369e81ee9195cc8350cd03e5c6c164faa0304b551ba0e69b1abfc24315"
+  },
+  "mysql": {
+    "passed": 1190,
+    "skipped": 57,
+    "failed": 0,
+    "privateReport": ".local/harness-runs/20261023T164403-e43ivpo0/report.json",
+    "sha256": "cead215baae755156e6c058e37524a3b4bd17dd787cc500f431e28ec4d0c499f",
+    "includesNewMysqlTracingTests": 2,
+    "skips": "PG-only and storage-inapplicable tests; no user database"
+  },
+  "focused": {
+    "adapterPassed": 59,
+    "routerPassed": 10,
+    "demoPassed": 13,
+    "sqliteTaskTracingPassed": 3,
+    "ownedMysqlTracingPassed": 2,
+    "mysqlTargetLog": ".local/langsmith-stage/mysql-tracing-first.log",
+    "warning": "Focused and full runs overlap; do not add them as accuracy"
+  },
+  "cloud": {
+    "service": "real_LangSmith_US_cloud",
+    "fixtureUpstreams": true,
+    "eventsAccepted": 96,
+    "httpBatches": 4,
+    "runs": 48,
+    "failed": 0,
+    "dropped": 0,
+    "pending": 0,
+    "contentReadback": {
+      "rootStatus": "preview",
+      "rootStateVersion": 14,
+      "appliedStatus": "adopted",
+      "appliedStateVersion": 16,
+      "localRuns": 48,
+      "cloudRuns": 48,
+      "sameRunIds": true,
+      "sameOutputsParentsErrors": true,
+      "validRunTimes": true,
+      "checks": {
+        "real_ids": "satisfied",
+        "locks": "satisfied",
+        "duration": "satisfied",
+        "exclude_live": "unverified",
+        "excluded_ids": "satisfied",
+        "excluded_artists": "satisfied",
+        "required_artist": "not_requested",
+        "releases": "not_requested",
+        "style": "unverified",
+        "catalog_language": "not_requested",
+        "ranking": "satisfied"
+      },
+      "cloudReadbackVerified": true
+    },
+    "privateReport": ".local/langsmith-demo/20261023T164406Z-9be05376/report.json",
+    "reportSha256": "f40105578e0d0c732f025c38b0c78aa8fb8320ad4dd39b1e84c9d8efcd3d128f",
+    "privateReadback": ".local/langsmith-demo/20261023T164406Z-9be05376/cloud-readback.json",
+    "readbackSha256": "bf09a77b954720bb6b5fe9c12d14fd84fd655c6de3c7dcfdc9320a3113cadd96",
+    "uiOpened": true,
+    "humanUiReview": false,
+    "accountDeploymentIdentifiersKeptPrivate": true
+  },
+  "localDeployment": {
+    "ports": [
+      16382,
+      16383
+    ],
+    "bothReady": true,
+    "bothTracingEnabled": true,
+    "runtime": "python",
+    "storage": "mysql",
+    "privateEvidence": ".local/langsmith-stage/app-deployment-final.json",
+    "sha256": "e0abe681916885cc94e8b5f3692e041fd0b08bc8e21d15dd061f176e4ee3d2b5"
+  },
+  "firstIssues": [
+    {
+      "finding": "Initial parallel integration missed pending-update and projection interfaces",
+      "result": "Original router 3 failures preserved; integrated APIs repaired",
+      "privateLog": ".local/langsmith-stage/router-first-failure.log"
+    },
+    {
+      "finding": "First real cloud rejected configured credential with HTTP403",
+      "result": "0 exported/10 failed/75 dropped; user corrected own credential; added new-key-format guard",
+      "privateReport": ".local/langsmith-demo/20261023T161748Z-d17f50cf/report.json"
+    },
+    {
+      "finding": "Cloud batch patch requires string end_time; absent/null rejected422; per-event HTTP exceeded flush bound",
+      "result": "7 accepted/2 failed/76 dropped; progress spans and true bounded batching implemented",
+      "privateReport": ".local/langsmith-demo/20261023T162809Z-8054e3a4/report.json"
+    },
+    {
+      "finding": "Cloud asynchronous mutable root updates produced older preview state14 despite local adopted state16",
+      "result": "100 events received/49 IDs matched did not prove state correctness; froze one terminal root per execution, kept adoption as child facts, re-uploaded and compared content",
+      "privateReport": ".local/langsmith-demo/20261023T163511Z-2b7bc29f/report.json"
+    },
+    {
+      "finding": "Private context comparison changed with persisted completion marker",
+      "result": "Strict expected dictionaries updated to include exact marker; root single terminal patch and later adopted child asserted",
+      "privateSummary": ".local/langsmith-demo/root-freeze-test-first-failure-summary.json"
+    }
+  ],
+  "newRealModelRequests": 0,
+  "newRealCatalogRequests": 0,
+  "playbackVerified": false,
+  "overallAgentAccuracy": null,
+  "overallAgentCompletionRate": null,
+  "limitations": [
+    "Music provider/model/device application in this demo are explicit fixtures; Cloud ingestion and backend workflow are real",
+    "Device catalog span is dispatch-to-validated-receipt, not Qt/Node internal HTTP",
+    "Some control routing and task actions still use separate roots linked through conversation/task",
+    "Root is first persisted execution stop; latest task state remains authoritative in MySQL",
+    "Bounded in-memory telemetry may be lost on failure/full queue/shutdown; no durable replay or quality alert loop",
+    "Runtime needs trace-write permission only; scoped fixture readback used maintainer credential with read permission",
+    "No new native Qt/audio/real recommendation quality or membership playback validation"
+  ],
+  "sourceHashes": {
+    "backend_py/tango_backend/agent_tracing.py": "e22ebc342df7f8f008533fbb3154ad11ccc8b66bcb0f37e93846c21cc5806e79",
+    "backend_py/tango_backend/conversation_router.py": "c8d37ad8d222ee75a281bbf21a3573291d7947c42b76aaa9b4a2c66d66658ee1",
+    "backend_py/tango_backend/task_runtime.py": "e931140c65bad83933f5e89814911b72ec1bbb6998f86215f38f13476fd95fe5",
+    "backend_py/tango_backend/model_transport.py": "8176e901a524ece77bea63a46aa516d0168df80d5eac1cde830e835a826c0876",
+    "backend_py/tango_backend/app.py": "16d2ad736123fa239be2541e40524da0bd0bc25a66bd8a99b1a7ef041c4a833b",
+    "backend_py/tango_backend/server.py": "43779da50912f0eb422e5a004f37352d4faede1a84c2db8931e6cf4dd3a091e6",
+    "backend_py/tango_backend/diagnostics.py": "bac0f77d363b30bba2809736afee2a62acfcd377f4a54aa9f22f71874c15f323",
+    "backend_py/evaluation/langsmith_demo.py": "378ba60b73dfead5a000d3fe3e89d574794701d8f3d45fbd392b5f882d3cec96",
+    "backend_py/tests/test_agent_tracing.py": "1e1c376f8c31999fb9dac4f7efb7fdc98b21abab79671885d4ebace9280d13f3",
+    "backend_py/tests/test_conversation_tracing.py": "0211d0be39c6f61bcde445c6ffdbacb4777f412d089df21c73f0ab5a118e06ce",
+    "backend_py/tests/test_langsmith_flow.py": "f9e9a5de98ca9a0eff7eeb49c95e03013dba252b7bb37ea2b82aee0682a33f97",
+    "backend_py/tests/test_task_tracing.py": "6d6408b7df62e608962c43694e29f770a5d0195756d7a949980dae68daed6d6b",
+    "backend_py/tests/test_task_tracing_mysql.py": "b5ced23bb6a3e1d853948229e91e0ed0ca9af034266fa5e3efc07e75d2664089",
+    "backend_py/tests/test_diagnostics.py": "0cfb6df5fd68b746817a9e7e81a56b08f6694f7bf9bebc73a2598e721b4eb308",
+    "scripts/langsmith-demo.sh": "85ad17fe4e1d05f6d11083e9dc37aaf11699c4bde1a56abbe065111c2f2518ed",
+    "scripts/check-harness.py": "d5eba60db3ed27a7bf483d76201f30df06f4e73e97a7ae03b05d8b6156a429f6",
+    "scripts/verify-harness.py": "3c9942dc21e763f79b1480228e2f1824c589e2747371f3125a8cd99d1c7dd05d",
+    "backend_py/pyproject.toml": "1d194d93dd7b3bab48d5e127d78100917924b5cf9e0a8348af87fff26b141683",
+    "backend_py/uv.lock": "10d7af96632fb3eb9f6edd6733e06ea1fb4ac6358f5c7ff4a60a210291622659"
+  },
+  "finishedAt": "2026-10-23T16:48:25.699934+00:00"
+}

@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "version": "v6-evaluation",
+  "businessVersion": "v5 (unchanged)",
+  "recordedAt": "2026-10-19T11:12:03.330313+00:00",
+  "title": "当前修复版首次运行新语义组合诊断",
+  "conclusion": "三个新任务、四轮全部执行。冻结自动评分严格完成1/3，已标注意图吻合2/4轮，条件通过52/68；另有8项失败、8项证据不足。没有因预算中断而漏测。",
+  "releaseDecision": "独立证据复核发现：一题因澄清续接合同冲突实际报错；一题业务条件满足但被歌手别名字符串检查误判；一题通过。原自动评分全部保留，不计算事后提高的准确率。多轮澄清续接仍是公开稳定上线前需修复的实际缺口。",
+  "population": "New semantic combinations authored by the development team, never used for production/prompt tuning before this frozen run. Not third-party blind testing or a probability sample.",
+  "rawMetrics": {
+    "tasks": 3,
+    "completed": 1,
+    "strictCompletionRate": 0.3333333333333333,
+    "completionInterval95": {
+      "level": 0.95,
+      "lower": 0.06149194472039621,
+      "upper": 0.7923403991979522,
+      "method": "Wilson score; fixed diagnostic sample only"
+    },
+    "completeIntentMatch": {
+      "metricLabel": "complete_annotated_intent_match",
+      "rounds": 4,
+      "passed": 2,
+      "rate": 0.5,
+      "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+    },
+    "criterionCounts": {
+      "passed": 52,
+      "failed": 8,
+      "unverified": 8,
+      "not_applicable": 0
+    },
+    "conservativeGoldAccuracy": 0.7647058823529411,
+    "observedGoldAccuracy": 0.8666666666666667,
+    "evidenceCoverage": 0.8823529411764706,
+    "caseMacroAccuracy": 0.7366666666666667
+  },
+  "actualProviderCalls": 10,
+  "maximumProviderCalls": 18,
+  "priorCumulativeCalls": 482,
+  "cumulativeCalls": 492,
+  "authorizedMaximumCalls": 500,
+  "remainingAuthorizedCalls": 8,
+  "allSelectedTasksAttempted": true,
+  "observedTurns": 4,
+  "budgetInterrupted": false,
+  "sourcesUnchangedDuringRun": true,
+  "secretDisclosureDetected": false,
+  "measurementCaveats": [
+    "“G.E.M.”与“邓紫棋”的角色题仅artist字符串一项失败；冻结别名组已含G.E.M.，工具解析ID7763，预览和其余24项检查均符合。该项属于评分标准过严，原分数不改。",
+    "上述事后复核由独立子代理核对既有证据完成，不是外部人工盲评、试听或新增模型复测，不产生新的成功率。",
+    "有声书场景的纯音乐与安静来自受控标签；没有实际人声检测、真实曲库召回或音频试听。",
+    "日期检查是冻结的日期窗口匹配，不检验截止日全天完整召回。",
+    "样本仅3任务4轮，熟悉工具和曲库上的新组合；不代表总体准确率或重复运行稳定性。"
+  ],
+  "independentReviews": [
+    {
+      "kind": "实际产品故障诊断",
+      "artifact": "docs/agent-new-v6-failure-review.json",
+      "summary": "模型两次都恢复正确日期；本轮指代缺少发行关键词，改引用上一轮又被本轮原文规则拒绝。待澄清需求没有独立的结构化续接合同。",
+      "newProviderCalls": 0,
+      "rawScoresChanged": false
+    },
+    {
+      "kind": "别名评分误判复核",
+      "artifact": "docs/agent-new-v6-alias-review.json",
+      "summary": "冻结别名与工具解析ID证实角色正确；三首共12分钟，含陶喆和指定日期内的邓紫棋作品，排除陈绮贞。原failed保持。",
+      "newProviderCalls": 0,
+      "rawScoresChanged": false
+    }
+  ],
+  "caseFindings": [
+    {
+      "id": "v6_clarification_date_carry",
+      "frozenAutomaticOutcome": "failed",
+      "evidenceReview": "actual_application_failure",
+      "reason": "INVALID_TASK_MODEL after correct missing-artist clarification; current-turn evidence contract blocks referenced prior release request.",
+      "providerCalls": 3
+    },
+    {
+      "id": "v6_distinct_artist_roles",
+      "frozenAutomaticOutcome": "failed",
+      "evidenceReview": "exact_string_alias_false_failure",
+      "reason": "Only expected邓紫棋 vs actualG.E.M.; resolved artistId7763 and all other24 checks pass.",
+      "providerCalls": 3
+    },
+    {
+      "id": "v6_segmented_background_duration",
+      "frozenAutomaticOutcome": "passed",
+      "evidenceReview": "frozen_requirements_met",
+      "reason": "Two12-minute segments correctly total24; six controlled instrumental tracks with quiet-source tags; registered backend preview actions only.",
+      "providerCalls": 4
+    }
+  ],
+  "failureCases": [
+    {
+      "id": "v6_clarification_date_carry",
+      "failedCriteria": [
+        "round_2.status",
+        "round_2.brief.kind",
+        "round_2.brief.requireReleases",
+        "round_2.brief.artist",
+        "round_2.briefDate.since",
+        "round_2.briefDate.until",
+        "round_2.tool_skills.required"
+      ],
+      "unknownCriteria": [
+        "round_2.tool_query.release_gem",
+        "round_2.preview.nonempty",
+        "round_2.preview.catalog_ids",
+        "round_2.preview.metadata_integrity",
+        "round_2.preview.reported_total_integrity",
+        "round_2.preview.max_tracks",
+        "round_2.preview.release",
+        "round_2.preview.release_only"
+      ]
+    },
+    {
+      "id": "v6_distinct_artist_roles",
+      "failedCriteria": [
+        "round_1.brief.artist"
+      ],
+      "unknownCriteria": []
+    }
+  ],
+  "notMeasured": [
+    "总体线上完成率与总体准确率",
+    "真实曲库召回和音频听感",
+    "会员播放",
+    "长期用户满意度",
+    "外部独立盲测",
+    "新的固定流程或多Agent配对对比",
+    "日期截止日全天完整召回",
+    "Qt偏好数据库与操作系统录音/播放副作用"
+  ],
+  "sourceArchive": "docs/evaluation-versions/v6-source/snapshot-manifest.json",
+  "preflight": "docs/agent-new-v6-preflight.json",
+  "budgetLedger": "docs/agent-evaluation-cumulative-budget.json",
+  "artifacts": {
+    "live": "docs/agent-new-v6-live.json",
+    "suite": "backend/evaluation/agent-suite-v6-holdout.json",
+    "protocol": "docs/agent-new-v6-protocol.json",
+    "manifest": "docs/agent-new-v6-manifest.json",
+    "aliasReview": "docs/agent-new-v6-alias-review.json",
+    "failureReview": "docs/agent-new-v6-failure-review.json"
+  },
+  "nextWork": {
+    "implemented": false,
+    "application": "Introduce non-executable pendingBrief with missing fields and user-message source IDs; use a clarification continuation contract before committing a validated executable brief. Keep current-turn edit authorization for existing confirmed plans.",
+    "evaluation": "For future frozen suites use predeclared verified artist identities/aliases rather than display-name string equality. Never overwrite this run or retroactively use its tasks as unseen holdout."
+  }
+}

@@ -1,0 +1,25 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_______ test_lease_expiring_before_finish_does_not_persist_reply[sqlite] _______
+backend_py/tests/test_route_reply_atomicity.py:91: in test_lease_expiring_before_finish_does_not_persist_reply
+    await no_replies(fx)
+backend_py/tests/test_route_reply_atomicity.py:79: in no_replies
+    assert not [message for message in journal["messages"] if message["role"] == "assistant"]
+E   AssertionError: assert not [{'id': 'route_c45c80ff9ad825f6f0b77d04218b55c0_reply', 'role': 'assistant', 'content': '你可以描述心情或场景找歌、指定歌手查新作、连续调整当前歌单...依据。长期口味会先展示提议，由你确认后保存在本机。生成的是预览，点击采用后才播放。支持暂停、取消、恢复和撤回当前音乐任务。', 'turnId': 'ed2bc08d-9675-4b66-b021-c0fdc9580c10', ...}]
+______ test_new_message_before_finish_does_not_persist_old_reply[sqlite] _______
+backend_py/tests/test_route_reply_atomicity.py:102: in test_new_message_before_finish_does_not_persist_old_reply
+    await no_replies(fx)
+backend_py/tests/test_route_reply_atomicity.py:79: in no_replies
+    assert not [message for message in journal["messages"] if message["role"] == "assistant"]
+E   AssertionError: assert not [{'id': 'route_b1d365694e2c724f5c3d5a65f6ef5f85_reply', 'role': 'assistant', 'content': '你可以描述心情或场景找歌、指定歌手查新作、连续调整当前歌单...依据。长期口味会先展示提议，由你确认后保存在本机。生成的是预览，点击采用后才播放。支持暂停、取消、恢复和撤回当前音乐任务。', 'turnId': 'a3d5007d-8676-43d8-9a1a-87997f7946c7', ...}]
+___ test_reply_failure_rolls_back_written_reply_and_route_completion[sqlite] ___
+backend_py/tests/test_route_reply_atomicity.py:113: in test_reply_failure_rolls_back_written_reply_and_route_completion
+    await no_replies(fx)
+backend_py/tests/test_route_reply_atomicity.py:79: in no_replies
+    assert not [message for message in journal["messages"] if message["role"] == "assistant"]
+E   AssertionError: assert not [{'id': 'route_ecd0a6461c3a4d2f6bba2b0cc2547d7c_reply', 'role': 'assistant', 'content': '你可以描述心情或场景找歌、指定歌手查新作、连续调整当前歌单...依据。长期口味会先展示提议，由你确认后保存在本机。生成的是预览，点击采用后才播放。支持暂停、取消、恢复和撤回当前音乐任务。', 'turnId': '7aadbc9c-ec90-4dc7-8f53-c84e57c41354', ...}]
+=========================== short test summary info ============================
+FAILED backend_py/tests/test_route_reply_atomicity.py::test_lease_expiring_before_finish_does_not_persist_reply[sqlite]
+FAILED backend_py/tests/test_route_reply_atomicity.py::test_new_message_before_finish_does_not_persist_old_reply[sqlite]
+FAILED backend_py/tests/test_route_reply_atomicity.py::test_reply_failure_rolls_back_written_reply_and_route_completion[sqlite]
+3 failed, 6 deselected in 0.42s

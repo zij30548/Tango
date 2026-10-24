@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "scope": "真实调用后的文档、冻结证据和离线门禁；不新增真实模型请求",
+  "repository": "passed",
+  "quick": {
+    "pythonPassed": 435,
+    "pythonSkipped": 19,
+    "pythonFailed": 0,
+    "nodePassed": 53,
+    "nodeSkipped": 0,
+    "nodeFailed": 0
+  },
+  "frozenSources": "61个来源仍与正式运行清单一致",
+  "privacyChecks": "公开摘要未包含实际API密钥，原始提案/调用日志留私有目录",
+  "htmlChecks": "10个任务、17轮，已校验结构和转义；未声称真实Qt视觉验收",
+  "budgetAtCompletion": {
+    "maximum": 80,
+    "started": 38,
+    "remaining": 42
+  },
+  "privateQuickReport": ".local/harness-runs/20261023T084826-bz0glvr_/report.json",
+  "privateQuickLogSha256": {
+    "python_offline.log": "2068da8016f15e35e1c053afe401785f77b469207a7f1b735e803f48070fa791",
+    "service_offline.log": "5c45fb57e59b00a9bd0f4971e468c1bd837707d0d51a018db483c3ad715d3ba2"
+  },
+  "historicalBudgetLedgerSha256": "ca11ece57ad17a570d7cb2dba366d4b9f57a66cfde456a96a931eb3ed3c94c9b"
+}

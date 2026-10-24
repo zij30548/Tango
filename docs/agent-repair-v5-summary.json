@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "version": "v5",
+  "title": "探歌 Agent 已见失败定向修复验收",
+  "recordedAt": "2026-10-19T10:23:00.555169+00:00",
+  "conclusion": "三个已见失败任务3/3通过，共7轮、102项冻结条件；真实曲库锁歌与轻快来源调整回归通过。",
+  "releaseDecision": "可继续本地使用与受控验收；本轮无未见新题，不能更新当前版本总体完成率或准确率，也不据此宣布达到公开上线标准。此前v4未见新题5/8、v3 24/26、v2 34/53的原始结果全部保留。",
+  "primaryPopulation": "known_failure_regressions_only; no unseen holdout",
+  "knownRegression": {
+    "tasks": 3,
+    "completed": 3,
+    "annotatedRounds": 7,
+    "annotatedRoundsMatched": 7,
+    "criteria": {
+      "passed": 102,
+      "failed": 0,
+      "unverified": 0,
+      "not_applicable": 0
+    },
+    "actualProviderCalls": 23,
+    "sourcesUnchangedDuringRun": true
+  },
+  "nativeReading": {
+    "passed": true,
+    "actualProviderCalls": 8,
+    "sourceSupportedUnlockedTracks": 6,
+    "prefixPreserved": true,
+    "sameTask": true,
+    "tailSetChanged": true,
+    "totalDurationMs": 2360889,
+    "songCount": 9,
+    "sourcesUnchangedDuringRun": true,
+    "listeningQuality": "not_measured",
+    "initialSceneSuitability": "not_measured"
+  },
+  "nativeCommute": {
+    "status": "not_rerun",
+    "actualProviderCalls": 0
+  },
+  "priorCumulativeCalls": 451,
+  "cumulativeCalls": 482,
+  "authorizedMaximumCalls": 500,
+  "budgetLedger": "docs/agent-evaluation-cumulative-budget.json",
+  "faults": {
+    "tasks": 24,
+    "completed": 24,
+    "strictCompletionRate": 1,
+    "completionInterval95": {
+      "level": 0.95,
+      "lower": 0.8620237953250198,
+      "upper": 1,
+      "method": "Wilson score; fixed diagnostic sample only"
+    },
+    "completeIntentMatch": {
+      "metricLabel": "complete_annotated_intent_match",
+      "rounds": 0,
+      "passed": 0,
+      "rate": null,
+      "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+    },
+    "criterionCounts": {
+      "passed": 24,
+      "failed": 0,
+      "unverified": 0,
+      "not_applicable": 24
+    },
+    "conservativeGoldAccuracy": 1,
+    "observedGoldAccuracy": 1,
+    "evidenceCoverage": 1,
+    "caseMacroAccuracy": 1
+  },
+  "offlineVerification": "docs/agent-repair-v5-offline.json",
+  "sourceArchive": "docs/evaluation-versions/v5-source/snapshot-manifest.json",
+  "failureCases": [],
+  "priorFailuresRetained": [
+    "docs/agent-repair-v4-summary.json",
+    "docs/agent-repair-v3-summary.json",
+    "docs/agent-evaluation-summary-2026-10-19.json"
+  ],
+  "knownLimitations": [
+    "No unseen diagnostic sample after v5 repair; known-case pass is not a generalization result.",
+    "No new same-case baseline comparison after repair. v2 paired comparison remains both7/9, single-agent44 vs fixed23 requests.",
+    "Finite adversarial contract tests do not exhaust all natural language or attacks.",
+    "Source-name/tag evidence is a metadata proxy; no audio, user listening quality or full catalog recall measurement.",
+    "Initial artist-only fast retrieval does not independently establish the scene suitability of every song.",
+    "Local macOS arm64 build validated; no packaged-distribution or older-system compatibility validation."
+  ],
+  "changedAreas": [
+    "Sparse clarification contracts and explicit patch-only followup state preservation.",
+    "Language polarity, duration-separated only, prefix-lock verbs/word order and safe zero-lock no-op.",
+    "Revision/run/generation-scoped full tool-attempt history and truthful bounded query coverage.",
+    "Supplementary query diversification, compose budget reservation and explicit recoverable observer degradation.",
+    "Artist-aware equal-style source detail priority under unchanged retrieval budgets; actual artist credits remain mandatory.",
+    "Negated, contradictory and uncertain style labels remain unverified in independent audit and production matching."
+  ],
+  "artifacts": {
+    "live": "docs/agent-repair-v5-live.json",
+    "reading": "docs/agent-repair-v5-real-reading.json",
+    "faults": "docs/agent-repair-v5-faults.json",
+    "protocol": "docs/agent-repair-v5-protocol.json",
+    "manifest": "docs/agent-repair-v5-manifest.json",
+    "suite": "backend/evaluation/agent-suite-v5-regression.json"
+  }
+}

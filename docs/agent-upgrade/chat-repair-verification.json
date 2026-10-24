@@ -1,0 +1,478 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-23",
+  "scope": "chat-interface-and-reported-failure-repair",
+  "status": "engineering_verified_known_model_failure_retained",
+  "sources": {
+    "backend_py/tango_backend/intent_routing.py": "135cbc1771d0f3b1ce6243c8f922bb21405e33ae5b08359add5c1a5708b82d18",
+    "backend_py/tango_backend/conversation_router.py": "489f1ecfb62eb8d3751f62297393e54eccd0a3a6112785e7164b327675ba6161",
+    "backend_py/tango_backend/capability_registry.py": "fbd023613e7f0e4574d260b497b33e33d7344999a3b3b7b71090f147c0bbcb22",
+    "backend_py/tango_backend/task_runtime.py": "dbb73ac32ae867eadd2126edd2191e1cb89d642849d6acdc7f4ff9c5394b9ee7",
+    "conversationclient.cpp": "72192119a8dbdaa7e14bc849ddc279fbecdae5752c877cc1ddcdeab014e9a05b",
+    "mainwindow.cpp": "d4af619b6bf59c8a1cf6e3e67be8e1eebccbb37b2c127b7e142c95e18c8a7486",
+    "mainwindow.h": "1e30a1be5e606ce8b7f8a089e4acb3a4b025358a9dff63bc8b9c06e49a7cc6af",
+    "mainwindowradio.cpp": "39a8be960d47b1cd047f414478fe2acbf0239804bd57a1698991424dc00ed9ad",
+    "playerwindowview.cpp": "8b7447d3e9884c4d489153e338461621282494a32e14cb21d020476084d297b1",
+    "playerwindowview.h": "e5b750266f284e6be0bcbf41994625f98040b1dd94ca1e3ef16e8c0c890a7985",
+    "radiodialog.cpp": "7686361241eadd55ecb38ea1e058ebbca38c8a5520dad856838478e65099665d",
+    "radiodialog.h": "1d180151c60878aa90ef72c3ac179d2950f9d1083e8f0c2b850ad8dbf8b321a1",
+    "musictaskclient.cpp": "92a16be4f58073eb9f49e132731b8ec8e5e9a2b074e154d795567cec2b13b739",
+    "backend_py/tests/test_chat_repair_routing.py": "0333a153b4195fb16f01d7bb0567da140604b01fe29ca900093e5470d6cd2418",
+    "backend_py/tests/test_task_runtime_migration.py": "955b3eab8064e7aa695a77e9cf8d6037d617483d453cad9ed19cea283e705d5c",
+    "backend_py/tests/test_mysql_task_runtime.py": "8e83fe6e8d93ef053172cf89bba6b1a8fa7f5565be37b07bd04f0fd89dfe11bf",
+    "tests/chat_assistant_flow_test.cpp": "262124f4a8e2fb138aecb733bb0a44be07b2842441a3279e78aa3930e8e25b81",
+    "tests/routing_client_test.cpp": "0999f5fc9854d19257b50650b9912a1f86c7a9b25c7a71e97e0ac0b5a7248ca3",
+    "tests/routing_flow_test.cpp": "6b0f2b999f22ca7d1038b6d30a744bd4104e87e3a6e7b6245f5952a461bba8df",
+    "tests/music_task_flow_test.cpp": "171f470292db8b6b500574bed4d4ab6d580ce6f74dc415f351d6b5dd2bee6a58",
+    "backend_py/tests/test_conversation_routing.py": "5fb1977b6bee3c676bcf1e144fe772736110bda2e89c9b97332fa437f5c2cbbd",
+    "backend_py/tests/test_calibration.py": "c4e0b8be2c07fdfb8b72a844fec2e4a0ec1f20d8c45d28fc637b73f5727ebbd5",
+    "scripts/verify-harness.py": "c22ba08c2c16ef89e26be22b3172afdd0584c136f96b5b97319c4c30b09942cb"
+  },
+  "engineering": {
+    "quick": {
+      "pythonPassed": 474,
+      "pythonSkipped": 19,
+      "nodePassed": 53,
+      "failed": 0,
+      "evidence": ".local/harness-runs/20261023T095045-mn9pc4vb/report.json"
+    },
+    "mysql": {
+      "passed": 1001,
+      "skipped": 54,
+      "failed": 0,
+      "evidence": ".local/harness-runs/20261023T093122-281h47d2/report.json",
+      "afterGateChange": "diagnostic_reason_split_covered_by_final_quick"
+    },
+    "native": {
+      "hostedQtTotal": 6,
+      "musicTaskQtTotal": 4,
+      "failed": 0,
+      "evidence": ".local/harness-runs/20261023T094835-8qa39lqt/report.json"
+    },
+    "targetedQt": {
+      "chatFlow": 12,
+      "routingClient": 27,
+      "routingFlow": 14,
+      "radioDialog": 24,
+      "taskDialog": 27,
+      "musicTaskClient": 100,
+      "includesQtInitCleanup": true,
+      "failed": 0,
+      "chatFlowEvidence": ".local/chat-repair-build/chat_assistant_flow_test/last-run.log"
+    }
+  },
+  "liveKnownRegression": {
+    "purpose": "known_failure_repair_regression",
+    "selectedCases": 4,
+    "selectedTurns": 6,
+    "providerRequests": 8,
+    "providerOutcomes": {
+      "responded": 8
+    },
+    "counts": {
+      "failed": 1,
+      "passed": 3
+    },
+    "cases": [
+      {
+        "id": "running",
+        "status": "passed",
+        "turns": [
+          {
+            "checks": [
+              {
+                "name": "route_completed",
+                "status": "passed"
+              },
+              {
+                "name": "intent_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "action_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "task_status",
+                "status": "passed"
+              },
+              {
+                "name": "preview_nonempty",
+                "status": "passed"
+              },
+              {
+                "name": "no_automatic_adoption",
+                "status": "passed"
+              },
+              {
+                "name": "running_metadata_query_evidence",
+                "status": "passed"
+              },
+              {
+                "name": "readback_no_new_calls",
+                "status": "passed"
+              },
+              {
+                "name": "no_local_preference_write",
+                "status": "passed"
+              }
+            ],
+            "error": null,
+            "execution": "task",
+            "seconds": 4.32,
+            "status": "passed",
+            "text": "推荐跑步要听的歌",
+            "turn": 1
+          }
+        ]
+      },
+      {
+        "id": "releases",
+        "status": "passed",
+        "turns": [
+          {
+            "checks": [
+              {
+                "name": "route_completed",
+                "status": "passed"
+              },
+              {
+                "name": "intent_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "action_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "task_status",
+                "status": "passed"
+              },
+              {
+                "name": "preview_nonempty",
+                "status": "passed"
+              },
+              {
+                "name": "no_automatic_adoption",
+                "status": "passed"
+              },
+              {
+                "name": "release_tools_only",
+                "status": "passed"
+              },
+              {
+                "name": "artist_slot",
+                "status": "passed"
+              },
+              {
+                "name": "release_requirement_preserved",
+                "status": "passed"
+              },
+              {
+                "name": "preview_uses_release_fixture",
+                "status": "passed"
+              },
+              {
+                "name": "readback_no_new_calls",
+                "status": "passed"
+              },
+              {
+                "name": "no_local_preference_write",
+                "status": "passed"
+              }
+            ],
+            "error": null,
+            "execution": "task",
+            "seconds": 4.589,
+            "status": "passed",
+            "text": "你能查询邓紫棋的新歌吗",
+            "turn": 1
+          }
+        ]
+      },
+      {
+        "id": "lookup_history",
+        "status": "passed",
+        "turns": [
+          {
+            "checks": [
+              {
+                "name": "route_completed",
+                "status": "passed"
+              },
+              {
+                "name": "intent_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "action_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "task_unchanged",
+                "status": "passed"
+              },
+              {
+                "name": "no_tools_dispatched",
+                "status": "passed"
+              },
+              {
+                "name": "lookup_parameters",
+                "status": "passed"
+              },
+              {
+                "name": "readback_no_new_calls",
+                "status": "passed"
+              },
+              {
+                "name": "no_local_preference_write",
+                "status": "passed"
+              }
+            ],
+            "error": null,
+            "execution": "device_not_executed",
+            "seconds": 0.027,
+            "status": "passed",
+            "text": "帮我搜索陈奕迅的十年",
+            "turn": 1
+          },
+          {
+            "checks": [
+              {
+                "name": "route_completed",
+                "status": "passed"
+              },
+              {
+                "name": "intent_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "action_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "task_unchanged",
+                "status": "passed"
+              },
+              {
+                "name": "no_tools_dispatched",
+                "status": "passed"
+              },
+              {
+                "name": "reply_contains:邓紫棋",
+                "status": "passed"
+              },
+              {
+                "name": "reply_contains:陈奕迅",
+                "status": "passed"
+              },
+              {
+                "name": "reply_contains:最近 200 条已路由消息",
+                "status": "passed"
+              },
+              {
+                "name": "readback_no_new_calls",
+                "status": "passed"
+              },
+              {
+                "name": "no_local_preference_write",
+                "status": "passed"
+              }
+            ],
+            "error": null,
+            "execution": "reply",
+            "seconds": 0.023,
+            "status": "passed",
+            "text": "我之前问过你哪些歌手",
+            "turn": 2
+          }
+        ]
+      },
+      {
+        "id": "previous_route_failures",
+        "status": "failed",
+        "turns": [
+          {
+            "checks": [
+              {
+                "name": "route_completed",
+                "status": "failed"
+              },
+              {
+                "name": "intent_exact_set",
+                "status": "failed"
+              },
+              {
+                "name": "action_exact_set",
+                "status": "failed"
+              },
+              {
+                "name": "slot:artist",
+                "status": "failed"
+              },
+              {
+                "name": "slot:targetMinutes",
+                "status": "failed"
+              },
+              {
+                "name": "task_unchanged",
+                "status": "passed"
+              },
+              {
+                "name": "no_tools_dispatched",
+                "status": "passed"
+              },
+              {
+                "name": "music_independent_of_memory_confirmation",
+                "status": "passed"
+              },
+              {
+                "name": "memory_proposal_has_requested_preference",
+                "status": "failed"
+              },
+              {
+                "name": "readback_no_new_calls",
+                "status": "passed"
+              },
+              {
+                "name": "no_local_preference_write",
+                "status": "passed"
+              }
+            ],
+            "error": null,
+            "execution": "route_only",
+            "seconds": 2.331,
+            "status": "failed",
+            "text": "记住我喜欢粤语，再推荐20分钟微醺歌单。",
+            "turn": 1
+          },
+          {
+            "checks": [
+              {
+                "name": "route_completed",
+                "status": "passed"
+              },
+              {
+                "name": "intent_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "action_exact_set",
+                "status": "passed"
+              },
+              {
+                "name": "task_unchanged",
+                "status": "passed"
+              },
+              {
+                "name": "no_tools_dispatched",
+                "status": "passed"
+              },
+              {
+                "name": "readback_no_new_calls",
+                "status": "passed"
+              },
+              {
+                "name": "no_local_preference_write",
+                "status": "passed"
+              }
+            ],
+            "error": null,
+            "execution": "route_only",
+            "seconds": 1.626,
+            "status": "passed",
+            "text": "他说‘取消任务’，我是在转述，请解释当前歌单。",
+            "turn": 2
+          }
+        ]
+      }
+    ],
+    "limits": [
+      "已公开失败原句的修复回归，不是独立新题或总体完成率。",
+      "使用真实模型、ASGI接口和隔离SQLite；曲库为提前固定的合成候选。",
+      "不执行Qt搜索/播放、不验证真实网易云发行事实、会员权益或听感。",
+      "偏好提议仅验证路由，不确认保存；搜索和历史不得创建或修改任务。"
+    ]
+  },
+  "singleDiagnostic": {
+    "purpose": "single_rejected_proposal_diagnosis",
+    "providerRequests": 1,
+    "validated": true,
+    "checks": {
+      "actions": true,
+      "intents": true,
+      "no_execution": true,
+      "slots": true,
+      "validated": true
+    },
+    "rejectionReason": null,
+    "limits": [
+      "一次已知失败诊断，无自动重试，不产生总体准确率。",
+      "旧合成上下文，不访问真实曲库或执行Qt能力。",
+      "提案脱敏后仅写私有文件，校验通过也不执行动作。"
+    ]
+  },
+  "budget": {
+    "maximum": 80,
+    "previouslyStarted": 38,
+    "newlyStarted": 9,
+    "started": 47,
+    "remaining": 33,
+    "automaticFurtherSpend": false
+  },
+  "actualApp": {
+    "rebuilt": true,
+    "backendsRestartedAfterOwnershipProof": true,
+    "searchExactVersions": 4,
+    "historyReplyCorrect": true,
+    "chatOnlyContentArea": true,
+    "autoplayPerformed": false,
+    "preferenceSaved": false,
+    "dataDeleted": false,
+    "memberFullPlaybackVerified": false,
+    "albumAndDurationDisplayed": true,
+    "finalReadyEvidence": ".local/chat-repair-build/final-ready.json",
+    "finalLauncherEvidence": ".local/chat-repair-build/last-launcher.log"
+  },
+  "firstFailuresPreserved": [
+    {
+      "kind": "quick",
+      "evidence": ".local/harness-runs/20261023T092439-05y02g39/report.json",
+      "reason": "stale_request_estimate_assertion_after_rule_clarification"
+    },
+    {
+      "kind": "mysql",
+      "evidence": ".local/harness-runs/20261023T092544-lwe5ld49/report.json",
+      "reason": "test_fixture_compose_without_worker_claim_fixed_via_scheduler"
+    },
+    {
+      "kind": "native",
+      "evidence": ".local/harness-runs/20261023T092901-4v0_xn6z/report.json",
+      "reason": "old_visible_panel_expectation_replaced_by_real_chat_commands"
+    },
+    {
+      "kind": "chat_fixture",
+      "evidence": ".local/chat-repair-build/chat_assistant_flow_test/first-run.log",
+      "reason": "missing_owned_fake_music_service_token_interrupted_run"
+    },
+    {
+      "kind": "chat_fixture",
+      "evidence": ".local/chat-repair-build/chat_assistant_flow_test/second-run.log",
+      "reason": "test_selected_recommendation_table_instead_of_queueView"
+    },
+    {
+      "kind": "music_client",
+      "evidence": ".local/assistant-repair-tests/musictaskclient/first-failure.json",
+      "reason": "old_resume_message_id_negative_replaced_with_adopt_lock_and_four_positive_controls"
+    },
+    {
+      "kind": "help_text_migration",
+      "evidence": ".local/harness-runs/20261023T094834-em6u9bka/report.json",
+      "reason": "historical_help_text_differs_after_chat_command_documentation_update; original_gold_kept_and_all_other_fields_compared"
+    }
+  ],
+  "overallTaskCompletionRate": null,
+  "overallSemanticAccuracy": null,
+  "recommendationQuality": null,
+  "stageDocument": "docs/AGENT_CHAT_REPAIR.md"
+}

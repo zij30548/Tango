@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "checks": {
+    "manifest": 5,
+    "navigation": 21,
+    "architecture": [
+      54,
+      59
+    ]
+  },
+  "errors": [],
+  "scope": "repository-contracts-only; no model calls, private configuration, databases or services"
+}

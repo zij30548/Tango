@@ -1,0 +1,267 @@
+{
+  "date": "2026-10-20",
+  "stage": "2:统一意图与能力路由",
+  "status": "engineering_verified_semantic_quality_not_evaluated",
+  "scope": "Isolated engineering, contract, fault, real temporary PG/Redis, native Qt+Node integration; no paid/live model or catalog",
+  "realModelCalls": 0,
+  "realCatalogCalls": 0,
+  "audio": "synthetic muted WAV in native integration only",
+  "backend": {
+    "passed": 668,
+    "failed": 0,
+    "skipped": 0,
+    "log": {
+      "path": "docs/agent-upgrade/step2-evidence/backend-final.log",
+      "sha256": "b6f3eae741b05146f89ad64ead63afe60f873ecf7ac6b4141f126a06e1a578d7"
+    }
+  },
+  "qt": {
+    "passedIncludingLifecycle": 82,
+    "functionalPassed": 72,
+    "failed": 0,
+    "skipped": 0,
+    "suites": [
+      {
+        "evidence": "client/test-routing-final.xml",
+        "sha256": "1ecaec97a3b1b00b31b0598cb76a0b2cda1d914cde601965f95beb2409267457",
+        "qt_pass": 22,
+        "qt_fail": 0,
+        "functional_pass": 20
+      },
+      {
+        "evidence": "flow/test-guards-final.xml",
+        "sha256": "dee7277cfbd6a9fb4c2003b9482eaa371f32c61a0f8e404dfd4df22875388535",
+        "qt_pass": 14,
+        "qt_fail": 0,
+        "functional_pass": 12
+      },
+      {
+        "evidence": "client/test-compat-first.xml",
+        "sha256": "f161f9ea61206932bc5808b4095bab12c8dc73bf1245e90189a654ac3b50f52c",
+        "qt_pass": 21,
+        "qt_fail": 0,
+        "functional_pass": 19
+      },
+      {
+        "evidence": "dialog/test-compat-first.xml",
+        "sha256": "b731e241e7073500fba5c6ad441a449048095d9a02bef688099e41ad9c1a3ab5",
+        "qt_pass": 21,
+        "qt_fail": 0,
+        "functional_pass": 19
+      },
+      {
+        "evidence": "flow/test-node-corrected-fixture.xml",
+        "sha256": "8a9cd3fa17a677dcbedcb79f8cd1f6fcfab54dbfddbf23c374b6992755f3c5ed",
+        "qt_pass": 4,
+        "qt_fail": 0,
+        "functional_pass": 2
+      }
+    ],
+    "archivedVerification": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-verification.json",
+      "sha256": "6e0cf4ac6e95cdaa08ffdafd4bad0ef27440a337172972928007b969c020a607"
+    }
+  },
+  "semanticEvaluation": {
+    "overallAccuracy": null,
+    "taskCompletionRate": null,
+    "developerScenarios": 39,
+    "scenariosFullyExecuted": false,
+    "holdout": false,
+    "note": "Stub proposals do not test real intent understanding; exposed scenarios are not an independent evaluation set. Historical 499/500 budget unchanged."
+  },
+  "workflow": [
+    "durable message receipt",
+    "narrow direct commands or one bounded structured model proposal",
+    "capability/source/permission/dependency/target-version validation",
+    "transactional route attempt + model slot + account/global reservation",
+    "Qt whitelist dispatch and explicit local preference confirmation",
+    "existing LangGraph task, actual catalog adapter contract, checked preview",
+    "explicit user adoption before playback"
+  ],
+  "reviewFixes": [
+    "Full control-clause guard rejects negation, reported speech, truncated continue-explanation and swapped control verbs",
+    "Provider-settled route releases in-process placeholders even when both durable finish writes fail",
+    "Route completed write verifies latest user under journal lock; old user turn cannot dispatch",
+    "Pending old music/confirmation cannot replace new task or newer local preference; continue is server-bound to task/revision"
+  ],
+  "comparisons": {
+    "baseline": "step1 fixed keyword bridge chooses task or legacy_assistant",
+    "current": "typed plan can represent memory proposal plus scene/release task and controlled dependencies",
+    "evidenceKind": "engineering ability/contract, not paired semantic effect estimate",
+    "cost": "narrow direct help/control use zero routing model calls; other requests add up to one routing call before existing task budget"
+  },
+  "preservedFailures": [
+    {
+      "log": {
+        "path": "docs/agent-upgrade/step2-evidence/backend-first.log",
+        "sha256": "8ea9145b0a6d87ac076757de89d9a934aad74595b982b26fae0dbaff275673a2"
+      },
+      "result": "663/664; new context fixture omitted register timestamp"
+    },
+    {
+      "log": {
+        "path": "docs/agent-upgrade/step2-evidence/context-second.log",
+        "sha256": "584ce04e2562bd1482031524742b8f366b77c87f9dbbd5312ac4dd9a1ad35630"
+      },
+      "result": "fixture returned unnormalized clarify brief; fixed fixture to use real validateBrief"
+    },
+    {
+      "log": {
+        "path": "docs/agent-upgrade/step2-evidence/http-first.log",
+        "sha256": "77fdb300d88fe3971cc9b641f5500fd7e3f5f0a397899d7b163578ac5dc0730f"
+      },
+      "result": "16/18; fixture omitted fields needed to prove task payload hash"
+    },
+    {
+      "log": {
+        "path": "docs/agent-upgrade/step2-evidence/qt-client-build-first.log",
+        "sha256": "c2cee1dddb47af30899c61ea375dcc9dbac61e66b3360ab21dc08b7101e7e586"
+      },
+      "result": "Qt slots macro collided with local variable name"
+    },
+    {
+      "log": {
+        "path": "docs/agent-upgrade/step2-evidence/qt-node-first.log",
+        "sha256": "3738e920a30250d81c064c35af8590c129b6bbc2b83fd82bd1c29d8fa9cf5281"
+      },
+      "result": "obsolete fake assistant branch returned remember object during compound music research; real schema rejected it"
+    },
+    {
+      "log": {
+        "path": "docs/agent-upgrade/step2-evidence/review-findings.json",
+        "sha256": "7144370e97cedb717c3ddc9c79a498ed6ffdcf3157c8cb1b0416a2012820f9db"
+      },
+      "result": "pre-fix reviewer observations, explicitly not a raw test log"
+    }
+  ],
+  "limits": [
+    "No real semantic accuracy, recommendation listening or live retrieval assessment",
+    "No MCP connection, dynamic Supervisor/multi-agent or online monitor aggregation yet",
+    "Context bounded to six prior user turns plus task; long-term memory remains confirmed local summary",
+    "Restored histories never dispatch old plans or reopen memory confirmations automatically",
+    "New routing tables require migration adapter before SQLite-to-PG deployment migration; existing tool refuses unknown schema",
+    "No public deployment, real user-data migration, commit or push"
+  ],
+  "artifact": {
+    "path": "build-macos/Tango.app",
+    "built": true,
+    "backendDefault": "http://127.0.0.1:16383",
+    "launch": "run-macos.command or VS Code F5"
+  },
+  "sourceSha256": {
+    "backend/capability-registry.mjs": "040365e728c0d959231347a5fe0ad33ca2da999bd5e49153babb1d9e030d39c0",
+    "backend/intent-routing.mjs": "cbe46a132f49ee9a637188cb8dde14c32c9e2e89ab7fdcbe7db67c9b67d528e7",
+    "backend/conversation-router.mjs": "43f141162020ee3e21641f93e77c6717af05d7106a6fc8c930fbc2df415067e6",
+    "backend/conversation-route-store.mjs": "7da903e16d85f126ec81b746021b7eb7640e18e72d901984e8a135cb23f3e5a3",
+    "backend/conversation-api.mjs": "4d3f394baef4fc4a4973ccb41756b7f8a10b1f89a5e32bda13844eb9bed1152e",
+    "backend/conversation-store.mjs": "d82b3e8b0087aa2b6b244c5f17b017c7a08b5ecf66a1d1e3126fcc0231490d82",
+    "backend/app.mjs": "d5f405798221d9ca88640090885f5f12419f6fa470ed099367c92735fe8047f6",
+    "backend/server.mjs": "c1cca3053ebfe01b86977dd8c918f3634699def4ed24ad18b8e7082c7acf17ae",
+    "backend/launch-local.mjs": "e969881897d94daf7381bab9866aa63e77caae52ce51bcc8ec07c61006d5b004",
+    "backend/task-runtime.mjs": "e643411a07ac6bcb856732837a8ce7fb32fbe232d44345a0649331eac36a1943",
+    "backend/task-model.mjs": "228e45f7609791a7fe68ab31b660af752c12ac46d9e19e818eb72ee06349dab3",
+    "backend/test/intent-routing.test.mjs": "fcb7870cf717d3438d1a57cd764148046b9299f0caee30548de8ca08897d3a58",
+    "backend/test/conversation-routing-api.test.mjs": "0f7ca3616cb7324d779a3728730db641352ece80cf3de9250697b970c9e0232e",
+    "backend/test/conversation-route-store.test.mjs": "3f60d8a006f01090792d5b8bb5c29861f1caf682697ca375cf53ffbe9f110eb3",
+    "backend/test/routing-context-task.test.mjs": "d427fac3882fb3cdfb0226ae00f316e887deea4e2c370a52789ff2da4e6a4727",
+    "backend/test/routing-task-coordination.test.mjs": "af7a87405c45f80343fbadcbc486a1a180e89cf3fc7d17081cbc20b4a61b5c35",
+    "backend/test/router-local-slot-recovery.test.mjs": "6a7f076df4043c6e6880c7bb1b54b3270c52e60a3001d1e51265d157e5b8e0a1",
+    "appbackendclient.cpp": "4ade4feb055a91cb703409f0600a7cd8adc5afdf1fa54587896cab9fff8c8b8d",
+    "appbackendclient.h": "44c804467f05980cd7e02419523ed27e47338d80e16ef67124f0845c80ba3518",
+    "conversationclient.cpp": "536f445af429ef50fa3ee2e97b1d277cb31fa236f0d72ca872ca54cb9fc35eba",
+    "conversationclient.h": "d9a03feaaa2ee7e87da231a67c4c3e126d065b9b709fa652d7a69012a2add382",
+    "mainwindow.h": "c911fd8de314655d9c335e8055b54c1e9d5d7ae5c5eee0a00c4711e1e8f72cca",
+    "mainwindowradio.cpp": "7bad36766e70c1821ba7d23b7344741021a75d06b43ba0d48a72fce9b3f967ca",
+    "musictaskclient.cpp": "a30f46d85abe9ffd95bfea91423c927c4f939a627a1f29bc133036343462b923",
+    "musictaskclient.h": "8d6c72f78f497fb467ac345593e642d07134344eb9002cbb1ea2d37cc67011ab",
+    "radiodialog.cpp": "138d40d9fed68d60b9da76614818791c1ca1f9e23d7c6c1d5509c3e9d34c64ae",
+    "radiodialog.h": "121733ceb0ba0b0790694a4bab162637cb87951f5eac69f9d1393adcf6f677f3",
+    "tests/routing_fixtures.h": "e99083371a510c3d9e08084020796a43488f29835a7a4f16997973f3261054ac",
+    "tests/routing_client_test.cpp": "181e1c0c13a57061ff0ced4f0bb8612e59f3110ed43e698b4fcb33ae0f88d5a9",
+    "tests/routing_flow_test.cpp": "3ed83241ab8a38953d0644cf09314cfb670c473d3a7c431a98562cbc876d3802",
+    "tests/music_task_flow_test.cpp": "e13fb76cef7e6f97e462fc3b85d42d3893c239f39d0576c24f2a83d3e803a338"
+  },
+  "evidence": {
+    "backend-final.log": {
+      "path": "docs/agent-upgrade/step2-evidence/backend-final.log",
+      "sha256": "b6f3eae741b05146f89ad64ead63afe60f873ecf7ac6b4141f126a06e1a578d7"
+    },
+    "backend-first.log": {
+      "path": "docs/agent-upgrade/step2-evidence/backend-first.log",
+      "sha256": "8ea9145b0a6d87ac076757de89d9a934aad74595b982b26fae0dbaff275673a2"
+    },
+    "backend-before-review-fixes.log": {
+      "path": "docs/agent-upgrade/step2-evidence/backend-before-review-fixes.log",
+      "sha256": "561b7a1536c1940267c6ac99564f874f10398287f37fd850c2608d15b47d6021"
+    },
+    "http-first.log": {
+      "path": "docs/agent-upgrade/step2-evidence/http-first.log",
+      "sha256": "77fdb300d88fe3971cc9b641f5500fd7e3f5f0a397899d7b163578ac5dc0730f"
+    },
+    "http-fixture-fixed.log": {
+      "path": "docs/agent-upgrade/step2-evidence/http-fixture-fixed.log",
+      "sha256": "bc7da7570768fa03888d66b0c9dc3c3cbb2caa8cfa0763342aa4437f921a3dc8"
+    },
+    "context-first.log": {
+      "path": "docs/agent-upgrade/step2-evidence/context-first.log",
+      "sha256": "a921635077288ca1206fda0dc92ac34b61a7a907443ed4b2f092fc8c61952d66"
+    },
+    "context-second.log": {
+      "path": "docs/agent-upgrade/step2-evidence/context-second.log",
+      "sha256": "584ce04e2562bd1482031524742b8f366b77c87f9dbbd5312ac4dd9a1ad35630"
+    },
+    "context-final.log": {
+      "path": "docs/agent-upgrade/step2-evidence/context-final.log",
+      "sha256": "9651f299570bad8135209b3e4cb434c80a09854452622bc15d0cfadfbf7661e3"
+    },
+    "routing-targeted.log": {
+      "path": "docs/agent-upgrade/step2-evidence/routing-targeted.log",
+      "sha256": "9c783112fc802d8ad1b6a58f8fccd32f945d74df9cb685f0362b97d1ac2a4c7a"
+    },
+    "review-findings.json": {
+      "path": "docs/agent-upgrade/step2-evidence/review-findings.json",
+      "sha256": "7144370e97cedb717c3ddc9c79a498ed6ffdcf3157c8cb1b0416a2012820f9db"
+    },
+    "qt-verification.json": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-verification.json",
+      "sha256": "6e0cf4ac6e95cdaa08ffdafd4bad0ef27440a337172972928007b969c020a607"
+    },
+    "qt-client.xml": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-client.xml",
+      "sha256": "1ecaec97a3b1b00b31b0598cb76a0b2cda1d914cde601965f95beb2409267457"
+    },
+    "qt-flow.xml": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-flow.xml",
+      "sha256": "dee7277cfbd6a9fb4c2003b9482eaa371f32c61a0f8e404dfd4df22875388535"
+    },
+    "qt-conversation.xml": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-conversation.xml",
+      "sha256": "f161f9ea61206932bc5808b4095bab12c8dc73bf1245e90189a654ac3b50f52c"
+    },
+    "qt-dialog.xml": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-dialog.xml",
+      "sha256": "b731e241e7073500fba5c6ad441a449048095d9a02bef688099e41ad9c1a3ab5"
+    },
+    "qt-node-flow.xml": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-node-flow.xml",
+      "sha256": "8a9cd3fa17a677dcbedcb79f8cd1f6fcfab54dbfddbf23c374b6992755f3c5ed"
+    },
+    "qt-node-first.log": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-node-first.log",
+      "sha256": "3738e920a30250d81c064c35af8590c129b6bbc2b83fd82bd1c29d8fa9cf5281"
+    },
+    "qt-node-diagnostic.log": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-node-diagnostic.log",
+      "sha256": "e72201da5863fe15d07891f00a8fff6929810fc0edf48311e08539dbdfe62a33"
+    },
+    "qt-client-build-first.log": {
+      "path": "docs/agent-upgrade/step2-evidence/qt-client-build-first.log",
+      "sha256": "c2cee1dddb47af30899c61ea375dcc9dbac61e66b3360ab21dc08b7101e7e586"
+    },
+    "build-final.log": {
+      "path": "docs/agent-upgrade/step2-evidence/build-final.log",
+      "sha256": "7463b833d8cb71ead2948be3249673be159da8ba3beffdd0d4817b83655a64c7"
+    }
+  }
+}

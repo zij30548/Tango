@@ -1,0 +1,10 @@
+********* Start testing of HostedFlowTest *********
+Config: Using QtTest library 5.15.19, Qt 5.15.19 (arm64-little_endian-lp64 shared (dynamic) release build; by Clang 21.0.0 (clang-2100.0.123.102) (Apple)), osx 26.6
+PASS   : HostedFlowTest::initTestCase()
+PASS   : HostedFlowTest::realBackendAccountsModelPreviewPlaybackAndLogout()
+PASS   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(corrupted guest file)
+PASS   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(read-only guest file)
+PASS   : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(unavailable data directory)
+PASS   : HostedFlowTest::cleanupTestCase()
+Totals: 6 passed, 0 failed, 0 skipped, 0 blacklisted, 5714ms
+********* Finished testing of HostedFlowTest *********

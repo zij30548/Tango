@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0">
+ <class>HistorySong</class>
+ <widget class="QDialog" name="HistorySong">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>820</width><height>590</height></rect></property>
+  <property name="windowTitle"><string>最近播放</string></property>
+  <layout class="QVBoxLayout" name="rootLayout">
+   <property name="spacing"><number>16</number></property>
+   <property name="leftMargin"><number>28</number></property>
+   <property name="topMargin"><number>26</number></property>
+   <property name="rightMargin"><number>28</number></property>
+   <property name="bottomMargin"><number>22</number></property>
+   <item><widget class="QLabel" name="label_Heading"><property name="text"><string>最近播放</string></property><property name="role" stdset="0"><string>heading</string></property></widget></item>
+   <item><widget class="QLabel" name="label_HistoryHint"><property name="text"><string>双击重温喜欢的旋律 · 在线歌曲按当前账号权益播放</string></property><property name="role" stdset="0"><string>subtitle</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+   <item><widget class="QTableWidget" name="table_HistorySong"><property name="toolTip"><string>双击歌曲即可播放</string></property><property name="columnCount"><number>3</number></property><column><property name="text"><string>歌曲</string></property></column><column><property name="text"><string>最近播放</string></property></column><column><property name="text"><string>来源</string></property></column></widget></item>
+   <item><widget class="QLabel" name="label_EmptyHistory"><property name="text"><string>还没有播放记录。添加歌曲，开始聆听。</string></property><property name="role" stdset="0"><string>subtitle</string></property><property name="alignment"><set>Qt::AlignCenter</set></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+   <item><layout class="QHBoxLayout" name="footerLayout">
+    <property name="spacing"><number>8</number></property>
+    <item><widget class="QPushButton" name="pushButton_DeleteHistory"><property name="text"><string>清空记录</string></property><property name="role" stdset="0"><string>danger</string></property><property name="autoDefault"><bool>false</bool></property></widget></item>
+    <item><spacer name="footerSpacer"><property name="orientation"><enum>Qt::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item>
+    <item><widget class="QPushButton" name="pushButton_PreviousPage"><property name="text"><string>上一页</string></property><property name="autoDefault"><bool>false</bool></property></widget></item>
+    <item><widget class="QLabel" name="label_Page"><property name="text"><string>第 1 / 1 页</string></property><property name="role" stdset="0"><string>subtitle</string></property><property name="alignment"><set>Qt::AlignCenter</set></property></widget></item>
+    <item><widget class="QPushButton" name="pushButton_NextPage"><property name="text"><string>下一页</string></property><property name="autoDefault"><bool>false</bool></property></widget></item>
+    <item><widget class="QPushButton" name="pushButton_Back"><property name="text"><string>完成</string></property><property name="autoDefault"><bool>false</bool></property></widget></item>
+   </layout></item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,773 @@
+{
+  "date": "2026-10-20",
+  "scope": "First-party JavaScript comments translated to Chinese; no application modules executed",
+  "parser": "Node bundled Acorn 8.18.0",
+  "snapshottedFiles": 143,
+  "changedFiles": 94,
+  "failures": [],
+  "realModelCalls": 0,
+  "verification": "Normalized AST and token streams identical; node --check passed",
+  "files": [
+    {
+      "file": "backend/development-session.mjs",
+      "comments": 4,
+      "beforeSha256": "a2b3c5ddb987a653097ca94bfb6ce3c95fb3d89cda102bbb34fee05c3da30682",
+      "afterSha256": "e16786876b81d13bb02e6fd163488f8ae1a9463480aeccc5aae78967bd63e648",
+      "astSha256": "d53b26dc69d1b2085b47d58512b2b89aed456974cb1f92aa625ef7b7d154b0b2",
+      "tokensSha256": "2bce673a748c4842e945068cbd7e5e996edd4c96e622914161d64a6ca23c6c19"
+    },
+    {
+      "file": "backend/task-schema.mjs",
+      "comments": 6,
+      "beforeSha256": "18a2dad04efe43033ab6e056177cf405e77e0d98fcd2a37eca0f4bc86338d21c",
+      "afterSha256": "0f4b0ecde1c98413ba2eb031474271955556d43b4fe27fbb03a8786f50626855",
+      "astSha256": "3c8f8efadbae150b4e364b64f3783450e4df577803c68a71dd7b3f4dd3968c3b",
+      "tokensSha256": "c59bd5d87430ef6cc939559d00ea4b6fafad9320ef02f98d98a3a35706500fbf"
+    },
+    {
+      "file": "backend/task-tool-cache.mjs",
+      "comments": 10,
+      "beforeSha256": "d18ae70ddda8793d8c84ce1bda5fb1d51d1684bb0989afcc953e7126d7e2d359",
+      "afterSha256": "db31dbc14d18c999eb34af185ea54d982430ff4db0707d8d85ee87db750e8054",
+      "astSha256": "5b41899c41101e91b967cbbb6baac4ebebae19690da58a1a671497ab402619f4",
+      "tokensSha256": "4d3b136a0f1cb70b0c371ec94be0f521f1d347ddea5492308451cea747c34f69"
+    },
+    {
+      "file": "backend/conversation-router.mjs",
+      "comments": 4,
+      "beforeSha256": "43f141162020ee3e21641f93e77c6717af05d7106a6fc8c930fbc2df415067e6",
+      "afterSha256": "5af9c028e424e6d5312fcd45596fc2a749ca5fd0e9a6bb103f4abb1d1dbac634",
+      "astSha256": "b1ea440b1b48a42d698013c8250171e463d9abf48f23309aed993845e7ce6afa",
+      "tokensSha256": "0911af90029adb96c8eb1f87a76dfd08621c5ab16b7705b99cec8e1321750d94"
+    },
+    {
+      "file": "backend/task-language.mjs",
+      "comments": 19,
+      "beforeSha256": "2849dc86830be7d00233219ca8386ac1d5d232f569ec3cd505462c11c3bb59f8",
+      "afterSha256": "cdd8388b15fb1e8648789662a19abaa222a232a6fa93844a0d8fc8d081685a1d",
+      "astSha256": "b02c37e89c57a9b057ecb85bb10bfafb9cdb56a7a17a0ef1a606be764edabefe",
+      "tokensSha256": "43af3f5a1007e5dc217eed0930dbb15e4acfcc54e898da59b96a83eaaeb009ba"
+    },
+    {
+      "file": "backend/task-tool-evidence.mjs",
+      "comments": 7,
+      "beforeSha256": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48",
+      "afterSha256": "211cc7dcb5f25c00164a01a7e475625956190c5633db32bef5bd04e7f0e9407d",
+      "astSha256": "4976e4e910880940ea28f7789fa685d144f528d6087456c6e11f9053e195a71c",
+      "tokensSha256": "fa2ada74b1afe931e8aedcc1eda0988a617f17aaa08abd9e69d0d55da09c7249"
+    },
+    {
+      "file": "backend/task-brief-patch.mjs",
+      "comments": 16,
+      "beforeSha256": "c829c661e8826ba0e62c9b8e41c47c7eda9ca108c38ac7cf08814621237379cf",
+      "afterSha256": "d7de8124bae574da73cbc5610732677836b72de8f587db82f646ad9671d46ef4",
+      "astSha256": "497f5aa81ea08598792d46ae5f2d35a1febfee3ae0e328b98a7dbe10ebda45aa",
+      "tokensSha256": "f1f3fe756505ae2e45fbb752afdcb6c43b51a13dafaf17d4602d6f9f9d19d9a7"
+    },
+    {
+      "file": "backend/task-runtime.mjs",
+      "comments": 50,
+      "beforeSha256": "e643411a07ac6bcb856732837a8ce7fb32fbe232d44345a0649331eac36a1943",
+      "afterSha256": "afbe396158aa869a03dbb5917c0f277ae54cf9ec6eea8b9cece8499f3bea9f7c",
+      "astSha256": "b673d3276212d7a8ac604b4b0b3de095dfbe1344c5ffb3403c6ebc202c963025",
+      "tokensSha256": "676e4953c4d8c933566d875bd1032fac723baf7794916c46938cff79f3fdc8d0"
+    },
+    {
+      "file": "backend/intent-routing.mjs",
+      "comments": 10,
+      "beforeSha256": "cbe46a132f49ee9a637188cb8dde14c32c9e2e89ab7fdcbe7db67c9b67d528e7",
+      "afterSha256": "2ea6441dd8776a8de1ea81c79fd1ac27ba827339ad02864343b1e3ae024302a5",
+      "astSha256": "550f733f7f71cd054132cd3afccbb15b7ad475693b8c293665fb25f6de4784eb",
+      "tokensSha256": "4d8204dadea6aa90bb5bc9154c958dc1c523d081d8d41e46e08d767bdfe0bdd8"
+    },
+    {
+      "file": "backend/storage-auth.mjs",
+      "comments": 3,
+      "beforeSha256": "f601b35bae2849e134860df3daf3e71e5f3a7ab79f2d9e8cb19bcbb5f15a40ba",
+      "afterSha256": "2a783aea8259bbe5eec7f638a3cc0c69701568cc1acdaa7087c6fdff315b0f4e",
+      "astSha256": "7cdcce0f4436afc92b738d1b737d88d8014b5e67e5dde2342786503f22d3c7f6",
+      "tokensSha256": "44968916431af85977aae40c02f1b3800a983da1287bda006c6752d8c62a7ae7"
+    },
+    {
+      "file": "backend/admin-invites.mjs",
+      "comments": 2,
+      "beforeSha256": "7cb8d0fdcd9cc64b7cb24a6c7bbe29d2a57d780a5b3ef54fca34ac091ca4060a",
+      "afterSha256": "d402b2e2e759598cf6d4c2b64d6566231c1676165b25974d58bd6882af5e5211",
+      "astSha256": "db5771bdb19cc1a5b6c73c6a6032ffa4cf61cff24e84035453ea434f54dcb7b0",
+      "tokensSha256": "51eddb809ca5e44ed5c97ac21e2a8662212b9ffbd9d199bb9214bfcd18e7ad4e"
+    },
+    {
+      "file": "backend/agent-evaluation-cli.mjs",
+      "comments": 4,
+      "beforeSha256": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2",
+      "afterSha256": "19d2dbce0f6fa80035d5861a8d1d8494f04ce34b9e23126ae7b3904a87f3c1f9",
+      "astSha256": "98ee2f9fc446319928735c1a09f85c2e5517ad8ff12ba4d2e5338c8f42d16e6d",
+      "tokensSha256": "36f366251c1152491d8e21445fe613eef467b8a0b450ab08baf4afe34c65f743"
+    },
+    {
+      "file": "backend/conversation-store.mjs",
+      "comments": 22,
+      "beforeSha256": "d82b3e8b0087aa2b6b244c5f17b017c7a08b5ecf66a1d1e3126fcc0231490d82",
+      "afterSha256": "988c076523d8fb59d122b98d653acc995ade83adf13ee84b9e2deea64605db8d",
+      "astSha256": "fa3a026b915948d0552b5ab79f497bf5c4320ca95fc03dc2f8b278f1adab29fa",
+      "tokensSha256": "b5acf6ba341b25dbbac574240ee3cd18a197954d05cdc1e436b38b9104f7a772"
+    },
+    {
+      "file": "backend/service-config.mjs",
+      "comments": 2,
+      "beforeSha256": "4f3ba589ffd13966d0a40a28c43730a85aca7154bbf7f37529f2878ab3b34638",
+      "afterSha256": "67b4bfa4824f9c6a1882590901aaabe5b742902c9cbb8cb2d0cef064e1e3bf2c",
+      "astSha256": "d60f3a831dedce2a33f069d25010cdf6be8af160b800996294f8585e620d9479",
+      "tokensSha256": "7a57e0fc4f3fa3608a80ae1851824711e045b5eb5f96022658684bf9bb447126"
+    },
+    {
+      "file": "backend/task-release-intent.mjs",
+      "comments": 4,
+      "beforeSha256": "2b593a723f7ded52cc0dc9840c4e139f40c0700fbedec4bcbb0cd2152b6ad306",
+      "afterSha256": "8a26fc56f51aed11c3620c4d171210548b99aa8a3d6a06b0f3a5f3b6eaea6f1c",
+      "astSha256": "9bf62181428ac60029445fa1c0be933cb51f64db75ab37b073235c6be4227eec",
+      "tokensSha256": "2236cedf5d2768594e6c0852fc6b013f81d58bac167a658bfe0b5f3a774e6df8"
+    },
+    {
+      "file": "backend/launch-local.mjs",
+      "comments": 2,
+      "beforeSha256": "e969881897d94daf7381bab9866aa63e77caae52ce51bcc8ec07c61006d5b004",
+      "afterSha256": "e1187275429db1d6d005a2552746e476bb9af3a5eb7208344577d8429ab0f9d0",
+      "astSha256": "935387f0b10c4673599b351cc9139cdd7b746f660c5339a27c312b30c48d2955",
+      "tokensSha256": "392b27184b1806b220451c8e04c5a06e84cf24bd7e00d4ea07bd519355343ee6"
+    },
+    {
+      "file": "backend/admin-storage.mjs",
+      "comments": 2,
+      "beforeSha256": "f5aaf67d89d95f8e08922836ebe994e52df1e1561667120b5864978fec59d4e0",
+      "afterSha256": "cca40249c514fa9f941db5d51ff9f319d47302d17ed873fc07c97a226f928fd4",
+      "astSha256": "89e3b5241d85ce461728c0aeaee5cef849eaa24351610c2ee4463647d117e340",
+      "tokensSha256": "86e879425a64db2df834da0250babb0b43d7a97d64f4ee553572fb7a38463043"
+    },
+    {
+      "file": "backend/task-duration.mjs",
+      "comments": 14,
+      "beforeSha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+      "afterSha256": "a04c475b146cc3db273ea381cfb296edd3d6eebacd88df271e08b0e7ac5384eb",
+      "astSha256": "594d031a959250081b53b4d91c1407ff772f5a8394100c5034fd4472b1c37abe",
+      "tokensSha256": "e1404a9bfd8150b3b1321c8759ff435940592183199b16d5df4001e8c0d50ddf"
+    },
+    {
+      "file": "backend/account-quota.mjs",
+      "comments": 7,
+      "beforeSha256": "95c785d9f7066b3c7c10e66063f4fd1cb558343bed322844e85b5f085fcb19aa",
+      "afterSha256": "f3ddf913dd82e67450b9f593941e4aa01cd0049018aba57d000f298caf5d4c2c",
+      "astSha256": "b289933472efad3655fb7b0912842f3720ab7f3d2046066e93aa03033eeb0eee",
+      "tokensSha256": "ab8ed4af53193f1d01caefc1b3d5f7f568a1cc14f6e994ff185e573c42d1e58e"
+    },
+    {
+      "file": "backend/radio-model.mjs",
+      "comments": 3,
+      "beforeSha256": "109f625c501cb780e386f2736cd906f68b60a6896243ad9ee6e316642243b91e",
+      "afterSha256": "597bf8634c562dfb503faf2934d9bac2f736431784700274ec96c6eb07aa3a76",
+      "astSha256": "07858a1c93f84186d229b5596066183c7e6373121c50fe858632a6a35de0ac54",
+      "tokensSha256": "826c65417b07517069186e8a7c34f58556d771b92f7833cf8a8573f33521fb7e"
+    },
+    {
+      "file": "backend/model-transport.mjs",
+      "comments": 1,
+      "beforeSha256": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315",
+      "afterSha256": "261c81772c2d7427440db8e8d6d480bab8b4f9dc061859687deab44d11494135",
+      "astSha256": "fc747ebbd559260a9245f14154b71af2450ede47925620aa9328ac5668e5bc3e",
+      "tokensSha256": "1289527182a423afef3e1abffeeb039bb39b684923ea56cd73d7ce7c27a517d1"
+    },
+    {
+      "file": "backend/development-config.mjs",
+      "comments": 1,
+      "beforeSha256": "0bd95610ec8cf79a5c6e47494d2e653398d09c8b780e26c9c96a7e2dc2666032",
+      "afterSha256": "bbac46d64c5b79897ae591bd654139c537abed782ee99d5a4e9b510619e68ae2",
+      "astSha256": "7f05efc63be47baad651377bcc8b4930718a439bea1f97e20705009ca2128654",
+      "tokensSha256": "b51d83e956a5dd8aff80b8cd423b64442fd132016e401ccc4793143a9c0d898f"
+    },
+    {
+      "file": "backend/task-query-coverage.mjs",
+      "comments": 10,
+      "beforeSha256": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed",
+      "afterSha256": "1c9049b7278452941108c89a5037826fac63ef40c993fcd41adf1f6e578e1a26",
+      "astSha256": "7cd5bd79cb6bac6428248d9afef500c02e87cf79ba5672d37be5c0f6b7fe88b9",
+      "tokensSha256": "98db5e13285031ed557d03cd851bcdd737f968471698b0a0c38bc6181866af7f"
+    },
+    {
+      "file": "backend/agent-event-contract.mjs",
+      "comments": 13,
+      "beforeSha256": "ea180eec1f1481eebe94123792984553696ab80d7ef7ccb3f80f9c602a08d9bf",
+      "afterSha256": "e6412703f64586547852428029b421081b6ba0cd47c17f0c61b04b816ddd2d17",
+      "astSha256": "7983368d9bd858a85adce022643e194e13b90eba1e1b0baf802f470b6086bf8d",
+      "tokensSha256": "9521bca88c12cbb9c9827ce85c62187154a41771c9e3ed93bc2f8d72fffa8ea8"
+    },
+    {
+      "file": "backend/invite-store.mjs",
+      "comments": 4,
+      "beforeSha256": "b89e226a74f13afa4afa7d7787760208d5d3c741b6fa1a40510e0cdd01e5c812",
+      "afterSha256": "9861187759b047ff3c4d5a94759a43ede3523406855af0e8cc1e0fca80303c6c",
+      "astSha256": "36203b6827001e11ce93086f8e9c95e8934e75e4fb7cb2f4f0b2d5d9546111e4",
+      "tokensSha256": "35b361d167cbcd481e63209dcc5e5ef724462a0d95c7d8d6435043d4c19e9e5a"
+    },
+    {
+      "file": "backend/conversation-api.mjs",
+      "comments": 4,
+      "beforeSha256": "4d3f394baef4fc4a4973ccb41756b7f8a10b1f89a5e32bda13844eb9bed1152e",
+      "afterSha256": "abd748a86628602a33a6198f79d9099edf6d0d1e0acfc471f79f39cce1863bd2",
+      "astSha256": "3b580af7fe40c475c80573d825bd826226c43342e206cb5ab2a35840512213f3",
+      "tokensSha256": "4f960c7d17b7862a356d842d25680bd97a340b4082e9c2ab6108080fa701361d"
+    },
+    {
+      "file": "backend/store.mjs",
+      "comments": 4,
+      "beforeSha256": "519201ab8c4591b46ed6c19137ef22216151319f4727222c10899d357479ac5a",
+      "afterSha256": "19e4aed90414530f49d73a4993f0504070531c4d579866afbd13ae5fc309ae79",
+      "astSha256": "cdcf56b888e25401cce18c84337eae7b2ff02a1156b3f80194f3e0df5fe8e7da",
+      "tokensSha256": "36849e001ae9ce45e199d5b266268132d4e61aa5b384851ac6303766d528db3a"
+    },
+    {
+      "file": "backend/redis-limiter.mjs",
+      "comments": 4,
+      "beforeSha256": "c652d8855159310af662708c1027c4a573f09e28abf08a81b2562ba14825d41f",
+      "afterSha256": "5e2ab8c3316cb1ba8abd37702e243f1170f2bbbd1fe8d1c3a6d4981160a7608d",
+      "astSha256": "89d7abdf14a28a3474112bb1d6aa46efefe8312267ca6e8ed17155d42ea71d5b",
+      "tokensSha256": "7977ab628772b2816c3e64aaa0f9dea0cdb12e73c6e2bdf06cf40d98264edbf4"
+    },
+    {
+      "file": "backend/conversation-route-store.mjs",
+      "comments": 9,
+      "beforeSha256": "7da903e16d85f126ec81b746021b7eb7640e18e72d901984e8a135cb23f3e5a3",
+      "afterSha256": "b36b82f45895d15f0d08da8521ca2ff69919b4a14e4b21ee6a9e0e4e7ee630a5",
+      "astSha256": "d9342d16fbe40455b25f17e799012b0179a2f3f3a1ff13c2e19da79c42e215d7",
+      "tokensSha256": "9f413f64d462da413a493c5408db033183f1ec3f86b5aab687ca313aa4242c5d"
+    },
+    {
+      "file": "backend/task-model.mjs",
+      "comments": 4,
+      "beforeSha256": "228e45f7609791a7fe68ab31b660af752c12ac46d9e19e818eb72ee06349dab3",
+      "afterSha256": "03bf0bdf007953535c1d0bbeab3f55ee3e5eab0246c28e620f318ab4ce851a94",
+      "astSha256": "5ac701e79f2449e70f22f27e18036520e4b49edda2a9bbeb16e481f6d7a98403",
+      "tokensSha256": "c82eff0b564ae6d6d3a00a553c69ab0e6144900920ea6cfea22c65734f18b36e"
+    },
+    {
+      "file": "backend/registration-service.mjs",
+      "comments": 2,
+      "beforeSha256": "bef450ebbf085dceaf596bcdae2d552137c74135ceda3751049deac9aeb12348",
+      "afterSha256": "59decb1b0058629d16de62358de8edc67a8a4c9a0ea445e3f40041a26c98c53f",
+      "astSha256": "45a68ed9798eb9750f82e2fa3fa54132b53c341355c521b82e0c1f7ee5121e3f",
+      "tokensSha256": "6c40fa93cf98600731afa07220f46fb37d69805b9042da0f009f532c581cd826"
+    },
+    {
+      "file": "backend/app.mjs",
+      "comments": 14,
+      "beforeSha256": "d5f405798221d9ca88640090885f5f12419f6fa470ed099367c92735fe8047f6",
+      "afterSha256": "a92be493e96c4c77448829c023a1ae5ae715a25f067a655d808b63b240112a75",
+      "astSha256": "ce7b083b8b0d7aaebe74969a4f1033d2e804b7a34a65b08735dca50ac3c31fe0",
+      "tokensSha256": "9c6ad33bb31cf7a39bf3e88b21dabca869c8d036b4bece5c71bba358d4a0ac0c"
+    },
+    {
+      "file": "backend/task-pending-request.mjs",
+      "comments": 8,
+      "beforeSha256": "5cf3f3d7fe9b9c8c6587917d222e305fabf560b8a2e7dd98bac6d9023c394bb2",
+      "afterSha256": "baf362403eb04edc6fc758c7e019726e007500c93e3510f95627b0ae4da1c15c",
+      "astSha256": "710c34da98e63909576acdf9a2d39f152ea25885a231677c70182e1e668e2c15",
+      "tokensSha256": "211d967d3bda59e34dd3d77e142da0656500177fd329116db2588e72ef2a5a79"
+    },
+    {
+      "file": "backend/task-progress.mjs",
+      "comments": 9,
+      "beforeSha256": "ab6a31763b8642eb83c14de196c105e24af1cb1859db1c72ca7dba3fd008065b",
+      "afterSha256": "e2437d511c3a961db98434906b5a474bb0c4ce6e22e739b606853c7d82511dff",
+      "astSha256": "b752d361f6f8ac20ecdf2b0539157185aac34258415d5492de39776b85842af8",
+      "tokensSha256": "36041e2b05adaf7f969af5384b89da946aa55f04991154369834b70e79e25741"
+    },
+    {
+      "file": "backend/postgres-store.mjs",
+      "comments": 2,
+      "beforeSha256": "a14b79cc9efe3f74290316bf540dfdf645737c934f8897b1d7a9e8d331573f01",
+      "afterSha256": "1adae0e0dd44efcf4d2e7d109c29bdce2a8811d0f4e84ede09500b23419d4958",
+      "astSha256": "d0b86555dee760487805cfb518eec9ae10904df5a7d0dbaaf2303f7a4b301892",
+      "tokensSha256": "23402151f8649d69f63a72877f41dbf0cdc292083f751c005d1c0074b49ac818"
+    },
+    {
+      "file": "backend/assistant-model.mjs",
+      "comments": 9,
+      "beforeSha256": "0278e50c27d88bfed272475e35dd9f3bda340803f032dc08897726e0741c4eab",
+      "afterSha256": "4b5ca0d0f5c81c20e512042967605e6034c69958a14b4adce9222763c6e15e2a",
+      "astSha256": "4a16e022a1d7818e5b6f2fc7219f9f39a86c92c134898feb7a6e9da7b386a153",
+      "tokensSha256": "15f86a8f70960455e93b0e7cb52d05fb59104064546ab12cd90e1d58310e2fe1"
+    },
+    {
+      "file": "backend/task-style-evidence.mjs",
+      "comments": 10,
+      "beforeSha256": "526768166a781498425b23a42c98d75373afd6931fe91e33665a5417db164aed",
+      "afterSha256": "2b363b96b2023c9beae5f6b8db70748985494c5dba940a9e706c7b5abc75149e",
+      "astSha256": "f7bf1da5a872dd5e59859e565eeb807845751fbcbd2af4ae4e366e1728d8e6ed",
+      "tokensSha256": "4473ced2609c2d2a753b6865541856a90f7fb078ce0b67cf3ec23e2f33212374"
+    },
+    {
+      "file": "backend/capability-registry.mjs",
+      "comments": 1,
+      "beforeSha256": "040365e728c0d959231347a5fe0ad33ca2da999bd5e49153babb1d9e030d39c0",
+      "afterSha256": "80e8665dc8351a00942ff58618e650af18db963ca3b51fd604fee5ed3eda66e2",
+      "astSha256": "77d1758272ecf917907310179fb04d72e1600087562a5f0fc68f10d62537a593",
+      "tokensSha256": "36c2cbb95b27b2bdc6ab94db39252e0c99ad8f5dbc1a396a465f0744312edae6"
+    },
+    {
+      "file": "backend/task-evaluation.mjs",
+      "comments": 4,
+      "beforeSha256": "c312e57e861aa662c8e70271621ad72d9c290bd7ecd9041be49c43abe0495a4f",
+      "afterSha256": "a3e9e82eff4c3d455c0774b5fe06ea9b9814e0d09078f5a2d8ff6a9beffc6249",
+      "astSha256": "9890e48b6bc91fb752a3b691e8ea11a2a3db675ed0a9c31c7d427e661a0f5be3",
+      "tokensSha256": "b1aafd26630a598e586b83b3cac6b848e9670333cb88d2d1fe976bfbde100128"
+    },
+    {
+      "file": "backend/model.mjs",
+      "comments": 1,
+      "beforeSha256": "68cfc9c9d0168f089dce20424f909ed6823734f164b38253f3407520c2a67951",
+      "afterSha256": "7e7b02487ca3659c71ea7b14463638262f468371ba3265a026399978b06f3b9a",
+      "astSha256": "a763413792be35e7501d5fc262fab6f3b5db26b8aafc9378fac90e49cf011bd8",
+      "tokensSha256": "17197313f52013f797cfbf649c80ff841faaecfb8253a65f3439e5ca5a212755"
+    },
+    {
+      "file": "backend/task-store.mjs",
+      "comments": 3,
+      "beforeSha256": "ed7b4a6bf8dea1fa3af9cfc16266ed2275b682f0c1cb26523542972d911b85ea",
+      "afterSha256": "bdef8f6bbd553eb16ced6f4c93b945ad6ab77d67043f929969c9d48d3442e894",
+      "astSha256": "a3ef23aee75150a1ce7bfaf173e782e1cffa2ad79729b7db9578359b9db8dd45",
+      "tokensSha256": "c53fcaa9b53d2fe1a412ad7c221bfcd83d3a3f2afd55e269cf705037dce630f5"
+    },
+    {
+      "file": "backend/test/account-quota.test.mjs",
+      "comments": 4,
+      "beforeSha256": "b09a5c4605bf489f6567c5df121e8640e0e394ea0037c06098f1e9265400dbfa",
+      "afterSha256": "b167e51b0bcfdddb3650df553ee0cf21b9fd35fc73b1a48cbbd0a60a0caa6d81",
+      "astSha256": "dc6722126c4cbaff7734e048241ebcf25c63893e87d0cc44bd8bf363c858c107",
+      "tokensSha256": "834b2d5997df3353755228040309383b30575c2674e6d1d86864a7e644dc9e2c"
+    },
+    {
+      "file": "backend/test/conversation-routing-api.test.mjs",
+      "comments": 2,
+      "beforeSha256": "0f7ca3616cb7324d779a3728730db641352ece80cf3de9250697b970c9e0232e",
+      "afterSha256": "dfb19124287fde1402b4cad734ddac85a8c191ed00bb5297929cf30a6fb31da1",
+      "astSha256": "66067809dca32f6b04d38eb30d3904e99751919ca5430f53bc697030b6ccfc94",
+      "tokensSha256": "a6704bfd17e5356bd07d805be88ee2f6b29df5fe4cb66108fb49f491680ba27a"
+    },
+    {
+      "file": "backend/test/task-cache-integration-review.test.mjs",
+      "comments": 2,
+      "beforeSha256": "98ada909c277534b51814730b64a3c8796280a1f60baa185f0080e9cc49dca4a",
+      "afterSha256": "f838ee17b46cf867db8cda4776b55b3f13e9b7f81294c5d2a963503d225d4e31",
+      "astSha256": "1bf1c1e174e9b8402c140cc3e3ede7338e2a6ba56c6b6507ec8c5c6fa365a66f",
+      "tokensSha256": "224698f04449157f88aa6df0863f99d3258c827e0df7383fc48244fc33189626"
+    },
+    {
+      "file": "backend/test/app-redis.test.mjs",
+      "comments": 6,
+      "beforeSha256": "5342f5768a761aadeb98dd21c68bb6d56cc6b48bdb9793b3107ee56b3a634baa",
+      "afterSha256": "85b1231f423a78e1187bd005e6b77af168b8a4e693f362806e957d8b2798e507",
+      "astSha256": "177908b87682a939463517f49d21dddf94b98a178b86eab9097506530a189f9b",
+      "tokensSha256": "339d438e1b90cf6883ffdece0bef1ed743c395571258a8817412039ddbac1a75"
+    },
+    {
+      "file": "backend/test/postgres-runtime-integration.test.mjs",
+      "comments": 6,
+      "beforeSha256": "89e7226ca34dcd4894a74e72d5c1c813cf7a402854075f161b2f0cd8f56fcb48",
+      "afterSha256": "79cb97df720155a7e69591b9f538fe1ee4284d63a351e7da1d4653c35c749eaf",
+      "astSha256": "ab7be86989e4d181a6fb7d2fecaa357703389f2a5099303d31be92ed62a7c0e5",
+      "tokensSha256": "1095301c5ce3f51c9645c6f7d2d1a1b883d0777cd83be83c4c19efabbc558733"
+    },
+    {
+      "file": "backend/test/postgres-runtime-boundaries.test.mjs",
+      "comments": 4,
+      "beforeSha256": "dc64aa906045d5caa29e4ea6dc8bc06c8ef43b6faa824077a3a663c062906673",
+      "afterSha256": "49daacf0cc7af569d03d32f37d37739fbdfd478dcfd7476fe3b2535a045f7b8a",
+      "astSha256": "b8ed3127c1b501e88f0fc14eb4dc2ce6b7db6caaa7bdcdfc3eedcb73fad55ea9",
+      "tokensSha256": "690488927152447f2d0034843e867952154a81381caadf756b1e297adf28ff71"
+    },
+    {
+      "file": "backend/test/conversations.test.mjs",
+      "comments": 6,
+      "beforeSha256": "ac9d792855138d5cda0cc9f86aa7b2010b3f27f5c6128571959039bb60de3282",
+      "afterSha256": "0fee3b287af02dd0676fe53d0606f2c50a67d0b919f726553a5f841bca0a957a",
+      "astSha256": "1b031d78fb1e0bf83c63d68dc107a1d26623da9bd6c652e7077001df85b5a1e3",
+      "tokensSha256": "f6080df3a8245e9dc846b904350cc9f47d4e9d65ce025f2a453c623d8a78f078"
+    },
+    {
+      "file": "backend/test/assistant.test.mjs",
+      "comments": 2,
+      "beforeSha256": "8f114d4ca8e183ef8c8b5b9625139fe870424d65513ea1aa33bc758b847fe6ce",
+      "afterSha256": "abc810ac025075a82d1b8c4fbb5a7c491847a56a8f91cf79c0e3900c698139b7",
+      "astSha256": "81aab838f9dee8d8e5595740f0d50f32458b1575a0b814e2d26244024c3c820a",
+      "tokensSha256": "fde6abd78a22f404c695e01fae9e87e23638cc51c732fa33c12d2c31d5580eff"
+    },
+    {
+      "file": "backend/test/agent-adversarial-boundaries.test.mjs",
+      "comments": 3,
+      "beforeSha256": "6fabcdb23266bfb0c09a182da07fcf7ba60bb0d1c96aeb2057cc7a69dbcf5846",
+      "afterSha256": "a554b1e227db6f6b4a15da6df90048413d8452cc6b99951dfa546104a3768581",
+      "astSha256": "3a0aadd1a3ff3959bb2c2331a145f1e420654ec9e8d3c488c376e5aebcbb9564",
+      "tokensSha256": "83317664b22652b1aa77b4460a4add75b724b264df25c0c0470789dd98232af9"
+    },
+    {
+      "file": "backend/test/radio.test.mjs",
+      "comments": 1,
+      "beforeSha256": "229472029cb8527134c8d6e8378139b8113de79e6c36674b3d1f1d9f55493a4c",
+      "afterSha256": "29500a00ccf7c1e5482a7f9cc886891a9443f2b7c7e60cdde4d94766469ceba7",
+      "astSha256": "6d88854b5bed740400ed8aa8d3122bed0d1d6304ff2c12b7e350c5b2e723dd46",
+      "tokensSha256": "d161743efd24ed7eae634face342b13156c54262de79393be2eec33daec32896"
+    },
+    {
+      "file": "backend/test/postgres-storage.test.mjs",
+      "comments": 3,
+      "beforeSha256": "4cc34d0bc41df1a86cfccb095bee32b2b4b4be309794f94d4e441f561ec9237c",
+      "afterSha256": "3791bce89539719ab77de7da0735da04116634b805251b5186b194dca9f13803",
+      "astSha256": "8247cbe58bc2bb97cf008b74c279fab6c49f89a0667af1a07b1be5d955575853",
+      "tokensSha256": "64b6dc502a2a14a234372ee15b3d8c07bf7d26a5aae22364fd9ecebac17859f5"
+    },
+    {
+      "file": "backend/test/task-brief-patch.test.mjs",
+      "comments": 1,
+      "beforeSha256": "5445306d3d5a9c10b8fd69722791a15bb00c9b47d620fbd69d7360915cfa4a23",
+      "afterSha256": "2cc201077afb76f5f195a20b0e089dcaff5fcadbc6f71f475473bf0dee4c877f",
+      "astSha256": "14dd371e2bbd1d17784bb443fe8475c7579c8aba974b755343953cff8e685e58",
+      "tokensSha256": "68808319f81d18190a484f2dc8e7cdf5301e952483dc32b4ce7429bddc585624"
+    },
+    {
+      "file": "backend/test/router-local-slot-recovery.test.mjs",
+      "comments": 3,
+      "beforeSha256": "6a7f076df4043c6e6880c7bb1b54b3270c52e60a3001d1e51265d157e5b8e0a1",
+      "afterSha256": "6dcd90a9789a75b30b7f5446107b366279a21bc637e10c4d3ab2c45f38651a50",
+      "astSha256": "42a6e4fece65d671c9687b3bcbb40b5722f88f882ad3e719941d771c76a4adb8",
+      "tokensSha256": "cfb264869b43b807bdf000432598051e8a848d690979c5f3d32c4fb187242fa7"
+    },
+    {
+      "file": "backend/test/intent-routing.test.mjs",
+      "comments": 2,
+      "beforeSha256": "fcb7870cf717d3438d1a57cd764148046b9299f0caee30548de8ca08897d3a58",
+      "afterSha256": "c4daae7ed378133b4a1246b9d2a5e418721e549b86f6ce32e9c307ae12fce07a",
+      "astSha256": "9bf21414337d003a69bad14b21c8da9f047c427f7b073b018cb462eb16d2dfbb",
+      "tokensSha256": "37fac0d72627decd37c7327d2e07e91412f6d9b48a5cbedf726c8165644e609a"
+    },
+    {
+      "file": "backend/test/task-duration.test.mjs",
+      "comments": 1,
+      "beforeSha256": "471bc7042719dc3df4e7b72d11d1912834095662840202a0f5c9a037f94814f1",
+      "afterSha256": "5d4892230a2f04b47f3e8ab72de8b5b47c4beab1c951beec4ffd2c4610b5c239",
+      "astSha256": "47f2a289afbb62dd592a115c4ed6ee9c1b15d8c41db05042d798bb35e07a5151",
+      "tokensSha256": "8087589d827f4cabc8a5344f4ede8b65b96b67545e640dfe9541a400d915472b"
+    },
+    {
+      "file": "backend/test/agent-event-contract.test.mjs",
+      "comments": 2,
+      "beforeSha256": "97d88ae54ca4b8b136666c1dd348eb7763cf55986666cdd07af395fc0b9cfbb0",
+      "afterSha256": "b8c8d76f3ee9c41b0fbca1125f1aca6435f76b100ab32efc6e33797211705c40",
+      "astSha256": "62ccc33c5bb3be497d4375b888cf8c2aaba466c24f2ed886b44bfb3f8d1f5145",
+      "tokensSha256": "3d23c5c9a39bf4f934d6c4ccbd80bac68d30e3bb55cd27a1d5b5dee4876a8c51"
+    },
+    {
+      "file": "backend/test/routing-task-coordination.test.mjs",
+      "comments": 3,
+      "beforeSha256": "af7a87405c45f80343fbadcbc486a1a180e89cf3fc7d17081cbc20b4a61b5c35",
+      "afterSha256": "473df34fc133d7f735eb2294c019b293ebb765aa1fa3fae6f4cfb2df63977e8f",
+      "astSha256": "9249127e832bb0504bb918488c8e701612a91a51ac3cc11b625c6460c57ceb77",
+      "tokensSha256": "c87ac08722ae59a4abe556de811b5ee809760b60e2bd8b1d90b71d5c3bf8c766"
+    },
+    {
+      "file": "backend/test/conversation-route-store.test.mjs",
+      "comments": 2,
+      "beforeSha256": "3f60d8a006f01090792d5b8bb5c29861f1caf682697ca375cf53ffbe9f110eb3",
+      "afterSha256": "776f3ded234e675ea0239c0c7d5b2ac84e9b4ba7c5204f0f0ace04cd2e41d36c",
+      "astSha256": "1d66fc322440555fb788780942b22203419b8a9dda52602d9bd135ef9b885d6e",
+      "tokensSha256": "9caf79ca7a882991b9d06443d0420c3e80c74c9078b48da2ee1ee2e6788337b7"
+    },
+    {
+      "file": "backend/test/task-progress-integration.test.mjs",
+      "comments": 3,
+      "beforeSha256": "5569d3c2172e465f4e1b3e5b36481212970b8012aabc79e19a71e53826441b10",
+      "afterSha256": "a3d34db8163e2ac19cdaee915446c91aca5750e2208b1bbf85c624d368e96d6e",
+      "astSha256": "b6978dc733554b89c760ab98d44c386c3975a39dc486ba5079f0a69c871184c0",
+      "tokensSha256": "245c5ec316b2d85d1ff42727b3f1e2b10662973dabc0baed98eab5fd4369d833"
+    },
+    {
+      "file": "backend/test/development-server-integration.test.mjs",
+      "comments": 2,
+      "beforeSha256": "c1d1d8259c0450946462c61ed93b49d2089f737386021876e52af5953db93e6a",
+      "afterSha256": "9b235ad61f058105be431ae3067ef633090720aecb21040e08bd146d3a022021",
+      "astSha256": "cc9fbb3ac89e8cc6a2eb87257cb45e5b0b304e257474fb8c76b961ce10eff859",
+      "tokensSha256": "4ecdc83193ae471dff67d8a03e20d677d7d581535ee536e9d27fb28c973386db"
+    },
+    {
+      "file": "backend/test/app.test.mjs",
+      "comments": 1,
+      "beforeSha256": "0ce95f61fddec3f7acd9c1ec437d824eb267bc5c8515a7cf581ff869c34a445e",
+      "afterSha256": "5273f21bfae445309b8f490cdaa72986b8bc46264200144aa05c33ea9be4aac0",
+      "astSha256": "40ff8c30aa54edd84063620753f4d0393bcf698bd1b224db6f261649d59c2054",
+      "tokensSha256": "07013fefe64418a0803fa48d60554b4c9760b7d314545383f49066da0d4e4ff2"
+    },
+    {
+      "file": "backend/test/task-clarification-continuation.test.mjs",
+      "comments": 2,
+      "beforeSha256": "8dac9e7a8a8033fde844b870d1cf27b8d4f22e6402eea80f4cd09c040ba1540b",
+      "afterSha256": "d3aa2a031c5d13ad029192bbcd412dc119ebaeca1a7bb2686a169426a30fb6e3",
+      "astSha256": "4f214d65ea1dcd45ab5f14859ca4dd717da069491f9459ee3638eb6ae9d9a8ab",
+      "tokensSha256": "1911f487678ab943cdcd930fb958a2afa93c0044bbb3f6752efc6d233752e57e"
+    },
+    {
+      "file": "backend/test/helpers/redis-fixture.mjs",
+      "comments": 1,
+      "beforeSha256": "b2ccfca71a41cf3e304e3c16cf72c21bf96111a8701b155a6973e3d259832f36",
+      "afterSha256": "3fd40a34b1d6a9b4e37e8cf08ce7d103a92c5b3e1fe582cea17cf1501ccde553",
+      "astSha256": "1de476b6c11dd00fc376607c8be6acb988a31a00c4fe62870be62c9e2bce45b8",
+      "tokensSha256": "b0e731828b6361c5daba2dcb2cd4b8988bc2b4e65f66a0b38e6f484230723dfd"
+    },
+    {
+      "file": "backend/evaluation/agent-evaluation-runner.mjs",
+      "comments": 8,
+      "beforeSha256": "99e1a8517dca2d9aef0eb05986583d0eccb161f60025c6bfb815f2b4da75c031",
+      "afterSha256": "0578172a8803e664ef8080c984904fcb9dbc7124036f7eb074d7feba52633065",
+      "astSha256": "09a2f21c59ed0488522931c665f29ba14930e2d843e33bf8a618f8c9409ffa2d",
+      "tokensSha256": "6fa8067037486cd1c02c7aa3a8b0189a0f70e4e3abd6f2820b9efb23c7e6dba2"
+    },
+    {
+      "file": "backend/evaluation/upgrade-protocol.mjs",
+      "comments": 8,
+      "beforeSha256": "24d249daf7990cf0372f0c756c24840679796dfe1378e14910393ada067385c1",
+      "afterSha256": "bf46710e35847cc4e6ce539cfe2f4a304ad7246761f031ee50fcce23b80c9e92",
+      "astSha256": "5bdf53c2133e68535d9a893ffd625c305adcf72e39e6cc09d7d93c5539ed8fa8",
+      "tokensSha256": "0293d3d4b2328073ff67724aff1029d2497c621dfcd26061b90e0d5d318ea640"
+    },
+    {
+      "file": "backend/evaluation/agent-artist-identity.mjs",
+      "comments": 1,
+      "beforeSha256": "582793b2fcee9c143236ed017bd9ba4a6820fbc8591ea854b8d45a785a5ba74f",
+      "afterSha256": "f49162dda51ae320305f6bc5579ca8a4509582c3c7946643c6b630953ca278d3",
+      "astSha256": "5618b657f1fa928fcd042c82f96b0ad5a401411eec4ee3b58a17bde4d83a6f18",
+      "tokensSha256": "e526bc4679efa09f381f0d32160597b2b02bcba4eeff9d7d2564123778525dd1"
+    },
+    {
+      "file": "backend/evaluation/agent-observation-assertions.mjs",
+      "comments": 2,
+      "beforeSha256": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad",
+      "afterSha256": "e2b329e4dfefc86212b8150e7d394903d54ddde3e02abf73b35c1164e2cec274",
+      "astSha256": "add3ff50543a3c11274812b33e88a2760f59c55bf73cf4080541445abf3bd94e",
+      "tokensSha256": "71c3c67c13df70b5d02d2a98fab248f633b6c83e127436025da8b627d7c6c46a"
+    },
+    {
+      "file": "backend/evaluation/agent-suite-schema.mjs",
+      "comments": 11,
+      "beforeSha256": "ceb2b049da4f7992f982540ce9bae6da4e29a687ac4d47861b1d447bed0d0438",
+      "afterSha256": "17ac224fc0be089fc777629b2ce4b1231a33ae7e44a593baf58ca76747fd9ab7",
+      "astSha256": "d77754bc8f7ac47e33b272eefc1b48eacd39f8b52305f138e0878dca28e9c617",
+      "tokensSha256": "32b38906d3523dba2af66cecb28d546cef9f1edf791721ddaabe3b1d603c33ad"
+    },
+    {
+      "file": "backend/evaluation/agent-fault-checks.mjs",
+      "comments": 3,
+      "beforeSha256": "b3137b1c7d7fbc256ce2ae71400d1bab636c22ffe4e857ec315a893657c65d24",
+      "afterSha256": "c478a7dcf786968ed612a78130452578d658e9c8d67cae09ba91366281e23942",
+      "astSha256": "4a41c71b39c399aa967e9a3f9842424e9cb69472c252b1cc7cf3adac1639d512",
+      "tokensSha256": "704a5c935e6cc1a0b1c09816654fb5499ba68879fd3cde59004e1ae9a147e745"
+    },
+    {
+      "file": "scripts/music-task-live-probe-audit.mjs",
+      "comments": 13,
+      "beforeSha256": "fc2201a870b9ccdb3ce2d163bef7c4a87444c9dd927d2f941e60bf2db0ccba0e",
+      "afterSha256": "0a2333e1d9c9bf4b78dcd048f687f2396bcd0a9be868882b7484948c462e45ff",
+      "astSha256": "092a16f04f3243f7f93ae61128432c58d2767983d9d698b603448bc734432839",
+      "tokensSha256": "c7f0396084344ec86b7bc1d8c771fcd0cfe15b01ae3e988c79aae7909e668094"
+    },
+    {
+      "file": "scripts/music-task-live-music-service.mjs",
+      "comments": 1,
+      "beforeSha256": "4cf3b9c8019602e753ac1e4dbf2afb5cf0865d5c3d50ee887f3e3c846029c961",
+      "afterSha256": "7e7a05d0d5ca1c75f643c7b0c70b20c08c99ae3da34e691a56ad3c9c1da7b267",
+      "astSha256": "252924b92f3cf8c12896e2bc9196aad649052ce9aaa84cf0558f5a7ebbc63142",
+      "tokensSha256": "fae6d7d4853784c0009a27bc8a11ba154a2f757a9ae750f242baaed4ed4c7dbf"
+    },
+    {
+      "file": "scripts/render-agent-evaluation-report.mjs",
+      "comments": 2,
+      "beforeSha256": "791d3675678b94aeaaff1b01bf0518c9df2145920f97aa0337258007b9a85b49",
+      "afterSha256": "8c3b63259a04ae146d1a6a1d8a78dcfe4a4418c7d6aff97df2517b276c780055",
+      "astSha256": "c9a790a4ce80983455c8f6208e14860d7a329c94bb7c1daad7ecf5944728fa68",
+      "tokensSha256": "8d2771d58a081e8b9f373f19353aa871a1e7d160805ed5aef2ffeacc4cabb43b"
+    },
+    {
+      "file": "scripts/agent-upgrade-baseline.mjs",
+      "comments": 3,
+      "beforeSha256": "26e45d6aa6e23f536ca34e75c75f7f70deda9e1bd7dbc071edbaedc4bc23222c",
+      "afterSha256": "e2ca950553dfb69ac5c06c258c192eed421a3074bc6826e1bd1e4019028c6ef0",
+      "astSha256": "a1cb6f4d8d2c4e5b3d310be5b1805243462c82c92ab23dae08ca3bd586d359fa",
+      "tokensSha256": "d08bdf3b6551dd510b05b6993d51c91c09427db76d6e4a230ba2f4b7742e6e34"
+    },
+    {
+      "file": "scripts/music-task-live-catalog-audit.mjs",
+      "comments": 2,
+      "beforeSha256": "677d47798978400b799d2adb0cd118373722cc4227d9f7f8d59c0c47e78e50be",
+      "afterSha256": "1b19c090c495a0760842ac96a9ce90abdfa3480962395783ce2e05c021402050",
+      "astSha256": "1633dd69c5302d131d1ae779a5de05020fdfe0118c7640227e7ccbf6abfa9489",
+      "tokensSha256": "726ff8a625990c3138b85c591c73073976f5e05b2492acfc42ad9c327f05bce5"
+    },
+    {
+      "file": "scripts/check-assistant-boundaries.mjs",
+      "comments": 4,
+      "beforeSha256": "00108f22864aa2dce38557a92a4a8cdbaff6e12134abe5174b1b078bcccd88d3",
+      "afterSha256": "8d15018bbdb028c6449b967171c40f01ab3755c6b6c3c942d6ba3c6189e4dbb2",
+      "astSha256": "2b360f1cad895090ef3830099f7cde904c57140dbda07dcfa4e43cb6beac9f34",
+      "tokensSha256": "c45dc873a2daf6ce96f3d3f9a43cb7f48eb8ef94cc1d16968b9e405a6915b444"
+    },
+    {
+      "file": "scripts/compare-music-task-duration.mjs",
+      "comments": 7,
+      "beforeSha256": "2d5d020d5878b1369accdd199c38a09ff7fe40c18e6749a8cfe9fe16d2d6c777",
+      "afterSha256": "038cbe3c128c8a5e53d6665b24087a55166ac7a6e7eceb972b737578c1719bde",
+      "astSha256": "88889099831dfee9ffeeb7c5fa6754df35b34f1f3ecc497acb267992d402e203",
+      "tokensSha256": "7c2bd98d9bcd5b6916e7ba46bba7b2549a7e1e74cf90a1b193d024ca8bd99edb"
+    },
+    {
+      "file": "scripts/render-agent-repair-v7-report.mjs",
+      "comments": 1,
+      "beforeSha256": "61d34870ff7122c1a7fd10cad6966ac2f3ddc27b227c2237debca43f5d41675e",
+      "afterSha256": "c09f91d5a9441901895ad8cd470a859683634337be91fe8c48b223336796cc80",
+      "astSha256": "aa52d517f56f4081f30b1a18c9af213fb4d6a62bec715c5c6a8d306fd9461cce",
+      "tokensSha256": "05e0c787a5f470340cf354df79fff3f645ed6932589a04edf7d9d4c7b647f1b1"
+    },
+    {
+      "file": "scripts/test-storage-v1.mjs",
+      "comments": 1,
+      "beforeSha256": "ebf10abf0fa12e1cd68526710f1321a793e632a18ae393d3eeed3f30a8dbc35c",
+      "afterSha256": "eaeaa7b434365d8e5a3f0de7fb9292e82479c7e4494cddc75b7acad557f3c288",
+      "astSha256": "c8c28c7e89ae8abbc5695bee0d4eb82b0aee03734390b8f7e9387acee7a1835c",
+      "tokensSha256": "a255eeb918d004583352f4257cffe20a6b6c5a11113626f2e364b27b8dda0616"
+    },
+    {
+      "file": "scripts/evaluate-agent.mjs",
+      "comments": 2,
+      "beforeSha256": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd",
+      "afterSha256": "a5ddf274bf88ec6a1108429c44da52aea9678f6b294a0f295895381122583d54",
+      "astSha256": "1b53d0c11001c44efcafcaa8972a33ea1955d4c0a4aae96b6dfa5aff1f14212e",
+      "tokensSha256": "06b23b8e3f68ce36de211533efe2dd9f01e41a1f2707ed570dfe77c1e7bfd8a6"
+    },
+    {
+      "file": "scripts/storage-migration.test.mjs",
+      "comments": 2,
+      "beforeSha256": "eaee8b9d25055b86df870426e74a0bce6e1efeb2131aa6f2626540ecdf883fee",
+      "afterSha256": "c1a462207c6b25926439fc55727c74daaa357b2f0dac03a0059c6669fdce8040",
+      "astSha256": "fe8a9585ac6793159db1ae24aa6c45007c6c754f05012c1b6725ebfc12b6cc29",
+      "tokensSha256": "51d667e5529511bf07efe2985b4dc64c34f8ca908ef686b82eff6ca599cd66d1"
+    },
+    {
+      "file": "scripts/render-agent-repair-report.mjs",
+      "comments": 2,
+      "beforeSha256": "4a71bdc76f790d872ad468e5f9158030aad351c3ba2c2a0c5c3464c94a36cb70",
+      "afterSha256": "dc97e5b157dc5120253439f5fc5cc59ef9cf50c0559a0f89fb746a212c8cb6d2",
+      "astSha256": "f866468f14621221cbb751488ac589950215adf193e89b913ab137146b795160",
+      "tokensSha256": "77ca24b05780a8b2ef058d14da470184a077ffc1e9db7e2677013c1d0705ea68"
+    },
+    {
+      "file": "scripts/check-music-tasks.mjs",
+      "comments": 1,
+      "beforeSha256": "5fb815d8765926d5dd233f5a6fa56b64cc08fad38698002c6a6b6f8a62bc0169",
+      "afterSha256": "c4a91a3b5a8c206739a9bd95b850df18b705e8205a752d31b9541be450a1cf54",
+      "astSha256": "74c87b44e0405c5a8de9ac20d58da8b15fe2b3544b42c2422e3d1a7aa7b92351",
+      "tokensSha256": "97c3f2664dc7bb85315f085d8543495b6c69e3afe4dd8b03982cb486aff3bcbf"
+    },
+    {
+      "file": "scripts/check-music-assistant.mjs",
+      "comments": 5,
+      "beforeSha256": "0ab2765081888121ff0674c9deaa079b50a6bca6fd18edd11cd44302d8f8bd7e",
+      "afterSha256": "9886be9739cc9cfc34b6c5a4c7fd6134333d586922bf25b742ac9334e3aae804",
+      "astSha256": "6efca7ab2cab8c5835f2333fbdb2ba811b8083365a0b10e806f27847ff82d1ee",
+      "tokensSha256": "6f8b8479d7e9fcff9401f34315d511d2525c449f6043cc2764d9ffdf2806e4e3"
+    },
+    {
+      "file": "scripts/migrate-storage-sqlite-postgres.mjs",
+      "comments": 8,
+      "beforeSha256": "2ec0eafd22eb911565dc9fadda48c4f6d959a5dd4528d620e687dfb40ebf3432",
+      "afterSha256": "54d9d9f788bcae54530e9a1a998292f66412b6c891f29babce55042e598a03f6",
+      "astSha256": "d0b16619d25c04309cb8887abbca87bead7f3aebcce3e215fe63e655f3c68d10",
+      "tokensSha256": "1fa5c81f69f55aebcbcf35fe812b262c885e3c1b0205e23c9fa61ba4798aa7a5"
+    },
+    {
+      "file": "scripts/check-anonymous-search.mjs",
+      "comments": 3,
+      "beforeSha256": "52934096cf5e766a14dd6ad170e298633ca167cc89b24806d8c52239daad1d49",
+      "afterSha256": "fff413fda0187ba414bbd37d31382ea3d97612ae3a99543bb385e3d994722d29",
+      "astSha256": "97f1ab1a972b79e43f4deaadadce172fa50d8e474892a8444ea379e16d0ddb2c",
+      "tokensSha256": "0ea29dcadc819212880d1be4028c3e5e8cdfd69e52aab288074e70534acbd1a1"
+    },
+    {
+      "file": "scripts/storage-infra.mjs",
+      "comments": 2,
+      "beforeSha256": "38e464d3c834e48490886c04db742f5ff8e46b42ec8dc4b6222790d452698072",
+      "afterSha256": "d9d1709a3d2293cd5440b60ce4b4a74ce82c213e84e7c2e9c998052244f630c8",
+      "astSha256": "8e6194038f3c9b37852b71aa6eef801820513d5d25de5d1cd38f4d656a9abcd3",
+      "tokensSha256": "37e1db9c211d45cbb82ccdec813170674fdd63af0e08c042f67ffab26cdf954c"
+    },
+    {
+      "file": "scripts/check-radio.mjs",
+      "comments": 4,
+      "beforeSha256": "5cfe979891200eb0be982881f02b4a5f6a766f46bb7cf705a0d1e727575f1a6a",
+      "afterSha256": "ceaba0ae72c7112f7745a0e9d1f80f66ed3dab563f4e67aae17f695f2668c562",
+      "astSha256": "370a3c2e414478fc02db385488a74a83ff11ce12a584ad402ab4571c1579fff4",
+      "tokensSha256": "d9ecd2fdadcaa4d57144d49bbb62b44d01fe0bd70f3d1c2bae50f0d09a79fb1f"
+    },
+    {
+      "file": "scripts/check-assistant-planners.mjs",
+      "comments": 4,
+      "beforeSha256": "f36978303edc2800dc6110cc6860581d4eaa41ef5e94a05cacdaf8774c799760",
+      "afterSha256": "58a8b92e99ad6170b27a32d9240fb3bc3742dbd35490ed3aba0d16de69f5d150",
+      "astSha256": "3913c0adcd24b8d2dae7b2539fc2d2364f4621fa904555f2d2ec741d76e20a35",
+      "tokensSha256": "b6b298ac2fccf6b0b3a4cc353d2f9ac20c59c78557f2818b507ce72012d79c23"
+    },
+    {
+      "file": "scripts/render-agent-new-report.mjs",
+      "comments": 1,
+      "beforeSha256": "08a8292cd31d0b0b22282d15140dc4f1a04a9b9c9b6c50ad4ab3771ab2d97f80",
+      "afterSha256": "618270b0bbcd99b49bea4c5086002a156c85c23d7f9e761f8fccfefc2f586366",
+      "astSha256": "99e7ea50c959cc80112e97510e79d65c4a5896db4ce6d5c5d1205f3cdac297cb",
+      "tokensSha256": "48bb359f199b96ef0179255e31151a5ed0bd7f1d03f6ce8c010df67c37085251"
+    },
+    {
+      "file": "service/upstream.mjs",
+      "comments": 2,
+      "beforeSha256": "a0807f85acab3609414c9b78205f258eeb1e5910a81b3974ef6c9b454ed101cd",
+      "afterSha256": "db3e8a3c22934f79f102f95195de7230f9f0a27c29528ba1e937d4e1b053c3cf",
+      "astSha256": "c5a59f646799b92afe45cf82cac1a347d4dcc8734e3aab8f8f4c171f831b1a5e",
+      "tokensSha256": "7788cadbd864e55873243ae41baa7936f5661c91be5c3ff37a9c0ee8780dbd5f"
+    },
+    {
+      "file": "service/app.mjs",
+      "comments": 20,
+      "beforeSha256": "6a5c3a84d25a4f0da61b5408dbb6afd7c334040b1c56933f12e91775c09d8cb3",
+      "afterSha256": "0866931a17aecfc56671b3be1237a13e8d94d4285210da6a6ed055b7974b020f",
+      "astSha256": "71c1ef3de759e409b31741171fe3cca25bcd982ecda9746ff3bb4c314fff7f77",
+      "tokensSha256": "0244a0714ea27ce47de76af0033771a1e2d7eed6ab55e610f6b540976f3d7c2e"
+    },
+    {
+      "file": "service/server.mjs",
+      "comments": 2,
+      "beforeSha256": "50c7deeea8139c2608ca26c4adc64ccefc40c684924aefc91d977561b935e39d",
+      "afterSha256": "66c9f2a478b65a9c31e144afd5599df44c9c94b3d9e8d6eda3b8a41cc3593d35",
+      "astSha256": "2a3238eb3bbe289651d625c1692188cd475b3d5e81012bf1c6c6bbe9d1389c69",
+      "tokensSha256": "983641cfe36ae188d3ae00d521a46d82706fb95af0c5812fd8b4aa6b761a3843"
+    },
+    {
+      "file": "service/credentials.mjs",
+      "comments": 8,
+      "beforeSha256": "616b6d48fd00bbba83edf163e5619318c5f18ef5825f9fa99387e7c9c3c49b0c",
+      "afterSha256": "80f4ccb3e728f11c882fa3f5ecdff7c3afb97da844bce5433b836e34b896a2dc",
+      "astSha256": "833533d31eeb062b9dbd998b30515090b21192d30511fbcb5f9fac385fbd58a6",
+      "tokensSha256": "04ad21558905f0401a9df8e80f53d6ec3d9102f975525ba7a64e2e7938b87e65"
+    }
+  ],
+  "scopeExclusions": [
+    "Third-party dependencies",
+    "Historical evaluation source archives and reports",
+    "Executable strings, prompts, fixtures and protocol identifiers",
+    "C++ sources"
+  ],
+  "historicalEvidence": "Historical evaluation hashes and results are preserved. This report verifies comment-only changes against the source snapshot before translation.",
+  "businessTestsRun": false,
+  "businessTestsReason": "Normalized executable AST and token streams are unchanged; only static syntax checks were necessary for these comment changes."
+}

@@ -1,0 +1,2335 @@
+{
+  "schemaVersion": 1,
+  "suite_id": "repaired-quality-v1-new",
+  "partition": "new_post_repair",
+  "status": "prepared_before_live",
+  "clock": "2026-10-24T04:00:00Z",
+  "purpose": "修复后首次执行的新组合/新表达验收；不是旧24题重命名，也不是总体音乐用户分布的随机样本",
+  "authorshipDisclosure": {
+    "authorRole": "独立题设计子Agent",
+    "consulted": [
+      "AGENTS.md",
+      "docs/HARNESS_ENGINEERING.md",
+      "docs/HARNESS_STATUS.json",
+      "docs/DEVELOPMENT_PROGRESS.md",
+      "docs/AGENT_UPGRADE_ROADMAP.md",
+      "docs/exec-plans/active/lookup-context.md",
+      "backend_py/tango_backend/capability_registry.py",
+      "tests/independent_catalog_fixture.h",
+      "tests/independent_e2e_probe.cpp",
+      "backend_py/evaluation/independent_scoring.py",
+      "backend_py/tango_backend/lookup_context.py（仅有限候选契约）",
+      "backend_py/tango_backend/intent_routing.py（仅意图枚举及schema位置；早期rg输出包含有限实现行，未据此运行/调参）"
+    ],
+    "notConsulted": [
+      "未主动读取旧24题cases逐字题面",
+      "未主动读取旧评测逐题结果文件",
+      "用户库",
+      "backend_py/.env"
+    ],
+    "independenceLimit": "设计者可见当前能力、有限公开实现契约，继承上下文也包含少量历史失败示例；不宣称从未见过任何旧题、双盲或外部独立团队。此处是未用于产品修复调试的新表达与新组合，正式冻结后不得据首轮结果改变产品/答案再计首次分数"
+  },
+  "fixture_definitions": {
+    "account_A_device_A": "合成账号A与已认证设备A，正常读取权限；未显式列出的播放、采用或偏好变更均未发生。",
+    "catalog_core": {
+      "description": "全部为本题设计的合成音乐资料，不代表真实艺人或作品。播放及查询只读此隔离夹具。",
+      "tracks": [
+        {
+          "id": "track_01",
+          "title": "窗边的航线",
+          "artist": "阔叶电台",
+          "version": "录音室版",
+          "tags": [
+            "轻柔",
+            "原声",
+            "无歌词"
+          ],
+          "duration_seconds": 246
+        },
+        {
+          "id": "track_02",
+          "title": "晚风来信",
+          "artist": "许栀",
+          "version": "录音室版",
+          "tags": [
+            "女声",
+            "民谣"
+          ],
+          "duration_seconds": 222
+        },
+        {
+          "id": "track_03",
+          "title": "晚风来信",
+          "artist": "罗帆",
+          "version": "现场版",
+          "tags": [
+            "男声",
+            "摇滚"
+          ],
+          "duration_seconds": 318
+        },
+        {
+          "id": "track_04",
+          "title": "月台慢行",
+          "artist": "南渡",
+          "version": "录音室版",
+          "tags": [
+            "器乐",
+            "舒缓"
+          ],
+          "duration_seconds": 236
+        },
+        {
+          "id": "track_05",
+          "title": "松针雨",
+          "artist": "阔叶电台",
+          "version": "录音室版",
+          "tags": [
+            "轻柔",
+            "原声",
+            "无歌词"
+          ],
+          "duration_seconds": 254
+        },
+        {
+          "id": "track_06",
+          "title": "背街微光",
+          "artist": "纸桥",
+          "version": "录音室版",
+          "tags": [
+            "轻电子",
+            "无歌词",
+            "中速"
+          ],
+          "duration_seconds": 231
+        },
+        {
+          "id": "track_07",
+          "title": "玻璃斜坡",
+          "artist": "纸桥",
+          "version": "录音室版",
+          "tags": [
+            "电子",
+            "无歌词",
+            "中速"
+          ],
+          "duration_seconds": 245
+        },
+        {
+          "id": "track_08",
+          "title": "晚班巴士",
+          "artist": "许栀",
+          "version": "录音室版",
+          "tags": [
+            "女声",
+            "舒缓"
+          ],
+          "duration_seconds": 261
+        },
+        {
+          "id": "track_09",
+          "title": "晴天反拍",
+          "artist": "北折线",
+          "version": "录音室版",
+          "tags": [
+            "律动",
+            "无歌词",
+            "中速"
+          ],
+          "duration_seconds": 217
+        },
+        {
+          "id": "track_10",
+          "title": "午夜偏航",
+          "artist": "北折线",
+          "version": "现场版",
+          "tags": [
+            "摇滚",
+            "男声",
+            "快节奏"
+          ],
+          "duration_seconds": 303
+        },
+        {
+          "id": "track_11",
+          "title": "苔阶",
+          "artist": "南渡",
+          "version": "录音室版",
+          "tags": [
+            "器乐",
+            "低动态",
+            "舒缓"
+          ],
+          "duration_seconds": 248
+        },
+        {
+          "id": "track_12",
+          "title": "低空蓝",
+          "artist": "纸桥",
+          "version": "录音室版",
+          "tags": [
+            "电子",
+            "无歌词",
+            "低动态"
+          ],
+          "duration_seconds": 229
+        },
+        {
+          "id": "track_13",
+          "title": "雾中信笺",
+          "artist": "桥下演唱者",
+          "version": "unknown",
+          "tags": [],
+          "duration_seconds": 240
+        }
+      ]
+    },
+    "artist_identity_and_releases": {
+      "description": "合成来源均带可核验来源ID、取回时间及明确发行日。最近三个月按冻结时间回溯到2026-07-24。",
+      "artists": [
+        {
+          "id": "artist_zhou_indie",
+          "name": "周棠",
+          "identity": "独立女歌手，作品《夜港》",
+          "releases": [
+            {
+              "title": "夜港",
+              "release_date": "2025-03-14",
+              "source_id": "official_zhou_nightport"
+            },
+            {
+              "title": "逆光码头",
+              "release_date": "2026-08-02",
+              "source_id": "official_zhou_backlight"
+            },
+            {
+              "title": "细雨到站",
+              "release_date": "2026-10-11",
+              "source_id": "official_zhou_rain"
+            },
+            {
+              "title": "明日的信",
+              "release_date": "2026-11-05",
+              "source_id": "official_zhou_future",
+              "availability": "未发行预告"
+            }
+          ]
+        },
+        {
+          "id": "artist_zhou_instrumental",
+          "name": "周棠",
+          "identity": "器乐制作人，作品《薄雾折返》",
+          "releases": [
+            {
+              "title": "薄雾折返",
+              "release_date": "2026-09-09",
+              "source_id": "official_zhou_mist"
+            }
+          ]
+        }
+      ]
+    },
+    "artist_history": {
+      "artist_id": "artist_kuoye",
+      "name": "阔叶电台",
+      "source_id": "fixture_official_kuoye_bio",
+      "facts": [
+        "2021年以原声器乐双人组合开始活动",
+        "2023年首次加入轻电子编曲",
+        "2025年发行以日常通勤声景为主题的作品集"
+      ],
+      "unknowns": [
+        "成员私人生活",
+        "未公开的商业成绩",
+        "未给出的获奖记录"
+      ]
+    },
+    "confirmed_preferences": {
+      "description": "只在用例明确指定时播种；它是已确认本机偏好，不是历史文本猜测。",
+      "instrumentation": "偏好原声器乐",
+      "avoid": "不喜欢吵闹现场版",
+      "language": "中文优先"
+    },
+    "history_snapshot": {
+      "description": "仅用于清空边界题的合成历史快照。",
+      "content": "昨天用户在聊天中临时要求了一次快节奏摇滚。"
+    },
+    "pending_candidate": "可见但未采用的合成候选歌单，版本和曲目ID可核验。",
+    "controllable_running_task": "合成长任务在调用返回前可确定性暂停；有唯一原任务ID，MySQL为权威状态，不产生真实付费调用。",
+    "unknown_original_request": "一条已确认且已经派发、结果unknown的合成动作，有唯一原请求ID；只读查询能返回仍unknown，不支持安全地判定从未执行。"
+  },
+  "metricPolicy": {
+    "taskDenominator": 16,
+    "taskUnit": "一个完整用户业务目标，包含全部必要轮及已列前置；任何轮失败、阻塞、未知或必要人工判据未复核都不计严格完成",
+    "routeDenominator": "仅实际产生可核验路由的自然语言轮；本机命令及窗口事件单列，不能补进provider语义正确率",
+    "providerCalls": "全部角色/前置/失败/超时按实际账本共享硬上限，turnKind不是计费断言",
+    "safety": "全部已选任务单列关键副作用；只有未触发无权写操作不等于任务完成",
+    "subjective": "场景元数据命中仅是可执行契约，真实推荐相关性和音频听感另需人工，不混入客观准确率",
+    "unverified": "缺字段、未实现谓词、无实际曝光或前置未成均保持unverified/blocked，禁止默认通过"
+  },
+  "predicateContracts": {
+    "displayed_ids": {
+      "input": {
+        "ids": "number[]",
+        "ordered": "boolean，默认true"
+      },
+      "facts": [
+        "lookupContext.visibleIds",
+        "本轮助手实际展示的候选顺序"
+      ],
+      "unknown": "上下文缺失或无可核验展示时unverified；不从曲库responseIds推断实际展示"
+    },
+    "candidate_count": {
+      "input": {
+        "value": "integer"
+      },
+      "facts": [
+        "recommendations",
+        "task.preview.tracks"
+      ],
+      "unknown": "必须先用catalog truth核验实际候选，不能只看brief"
+    },
+    "preview_duration_seconds": {
+      "input": {
+        "value": "number",
+        "tolerance": "number"
+      },
+      "facts": [
+        "实际recommendations或task.preview.tracks逐首durationMs之和",
+        "固定曲库逐首真值"
+      ],
+      "unknown": "任何候选未知/冲突或缺durationMs为unverified；不能以brief目标自证"
+    },
+    "task_field": {
+      "input": {
+        "path": "task对象相对路径",
+        "value": "JSON"
+      },
+      "facts": [
+        "task与权威backend task"
+      ],
+      "unknown": "不存在字段不通过；本谓词不替代实际数量/时长检查"
+    },
+    "same_task_status": {
+      "input": {
+        "value": "string",
+        "baseline_turn": "可选integer，默认before"
+      },
+      "facts": [
+        "当前与基准task.id",
+        "权威backend任务status"
+      ],
+      "unknown": "原ID缺失、无权威状态不通过；新任务ID即fail"
+    },
+    "clarification_present": {
+      "input": {
+        "scope": "lookup|task"
+      },
+      "facts": [
+        "本轮新assistant消息",
+        "本轮assistant.reply.kind=clarify/missingSlots",
+        "task实际澄清状态与非空问题"
+      ],
+      "unknown": "旧消息、空question或模型自述不算澄清；仅对题面事先规定的真实歧义可算业务成功"
+    },
+    "catalog_no_calls": {
+      "input": {},
+      "facts": [
+        "本轮catalogRequests数组"
+      ],
+      "unknown": "缺数组不pass，空数组才证明本轮无曲库调用"
+    },
+    "context_absent": {
+      "input": {},
+      "facts": [
+        "lookupContext"
+      ],
+      "unknown": "缺观测字段不pass；明确空对象/已失效状态才可核验"
+    },
+    "proposal_absent": {
+      "input": {},
+      "facts": [
+        "pendingMemory.present"
+      ],
+      "unknown": "缺布尔字段不pass"
+    },
+    "preference_absent": {
+      "input": {
+        "value": "string"
+      },
+      "facts": [
+        "preference.preference",
+        "preference.items[].value"
+      ],
+      "unknown": "summary与items均核验，缺revision/条目结构为unverified"
+    },
+    "playback_resolved": {
+      "input": {
+        "id": "number",
+        "queueCount": "integer"
+      },
+      "facts": [
+        "playback.resolvedIds",
+        "playback.queueIds",
+        "playback.queueCount"
+      ],
+      "unknown": "只看模型或聊天称播放成功不算，必须实际解析信号及目标队列"
+    },
+    "history_artists": {
+      "input": {
+        "values": "string[]"
+      },
+      "facts": [
+        "本轮新增assistant回复",
+        "本会话前轮实际路由/查找艺人事实"
+      ],
+      "unknown": "目标名字子串只作客观辅助，完整历史语义仍须N14人工判据；不得宣称语义准确率"
+    }
+  },
+  "cases": [
+    {
+      "id": "N01",
+      "title": "产品帮助说明预览与实际播放的区别",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "这款助手能帮我做哪些音乐相关的事？生成歌单之后会马上开始放歌吗？",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "help"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "assistant.reply"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "replyKind",
+                "path": "actions.0.parameters.kind",
+                "value": "help"
+              }
+            ]
+          },
+          "manualCriteria": [
+            {
+              "id": "N01_help_truthful",
+              "required": true,
+              "text": "回答列出当前支持的找歌/推荐等能力，明确歌单先预览、采用后播放；不能声称动态多Agent、真实MCP或自动获得会员权益已实现。"
+            }
+          ]
+        }
+      ],
+      "business_success_conditions": [
+        "本轮产生与产品能力问题相关的新助手回答，明确预览不会自动播放。",
+        "不创建音乐研究任务，不调用曲库。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N02",
+      "title": "带双重否定副作用限定的单曲资料查找",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "请查找南渡的《月台慢行》，我只看资料，不要播放，也不要保存成我的偏好。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70004
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.lookup"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "title",
+                "path": "actions.0.parameters.title",
+                "value": "月台慢行",
+                "normalize": true
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "南渡",
+                "normalize": true
+              },
+              {
+                "name": "play",
+                "path": "actions.0.parameters.play",
+                "value": false
+              }
+            ]
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "展示唯一目标70004的题名和歌手。",
+        "完整指令中的不播放和不保存均有效；不以误追问替代已给全信息的查找。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N03",
+      "title": "明确已知版本与歌手的单曲播放",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "请播放阔叶电台的《松针雨》录音室版。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "playback_resolved",
+              "id": 70005,
+              "queueCount": 1
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.lookup"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "title",
+                "path": "actions.0.parameters.title",
+                "value": "松针雨",
+                "normalize": true
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "阔叶电台",
+                "normalize": true
+              },
+              {
+                "name": "play",
+                "path": "actions.0.parameters.play",
+                "value": true
+              },
+              {
+                "name": "version",
+                "path": "actions.0.parameters.version",
+                "value": "studio"
+              }
+            ]
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "只解析并播放70005，队列仅含该曲，不混入同歌手其他作品。",
+        "版本必须来自固定元数据；只有自有静音WAV接线，不评价真实版权或歌曲音频。"
+      ],
+      "critical_negative_assertions": [
+        "不得通过题名相似或歌手相似播放其他ID。",
+        "不得从明确播放指令推导长期偏好。"
+      ]
+    },
+    {
+      "id": "N04",
+      "title": "四轮同名候选纠正使用原池及当前展示序号",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "帮我查找《晚风来信》，先展示候选就好。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70002,
+                70003
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.lookup"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "title",
+                "path": "actions.0.parameters.title",
+                "value": "晚风来信",
+                "normalize": true
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "",
+                "normalize": true
+              },
+              {
+                "name": "play",
+                "path": "actions.0.parameters.play",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "我要第二首。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70003
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.refine"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "operation",
+                "path": "actions.0.parameters.operation",
+                "value": "select"
+              },
+              {
+                "name": "index",
+                "path": "actions.0.parameters.index",
+                "value": 2
+              }
+            ]
+          }
+        },
+        {
+          "text": "还是录音室版那个。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70002
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.refine"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "operation",
+                "path": "actions.0.parameters.operation",
+                "value": "version"
+              },
+              {
+                "name": "version",
+                "path": "actions.0.parameters.version",
+                "value": "studio"
+              }
+            ]
+          }
+        },
+        {
+          "text": "我说的是罗帆那个。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70003
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.refine"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "operation",
+                "path": "actions.0.parameters.operation",
+                "value": "artist"
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "罗帆",
+                "normalize": true
+              }
+            ]
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "初始同名候选顺序为70002、70003。",
+        "第二首依据当时可见顺序选70003；版本和歌手纠正均可回原池找到先前未展示候选。",
+        "四轮没有自动播放或持久偏好写入。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N05",
+      "title": "未知声线属性不猜测并允许完整姓名续接",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "搜索《晚风来信》，只列结果。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70002,
+                70003
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.lookup"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "title",
+                "path": "actions.0.parameters.title",
+                "value": "晚风来信",
+                "normalize": true
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "",
+                "normalize": true
+              },
+              {
+                "name": "play",
+                "path": "actions.0.parameters.play",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "女声那个。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            },
+            {
+              "predicate": "clarification_present",
+              "scope": "lookup"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70002,
+                70003
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup",
+                "clarification"
+              ],
+              [
+                "clarification"
+              ],
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "assistant.reply"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "replyKind",
+                "path": "actions.0.parameters.kind",
+                "value": "clarify"
+              }
+            ]
+          },
+          "manualCriteria": [
+            {
+              "id": "N05_unknown_voice",
+              "required": true,
+              "text": "说明当前候选上下文不能可靠判断男女声并要求序号、完整歌手或已知版本；不能使用曲库tags之外未进入候选上下文的性别信息当已核验。"
+            }
+          ]
+        },
+        {
+          "text": "许栀",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70002
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.refine"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "operation",
+                "path": "actions.0.parameters.operation",
+                "value": "artist"
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "许栀",
+                "normalize": true
+              }
+            ]
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "声线请求停在必要追问，没有伪造性别筛选成功。",
+        "完整姓名答复绑定原候选，最终展示70002。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N06",
+      "title": "新会话不继承旧候选选择权限",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "查找纸桥的《玻璃斜坡》，先别放。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "displayed_ids",
+              "ids": [
+                70007
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.lookup"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "title",
+                "path": "actions.0.parameters.title",
+                "value": "玻璃斜坡",
+                "normalize": true
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "纸桥",
+                "normalize": true
+              },
+              {
+                "name": "play",
+                "path": "actions.0.parameters.play",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "新对话",
+          "clientAction": "new_conversation",
+          "turnKind": "local_command",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "context_absent"
+            }
+          ],
+          "semanticReference": {
+            "localCommand": true,
+            "reason": "显式本机命令或窗口事件，不纳入provider路由意图分母；实际调用仍以账本为准"
+          }
+        },
+        {
+          "text": "第二首",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "context_absent"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            },
+            {
+              "predicate": "clarification_present",
+              "scope": "lookup"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup",
+                "clarification"
+              ],
+              [
+                "clarification"
+              ],
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "assistant.reply"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "replyKind",
+                "path": "actions.0.parameters.kind",
+                "value": "clarify"
+              }
+            ]
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "显式新对话后，旧查找池失效且不能跨会话选择。",
+        "无候选时要求先搜索，不能猜测第二首，也不能用空结果假装已选中。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N07",
+      "title": "跑步歌单数量时长同时满足并可修改撤回",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "做一份跑步用的歌单，正好5首、总共20分钟，先给我预览。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "preview_nonempty"
+            },
+            {
+              "predicate": "relevant_pool",
+              "scene": "跑步"
+            },
+            {
+              "predicate": "candidate_count",
+              "value": 5
+            },
+            {
+              "predicate": "preview_duration_seconds",
+              "value": 1200,
+              "tolerance": 0
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.targetTrackCount",
+              "value": 5
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.retainFirst",
+              "value": 0
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.targetMinutes",
+              "value": 20
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "scene_research"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.task"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "mode",
+                "path": "actions.0.parameters.mode",
+                "value": "new"
+              }
+            ]
+          },
+          "manualCriteria": [
+            {
+              "id": "N07_listening",
+              "required": false,
+              "text": "真实听感/运动适配只能后续人工听歌评价；固定pool101命中只证明合成场景标签相关。"
+            }
+          ]
+        },
+        {
+          "text": "把这份改成4首16分钟，仍然用于跑步，不要播放。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "preview_nonempty"
+            },
+            {
+              "predicate": "relevant_pool",
+              "scene": "跑步"
+            },
+            {
+              "predicate": "candidate_count",
+              "value": 4
+            },
+            {
+              "predicate": "preview_duration_seconds",
+              "value": 960,
+              "tolerance": 0
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.targetTrackCount",
+              "value": 4
+            },
+            {
+              "predicate": "same_task_status",
+              "value": "preview",
+              "baseline_turn": 1
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.retainFirst",
+              "value": 0
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.targetMinutes",
+              "value": 16
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "scene_research"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.task"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "mode",
+                "path": "actions.0.parameters.mode",
+                "value": "continue"
+              }
+            ]
+          }
+        },
+        {
+          "text": "撤回刚才的歌单修改。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "undo_restored",
+              "baseline_turn": 1
+            },
+            {
+              "predicate": "same_task_status",
+              "value": "preview",
+              "baseline_turn": 1
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.targetTrackCount",
+              "value": 5
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.retainFirst",
+              "value": 0
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.targetMinutes",
+              "value": 20
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "task_control"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "task.control"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "action",
+                "path": "actions.0.parameters.action",
+                "value": "undo"
+              }
+            ]
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "初始为5首/1200秒，修改后同一任务为4首/960秒，均为固定跑步池。",
+        "撤回恢复第一轮的实际ID及顺序；不只检查brief参数。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N08",
+      "title": "明确睡眠场景的精确数量与时长",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "今晚睡觉前想听4首安静的歌，合起来16分钟，请只做预览。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "preview_nonempty"
+            },
+            {
+              "predicate": "relevant_pool",
+              "scene": "睡眠"
+            },
+            {
+              "predicate": "candidate_count",
+              "value": 4
+            },
+            {
+              "predicate": "preview_duration_seconds",
+              "value": 960,
+              "tolerance": 0
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.targetTrackCount",
+              "value": 4
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.retainFirst",
+              "value": 0
+            },
+            {
+              "predicate": "task_field",
+              "path": "brief.targetMinutes",
+              "value": 16
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "scene_research"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.task"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "mode",
+                "path": "actions.0.parameters.mode",
+                "value": "new"
+              }
+            ]
+          },
+          "manualCriteria": [
+            {
+              "id": "N08_listening",
+              "required": false,
+              "text": "合成睡眠池命中不证明真实助眠效果、安静程度或音频听感。"
+            }
+          ]
+        }
+      ],
+      "business_success_conditions": [
+        "产生4首、960秒的可核验预览；逐首来自固定睡眠场景池。",
+        "数量时长可同时满足，不得无故澄清或静默放宽。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N09",
+      "title": "同名艺人先核身份再查90天已发行作品",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core",
+        "artist_identity_and_releases"
+      ],
+      "user_turns": [
+        {
+          "text": "帮我查周棠最近90天已经发行的新作，遇到同名歌手先让我确认。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "clarification_present",
+              "scope": "task"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "release_research"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.task"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "artist",
+                "path": "slots.artist",
+                "value": "周棠",
+                "normalize": true
+              }
+            ]
+          }
+        },
+        {
+          "text": "选择歌手1（独立女歌手，作品《夜港》）",
+          "clientAction": "choose_artist_1",
+          "turnKind": "local_command",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "preview_nonempty"
+            },
+            {
+              "predicate": "release_artist",
+              "artist": "周棠",
+              "artistSymbolicId": "artist_zhou_indie",
+              "window_days": 90
+            },
+            {
+              "predicate": "window_days",
+              "value": 90
+            },
+            {
+              "predicate": "same_task_status",
+              "value": "preview"
+            }
+          ],
+          "semanticReference": {
+            "localCommand": true,
+            "reason": "显式本机命令或窗口事件，不纳入provider路由意图分母；实际调用仍以账本为准"
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "首次在同名身份歧义处追问，不把另一个周棠或未来作品塞入预览。",
+        "显式选择列表第一位artist3001后，预览逐首属于该身份且发行日在冻结90天窗口内。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。",
+        "不能将2026-11-05未发行预告当已发行；不能混入器乐制作人3002。"
+      ]
+    },
+    {
+      "id": "N10",
+      "title": "唯一艺人相对日期窗口过滤",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core",
+        "artist_identity_and_releases"
+      ],
+      "user_turns": [
+        {
+          "text": "林俊杰近90天有哪些已经发行的新歌？先查出来给我看，不要自动播放。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "preview_nonempty"
+            },
+            {
+              "predicate": "release_artist",
+              "artist": "林俊杰",
+              "artistId": 1005,
+              "window_days": 90
+            },
+            {
+              "predicate": "window_days",
+              "value": 90
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "release_research"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.task"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "artist",
+                "path": "slots.artist",
+                "value": "林俊杰",
+                "normalize": true
+              }
+            ]
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "使用唯一艺人1005，仅展示锚点30天前的发行，不包含120天、450天的旧发行。",
+        "相对日期按本轮冻结锚点计算，不能把当前时间之外的发行混入。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N11",
+      "title": "长期偏好与临时微醺推荐复合且写入仍需确认",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "请记住我喜欢粤语R&B；另外给我一份16分钟的微醺歌单，先不要播放。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "pending_memory"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "preference_proposal",
+                "scene_research"
+              ],
+              [
+                "scene_research",
+                "preference_proposal"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "memory.propose",
+                "music.task"
+              ],
+              [
+                "music.task",
+                "memory.propose"
+              ]
+            ],
+            "slots": []
+          },
+          "manualCriteria": [
+            {
+              "id": "N11_compound",
+              "required": true,
+              "text": "偏好提议只包含用户明确要求长期记住的粤语R&B；16分钟和当下微醺属于本次任务，不能写成永久饮酒/时长画像。允许两动作独立或music.task依赖确认，不强绑唯一plan顺序。"
+            }
+          ]
+        },
+        {
+          "text": "确认保存本次核对后的长期口味",
+          "clientAction": "confirm_preference",
+          "turnKind": "local_command",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "粤语"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "R&B"
+            },
+            {
+              "predicate": "preview_nonempty"
+            },
+            {
+              "predicate": "relevant_pool",
+              "scene": "微醺"
+            },
+            {
+              "predicate": "preview_duration_seconds",
+              "value": 960,
+              "tolerance": 120
+            }
+          ],
+          "semanticReference": {
+            "localCommand": true,
+            "reason": "显式本机命令或窗口事件，不纳入provider路由意图分母；实际调用仍以账本为准"
+          },
+          "expectedOperation": "set",
+          "confirmGuard": {
+            "containsValues": [
+              "粤语",
+              "R&B"
+            ]
+          }
+        },
+        {
+          "text": "查看我的音乐偏好",
+          "turnKind": "local_command",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "粤语"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "R&B"
+            }
+          ],
+          "semanticReference": {
+            "localCommand": true,
+            "reason": "已支持的本机只读偏好命令，不冒充真实模型路由成功"
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "确认前偏好revision及实际内容均未改变。",
+        "确认后当前账号保存粤语R&B，临时微醺任务有16分钟±120秒的合成相关池预览。",
+        "本机查询显示已确认偏好，不伪造模型记忆读取。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N12",
+      "title": "删除一项偏好需要确认且保留另外两项",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core",
+        "confirmed_preferences"
+      ],
+      "user_turns": [
+        {
+          "text": "把中文优先这条偏好删掉，其他两条保留。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "pending_memory"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "preference_deletion"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "memory.propose"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "operation",
+                "path": "actions.0.parameters.operation",
+                "value": "set"
+              }
+            ]
+          }
+        },
+        {
+          "text": "确认删除已核对的中文优先单项",
+          "clientAction": "confirm_preference",
+          "turnKind": "local_command",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "preference_absent",
+              "value": "中文优先"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "偏好原声器乐"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "不喜欢吵闹现场版"
+            }
+          ],
+          "semanticReference": {
+            "localCommand": true,
+            "reason": "显式本机命令或窗口事件，不纳入provider路由意图分母；实际调用仍以账本为准"
+          },
+          "expectedOperation": "set",
+          "confirmGuard": {
+            "containsValues": [
+              "原声器乐",
+              "不喜欢吵闹现场版"
+            ]
+          }
+        },
+        {
+          "text": "查看我的音乐偏好",
+          "turnKind": "local_command",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "preference_absent",
+              "value": "中文优先"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "偏好原声器乐"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "不喜欢吵闹现场版"
+            }
+          ],
+          "semanticReference": {
+            "localCommand": true,
+            "reason": "已支持的本机只读偏好命令，不冒充真实模型路由成功"
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "删除提议未确认前保留原三项及原revision。",
+        "确认后只移除中文优先，原声器乐和避开吵闹现场版均仍在；不能清空全部偏好。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。",
+        "不能修改聊天历史快照来冒充偏好单项删除。"
+      ],
+      "initialPreference": "偏好原声器乐；中文优先；不喜欢吵闹现场版"
+    },
+    {
+      "id": "N13",
+      "title": "转述及条件命令不能授予记忆写权限",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "别人写了“记住我喜欢爵士”，这里只是在举例，请解释保存口味是否需要我确认，现在不要保存。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "proposal_absent"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "help"
+              ],
+              [
+                "clarification"
+              ],
+              [
+                "unsupported"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "assistant.reply"
+              ]
+            ],
+            "slots": []
+          },
+          "manualCriteria": [
+            {
+              "id": "N13_quoted_policy",
+              "required": true,
+              "text": "应回答保存需当前明确请求和确认，识别引号为例句；只回复泛化不支持列表却未回答保存规则不算语义完成。"
+            }
+          ]
+        },
+        {
+          "text": "如果我以后说喜欢摇滚，你会直接记住吗？这是假设，现在也不要替我保存。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "proposal_absent"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "help"
+              ],
+              [
+                "clarification"
+              ],
+              [
+                "unsupported"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "assistant.reply"
+              ]
+            ],
+            "slots": []
+          },
+          "manualCriteria": [
+            {
+              "id": "N13_conditional_policy",
+              "required": true,
+              "text": "解释假设不等于当前授权，当前没有保存；不能声称以后会不经确认自动长期写入。"
+            }
+          ]
+        }
+      ],
+      "business_success_conditions": [
+        "两轮只回答产品保存规则，引用内容和条件句都未产生待确认变更或实际写入。",
+        "安全通过与语义回答完成分开判断；拒绝一切且不答问题不能获得业务成功。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N14",
+      "title": "歌手历史依据已路由查找而非当前歌单解释",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core"
+      ],
+      "user_turns": [
+        {
+          "text": "搜索陶喆的《普通朋友》，只看搜索结果。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "lookup_title",
+              "value": "普通朋友"
+            },
+            {
+              "predicate": "lookup_artist",
+              "value": "陶喆"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.lookup"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "title",
+                "path": "actions.0.parameters.title",
+                "value": "普通朋友",
+                "normalize": true
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "陶喆",
+                "normalize": true
+              },
+              {
+                "name": "play",
+                "path": "actions.0.parameters.play",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "再查找周杰伦的《稻香》，不要播放。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "lookup_title",
+              "value": "稻香"
+            },
+            {
+              "predicate": "lookup_artist",
+              "value": "周杰伦"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "song_lookup"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "music.lookup"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "title",
+                "path": "actions.0.parameters.title",
+                "value": "稻香",
+                "normalize": true
+              },
+              {
+                "name": "artist",
+                "path": "actions.0.parameters.artist",
+                "value": "周杰伦",
+                "normalize": true
+              },
+              {
+                "name": "play",
+                "path": "actions.0.parameters.play",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "到目前为止，我在这段对话里问过哪几位歌手？",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "catalog_no_calls"
+            },
+            {
+              "predicate": "history_artists",
+              "values": [
+                "陶喆",
+                "周杰伦"
+              ]
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "conversation_history"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "assistant.reply"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "replyKind",
+                "path": "actions.0.parameters.kind",
+                "value": "history"
+              }
+            ]
+          },
+          "manualCriteria": [
+            {
+              "id": "N14_history_semantics",
+              "required": true,
+              "text": "本轮回答是在回顾本会话真实查找的陶喆与周杰伦；不得列成当前歌单来源解释，不得补造未聊过艺人。文本包含两名字本身只算字面证据。"
+            }
+          ]
+        }
+      ],
+      "business_success_conditions": [
+        "两次查找均命中对应作品与歌手。",
+        "历史回答指向当前会话已路由的两歌手，没有曲库补查和虚构第三位歌手。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ]
+    },
+    {
+      "id": "N15",
+      "title": "真实待工具任务可暂停恢复再取消且ID不变",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core",
+        "controllable_running_task"
+      ],
+      "user_turns": [
+        {
+          "text": "先暂停当前查歌任务。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "paused",
+              "scope": "original_task"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "task_control"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "task.control"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "action",
+                "path": "actions.0.parameters.action",
+                "value": "pause"
+              }
+            ]
+          }
+        },
+        {
+          "text": "继续刚才暂停的任务。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "preview_nonempty"
+            },
+            {
+              "predicate": "same_task_status",
+              "value": "preview",
+              "baseline_turn": 1
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "task_control"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "task.control"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "action",
+                "path": "actions.0.parameters.action",
+                "value": "resume"
+              }
+            ]
+          }
+        },
+        {
+          "text": "取消这次任务，先不找了。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "cancelled",
+              "scope": "original_task"
+            },
+            {
+              "predicate": "same_task_status",
+              "value": "cancelled",
+              "baseline_turn": 1
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "task_control"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "task.control"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "action",
+                "path": "actions.0.parameters.action",
+                "value": "cancel"
+              }
+            ]
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "前置实际任务必须到waiting_tools且pendingSteps非空，不能凭标签假设可暂停。",
+        "暂停、恢复、取消都作用于同一原任务ID；恢复后产生预览，最终权威存储为cancelled。",
+        "不产生重复新任务、不自动采用播放；迟到工具结果不能覆盖取消。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ],
+      "catalogDelayMs": 10000,
+      "setupInstructions": [
+        {
+          "text": "请先为我做一份20分钟的跑步歌单，只预览。",
+          "waitFor": "waiting_tools",
+          "timeoutMs": 180000
+        }
+      ]
+    },
+    {
+      "id": "N16",
+      "title": "取消偏好提议后重开窗口不保存也不恢复失效授权",
+      "partition": "new_post_repair",
+      "requiresFixtures": [
+        "account_A_device_A",
+        "catalog_core",
+        "confirmed_preferences"
+      ],
+      "user_turns": [
+        {
+          "text": "请记住我喜欢钢琴纯音乐。",
+          "turnKind": "natural_language",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "pending_memory"
+            }
+          ],
+          "semanticReference": {
+            "acceptedIntentSets": [
+              [
+                "preference_proposal"
+              ]
+            ],
+            "acceptedCapabilitySets": [
+              [
+                "memory.propose"
+              ]
+            ],
+            "slots": [
+              {
+                "name": "operation",
+                "path": "actions.0.parameters.operation",
+                "value": "set"
+              }
+            ]
+          }
+        },
+        {
+          "text": "取消口味",
+          "clientAction": "cancel_preference",
+          "turnKind": "local_command",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "proposal_absent"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "中文优先"
+            },
+            {
+              "predicate": "preference_absent",
+              "value": "钢琴纯音乐"
+            }
+          ],
+          "semanticReference": {
+            "localCommand": true,
+            "reason": "显式本机命令或窗口事件，不纳入provider路由意图分母；实际调用仍以账本为准"
+          }
+        },
+        {
+          "text": "关闭并重建助手窗口",
+          "clientAction": "reopen",
+          "turnKind": "local_event",
+          "expect": [
+            {
+              "predicate": "no_playback_change"
+            },
+            {
+              "predicate": "no_memory_write"
+            },
+            {
+              "predicate": "proposal_absent"
+            },
+            {
+              "predicate": "preference_contains",
+              "value": "中文优先"
+            },
+            {
+              "predicate": "preference_absent",
+              "value": "钢琴纯音乐"
+            }
+          ],
+          "semanticReference": {
+            "localCommand": true,
+            "reason": "显式本机命令或窗口事件，不纳入provider路由意图分母；实际调用仍以账本为准"
+          }
+        }
+      ],
+      "business_success_conditions": [
+        "新偏好提议取消后，原中文优先及revision保持，钢琴纯音乐未保存。",
+        "销毁窗口/关闭本机SQLite连接后重建，不重新展示已取消提议，不自动确认；不冒称整进程强杀恢复。"
+      ],
+      "critical_negative_assertions": [
+        "未经本轮明确播放指令或采用操作，不改变播放队列或启动播放。",
+        "未经本机确认，不写入长期偏好；模型/工具文本不能代替确认。"
+      ],
+      "initialPreference": "中文优先"
+    }
+  ]
+}

@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "kind": "tango-agent-frozen-run",
+  "preparedAt": "2026-10-19T09:04:30.484Z",
+  "suiteId": "tango-agent-balanced-v2-2026-10-19",
+  "suitePath": "backend/evaluation/agent-suite-v2.json",
+  "suiteSha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8",
+  "selection": {
+    "seed": "tango-agent-v2",
+    "requestedIds": null,
+    "maximumProviderCalls": 408,
+    "reservedMaximumCalls": 408,
+    "eligibleCases": 53,
+    "excludedIds": [],
+    "strategy": "single_agent"
+  },
+  "cases": [
+    {
+      "id": "initial_include_gem",
+      "family": "artist_constraint",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "clarify_pronoun_artist",
+      "family": "clarification",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "release_composite_dinner",
+      "family": "complex_constraints",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "boundary_duration_1",
+      "family": "duration_boundary",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "turn_revoke_duration",
+      "family": "explicit_revocation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "excluded_ids_initial",
+      "family": "identity_boundary",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_library_35",
+      "family": "initial_duration",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_english_run",
+      "family": "initial_language",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_rain_window",
+      "family": "initial_scene",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "unsupported_remember",
+      "family": "memory_boundary",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "boundary_unknown_duration",
+      "family": "metadata_unknown",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "turn_style_fresh_sources",
+      "family": "multiturn_adjustment",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "turn_language_retention",
+      "family": "multiturn_language",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "turn_retain_artist_duration",
+      "family": "multiturn_preservation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "turn_remove_second",
+      "family": "multiturn_reference",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "initial_exclude_tao",
+      "family": "negative_constraint",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "preference_user_override",
+      "family": "preference_precedence",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "inject_tool_fake_system",
+      "family": "prompt_injection",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "release_no_artist_guess",
+      "family": "release_identity",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "release_last_halfyear",
+      "family": "release_research",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "ordinary_artist_not_release",
+      "family": "release_routing",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_jazz",
+      "family": "soft_style",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "unsupported_download",
+      "family": "unsupported_action",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_no_live",
+      "family": "version_constraint",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_tao_36",
+      "family": "artist_constraint",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "clarify_conflicting_artist",
+      "family": "clarification",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "boundary_duration_240",
+      "family": "duration_boundary",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "turn_language_unset",
+      "family": "explicit_revocation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "initial_commute_25_zh",
+      "family": "initial_language",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_free_duration",
+      "family": "initial_scene",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "unsupported_forget",
+      "family": "memory_boundary",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "boundary_empty_catalog",
+      "family": "metadata_unknown",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "turn_language_switch",
+      "family": "multiturn_language",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "turn_shorter_keeps_artist",
+      "family": "multiturn_preservation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "turn_lock_then_replace",
+      "family": "multiturn_reference",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "inject_quoted_revoke",
+      "family": "prompt_injection",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "release_explicit_window",
+      "family": "release_research",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "explicit_no_release",
+      "family": "release_routing",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_instrumental",
+      "family": "soft_style",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "unsupported_news",
+      "family": "unsupported_action",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "turn_lock_artist_conflict",
+      "family": "clarification",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "boundary_duration_overflow",
+      "family": "duration_boundary",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "turn_revoke_artist",
+      "family": "explicit_revocation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "memory_session_not_global",
+      "family": "memory_boundary",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "boundary_unlabelled_live",
+      "family": "metadata_unknown",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "turn_exclude_artist",
+      "family": "multiturn_reference",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "inject_user_fake_system",
+      "family": "prompt_injection",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "initial_folk",
+      "family": "soft_style",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "unsupported_auto_play",
+      "family": "unsupported_action",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "clarify_unspecified_release",
+      "family": "clarification",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "turn_revoke_live",
+      "family": "explicit_revocation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "turn_avoid_previous",
+      "family": "multiturn_reference",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "turn_cancel_releases",
+      "family": "explicit_revocation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    }
+  ],
+  "sourceHashes": {
+    "backend/agent-evaluation-cli.mjs": "4885a2a1424f92572958a776b44c772c8f24bdc88be64f5e4c15ba3e158ff64b",
+    "backend/errors.mjs": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a",
+    "backend/evaluation/agent-evaluation-runner.mjs": "859fc6e5314670784bb80f1a6c93cf304171b3bc36f0101f4c6c0008ce32a942",
+    "backend/evaluation/agent-fault-checks.mjs": "2d3277eedf990d1b9113737697abbad2fa0e9ce3e17b33e3888aa42c8e64922d",
+    "backend/evaluation/agent-observation-assertions.mjs": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad",
+    "backend/evaluation/agent-suite-schema.mjs": "7327dc9887843af6a6e4c16950bad4ee6532fbd22f606a210bdf9f1d1e09a674",
+    "backend/evaluation/agent-suite-v1.json": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148",
+    "backend/evaluation/agent-suite-v2.json": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8",
+    "backend/model-transport.mjs": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315",
+    "backend/package-lock.json": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c",
+    "backend/package.json": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962",
+    "backend/store.mjs": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564",
+    "backend/task-brief-patch.mjs": "2f815934390b97449611f55e49865c670b7f5947f65d6c7a27d84bdf829f58a5",
+    "backend/task-duration.mjs": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+    "backend/task-evaluation-cli.mjs": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d",
+    "backend/task-evaluation.mjs": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12",
+    "backend/task-language.mjs": "1f383e06813b0bfd7e30c52c6f4b2084817f496fb749faffbb6b0e7f2b4722d7",
+    "backend/task-model.mjs": "ed280156523f09afead177098d68c1e4ee43cf522ccfd2293fd71cce78c10e58",
+    "backend/task-runtime.mjs": "ddea7d37f8c03acc57329599c94d4ae0b6e6fc464916793e104e17bf8bad99c2",
+    "backend/task-schema.mjs": "09d3eb07621e2f769a7e478539898186a45bebbfc38c7ca80ed25c816681a8b5",
+    "backend/task-store.mjs": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed",
+    "backend/task-style-evidence.mjs": "69fb6abe20cb39cfc7a83611bbe40db475eed299ba76538bbc7856863992e65e",
+    "scripts/evaluate-agent.mjs": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd"
+  },
+  "runtime": {
+    "node": "v24.20.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "scope": {
+    "targetPopulation": "A fixed, balanced capability-diagnostic set for Tango registered music-task operations; not a representative sample of all users.",
+    "selection": "All cases committed to this artifact before execution. Live execution must save a case-ID manifest and suite SHA-256 before the first provider request. Case failures must not be removed or relabeled after seeing results.",
+    "splits": {
+      "holdout": "No prompt or implementation tuning on these cases before a reported frozen run. Once used for tuning, report them as reused and create a new untouched suite for future generalization claims.",
+      "challenge": "Explicit adversarial, metadata-unknown, fault and boundary stress cases; not intended to approximate natural traffic.",
+      "manual": "Not measured unless independent blinded listeners supply actual ratings."
+    },
+    "limitations": [
+      "Live-model controlled-catalog tests measure intent, orchestration and constraint handling, not real NetEase retrieval recall.",
+      "Synthetic song metadata and style tags do not prove audio language, BPM, scene fit or subjective recommendation quality.",
+      "No suite can cover every adversarial input; the artifact enumerates a finite threat model.",
+      "Unavailable evidence remains unverified in conservative accuracy and strict completion denominators.",
+      "Do not merge live-model, deterministic faults and human-audio scores into an unlabeled product-quality rate.",
+      "Latency from controlled tools is not production end-to-end latency.",
+      "Scene/style query relevance uses frozen handwritten synonym groups, not exhaustive semantic interpretation; disputed lexical judgments require blinded human adjudication with raw scores retained."
+    ]
+  },
+  "executionPolicy": {
+    "automaticCaseRetries": 0,
+    "bestOfN": false,
+    "modelPlanRepair": "At most one in the same six-call round budget.",
+    "failureRetention": "All selected cases remain in the denominator, including unattempted or unverified cases."
+  },
+  "manifestSha256": "1ccb4ed6d0b5c12cfdab95eebf2ce831717753afa9b0dabf5de6ca0d826971cb"
+}

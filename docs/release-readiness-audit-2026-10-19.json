@@ -1,0 +1,275 @@
+{
+  "auditedAt": "2026-10-19T05:26:13.381811+00:00",
+  "scope": "Read-only source/artifact inspection plus isolated local test probes; no user database, .env, Cookie or paid provider calls. Only this audit artifact added.",
+  "verdict": {
+    "developmentDemo": "usable",
+    "assistedPrivateTesting": "conditional",
+    "standalonePrivateBeta": "blocked_pending_fixes",
+    "publicRelease": "not_ready"
+  },
+  "productionCodeChanged": false,
+  "paidProviderCalls": 0,
+  "testsThisAudit": {
+    "backendAuthAndTasks": {
+      "passed": 77,
+      "failed": 0
+    },
+    "localMusicService": {
+      "passed": 49,
+      "failed": 0
+    }
+  },
+  "dependencyAudit": {
+    "backend": {
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencyAlerts": [],
+      "exploitableFromCurrentRoutesEstablished": false,
+      "fixApplied": false
+    },
+    "service": {
+      "counts": {
+        "info": 0,
+        "low": 0,
+        "moderate": 1,
+        "high": 6,
+        "critical": 0,
+        "total": 7
+      },
+      "dependencyAlerts": [
+        {
+          "name": "basic-ftp",
+          "severity": "high",
+          "direct": false,
+          "advisories": [
+            {
+              "title": "basic-ftp: Quadratic-time CPU denial of service in Client.list() Unix directory-listing parser (RE_LINE backtracking)",
+              "url": "https://github.com/advisories/GHSA-c475-qrg2-pj4r"
+            }
+          ]
+        },
+        {
+          "name": "file-type",
+          "severity": "moderate",
+          "direct": false,
+          "advisories": [
+            {
+              "title": "file-type affected by infinite loop in ASF parser on malformed input with zero-size sub-header",
+              "url": "https://github.com/advisories/GHSA-5v7r-6r5c-r473"
+            }
+          ]
+        },
+        {
+          "name": "get-uri",
+          "severity": "high",
+          "direct": false,
+          "advisories": []
+        },
+        {
+          "name": "music-metadata",
+          "severity": "high",
+          "direct": false,
+          "advisories": [
+            {
+              "title": "music-metadata has an infinite loop vulnerability in ASF parser",
+              "url": "https://github.com/advisories/GHSA-v6c2-xwv6-8xf7"
+            },
+            {
+              "title": "music-metadata: MP4 stsd sample-entry size==0 causes a synchronous infinite loop (DoS) — unreleased regression on master",
+              "url": "https://github.com/advisories/GHSA-f94x-6692-553q"
+            },
+            {
+              "title": "music-metadata: Uncontrolled memory allocation in APEv2 parser",
+              "url": "https://github.com/advisories/GHSA-53v6-4h7p-p4gj"
+            },
+            {
+              "title": "music-metadata: ID3v2 tag size not validated before allocation, causing memory exhaustion DoS",
+              "url": "https://github.com/advisories/GHSA-jjpr-9cvf-cq55"
+            },
+            {
+              "title": "music-metadata: EBML parser trusts element lengths, allowing memory exhaustion or process abort",
+              "url": "https://github.com/advisories/GHSA-5gfj-9q3v-qfp3"
+            },
+            {
+              "title": "music-metadata: uncatchable process crash parsing a crafted `.dsf` (residual of GHSA-v6c2-xwv6-8xf7)",
+              "url": "https://github.com/advisories/GHSA-8j4c-6x6g-rq3j"
+            }
+          ]
+        },
+        {
+          "name": "NeteaseCloudMusicApi",
+          "severity": "high",
+          "direct": true,
+          "advisories": []
+        },
+        {
+          "name": "node-forge",
+          "severity": "high",
+          "direct": false,
+          "advisories": [
+            {
+              "title": "node-forge RSA PKCS#1 v1.5 signature verification accepts extra nested DigestAlgorithm elements",
+              "url": "https://github.com/advisories/GHSA-86w9-cpqp-85rv"
+            }
+          ]
+        },
+        {
+          "name": "pac-proxy-agent",
+          "severity": "high",
+          "direct": false,
+          "advisories": []
+        }
+      ],
+      "exploitableFromCurrentRoutesEstablished": false,
+      "fixApplied": false
+    }
+  },
+  "findings": [
+    {
+      "id": "release-package",
+      "priority": "before_external_install",
+      "finding": "Current debug arm64 bundle links Qt/hiredis under /opt/homebrew and starts local music adapter from repository scripts; not self-contained.",
+      "evidence": [
+        "scripts/build-macos.sh:23",
+        "neteaseclient.cpp:107",
+        "neteaseclient.cpp:216"
+      ],
+      "verification": "Read-only otool dependency inspection and source inspection."
+    },
+    {
+      "id": "release-signing",
+      "priority": "before_public_distribution",
+      "finding": "Current bundle is ad-hoc signed, has no TeamIdentifier; strict signature verification fails; release versions and target OS/dependency deployment targets need reconciliation.",
+      "evidence": [
+        "packaging/macos/Info.plist:5"
+      ],
+      "verification": "codesign -dv and codesign --verify --deep --strict; failure text: code has no resources but signature indicates they must be present."
+    },
+    {
+      "id": "constraint-retention",
+      "priority": "before_beta",
+      "finding": "Except server-owned catalogLanguage, full model Brief replacement can silently clear duration, required artist and exclusion constraints on a style-only turn.",
+      "evidence": [
+        "backend/task-runtime.mjs:258",
+        "backend/task-schema.mjs:96"
+      ],
+      "verification": "Pure local validateBrief adversarial proposal accepted; demonstrates missing guard, not a newly observed real-provider failure.",
+      "next": "Explicit field patch and deterministic merge; clearing conditions is a first-class operation."
+    },
+    {
+      "id": "budget-resume",
+      "priority": "before_beta",
+      "finding": "Resume is offered after per-run budget exhaustion but preserves exhausted runCalls and immediately fails again.",
+      "evidence": [
+        "backend/task-runtime.mjs:144",
+        "backend/task-runtime.mjs:217",
+        "radiodialog.cpp:749"
+      ],
+      "verification": "Isolated temporary SQLite and stub model, maxRunCalls=1: exhausted -> resume -> exhausted, provider calls remain 1.",
+      "next": "Distinguish per-run, total-task and daily caps; provide actionable recovery without bypassing quotas."
+    },
+    {
+      "id": "account-concurrency",
+      "priority": "before_beta",
+      "finding": "Two tasks for the same account can wait for tools then overlap model calls despite documented one-call account limit.",
+      "evidence": [
+        "backend/task-runtime.mjs:85",
+        "backend/task-runtime.mjs:218",
+        "backend/README.md:148"
+      ],
+      "verification": "Isolated in-memory SQLite/model stub reproduced simultaneousModelCalls=2. Global concurrency and daily caps remain in force.",
+      "next": "Account-level scheduler or semaphore shared by all AI routes."
+    },
+    {
+      "id": "public-cost-access",
+      "priority": "before_public_registration",
+      "finding": "Registration grants immediate operator-funded model access; no invite/approval/account verification. Multiple accounts can consume the shared daily pool.",
+      "evidence": [
+        "backend/app.mjs:99",
+        "backend/README.md:149"
+      ],
+      "next": "Invite beta, account disable/revocation, per-account and global spend visibility/kill switch."
+    },
+    {
+      "id": "data-lifecycle",
+      "priority": "before_public_registration",
+      "finding": "Server persists instruction, preference and messages in task JSON; no account/task deletion or retention cleanup and no backup/restore drill implementation.",
+      "evidence": [
+        "backend/task-runtime.mjs:88",
+        "backend/task-store.mjs:29",
+        "backend/README.md:154"
+      ],
+      "next": "Accurate data disclosure, deletion/retention policy, backup and recovery exercise."
+    },
+    {
+      "id": "public-operations",
+      "priority": "before_public_service",
+      "finding": "No verified public HTTPS deployment, process supervision, alerting or rollback/backup workflow; single-process rate/concurrency state must not be represented as multi-instance protection.",
+      "evidence": [
+        "backend/README.md:150",
+        "backend/README.md:152",
+        "backend/README.md:154"
+      ]
+    },
+    {
+      "id": "dependency-review",
+      "priority": "before_release",
+      "finding": "Music service dependency audit reports 6 high and 1 moderate dependency alerts; backend reports zero. Route reachability is not yet established.",
+      "verification": "npm audit --omit=dev --json; no install, forced fix or dependency change performed.",
+      "next": "Resolve or document each reachable/unused path; do not apply suggested forced major downgrade blindly."
+    },
+    {
+      "id": "evidence-quality",
+      "priority": "before_broader_beta",
+      "finding": "Current two passed multi-turn live cases were repeatedly tuned; no held-out success-rate or listening-quality proof. Old memory baseline excludes new Node processes and long playback.",
+      "evidence": [
+        "docs/music-task-style-fix-validation.json:1",
+        "docs/PERFORMANCE_BASELINE.md:5"
+      ],
+      "next": "Frozen unused multi-turn set, constraint/failure/latency/cost metrics, actual playback and blind comparison, full-process long-run memory profile."
+    },
+    {
+      "id": "catalog-release-basis",
+      "priority": "before_public_music_operation",
+      "finding": "Project uses a third-party NetEase adapter; no official commercial catalog authorization evidence was found in the repository. Legal eligibility is not determined by this code audit.",
+      "evidence": [
+        "service/package.json:13"
+      ],
+      "next": "Establish authorized scope and fallback service behavior; include dependency license notices."
+    }
+  ],
+  "sourceSha256": {
+    "backend/task-runtime.mjs": "a4fbca31af3ac89c4cb5d1d3be2bf78aaa04d0b8a241ec1bd8183292469a8696",
+    "backend/task-schema.mjs": "a311e715608dcbaee6b33e36287c5b98c955a4ad47456bccaf75137dc28fd056",
+    "backend/task-store.mjs": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed",
+    "backend/app.mjs": "f829d9e4e0d449578e6bb6dcc4ce6ec7c324ded206a107e5f3bf526a173db5ff",
+    "scripts/build-macos.sh": "6a1f4ae3134d3e4d2c5bce8a9c388eab38c0eccb1db105b94b9534641932d693",
+    "neteaseclient.cpp": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96",
+    "packaging/macos/Info.plist": "a921b300bc4a10027bc606ea2733c91f47fdb16884efdf7b0e963f8d2f4490d7",
+    "radiodialog.cpp": "07edfeffdd813653edd66133902ca75ab7f856f357d18d04bf75385e2cb493bc"
+  },
+  "externalPrimarySources": [
+    {
+      "title": "Apple distribution guidance",
+      "url": "https://developer.apple.com/documentation/technologyoverviews/distribution"
+    },
+    {
+      "title": "Original NetEase adapter repository archived",
+      "url": "https://github.com/Binaryify/NeteaseCloudMusicApi"
+    },
+    {
+      "title": "node-forge advisory",
+      "url": "https://github.com/advisories/GHSA-86w9-cpqp-85rv"
+    },
+    {
+      "title": "Qt licensing",
+      "url": "https://doc.qt.io/archives/qt-5.15/licensing.html"
+    }
+  ]
+}

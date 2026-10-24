@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "version": "agent-redis-v2",
+  "status": "completed",
+  "recordedAt": "2026-10-19T14:15:05.363273+00:00",
+  "scope": [
+    "Redis exact-scope validated scene-tool metadata cache",
+    "Redis Stream version notifications and authenticated SSE task progress",
+    "Qt live stage display, bounded snapshot refresh and polling fallback",
+    "Concurrent PostgreSQL cancelled-worker admission repair"
+  ],
+  "engineeringAcceptance": {
+    "full": {
+      "command": "cd backend && npm run test:storage",
+      "tests": 466,
+      "passed": 466,
+      "failed": 0,
+      "skipped": 0,
+      "dependencies": "Temporary isolated real PostgreSQL and Redis; existing backend and migration suites included"
+    },
+    "desktop": {
+      "clientAndSse": {
+        "passed": 84,
+        "failed": 0,
+        "skipped": 0
+      },
+      "dialog": {
+        "passed": 21,
+        "failed": 0,
+        "skipped": 0
+      },
+      "nativeBusinessFlow": {
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0
+      },
+      "authorizationContext": {
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0
+      },
+      "qtTotalsIncludeInitAndCleanup": true,
+      "mainApplicationBuild": "passed",
+      "screenshot": {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/progress.png",
+        "sha256": "4af1468456e81ffd7d3f4ed2f0a32f01675c83573953724d4f32bbf4c940ac50",
+        "visuallyReviewed": true
+      }
+    },
+    "coverage": [
+      "Real PostgreSQL/Redis HTTP replicas share committed metadata and final progress",
+      "Account, device, authorization epoch, complete-input and namespace isolation",
+      "Expired, future-dated, malformed, oversized, failed, empty and clarification cache results",
+      "Preserved original checkedAt; fresh release queries bypass cache",
+      "Rejected commits and cancelled revisions cannot populate or adopt cached data",
+      "Cache hits preserve locked/excluded tracks without incrementing toolCalls",
+      "SSE authentication, revoked sessions, cursors, heartbeat, bounded connections, backpressure, final state and shutdown cleanup",
+      "Atomic Redis Stream append plus TTL; lost notification/database fallback",
+      "Qt fragmented and numeric-timestamp frames, late/duplicate events, single GET flight, final-version catch-up, disconnect/reconnect and old-backend compatibility",
+      "Previous storage/migration/worker crash/quotas/idempotency regression suites"
+    ]
+  },
+  "controlledComparison": {
+    "type": "One deterministic exact-repeat scenario with a local synthetic model/catalog and real isolated Redis",
+    "tasksPerArm": 2,
+    "baseline": {
+      "deviceCatalogSteps": 2,
+      "modelCalls": 4
+    },
+    "cacheEnabled": {
+      "deviceCatalogSteps": 1,
+      "modelCalls": 4
+    },
+    "finalTrackIdsEqual": true,
+    "originalEvidenceTimePreserved": true,
+    "interpretation": "Demonstrates reuse for this exact-repeat fixture only; does not estimate online hit rate, latency improvement or recommendation accuracy."
+  },
+  "cachePolicy": {
+    "skill": "scene.research@1",
+    "maximumTtlMs": 120000,
+    "sourceEvidenceMaxAgeMs": 300000,
+    "releaseQueries": "always live",
+    "unknownAuthorizationContext": "cache disabled",
+    "failure": "miss, then existing live tool path and budgets",
+    "identity": [
+      "appUser",
+      "device",
+      "opaqueLocalAuthorizationEpoch",
+      "skillVersion",
+      "completeExactToolInput"
+    ],
+    "stored": "Whitelisted metadata and original source timestamps only; no cookies, authorization tokens, playback URLs or model reasoning"
+  },
+  "progressPolicy": {
+    "authority": "PostgreSQL business checkpoints",
+    "redisPayload": "Committed state version only",
+    "streamTtlSeconds": 3600,
+    "streamApproximateMaxLength": 128,
+    "lastEventId": "Current state version; reconnect sends latest state, not full event-history replay",
+    "desktopHealthyPollMs": 5000,
+    "desktopDisconnectedPollMs": 1000,
+    "snapshotDebounceMs": 100,
+    "serverRedisFailureFallbackMs": 2000,
+    "serverSafetySyncMs": 10000,
+    "maxConnectionsPerInstance": 100,
+    "maxConnectionsPerUserPerInstance": 2,
+    "heartbeatMs": 15000,
+    "connectionLifetimeMs": 300000,
+    "readOnlySubscription": true,
+    "percentCompletion": "not fabricated"
+  },
+  "localActivation": {
+    "backendReloaded": true,
+    "storage": "postgres",
+    "rateLimiter": "redis",
+    "agentFeaturesVersion": 2,
+    "readiness": true,
+    "clientRebuilt": true,
+    "userDatabaseMigrationRequired": false,
+    "paidProviderAttemptsThisUpgrade": 0,
+    "historicalEvaluationBudgetUnchanged": true
+  },
+  "failureAudit": [
+    {
+      "log": "full-initial",
+      "finding": "Concurrent create could return AI_BUSY while a cancelled graph promise was still winding down locally.",
+      "resolution": "Ignore the non-authoritative jobs map for PostgreSQL admission; retain live paid-call and persistent guards. Added deterministic completion regression."
+    },
+    {
+      "log": "full-second",
+      "finding": "First attempted admission repair changed an active-task Redis-outage response and did not remove the stale graph guard before model execution.",
+      "resolution": "Retained original preflight and fixed the underlying PostgreSQL jobs-map check. Final existing and new regression cases pass."
+    },
+    {
+      "log": "desktop-initial",
+      "finding": "Existing request-field allowlist required the new non-sensitive catalogContext field.",
+      "resolution": "Updated contract assertion; strict reserved fields remain protected."
+    },
+    {
+      "log": "desktop-offscreen-flow",
+      "finding": "Offscreen Qt media backend did not advance the synthetic WAV playback clock.",
+      "resolution": "Reran the actual native platform; complete business flow passed 4/4."
+    }
+  ],
+  "limitations": [
+    "No paid or fresh real-model recommendation-quality evaluation in this upgrade",
+    "No online cache-hit-rate or end-to-end latency benchmark",
+    "No public production capacity, multi-region or high-availability certification",
+    "Task progress does not replay model reasoning or offer exactly-once provider billing",
+    "Redis queues and account-synced long-term preferences remain outside this upgrade"
+  ],
+  "logs": [
+    {
+      "name": "full-final",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/full-final.txt",
+      "status": "passed",
+      "sha256": "99a7120b1a232100ec507c54e711b98fce671fe7f72a623d7851f7e5aa41a062"
+    },
+    {
+      "name": "full-initial",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/full-initial.txt",
+      "status": "historical-failure",
+      "sha256": "99a40cb5171fc2de8a89b6f55751913115ba4fb3a2bd0f5952fc97148df42e0a"
+    },
+    {
+      "name": "full-second",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/full-second.txt",
+      "status": "historical-failure",
+      "sha256": "f032518be20a9b32236187b93b6730788c92bb110694d89805d354706a61738d"
+    },
+    {
+      "name": "full-third",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/full-third.txt",
+      "status": "passed-before-final-additions",
+      "sha256": "e6574d6fd689973d7dac9678dd39e89fa612662111f1e3d768c3f9909d17b06e"
+    },
+    {
+      "name": "desktop-client",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-client.txt",
+      "status": "passed",
+      "sha256": "35c20bfbf9e185d31940b0c4ba5234f9ecb217c2637e00052c993bb1a9f62c69"
+    },
+    {
+      "name": "desktop-dialog",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-dialog.txt",
+      "status": "passed",
+      "sha256": "3c31f1862be1b14cb988c3f956c22c2914eddc1ac9c068e48163f672c69125b5"
+    },
+    {
+      "name": "desktop-native-flow",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-native-flow.txt",
+      "status": "passed",
+      "sha256": "5809eb418dce43e1ab7dc3bfc2778a9b6af3f49a8afddd05e1fef5c7d3765aa8"
+    },
+    {
+      "name": "desktop-authorization",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-authorization.txt",
+      "status": "passed",
+      "sha256": "c235b1cacaf0549d0d3b6fccc33382345c8d716ddb2656474244053b2588c2ca"
+    },
+    {
+      "name": "desktop-initial",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-initial.txt",
+      "status": "historical-failure",
+      "sha256": "6847532011d09dfeb6b1a13d981f23e26c8fd908ffb5db58dc9c4d67757f7a3e"
+    },
+    {
+      "name": "desktop-offscreen-flow",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-offscreen-flow.txt",
+      "status": "historical-environment-failure",
+      "sha256": "591bfeb49580517acf380cdd277cb1fc1a539a3022be360b98359a78c467d070"
+    },
+    {
+      "name": "app-build",
+      "path": "docs/evaluation-versions/redis-agent-v2-checks/app-build.txt",
+      "status": "passed",
+      "sha256": "dfe792457777d1a6b7fd071d6e705fc46a3b85bfa9425770e4ab11207afb1862"
+    }
+  ],
+  "sourceSnapshot": {
+    "path": "docs/evaluation-versions/redis-agent-v2-source/manifest.json",
+    "files": 191,
+    "sha256": "7378d452b8175db1e83a082b80cb0f44e75220dcc1512f50678620544255a6a3"
+  }
+}

@@ -1,0 +1,7 @@
+Captured first pytest result, before test-fixture correction.
+Command: backend_py/.venv/bin/python -m pytest backend_py/tests/test_multi_model_runtime.py -q
+Result: 1 failed, 25 passed, 3 skipped in 0.40s
+Failure: test_legacy_task_is_not_silently_migrated_to_multi_model
+MusicTaskRuntime(store=None) -> TaskStore(store) -> AttributeError: NoneType object has no attribute dialect.
+Correction: construct a valid unopened Store(tmp_path / unopened.sqlite); product assertions and code were not weakened.
+This is a transcript summary; not a full raw pytest log.

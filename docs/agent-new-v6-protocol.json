@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "version": "v6",
+  "createdAt": "2026-10-19T11:04:11.515812+00:00",
+  "purpose": "First execution of untouched new semantic combinations after v5 repairs.",
+  "authorization": {
+    "source": "Original user maximum500 plus current request to run independent new questions; the limit is not reset.",
+    "alreadyUsed": 482,
+    "maximumCumulativeCalls": 500,
+    "remainingBeforeThisVersion": 18
+  },
+  "allocations": [
+    {
+      "id": "new_semantic_combinations",
+      "cases": 3,
+      "turns": 4,
+      "newHoldoutCases": 3,
+      "knownRegressionCases": 0,
+      "selectionReservation": 24,
+      "maximumProviderCalls": 18,
+      "suite": "backend/evaluation/agent-suite-v6-holdout.json",
+      "suiteSha256": "37f2fa6dc77885f916b147ae8f08699c7a6a48172984cf440a837ca714a47f3b"
+    }
+  ],
+  "maximumAdditionalCalls": 18,
+  "maximumCumulativeAfterAllocation": 500,
+  "policy": {
+    "automaticCaseRetries": 0,
+    "bestOfN": false,
+    "modelPlanRepair": "Existing runtime permits at most one bounded repair; every provider attempt counts.",
+    "freezeBeforeCalls": true,
+    "noProductionOrGoldChangesDuringRun": true,
+    "selectionVsLiveCap": "Prepare reserves6 per turn (24) to retain all3 tasks. Actual pre-transmission boundary is18. All cases remain scored, including unattempted/unknown budget-interrupted turns.",
+    "budgetInterruptedCases": "Remain in strict denominator; distinguish budget interruption from observed semantic errors.",
+    "primaryMetrics": "New-task completion counts, complete annotated intent counts and criterion counts only; no representative all-user claim.",
+    "noPostOutcomeGoldEdits": true
+  },
+  "plannedArtifacts": {
+    "manifest": "docs/agent-new-v6-manifest.json",
+    "live": "docs/agent-new-v6-live.json",
+    "report": "docs/agent-new-v6-report.html",
+    "summary": "docs/agent-new-v6-summary.json"
+  },
+  "previousResult": "docs/agent-repair-v5-summary.json",
+  "priorBudgetLedger": "docs/agent-evaluation-cumulative-budget.json",
+  "notMeasured": [
+    "总体线上完成率与总体准确率",
+    "真实曲库召回和音频听感",
+    "会员播放",
+    "长期用户满意度",
+    "外部独立盲测",
+    "新的固定流程或多Agent配对对比",
+    "日期截止日全天完整召回",
+    "Qt偏好数据库与操作系统录音/播放副作用"
+  ],
+  "preExecutionReview": {
+    "goldReviewed": true,
+    "changesBeforeAnyProviderCall": [
+      {
+        "initialSuiteSha256": "938921901348fa473388c5afa89ef7d9347dbd3cb9cb0a57af211d1bc56439ee",
+        "at": "2026-10-19T11:06:26.697758+00:00",
+        "externalCallsSoFar": 0,
+        "changes": [
+          "Remove out-of-scope long-term memory assertion without complete observation; mark unmeasured.",
+          "Report model ranking degradation separately rather than adding an unstated user requirement.",
+          "Document finite date-window matching, not inclusive-day recall."
+        ],
+        "reviewerFindings": [
+          "Missing preview ranking getter in scoring harness needs null-safety before execution."
+        ]
+      }
+    ],
+    "productionSourceChanges": false,
+    "evaluationHarnessNullGuardFix": true
+  }
+}

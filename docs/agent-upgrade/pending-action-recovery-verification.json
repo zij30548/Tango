@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "stage": "pending-action-recovery",
+  "reviewedOn": "2026-10-24",
+  "status": "passed-with-stated-scope",
+  "headForReferenceOnly": "bb6d0bc2e3573946b4996b163515b9c0b248022e",
+  "workspace": "保留原有未提交改动；以下SHA256标识本次验收源码，HEAD不是完整工作区版本。",
+  "scope": "本机待确认动作持久化、显式续接与后台原请求只读回执。",
+  "environment": {
+    "platform": "macOS arm64 native",
+    "python": "3.12.14",
+    "qt": "5.15.19",
+    "storage": "独立临时SQLite与MySQL/Redis"
+  },
+  "behavior": [
+    "按profile/device/conversation/turn/action隔离，受限不可变计划先落盘再派发。",
+    "恢复先GET核验原路由，历史读取不授权route POST或新的模型调用。",
+    "未确认set/clear重显；偏好摘要、条目、revision、动作状态与固定回复回执同事务。",
+    "重复确认不重复保存，revision CAS拒绝包括A→B→A在内的陈旧提议。",
+    "已确认未派发须明确继续，并核验最新消息与任务版本。",
+    "dispatched恢复为unknown，只GET原requestId，未知请求不重POST。",
+    "recorded只证明提交，不证明任务完成；unknown不能证明请求从未执行。",
+    "旧请求独立观察，不切换新任务、不取消本机工具。",
+    "7天有效期；每个账号/设备/会话最多32条活跃路由，每次最多读取32条恢复记录。"
+  ],
+  "tests": {
+    "repository": {
+      "command": "python3 scripts/check-harness.py",
+      "status": "passed"
+    },
+    "quick": {
+      "command": "python3 scripts/verify-harness.py --tier quick",
+      "python": {
+        "passed": 656,
+        "failed": 0,
+        "skipped": 22
+      },
+      "node": {
+        "passed": 53,
+        "failed": 0,
+        "skipped": 0
+      },
+      "privateReport": ".local/harness-runs/20261023T181844-knqosqf_/report.json"
+    },
+    "mysql": {
+      "command": "python3 scripts/verify-harness.py --tier mysql",
+      "passed": 1198,
+      "failed": 0,
+      "skipped": 57,
+      "skipScope": "PG专属与当前存储不适用用例，逐项原因保留在日志。",
+      "privateReport": ".local/harness-runs/20261023T181025-sfgtivx8/report.json"
+    },
+    "native": {
+      "command": "python3 scripts/verify-harness.py --tier native",
+      "suites": {
+        "hosted_flow_test": {
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0
+        },
+        "music_task_flow_test": {
+          "passed": 5,
+          "failed": 0,
+          "skipped": 0
+        },
+        "routing_flow_test": {
+          "passed": 31,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      "includesLifecycleChecks": true,
+      "privateReport": ".local/harness-runs/20261023T181845-06g3sud6/report.json"
+    },
+    "targetedQt": {
+      "preferenceitems": {
+        "passed": 15,
+        "failed": 0,
+        "skipped": 0,
+        "privateLog": ".local/confirmation-storage-test/storage-tests-final.txt"
+      },
+      "routing_flow": {
+        "passed": 31,
+        "failed": 0,
+        "skipped": 0,
+        "privateLog": ".local/pending-confirmation/routing-final-settled-send.txt"
+      },
+      "routing_client": {
+        "passed": 28,
+        "failed": 0,
+        "skipped": 0,
+        "privateLog": ".local/pending-confirmation/routing-client-final.txt"
+      },
+      "chat_assistant_flow": {
+        "passed": 14,
+        "failed": 0,
+        "skipped": 0,
+        "privateLog": ".local/pending-confirmation/chat-flow-final.txt"
+      },
+      "musictaskclient": {
+        "passed": 118,
+        "failed": 0,
+        "skipped": 0,
+        "privateLog": ".local/pending-actions-receipts/qt/full-independent-receipts.txt"
+      }
+    },
+    "requestReceiptSpecialist": {
+      "sqlite": {
+        "passed": 4,
+        "failed": 0
+      },
+      "ownedMysqlRedis": {
+        "passed": 4,
+        "failed": 0,
+        "privateLog": ".local/pending-actions-receipts/mysql-specialist.log"
+      }
+    },
+    "interpretation": "套件重叠且Qt含参数化检查和生命周期，不能相加为模型总体完成率或准确率。"
+  },
+  "preservedFailures": [
+    {
+      "kind": "改造前恢复断言失败",
+      "privateLog": ".local/pending-confirmation/routing-first.txt",
+      "resolution": "实现原路由GET核验和提议恢复。"
+    },
+    {
+      "kind": "未知快照夹具断言不当",
+      "privateLog": ".local/pending-confirmation/routing-current.txt",
+      "resolution": "改为无任务ID且只读标记存在，保留零POST断言。"
+    },
+    {
+      "kind": "并行修改中间态调用签名不一致",
+      "privateReport": ".local/harness-runs/20261023T181123-_sjgdxke/report.json",
+      "resolution": "接口完成后，干净原生构建通过。"
+    },
+    {
+      "kind": "工具夹具生命周期/版本不一致",
+      "privateLog": ".local/pending-actions-receipts/qt/independent-diagnostic.txt",
+      "resolution": "使用exact只读恢复与显式local resume，匹配步骤revision/stateVersion，保留工具不中断断言。"
+    },
+    {
+      "kind": "发送夹具未等待回复同步",
+      "privateLog": ".local/pending-confirmation/routing-final-complete.txt",
+      "observed": {
+        "passed": 30,
+        "failed": 1
+      },
+      "resolution": "等待journalPending=false、task idle和按钮实际可用；保留业务与请求次数断言，最终31通过。"
+    },
+    {
+      "kind": "初次本机qmake相对路径错误",
+      "resolution": "修正构建目录相对路径，无产品变更。"
+    }
+  ],
+  "productReviewFixes": [
+    "旧unknown查询可能覆盖新任务：增加独立观察分支。",
+    "旧task.control可能跨话题执行：增加最新turn/confirmationTurn守卫。",
+    "动作CAS失败可能占住全局提议指针：持久更新成功后才设置指针。",
+    "确认事务失败可能使按钮不可重试：回滚后重显可编辑提议。",
+    "后台能力不可用可能使恢复队列停滞：显式失败并推进队列。"
+  ],
+  "localRuntime": {
+    "applicationBuilt": "build-macos/Tango.app",
+    "backendsRestartedAfterOwnershipVerification": true,
+    "ports": [
+      16382,
+      16383
+    ],
+    "ready": true,
+    "receiptEndpointAuthenticatedSmoke": "passed",
+    "accountUsageUnchanged": true,
+    "privateLog": ".local/pending-confirmation/runtime-smoke.json"
+  },
+  "realModelRequests": 0,
+  "realCatalogRequests": 0,
+  "langsmithCloudAcceptance": "本轮未重复；隔离测试不加载真实观测配置。",
+  "limits": [
+    "未SIGKILL整个Qt进程；验证窗口销毁、关闭连接重开同一临时SQLite文件及事务/网络故障注入。",
+    "无独立语义评测、人工听感、会员播放或生产部署验收。",
+    "仅当前设备及会话消息窗口恢复，不做云端偏好同步。",
+    "过期行保留用于拒绝重放；物理清理与全历史派生失效仍待治理。",
+    "清空队列的短效确认和播放采用沿用原明确确认机制。",
+    "不承诺供应商计费exactly-once。"
+  ],
+  "productionDataDeleted": false,
+  "commitOrPush": false,
+  "sourceSha256": {
+    "radiostore.h": "58887f8d40731a97806e3cb9b176bd3d8f685a044029c768f745373936252fa9",
+    "radiostore.cpp": "e08fb5911844dc5c4757ef11a23574dbeed14dfefb66a79a667d90fe599c4341",
+    "mainwindow.h": "1ab0ea35c82eb474dc240d398fe8fb05a031fb6ef6c3e03e74763c7f11ad4d0c",
+    "mainwindowradio.cpp": "4ca195d611901191ffdcc7bda40ae4472af18993e86fd4994779265532819022",
+    "conversationclient.h": "6b317dbcb148c42aa2951351c5d6efc57ad2608edacb647256adff3912818672",
+    "conversationclient.cpp": "64b0f22251b9907aae10eec9c6275a3b3ea0425457532c864af98112a5a3169d",
+    "appbackendclient.h": "a4ab4280730fc44339e3d280e33ca61b08006835a43733cd985f5e01c3518406",
+    "appbackendclient.cpp": "8a20441e0f7b836ea5b9978113ae92fa70adf02b07b3033baa0a6ab5da3e3f1c",
+    "musictaskclient.h": "e6f43ba64bf74266cb42b464c17dabbee3230194830347b4e527c61d31bb9812",
+    "musictaskclient.cpp": "280bd1bb8c95f1ef27bff37fcb3364d7c68552f0a75a02a92f65645e206a1714",
+    "backend_py/tango_backend/app.py": "579472b72380aad8d84d90bb1724e91fe5d4889a4be5c700928c248529014ac8",
+    "backend_py/tango_backend/task_store.py": "1b861f869ea0cbf6fb10dd4411c02913d770f0e76c5116a49092944ddb0e970b",
+    "backend_py/tests/test_task_request_receipts.py": "61e2c714bad495232eaa5d316a4ef90b0b2b0ee90c981bea416eaa622a1897b1",
+    "backend_py/tests/test_task_request_receipts_mysql.py": "061552498a2b0854638d2baec6ec275d9bb6430cdf53b3811c1a6d2b4c880080",
+    "tests/preferenceitems_test.cpp": "d654ef54b9dc40e8ad311fdc30ffc03e96fc611f436bdbcf51a6a7e250c22a08",
+    "tests/routing_flow_test.cpp": "25cdcc3344d0e6f2404873b93610bf90a353c645f0415dbbc6d276090e40887c",
+    "tests/routing_fixtures.h": "834eef1f27f45718624ed09354d6334017b0d0dc46c1f27ca5b91e2fa8068a0d",
+    "tests/routing_client_test.cpp": "e0da077e9adbf1cf306fded64313363de68286c1dffa321aca18c2ada9f63701",
+    "tests/musictaskclient_test.cpp": "282f5d2eed7b24a7c759562a7118d1257ca30a48c8cbc725251c421a4134e7bb",
+    "scripts/verify-harness.py": "0dcb3a844c59566b7ae118dbca71b7f223913aeb97a3ecd4851117a544074dcc"
+  }
+}

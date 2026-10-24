@@ -1,0 +1,1177 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T08:57:11.163572+00:00",
+  "scope": "Read-only coverage audit plus current-source isolated regressions. No production source edits, live provider, real NetEase, audio or user data access.",
+  "suite": {
+    "path": "backend/evaluation/agent-suite-v2.json",
+    "sha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8",
+    "cases": 79,
+    "liveControlledCatalogCases": 53,
+    "liveControlledCatalogTurns": 68,
+    "deterministicFaultCases": 24,
+    "humanAudioCases": 2,
+    "sampling": "Balanced finite capability diagnostic, not representative production traffic.",
+    "supersedes": {
+      "path": "agent-suite-v1.json",
+      "sha256": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148",
+      "reason": "Pre-execution independent review found scene/style and dispatched-query annotations insufficiently complete. No provider outputs or paid calls were used to select gold changes.",
+      "executedLiveBeforeSupersession": false
+    },
+    "briefConceptGroups": 29,
+    "actualToolQueryConceptGroups": 79
+  },
+  "registeredSkills": [
+    {
+      "id": "scene.research",
+      "version": 1,
+      "permission": "catalog.read",
+      "maximumAttempts": 2,
+      "timeoutMs": 45000,
+      "maximumTracks": 40
+    },
+    {
+      "id": "releases.research",
+      "version": 1,
+      "permission": "catalog.read",
+      "maximumAttempts": 2,
+      "timeoutMs": 45000,
+      "maximumTracks": 40
+    }
+  ],
+  "runsExecutedByThisAudit": [
+    {
+      "id": "qt_preference_items",
+      "executionState": "executed_this_turn",
+      "passed": 5,
+      "failed": 0,
+      "expectedReportedTestCount": 5,
+      "exitCode": 0,
+      "rawLogPath": "/private/tmp/tango-coverage-preferenceitems-results.txt",
+      "rawLogSha256": "73298c4db75dd6ba44841671ee43cbb899a1a71add42ab09119aca37dca7e9a1",
+      "sources": [
+        {
+          "path": "tests/preferenceitems_test.cpp",
+          "exists": true,
+          "sha256": "0414ebe09e044b59a32827c5d7dc461506dfd140cc1e8b2186a641cd72f8f5ec"
+        },
+        {
+          "path": "radiostore.cpp",
+          "exists": true,
+          "sha256": "456b29bb78f0c5210939708f332cbe4cbc48a269946b8f4af3fcbc8a086f3591"
+        }
+      ],
+      "note": "Fresh qmake and make from current sources; in-memory SQLite.",
+      "actualProviderRequests": 0,
+      "actualNetEaseRequests": 0,
+      "audioRequests": 0
+    },
+    {
+      "id": "qt_radio_client_and_store",
+      "executionState": "executed_this_turn",
+      "passed": 63,
+      "failed": 0,
+      "expectedReportedTestCount": 63,
+      "exitCode": 0,
+      "rawLogPath": "/private/tmp/tango-coverage-radioclient-results.txt",
+      "rawLogSha256": "d3e8b7ca8074c9d2bc50063be421d9b547da6f356c523ce76b46716ef0ef7842",
+      "sources": [
+        {
+          "path": "tests/radioclient_test.cpp",
+          "exists": true,
+          "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+        },
+        {
+          "path": "radioclient.cpp",
+          "exists": true,
+          "sha256": "1c47c72ca50df567b7b7057c607df3dfeb6765cab4c8cc9116a663a45cbb0286"
+        },
+        {
+          "path": "radiostore.cpp",
+          "exists": true,
+          "sha256": "456b29bb78f0c5210939708f332cbe4cbc48a269946b8f4af3fcbc8a086f3591"
+        },
+        {
+          "path": "appbackendclient.cpp",
+          "exists": true,
+          "sha256": "ac4be852188c744039870bed1d971899e51ef9dadc20effce3881ec07f827a5e"
+        },
+        {
+          "path": "neteaseclient.cpp",
+          "exists": true,
+          "sha256": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96"
+        }
+      ],
+      "note": "Fresh build; loopback HTTP fixtures and temporary or in-memory SQLite; no GUI or audio.",
+      "actualProviderRequests": 0,
+      "actualNetEaseRequests": 0,
+      "audioRequests": 0
+    },
+    {
+      "id": "qt_radio_dialog",
+      "executionState": "executed_this_turn",
+      "passed": 14,
+      "failed": 0,
+      "expectedReportedTestCount": 14,
+      "exitCode": 0,
+      "rawLogPath": "/private/tmp/tango-coverage-radiodialog-results.txt",
+      "rawLogSha256": "69b9a248392f241883865355b5f0c85d44bbcd1f1b1c2ca8853df718ed43e856",
+      "sources": [
+        {
+          "path": "tests/radiodialog_test.cpp",
+          "exists": true,
+          "sha256": "ba4d220f1c2c122d5a322305cee26527389d7a8f50bac7b0ed49f49f6a1c21bc"
+        },
+        {
+          "path": "radiodialog.cpp",
+          "exists": true,
+          "sha256": "b96d04b1c2572a2521abc43a2a244cc6cbb3569125681394e9c82f947086f5ab"
+        }
+      ],
+      "note": "Fresh build, QT_QPA_PLATFORM=offscreen; no playback runtime.",
+      "actualProviderRequests": 0,
+      "actualNetEaseRequests": 0,
+      "audioRequests": 0
+    },
+    {
+      "id": "qt_netease_profile",
+      "executionState": "executed_this_turn",
+      "passed": 6,
+      "failed": 0,
+      "expectedReportedTestCount": 6,
+      "exitCode": 0,
+      "rawLogPath": "/private/tmp/tango-coverage-profile-results.txt",
+      "rawLogSha256": "d2e78e41c0beec867c859c6adbcfa8f49a7a838678e52e42e6ff464db4c0025d",
+      "sources": [
+        {
+          "path": "tests/netease_profile_test.cpp",
+          "exists": true,
+          "sha256": "c537175de3b86d57cefd9572569f6c1f97b79315823bb22234c8aa592d13fe73"
+        },
+        {
+          "path": "neteaseclient.cpp",
+          "exists": true,
+          "sha256": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96"
+        }
+      ],
+      "note": "Fresh build; loopback fake server and QTemporaryDir credentials.",
+      "actualProviderRequests": 0,
+      "actualNetEaseRequests": 0,
+      "audioRequests": 0
+    },
+    {
+      "id": "node_music_service",
+      "executionState": "executed_this_turn",
+      "passed": 49,
+      "failed": 0,
+      "expectedReportedTestCount": 49,
+      "exitCode": 0,
+      "rawLogPath": "/private/tmp/tango-coverage-service-results.txt",
+      "rawLogSha256": "1ea31905f117c2b53f738d552f9cbb6e717a42f3969a03ea40ad0a6151ebbb42",
+      "sources": [
+        {
+          "path": "service/test/app.test.mjs",
+          "exists": true,
+          "sha256": "919f827ecb9343b831cf9399cac2a458135bc9135df687a0912b46c4aad7ae0f"
+        },
+        {
+          "path": "service/test/assistant.test.mjs",
+          "exists": true,
+          "sha256": "e717961a84a243e5daa6c8f0ab2a74e8481e0199adbebb18b4b638b53ab05382"
+        }
+      ],
+      "note": "Current-source test runner; fake upstream and isolated temporary profile data.",
+      "actualProviderRequests": 0,
+      "actualNetEaseRequests": 0,
+      "audioRequests": 0
+    }
+  ],
+  "rootCoordinatedRuns": {
+    "state": "planned_or_executing; confirm separate root report before citing as completed",
+    "expected": [
+      "backend test suite approximately218",
+      "Qt MusicTaskClient35",
+      "Qt MusicTaskDialog20",
+      "native MusicTaskFlow4"
+    ]
+  },
+  "historicalEvidence": [
+    {
+      "path": "docs/music-task-style-fix-validation.json",
+      "state": "historical",
+      "actualProviderAttempts": 48,
+      "notCurrentBenchmark": true
+    },
+    {
+      "path": "docs/agent-metrics-summary-2026-10-19.json",
+      "state": "historical_recomputation",
+      "tunedNativeTaskPasses": 2,
+      "nativeTasks": 2,
+      "notHeldOut": true
+    }
+  ],
+  "metricInterpretation": {
+    "reportedTestRows": "Qt totals include init/cleanup and parameterized rows. Unit-test pass counts are not independent user-task counts.",
+    "completion": "Strict per frozen task; all applicable per-turn output criteria and assertions pass. Unknown/unattempted evidence is retained and visibly separated.",
+    "intentAccuracy": "Complete annotated intent match: all explicitly annotated meaningful exact fields, scene/style concept synonyms, list membership, dates and clarification concepts must match per turn. Output status, actual dispatched query relevance and preview completion are separate. Handwritten concept aliases may need blinded human adjudication; this is not unlimited semantic accuracy.",
+    "atomAccuracy": "Conservative passed/all gold criteria, plus observed passed/(passed+failed) and evidence coverage. Report macro and micro separately.",
+    "uncertainty": "Wilson completion intervals describe the fixed diagnostic sample only. Related case families, nonrandom traffic sampling and repeated model behavior limit population inference.",
+    "mustKeepSeparate": [
+      "Live-model controlled-catalog task completion",
+      "Deterministic security/fault assertion pass rate",
+      "Actual model+real metadata native regression evidence",
+      "Human blind listening quality",
+      "Real catalog recall",
+      "Long-term personalization benefit",
+      "Production performance"
+    ]
+  },
+  "capabilities": [
+    {
+      "id": "registered_skills",
+      "name": "Only two registered bounded catalog-read skills",
+      "suiteCaseIds": [
+        "initial_rain_window",
+        "initial_free_duration",
+        "release_last_halfyear",
+        "release_explicit_window",
+        "release_composite_dinner",
+        "ordinary_artist_not_release",
+        "explicit_no_release"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/task-schema.mjs",
+          "exists": true,
+          "sha256": "09d3eb07621e2f769a7e478539898186a45bebbfc38c7ca80ed25c816681a8b5"
+        },
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "tests/musictaskclient_test.cpp",
+          "exists": true,
+          "sha256": "ac69c891b637b8a2c156af3a0c1f7de89bcdfb783b76b7212144b1524351b6d0"
+        }
+      ],
+      "evidenceState": "code_inspected_and_tests_available; root_current_rerun_pending_record",
+      "measures": "scene.research and releases.research v1; catalog.read; at most40 tracks,2attempts,45-second lease per skill.",
+      "doesNotEstablish": "No arbitrary plugin execution, dynamic marketplace, browser/news/scheduler skill or account-memory-write skill."
+    },
+    {
+      "id": "intent_understanding",
+      "name": "Initial meaningful slots and action choice",
+      "suiteCaseIds": [
+        "initial_rain_window",
+        "initial_library_35",
+        "initial_commute_25_zh",
+        "initial_english_run",
+        "initial_tao_36",
+        "initial_include_gem",
+        "initial_exclude_tao",
+        "initial_no_live",
+        "initial_instrumental",
+        "initial_jazz",
+        "initial_folk",
+        "initial_free_duration",
+        "clarify_pronoun_artist",
+        "clarify_unspecified_release",
+        "clarify_conflicting_artist",
+        "unsupported_auto_play",
+        "unsupported_download",
+        "unsupported_news",
+        "ordinary_artist_not_release",
+        "explicit_no_release",
+        "turn_lock_artist_conflict"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/agent-suite-schema.test.mjs",
+          "exists": true,
+          "sha256": "8c4d22ac7e280744bf7023b478496bec3d2e47e1add143c4856a26e18e0cab12"
+        },
+        {
+          "path": "backend/test/agent-evaluation-runner.test.mjs",
+          "exists": true,
+          "sha256": "e969493df257c8c4f92abd03ee4f5cb05bedfe967fe9c0fae34bad9f4c6416c4"
+        },
+        {
+          "path": "backend/test/task-brief-patch.test.mjs",
+          "exists": true,
+          "sha256": "18a7259444ed9dc01ecd35c1d3ac60382162731d378d8dc607da659ad5a0f7f1"
+        }
+      ],
+      "evidenceState": "frozen_53_live_model_cases_not_executed_in_this_audit",
+      "measures": "Pre-execution v2 gold includes meaningful exact slots,29 scene/style concept groups, independent clarification concepts and per-turn annotation coverage;79 actual dispatched-query concept groups independently gate task completion.",
+      "doesNotEstablish": "Passing model-transport schema tests alone cannot establish real model intent accuracy; synonymous legitimate interpretations may need independent review."
+    },
+    {
+      "id": "multiturn_constraints",
+      "name": "Multi-turn retention, changes, revocations and references",
+      "suiteCaseIds": [
+        "turn_retain_artist_duration",
+        "turn_style_fresh_sources",
+        "turn_shorter_keeps_artist",
+        "turn_revoke_duration",
+        "turn_revoke_artist",
+        "turn_revoke_live",
+        "turn_language_retention",
+        "turn_language_switch",
+        "turn_language_unset",
+        "turn_avoid_previous",
+        "turn_lock_then_replace",
+        "turn_remove_second",
+        "turn_exclude_artist",
+        "turn_cancel_releases"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/task-brief-patch.test.mjs",
+          "exists": true,
+          "sha256": "18a7259444ed9dc01ecd35c1d3ac60382162731d378d8dc607da659ad5a0f7f1"
+        },
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "tests/music_task_flow_test.cpp",
+          "exists": true,
+          "sha256": "1175e6774b81f17cd81bfa2dd8a63cc5a82a45eaea7bd3b35d6df0433345223c"
+        },
+        {
+          "path": "tests/music_task_dialog_test.cpp",
+          "exists": true,
+          "sha256": "3cf50057cc4545d9583641b9bd6bfc350900937769ba0f71e618f96d1c9d346b"
+        }
+      ],
+      "evidenceState": "fixed_fixture_tests_available; frozen_live_cases_planned",
+      "measures": "Unchanged constraints retained; explicit revocation; current preview positional references; locks, previous exclusions and language switches.",
+      "doesNotEstablish": "15 two-turn cases do not cover arbitrary conversation lengths, interrupted clarification chains, complex nested references or every ambiguous intent."
+    },
+    {
+      "id": "bounded_loop",
+      "name": "Observe-result loop, one targeted retry and budgets",
+      "suiteCaseIds": [
+        "fault_http_429",
+        "fault_http_timeout",
+        "fault_malformed_json",
+        "fault_unknown_rank_index",
+        "fault_duplicate_rank",
+        "fault_string_rank",
+        "fault_run_budget",
+        "fault_task_budget",
+        "fault_daily_budget"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "backend/test/task-runtime-guards.test.mjs",
+          "exists": true,
+          "sha256": "987d09ae6a49a74ff64a9a9f61de8cfd34427cbc7913bc44b4cf19e953bffd20"
+        },
+        {
+          "path": "backend/test/agent-adversarial-boundaries.test.mjs",
+          "exists": true,
+          "sha256": "61cdf5701b0bc4c46d8926300ad376fc40c9ec34fdfcfa4b6e387b3ae7c70d99"
+        }
+      ],
+      "evidenceState": "deterministic_fault_registry_implemented; root_current_execution_pending_record",
+      "measures": "Bounded graph transitions and model/tool attempts; failure accounting; no unbounded retry.",
+      "doesNotEstablish": "No proof of planning quality for unknown skills; no unrestricted autonomous agent loop."
+    },
+    {
+      "id": "short_term_state",
+      "name": "Task short-term state and checkpoint persistence",
+      "suiteCaseIds": [
+        "turn_avoid_previous",
+        "turn_lock_then_replace",
+        "turn_remove_second",
+        "turn_exclude_artist",
+        "fault_restart_checkpoint",
+        "fault_cancel_late_result"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "backend/test/task-runtime-guards.test.mjs",
+          "exists": true,
+          "sha256": "987d09ae6a49a74ff64a9a9f61de8cfd34427cbc7913bc44b4cf19e953bffd20"
+        },
+        {
+          "path": "tests/musictaskclient_test.cpp",
+          "exists": true,
+          "sha256": "ac69c891b637b8a2c156af3a0c1f7de89bcdfb783b76b7212144b1524351b6d0"
+        }
+      ],
+      "evidenceState": "deterministic_tests_available; current_root_rerun_pending_record",
+      "measures": "Task brief, revisions, preview versions, branch results, question and budgets persist in owned SQLite checkpoints.",
+      "doesNotEstablish": "This is structured task state, not a semantic episodic-memory retrieval benchmark."
+    },
+    {
+      "id": "explicit_long_term_preferences",
+      "name": "Explicit preference CRUD, account separation and rollback",
+      "suiteCaseIds": [
+        "unsupported_remember",
+        "unsupported_forget",
+        "memory_session_not_global",
+        "preference_user_override"
+      ],
+      "testFiles": [
+        {
+          "path": "tests/preferenceitems_test.cpp",
+          "exists": true,
+          "sha256": "0414ebe09e044b59a32827c5d7dc461506dfd140cc1e8b2186a641cd72f8f5ec"
+        },
+        {
+          "path": "tests/radioclient_test.cpp",
+          "exists": true,
+          "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+        },
+        {
+          "path": "tests/radiodialog_test.cpp",
+          "exists": true,
+          "sha256": "ba4d220f1c2c122d5a322305cee26527389d7a8f50bac7b0ed49f49f6a1c21bc"
+        },
+        {
+          "path": "tests/assistant_flow_test.cpp",
+          "exists": true,
+          "sha256": "2c334ec36232413afcf8ea5d8bcc23381e2742b207499a7007e7b32beb9f52c9"
+        },
+        {
+          "path": "backend/test/assistant.test.mjs",
+          "exists": true,
+          "sha256": "284e115245c7ae8827c15c5d002c283219a6cdbc9409eb53c0d5c5051f83c1e2"
+        }
+      ],
+      "evidenceState": "executed_this_turn: qt_preference_items5,qt_radio_client_and_store63,qt_radio_dialog14; integrated_assistant_flow_not_rerun_by_this_audit",
+      "measures": "User-confirmed structured items, retention of IDs and confirmation time, partial edits/deletion, profile separation, legacy confirmation and SQL transaction rollback.",
+      "doesNotEstablish": "No autonomous task-agent memory-write skill; legacy assistant memory proposals require explicit UI review. No measured recommendation gain, semantic retrieval quality or cross-device sync."
+    },
+    {
+      "id": "memory_authorization",
+      "name": "Memory proposals cannot silently persist user or tool text",
+      "suiteCaseIds": [
+        "unsupported_remember",
+        "unsupported_forget",
+        "inject_user_fake_system",
+        "inject_tool_fake_system",
+        "inject_quoted_revoke",
+        "memory_session_not_global"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/assistant.test.mjs",
+          "exists": true,
+          "sha256": "284e115245c7ae8827c15c5d002c283219a6cdbc9409eb53c0d5c5051f83c1e2"
+        },
+        {
+          "path": "backend/test/task-brief-patch.test.mjs",
+          "exists": true,
+          "sha256": "18a7259444ed9dc01ecd35c1d3ac60382162731d378d8dc607da659ad5a0f7f1"
+        },
+        {
+          "path": "tests/radiodialog_test.cpp",
+          "exists": true,
+          "sha256": "ba4d220f1c2c122d5a322305cee26527389d7a8f50bac7b0ed49f49f6a1c21bc"
+        },
+        {
+          "path": "tests/assistant_flow_test.cpp",
+          "exists": true,
+          "sha256": "2c334ec36232413afcf8ea5d8bcc23381e2742b207499a7007e7b32beb9f52c9"
+        }
+      ],
+      "evidenceState": "executed_this_turn: qt_radio_dialog14; backend_current_rerun_pending_record",
+      "measures": "Explicit save review and account-switch stale-editor protection; temporary scene does not become permanent preference.",
+      "doesNotEstablish": "Finite grammar and fixtures do not cover every adversarial paraphrase; generated proposals are not a completed write."
+    },
+    {
+      "id": "memory_benefit",
+      "name": "Long-term preference usefulness and drift",
+      "suiteCaseIds": [
+        "preference_user_override"
+      ],
+      "testFiles": [
+        {
+          "path": "tests/preferenceitems_test.cpp",
+          "exists": true,
+          "sha256": "0414ebe09e044b59a32827c5d7dc461506dfd140cc1e8b2186a641cd72f8f5ec"
+        },
+        {
+          "path": "tests/radioclient_test.cpp",
+          "exists": true,
+          "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+        }
+      ],
+      "evidenceState": "not_measured",
+      "measures": "Storage correctness and current-task precedence are covered separately.",
+      "doesNotEstablish": "No causal A/B comparison, long-term satisfaction, forgetting accuracy, preference drift, contradictory preference resolution or learned memory relevance measured."
+    },
+    {
+      "id": "catalog_grounding",
+      "name": "Candidate-only ranking and immutable metadata",
+      "suiteCaseIds": [
+        "excluded_ids_initial",
+        "fault_malformed_json",
+        "fault_unknown_rank_index",
+        "fault_duplicate_rank",
+        "fault_string_rank",
+        "fault_stale_tool_lease",
+        "fault_revision_race",
+        "fault_unknown_song_id",
+        "fault_tool_metadata_size"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/task-ranking.test.mjs",
+          "exists": true,
+          "sha256": "83d3dde8425e7386e1dbae500ee125b3061750cd4a9a43cd4fc7231f57cc22aa"
+        },
+        {
+          "path": "backend/test/agent-suite-schema.test.mjs",
+          "exists": true,
+          "sha256": "8c4d22ac7e280744bf7023b478496bec3d2e47e1add143c4856a26e18e0cab12"
+        },
+        {
+          "path": "tests/radioclient_test.cpp",
+          "exists": true,
+          "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+        },
+        {
+          "path": "tests/musictaskclient_test.cpp",
+          "exists": true,
+          "sha256": "ac69c891b637b8a2c156af3a0c1f7de89bcdfb783b76b7212144b1524351b6d0"
+        }
+      ],
+      "evidenceState": "executed_this_turn: qt_radio_client_and_store63,scorer21; backend_current_rerun_pending_record",
+      "measures": "Temporary ranking indices map to allowed catalog IDs; forged IDs, duplicate/order shapes and changed metadata rejected or explicitly degraded.",
+      "doesNotEstablish": "Ranking format correctness is not song recommendation accuracy, relevance or diversity quality."
+    },
+    {
+      "id": "duration",
+      "name": "Bounded selection and declared time tolerance",
+      "suiteCaseIds": [
+        "initial_library_35",
+        "boundary_duration_1",
+        "boundary_duration_240",
+        "boundary_duration_overflow",
+        "boundary_unknown_duration",
+        "boundary_unlabelled_live",
+        "boundary_empty_catalog"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/task-duration.test.mjs",
+          "exists": true,
+          "sha256": "471bc7042719dc3df4e7b72d11d1912834095662840202a0f5c9a037f94814f1"
+        },
+        {
+          "path": "backend/test/agent-suite-schema.test.mjs",
+          "exists": true,
+          "sha256": "8c4d22ac7e280744bf7023b478496bec3d2e47e1add143c4856a26e18e0cab12"
+        }
+      ],
+      "evidenceState": "deterministic_oracle_tests_available; root_current_rerun_pending_record",
+      "measures": "Independent duration sum, ±max(60seconds,10%) tolerance, fixed locks, evidence constraints, unknown durations.",
+      "doesNotEstablish": "No guarantee of exact wall-clock playback time under gaps, unavailable songs, audio latency or user skips."
+    },
+    {
+      "id": "catalog_language",
+      "name": "Source-language consistency",
+      "suiteCaseIds": [
+        "initial_commute_25_zh",
+        "initial_english_run",
+        "turn_language_retention",
+        "turn_language_switch"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/task-language.test.mjs",
+          "exists": true,
+          "sha256": "39ab1803a7e5d4aee7d8a48a3e9babc74e1c82d2fbcf522b81a2b89dd54c76f5"
+        },
+        {
+          "path": "tests/musictaskclient_test.cpp",
+          "exists": true,
+          "sha256": "ac69c891b637b8a2c156af3a0c1f7de89bcdfb783b76b7212144b1524351b6d0"
+        }
+      ],
+      "evidenceState": "fixture_tests_available; historical_two_scene_real_regressions; current_live_planned",
+      "measures": "Structured zh/en/any retention and rejecting explicitly opposite labeled provenance.",
+      "doesNotEstablish": "No recording-level vocal-language detection; mixed/unknown source tags remain uncertain."
+    },
+    {
+      "id": "release_identity_dates",
+      "name": "Release artist identity, date bounds and disambiguation",
+      "suiteCaseIds": [
+        "release_last_halfyear",
+        "release_explicit_window",
+        "release_no_artist_guess",
+        "ordinary_artist_not_release",
+        "explicit_no_release",
+        "fault_future_release",
+        "fault_artist_id_mismatch"
+      ],
+      "testFiles": [
+        {
+          "path": "service/test/assistant.test.mjs",
+          "exists": true,
+          "sha256": "e717961a84a243e5daa6c8f0ab2a74e8481e0199adbebb18b4b638b53ab05382"
+        },
+        {
+          "path": "tests/radioclient_test.cpp",
+          "exists": true,
+          "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+        },
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "tests/musictaskclient_test.cpp",
+          "exists": true,
+          "sha256": "ac69c891b637b8a2c156af3a0c1f7de89bcdfb783b76b7212144b1524351b6d0"
+        }
+      ],
+      "evidenceState": "executed_this_turn: node_music_service49,qt_radio_client_and_store63; task_backend_current_pending_record",
+      "measures": "Verified catalog artist IDs and album metadata; future/invalid dates; explicit same-name artist choice.",
+      "doesNotEstablish": "No guarantee that NetEase release catalog is exhaustive, fresh, region-complete or officially authoritative for all artists."
+    },
+    {
+      "id": "account_isolation",
+      "name": "App owner/device isolation and NetEase profile isolation",
+      "suiteCaseIds": [
+        "excluded_ids_initial",
+        "fault_cross_account_read",
+        "fault_cross_account_write"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/app.test.mjs",
+          "exists": true,
+          "sha256": "4b9dd03dc546f912f17c6c8ee68dc078f78edf5cb09371b45be38558764a709c"
+        },
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "tests/netease_profile_test.cpp",
+          "exists": true,
+          "sha256": "c537175de3b86d57cefd9572569f6c1f97b79315823bb22234c8aa592d13fe73"
+        },
+        {
+          "path": "tests/radioclient_test.cpp",
+          "exists": true,
+          "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+        },
+        {
+          "path": "service/test/app.test.mjs",
+          "exists": true,
+          "sha256": "919f827ecb9343b831cf9399cac2a458135bc9135df687a0912b46c4aad7ae0f"
+        }
+      ],
+      "evidenceState": "executed_this_turn: qt_netease_profile6,qt_radio_client_and_store63,node_music_service49; backend_current_pending_record",
+      "measures": "Foreign task access rejected; account switches invalidate callbacks; opaque profile headers; legacy guest cookie not inherited.",
+      "doesNotEstablish": "Not a full authentication pentest, compromised-device defense, multi-process identity attack test or privacy deletion assessment."
+    },
+    {
+      "id": "quota_accounting",
+      "name": "Per-run, task, daily and global budget accounting",
+      "suiteCaseIds": [
+        "fault_run_budget",
+        "fault_task_budget",
+        "fault_daily_budget"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/task-runtime-guards.test.mjs",
+          "exists": true,
+          "sha256": "987d09ae6a49a74ff64a9a9f61de8cfd34427cbc7913bc44b4cf19e953bffd20"
+        },
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "backend/test/app.test.mjs",
+          "exists": true,
+          "sha256": "4b9dd03dc546f912f17c6c8ee68dc078f78edf5cb09371b45be38558764a709c"
+        },
+        {
+          "path": "backend/test/agent-evaluation-cli.test.mjs",
+          "exists": true,
+          "sha256": "0f0af020406275bd6807204503feb30a9a8a0e9b9286fb2c3e83dfa0b0caf92f"
+        }
+      ],
+      "evidenceState": "fault_scenarios_implemented; current_root_execution_pending_record",
+      "measures": "Reservation before calls, persistent ledger, bounded corrections, visible actionable budget exhaustion.",
+      "doesNotEstablish": "No real provider invoicing reconciliation or production currency-cost accuracy."
+    },
+    {
+      "id": "concurrency",
+      "name": "Same-account serialization and bounded global concurrency",
+      "suiteCaseIds": [
+        "fault_account_parallel",
+        "fault_global_parallel"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/task-runtime-guards.test.mjs",
+          "exists": true,
+          "sha256": "987d09ae6a49a74ff64a9a9f61de8cfd34427cbc7913bc44b4cf19e953bffd20"
+        },
+        {
+          "path": "backend/test/agent-adversarial-boundaries.test.mjs",
+          "exists": true,
+          "sha256": "61cdf5701b0bc4c46d8926300ad376fc40c9ec34fdfcfa4b6e387b3ae7c70d99"
+        }
+      ],
+      "evidenceState": "fault_scenarios_implemented; current_root_execution_pending_record",
+      "measures": "Controlled concurrent task/tool returns and ignored-abort providers.",
+      "doesNotEstablish": "No distributed scheduler or multi-worker/process enforcement proof; runtime in-memory limits cannot be assumed cluster-wide."
+    },
+    {
+      "id": "recovery",
+      "name": "Checkpoint resume and uncertain calls",
+      "suiteCaseIds": [
+        "fault_http_429",
+        "fault_http_timeout",
+        "fault_run_budget",
+        "fault_task_budget",
+        "fault_daily_budget",
+        "fault_restart_checkpoint",
+        "fault_cancel_late_result"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "backend/test/task-runtime-guards.test.mjs",
+          "exists": true,
+          "sha256": "987d09ae6a49a74ff64a9a9f61de8cfd34427cbc7913bc44b4cf19e953bffd20"
+        },
+        {
+          "path": "backend/evaluation/agent-fault-checks.mjs",
+          "exists": true,
+          "sha256": "ff7b1be59ddac033d83a9c904e28f58bb94036e37cca959c51d550ef7b381382"
+        },
+        {
+          "path": "tests/musictaskclient_test.cpp",
+          "exists": true,
+          "sha256": "ac69c891b637b8a2c156af3a0c1f7de89bcdfb783b76b7212144b1524351b6d0"
+        }
+      ],
+      "evidenceState": "fault_scenarios_implemented; current_root_execution_pending_record",
+      "measures": "Reopening runtime, lease renewal, current-revision progress, no automatic replay of uncertain reservations.",
+      "doesNotEstablish": "Most backend restart fixtures close/recreate objects in one process; no OS SIGKILL during SQLite commit, disk-full, filesystem permission loss, corrupted WAL, machine reboot or actual provider response lost across process death."
+    },
+    {
+      "id": "adoption_idempotency",
+      "name": "Preview/adopt/apply confirmation and duplicate delivery",
+      "suiteCaseIds": [
+        "fault_duplicate_tool_result",
+        "fault_create_idempotency",
+        "fault_adopt_apply"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "backend/evaluation/agent-fault-checks.mjs",
+          "exists": true,
+          "sha256": "ff7b1be59ddac033d83a9c904e28f58bb94036e37cca959c51d550ef7b381382"
+        },
+        {
+          "path": "tests/music_task_flow_test.cpp",
+          "exists": true,
+          "sha256": "1175e6774b81f17cd81bfa2dd8a63cc5a82a45eaea7bd3b35d6df0433345223c"
+        },
+        {
+          "path": "tests/musictaskclient_test.cpp",
+          "exists": true,
+          "sha256": "ac69c891b637b8a2c156af3a0c1f7de89bcdfb783b76b7212144b1524351b6d0"
+        }
+      ],
+      "evidenceState": "fault_scenarios_implemented; current_root_execution_pending_record",
+      "measures": "Stable adoption receipt; explicit applied acknowledgement; request idempotency; queue/history protection in integration fixtures.",
+      "doesNotEstablish": "Exactly-once semantics across unknown external playback devices or multiple simultaneous clients are not established."
+    },
+    {
+      "id": "tool_lifecycle",
+      "name": "Tool leases, cancellation and stale results",
+      "suiteCaseIds": [
+        "fault_stale_tool_lease",
+        "fault_revision_race",
+        "fault_restart_checkpoint",
+        "fault_cancel_late_result",
+        "fault_unknown_song_id",
+        "fault_tool_metadata_size"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "tests/radioclient_test.cpp",
+          "exists": true,
+          "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+        },
+        {
+          "path": "tests/musictaskclient_test.cpp",
+          "exists": true,
+          "sha256": "ac69c891b637b8a2c156af3a0c1f7de89bcdfb783b76b7212144b1524351b6d0"
+        },
+        {
+          "path": "tests/netease_profile_test.cpp",
+          "exists": true,
+          "sha256": "c537175de3b86d57cefd9572569f6c1f97b79315823bb22234c8aa592d13fe73"
+        }
+      ],
+      "evidenceState": "executed_this_turn: qt_radio_client_and_store63,qt_netease_profile6; task_backend_current_pending_record",
+      "measures": "Stale lease/revision rejected; late callback cancellation; context destruction and account switching.",
+      "doesNotEstablish": "Does not prove uninterrupted operation under every network partition or distributed clock skew."
+    },
+    {
+      "id": "model_http_boundary",
+      "name": "Model HTTP transport, output parsing and secret redaction",
+      "suiteCaseIds": [
+        "inject_user_fake_system",
+        "inject_tool_fake_system",
+        "inject_quoted_revoke",
+        "fault_http_429",
+        "fault_http_timeout",
+        "fault_malformed_json",
+        "fault_unknown_rank_index",
+        "fault_duplicate_rank",
+        "fault_string_rank"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/app.test.mjs",
+          "exists": true,
+          "sha256": "4b9dd03dc546f912f17c6c8ee68dc078f78edf5cb09371b45be38558764a709c"
+        },
+        {
+          "path": "backend/test/radio.test.mjs",
+          "exists": true,
+          "sha256": "9401eb683b1ff166bab02113f8e2c279695293ad31c6406546f03d939e1a4664"
+        },
+        {
+          "path": "backend/test/assistant.test.mjs",
+          "exists": true,
+          "sha256": "284e115245c7ae8827c15c5d002c283219a6cdbc9409eb53c0d5c5051f83c1e2"
+        },
+        {
+          "path": "backend/test/task-ranking.test.mjs",
+          "exists": true,
+          "sha256": "83d3dde8425e7386e1dbae500ee125b3061750cd4a9a43cd4fc7231f57cc22aa"
+        },
+        {
+          "path": "backend/test/agent-evaluation-cli.test.mjs",
+          "exists": true,
+          "sha256": "0f0af020406275bd6807204503feb30a9a8a0e9b9286fb2c3e83dfa0b0caf92f"
+        }
+      ],
+      "evidenceState": "loopback_or_stubbed_HTTP_tests_available; current_root_rerun_pending_record",
+      "measures": "Timeouts, refused redirects, response size caps, envelope/schema validation, cancellation, redaction and attempt logging.",
+      "doesNotEstablish": "Loopback/stub response tests are not live Qwen service availability or arbitrary model behavior tests."
+    },
+    {
+      "id": "adversarial_finite_threat_model",
+      "name": "Prompt injection and contract adversarial cases",
+      "suiteCaseIds": [
+        "inject_user_fake_system",
+        "inject_tool_fake_system",
+        "inject_quoted_revoke",
+        "fault_malformed_json",
+        "fault_unknown_rank_index",
+        "fault_duplicate_rank",
+        "fault_string_rank",
+        "fault_stale_tool_lease",
+        "fault_revision_race",
+        "fault_cross_account_read",
+        "fault_cross_account_write",
+        "fault_unknown_song_id",
+        "fault_tool_metadata_size"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/test/agent-adversarial-boundaries.test.mjs",
+          "exists": true,
+          "sha256": "61cdf5701b0bc4c46d8926300ad376fc40c9ec34fdfcfa4b6e387b3ae7c70d99"
+        },
+        {
+          "path": "backend/test/task-brief-patch.test.mjs",
+          "exists": true,
+          "sha256": "18a7259444ed9dc01ecd35c1d3ac60382162731d378d8dc607da659ad5a0f7f1"
+        },
+        {
+          "path": "backend/test/agent-suite-schema.test.mjs",
+          "exists": true,
+          "sha256": "8c4d22ac7e280744bf7023b478496bec3d2e47e1add143c4856a26e18e0cab12"
+        }
+      ],
+      "evidenceState": "seeded_contract_suite_and_3_frozen_live_injections_available; actual_live_pending",
+      "measures": "User fake-system, quoted commands, hostile tool source, forbidden fields, unsafe IDs and finite seeded malformed values.",
+      "doesNotEstablish": "Not every attack: no adaptive red team, multilingual injection campaign, secret-bearing real tool sandbox, SSRF/cloud deployment pentest or social-engineering coverage."
+    },
+    {
+      "id": "netease_adapter_contract",
+      "name": "Actual NetEase adapter with fake upstream",
+      "suiteCaseIds": [
+        "release_last_halfyear",
+        "release_explicit_window",
+        "fault_stale_tool_lease",
+        "fault_revision_race",
+        "fault_unknown_song_id",
+        "fault_tool_metadata_size"
+      ],
+      "testFiles": [
+        {
+          "path": "service/test/app.test.mjs",
+          "exists": true,
+          "sha256": "919f827ecb9343b831cf9399cac2a458135bc9135df687a0912b46c4aad7ae0f"
+        },
+        {
+          "path": "service/test/assistant.test.mjs",
+          "exists": true,
+          "sha256": "e717961a84a243e5daa6c8f0ab2a74e8481e0199adbebb18b4b638b53ab05382"
+        },
+        {
+          "path": "tests/radioclient_test.cpp",
+          "exists": true,
+          "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+        },
+        {
+          "path": "tests/netease_profile_test.cpp",
+          "exists": true,
+          "sha256": "c537175de3b86d57cefd9572569f6c1f97b79315823bb22234c8aa592d13fe73"
+        }
+      ],
+      "evidenceState": "executed_this_turn: node_music_service49,qt_radio_client_and_store63,qt_netease_profile6",
+      "measures": "Public metadata contracts, bounded rows, identity/date validation, anonymous route behavior and profile credentials.",
+      "doesNotEstablish": "No current-run actual NetEase response freshness, real retrieval Recall@K, region availability, login durability or paid-song full-play rights verified."
+    },
+    {
+      "id": "real_model_real_catalog",
+      "name": "Real model + real metadata + native UI chain",
+      "suiteCaseIds": [],
+      "testFiles": [
+        {
+          "path": "tests/music_task_live_probe.cpp",
+          "exists": true,
+          "sha256": "7fdef7c7e096625035b5d66cb5f38c99b141676de5e6490089f50b751b5c50bc"
+        },
+        {
+          "path": "scripts/music-task-live-probe-audit.mjs",
+          "exists": true,
+          "sha256": "0ce7b6303775f94b5937d4da3a87ccc56fb08758a8a8162160683cdb3ab99289"
+        }
+      ],
+      "evidenceState": "historical_tuned_regressions_only; not_rerun_in_this_audit",
+      "measures": "Saved reading and commute native two-turn probes from earlier source version; source/tag support and locks/duration.",
+      "doesNotEstablish": "Two repeatedly tuned cases do not establish held-out success. New backend constraint patch means historical records must not be labeled current-source acceptance."
+    },
+    {
+      "id": "live_heldout_benchmark",
+      "name": "Frozen live model with controlled metadata",
+      "suiteCaseIds": [
+        "initial_rain_window",
+        "initial_library_35",
+        "initial_commute_25_zh",
+        "initial_english_run",
+        "initial_tao_36",
+        "initial_include_gem",
+        "initial_exclude_tao",
+        "initial_no_live",
+        "initial_instrumental",
+        "initial_jazz",
+        "initial_folk",
+        "initial_free_duration",
+        "clarify_pronoun_artist",
+        "clarify_unspecified_release",
+        "clarify_conflicting_artist",
+        "unsupported_auto_play",
+        "unsupported_remember",
+        "unsupported_forget",
+        "unsupported_download",
+        "unsupported_news",
+        "release_last_halfyear",
+        "release_explicit_window",
+        "release_composite_dinner",
+        "release_no_artist_guess",
+        "ordinary_artist_not_release",
+        "explicit_no_release",
+        "turn_retain_artist_duration",
+        "turn_style_fresh_sources",
+        "turn_shorter_keeps_artist",
+        "turn_revoke_duration",
+        "turn_revoke_artist",
+        "turn_revoke_live",
+        "turn_language_retention",
+        "turn_language_switch",
+        "turn_language_unset",
+        "turn_avoid_previous",
+        "turn_lock_then_replace",
+        "turn_remove_second",
+        "turn_exclude_artist",
+        "turn_cancel_releases",
+        "turn_lock_artist_conflict",
+        "inject_user_fake_system",
+        "inject_tool_fake_system",
+        "inject_quoted_revoke",
+        "memory_session_not_global",
+        "preference_user_override",
+        "excluded_ids_initial",
+        "boundary_duration_1",
+        "boundary_duration_240",
+        "boundary_duration_overflow",
+        "boundary_unknown_duration",
+        "boundary_unlabelled_live",
+        "boundary_empty_catalog"
+      ],
+      "testFiles": [
+        {
+          "path": "backend/evaluation/agent-suite-v2.json",
+          "exists": true,
+          "sha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8"
+        },
+        {
+          "path": "backend/agent-evaluation-cli.mjs",
+          "exists": true,
+          "sha256": "c872ce3e58ee326116c1f378b8a2ee025bde142e966e4cf8fec96b99db8798a7"
+        },
+        {
+          "path": "backend/evaluation/agent-suite-schema.mjs",
+          "exists": true,
+          "sha256": "1952d14f4699c7293f05e2e57791b03bfc79d5a2c1063c11df24c6d174702c29"
+        }
+      ],
+      "evidenceState": "planned_and_frozen; provider_budget_approval_pending_at_inventory_creation",
+      "measures": "53 independent case definitions and68 turns, explicit gold, attempted/unattempted records and source hashes intended.",
+      "doesNotEstablish": "Until actual run report exists, no measured held-out completion/accuracy; controlled catalog cannot measure real search recall, musical relevance or production latency."
+    },
+    {
+      "id": "subjective_audio",
+      "name": "Listening relevance and adjustment quality",
+      "suiteCaseIds": [
+        "human_scene_relevance",
+        "human_adjustment_preference"
+      ],
+      "testFiles": [],
+      "evidenceState": "not_measured",
+      "measures": "Two placeholders explicitly require independent blind listening; absent ratings remain unverified.",
+      "doesNotEstablish": "No automated tag match can establish happier/upbeat feel, scene fit, BPM, vocals or subjective improvement."
+    },
+    {
+      "id": "long_run_performance",
+      "name": "Total process memory, load, endurance and production latency",
+      "suiteCaseIds": [],
+      "testFiles": [
+        {
+          "path": "scripts/macos_memory_profile.py",
+          "exists": true,
+          "sha256": "dd7977e636a780e79e362184a7559019914b0c3a9a487dd02b4371717a86589a"
+        }
+      ],
+      "evidenceState": "not_measured_for_current_full_agent_stack",
+      "measures": "Historical four preview-round latency records exist separately.",
+      "doesNotEstablish": "No current Qt+Node+music-service total RSS endurance, p95 under concurrent users, CPU/heap leak, large library/cover cache stress or production SLO."
+    },
+    {
+      "id": "operational_disaster_recovery",
+      "name": "Disk and cross-process operational faults",
+      "suiteCaseIds": [],
+      "testFiles": [
+        {
+          "path": "backend/test/tasks.test.mjs",
+          "exists": true,
+          "sha256": "01c7710164b169275a1fe170d6054e8e5ab03d87b53838975540f8338a4f3cdf"
+        },
+        {
+          "path": "tests/preferenceitems_test.cpp",
+          "exists": true,
+          "sha256": "0414ebe09e044b59a32827c5d7dc461506dfd140cc1e8b2186a641cd72f8f5ec"
+        }
+      ],
+      "evidenceState": "partial_SQL_trigger_rollback_only; broader_faults_not_measured",
+      "measures": "Preference transaction trigger rollback and task idempotency transaction rollback are targeted logical failure checks.",
+      "doesNotEstablish": "No disk-full, corrupted database/WAL, SIGKILL mid-commit, cross-process SQLite writers, networked storage or backup restore exercise."
+    },
+    {
+      "id": "multi_agent_comparison",
+      "name": "Incremental value of dual research agents",
+      "suiteCaseIds": [],
+      "testFiles": [
+        {
+          "path": "backend/task-evaluation.mjs",
+          "exists": true,
+          "sha256": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12"
+        },
+        {
+          "path": "backend/test/task-evaluation.test.mjs",
+          "exists": true,
+          "sha256": "8432451316b5c92323cfac8bc7c1e719c8676644699a8a3165550ca150ada4e1"
+        }
+      ],
+      "evidenceState": "historical_synthetic_comparisons_only; not_current_heldout",
+      "measures": "Prior fixed/single/dual mechanics counts are retained; no new provider comparison executed by this audit.",
+      "doesNotEstablish": "No demonstrated recommendation-quality improvement, fair current-provider performance gain, or justified universal multi-agent routing."
+    },
+    {
+      "id": "release_and_legal",
+      "name": "Public distribution and operational authorization",
+      "suiteCaseIds": [],
+      "testFiles": [],
+      "evidenceState": "outside_agent_benchmark; release_audit_separate",
+      "measures": "See release-readiness-audit-2026-10-19.json for local code/deployment findings.",
+      "doesNotEstablish": "Agent correctness scores do not constitute commercial music rights, public deployment security review, app notarization or launch approval."
+    }
+  ],
+  "criticalNotMeasured": [
+    "Human blinded music relevance and preference improvement",
+    "Actual NetEase retrieval recall or NDCG with independently relevant song labels",
+    "Long-term memory benefit or drift",
+    "Actual stream-to-completion task success across account rights and unavailable tracks",
+    "Current full-stack endurance memory and production p95",
+    "OS-kill/mid-commit/disk-full/corrupt-WAL/backup-restore/cross-process recovery",
+    "Adaptive adversarial red-team beyond enumerated finite cases"
+  ],
+  "allAgentCapabilitiesCompletelyCovered": false,
+  "completeCoverageClaimAllowed": false,
+  "suiteFrozenBytesUnchangedDuringAudit": true,
+  "frozenV1Unchanged": true,
+  "scorerPreExecutionValidation": {
+    "state": "executed_this_turn",
+    "passed": 29,
+    "failed": 0,
+    "testFile": "backend/test/agent-suite-schema.test.mjs",
+    "sourceSha256": "7327dc9887843af6a6e4c16950bad4ee6532fbd22f606a210bdf9f1d1e09a674",
+    "notes": [
+      "Rejects wrong-scene previews, forged totals, explicit empty delivered catalogs and unused correct query plans.",
+      "Version1 immutable and superseded before any provider execution."
+    ]
+  }
+}

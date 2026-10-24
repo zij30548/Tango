@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "id": "tango_upgrade_acceptance_v1",
+  "purpose": "development_acceptance",
+  "createdOn": "2026-10-20",
+  "sourceBaseline": "docs/agent-upgrade/baseline-v1.json",
+  "developmentSuite": "backend/evaluation/agent-upgrade-dev-v1.json",
+  "eventContract": {
+    "module": "backend/agent-event-contract.mjs",
+    "version": 1,
+    "integrationStatus": "contract_only"
+  },
+  "historicalBudget": {
+    "ledger": "docs/agent-evaluation-cumulative-budget.json",
+    "maximum": 500,
+    "actual": 499,
+    "remaining": 1,
+    "newlyAuthorizedCalls": 0
+  },
+  "families": [
+    "conversation",
+    "routing",
+    "mcp",
+    "orchestration",
+    "memory",
+    "retrieval",
+    "monitoring"
+  ],
+  "criticalInvariants": [
+    {
+      "id": "account_credential_isolation",
+      "description": "账号和设备隔离；密钥、Cookie、会话令牌不进入公开日志、模型或其他用户上下文。"
+    },
+    {
+      "id": "catalog_grounding",
+      "description": "歌曲ID和发行事实必须有本次有效曲库证据；来源标签不能认证音频听感。"
+    },
+    {
+      "id": "confirmed_memory_write",
+      "description": "长期偏好仅在当前有效提案获得用户明确确认后写入；否定、引用与临时场景不授权写入。"
+    },
+    {
+      "id": "confirmed_playback",
+      "description": "预览与恢复不改变播放队列；当前用户确认采用后才能执行。"
+    },
+    {
+      "id": "stale_result_rejection",
+      "description": "旧revision、lease、账号或授权代次的结果不得提交到当前任务。"
+    },
+    {
+      "id": "idempotent_effects",
+      "description": "重复消息与回执不能重复产生偏好写入、播放采用或付费执行。"
+    },
+    {
+      "id": "budget_enforced",
+      "description": "每轮、每任务、账号及全局额度不能绕过；失败和不确定的已发起调用计数。"
+    },
+    {
+      "id": "uncertain_call_recovery",
+      "description": "中断恢复不自动重放不确定的付费调用；取消停止新调度并拒绝迟到结果。"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "strict_task_completion",
+      "unit": "task",
+      "denominator": "全部预选任务，包含失败、中断、缺失观察与待核验任务",
+      "unknownPolicy": "未核验不计成功，分母保留，逐题列出。"
+    },
+    {
+      "id": "intent_exact_set",
+      "unit": "turn",
+      "denominator": "全部预选且有金标的用户轮次",
+      "unknownPolicy": "缺少输出或必要参数不计正确；不把多轮当独立任务。"
+    },
+    {
+      "id": "routing_correctness",
+      "unit": "turn",
+      "denominator": "全部预选且有允许路由集合的轮次",
+      "unknownPolicy": "漏子任务、错误派发与不必要多Agent分别列出。"
+    },
+    {
+      "id": "grounded_facts",
+      "unit": "claim",
+      "denominator": "需要外部证据的可检验事实陈述",
+      "unknownPolicy": "证据不足保持未知，不能当作有依据。"
+    },
+    {
+      "id": "retrieval_relevance",
+      "unit": "query",
+      "denominator": "人工标注候选池中的查询与相关候选",
+      "unknownPolicy": "仅报告池内Recall@K/Precision@K/NDCG@K，不推广为全曲库召回。"
+    },
+    {
+      "id": "memory_correctness",
+      "unit": "operation",
+      "denominator": "预选的记忆读取、确认、冲突、删除与隔离操作",
+      "unknownPolicy": "写入成功不等于语义正确；缺少删除生效验证保持未知。"
+    },
+    {
+      "id": "recovery_correctness",
+      "unit": "task",
+      "denominator": "预选的故障、取消、恢复和重复提交任务",
+      "unknownPolicy": "结果不明与重复副作用单独列出，不当作成功恢复。"
+    },
+    {
+      "id": "efficiency",
+      "unit": "task",
+      "denominator": "全部预选任务及实际开始的工具和模型调用",
+      "unknownPolicy": "缺少耗时、tokens或费用记录标未知，不填零；报告p50/p95与样本量。"
+    }
+  ],
+  "qualityGate": {
+    "status": "blocked_pending_calibration_and_budget",
+    "thresholds": null
+  },
+  "evidencePolicy": {
+    "separateModes": true,
+    "retainFailures": true,
+    "bestOfN": false,
+    "developmentEligibleForHoldout": false
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "version": "v5",
+  "createdAt": "2026-10-19T10:14:38.748553+00:00",
+  "purpose": "Repair the three retained v4 failures and the reading source-selection bug; this version has no unseen sample.",
+  "authorization": {
+    "source": "Original authorization for at most 500 real provider requests across all versions, never reset.",
+    "maximumCumulativeCalls": 500,
+    "alreadyUsed": 451,
+    "remainingBeforeThisVersion": 49
+  },
+  "allocations": [
+    {
+      "id": "known_failure_regression",
+      "maximumProviderCalls": 41,
+      "selectionReservation": 42,
+      "cases": 3,
+      "turns": 7,
+      "newHoldoutCases": 0,
+      "knownRegressionCases": 3,
+      "suite": "backend/evaluation/agent-suite-v5-regression.json",
+      "suiteSha256": "fd9c6680789f8abb09c6037f55f1b7442a86652168604469570e19c1a9679079"
+    },
+    {
+      "id": "reading_known_regression",
+      "maximumProviderCalls": 8
+    }
+  ],
+  "maximumAdditionalCalls": 49,
+  "maximumCumulativeAfterAllocation": 500,
+  "policy": {
+    "automaticCaseRetries": 0,
+    "bestOfN": false,
+    "failuresRetained": true,
+    "freezeBeforeCalls": true,
+    "noProductionOrGoldChangesDuringRun": true,
+    "knownRegressionsNotHoldout": true,
+    "selectionVsLiveCap": "Manifest reserves 6 calls per turn (42) only to include all three cases. The actual provider boundary is capped at 41; native reading at 8. Every selected case stays in the denominator if the cap interrupts execution.",
+    "commute": "Not rerun in v5; v4 result stays historical.",
+    "historicalUnseenResult": "v4 5/8, never retroactively rescored."
+  },
+  "previousResult": "docs/agent-repair-v4-summary.json",
+  "plannedArtifacts": {
+    "live": "docs/agent-repair-v5-live.json",
+    "manifest": "docs/agent-repair-v5-manifest.json",
+    "reading": "docs/agent-repair-v5-real-reading.json",
+    "offline": "docs/agent-repair-v5-faults.json"
+  },
+  "notMeasured": [
+    "当前最终修复版的未见样本总体完成率与总体准确率",
+    "音频听感、音频语种或版本",
+    "真实曲库完整召回",
+    "长期偏好推荐收益",
+    "全体生产用户准确率",
+    "真实进程/磁盘灾难恢复"
+  ],
+  "nativeAuditPolicy": {
+    "sourceLabels": "Independent frozen vocabulary; selected IDs must join to fresh actual playlist metadata, negated, uncertain or conflicting labels stay unverified. Production matching is never imported.",
+    "scope": "same-task edit, preserved requested prefix, changed unlocked sequence, accepted ranking, freshly fetched source-label support. This does not establish initial-scene suitability, audio language, listening quality, full catalog recall or full playback.",
+    "readingOnly": true,
+    "priorNativeResultsRescored": false
+  }
+}

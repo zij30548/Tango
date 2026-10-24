@@ -1,0 +1,16 @@
+{
+  "name": "quiet-netease-service",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Loopback-only, account-authorized NetEase bridge for Tango",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "NeteaseCloudMusicApi": "4.32.0"
+  }
+}

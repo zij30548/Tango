@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "id": "tango-v7-independent-post-run-review",
+  "reviewedAt": "2026-10-19T12:12:28.531Z",
+  "reviewer": {
+    "name": "Codex /root/repair_loop_queries",
+    "role": "独立子代理事后原始证据核对",
+    "disclosure": "参与过生产检索与本次身份评测规则实现；不是外部人工裁决、人工试听或盲评。"
+  },
+  "method": "独立核对原始HTTP账本、运行检查点、已接受工具历史、固定曲库元数据及manifest；未调用评分器重新计算分数。",
+  "artifacts": {
+    "live": {
+      "path": "docs/agent-repair-v7-live.json",
+      "sha256": "1c012e53594a2de7d9a57432af8ecb71eb74785be73b695170c862b4224b6f6d"
+    },
+    "suite": {
+      "path": "backend/evaluation/agent-suite-v7-regression.json",
+      "sha256": "d3d14686f4ae22654a4cc1275a0bc0169ef03b153c34d88f45e4629d33bd2158"
+    },
+    "protocol": "docs/agent-repair-v7-protocol.json",
+    "priorLive": {
+      "path": "docs/agent-new-v6-live.json",
+      "sha256": "6c87521f11f0b800a553ae502adc8be9f71b1f2255928fbb658520982e4fdf53"
+    }
+  },
+  "conclusion": "本次两项已知修复回归的实际证据支持原报告通过结论；未发现记录范围内的隐藏重试或漏记模型调用。",
+  "originalReportedResults": {
+    "tasksCompleted": 2,
+    "tasks": 2,
+    "annotatedIntentRoundsPassed": 3,
+    "rounds": 3,
+    "criteriaPassed": 45,
+    "criteriaFailed": 0,
+    "criteriaUnverified": 0,
+    "sourceScoresModified": false
+  },
+  "callAudit": {
+    "priorCumulative": 492,
+    "thisRun": 7,
+    "cumulative": 499,
+    "userMaximum": 500,
+    "maximumThisRun": 8,
+    "allSevenTransmissionsAccounted": true,
+    "httpStatuses": [
+      200,
+      200,
+      200,
+      200,
+      200,
+      200,
+      200
+    ],
+    "caseRestartsObserved": 0,
+    "correctionCallsObserved": 0,
+    "unregisteredToolEventsObserved": 0,
+    "automaticCaseRetriesObserved": 0,
+    "scope": "仅此隔离评测进程已记录的模型HTTP请求与任务调用账本，不推断其他进程。"
+  },
+  "integrity": {
+    "sourcesUnchangedDuringRun": true,
+    "sourceHashMapsMatchManifest": true,
+    "suiteHashMatchesManifest": true,
+    "priorV6OriginalReportUnmodified": true,
+    "productionOrGoldEditedByReviewer": false
+  },
+  "cases": [
+    {
+      "id": "v7_clarification_date_carry_regression",
+      "evidencePointer": "/results/0",
+      "observedTerminal": "preview",
+      "providerSequences": [
+        1,
+        4
+      ],
+      "providerCalls": 4,
+      "modelNodes": [
+        {
+          "revision": 1,
+          "node": "understand"
+        },
+        {
+          "revision": 2,
+          "node": "understand"
+        },
+        {
+          "revision": 2,
+          "node": "shared_research"
+        },
+        {
+          "revision": 2,
+          "node": "compose"
+        }
+      ],
+      "selectedIds": [
+        926000008
+      ],
+      "independentDurationMs": 240000,
+      "identity": {
+        "artistAlias": "邓紫棋",
+        "resolvedArtist": {
+          "id": 7763,
+          "name": "邓紫棋"
+        },
+        "verifiedArtist": {
+          "id": 7763,
+          "name": "邓紫棋",
+          "requestedName": "邓紫棋",
+          "checkedAt": "2026-10-19T01:00:00.000Z"
+        }
+      },
+      "dateWindow": {
+        "since": "2026-08-01T00:00:00.000Z",
+        "until": "2026-09-30T00:00:00.000Z"
+      },
+      "currentRunHistoryCorroborated": true,
+      "acceptedToolHistoryEntries": 2,
+      "repairObserved": "缺歌手时只澄清，补充歌手后按首轮日期成功派发并生成范围内预览；未再发生v6补丁校验失败。"
+    },
+    {
+      "id": "v7_distinct_artist_roles_regression",
+      "evidencePointer": "/results/1",
+      "observedTerminal": "preview",
+      "providerSequences": [
+        5,
+        7
+      ],
+      "providerCalls": 3,
+      "modelNodes": [
+        {
+          "revision": 1,
+          "node": "understand"
+        },
+        {
+          "revision": 1,
+          "node": "shared_research"
+        },
+        {
+          "revision": 1,
+          "node": "compose"
+        }
+      ],
+      "selectedIds": [
+        924000001,
+        924000002,
+        910000001
+      ],
+      "independentDurationMs": 720000,
+      "identity": {
+        "artistAlias": "G.E.M.",
+        "resolvedArtist": {
+          "id": 7763,
+          "name": "邓紫棋"
+        },
+        "verifiedArtist": {
+          "id": 7763,
+          "name": "邓紫棋",
+          "requestedName": "G.E.M.",
+          "checkedAt": "2026-10-19T01:00:00.000Z"
+        }
+      },
+      "dateWindow": {
+        "since": "2026-10-01T00:00:00.000Z",
+        "until": "2026-10-10T00:00:00.000Z"
+      },
+      "currentRunHistoryCorroborated": true,
+      "acceptedToolHistoryEntries": 2,
+      "repairObserved": "G.E.M.由已接受的工具ID7763确认；新冻结身份判据接受合法别名，同时满足不同歌手角色、排除与12分钟约束。此业务输出在v6已符合，本次修的是身份测量规则。"
+    }
+  ],
+  "limitations": [
+    "仅2个已见任务、3轮的修复回归；不是独立新题总体完成率或全体用户准确率。",
+    "别名角色题在v6的业务结果已符合，本次更换了明确声明的身份判据；不得把该通过算作模型找歌能力提升。",
+    "实际模型配合受控合成目录，未验证真实曲库完整召回、账号权益或会员完整播放。",
+    "截止日日期容差未检验整天边界召回；实际被选发行分别为8月1日及10月1日。",
+    "未评估音频听感、人声、真实录音/操作系统副作用、长期偏好收益或生产部署稳定性。"
+  ],
+  "activity": {
+    "newProviderCalls": 0,
+    "newCatalogCalls": 0,
+    "rescored": false,
+    "productionModified": false,
+    "goldModified": false,
+    "originalReportsModified": false
+  }
+}

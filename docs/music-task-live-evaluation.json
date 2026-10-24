@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "evidenceType": "real_qwen_with_synthetic_catalog",
+  "catalogType": "synthetic_fixture",
+  "totalActualProviderAttempts": 23,
+  "attemptHistory": [
+    {
+      "attempt": 1,
+      "calls": 1,
+      "outcome": "interrupted",
+      "reason": {
+        "publicTextOmitted": true
+      }
+    },
+    {
+      "attempt": 2,
+      "calls": 22,
+      "outcome": "completed",
+      "providerAttemptCeiling": 23
+    }
+  ],
+  "notRerunAfterFixes": true,
+  "subsequentChanges": [
+    {
+      "publicTextOmitted": true
+    },
+    {
+      "publicTextOmitted": true
+    },
+    {
+      "publicTextOmitted": true
+    }
+  ],
+  "interpretation": {
+    "publicTextOmitted": true
+  },
+  "rawReport": {
+    "schemaVersion": 1,
+    "evaluationType": {
+      "publicTextOmitted": true
+    },
+    "currentDate": {
+      "publicTextOmitted": true
+    },
+    "catalogFrozenAt": {
+      "publicTextOmitted": true
+    },
+    "model": "qwen3.7-flash-2026-07-15",
+    "measured": [
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      }
+    ],
+    "notMeasured": [
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      },
+      {
+        "publicTextOmitted": true
+      }
+    ],
+    "caveat": {
+      "publicTextOmitted": true
+    },
+    "budgets": {
+      "modelCallsPerRun": 6,
+      "toolCallsPerRun": 4
+    },
+    "actualProviderCalls": 22,
+    "maximumProviderCalls": 23,
+    "strategies": [
+      {
+        "strategy": "fixed",
+        "totalModelCalls": 4,
+        "cases": [
+          {
+            "id": "composite_and_locked_revision",
+            "status": "preview",
+            "modelCalls": 4,
+            "checks": [
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "unverified",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "unmet",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "unverified",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "strategy": "single_agent",
+        "totalModelCalls": 6,
+        "cases": [
+          {
+            "id": "composite_and_locked_revision",
+            "status": "preview",
+            "modelCalls": 6,
+            "checks": [
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "unverified",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "unmet",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "unverified",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "strategy": "dual_agent",
+        "totalModelCalls": 12,
+        "cases": [
+          {
+            "id": "composite_and_locked_revision",
+            "status": "preview",
+            "modelCalls": 12,
+            "checks": [
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "unverified",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "satisfied",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              },
+              {
+                "key": {
+                  "publicTextOmitted": true
+                },
+                "status": "unverified",
+                "text": {
+                  "publicTextOmitted": true
+                },
+                "detail": {
+                  "publicTextOmitted": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "publicationMetadata": {
+    "sourceKind": "sanitized-public-extract",
+    "notice": "此文件是公开脱敏摘要，不是完整冻结原报告；原始请求响应及运行状态仅保留在本机私有备份中。原成绩、失败、跳过和不确定性未改写。",
+    "privateOriginalSha256": "957101fedcdeeeae38800bf99ec5148cbc9f777d2d2273ca5b2b3d1936911898",
+    "privateOriginalBytes": 19942,
+    "privateOriginalPreserved": true,
+    "originalVerdictsUnchanged": true,
+    "metricScalarValuesVerified": 13,
+    "rawEvidencePrivate": true,
+    "fullReplayAvailableInPublicRepository": false,
+    "redactedJsonPaths": [
+      "/attemptHistory/0/reason",
+      "/interpretation",
+      "/rawReport/catalogFrozenAt",
+      "/rawReport/caveat",
+      "/rawReport/currentDate",
+      "/rawReport/evaluationType",
+      "/rawReport/measured/0",
+      "/rawReport/measured/1",
+      "/rawReport/measured/2",
+      "/rawReport/measured/3",
+      "/rawReport/notMeasured/0",
+      "/rawReport/notMeasured/1",
+      "/rawReport/notMeasured/2",
+      "/rawReport/notMeasured/3",
+      "/rawReport/notMeasured/4",
+      "/rawReport/strategies/0/cases/0/blindReview",
+      "/rawReport/strategies/0/cases/0/checks/0/detail",
+      "/rawReport/strategies/0/cases/0/checks/0/key",
+      "/rawReport/strategies/0/cases/0/checks/0/text",
+      "/rawReport/strategies/0/cases/0/checks/1/detail",
+      "/rawReport/strategies/0/cases/0/checks/1/key",
+      "/rawReport/strategies/0/cases/0/checks/1/text",
+      "/rawReport/strategies/0/cases/0/checks/2/detail",
+      "/rawReport/strategies/0/cases/0/checks/2/key",
+      "/rawReport/strategies/0/cases/0/checks/2/text",
+      "/rawReport/strategies/0/cases/0/checks/3/detail",
+      "/rawReport/strategies/0/cases/0/checks/3/key",
+      "/rawReport/strategies/0/cases/0/checks/3/text",
+      "/rawReport/strategies/0/cases/0/checks/4/detail",
+      "/rawReport/strategies/0/cases/0/checks/4/key",
+      "/rawReport/strategies/0/cases/0/checks/4/text",
+      "/rawReport/strategies/0/cases/0/checks/5/detail",
+      "/rawReport/strategies/0/cases/0/checks/5/key",
+      "/rawReport/strategies/0/cases/0/checks/5/text",
+      "/rawReport/strategies/0/cases/0/checks/6/detail",
+      "/rawReport/strategies/0/cases/0/checks/6/key",
+      "/rawReport/strategies/0/cases/0/checks/6/text",
+      "/rawReport/strategies/0/cases/0/checks/7/detail",
+      "/rawReport/strategies/0/cases/0/checks/7/key",
+      "/rawReport/strategies/0/cases/0/checks/7/text",
+      "/rawReport/strategies/0/cases/0/error",
+      "/rawReport/strategies/0/cases/0/ids",
+      "/rawReport/strategies/0/cases/0/instruction",
+      "/rawReport/strategies/0/cases/0/lockPreserved",
+      "/rawReport/strategies/0/cases/0/question",
+      "/rawReport/strategies/0/cases/0/toolCalls",
+      "/rawReport/strategies/0/cases/0/totalDurationMs",
+      "/rawReport/strategies/1/cases/0/blindReview",
+      "/rawReport/strategies/1/cases/0/checks/0/detail",
+      "/rawReport/strategies/1/cases/0/checks/0/key",
+      "/rawReport/strategies/1/cases/0/checks/0/text",
+      "/rawReport/strategies/1/cases/0/checks/1/detail",
+      "/rawReport/strategies/1/cases/0/checks/1/key",
+      "/rawReport/strategies/1/cases/0/checks/1/text",
+      "/rawReport/strategies/1/cases/0/checks/2/detail",
+      "/rawReport/strategies/1/cases/0/checks/2/key",
+      "/rawReport/strategies/1/cases/0/checks/2/text",
+      "/rawReport/strategies/1/cases/0/checks/3/detail",
+      "/rawReport/strategies/1/cases/0/checks/3/key",
+      "/rawReport/strategies/1/cases/0/checks/3/text",
+      "/rawReport/strategies/1/cases/0/checks/4/detail",
+      "/rawReport/strategies/1/cases/0/checks/4/key",
+      "/rawReport/strategies/1/cases/0/checks/4/text",
+      "/rawReport/strategies/1/cases/0/checks/5/detail",
+      "/rawReport/strategies/1/cases/0/checks/5/key",
+      "/rawReport/strategies/1/cases/0/checks/5/text",
+      "/rawReport/strategies/1/cases/0/checks/6/detail",
+      "/rawReport/strategies/1/cases/0/checks/6/key",
+      "/rawReport/strategies/1/cases/0/checks/6/text",
+      "/rawReport/strategies/1/cases/0/checks/7/detail",
+      "/rawReport/strategies/1/cases/0/checks/7/key",
+      "/rawReport/strategies/1/cases/0/checks/7/text",
+      "/rawReport/strategies/1/cases/0/error",
+      "/rawReport/strategies/1/cases/0/ids",
+      "/rawReport/strategies/1/cases/0/instruction",
+      "/rawReport/strategies/1/cases/0/lockPreserved",
+      "/rawReport/strategies/1/cases/0/question",
+      "/rawReport/strategies/1/cases/0/toolCalls",
+      "/rawReport/strategies/1/cases/0/totalDurationMs",
+      "/rawReport/strategies/2/cases/0/blindReview",
+      "/rawReport/strategies/2/cases/0/checks/0/detail",
+      "/rawReport/strategies/2/cases/0/checks/0/key",
+      "/rawReport/strategies/2/cases/0/checks/0/text",
+      "/rawReport/strategies/2/cases/0/checks/1/detail",
+      "/rawReport/strategies/2/cases/0/checks/1/key",
+      "/rawReport/strategies/2/cases/0/checks/1/text",
+      "/rawReport/strategies/2/cases/0/checks/2/detail",
+      "/rawReport/strategies/2/cases/0/checks/2/key",
+      "/rawReport/strategies/2/cases/0/checks/2/text",
+      "/rawReport/strategies/2/cases/0/checks/3/detail",
+      "/rawReport/strategies/2/cases/0/checks/3/key",
+      "/rawReport/strategies/2/cases/0/checks/3/text",
+      "/rawReport/strategies/2/cases/0/checks/4/detail",
+      "/rawReport/strategies/2/cases/0/checks/4/key",
+      "/rawReport/strategies/2/cases/0/checks/4/text",
+      "/rawReport/strategies/2/cases/0/checks/5/detail",
+      "/rawReport/strategies/2/cases/0/checks/5/key",
+      "/rawReport/strategies/2/cases/0/checks/5/text",
+      "/rawReport/strategies/2/cases/0/checks/6/detail",
+      "/rawReport/strategies/2/cases/0/checks/6/key",
+      "/rawReport/strategies/2/cases/0/checks/6/text",
+      "/rawReport/strategies/2/cases/0/checks/7/detail",
+      "/rawReport/strategies/2/cases/0/checks/7/key",
+      "/rawReport/strategies/2/cases/0/checks/7/text",
+      "/rawReport/strategies/2/cases/0/error",
+      "/rawReport/strategies/2/cases/0/ids",
+      "/rawReport/strategies/2/cases/0/instruction",
+      "/rawReport/strategies/2/cases/0/lockPreserved",
+      "/rawReport/strategies/2/cases/0/question",
+      "/rawReport/strategies/2/cases/0/toolCalls",
+      "/rawReport/strategies/2/cases/0/totalDurationMs",
+      "/subsequentChanges/0",
+      "/subsequentChanges/1",
+      "/subsequentChanges/2"
+    ]
+  }
+}

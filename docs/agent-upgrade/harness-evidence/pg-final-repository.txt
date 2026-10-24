@@ -1,0 +1,1 @@
+Harness 仓库契约检查通过；能力缺口仍以 HARNESS_STATUS.json 为准。

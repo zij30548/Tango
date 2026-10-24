@@ -1,0 +1,129 @@
+{
+  "fixtureVersion": 1,
+  "kind": "synthetic_legacy_storage_contract",
+  "provenance": {
+    "generatedBy": "Original Node Store/TaskStore created isolated SQLite rows; original Node then read a Python-written update, password and session. No API, network, real environment or user database used.",
+    "sourceFiles": {
+      "backend/store.mjs": "19e4aed90414530f49d73a4993f0504070531c4d579866afbd13ae5fc309ae79",
+      "backend/postgres-store.mjs": "1adae0e0dd44efcf4d2e7d109c29bdce2a8811d0f4e84ede09500b23419d4958",
+      "backend/task-store.mjs": "bdef8f6bbd553eb16ced6f4c93b945ad6ab77d67043f929969c9d48d3442e894",
+      "backend/postgres-task-store.mjs": "39097df722ad264f700bc9689b977fdfc47300cdc46b0b5f321b82ed7868511d",
+      "backend/storage-auth.mjs": "2a783aea8259bbe5eec7f638a3cc0c69701568cc1acdaa7087c6fdff315b0f4e",
+      "backend/storage-task-helpers.mjs": "39454eed18a336b709b0549e275fab0ee212554ef792ddb0742153e74ea338f0"
+    },
+    "runtimeReadbackAtGeneration": {
+      "passwordMatches": true,
+      "sessionMatches": true,
+      "snapshotMatches": true
+    },
+    "scope": "Frozen historical cross-language contract. Routine tests do not execute Node; this does not establish new live Node compatibility or model accuracy."
+  },
+  "now": 1792454400000,
+  "password": "cross-language-fixture-口令",
+  "original": {
+    "user": {
+      "id": "284d760e-4842-4e82-89f3-97fc40f6fa36",
+      "username": "node_fixture"
+    },
+    "sessionToken": "AkmTS8vslwlEDxffR9z1Vl9pXUTHT2_TTnZt9oqFAy4",
+    "taskId": "f9bfb6f9-4e75-407d-8932-73cf11b749dc",
+    "request": {
+      "deviceId": "interop_fixture_device",
+      "requestId": "2c0828e4-2828-4b99-a5b1-4c138774cf76",
+      "instruction": "晚风中的粤语音乐",
+      "excludedIds": []
+    }
+  },
+  "tables": {
+    "users": [
+      {
+        "id": "284d760e-4842-4e82-89f3-97fc40f6fa36",
+        "username": "node_fixture",
+        "username_key": "node_fixture",
+        "password_salt": "41d1460d513223a80efb11aa20a6158a",
+        "password_hash": "scrypt-v2$e2bb60b9b42744e8f1fef2ff96a13a553a3fd81700fad9461b59c2b25f88b6033beb04c99a47c71d96b3689946f87c45f4abfd72d7a483096188b12cc7086079",
+        "created_at": 1792454400000
+      }
+    ],
+    "sessions": [
+      {
+        "token_hash": "6facdcfb14c58d8ba6e87ae8d1d01bb6be6666d74289e0714110b42f78fa7c5c",
+        "user_id": "284d760e-4842-4e82-89f3-97fc40f6fa36",
+        "created_at": 1792454400000,
+        "expires_at": 1793059200000
+      }
+    ],
+    "music_account_quota": [
+      {
+        "user_id": "284d760e-4842-4e82-89f3-97fc40f6fa36",
+        "daily_limit": 30,
+        "total_limit": 300,
+        "enabled": 1,
+        "updated_at": 1792454400000
+      }
+    ],
+    "music_tasks": [
+      {
+        "id": "f9bfb6f9-4e75-407d-8932-73cf11b749dc",
+        "user_id": "284d760e-4842-4e82-89f3-97fc40f6fa36",
+        "device_id": "interop_fixture_device",
+        "revision": 1,
+        "status": "preview",
+        "snapshot_json": "{\"id\":\"f9bfb6f9-4e75-407d-8932-73cf11b749dc\",\"userId\":\"284d760e-4842-4e82-89f3-97fc40f6fa36\",\"deviceId\":\"interop_fixture_device\",\"revision\":1,\"stateVersion\":1,\"status\":\"preview\",\"createdAt\":1792454400000,\"updatedAt\":1792454400000,\"runId\":\"ca5bb448-4971-4dee-9b22-adbb5c42b800\",\"pendingSteps\":[],\"budget\":{\"totalCalls\":0,\"runCalls\":0},\"messages\":[],\"preview\":{\"title\":\"Node 初始歌单\",\"tracks\":[{\"id\":1001,\"title\":\"晚风\",\"artist\":\"合成艺人\"}]},\"trace\":[]}",
+        "created_at": 1792454400000,
+        "updated_at": 1792454400000
+      }
+    ],
+    "music_task_requests": [
+      {
+        "user_id": "284d760e-4842-4e82-89f3-97fc40f6fa36",
+        "device_id": "interop_fixture_device",
+        "request_id": "2c0828e4-2828-4b99-a5b1-4c138774cf76",
+        "payload_hash": "d8529855062dcb7e01ec88f11d27fc394a902af54eace54e587c822f6e2bb939",
+        "task_id": "f9bfb6f9-4e75-407d-8932-73cf11b749dc"
+      }
+    ]
+  },
+  "expectedUpdatedSnapshot": {
+    "id": "f9bfb6f9-4e75-407d-8932-73cf11b749dc",
+    "userId": "284d760e-4842-4e82-89f3-97fc40f6fa36",
+    "deviceId": "interop_fixture_device",
+    "revision": 1,
+    "stateVersion": 2,
+    "status": "preview",
+    "createdAt": 1792454400000,
+    "updatedAt": 1792454400001,
+    "runId": "ca5bb448-4971-4dee-9b22-adbb5c42b800",
+    "pendingSteps": [],
+    "budget": {
+      "totalCalls": 0,
+      "runCalls": 0
+    },
+    "messages": [],
+    "preview": {
+      "title": "Python 更新歌单",
+      "tracks": [
+        {
+          "id": 1001,
+          "title": "晚风",
+          "artist": "合成艺人"
+        }
+      ]
+    },
+    "trace": []
+  },
+  "passwordFormat": {
+    "saltHexLength": 32,
+    "hashPrefix": "scrypt-v2$",
+    "derivedHexLength": 128,
+    "N": 32768,
+    "r": 8,
+    "p": 3,
+    "derivedBytes": 64
+  },
+  "sessionFormat": {
+    "rawTokenLength": 43,
+    "storedHash": "sha256-hex",
+    "defaultDurationMs": 604800000
+  }
+}

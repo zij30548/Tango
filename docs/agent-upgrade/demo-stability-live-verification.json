@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "stage": "demo-stability-live-v1",
+  "recordedAt": "2026-10-24T12:47:59.029903+00:00",
+  "status": "executed_once_with_residual_failures",
+  "privateRun": ".local/demo-stability-live/live-desktop-20261024T123339Z-2703f133",
+  "scope": "真实Qt测试驱动正式MainWindow/RadioDialog、FastAPI/LangGraph、真实Flash及匿名网易云；隔离SQLite；已知演示回归，不是独立新题或总体准确率",
+  "authorization": {
+    "newMaximum": 60,
+    "started": 8,
+    "remaining": 52,
+    "oldUiPreparationRequests": 0,
+    "allRolesFailuresAndUnknownCount": true,
+    "automaticRerun": false,
+    "remainingCarriesAutomatically": false
+  },
+  "modelRequests": {
+    "errorCodes": {},
+    "outcomes": {
+      "responded": 8
+    },
+    "roles": {
+      "route:flash": 2,
+      "task:flash": 6
+    },
+    "started": 8,
+    "usage": {
+      "completion_tokens": 1038,
+      "prompt_tokens": 16185,
+      "total_tokens": 17223
+    },
+    "usageKnownRequests": 8,
+    "usageUnknownRequests": 0
+  },
+  "observations": 18,
+  "actualChatInputs": 16,
+  "windowRebuildEvents": 1,
+  "conditionalArtistEventNotNeeded": 1,
+  "assessment": {
+    "kind": "agent_review_of_observed_facts_not_human_listening",
+    "objectiveWorkflowPass": 4,
+    "failed": 1,
+    "unverified": 1,
+    "totalTasks": 6,
+    "overallSemanticAccuracy": null,
+    "productOverallCompletionRate": null,
+    "tasks": [
+      {
+        "id": "LIVE01",
+        "status": "unverified",
+        "observations": [
+          0,
+          1
+        ],
+        "facts": "帮助及只读权限正确；实际找到十年候选，录音室元数据unknown，未自动播放",
+        "limits": "不能说已核验录音室命中"
+      },
+      {
+        "id": "LIVE02",
+        "status": "passed",
+        "observations": [
+          2,
+          3,
+          4
+        ],
+        "facts": "真实6曲1200003毫秒；偏好确认前revision0，明确确认后revision1，未采用前队列不变",
+        "limits": "主观微醺/粤语相关性与听感未作人工评审"
+      },
+      {
+        "id": "LIVE03",
+        "status": "passed_with_display_issue",
+        "observations": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "facts": "原任务、锁定前三ID/顺序保留，40分2399999毫秒；撤回恢复原6IDs及顺序",
+        "limits": "原锁检查文字陈旧显示0；后来只离线修复"
+      },
+      {
+        "id": "LIVE04",
+        "status": "passed_with_display_issue",
+        "observations": [
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "facts": "同会话任务窗口重建恢复，调用总数不变；队列与预览6IDs一致，后台adopted，同采用ID/appliedAt，位置812到2451毫秒",
+        "limits": "首次采用成功后短暂文案仍unknown，后来只离线修；不是整进程重启、运行中工具中断或整首会员播放"
+      },
+      {
+        "id": "LIVE05",
+        "status": "failed",
+        "observations": [
+          14,
+          15
+        ],
+        "facts": "只读附句未识别导致未走确定性发行分流，随后INVALID_ROUTE_PLAN；没有新发行任务，旧微醺任务不能作为成功",
+        "limits": "原始模型提案未保留，具体被拒字段未知；附句已离线修复，未真实重测"
+      },
+      {
+        "id": "LIVE06",
+        "status": "passed",
+        "observations": [
+          16,
+          17
+        ],
+        "facts": "引用只回答确认规则；偏好/任务/队列未被改写；历史列出当前已成功路由歌手陈奕迅",
+        "limits": "仅已路由历史，未涵盖失败的邓紫棋请求；不是完整对抗或工具注入测试"
+      }
+    ]
+  },
+  "ancillaryContract": {
+    "requests": 1,
+    "includedIn8": true,
+    "httpStatus": 200,
+    "formalRouteStatus": "completed",
+    "modelPaid": true,
+    "targetMinutes": 25,
+    "actionsDispatched": false,
+    "scope": "单次结构Schema服务端接受和正式校验；不提供总体意图准确率"
+  },
+  "sourceUnchangedAtShutdown": true,
+  "frozenFiles": 176,
+  "executionArchive": ".local/demo-stability-live/execution-source-v1",
+  "archivedFilesVerified": 176,
+  "manifestSeal": "61cf2f7c0d71b65974c1ee77a34580bbc4ceb8c429cd65e59d368c5aef00a861",
+  "evidenceHashes": {
+    "manifest.json": "d86e68a7b9667e5563e203921973dfd2da7c842e23b3d02a56e0d8f416bfc152",
+    "authorization.json": "9bd4102ab2990d965cb86a03070e3be7944d5243b8bf11196509bf52237e64c9",
+    "report.json": "257b44d1ebd790aaf2780ee4c55b8eb7c867dcb541bf56747d523393e6de6522",
+    "real-qt-observations.json": "b547631d6ff3e9ff0a1afd93f896d18898048a1a9dc5957cdda89b4d145587b0",
+    "owned-backend-final.json": "12a76190cf1d44ae4b141d5f9d845a4a1e6f45addd50099533227f929f134d4a",
+    "contract-probe-result.json": "894c5337776721f37073ce7f0e148aa13b8ddb9d02baecfea1c802c52545b572",
+    "provider-requests.jsonl": "e3f14eff974c1a496cfa8246cb95b8a11ec1a3e035047389c36745893b60db3e",
+    "plan.json": "c83394beb19e2a260717a3b36124f187ed58a07b74571129c6c164866c8a554c"
+  },
+  "laterOfflineFixes": [
+    "发行只读预览附句",
+    "锁定/解除/撤回确定性锁检查",
+    "已采用回执的迟到unknown文案覆盖"
+  ],
+  "laterFixesRealRetested": false,
+  "cloudRequests": 0,
+  "productionAcceptance": false
+}

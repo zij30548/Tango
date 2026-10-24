@@ -1,0 +1,2264 @@
+{
+  "schemaVersion": 1,
+  "kind": "equal_input_duration_component_ablation",
+  "generatedAt": "2026-10-19T04:59:06.132Z",
+  "modelCalls": 0,
+  "catalogRequests": 0,
+  "realUserDataAccessed": false,
+  "input": {
+    "reportName": "tango-style-commute-final.json",
+    "reportSha256": "531dc68717fdb324ded4fa46c074f798e497b5184ad03aa05466ed1cca81721f",
+    "preparedInputSha256": "3530e5f136ecd77f8c41dc3ebed253d964f446789e0cd2601aa6be6f5c5744bd",
+    "nativeProbeKind": "native-live-probe-v2",
+    "nativeProbeGoalAcceptancePassed": true,
+    "nativeProbeSourcesUnchanged": true,
+    "expectedStyleGold": "轻快",
+    "rankingStatus": "model",
+    "rankingSource": "model_priority_then_catalog",
+    "candidateCount": 40,
+    "lockedCount": 3,
+    "fixedEvaluationAt": "2026-10-19T04:58:11.962Z",
+    "nativeCapturedAlgorithmSha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29"
+  },
+  "algorithm": {
+    "module": "backend/task-duration.mjs",
+    "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+    "comparisonScriptSha256": "3e4666798a949ee25f76821a05447efd328b713ae0aa3bb77cba7ea362dfbcf0",
+    "matchesNativeCapturedAlgorithm": true,
+    "sourcesUnchangedDuringComparison": true
+  },
+  "preparedInput": {
+    "expectedStyle": "轻快",
+    "brief": {
+      "adjustment": "保留前三首，其他改得轻快一点，仍然30分钟",
+      "artist": "",
+      "artistOnly": false,
+      "avoidPrevious": true,
+      "excludeLive": false,
+      "excludedArtists": [],
+      "kind": "research",
+      "queries": [
+        "华语流行 轻快 通勤",
+        "华语热歌 30分钟"
+      ],
+      "question": "",
+      "removeIds": [],
+      "requireReleases": false,
+      "requiredArtist": "",
+      "retainFirst": 3,
+      "scene": "下班通勤",
+      "since": null,
+      "styles": [
+        "轻快"
+      ],
+      "targetMinutes": 30,
+      "title": "下班通勤华语精选",
+      "until": null
+    },
+    "targetMs": 1800000,
+    "fixedEvaluationAt": "2026-10-19T04:58:11.962Z",
+    "locks": [
+      {
+        "album": "然呀",
+        "artist": "然",
+        "coverUrl": "https://p3.music.126.net/Rz6Tfcajj8Sh9S2hG0CDBg==/109951172689005854.jpg",
+        "durationMs": 28003,
+        "id": 3346218543,
+        "reason": "来自「华语流行 | 通勤放空必听」，然 · 时间是一双眼睛。",
+        "sourceId": 18283817379,
+        "sourceKind": "playlist",
+        "sourceName": "华语流行 | 通勤放空必听",
+        "sourceQuery": "华语流行 通勤",
+        "sourceSkill": "scene.research",
+        "sourceTags": [
+          "流行"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "华语"
+          ],
+          "status": "source_matched"
+        },
+        "title": "时间是一双眼睛"
+      },
+      {
+        "album": "周旋",
+        "artist": "晴日西多士",
+        "coverUrl": "https://p3.music.126.net/7Cl0f4EUjqrLhOouA4SH_w==/109951173629355662.jpg",
+        "durationMs": 152928,
+        "id": 3410804176,
+        "reason": "来自「华语流行 | 通勤放空必听」，晴日西多士 · Soda Pop（气泡与引力）。",
+        "sourceId": 18283817379,
+        "sourceKind": "playlist",
+        "sourceName": "华语流行 | 通勤放空必听",
+        "sourceQuery": "华语流行 通勤",
+        "sourceSkill": "scene.research",
+        "sourceTags": [
+          "流行"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "华语"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Soda Pop（气泡与引力）"
+      },
+      {
+        "album": "我爱你没有保留",
+        "artist": "兰毖 / 又又音灵 / 吹个泡泡",
+        "coverUrl": "https://p3.music.126.net/l7V-8eQObknUF5bdMsyFDA==/109951169793406925.jpg",
+        "durationMs": 29910,
+        "id": 2609129928,
+        "reason": "来自「华语流行 | 通勤放空必听」，兰毖 / 又又音灵 / 吹个泡泡 · P.S.我爱你(我爱你不是冲动)。",
+        "sourceId": 18283817379,
+        "sourceKind": "playlist",
+        "sourceName": "华语流行 | 通勤放空必听",
+        "sourceQuery": "华语流行 通勤",
+        "sourceSkill": "scene.research",
+        "sourceTags": [
+          "流行"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "华语"
+          ],
+          "status": "source_matched"
+        },
+        "title": "P.S.我爱你(我爱你不是冲动)"
+      }
+    ],
+    "lockedIds": [
+      3346218543,
+      3410804176,
+      2609129928
+    ],
+    "previousUnlockedIds": [
+      3445658309,
+      3434642926,
+      3345511314,
+      2748411055,
+      3344394958,
+      3337479047,
+      3407952317,
+      3336885596,
+      3442289671,
+      2613318859,
+      3326884682,
+      2741139704,
+      3317921239,
+      3340949712,
+      2746200051
+    ],
+    "ranking": {
+      "status": "model",
+      "source": "model_priority_then_catalog",
+      "reasonCounts": {},
+      "recordedOrder": [
+        1441758494,
+        85571,
+        385973,
+        1840459406,
+        1983697828,
+        1394952100,
+        31370203,
+        497463179,
+        1305904915,
+        3157058,
+        2786189,
+        1805363607,
+        19292984,
+        1382778514,
+        35678875,
+        563563366,
+        1836033745,
+        1815466571,
+        1463165983,
+        476659144,
+        19292987,
+        1403215687,
+        1412266089,
+        406737348,
+        28788849,
+        150430,
+        1464112021,
+        1461142410,
+        2147260072,
+        3314681909,
+        1832217238,
+        1935906706,
+        1442447125,
+        1380938715,
+        2009660470,
+        3026583,
+        2006166078,
+        19711382,
+        32341765,
+        1392089153
+      ],
+      "effectiveOrder": [
+        1441758494,
+        85571,
+        385973,
+        1840459406,
+        1983697828,
+        1394952100,
+        31370203,
+        497463179,
+        1305904915,
+        3157058,
+        2786189,
+        1805363607,
+        19292984,
+        1382778514,
+        35678875,
+        563563366,
+        1836033745,
+        1815466571,
+        1463165983,
+        476659144,
+        19292987,
+        1403215687,
+        1412266089,
+        406737348,
+        28788849,
+        150430,
+        1464112021,
+        1461142410,
+        2147260072,
+        3314681909,
+        1832217238,
+        1935906706,
+        1442447125,
+        1380938715,
+        2009660470,
+        3026583,
+        2006166078,
+        19711382,
+        32341765,
+        1392089153
+      ]
+    },
+    "candidates": [
+      {
+        "album": "晚风",
+        "artist": "Copy / BT07",
+        "durationMs": 202666,
+        "id": 1441758494,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "晚风",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 1,
+        "flags": 0
+      },
+      {
+        "album": "微微",
+        "artist": "郭顶",
+        "durationMs": 193600,
+        "id": 85571,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "我们俩",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 2,
+        "flags": 0
+      },
+      {
+        "album": "知足 最真杰作选",
+        "artist": "五月天",
+        "durationMs": 169347,
+        "id": 385973,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "恋爱ing",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 3,
+        "flags": 0
+      },
+      {
+        "album": "热爱105°C的你",
+        "artist": "阿肆",
+        "durationMs": 195328,
+        "id": 1840459406,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "热爱105°C的你",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 4,
+        "flags": 0
+      },
+      {
+        "album": "Shortcut To Heaven",
+        "artist": "lullaboy",
+        "durationMs": 184343,
+        "id": 1983697828,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Shortcut To Heaven",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 5,
+        "flags": 0
+      },
+      {
+        "album": "Good Day",
+        "artist": "Surfaces",
+        "durationMs": 181000,
+        "id": 1394952100,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Good Day",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 6,
+        "flags": 0
+      },
+      {
+        "album": "The Bright Side",
+        "artist": "Lenka",
+        "durationMs": 197372,
+        "id": 31370203,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Unique",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 7,
+        "flags": 0
+      },
+      {
+        "album": "Lucky",
+        "artist": "Lenka",
+        "durationMs": 200366,
+        "id": 497463179,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Lucky",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 8,
+        "flags": 0
+      },
+      {
+        "album": "Why So Serious",
+        "artist": "Alice Merton",
+        "durationMs": 223933,
+        "id": 1305904915,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Why So Serious",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 9,
+        "flags": 0
+      },
+      {
+        "album": "Wake up Love",
+        "artist": "Melanie Penn",
+        "durationMs": 166719,
+        "id": 3157058,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Ordinary Day",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 10,
+        "flags": 0
+      },
+      {
+        "album": "Songs from This - EP",
+        "artist": "Joy Williams",
+        "durationMs": 158798,
+        "id": 2786189,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Sunny Day",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 11,
+        "flags": 0
+      },
+      {
+        "album": "Cat Cafe",
+        "artist": "Shoffy",
+        "durationMs": 150750,
+        "id": 1805363607,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Cat Cafe",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 12,
+        "flags": 0
+      },
+      {
+        "album": "Fearless",
+        "artist": "Taylor Swift",
+        "durationMs": 236266,
+        "id": 19292984,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Love Story",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 13,
+        "flags": 0
+      },
+      {
+        "album": "Lover",
+        "artist": "Taylor Swift",
+        "durationMs": 221306,
+        "id": 1382778514,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Lover",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 14,
+        "flags": 0
+      },
+      {
+        "album": "I'm Sorry",
+        "artist": "Fine乐团",
+        "durationMs": 246268,
+        "id": 35678875,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "呼吸决定",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 15,
+        "flags": 0
+      },
+      {
+        "album": "爱在夏天",
+        "artist": "告五人",
+        "durationMs": 380800,
+        "id": 563563366,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "爱在夏天",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 16,
+        "flags": 0
+      },
+      {
+        "album": "那一刻心动",
+        "artist": "任子墨",
+        "durationMs": 225921,
+        "id": 1836033745,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "那一刻心动",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 17,
+        "flags": 0
+      },
+      {
+        "album": "万次心动",
+        "artist": "欧瑞SoulCore",
+        "durationMs": 165080,
+        "id": 1815466571,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "万次心动",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 18,
+        "flags": 0
+      },
+      {
+        "album": "天外来物",
+        "artist": "薛之谦",
+        "durationMs": 257212,
+        "id": 1463165983,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "天外来物",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 19,
+        "flags": 0
+      },
+      {
+        "album": "小宇",
+        "artist": "桃德李Todd Li",
+        "durationMs": 226987,
+        "id": 476659144,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "小宇",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 20,
+        "flags": 0
+      },
+      {
+        "album": "Fearless",
+        "artist": "Taylor Swift",
+        "durationMs": 231140,
+        "id": 19292987,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "You Belong With Me",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 21,
+        "flags": 0
+      },
+      {
+        "album": "想见你想见你想见你",
+        "artist": "八三夭",
+        "durationMs": 239794,
+        "id": 1403215687,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "想见你想见你想见你",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 22,
+        "flags": 0
+      },
+      {
+        "album": "摩天动物园",
+        "artist": "G.E.M.邓紫棋",
+        "durationMs": 204140,
+        "id": 1412266089,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "好想好想你",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 23,
+        "flags": 0
+      },
+      {
+        "album": "在我心里有个你",
+        "artist": "By2",
+        "durationMs": 231982,
+        "id": 406737348,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "爱丫爱丫",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 24,
+        "flags": 0
+      },
+      {
+        "album": "The Twilight Saga Forever Love Songs",
+        "artist": "Christina Perri",
+        "durationMs": 285120,
+        "id": 28788849,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "A Thousand Years",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 25,
+        "flags": 0
+      },
+      {
+        "album": "太平盛世",
+        "artist": "陶喆",
+        "durationMs": 261906,
+        "id": 150430,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "就是爱你",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 26,
+        "flags": 0
+      },
+      {
+        "album": "糸",
+        "artist": "石崎ひゅーい / 菅田将暉",
+        "durationMs": 204637,
+        "id": 1464112021,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "糸",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 27,
+        "flags": 0
+      },
+      {
+        "album": "想说",
+        "artist": "颜人中",
+        "durationMs": 200689,
+        "id": 1461142410,
+        "sourceId": 7302073646,
+        "sourceKind": "playlist",
+        "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+        "sourceQuery": "轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "想说",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 28,
+        "flags": 0
+      },
+      {
+        "album": "Iced Americano",
+        "artist": "Vincentz",
+        "durationMs": 193508,
+        "id": 2147260072,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Iced Americano",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 29,
+        "flags": 0
+      },
+      {
+        "album": "Love Star",
+        "artist": "凌晨一点的莱茵猫",
+        "durationMs": 145451,
+        "id": 3314681909,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Love Star (爱之星)",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 30,
+        "flags": 0
+      },
+      {
+        "album": "Ladyfingers",
+        "artist": "Ryan Gebhardt",
+        "durationMs": 164000,
+        "id": 1832217238,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Ladyfingers",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 31,
+        "flags": 0
+      },
+      {
+        "album": "Feel Something",
+        "artist": "Fiji Blue",
+        "durationMs": 150756,
+        "id": 1935906706,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Feel Something",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 32,
+        "flags": 0
+      },
+      {
+        "album": "LEMONS (feat. kennedi)",
+        "artist": "Shawn Wasabi / Kennedi",
+        "durationMs": 156038,
+        "id": 1442447125,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "LEMONS (feat. kennedi)",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 33,
+        "flags": 0
+      },
+      {
+        "album": "Home From Home",
+        "artist": "The Delegates",
+        "durationMs": 200506,
+        "id": 1380938715,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "I Only Watch It For The Weather",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 34,
+        "flags": 0
+      },
+      {
+        "album": "fuzzy wuzzy",
+        "artist": "Versutus",
+        "durationMs": 157648,
+        "id": 2009660470,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "fuzzy wuzzy",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 35,
+        "flags": 0
+      },
+      {
+        "album": "My Diary",
+        "artist": "MOCCA",
+        "durationMs": 168228,
+        "id": 3026583,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "I Remember",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 36,
+        "flags": 0
+      },
+      {
+        "album": "Free Loop",
+        "artist": "甘草片r",
+        "durationMs": 206730,
+        "id": 2006166078,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Free Loop",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 37,
+        "flags": 0
+      },
+      {
+        "album": "Irlande",
+        "artist": "Vox Angeli",
+        "durationMs": 200186,
+        "id": 19711382,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "New Soul",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 38,
+        "flags": 0
+      },
+      {
+        "album": "Smile",
+        "artist": "Dami Im",
+        "durationMs": 183228,
+        "id": 32341765,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Smile",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 39,
+        "flags": 0
+      },
+      {
+        "album": "Memories",
+        "artist": "Maroon 5",
+        "durationMs": 189486,
+        "id": 1392089153,
+        "sourceId": 13850300861,
+        "sourceKind": "playlist",
+        "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+        "sourceQuery": "轻快",
+        "sourceTags": [
+          "欧美",
+          "流行",
+          "快乐"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Memories",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 40,
+        "flags": 0
+      }
+    ],
+    "options": {
+      "targetMs": 1800000,
+      "baseMs": 210841,
+      "maximumTracks": 27,
+      "minimumTracks": 0,
+      "requiredFlags": 0
+    },
+    "lockedHardConflicts": [],
+    "reconstruction": {
+      "hardFilters": [
+        "explicit removes",
+        "previous unlocked IDs when avoidPrevious",
+        "artist-only credits",
+        "excluded artists",
+        "labelled live versions",
+        "dated releases"
+      ],
+      "externalExcludedIdsExported": false,
+      "externalExcludedIds": [],
+      "assumption": "External excludedIds are absent from the public export; treated as empty. The native probe uses an isolated new account/device and no real listening history.",
+      "durationTolerance": "max(60 seconds, 10% of requested duration)",
+      "styleEvidence": "Explicit gold style joined by real ID/name to actual playlist metadata; ignores production styleEvidence and broad retained styles.",
+      "duplicateProvenance": "For duplicate real IDs, all actual branch source records may establish style support; both methods receive the same joined evidence."
+    }
+  },
+  "results": [
+    {
+      "method": "closest_duration",
+      "samePreparedInputSha256": "3530e5f136ecd77f8c41dc3ebed253d964f446789e0cd2601aa6be6f5c5744bd",
+      "selectionPolicy": "closest_duration",
+      "songCount": 10,
+      "unlockedSongCount": 7,
+      "selectedIds": [
+        3346218543,
+        3410804176,
+        2609129928,
+        1840459406,
+        1983697828,
+        497463179,
+        19292984,
+        563563366,
+        1815466571,
+        476659144
+      ],
+      "unlockedIds": [
+        1840459406,
+        1983697828,
+        497463179,
+        19292984,
+        563563366,
+        1815466571,
+        476659144
+      ],
+      "initialLockedIds": [
+        3346218543,
+        3410804176,
+        2609129928
+      ],
+      "locksPreserved": true,
+      "lockedHardConflicts": [],
+      "requiredFlags": 0,
+      "selectedFlags": 0,
+      "mandatoryEvidenceSatisfied": true,
+      "targetDurationMs": 1800000,
+      "totalDurationMs": 1800011,
+      "durationErrorMs": 11,
+      "durationOffsetMs": 11,
+      "toleranceMs": 180000,
+      "allDurationsKnown": true,
+      "withinDurationBand": true,
+      "tailOrderChanged": true,
+      "tailSetChanged": true,
+      "addedUnlockedIds": [
+        1840459406,
+        1983697828,
+        497463179,
+        19292984,
+        563563366,
+        1815466571,
+        476659144
+      ],
+      "removedUnlockedIds": [
+        3445658309,
+        3434642926,
+        3345511314,
+        2748411055,
+        3344394958,
+        3337479047,
+        3407952317,
+        3336885596,
+        3442289671,
+        2613318859,
+        3326884682,
+        2741139704,
+        3317921239,
+        3340949712,
+        2746200051
+      ],
+      "expectedStyle": "轻快",
+      "expectedStyleSupportedUnlockedCount": 7,
+      "expectedStyleSupportedUnlockedCoverage": 1,
+      "expectedStyleEvidence": [
+        {
+          "trackId": 1840459406,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 1983697828,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 497463179,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 19292984,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 563563366,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 1815466571,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 476659144,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        }
+      ],
+      "averageSelectedCandidateRank": 12,
+      "durationSelection": {
+        "indices": [
+          3,
+          4,
+          7,
+          12,
+          15,
+          17,
+          19
+        ],
+        "algorithm": "bounded_duration_dp",
+        "quantizationMs": 1000,
+        "maximumQuantizationSpreadMs": 27000,
+        "selectionPolicy": "closest_duration",
+        "toleranceMs": 180000,
+        "withinTolerance": true
+      },
+      "timing": {
+        "repetitions": 3,
+        "measuredMs": [
+          19.078791,
+          2.695582999999992,
+          2.4861669999999947
+        ],
+        "medianMs": 2.695582999999992,
+        "minimumMs": 2.4861669999999947,
+        "maximumMs": 19.078791,
+        "scope": "Local selector only; alternating method order, no provider or catalog latency."
+      },
+      "listeningQuality": "not_measured"
+    },
+    {
+      "method": "preference_within_tolerance",
+      "samePreparedInputSha256": "3530e5f136ecd77f8c41dc3ebed253d964f446789e0cd2601aa6be6f5c5744bd",
+      "selectionPolicy": "preference_within_tolerance",
+      "songCount": 11,
+      "unlockedSongCount": 8,
+      "selectedIds": [
+        3346218543,
+        3410804176,
+        2609129928,
+        1441758494,
+        85571,
+        385973,
+        1840459406,
+        1983697828,
+        1394952100,
+        31370203,
+        497463179
+      ],
+      "unlockedIds": [
+        1441758494,
+        85571,
+        385973,
+        1840459406,
+        1983697828,
+        1394952100,
+        31370203,
+        497463179
+      ],
+      "initialLockedIds": [
+        3346218543,
+        3410804176,
+        2609129928
+      ],
+      "locksPreserved": true,
+      "lockedHardConflicts": [],
+      "requiredFlags": 0,
+      "selectedFlags": 0,
+      "mandatoryEvidenceSatisfied": true,
+      "targetDurationMs": 1800000,
+      "totalDurationMs": 1734863,
+      "durationErrorMs": 65137,
+      "durationOffsetMs": -65137,
+      "toleranceMs": 180000,
+      "allDurationsKnown": true,
+      "withinDurationBand": true,
+      "tailOrderChanged": true,
+      "tailSetChanged": true,
+      "addedUnlockedIds": [
+        1441758494,
+        85571,
+        385973,
+        1840459406,
+        1983697828,
+        1394952100,
+        31370203,
+        497463179
+      ],
+      "removedUnlockedIds": [
+        3445658309,
+        3434642926,
+        3345511314,
+        2748411055,
+        3344394958,
+        3337479047,
+        3407952317,
+        3336885596,
+        3442289671,
+        2613318859,
+        3326884682,
+        2741139704,
+        3317921239,
+        3340949712,
+        2746200051
+      ],
+      "expectedStyle": "轻快",
+      "expectedStyleSupportedUnlockedCount": 8,
+      "expectedStyleSupportedUnlockedCoverage": 1,
+      "expectedStyleEvidence": [
+        {
+          "trackId": 1441758494,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 85571,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 385973,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 1840459406,
+          "sourceId": 7302073646,
+          "sourceName": "中文歌|甜|轻快又充满希望的生活啊",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T04:58:06.198Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 1983697828,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 1394952100,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 31370203,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 497463179,
+          "sourceId": 13850300861,
+          "sourceName": "英文小清新 | 轻快 阳光 清新 快乐 氛围曲",
+          "sourceTags": [
+            "欧美",
+            "流行",
+            "快乐"
+          ],
+          "checkedAt": "2026-10-19T04:58:06.578Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        }
+      ],
+      "averageSelectedCandidateRank": 4.5,
+      "durationSelection": {
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "algorithm": "bounded_duration_dp",
+        "quantizationMs": 1000,
+        "maximumQuantizationSpreadMs": 27000,
+        "selectionPolicy": "preference_within_tolerance",
+        "toleranceMs": 180000,
+        "withinTolerance": true
+      },
+      "timing": {
+        "repetitions": 3,
+        "measuredMs": [
+          13.073125000000005,
+          6.3267080000000036,
+          5.039874999999995
+        ],
+        "medianMs": 6.3267080000000036,
+        "minimumMs": 5.039874999999995,
+        "maximumMs": 13.073125000000005,
+        "scope": "Local selector only; alternating method order, no provider or catalog latency."
+      },
+      "listeningQuality": "not_measured"
+    }
+  ],
+  "delta": {
+    "expectedStyleCoverage": 0,
+    "expectedStyleTrackCount": 1,
+    "durationErrorMs": 65126,
+    "bothWithinDurationBand": true,
+    "bothPreserveLocksAndMandatoryEvidence": true,
+    "sourceEvidenceCoverageImproved": false,
+    "selectedSequenceChangedBetweenMethods": true
+  },
+  "scope": "Deterministic duration-selector ablation on one recorded real catalog/ranking/lock snapshot. Both methods receive byte-identical prepared inputs; only preferenceWithinTolerance changes. No new model or catalog calls.",
+  "limitations": [
+    "Not a full fixed-workflow/single-Agent/dual-Agent A/B comparison.",
+    "Recorded degraded ranking remains degraded; selector results cannot repair or validate that model result.",
+    "Source-name/tag support measures textual metadata only, not acoustic features, recommendation relevance or listening satisfaction.",
+    "Timing covers this local selector process and candidate snapshot only; it is not production latency or a general speed ranking.",
+    "One fixed candidate snapshot cannot establish general improvement."
+  ],
+  "listeningQuality": "not_measured",
+  "listeningQualityNotMeasured": true
+}

@@ -1,0 +1,530 @@
+{
+  "schemaVersion": 1,
+  "id": "tango-conversation-calibration-v1",
+  "purpose": "exposed_development_calibration",
+  "createdOn": "2026-10-23",
+  "clock": "2026-10-23T04:00:00Z",
+  "scope": "真实生产会话/路由/任务HTTP接口；SQLite隔离库、固定合成曲库、无Qt播放和真实听感。未实现的能力不计已完成。",
+  "cases": [
+    {
+      "id": "help",
+      "title": "明确帮助不调用模型",
+      "group": "routine",
+      "turns": [
+        {
+          "text": "你能做什么？",
+          "expect": {
+            "intents": [
+              [
+                "help"
+              ]
+            ],
+            "actions": [
+              [
+                "assistant.reply",
+                "help"
+              ]
+            ],
+            "taskStatus": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "title": "微醺场景与时长",
+      "group": "routine",
+      "turns": [
+        {
+          "text": "我现在在喝酒，推荐20分钟粤语歌，不要现场版。",
+          "expect": {
+            "intents": [
+              [
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "slots": {
+              "targetMinutes": 20
+            },
+            "taskStatus": "preview",
+            "brief": {
+              "targetMinutes": 20,
+              "excludeLive": true
+            },
+            "concepts": [
+              [
+                "styles",
+                [
+                  "粤语"
+                ]
+              ],
+              [
+                "scene",
+                [
+                  "喝酒",
+                  "微醺",
+                  "饮酒",
+                  "小酌",
+                  "酒吧"
+                ]
+              ]
+            ],
+            "queries": [
+              [
+                "粤语"
+              ]
+            ],
+            "minutes": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "releases",
+      "title": "指定歌手近期发行",
+      "group": "routine",
+      "turns": [
+        {
+          "text": "查一下邓紫棋最近30天的新歌，整理成20分钟歌单。",
+          "expect": {
+            "intents": [
+              [
+                "release_research"
+              ],
+              [
+                "release_research",
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "slots": {
+              "artist": "邓紫棋",
+              "targetMinutes": 20
+            },
+            "taskStatus": "preview",
+            "brief": {
+              "artist": "邓紫棋",
+              "requireReleases": true,
+              "targetMinutes": 20
+            },
+            "releaseWindowDays": 30,
+            "minutes": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "compound",
+      "title": "偏好提议与独立找歌",
+      "group": "routine",
+      "turns": [
+        {
+          "text": "记住我喜欢粤语，再推荐20分钟微醺歌单。",
+          "expect": {
+            "intents": [
+              [
+                "preference_proposal",
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "memory.propose",
+                "set"
+              ],
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "taskStatus": "preview",
+            "brief": {
+              "targetMinutes": 20
+            },
+            "concepts": [
+              [
+                "styles",
+                [
+                  "粤语"
+                ]
+              ]
+            ],
+            "minutes": 20,
+            "independentMusic": true
+          },
+          "memoryDecision": "cancel"
+        }
+      ]
+    },
+    {
+      "id": "negative",
+      "title": "临时场景不保存偏好",
+      "group": "boundary",
+      "turns": [
+        {
+          "text": "我这次喝酒想听20分钟爵士，不要把这次喜好记住。",
+          "expect": {
+            "intents": [
+              [
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "taskStatus": "preview",
+            "brief": {
+              "targetMinutes": 20
+            },
+            "concepts": [
+              [
+                "styles",
+                [
+                  "爵士",
+                  "jazz"
+                ]
+              ],
+              [
+                "scene",
+                [
+                  "喝酒",
+                  "微醺",
+                  "饮酒",
+                  "小酌",
+                  "酒吧"
+                ]
+              ]
+            ],
+            "minutes": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "clarification",
+      "title": "缺歌手追问后承接",
+      "group": "routine",
+      "turns": [
+        {
+          "text": "帮我查最近30天的新歌。",
+          "expect": {
+            "intents": [
+              [
+                "release_research",
+                "clarification"
+              ],
+              [
+                "release_research"
+              ]
+            ],
+            "actions": [
+              [
+                "assistant.reply",
+                "clarify"
+              ]
+            ],
+            "missingSlot": "artist",
+            "taskStatus": null
+          }
+        },
+        {
+          "text": "邓紫棋，整理成20分钟。",
+          "expect": {
+            "intents": [
+              [
+                "release_research"
+              ],
+              [
+                "release_research",
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "slots": {
+              "artist": "邓紫棋",
+              "targetMinutes": 20
+            },
+            "taskStatus": "preview",
+            "brief": {
+              "artist": "邓紫棋",
+              "requireReleases": true,
+              "targetMinutes": 20
+            },
+            "releaseWindowDays": 30,
+            "minutes": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "revision",
+      "title": "锁定后连续调整",
+      "group": "routine",
+      "turns": [
+        {
+          "text": "推荐20分钟读书纯音乐，不要现场版。",
+          "expect": {
+            "intents": [
+              [
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "taskStatus": "preview",
+            "brief": {
+              "targetMinutes": 20,
+              "excludeLive": true
+            },
+            "concepts": [
+              [
+                "styles",
+                [
+                  "纯音乐",
+                  "instrumental"
+                ]
+              ]
+            ],
+            "minutes": 20
+          }
+        },
+        {
+          "text": "锁定的保留，其余换得轻快一点，仍然20分钟。",
+          "lockFirst": 1,
+          "expect": {
+            "intents": [
+              [
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "continue"
+              ]
+            ],
+            "taskStatus": "preview",
+            "brief": {
+              "targetMinutes": 20,
+              "excludeLive": true
+            },
+            "concepts": [
+              [
+                "styles",
+                [
+                  "纯音乐",
+                  "instrumental"
+                ]
+              ],
+              [
+                "styles",
+                [
+                  "轻快",
+                  "欢快",
+                  "upbeat"
+                ]
+              ]
+            ],
+            "minutes": 20,
+            "retainLocked": true,
+            "changeUnlocked": true
+          }
+        },
+        {
+          "text": "撤回刚才的修改",
+          "expect": {
+            "intents": [
+              [
+                "task_control"
+              ]
+            ],
+            "actions": [
+              [
+                "task.control",
+                "undo"
+              ]
+            ],
+            "taskStatus": "preview",
+            "undoPrevious": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "quoted",
+      "title": "引用取消不触发控制",
+      "group": "boundary",
+      "turns": [
+        {
+          "text": "推荐20分钟读书纯音乐。",
+          "expect": {
+            "intents": [
+              [
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "taskStatus": "preview",
+            "brief": {
+              "targetMinutes": 20
+            },
+            "minutes": 20
+          }
+        },
+        {
+          "text": "他说“取消任务”，我是在转述，请解释当前歌单。",
+          "expect": {
+            "intents": [
+              [
+                "explain_result"
+              ]
+            ],
+            "actions": [
+              [
+                "assistant.reply",
+                "explain"
+              ]
+            ],
+            "taskStatus": "preview",
+            "samePlaylist": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "recovery",
+      "title": "暂停重开只读后恢复取消",
+      "group": "boundary",
+      "turns": [
+        {
+          "text": "推荐20分钟读书纯音乐。",
+          "expect": {
+            "intents": [
+              [
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "taskStatus": "preview",
+            "brief": {
+              "targetMinutes": 20
+            },
+            "minutes": 20
+          }
+        },
+        {
+          "text": "暂停任务",
+          "expect": {
+            "intents": [
+              [
+                "task_control"
+              ]
+            ],
+            "actions": [
+              [
+                "task.control",
+                "pause"
+              ]
+            ],
+            "taskStatus": "paused"
+          },
+          "restartAfter": true
+        },
+        {
+          "text": "恢复任务",
+          "expect": {
+            "intents": [
+              [
+                "task_control"
+              ]
+            ],
+            "actions": [
+              [
+                "task.control",
+                "resume"
+              ]
+            ],
+            "taskStatus": "preview",
+            "minutes": 20
+          }
+        },
+        {
+          "text": "取消任务",
+          "expect": {
+            "intents": [
+              [
+                "task_control"
+              ]
+            ],
+            "actions": [
+              [
+                "task.control",
+                "cancel"
+              ]
+            ],
+            "taskStatus": "cancelled"
+          }
+        }
+      ]
+    },
+    {
+      "id": "catalog_failure",
+      "title": "曲库故障不伪装无结果",
+      "group": "fault",
+      "turns": [
+        {
+          "text": "推荐20分钟跑步歌曲。",
+          "catalogFault": true,
+          "expect": {
+            "intents": [
+              [
+                "scene_research"
+              ]
+            ],
+            "actions": [
+              [
+                "music.task",
+                "new"
+              ]
+            ],
+            "taskStatus": "failed",
+            "taskError": "CATALOG_QUERY_FAILED"
+          }
+        }
+      ]
+    }
+  ]
+}

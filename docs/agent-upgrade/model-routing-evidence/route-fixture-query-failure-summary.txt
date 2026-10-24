@@ -1,0 +1,7 @@
+Captured second pytest result before correcting the test query.
+Command: backend_py/.venv/bin/python -m pytest backend_py/tests/test_multi_model_runtime.py -q
+Result: 2 failed, 27 passed, 3 skipped in 0.80s
+Both new paid-route cases completed their expected business status, then queried metadata from music_conversation_routes instead of music_conversation_route_attempts.
+Failure: sqlite3.OperationalError: no such column: model_selection_json.
+Correction: query the existing attempt ledger table; metadata assertions unchanged.
+This is a transcript summary, not a full raw pytest log.

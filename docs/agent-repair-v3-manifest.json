@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "kind": "tango-agent-frozen-run",
+  "preparedAt": "2026-10-19T09:53:10.576Z",
+  "suiteId": "tango-agent-new-holdout-v3-2026-10-19",
+  "suitePath": "backend/evaluation/agent-suite-v3-holdout.json",
+  "suiteSha256": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd",
+  "selection": {
+    "seed": "tango-repair-v3",
+    "requestedIds": null,
+    "maximumProviderCalls": 204,
+    "reservedMaximumCalls": 204,
+    "eligibleCases": 26,
+    "excludedIds": [],
+    "strategy": "single_agent"
+  },
+  "cases": [
+    {
+      "id": "v3_gem_breakfast",
+      "family": "artist_inclusion",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_artist_train",
+      "family": "artist_version",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_overflow",
+      "family": "duration_boundary",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_english_exercise",
+      "family": "language",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_language_release",
+      "family": "multiturn_language",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "v3_remove_local_position",
+      "family": "multiturn_reference",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "v3_stop_release_research",
+      "family": "multiturn_revocation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "v3_clarify_pronoun",
+      "family": "necessary_clarification",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_exclude_kitchen",
+      "family": "negative_constraint",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_optional_duration",
+      "family": "optional_fields",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_preference_override",
+      "family": "preference_override",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_injected_user",
+      "family": "prompt_injection",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_release_calendar",
+      "family": "release_research",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_empty_catalog",
+      "family": "retrieval_empty",
+      "mode": "live_model_controlled_catalog",
+      "split": "challenge",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_rain_books",
+      "family": "scene_coverage",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_jazz_editing",
+      "family": "source_style",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_three_turn_style_duration",
+      "family": "three_turn_preservation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 3,
+      "maximumModelCalls": 18,
+      "nominalModelCalls": 12
+    },
+    {
+      "id": "v3_three_turn_lock_replace",
+      "family": "three_turn_reference",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 3,
+      "maximumModelCalls": 18,
+      "nominalModelCalls": 12
+    },
+    {
+      "id": "v3_unsupported_play",
+      "family": "unsupported_action",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_zh_subway",
+      "family": "language",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_relax_artist_only",
+      "family": "multiturn_revocation",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 2,
+      "maximumModelCalls": 12,
+      "nominalModelCalls": 8
+    },
+    {
+      "id": "v3_clarify_release_artist",
+      "family": "necessary_clarification",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_injected_source",
+      "family": "prompt_injection",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_release_quarter",
+      "family": "release_research",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_instrumental_study",
+      "family": "source_style",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    },
+    {
+      "id": "v3_unsupported_news",
+      "family": "unsupported_action",
+      "mode": "live_model_controlled_catalog",
+      "split": "holdout",
+      "rounds": 1,
+      "maximumModelCalls": 6,
+      "nominalModelCalls": 4
+    }
+  ],
+  "sourceHashes": {
+    "backend/agent-evaluation-cli.mjs": "4885a2a1424f92572958a776b44c772c8f24bdc88be64f5e4c15ba3e158ff64b",
+    "backend/errors.mjs": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a",
+    "backend/evaluation/agent-evaluation-runner.mjs": "22baa52e297457e4039a4eb5b6cb61221869981d86ad4c65baf993edae4bd465",
+    "backend/evaluation/agent-fault-checks.mjs": "90509e4faa669526bece35b68e58efdca2bca974558eaa44952f79d6747c73bb",
+    "backend/evaluation/agent-observation-assertions.mjs": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad",
+    "backend/evaluation/agent-suite-schema.mjs": "7c478de409c896794659ed10d334cb44b7fcf1adba631d1afb92bc61ca932972",
+    "backend/evaluation/agent-suite-v1.json": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148",
+    "backend/evaluation/agent-suite-v2.json": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8",
+    "backend/evaluation/agent-suite-v3-holdout.json": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd",
+    "backend/model-transport.mjs": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315",
+    "backend/package-lock.json": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c",
+    "backend/package.json": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962",
+    "backend/store.mjs": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564",
+    "backend/task-brief-patch.mjs": "c108d200072875cef895d64dabfbfcb1e8199b2929b41acc13cb120a4a08ee68",
+    "backend/task-duration.mjs": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+    "backend/task-evaluation-cli.mjs": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d",
+    "backend/task-evaluation.mjs": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12",
+    "backend/task-language.mjs": "1f383e06813b0bfd7e30c52c6f4b2084817f496fb749faffbb6b0e7f2b4722d7",
+    "backend/task-model.mjs": "b3f194fe666d67b170ef0fb0b8e2166385c5afb9d57378f936cddc2097470527",
+    "backend/task-query-coverage.mjs": "07694aaf261d40326ba8331b60bc5cad5f61881980b474cf54625ced9d100660",
+    "backend/task-release-intent.mjs": "9fda45f88e3397400fc0ef95d7ade7364fba28287d301877cd7ad1b886e97ba0",
+    "backend/task-runtime.mjs": "b462765a0edcb75f0129bc9766a60c20c8919b7b25d0a0adb43830afd9c565a0",
+    "backend/task-schema.mjs": "8aed0ffce9f34537059017b07e2453879058b239eb5b102e8a4646ba454764ee",
+    "backend/task-store.mjs": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed",
+    "backend/task-style-evidence.mjs": "69fb6abe20cb39cfc7a83611bbe40db475eed299ba76538bbc7856863992e65e",
+    "backend/task-tool-evidence.mjs": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48",
+    "scripts/evaluate-agent.mjs": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd"
+  },
+  "runtime": {
+    "node": "v24.20.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "scope": {
+    "targetPopulation": "New finite diagnostic requests for repaired Tango task pipeline; not production traffic.",
+    "design": "26 newly authored tasks /34 turns before any v3 provider execution.20 single-turn,4 two-turn,2 three-turn. Independent of repair agents prompt edits; no provider outcomes used to choose gold.",
+    "limitations": [
+      "No suite can cover every adversarial input or all production users.",
+      "Synthetic catalogs establish metadata constraints, not real retrieval recall or audio fit.",
+      "One model draw per task; no claim about repeated-model variance.",
+      "Safe clarification and unsupported-request handling count as expected outcomes only when frozen gold explicitly requires them.",
+      "This is a different task set from v2, so raw percentages are not a paired causal estimate of improvement."
+    ]
+  },
+  "executionPolicy": {
+    "automaticCaseRetries": 0,
+    "bestOfN": false,
+    "modelPlanRepair": "At most one in the same six-call round budget.",
+    "failureRetention": "All selected cases remain in the denominator, including unattempted or unverified cases."
+  },
+  "manifestSha256": "4c7700da91af96505843cf77c355a3a5a32a75910f8b07d644d9531ffe17b03c"
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-24",
+  "scope": "independent-e2e-v1-first-live-execution",
+  "authorization": {
+    "source": "用户本轮明确授权",
+    "maximumProviderRequests": 200,
+    "allRolesShared": true,
+    "failuresTimeoutsUnknownAndSetupCount": true,
+    "automaticRerun": false,
+    "extraModelJudge": false
+  },
+  "run": ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f",
+  "manifestSeal": "9ed3ce60842cd83e06b9115992d73e6fc169287f16c7e551b7154447d0478136",
+  "actual": {
+    "attempts": 76,
+    "maximum": 200,
+    "outcomes": {
+      "failed": 0,
+      "responded": 76,
+      "uncertain": 0
+    }
+  },
+  "phaseAtRequestStart": {
+    "setup": {
+      "task:flash": 12,
+      "route:flash": 2
+    },
+    "evaluation": {
+      "route:flash": 36,
+      "task:flash": 26
+    }
+  },
+  "phaseAttributionLimit": "当前控制上下文标签，跨轮前置异步任务可能延续；不是不可变taskId/callId证明的业务因果归属。",
+  "roleTotals": {
+    "route:flash": 38,
+    "task:flash": 38
+  },
+  "reportedUsage": {
+    "prompt_tokens": 123011,
+    "completion_tokens": 10063,
+    "total_tokens": 133074
+  },
+  "exactMonetaryCost": null,
+  "usageReportingRequests": 76,
+  "unusedAtClose": 124,
+  "runClosed": true,
+  "unusedBudgetCarriesToFutureEvaluation": false,
+  "historicalBudgetReused": false,
+  "realCatalogRequests": 0,
+  "cloudTracingEnabled": false,
+  "providerResponseIsNotBusinessSuccess": true,
+  "ledgerSha256": "2b242e01dc8d83c16d5a5ec98712add5c8fd7fc6bf9bc3fbc1beb91b7ba247fd",
+  "notes": [
+    "只执行一轮真实新题，无额外模型裁判、无付费补救或重跑。",
+    "133074 Token来自provider报告，不等于核对账单或金额预算。"
+  ]
+}

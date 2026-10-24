@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "tier": "quick",
+  "scope": "离线契约、模拟模型/曲库、临时 SQLite 与本机 HTTP；不覆盖 MySQL、Qt 音频或真实模型效果。",
+  "startedAt": "2026-10-21T13:14:13.508160+00:00",
+  "status": "passed",
+  "reason": "selected_tier_completed",
+  "commands": [
+    {
+      "id": "repository",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/scripts/check-harness.py"
+      ],
+      "cwd": "<repo>",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.181
+    },
+    {
+      "id": "node_version",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--eval",
+        "process.exit(Number(process.versions.node.split('.')[0]) >= 20 ? 0 : 1)"
+      ],
+      "cwd": "<repo>",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.039
+    },
+    {
+      "id": "python_offline",
+      "command": [
+        "<repo>/backend_py/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-p",
+        "asyncio",
+        "tests/test_harness_repository.py",
+        "tests/test_verify_harness.py",
+        "tests/test_models.py",
+        "tests/test_conversation_routing.py",
+        "tests/test_app.py",
+        "tests/test_http_protocol.py",
+        "tests/test_launch_local.py",
+        "tests/test_storage_profile.py",
+        "tests/test_model_profiles.py",
+        "tests/test_multi_model_runtime.py",
+        "tests/test_multi_model_storage.py",
+        "tests/test_multi_model_server.py",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "<repo>/backend_py",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 11.481
+    },
+    {
+      "id": "service_offline",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "<repo>/service/test/app.test.mjs",
+        "<repo>/service/test/assistant.test.mjs",
+        "<repo>/scripts/development-env.test.mjs"
+      ],
+      "cwd": "<repo>",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.445
+    }
+  ],
+  "finishedAt": "2026-10-21T13:14:25.654288+00:00"
+}

@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 1,
+  "stage": "上轮根因复核与残留修复",
+  "reviewedOn": "2026-10-24",
+  "status": "bounded_engineering_verified_not_all_original_tasks_complete",
+  "scope": "共享解析与偏好用途、原P03首句/B01完整只读附句、新作前缀、复合记忆问句边界、任务拒绝/未知、原动作恢复及版本显示",
+  "technology": [
+    "C++/Qt5",
+    "Python/FastAPI/LangGraph",
+    "MySQL/InnoDB",
+    "Redis",
+    "设备SQLite"
+  ],
+  "roots": [
+    "合法表达解析与权限计算不一致，偏好管理可被误派为音乐任务",
+    "任务HTTP协议错误被压成文字，确定拒绝与未知混淆",
+    "普通恢复未核验原动作/目标/版本",
+    "查找version未进入聊天渲染",
+    "前次10题遗漏原24题若干原话和错误分支"
+  ],
+  "tests": {
+    "repository": {
+      "command": "python3 scripts/check-harness.py",
+      "status": "passed",
+      "afterDocumentationUpdate": true
+    },
+    "quick": {
+      "command": "python3 scripts/verify-harness.py --tier quick",
+      "python": {
+        "passed": 1025,
+        "skipped": 25,
+        "failed": 0
+      },
+      "node": {
+        "passed": 53,
+        "skipped": 0,
+        "failed": 0
+      },
+      "privateReport": ".local/harness-runs/20261024T064715-pb2ss3fe/report.json",
+      "earlierPassedRunNotAdded": ".local/harness-runs/20261024T064533-izefmdy0/report.json"
+    },
+    "mysql": {
+      "command": "python3 scripts/verify-harness.py --tier mysql",
+      "passed": 1576,
+      "skipped": 60,
+      "failed": 0,
+      "skipScope": "PG专属及当前后端不适用项；拥有者临时MySQL/Redis，迁移另建临时PG",
+      "privateReport": ".local/harness-runs/20261024T064533-0t8nx8i0/report.json"
+    },
+    "native": {
+      "command": "python3 scripts/verify-harness.py --tier native",
+      "suites": {
+        "hosted_flow_test": 6,
+        "music_task_flow_test": 5,
+        "routing_flow_test": 55
+      },
+      "failed": 0,
+      "skipped": 0,
+      "includesLifecycleChecks": true,
+      "privateReport": ".local/harness-runs/20261024T064616-02crh49e/report.json"
+    },
+    "nativeResidualRegression": {
+      "command": "backend_py/.venv/bin/python scripts/check-agent-repairs.py --residual",
+      "selectedTasks": 15,
+      "selectedInteractions": 25,
+      "automaticPassedTasks": 15,
+      "finalStateChecks": 37,
+      "passedChecks": 37,
+      "sourceFiles": 147,
+      "sourceAndBinaryUnchanged": true,
+      "manifestSeal": "7dab6c62427bbb22de71ce2006e5188e11afe3e2759ed3e1b299377312eeecf2",
+      "realProviderRequests": 0,
+      "privateRun": ".local/agent-repair-runs/20261024T064715Z-fd11ee74",
+      "supplementalChecks": [
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R01', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R02', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R03', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R04', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R04', 2)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R04', 3)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R05', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R05', 2)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R06', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R06', 2)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R07', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R08', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R08', 2)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R09', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R10', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R11', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R12', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R13', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R13', 2)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R14', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R14', 2)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R14', 3)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R14', 4)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R15', 1)",
+          "passed": true
+        },
+        {
+          "detail": "settled",
+          "name": "交互实际结束:('R15', 2)",
+          "passed": true
+        },
+        {
+          "detail": "静音WAV只验执行接线，不证明会员权益或听感",
+          "name": "明确录音室版本实际解析播放",
+          "passed": true
+        },
+        {
+          "detail": "读取真实Qt候选及拥有者后台快照",
+          "name": "六首不是保留六首",
+          "passed": true
+        },
+        {
+          "detail": "检查确认后的实际本机内容",
+          "name": "删单项保留其他项",
+          "passed": true
+        },
+        {
+          "detail": "原任务ID存在不能替代已离开paused并取得实际候选的证据",
+          "name": "恢复原任务后实际完成预览",
+          "passed": true
+        },
+        {
+          "detail": "不伪造actionId；不能仅凭没有写偏好就当攻击已触发",
+          "name": "旧确认确实重放且原动作已取消",
+          "passed": true
+        },
+        {
+          "detail": "原始description字段过滤/执行边界测试；不声称真实模型看到了攻击或抵抗成功",
+          "name": "恶意未知字段确实送到设备适配边界",
+          "passed": true
+        },
+        {
+          "detail": "只核验原首句；未宣称完整多轮女声消歧已验收",
+          "name": "原P03首句保留两个同名候选",
+          "passed": true
+        },
+        {
+          "detail": "仅证设备字段过滤/权限边界，固定模型未看到攻击",
+          "name": "原B01只读查询攻击字段实际触达设备",
+          "passed": true
+        },
+        {
+          "detail": "显式记忆请求不能误路由成场景研究",
+          "name": "后置记忆确认保存且不创建音乐任务",
+          "passed": true
+        },
+        {
+          "detail": "检查本机确认后实际条目",
+          "name": "后置删除粤语保留其他原偏好",
+          "passed": true
+        },
+        {
+          "detail": "清空音乐偏好仅改变偏好；不是清历史",
+          "name": "清空确认后确为空且未建任务",
+          "passed": true
+        },
+        {
+          "detail": "查询取得元数据不能替代已在用户聊天中告知版本的证据",
+          "name": "R01明确版本实际显示在聊天",
+          "passed": true
+        }
+      ],
+      "manualOrSemanticMetrics": null
+    },
+    "targetedPython": {
+      "passed": 378,
+      "skipped": 6,
+      "failed": 0,
+      "newResidualCases": 42,
+      "privateLog": ".local/residual-routing-audit/question-tail-final-targeted-tests.txt"
+    },
+    "targetedQt": [
+      {
+        "suite": "musictaskclient_test",
+        "passed": 193,
+        "skipped": 0,
+        "failed": 0,
+        "privateLog": ".local/residual-state-audit/full-client-frozen.txt"
+      },
+      {
+        "suite": "radiodialog_test",
+        "passed": 30,
+        "skipped": 0,
+        "failed": 0,
+        "privateLog": ".local/agent-residual-repair/radio-final.txt"
+      }
+    ],
+    "counting": "各套重叠，不相加；固定模型/曲库验工程接线，不是模型总体准确率"
+  },
+  "firstFailures": [
+    {
+      "scope": "新增路由契约首次",
+      "failed": 19,
+      "passed": 11,
+      "log": ".local/residual-routing-audit/first-failing-contracts.txt"
+    },
+    {
+      "scope": "复合查询什么词尾",
+      "failed": 2,
+      "passed": 40,
+      "log": ".local/residual-routing-audit/question-tail-first-failing-tests.txt"
+    },
+    {
+      "scope": "Qt错误元数据及原动作核验正式复现",
+      "failed": 2,
+      "passed": 2,
+      "log": ".local/residual-state-audit/formal-first-failure.txt"
+    },
+    {
+      "scope": "Qt400协议映射中间失败",
+      "failed": 3,
+      "passed": 74,
+      "log": ".local/residual-state-audit/targeted-first.txt"
+    },
+    {
+      "scope": "聊天版本未显示",
+      "failed": 2,
+      "passed": 4,
+      "log": ".local/agent-residual-repair/version-ui-first-failure.txt"
+    }
+  ],
+  "nonFailuresNotMisrepresented": [
+    {
+      "scope": "Qt小数及超范围revision保护",
+      "passed": 6,
+      "failed": 0,
+      "log": ".local/residual-state-audit/revision-first-failure.txt",
+      "meaning": "实际已安全拒绝，未修改产品校验，文件名不代表失败"
+    }
+  ],
+  "baselinePreservation": {
+    "verifiedArtifacts": 29,
+    "allUnchanged": true,
+    "artifactSha256": {
+      "docs/agent-upgrade/agent-e2e-repair-verification.json": "771b7d1cd4a3c614e667445248867f1cac17dce0a34551b92e1c50bfb3fae3c5",
+      "docs/agent-upgrade/independent-e2e-verification.json": "4eb191915506ef40be5b4fb79a6a87977074bf4c3e3811e399f00283636091b7",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/repair-checks.json": "fac4676798583aad96468dc27fd3f5022679ef82054c8fd8e6f3e99448726810",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/plan.json": "9037893b42694913eec67a149d3bec762afe81683eafe528c270534c1979777b",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/report.json": "176881c2c9bf9b2c351f0382ce904fe8fd608242aca348cf5e01bc6f4b5a068b",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/review.html": "42c558af73166bf488c5559b313fee79a2ed1916445d2997e2e92120505fc78f",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/selected-observations.json": "e48c8f938ace5b31a86eb81245727c0330dd755dcbac6d8726841b51da783178",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/suite.json": "6edd2a085f932466ef9822ab3890ec9eb1bba98af0373b5c5a756bb7383cba77",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/execution-lock.json": "90a5ecdb5486ffeb976405c56678b9c7547a0350ff7d25b546cf6c90d38f94f3",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/observations.json": "9caecc236dff81cfb5cd072c6aa9b67be3dfadf878594256b300ad1b8de78e07",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/catalog-truth.json": "b1773664f62a5cf86a14770f89481d71c9515e3bcbf81c173eca5622055da98a",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/manifest.json": "f7fd892e4b2f3f63e66abcba1e84a0fbe38fe8a835c68c886665f25e5088230b",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/ready.json": "7cc78e6f6482a6aee046448844010c72a19fa5314da513e6a1b86fe3a75af40f",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/runtime-model-policy.json": "f1392e29dc89c84c47c6b6232c8784772e46fd4c2bab87722f09d99ed04e90d2",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/review-data.json": "f853e2b83bfefcbec2b00732b2d8a35cf7641a411ffd919219b6ccb77462a903",
+      ".local/agent-repair-runs/20261023T203646Z-e7bce866/human-review.json": "4695676b29a5ab8c14df82bdd8b564af11a62e912be720664813e39ba0fcf735",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/plan.json": "0f503b2cc8466ddf752f5859765d5d64d27fb7b17c98f0c9bfd02250f12f1082",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/report.json": "6b65dd037528252cdfb2baf4f901af8fb66f78001d7573464e736cd2e8533224",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/review.html": "24b504589117e557cd5597db1f87d60871fad90a7c50aba67ad966ae3c28ef43",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/selected-observations.json": "e653b9e488471134a3641daf04e6ab509491163970b8e32dc13d66b387aa77bf",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/suite.json": "3f686bacd70d800a1f0ce02ff04e52db9b34d2a93dc6b1b7bdc5b3928dc2eeba",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/execution-lock.json": "7b67df1b59dc4bb52b5cd48ef3fa796772f92ebf9d8b5be88057381f86873065",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/observations.json": "d39357bda962cb4103259f29edc9677a782093fe7452d24af93da2eaff56d439",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/catalog-truth.json": "722b0b46b9df22cb9a27716bb2b9426198628340aa58a6d6a54370957617ab4a",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/manifest.json": "756b444f3452fa4d6af2fc649f3d412e9205f6fcfa04b04e790a782d01c2bd78",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/ready.json": "ff122d93d45f9c4fe322505975d1abcb7e2b077ca1f933df71298ac396c3f826",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/runtime-model-policy.json": "2526e7c1b45dfae094cad22c61a125a7004c04f9e7132e8dfff8159d74611f7b",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/review-data.json": "d6a5c81b4725dd074116b0b6637c1a7fe37fe4947c9e8e17f6ca1b5099f3cd2a",
+      ".local/independent-e2e-runs/20261023T190311Z-72c6ee3f/human-review.json": "289301efc25c7acaf6e70259b295c281025c12b18daba7fbf196c1c14ef59179"
+    },
+    "old24QuestionScoreUnchanged": true,
+    "old10QuestionScoreUnchanged": true
+  },
+  "runtime": {
+    "appRebuilt": true,
+    "prepareMacosExitCode": 0,
+    "ownedBackendsNormalRestart": [
+      {
+        "port": 16382,
+        "development": false,
+        "oldPid": 40536,
+        "verifiedOwner": true,
+        "normalStop": true,
+        "health": {
+          "httpStatus": 200,
+          "ready": null,
+          "runtimeLanguage": "python",
+          "storage": "mysql"
+        },
+        "ready": {
+          "httpStatus": 200,
+          "ready": true,
+          "runtimeLanguage": null,
+          "storage": "mysql"
+        }
+      },
+      {
+        "port": 16383,
+        "development": true,
+        "oldPid": 40572,
+        "verifiedOwner": true,
+        "normalStop": true,
+        "health": {
+          "httpStatus": 200,
+          "ready": null,
+          "runtimeLanguage": "python",
+          "storage": "mysql"
+        },
+        "ready": {
+          "httpStatus": 200,
+          "ready": true,
+          "runtimeLanguage": null,
+          "storage": "mysql"
+        }
+      }
+    ],
+    "userDataOrQuotaReset": false
+  },
+  "privacyAndBudget": {
+    "newRealModelRequests": 0,
+    "newRealCatalogRequests": 0,
+    "newCloudTracingRequestsInEvaluation": 0,
+    "oldUnusedBudgetCarriedForward": false,
+    "commitOrPush": false
+  },
+  "knownGaps": [
+    "P03第二轮基于前次lookup候选的人声/版本自然语言消歧尚未实现，当前只验首句",
+    "P10艺人发展时间线缺资料来源与能力契约",
+    "真实模型修后语义准确率、真实曲库/听感未复测；完整对抗与原B04仍非已验收",
+    "真实MCP、动态Supervisor、反馈告警、生产部署及备份恢复尚未完成",
+    "未知/新增错误码和旧缺原动作事实继续unknown，不推断未执行或自动重发"
+  ],
+  "businessCompletionRate": null,
+  "semanticAccuracy": null,
+  "sourceSha256": {
+    "backend_py/tango_backend/intent_routing.py": "f86241e601418a4c115b1ed08f431771aaa325272a1a9d4f7b16d2e58a2a1f43",
+    "backend_py/tango_backend/request_understanding.py": "81f1585ac1ec3485aece0432f92e1249acd9ac2240e1f42f52fa2c034636ed3a",
+    "backend_py/evaluation/repair_regression.py": "1946c48ea202fb3892e2ae57618da695a5b39f4186e17e597610f2dac105f155",
+    "backend_py/tests/test_route_residual_contracts.py": "09a7339b7b04c9c7f4969c3b441ff82c884d136d3fd329ca3bbfee812ebf59f5",
+    "backend_py/tests/test_agent_repair_regression.py": "158c989286713a47e6bff8611a44333b8b27ad4b165b99cb1669f45e7eabf3ad",
+    "appbackendclient.cpp": "8920cc2aab37a982aba56cda2255c413304e51b14caf0b8720ba89fd2370cb99",
+    "musictaskclient.cpp": "a77ad17956048578049040f3d0f71ea4ca6381446e09a111033eaf78f36261af",
+    "musictaskclient.h": "045436c0f3ce04f52f59d0dbc4190dfd5536775bbed737c206fb4fbded4d3205",
+    "mainwindowradio.cpp": "8fb4c0928d9975707f83df52fff839f6074dd121fc9c892f52075e73f2ad5462",
+    "radiostore.cpp": "2b668659fb8ddde0eb7ddd366fb8bd1611707fb4e8e81b9096e48bd5b0130c6c",
+    "radiodialog.cpp": "7cb3af18cee23a86ecac9b40abdcfd3e272acd34ff9b770cbc67dfaf81b292a3",
+    "tests/musictaskclient_test.cpp": "20d9a48028e3a39cbbb570598c0eee252fbebf457ecafc6241f6317f587a3d42",
+    "tests/routing_flow_test.cpp": "32a5074b01115b4c6ff01cbb535cc5e768f660e72357f2c60228500240a1a10b",
+    "tests/radiodialog_test.cpp": "1823540a6f7d8fa0f57e0dd476f329ee04658ceed88d9fc19313f40bbe28510a",
+    "scripts/verify-harness.py": "169092f7827c5081410e01c91cd4b34c25a2bf9e88315f12c092f0d27d15dca1"
+  },
+  "artifactSha256": {
+    "manifest.json": "e00cf7ea6a53e1dce7bf9da8095faafe4c2330ed6e80e06e1f48a3291b54c379",
+    "report.json": "d7737f1bf2d2360a3a84633046f870c48f9128b092da69b646e0ea3bc3df7ce6",
+    "repair-checks.json": "8c4e7b70a9bd4e54517743e6f38e3d648202ec546c971abeadb13efc8d7ce733",
+    "selected-observations.json": "41e8f498635510424fae53d9c6f0f161aa0bb62c637a303607a016bfa4f2b106"
+  }
+}

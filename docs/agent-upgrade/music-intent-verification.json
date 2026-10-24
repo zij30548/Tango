@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "stage": "music-intent-and-requirements",
+  "date": "2026-10-24",
+  "status": "completed_engineering_scope",
+  "reviewedAt": "2026-10-24T14:54:44.862009+00:00",
+  "scope": "统一音乐目标与条件、受控Skill路由、真实艺人ID、来源与时长约束、Qt只读查询和明确播放的工程验收；真实模型曲库成绩单独记录。",
+  "workingTreeBaseCommit": "bb6d0bc2e3573946b4996b163515b9c0b248022e",
+  "workingTreeDirty": true,
+  "requirements": {
+    "specificSongLookup": "歌手加歌名返回目标候选，查询不自动播放。",
+    "artistCatalog": "解析标准名和上游别名，按真实artists ID过滤同名及其他歌手，单击只播放目标曲目。",
+    "existingPlaylistSearch": "已有歌单用卡片展示，单击只读展开曲目；与生成歌单分流。",
+    "compositePlaylist": "散步、邓紫棋与30分钟形成一个任务并保存原文条件；实际总时长27至33分钟。",
+    "followups": "改20分钟、换周杰伦、保留前三首及撤回只修改对应条件；冲突不静默丢弃锁定。",
+    "sourceHonesty": "场景由能关联到曲目的来源名称/标签核验；否定、不足或未知明确说明，不把曲库文字证据称为音频听感。",
+    "sideEffects": "未明确采用不替换队列，本次场景不自动写长期偏好；身份解析失败禁止自动播放。"
+  },
+  "architecture": {
+    "runtime": "现有Python LangGraph固定音乐协调流程，完整支持的语法直接编译，未知部分受控模型理解并保留已确定条件。",
+    "skills": [
+      "song.lookup",
+      "artist.catalog",
+      "playlist.find",
+      "scene.playlist",
+      "release.query"
+    ],
+    "boundary": "Skill登记和Flash/Plus模型分工不等于动态多Agent；真实MCP和动态Supervisor本阶段未实现。",
+    "stack": [
+      "C++17 / Qt5.15.19 Widgets / QNetworkAccessManager",
+      "Python3.12 / FastAPI / LangGraph",
+      "MySQL8.4 / InnoDB / Redis",
+      "设备SQLite / Node.js网易云适配"
+    ]
+  },
+  "externalRequests": {
+    "scope": "本文件所列工程门禁及固定上游回归，不包含另行授权的真实运行",
+    "paidModel": 0,
+    "realNeteaseCatalog": 0,
+    "langsmithCloud": 0
+  },
+  "gates": {
+    "quick": {
+      "report": ".local/harness-runs/20261024T144709-twufas0h/report.json",
+      "pythonPassed": 1894,
+      "pythonSkipped": 37,
+      "nodePassed": 61,
+      "failed": 0
+    },
+    "mysql": {
+      "report": ".local/harness-runs/20261024T144709-0dqekr00/report.json",
+      "passed": 2461,
+      "skipped": 66,
+      "failed": 0,
+      "environment": "拥有者临时MySQL/Redis；迁移用例另建临时PG，不读取应用用户库。"
+    },
+    "native": {
+      "report": ".local/harness-runs/20261024T144709-_ozad0zc/report.json",
+      "suites": {
+        "hosted_flow_test": {
+          "log": ".local/harness-runs/20261024T144709-_ozad0zc/hosted_flow_test_run.log",
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "blacklisted": 0,
+          "milliseconds": 8191
+        },
+        "music_task_flow_test": {
+          "log": ".local/harness-runs/20261024T144709-_ozad0zc/music_task_flow_test_run.log",
+          "passed": 5,
+          "failed": 0,
+          "skipped": 0,
+          "blacklisted": 0,
+          "milliseconds": 23924
+        },
+        "routing_flow_test": {
+          "log": ".local/harness-runs/20261024T144709-_ozad0zc/routing_flow_test_run.log",
+          "passed": 57,
+          "failed": 0,
+          "skipped": 0,
+          "blacklisted": 0,
+          "milliseconds": 68338
+        },
+        "lookup_context_flow_test": {
+          "log": ".local/harness-runs/20261024T144709-_ozad0zc/lookup_context_flow_test_run.log",
+          "passed": 27,
+          "failed": 0,
+          "skipped": 0,
+          "blacklisted": 0,
+          "milliseconds": 30634
+        },
+        "chat_workspace_flow_test": {
+          "log": ".local/harness-runs/20261024T144709-_ozad0zc/chat_workspace_flow_test_run.log",
+          "passed": 14,
+          "failed": 0,
+          "skipped": 0,
+          "blacklisted": 0,
+          "milliseconds": 16194
+        },
+        "music_intent_flow_test": {
+          "log": ".local/harness-runs/20261024T144709-_ozad0zc/music_intent_flow_test_run.log",
+          "passed": 16,
+          "failed": 0,
+          "skipped": 0,
+          "blacklisted": 0,
+          "milliseconds": 23956
+        }
+      },
+      "environment": "macOS原生Qt六套顺序执行；正式Python HTTP/LangGraph，固定模型/曲库及生成WAV。"
+    },
+    "overlap": "quick、MySQL、native和定向回归覆盖重叠，不相加为总体完成率或准确率；跳过不算通过。"
+  },
+  "targetedRegressions": {
+    "independentNativeAcceptance": {
+      "log": ".local/music-intent-acceptance/review-regression-first.txt",
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0,
+      "blacklisted": 0,
+      "milliseconds": 24289,
+      "businessCases": 14,
+      "lifecycleChecks": 2,
+      "purpose": "预写业务判据；独立实现验收探针，属于已暴露需求工程回归，不是独立语义新题。"
+    },
+    "taskToolClient": {
+      "log": ".local/music-intent/catalog/qt-final-source.txt",
+      "passed": 206,
+      "failed": 0,
+      "skipped": 0,
+      "blacklisted": 0,
+      "milliseconds": 46344
+    },
+    "musicProfile": {
+      "log": ".local/music-intent/profile-unit/test-first.log",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "blacklisted": 0,
+      "milliseconds": 734
+    },
+    "latestGrammar": {
+      "log": ".local/music-intent/backend-phrase-first.txt",
+      "passed": 813,
+      "skipped": 2,
+      "failed": 0
+    },
+    "priorQuantityAndAliases": {
+      "log": ".local/music-intent/backend-quantity-second.txt",
+      "passed": 699,
+      "skipped": 2,
+      "failed": 0,
+      "version": "早于最后语法修复，保留为当时定向结果。"
+    },
+    "undoAndSources": {
+      "log": ".local/music-intent/backend-undo-final.txt",
+      "passed": 500,
+      "skipped": 28,
+      "failed": 0,
+      "version": "早于最终门禁，与全量覆盖重叠。"
+    }
+  },
+  "readOnlyReviewRepairs": [
+    {
+      "finding": "指定歌手身份接口失败时退回姓名匹配，存在未经身份核验自动播放路径。",
+      "fix": "网络和结构异常明确失败；无唯一身份只展示候选，禁止自动播放。",
+      "regression": "16项Qt验收中的503阻断与无唯一身份用例。"
+    },
+    {
+      "finding": "未完成只读查询重开成为unknown后未终结，会长期占用待恢复名额。",
+      "fix": "只读核对原route后将本机旧查找/筛选动作终结为skipped，提示重新搜索，不重新派发。",
+      "regression": "artist与playlist两类重开直接核对SQLite action=skipped和terminal=1，曲库/模型调用计数不增。"
+    },
+    {
+      "finding": "旧Node服务health version1会被新版Qt复用，导致新增目录API返回404。",
+      "fix": "增加catalogVersion=2与musicIntentVersion=1并拒绝旧服务；更新当前模拟健康契约。",
+      "regression": "Node启动协议、Qt profile专项及最终原生门禁。"
+    }
+  ],
+  "firstFailuresAndCorrections": [
+    {
+      "evidence": ".local/music-intent-acceptance/first-run.txt",
+      "passed": 2,
+      "failed": 10,
+      "skipped": 0,
+      "cause": "新Qt验收夹具在填入草稿前检查发送按钮，10项业务均未发送；不是产品能力分数。",
+      "correction": "先填草稿再核对按钮；保留所有业务判据。修正后12项通过，再追加边界得到16项通过。"
+    },
+    {
+      "evidence": ".local/harness-runs/20261024T141818-rdt5mzjb/report.json",
+      "log": ".local/harness-runs/20261024T141818-rdt5mzjb/python_offline.log",
+      "passed": 1808,
+      "failed": 5,
+      "skipped": 37,
+      "cause": "扩展确定性音乐理解暴露旧话题/修改路由、冲突时长及候选指代回归。",
+      "correction": "收紧按字段完整消费和上下文优先级；冲突时长明确澄清且不执行，不改旧题为成功。"
+    },
+    {
+      "evidence": ".local/music-intent/backend-new-first.txt",
+      "passed": 30,
+      "failed": 1,
+      "skipped": 2,
+      "cause": "连续更换歌手后仍使用旧候选，未重新进入所需检索。",
+      "correction": "切换艺人时清除旧身份和不适用候选，保留场景、时长；正式Runtime与Qt连续修改均回归。"
+    },
+    {
+      "evidence": ".local/music-intent/backend-runtime-first.txt",
+      "passed": 132,
+      "failed": 1,
+      "skipped": 35,
+      "cause": "伪造歌手选择未命中时访问空对象，返回TypeError而非受控拒绝。",
+      "correction": "先验证选择存在且来自原曲库候选，再核对所属分支；保留原选择越权断言。"
+    },
+    {
+      "evidence": ".local/music-intent/backend-all-first.txt",
+      "passed": 2261,
+      "failed": 5,
+      "skipped": 178,
+      "cause": "旧路由上下文与冻结helper兼容回归；与quick部分失败重叠。",
+      "correction": "保留原失败和冻结向量；精确调整原意图与候选继承边界，不能把与quick重叠的项相加。"
+    },
+    {
+      "evidence": ".local/music-intent/backend-quantity-first.txt",
+      "passed": 249,
+      "failed": 3,
+      "skipped": 2,
+      "cause": "“查询”短前缀误吞字符，保留前三首和全角第2首被误判为作品浏览。",
+      "correction": "限定完整数量和动词语法，候选指代/已有任务控制优先；旧行为断言保留。"
+    },
+    {
+      "evidence": ".local/music-intent/catalog/qt-first.txt",
+      "passed": 184,
+      "failed": 9,
+      "skipped": 0,
+      "cause": "目录身份/署名契约升级后的首轮工具与旧夹具回归；原9项失败完整保留。",
+      "correction": "补真实artists ID数组、身份解析和分页夹具，并修正正式工具筛选边界；最终工具206项通过。"
+    },
+    {
+      "evidence": ".local/harness-runs/20261024T143643-bs21i5pd/report.json",
+      "log": ".local/harness-runs/20261024T143643-bs21i5pd/lookup_context_flow_test_run.log",
+      "passed": 25,
+      "failed": 2,
+      "skipped": 0,
+      "cause": "两个版本冲突测试的曲库夹具未提供新增/assistant/artists正式身份契约。",
+      "correction": "给当前夹具补歌手身份与作品artists署名，不放宽录音室/现场冲突和禁止自动播放断言；最终整套27项通过。"
+    },
+    {
+      "evidence": ".local/music-requirements-live/requirements-20261024T144744Z-157dddad/real-qt-observations.json",
+      "phase": "evaluation_preflight_only",
+      "modelRequests": 0,
+      "realCatalogRequests": 0,
+      "businessInputsSent": 0,
+      "cause": "正式ConversationClient.startNew采用懒创建；探针错误要求准备阶段已经取得非空新会话ID，导致setup停止。",
+      "correction": "由独立评测阶段修正懒创建前置条件并记录新版本；不改变本工程门禁成绩或题面。"
+    }
+  ],
+  "integration": {
+    "app": "build-macos/Tango.app",
+    "appBinarySha256": "72b0c29984599aae1a67849fefbb99db9ec1160e25448696aa9a314465d3ec0f",
+    "buildLog": ".local/music-intent/app-build-frozen.log",
+    "prepareLog": ".local/music-intent/prepare-final.log",
+    "prepareExitCode": 0,
+    "restartEvidence": ".local/music-intent/owned-backend-restart.json",
+    "restart": {
+      "stopped": [
+        {
+          "pid": 83280,
+          "uid": 501,
+          "args": "/Users/zijing/projects/fictional-fishstick/backend_py/.venv/bin/python -m tango_backend.server",
+          "cwd": "backend_py",
+          "signal": "SIGTERM"
+        },
+        {
+          "pid": 83281,
+          "uid": 501,
+          "args": "/Users/zijing/projects/fictional-fishstick/backend_py/.venv/bin/python -m tango_backend.server",
+          "cwd": "backend_py",
+          "signal": "SIGTERM"
+        }
+      ]
+    },
+    "healthEvidence": ".local/music-intent/actual-backend-health.json",
+    "healthAndReady": {
+      "16382": {
+        "health": {
+          "status": 200,
+          "app": "quiet-app-backend",
+          "pid": 440,
+          "storage": "mysql",
+          "rateLimiter": "redis",
+          "runtimeLanguage": "python",
+          "developmentMode": false,
+          "musicIntentVersion": 1,
+          "conversationClearVersion": 1
+        },
+        "ready": {
+          "status": 200,
+          "storage": "mysql",
+          "rateLimiter": "redis",
+          "ready": true
+        }
+      },
+      "16383": {
+        "health": {
+          "status": 200,
+          "app": "quiet-app-backend",
+          "pid": 441,
+          "storage": "mysql",
+          "rateLimiter": "redis",
+          "runtimeLanguage": "python",
+          "developmentMode": true,
+          "musicIntentVersion": 1,
+          "conversationClearVersion": 1
+        },
+        "ready": {
+          "status": 200,
+          "storage": "mysql",
+          "rateLimiter": "redis",
+          "ready": true
+        }
+      }
+    },
+    "noDatabaseWipeOrQuotaReset": true
+  },
+  "versionEvidence": {
+    "manifest": ".local/music-requirements-live/requirements-20261024T144744Z-157dddad/manifest.json",
+    "manifestSha256": "bfcfb2ee4b1e59e6681aaca8a650cd3498d5372abb0eea4c666b4cb4602a3816",
+    "manifestSeal": "ef565bef202c31079f40430235b3852da9eeecaa12d05c293337601b2404f924",
+    "frozenSourceCount": 178,
+    "mismatches": [],
+    "boundary": "仅读取该冻结manifest的公开源码哈希，未读取本轮connection、token、env或用户库；此处引用不是把真实运行成绩纳入工程门禁。",
+    "sourcesMatchedAtEngineeringRecord": true,
+    "snapshotMeaning": "178项是最终工程门禁与首次真实准备时的冻结版本；后续仅评测探针/等待守卫修复须另记新manifest和delta，不覆盖本哈希。",
+    "subsequentEvaluationDriverCorrection": "真实准备阶段发现新对话懒创建与探针非空ID前置条件不一致；仅评测驱动继续修复，不将旧probe哈希称作修后真实验收版本。"
+  },
+  "sourceHashes": {
+    ".local/music-requirements-live-probe/music_requirements_live_probe": "e96e71eb4af454686529012e685d59e0e122f6f5862456d83af5c37729b773b2",
+    "MusicPlayer2.pro": "61207596a38797664a7ef3bda33d02100fceae24eaf034b0be691dbf4ee0f07f",
+    "aboutdialog.cpp": "6af96e571cf7cc354250580d715ae87832e960510501bedaff2b0e66020a8cb0",
+    "aboutdialog.h": "8ea40d8df464a10b96670bb3ff09e46261ff218a133fff3dbd5c36b39892ad23",
+    "aboutdialog.ui": "7ba0757c5330c21f10cda2d55fe291cc45f0caeb8ee82cc3e917f058002bc828",
+    "appbackendclient.cpp": "b38d601995ee01bb59237018ee73c6e3230eb42fbd11413dbda2b95cdc6b4a9c",
+    "appbackendclient.h": "269671d8eb1258180e8a408267bb002dfc631fe597e07b0d8ace260d2976c66f",
+    "artwork.pri": "047041b720d0dae8df3d48f55589a0ab3f0e0a58677ad5d1fa2ea363ca5d0489",
+    "assistanttypes.h": "62a9ef8450724d9890f8a030197b45baa1bfb9ddb3c2a14a2924de9cb656815b",
+    "backend_py/evaluation/__init__.py": "43618792acb2ebbc9d5d412fecee82d8f202a1127e063a90a39589cfbc158c6c",
+    "backend_py/evaluation/calibration.py": "20b328397689a93cd108b984524ae9e5858fcadb257d410fc8446b2f40637f5c",
+    "backend_py/evaluation/demo_stability.py": "2e56de0287cd596a39f8bcf7a1f3f75fb74f193fd66993a6f0c3e120f8e3f914",
+    "backend_py/evaluation/independent.py": "60a43077377dece6bfde565630ecb09dff0fd93f65c2a8f5da48d63441ae16f1",
+    "backend_py/evaluation/independent_scoring.py": "14cdada39eb316ea383b3475522f4d0bbb65e03353db2c6780bd4f67864ab51c",
+    "backend_py/evaluation/independent_server.py": "4f58ea9443bfa5869f4aa8e9d61916f033753b52ab31cd5a98b488ae8f8f6e48",
+    "backend_py/evaluation/langsmith_demo.py": "378ba60b73dfead5a000d3fe3e89d574794701d8f3d45fbd392b5f882d3cec96",
+    "backend_py/evaluation/lookup_regression.py": "98afb38e454fc89e37d399fdaa3dc2cb0fd76eca8c8bbb903a883b369790a829",
+    "backend_py/evaluation/music_requirements_live.py": "fe23151ca3eb9c30c02fc401aec9f92273aee35af3eb1ade34e313bc8433a6f5",
+    "backend_py/evaluation/repair_regression.py": "1946c48ea202fb3892e2ae57618da695a5b39f4186e17e597610f2dac105f155",
+    "backend_py/evaluation/repaired_quality.py": "e44507e3420c48c2f5fe2fdfa25d2bf2514686fe3f6b400013c6051b45b069f1",
+    "backend_py/evaluation/repaired_quality_scoring.py": "b767fefc3a2a1d7f9f8ddd2559c795c01ecc71c9aacd06ab17ecc4e7134c4a9a",
+    "backend_py/evaluation/scripted.py": "8be2ee6f6405287a6149d43fa1e1b7c79a759f9cba29c8871f7973e0b177300c",
+    "backend_py/pyproject.toml": "1d194d93dd7b3bab48d5e127d78100917924b5cf9e0a8348af87fff26b141683",
+    "backend_py/tango_backend/__init__.py": "fa7c26f3d8e27490ec61a2d3900b343f038b0978c645bc67c1e0efa56e6596f1",
+    "backend_py/tango_backend/account_quota.py": "4da0bafd43b84e7ea759063e122d5b157c18fe459eee6ab528f1fc10f864c4c6",
+    "backend_py/tango_backend/admin.py": "57f0fa9241ca1f87416e43101289a9dda28a08bc9ddd0ce82c134afd0f791bf7",
+    "backend_py/tango_backend/agent_tracing.py": "6af29c475d1ac626bedd38be10fe8f4968902ad30bcc5bca9a5820c1c475a6ac",
+    "backend_py/tango_backend/app.py": "a661cc9e6f7370701a8bb1fb3e3c18efde2fc9d528e15c34dc79b04f6c09be19",
+    "backend_py/tango_backend/assistant_model.py": "3394aa55f8854d354b7e50b94679360f5c34030a94339c3408a1209e4c55068c",
+    "backend_py/tango_backend/capability_registry.py": "953576a0918e03cd9a1f7b2b5d20cf1e0544d263cedd67b596a9699a5150a334",
+    "backend_py/tango_backend/compat.py": "8461edfba7ba2d14c16f972f3c6c5ea3664556d5315f4727b6912bbcd7234e06",
+    "backend_py/tango_backend/conversation_commands.py": "9d1353bbc4442876dd677367859b2766df72c85433fd55e9ee07eea32c2d518b",
+    "backend_py/tango_backend/conversation_route_store.py": "68ef4e183ad3b1226c15668d5105d0347ac713edf680dfb76d288ce154935287",
+    "backend_py/tango_backend/conversation_router.py": "12884ba9adbb931ede82ebabb0c73f12e5aa7437cd9701573cf9d7fc69651cb8",
+    "backend_py/tango_backend/conversation_store.py": "9608cd314ead65939171bb52a124390e333ef9d8b9534e8ca70c1ba6d6748701",
+    "backend_py/tango_backend/development_config.py": "7f2cf4d5b8867d8fe2eb866062f0dd15119ef7bfa7f2d39c8cd2b93dcd96e7b2",
+    "backend_py/tango_backend/development_session.py": "519466529acb7f3ff651ca2fd2912414fe5d6150ac4b457efe88079672d34489",
+    "backend_py/tango_backend/diagnostics.py": "e81e4eb94d84ec706557342313d75107ecc4357c6e26a5232cf344776d631713",
+    "backend_py/tango_backend/ensure_storage.py": "3f6e51bcf36c7d2bfa7f9cbcd2a3fc79a7b6babce68ee6947f41e136466c9abd",
+    "backend_py/tango_backend/errors.py": "1bdf5af4208e1161ec50d971f5e38660c43deae2007c08931cca1347dd087b5e",
+    "backend_py/tango_backend/http_protocol.py": "2039ca6f46c203f3979c7631d0bfd85e93dbc57874f069db9acd59ee04272213",
+    "backend_py/tango_backend/intent_routing.py": "f51afb9a9e83a6f764430362613e254d81c07aa8cda77bdd4fefe9f60e4d613d",
+    "backend_py/tango_backend/invite_store.py": "96a63fadb8c03b02a75729c6228290c436166e190b432ad749d7ff7009a0f06c",
+    "backend_py/tango_backend/launch_local.py": "fed31547b0b5a3a4585fcabbc1d218fa932364b25dd635b0a7b0c44bc5f282e4",
+    "backend_py/tango_backend/lookup_context.py": "bc4a75ad3d404d14c1d0eaafb16c4fa229b2d9d701fe1782d6209db773b1d8e7",
+    "backend_py/tango_backend/migrate_mysql.py": "5bd24bda584abf1247a0b19322db182250c2c934e70adecb8aa8ffbc38f50bd8",
+    "backend_py/tango_backend/migrations/001_initial_mysql.sql": "04493e405963214e2752bdc025d7987379193e1c797f62f0e3aa9d24120509b0",
+    "backend_py/tango_backend/migrations/001_initial_postgres.sql": "792f69278b821188808ff7b7715e81a931c01740e3e8a47fbc3bbc87073e308a",
+    "backend_py/tango_backend/model.py": "0268000794716730985634afb3fde811b67c92d57603fb68199d152e7de8e618",
+    "backend_py/tango_backend/model_common.py": "164e722476a036fa4a9542e02194bd0a27cfdddc6f054437e8e56ba38cf6ad3b",
+    "backend_py/tango_backend/model_profiles.py": "c1d76aeaf7a4282c6bb918b9434768591017ff94e3ce34922f918a50fffa9478",
+    "backend_py/tango_backend/model_transport.py": "cdabfab176263844e3a1f90eea494a6a4eb115b3779fa18ba11b2b1975300c2c",
+    "backend_py/tango_backend/music_lookup_intent.py": "01501a6b76304ff94bee1b6f0a7d90fe97b9727d7be5b7e4bdc0d63741fc834a",
+    "backend_py/tango_backend/music_request.py": "9a04734e73dfa50ed99abbfe8d6fcd79804290c0101d83efb955ac01b28b4949",
+    "backend_py/tango_backend/music_skills.py": "d9396d44f7bcd657791e5074e79e835fd8bde1e9486cbf2ebf69101e322bd652",
+    "backend_py/tango_backend/mysql_infra.py": "779c376adf3c1ac4988fb480b75b501298ed303e7cbb47d27bdf49ab949cf8d5",
+    "backend_py/tango_backend/mysql_store.py": "beae11bca12038cbf08e8dcf1d2673f3100dee487a1e90571d9baf3a0dec0e7a",
+    "backend_py/tango_backend/mysql_task_store.py": "eae1c2d11f9cc5ffd6973fdcf4ce7f799ca4b1a2af4459ca0f9bd6c1a93ecbc4",
+    "backend_py/tango_backend/postgres_store.py": "7ec4037819a36479bf798b95c5718ded3a3ba4bb7e0ba65133c3dbf86bd089ee",
+    "backend_py/tango_backend/postgres_task_store.py": "ab57a5355a6e002819861146db980bb92adf2b590c9126af096253f37632499a",
+    "backend_py/tango_backend/prompts.json": "33d4f93b5c209a2b513dc43fc7260085ec4cbd0e30d67b3128789994f4e2fe4c",
+    "backend_py/tango_backend/radio_model.py": "8c1cd7c8b9495f4c17be6b0a92b18196506007d3fa4aa90c0ac01b46ed6ae7dd",
+    "backend_py/tango_backend/redis_limiter.py": "c1a06ebfdf1418b4ad218ab3779bdb4747713266a49530a95c802191897f5011",
+    "backend_py/tango_backend/registration_service.py": "2f42c60ce2ec02723a404ded6104b2dfde890694412da389dd5634ce8bec1aed",
+    "backend_py/tango_backend/release_intent.py": "477e30b9ce0f7a106f0899eb790fb82dd068c1bdf6fde1c2235939fb0e7ebe39",
+    "backend_py/tango_backend/request_understanding.py": "98ab67bc6ed52870e968039c3d070319e98bccb21bde362f9ce9095cfb0e01a3",
+    "backend_py/tango_backend/route_contract.py": "9e5f7750dc9993d47d9d156b6265ae39fc06c70957a07199394644f2e31a5009",
+    "backend_py/tango_backend/security_config.py": "7edbc069aa22116ecd432c00f4d5d32cfcd9a11e61604cea8096e6f3751e9789",
+    "backend_py/tango_backend/server.py": "43779da50912f0eb422e5a004f37352d4faede1a84c2db8931e6cf4dd3a091e6",
+    "backend_py/tango_backend/service_config.py": "5e80571910077aa219d1355f3614cb62a4616ab0d912d3bd4339ccccf247857f",
+    "backend_py/tango_backend/storage.py": "5ed23959a3b59e3dbf4bfd4da1ee4c9a6268d44f6c0cd6d14f811774b3d79db5",
+    "backend_py/tango_backend/storage_auth.py": "ed9e56c0907945ec2962fc94e1f5468dfc8379be74f08407910a1ed6c2f0e6f9",
+    "backend_py/tango_backend/storage_db.py": "21f844112f2bd9867275812813eeebae391208a8a675871330cfb95f2de1b1b4",
+    "backend_py/tango_backend/storage_postgres.py": "93c81a3626f11f22472877ffbea040d617fb8be90d0723f449452126d3a184fe",
+    "backend_py/tango_backend/storage_profile.py": "a5407e8065ab3e966ac85d0f89f85cf20b72b3915d613846169f277ffc28d582",
+    "backend_py/tango_backend/store.py": "49e6791d01ffdf8ea85536c5dc72f96b04c61795a672b5c33c0253e1ff42880a",
+    "backend_py/tango_backend/task_brief_patch.py": "b36a2dbe1c06011707aa0b2fb8613b3a9930f2f1aa8fa913345ead2ae915cabd",
+    "backend_py/tango_backend/task_duration.py": "aa5e0739323dc9f7b69ba842a6998d26aab993b2a3210f36b033757a2095918b",
+    "backend_py/tango_backend/task_language.py": "8b10cccff9df41817c22731a8f33ce5dafe3ae94a1771e5d7c672494b4e7160f",
+    "backend_py/tango_backend/task_model.py": "98464acece9a288883e3c7a9c3ea3810aa32ee630e4e9077276b121e3759c2ec",
+    "backend_py/tango_backend/task_pending_request.py": "3f8c259725c527899e8ae11f385e896b7055977ac3f387368961881c402b3c1f",
+    "backend_py/tango_backend/task_progress.py": "de4b0a71dacfcc4424649edca527abf8cdaa6ccdfe09d3bdef857ad5accb88b4",
+    "backend_py/tango_backend/task_query_coverage.py": "6aa7d5481baa1ec9721e78ecbe504225f591176e81bd425836d6d255bd5a1d6e",
+    "backend_py/tango_backend/task_release_intent.py": "a26cfa83cb5889057daf75d5e488a18e316cb946bfed73ba4befd79a3efc8e18",
+    "backend_py/tango_backend/task_runtime.py": "cae882287f1ccfd198d957e7ca9b6413119cb5d2eda2b118b140d0595a7bd1f1",
+    "backend_py/tango_backend/task_schema.py": "d468a3ca13bb06547c6dabf59e33edc9fce126f234d54703b5dc896d1e955217",
+    "backend_py/tango_backend/task_store.py": "a6274418fc302ffaac65d981db11f13e37a66a8de5ce9a2f6d2f063d0f577022",
+    "backend_py/tango_backend/task_style_evidence.py": "ac092fb97b308314e8e38496854b4f3da03777744ac2ebaa999252fd5e8248f2",
+    "backend_py/tango_backend/task_tool_cache.py": "d497042451726af0223a34447c1b95f9301b2e46059e79fcf6ceb176a18fb726",
+    "backend_py/tango_backend/task_tool_evidence.py": "18c21d6bab090d815ac66cb8bed39fe946d2b0230f86f95cfadc414b3744a610",
+    "backend_py/tango_backend/task_track_count.py": "1eb9eaf04b54fcaa272662f26cee6ff3ae9dfbe379477c84cfbd0180d7982456",
+    "backend_py/tests/test_demo_stability.py": "ef6a2a17403c02475bb500593f38e7f1971d6049d770242da3d2e2f25a3e73ee",
+    "backend_py/tests/test_repaired_quality_metrics.py": "e5afd9415b680d97e6f86c46a127d9ff675cd01bc75c4f4717675b110606c556",
+    "backend_py/tests/test_repaired_quality_protocol.py": "c23c61c93816dd3eaaece85e67448afebfd4077d0ad687761f27e7e0ebfe7d58",
+    "backend_py/tests/test_repaired_quality_review.py": "7fd5a1d44bf737441d2ecff625cc840ebfb704176d96be014d9670236b6b8734",
+    "backend_py/tests/test_repaired_quality_runner.py": "e094402b593a97fc7d250b2deab62c0aa9b9bd68f12e5dd65463bc915a470472",
+    "backend_py/tests/test_repaired_quality_scoring.py": "0232699a195bfce2a55b9bbf97bdb38f67b702bb56e4e737d7d881ef0298843e",
+    "backend_py/tests/test_repaired_quality_scoring_audit.py": "c2ce6eda11474b6536297566ad3964a1acf6fa94463799ca707dd301e2317a56",
+    "backend_py/uv.lock": "10d7af96632fb3eb9f6edd6733e06ea1fb4ac6358f5c7ff4a60a210291622659",
+    "conversationclient.cpp": "9d8eaeee0a2b07a8be14dad66077a4444ff53920c2ac5a5e00c9d1cb0c506316",
+    "conversationclient.h": "2f8bf1f8206b6d193eba0fdd2003e28d1e9b6d1ff52a98dea2c2e82c5ef14482",
+    "coverartcache.cpp": "f07e91d423c82606b4af5c2d9155cd854f9c929bbf601b3dc0bdc2bb130491de",
+    "coverartcache.h": "b53383f2a3e5389a5725759baf6a328033c88d301537e37b408e555dd09fb431",
+    "dialogstyle.h": "22327544a22518505d60dcf05556aaef2ac8a1db1c210db413eb5262e387f769",
+    "docs/evaluation-data/independent-e2e-v1-candidates.json": "0b707b8a2642a6a8f54fa0f584ec4dc9935577183aebe95eede78057876ba5ec",
+    "focus.pri": "b76ad57e6d05c92a151fd9efa063cc30093f7cad41443e9737d97c6b84fa3e66",
+    "focuscore.cpp": "bfc0777609d1fac2d21d3e6fff611bb242a457496bae9c5f3797b5dd9dcaa9c3",
+    "focuscore.h": "b4e278653bd959b395000359b0d39529b89bcb1341934ac84910867164d8e140",
+    "focusdialog.cpp": "7ef35839efa21351053b0e70a8bb4ffe0ea0c304853e23f027ed2b0ce39224f6",
+    "focusdialog.h": "4ef5df4e11b92708dc650573b17f47f27cad3b9e6c987db5be53adf8bef8cbd5",
+    "focusmodelclient.cpp": "e56bb1e6ecfaf5720fb62fd9dcd9d1f9edc7eacad34426771f95fb6e0c0ad50b",
+    "focusmodelclient.h": "5d2e676dd675ec17e900c17975a7507010e4f9f2e7163b7339cc99e611e6f163",
+    "focussession.cpp": "19b4a6315705e4394312510f2dea3f16db5d408fe0dc820db6d08c70ca47ff23",
+    "focussession.h": "13100e5d549d98165a401fdbcebf64b2a55e430661296584de0e4064152b4064",
+    "historysong.cpp": "108946a1a9a3aea785a750f71217d98c9db9ee21a28b8e86a542cee9f5fd0941",
+    "historysong.h": "7e1e0a303dc6d14ed5801f4ec844bb7d56e490cd29bcdfb9fac3e766bf09e5ce",
+    "historysong.ui": "012883651ae0b000926244b1cb25d2984297d297872ac3521801a610fba4292c",
+    "likesong.cpp": "9d760e2fcca598c60a30efb6d23f8755f6d03205de2c794c9b5baa0345fa014e",
+    "likesong.h": "9c3533464a9c302e3bb0775899ef678760a4c7c5fd7f2fc2a2d732a80e82558d",
+    "likesong.ui": "df3bf91fcde78a85e55845897f32f63a71d38f2a015996a4f293cbe2b934cb69",
+    "lookupcontext.h": "c4389923a24375e2e20d197a027bb0be22c627ccf8fef5443ea2376a3afa4924",
+    "lyricswidget.cpp": "e7d4da3fa98b6edb3278c7d0800c0142508a84a4117b1ef5e735eb17a9c8da1b",
+    "lyricswidget.h": "ec5f8f5262d0f8451c55d7f335af7aaeec61c4c464f81b089e2d253286d75229",
+    "main.cpp": "02de01df84df49cf1dc9b170a5edaf2af0856f98dd7d7f9041908adf83dc4281",
+    "mainwindow.cpp": "d4af619b6bf59c8a1cf6e3e67be8e1eebccbb37b2c127b7e142c95e18c8a7486",
+    "mainwindow.h": "90476764635ef2bb3dbd4e5003b2a3c6d42507baa4cedc3cbaed2ce1e02ee03a",
+    "mainwindowfocus.cpp": "2488a375dfbad8ba0ed380e85aa30e905d9f5591c5d6086a2ca58d7fc26de2df",
+    "mainwindowradio.cpp": "37b397a378f0da0c56dc68bb3c66b52fc60420f24a7ba0330b00ecf1caa4d673",
+    "musictaskclient.cpp": "60db44e604af632cbec1e119a4b683ef2406d01cb330f5f4f42ae22ee5a71ded",
+    "musictaskclient.h": "045436c0f3ce04f52f59d0dbc4190dfd5536775bbed737c206fb4fbded4d3205",
+    "neteaseclient.cpp": "4213c8b5a364883ae3b9d55a2da8285e6473357ab607b99740b8f7d340ce1366",
+    "neteaseclient.h": "fd8ac465e4a62b8d60274d95db74100b8b9985417bc5e6dbeb6c8e19eacb46ae",
+    "neteasedialogs.cpp": "ea4374cf50620e7f4552ba3275500c0a8786c7970e5708bb648e0ba6aa3b6578",
+    "neteasedialogs.h": "0f8ea93c0c8f6420e764a07e509650b7460e013e84515cedd112867e7b412b86",
+    "neteasetypes.h": "53de780ad81ba7072ff0f4b9e50e5855db83cba58a87ffdd5e00086b84ec411a",
+    "passwordvisibility.h": "f74195531248ab455aefcb2f823572f18b7f7f7c514b2530ceabc2ddaf1a20dc",
+    "playerwindowview.cpp": "8b7447d3e9884c4d489153e338461621282494a32e14cb21d020476084d297b1",
+    "playerwindowview.h": "e5b750266f284e6be0bcbf41994625f98040b1dd94ca1e3ef16e8c0c890a7985",
+    "radio.pri": "f217a06f4101f0f19a069a6fb4326116cafe5d6543f9e22547270c200320590b",
+    "radioclient.cpp": "1c47c72ca50df567b7b7057c607df3dfeb6765cab4c8cc9116a663a45cbb0286",
+    "radioclient.h": "a59fcb91fccec9c3092d83b72f37072af9463e367fd55254106ee047eaef78be",
+    "radiodialog.cpp": "863a38fdd22883007c1c5121e5be2efd5b9566f54a97e2a89b9e0ef08a930fea",
+    "radiodialog.h": "2d181df88eaeaefeaa2c698bde46520cd35d806d39215f8d9fa8b88771271f02",
+    "radiostore.cpp": "ceef3e0d741bd0ccac15481f4b6219ca063669233877532fdcdf05ccfb193532",
+    "radiostore.h": "15475ed69097288b980bc80ec4141211eae866d7ee32b215b53d22e7a03e2214",
+    "radiotypes.h": "dcafe173d2a31ec6c5d7a6c6ee83f70ad30cc21d4c6372a82370154b6e8a3b23",
+    "ranklist.cpp": "444768534cee04c7de52ae658339b031868bb077dfbf5ce099d287633edafd4b",
+    "ranklist.h": "7fbdd481acfa9e862fcf07415993f5e2d6509a06ac8023119c8b61c4538ee9af",
+    "ranklist.ui": "8124b0ee96fac778630685b8b748672aca1b30739e549a28fc52088cd6107952",
+    "redisconnection.h": "9999ed3a6ea3d28bd8fbea659f53a5ee16bdd3c3d7e8c9a067f642b5662afec4",
+    "scripts/check-agent-repairs.py": "07ca9a95b34243fc0719e4d7a44931d986367dfebbbe9453fc694ff29170c263",
+    "scripts/check-demo-stability.py": "340639e209753434706357e9b679b325fd2a0d03d6e22b11a03ab407fb212a56",
+    "scripts/check-lookup-context.py": "a40420e10390a4a2559cb1741077aebea87047fabb28adb00b597b17bc5f1a98",
+    "scripts/check-music-requirements-live.py": "c31ad9275accc1cf92d8eecd2d463314ab710d463d3a13af70dff458cb66187c",
+    "scripts/evaluate-agent.py": "46d588df9b1a5340159685b3f51571656bdf4795e38d926e523256debe73f93a",
+    "scripts/evaluate-repaired-agent.py": "3957ba8be5577d7136b2584555a2abe4553a53ef1dbcfe3babd1ff8947d8ed28",
+    "scripts/verify-harness.py": "0b004219b3fe3cb40312bb37d0ec0aa73d5b26b065e4df1298a9e6556d877241",
+    "service/app.mjs": "2fcbf20bc650fe3f5fee50a3b5f77cafdbbf941a7141a8cd2d3b715e247002f3",
+    "service/credentials.mjs": "80f4ccb3e728f11c882fa3f5ecdff7c3afb97da844bce5433b836e34b896a2dc",
+    "service/evaluation/music_requirements_netease.mjs": "4d72f1af81e1fc46057ddc43681157ec5a3db361788b920066f2d8db4848e11a",
+    "service/launch.mjs": "0a95d9324baa96c9a9f1499de6c0d11a758d6e2e36b88e928dd2de49e3bb0e3c",
+    "service/package-lock.json": "2d27cabee20367312012513a1b3a322ee3da328ccac1bbbcd949cea318afd379",
+    "service/package.json": "df74c8ca8032c632bc306bd8aedad112b532484b06a8b783c623507118cf9d98",
+    "service/server.mjs": "66c9f2a478b65a9c31e144afd5599df44c9c94b3d9e8d6eda3b8a41cc3593d35",
+    "service/upstream.mjs": "6b842a10f049a11df3390047019f90c966c7d8331cfa43eb19d9d5276b309e4b",
+    "signin.cpp": "77efe67aa366b730726f4d2634d1cfdb4699717aeb2926894933263d306d2344",
+    "signin.h": "f1c3b8ecf145edc2f37767b27b93f98376884a105e981bff937482bbc18134d3",
+    "signin.ui": "6b842d90a7abd623bad27de5e47a397ef0f457cde2020e115540b44c714ddcfd",
+    "signup.cpp": "58de621129356285ee1fd4cf9e2727d730c7f8b7a9098628a9d2b51d56101b60",
+    "signup.h": "44e45905abb8afb6ccaca2eda315b613175b756eccdfba0c6f9d91bc240dfbf1",
+    "signup.ui": "597e7fbf52fc5735cd1d7ddf51921474da2905069b429e96889295b64211d266",
+    "songlistdelegate.cpp": "3d7a4edcb107f3eff3932b733dd3e91c15e05faf4a9dcc3c40f730fe3b476e0e",
+    "songlistdelegate.h": "ee66dc2799b978edc6fd15ce40f52025aa4dd3300891b0b59f086f3af3755402",
+    "tests/independent_catalog_fixture.h": "8c6f58edb88afab14ace07956d32df10e99af4b264e0bf57b8e1e34bb0c15f59",
+    "tests/independent_e2e_probe.cpp": "5e48c4264a3f39512bd43fcd3eeaf13df3074dcd649645c4fd1a5ae681432ac3",
+    "tests/independent_e2e_probe.pro": "c2767e3a46ef8f730751d76dcfa7e847e88402c0911b6e0679ac9dd2e7331519",
+    "tests/music_requirements_live_probe.cpp": "dfefb98e202cc7139a9910c70ea6583e5d1b004e4174f44bfd72db14afcbe031",
+    "tests/music_requirements_live_probe.pro": "4f47f4d7842a140259424379492913bff83d3a3162f0f305464d8c7a201b9c2a"
+  },
+  "supplementalSourceHashes": {
+    "tests/music_intent_flow_test.cpp": "e888a8f3715ea6a6ddc162d026ca93801a8e0e10245653365b3c8a0d73eab50f",
+    "tests/music_intent_flow_test.pro": "fc4856dd2fc283e69aa3d850d9ac4d680344bf94f1283eb215d1f659ff6d81ec",
+    "tests/musictaskclient_test.cpp": "0e25615391cec1d0fffa4a12f853530d722c20f3b1a917b9a9818f5a5775cf12",
+    "tests/netease_profile_test.cpp": "7afb93aefd38bdcba170884734f01feda0b9e622e46999840744a6cdebf8959d",
+    "tests/lookup_context_flow_test.cpp": "f1dd3da13e9b652a2ccee3b1e11cfe7171aefdac1a8516fad33b850d213fa891",
+    "tests/chat_workspace_flow_test.cpp": "05e371ddcf7b4a653fd91587af7559d7bff8d1a14c95ca0b8d02981c555cb57a",
+    "tests/music_task_flow_test.cpp": "6fff00f883c3c673682d698b32868e05ad4ae355b8f6016f1ba5b7cdbd8f45b2",
+    "backend_py/tests/test_music_requirements.py": "5e6e7e0842ee66f5ee531a2b915e7dc712fe0fb0fd138200f4fe46b3092323db",
+    "backend_py/tests/test_music_requirements_mysql.py": "13ce4ae11d4d268673a98ee0e6c814540e1a808e3c8e99bdfc07f139466440aa",
+    "backend_py/tests/test_music_requirements_live.py": "5222eb0c712187a66a3f09f9605908c27a1ba83ca1c90d5344fbce881b0e61dc",
+    "scripts/check-harness.py": "d5eba60db3ed27a7bf483d76201f30df06f4e73e97a7ae03b05d8b6156a429f6",
+    "build-macos/Tango.app/Contents/MacOS/Tango": "72b0c29984599aae1a67849fefbb99db9ec1160e25448696aa9a314465d3ec0f"
+  },
+  "artifactHashes": {
+    ".local/harness-runs/20261024T141818-rdt5mzjb/python_offline.log": "8d83fd3a009cfb1c42941374d6f1ea5e7cfd812456e4756e5c0e1de59f87301d",
+    ".local/harness-runs/20261024T141818-rdt5mzjb/report.json": "0e24246bb039890dffbc4e48f376cc3abcfccb028f02d5ba5b09defcfc8b44a4",
+    ".local/harness-runs/20261024T143643-bs21i5pd/lookup_context_flow_test_run.log": "122dc0b184bab7ce15fdb6bcc9eb4ec7273927e194a13c03528307544c4d0f61",
+    ".local/harness-runs/20261024T143643-bs21i5pd/report.json": "616d1e53d0ca851f0da6b00f5e1004497cfe1c75518996dfd3a7a4c93806ab78",
+    ".local/harness-runs/20261024T144709-0dqekr00/mysql-pytest.log": "75953e39cc354b80e22731663708c69404c21f5800c174937fd56d100e1a5c7e",
+    ".local/harness-runs/20261024T144709-0dqekr00/mysql_isolated.log": "5b1335a2347f9781a47f975abe5939073c25054455fa4c3b9c90b98490da8070",
+    ".local/harness-runs/20261024T144709-0dqekr00/report.json": "ba5ea8c8bb0ddc0a0d7ca8d3d8b0da352e4cef07680ee2a6557544a822f06c44",
+    ".local/harness-runs/20261024T144709-0dqekr00/repository.log": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c",
+    ".local/harness-runs/20261024T144709-_ozad0zc/chat_workspace_flow_test_build.log": "7020902145972e56d0560f36229254d2db5470279411cf1700eda5e2ab014a60",
+    ".local/harness-runs/20261024T144709-_ozad0zc/chat_workspace_flow_test_configure.log": "7e599162238f4832ec210b97bf14264e2ced52717354825ea9d108e801e11e3a",
+    ".local/harness-runs/20261024T144709-_ozad0zc/chat_workspace_flow_test_run.log": "c9f139846c28a0502ddf096d9feffa1ab3edfcfd4b4f1ae6c1142d507fd4d0c5",
+    ".local/harness-runs/20261024T144709-_ozad0zc/hosted_flow_test_build.log": "233d1619bab85d1b411a9a205b8912c3810a59289384bcd74e4375fdf4104f32",
+    ".local/harness-runs/20261024T144709-_ozad0zc/hosted_flow_test_configure.log": "f01ecba55f748156960db5563cf1d66652f6207ca896164e81b7dfbe92623c0a",
+    ".local/harness-runs/20261024T144709-_ozad0zc/hosted_flow_test_run.log": "7681f8d16b301a7855ea45071a376139a81bbdea68b9c7a59e93f126a9b3d914",
+    ".local/harness-runs/20261024T144709-_ozad0zc/lookup_context_flow_test_build.log": "f588f60d30076de23ea17ea1e4529427f1bf8855e2d5df4861943c8f463c1743",
+    ".local/harness-runs/20261024T144709-_ozad0zc/lookup_context_flow_test_configure.log": "be5dedbb9a97d19c518625c3ed93354ea211e6def1e9a1900fe3f121b21e160c",
+    ".local/harness-runs/20261024T144709-_ozad0zc/lookup_context_flow_test_run.log": "788f2d1a0b286a933bedb8aafb278e3bc3487da04ed08067696a92829c9fc965",
+    ".local/harness-runs/20261024T144709-_ozad0zc/music_intent_flow_test_build.log": "d6fc3f7a9fa75d36c3335b451b4d39608ef5d685c52cfca70c2daa108aa92edc",
+    ".local/harness-runs/20261024T144709-_ozad0zc/music_intent_flow_test_configure.log": "117b0e78d43483d7f713b606502b322e4bd50774760a720b23c1df5c44e14234",
+    ".local/harness-runs/20261024T144709-_ozad0zc/music_intent_flow_test_run.log": "cb500b20f62e4aaa673edc2e3a07024eeab7fbe268fbcb55f7d5feb8811c0c45",
+    ".local/harness-runs/20261024T144709-_ozad0zc/music_task_flow_test_build.log": "c78ee0d98e50b6e812503b95cbe096740b3adcb57ffe0df25254dc00e3964531",
+    ".local/harness-runs/20261024T144709-_ozad0zc/music_task_flow_test_configure.log": "7573a1ffea362375d5443af01e98041091ba333eeefda683efa980c8fcbcdcf3",
+    ".local/harness-runs/20261024T144709-_ozad0zc/music_task_flow_test_run.log": "5a7306e1ecfe012c8fa6e6fc1e26ca447780de2905303764fc9df241a5b43b63",
+    ".local/harness-runs/20261024T144709-_ozad0zc/report.json": "55beacf8fbd99559e870a5c6a39e298ae07752bf2eff8f88ee0ce8219bf9645e",
+    ".local/harness-runs/20261024T144709-_ozad0zc/repository.log": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c",
+    ".local/harness-runs/20261024T144709-_ozad0zc/routing_flow_test_build.log": "514ce5d56867545d2421c14d03b8adbe36324e621b989f1e52017894380608de",
+    ".local/harness-runs/20261024T144709-_ozad0zc/routing_flow_test_configure.log": "35450ad56ba5dc850f469fcba158c3f8a2882f09bd94b66fa3560e6c0fd807f7",
+    ".local/harness-runs/20261024T144709-_ozad0zc/routing_flow_test_run.log": "361bdd80885332d0eba0c1a366959270677586b426ae87651997325554e79cec",
+    ".local/harness-runs/20261024T144709-twufas0h/node_version.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".local/harness-runs/20261024T144709-twufas0h/python_offline.log": "b40653994e8757ab456f1117e0943ce4b72d8e3a4a57d170d4fa3c62c723fda9",
+    ".local/harness-runs/20261024T144709-twufas0h/report.json": "ef31a626708fe1ab87cc5cbeb6af95604b8ffe2a90076b95125c0552c5b31585",
+    ".local/harness-runs/20261024T144709-twufas0h/repository.log": "307b41a58dc5eaf413c09800b123c38ba93772f19fcc794674ad90bf0e3a2d5c",
+    ".local/harness-runs/20261024T144709-twufas0h/service_offline.log": "1ed6679d1a54cf99b32fafbe153b31b84727af08966fb90c2a3d8f6ad18ee950",
+    ".local/music-intent/actual-backend-health.json": "503ba6e14e0b883fb426745e04803474221bd9b2742afb5d7e9b19d1263edae5",
+    ".local/music-intent/app-build-frozen.log": "4de7f5dd957613385bb23528dead4a4424e5b9cb621cdbe075579974bfe3a79e",
+    ".local/music-intent/backend-all-first.txt": "206e9413fdc043852547bb006fe48bf74491396f241be2e6fd6a6f923d1e90cf",
+    ".local/music-intent/backend-new-first.txt": "679342f1c0a3dfa57dfd332e1ce61218db44947193d65e268ea99074e2ea4d84",
+    ".local/music-intent/backend-phrase-first.txt": "c1f3b21bf241cab28aff7e5121836d844a819e1127181130362e339bacad2d4a",
+    ".local/music-intent/backend-quantity-first.txt": "e4e29b8436e7754a428e972e07594a1ab285351a71a731a88146a5991b49701a",
+    ".local/music-intent/backend-quantity-second.txt": "56043870db1e6656347987f0d23d939a1f4e68bb5947c926493714b698e48b38",
+    ".local/music-intent/backend-runtime-first.txt": "19e7d67da71f11fe493fb018fc62212d185f69631405131f7b9e6097c80fc2cd",
+    ".local/music-intent/backend-undo-final.txt": "f2267fb94765552dbb678952192c2541c3e254448ab802838508a9b8ed389cc7",
+    ".local/music-intent/catalog/live-runner-route-wait-final.txt": "bf6453fe3563a760ccad1c2505a563ded070945dcccdaff7a6d6472aa4a721a8",
+    ".local/music-intent/catalog/qt-final-source.txt": "636a07b73caba1f4fd349831d66ab63d452c0215b570387b7cd96f08e724a519",
+    ".local/music-intent/catalog/qt-first.txt": "b554e0ca4e2b8b8255a0222d0108de67ae77b14bf8d5b3bf619a8ca46e5e3bde",
+    ".local/music-intent/native-frozen-runner.log": "cdb2b06a512f0cf5ca79b30ec514df67c1acb6ad03eae3957f67eab3c3954840",
+    ".local/music-intent/owned-backend-restart.json": "1a8d6f2170c3e0cd26f580841fad93600b887513dcc52be4cbf893348e544552",
+    ".local/music-intent/prepare-final.log": "d23211fa79e97282dd5fe307899840a8a62a366b0352f9b6a60950b5ca4113a1",
+    ".local/music-intent/profile-unit/test-first.log": "b79e6b4ab15edae63b557b80a52ebb6c4f491f06430694418c57a6f2f13eee5e",
+    ".local/music-intent-acceptance/composite-review.png": "3d58725dcf5f075b09112a59af125c557b66ed9a12f0bead15f04d5fbf789402",
+    ".local/music-intent-acceptance/first-run.txt": "edd87eceb036094475fee770b172fbd52689aae50420f39ceb4f7d5283c6aa01",
+    ".local/music-intent-acceptance/fixture-corrected-run.txt": "4907d586d85d15cd3c4bd99344eacefcb0e5e5457bd4350be8a20b02e567f10a",
+    ".local/music-intent-acceptance/review-regression-first.txt": "fa99a9fe98efc66801574966416499b94cca3ffc9f74d0384dba9e76536b610d",
+    ".local/music-requirements-live/requirements-20261024T144744Z-157dddad/real-qt-observations.json": "d3b92e76806dac48fbdb81ba4680dafab1ff4ea929a2b65e5327d76591c70ecc",
+    ".local/music-requirements-live/requirements-20261024T144744Z-157dddad/qt-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "visualQA": {
+    "screenshot": ".local/music-intent-acceptance/composite-review.png",
+    "reviewed": true,
+    "finding": "长歌单列表与固定输入区无重叠；当前截图在滚动列表底部，不能仅凭此图证明整段对话同时可见。"
+  },
+  "realEvaluation": {
+    "includedInThisEngineeringProof": false,
+    "note": "用户另行授权的新80次真实模型/匿名网易云运行由单独报告记录；本文件不预填或引用其业务分数，也不沿用旧预算。",
+    "overallSemanticAccuracy": null,
+    "overallBusinessCompletionRate": null,
+    "preflightFailure": {
+      "runDirectory": ".local/music-requirements-live/requirements-20261024T144744Z-157dddad",
+      "phase": "before_first_business_input",
+      "status": "stopped_by_evaluation_precondition",
+      "modelRequests": 0,
+      "realCatalogRequests": 0,
+      "businessInputsSent": 0,
+      "cause": "正式ConversationClient.startNew采用懒创建；探针错误要求准备阶段已经取得非空新会话ID，导致setup停止。",
+      "boundary": "这是评测准备失败，不能算8项业务已经执行或失败，也不自动重跑付费题；修正仅作用评测驱动，产品版本和题面保持。",
+      "next": "修正驱动并通过正式固定后端smoke后重新prepare；新源码及探针二进制另行冻结。",
+      "artifacts": {
+        ".local/music-requirements-live/requirements-20261024T144744Z-157dddad/real-qt-observations.json": "d3b92e76806dac48fbdb81ba4680dafab1ff4ea929a2b65e5327d76591c70ecc",
+        ".local/music-requirements-live/requirements-20261024T144744Z-157dddad/qt-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "limitations": [
+    "确定性理解只覆盖完整支持语法；自由表达与真实模型泛化需另行真实评测。",
+    "固定曲库和生成WAV只验证链路、署名、时长、权限和状态，不能证明真实听感、完整歌曲或会员权益。",
+    "scene来源命中是文字证据，没有音频节奏、声线或人声比例分析。",
+    "后台校验设备工具结果的归属、结构、版本和租约，不独立认证其全部上游字段真实性。",
+    "本阶段工程通过不代表可公开上线；MCP、动态多Agent、运营反馈与生产验收继续待做。"
+  ],
+  "versionControl": {
+    "committed": false,
+    "pushed": false,
+    "privateRuntimeArtifactsIgnored": true,
+    "oldFailuresScoresAndAuthorizationsPreserved": true
+  },
+  "deliveryStatus": "completed_engineering_real_acceptance_partial",
+  "postRealRepairs": {
+    "scope": "首轮真实截图发现的聊天封面遗漏、文档资源回退与测试等待竞态；原真实3/8成绩不变",
+    "sourceHashes": {
+      "radiodialog.cpp": "de726414a757be185e7fb4ec50d26b3e4aabdf4870c3a493a3456d9ffc4194a2",
+      "radiodialog.h": "b1ba826f18edb90184a12a288e17bc00cd6e521b3c6baab63c6a3ed24adac2be",
+      "tests/radiodialog_test.cpp": "2ac6ecd69caa05dfa4a9f9b8697b2530418e847655bf44b46b15be310f8e706a",
+      "tests/routing_flow_test.cpp": "ae42500c3a6bb9f83100df45e84e0f1fbc1738c11044e3a7e3b9eb291e3bd834",
+      "backend_py/evaluation/music_identity_followup.py": "29db139e49a063f472c2ec05720b0a8a922cc71e0c649265fa3b3c43fddca1b5",
+      "backend_py/tests/test_music_identity_followup.py": "68185b2d7bc31a3e2afaa00e6f648a906b729dbeb7e25c384451b87bdab4948d",
+      "tests/music_identity_followup_probe.cpp": "58d501b2e30a4bc1e1c7e67a7823c85116108b2df01632e5b9709c1ba1b811b2",
+      "tests/music_identity_followup_probe.pro": "3dd7c37a517931aa16907c9b5962c8de7165b184a0b44761bfb727dc3fe6e831",
+      "tests/music_identity_followup_flow_test.cpp": "eb8bdd7cb641db563d926caed8195d874a4961473b16e4d809b245bcd566360f",
+      "tests/music_identity_followup_flow_test.pro": "24108d509f89163e85624c5e6e37ddbd1ace755106fb9cc1071629dcac8050ce",
+      "scripts/check-music-identity-followup.py": "60ee05050bd79c713fb99d654a033c7701aa3ab517f3ba358d6b2ca5b73f883f",
+      "scripts/verify-harness.py": "43680323d6d4e1d752577b0ea470f3d1dde2d5fbff8fa06a1a91db87e630462b",
+      "service/evaluation/music_identity_followup_netease.mjs": "0f3ea2eb6b1981670264167a99dffd38c6a3d0bd6c990d7a6ce9c9d46c60c6a7"
+    },
+    "artwork": {
+      "passed": 36,
+      "failed": 0,
+      "skipped": 0,
+      "proof": "实际聊天文档48px QImage像素、视口绘制、歌曲／歌单图片点击、外部资源回退拒绝、账号及候选切换后迟到图片不复活",
+      "firstFailure": "35通过1失败：文档底层file资源回退；新增ConversationDocument拒绝fallback后通过，用户消息转义仍保留",
+      "lastTextOnlyChange": "36项单元早于默认双击改点击文案；最终native包含此文案"
+    },
+    "evaluationDriver": {
+      "pythonGuardPassed": 17,
+      "nativePureGuardsPassed": true,
+      "formalQtFlowPassed": 4,
+      "modelRequests": 0,
+      "realCatalogRequests": 0,
+      "preparedRun": ".local/music-identity-followup/identity-20261024T151930Z-bf33f936",
+      "scope": "music_identity_followup_v1",
+      "maximum": 40,
+      "authorizationStatus": "pending",
+      "oldEightyStatementDoesNotAuthorizeScope": true
+    },
+    "regressionWaitRepair": {
+      "initialNative": "56通过1失败：valid恢复在独立GET回执返回前读取unknown",
+      "repair": "本用例GET延迟150ms，成功等待匹配原requestId且accepted=true，负例等待明确格式拒绝；原SQL/facts/POST次数/队列断言保留，生产代码未修改",
+      "targetedPassed": 7,
+      "failed": 0
+    },
+    "quickFirstAttempt": "1910通过1失败37跳过；新增诊断源码尚在写入触发source_changed_during_run，冻结后重跑，不弱化检查",
+    "quickFinal": {
+      "report": ".local/harness-runs/20261024T151930-8jqv0r1w/report.json",
+      "pythonPassed": 1911,
+      "pythonSkipped": 37,
+      "nodePassed": 61,
+      "failed": 0
+    },
+    "mysqlFinal": {
+      "report": ".local/harness-runs/20261024T151705-6o7df7e1/report.json",
+      "passed": 2478,
+      "skipped": 66,
+      "failed": 0
+    },
+    "nativeFinal": {
+      "status": "passed",
+      "report": ".local/harness-runs/20261024T152311-r4yxssuy/report.json",
+      "suites": {
+        "hosted_flow_test": {
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "log": ".local/harness-runs/20261024T152311-r4yxssuy/hosted_flow_test_run.log"
+        },
+        "music_task_flow_test": {
+          "passed": 5,
+          "failed": 0,
+          "skipped": 0,
+          "log": ".local/harness-runs/20261024T152311-r4yxssuy/music_task_flow_test_run.log"
+        },
+        "routing_flow_test": {
+          "passed": 57,
+          "failed": 0,
+          "skipped": 0,
+          "log": ".local/harness-runs/20261024T152311-r4yxssuy/routing_flow_test_run.log"
+        },
+        "lookup_context_flow_test": {
+          "passed": 27,
+          "failed": 0,
+          "skipped": 0,
+          "log": ".local/harness-runs/20261024T152311-r4yxssuy/lookup_context_flow_test_run.log"
+        },
+        "chat_workspace_flow_test": {
+          "passed": 14,
+          "failed": 0,
+          "skipped": 0,
+          "log": ".local/harness-runs/20261024T152311-r4yxssuy/chat_workspace_flow_test_run.log"
+        },
+        "music_intent_flow_test": {
+          "passed": 16,
+          "failed": 0,
+          "skipped": 0,
+          "log": ".local/harness-runs/20261024T152311-r4yxssuy/music_intent_flow_test_run.log"
+        }
+      }
+    },
+    "artifacts": {
+      ".local/music-intent/chat-artwork-tests/first-run.txt": "eb0cb3b8cde87e8d4cc40f726c77d1e53061214630d8f27e9e0d4fe4909d29a2",
+      ".local/music-intent/chat-artwork-tests/document-guard-run.txt": "25572946305681eb87a89642e104f2c9b803872c2d03530121c902e83a8757d7",
+      ".local/music-intent/chat-artwork-tests/injection-diagnostic.txt": "357fb16c9ce59491bd29500bc251f920c3c6aecd6dba7f4c8c62040cf5d1c7eb",
+      ".local/music-intent/chat-artwork-tests/decoded-song.png": "873c8ade6ae5d9b6800fccc652c6b234da5baa748faa8d56edc15e939afcaafa",
+      ".local/music-intent/chat-artwork-tests/decoded-playlist.png": "df932164cb7fdcb4848d74a78b0939c3961b00e47a1ef5cff57a44801431bad8",
+      ".local/music-identity-followup-guards/qt-first.txt": "ec10b568b8d97c5c6e3a803d11b58b5d5bf06a883af1df6884a4bcf3e0149153",
+      ".local/music-identity-followup-guards/python-second.txt": "fd7437788317a65349dd45638b6c12ee94e33a151ed6fa39d0995986098d68df",
+      ".local/music-identity-followup-guards/probe-pure-first.txt": "cd94e8872391506d9c046e2a5ebb0a225757cb2c73cf6c64d8462c58f0428f6b",
+      ".local/harness-runs/20261024T151717-vu75okc8/routing_flow_test/routing-receipt-wait-targeted.txt": "7799c9053e66739ab5bd7a3b65d31d29ba2008aba65a453b1f0745a40e16f91a",
+      ".local/harness-runs/20261024T151717-vu75okc8/report.json": "4e165a18832aac5d0d0f86724727009644ba1f1b42f5d2b37f6124acb519ad9e",
+      ".local/harness-runs/20261024T151705-0c3q9cgq/report.json": "695f6ae3d0091236ca45695dda1272722d9ed07d4b794784eec13852ed072e7d",
+      ".local/harness-runs/20261024T151930-8jqv0r1w/report.json": "57f0a7c571f643d7cebe473eaa2b133f9c1d6524d433ef2ba545fc2f7f30c5db",
+      ".local/harness-runs/20261024T151705-6o7df7e1/report.json": "47439648b67880e703d3dffc04e174a5bc75f06520c61d2f78f1c676bf5e9270",
+      ".local/music-intent/app-delivery-final.log": "6b7eb219bfadf7e6a95e77b33f1d284acb7a519792005642457a7b6ffc4ef662",
+      ".local/harness-runs/20261024T152311-r4yxssuy/hosted_flow_test_run.log": "b832211250f9c256ea99bc11e0dbb49bfc1924e9ff615071f0ab3e1fb27bfef6",
+      ".local/harness-runs/20261024T152311-r4yxssuy/music_task_flow_test_run.log": "742257ddac3b0e4fe85f08dd58b1e07af8b4a488aafbab4668bb9c8aef6aa544",
+      ".local/harness-runs/20261024T152311-r4yxssuy/routing_flow_test_run.log": "4e9d2b2b6130bfb1c03dd7fe7efe72ac881712adead0e61210a780ca7905f7d5",
+      ".local/harness-runs/20261024T152311-r4yxssuy/lookup_context_flow_test_run.log": "1eeb1d8c530e2848e90a4e93da4921cd92e6781cbe80697e35847eb8daabe9a4",
+      ".local/harness-runs/20261024T152311-r4yxssuy/chat_workspace_flow_test_run.log": "5003200487ff5c86eb4fc6597d5bfb61c0c94ff8f8127602dfdefe32fa14b69e",
+      ".local/harness-runs/20261024T152311-r4yxssuy/music_intent_flow_test_run.log": "5a4e37d49666d987ee1470dd34e1a982d511bec82c9d8a86bdd3a29cf28f16fc",
+      ".local/harness-runs/20261024T152311-r4yxssuy/report.json": "89715e1adac3bd821276494e7367badba52459c2a1ee9039866c3bff3a958670"
+    },
+    "appSha256": "d8add83ee092a05784ffff657a99f8307fbc95dc22eb3cec48aa9641428ebcca",
+    "codeFrozen": true
+  },
+  "identityFollowup": {
+    "report": "docs/agent-upgrade/music-identity-followup-verification.json",
+    "stageDocument": "docs/AGENT_IDENTITY_FOLLOWUP_RESULTS.md",
+    "consumed": 6,
+    "combinedConsumed": 13,
+    "strictResult": "1完成1部分完成",
+    "postRunRepairs": true,
+    "paidRetest": false
+  }
+}

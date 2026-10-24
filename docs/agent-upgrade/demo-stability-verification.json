@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-24T12:51:00.790679+00:00",
+  "stage": "demo-stability-engineering",
+  "status": "engineering_passed_real_first_run_with_residual_failures",
+  "scope": "最终离线工程门禁与前一版真实首轮分开；不提供总体语义准确率或上线验收",
+  "tests": {
+    "repository": "passed",
+    "quick": {
+      "pythonPassed": 1758,
+      "pythonSkipped": 28,
+      "nodePassed": 53,
+      "report": ".local/harness-runs/20261024T124459-lbvab0rk/report.json"
+    },
+    "coreNative": {
+      "tasks": 10,
+      "interactions": 23,
+      "setupInstructions": 1,
+      "checks": 88,
+      "allPassed": true,
+      "validRun": true,
+      "sourceUnchanged": true,
+      "realRequests": 0,
+      "manifestSeal": "cac21c341f6a63d8562b97b66da39229ff43f47852612cf8eddef79418137284",
+      "sourceFiles": 168,
+      "report": ".local/demo-stability-runs/20261024T124852Z-5e38afeb/demo-checks.json"
+    },
+    "nativeGate": {
+      "suites": {
+        "hosted_flow_test": 6,
+        "music_task_flow_test": 5,
+        "routing_flow_test": 57,
+        "lookup_context_flow_test": 27
+      },
+      "failed": 0,
+      "skipped": 0,
+      "report": ".local/harness-runs/20261024T124502-kdj2fj6o/report.json"
+    },
+    "extraPythonQt": {
+      "passed": 1,
+      "scope": "SQLite隔离、假模型/曲库",
+      "log": ".local/demo-stability/python-qt-integration.log"
+    },
+    "mysql": {
+      "passed": 2309,
+      "skipped": 63,
+      "report": ".local/harness-runs/20261024T124153-gc3ii37p/report.json",
+      "scope": "拥有者临时MySQL/Redis全套，迁移用例另临时PG，不读应用库"
+    }
+  },
+  "firstFailuresRetained": {
+    "coreRun": ".local/demo-stability-runs/20261024T121613Z-f1b73f35",
+    "automaticTasksPassed": 9,
+    "automaticTasksTotal": 10,
+    "finalChecksFailed": 8,
+    "product": "D05复合偏好误判纯偏好，修完整预览表达和共用名词式音乐请求识别",
+    "observation": "D10重复采用题面不同于探针固定发送命令，引发锚点拒绝；改为再次发送真实“采用歌单”，同回执/队列/不重解析判据保持",
+    "nativeGate": ".local/harness-runs/20261024T121932-sya2owsz/report.json",
+    "nativeFixture": "假上游按旧提示词称谓分流；改为按正式输入结构识别，未放宽业务断言",
+    "transportTest": "模拟Plus流式配置首次收到假JSON而非SSE，改正确流夹具，产品传输未放宽"
+  },
+  "runtime": {
+    "appBuild": "passed_final",
+    "backendHealthReady": [
+      {
+        "port": 16382,
+        "healthStatus": 200,
+        "readyStatus": 200,
+        "ready": true,
+        "app": "quiet-app-backend",
+        "pid": 77670,
+        "runtimeLanguage": "python",
+        "storage": "mysql",
+        "rateLimiter": "redis",
+        "developmentMode": false,
+        "lookupContextVersion": 1
+      },
+      {
+        "port": 16383,
+        "healthStatus": 200,
+        "readyStatus": 200,
+        "ready": true,
+        "app": "quiet-app-backend",
+        "pid": 77672,
+        "runtimeLanguage": "python",
+        "storage": "mysql",
+        "rateLimiter": "redis",
+        "developmentMode": true,
+        "lookupContextVersion": 1
+      }
+    ],
+    "normalOwnedRestart": true,
+    "clearedUserData": false,
+    "resetQuota": false,
+    "vscodePrepareExitCode": 0
+  },
+  "liveRecheck": {
+    "newAuthorizationMaximum": 60,
+    "realProviderRequests": 8,
+    "remaining": 52,
+    "tasks": 6,
+    "objectiveWorkflowPassed": 4,
+    "failed": 1,
+    "unverified": 1,
+    "automaticRerun": false,
+    "unusedBudgetCarriesAutomatically": false,
+    "report": "docs/agent-upgrade/demo-stability-live-verification.json",
+    "budget": "docs/agent-upgrade/demo-stability-budget-2026-10-24.json",
+    "executionArchiveVerifiedFiles": 176,
+    "subsequentFixesRealRetested": false
+  },
+  "sources": {
+    "backend_py/evaluation/demo_stability.py": "2e56de0287cd596a39f8bcf7a1f3f75fb74f193fd66993a6f0c3e120f8e3f914",
+    "backend_py/tango_backend/conversation_commands.py": "9d1353bbc4442876dd677367859b2766df72c85433fd55e9ee07eea32c2d518b",
+    "backend_py/tango_backend/conversation_router.py": "1d54bc5ea6561888c4dfe772b90ed4983a4a0e9eac56049fe766565752a31308",
+    "backend_py/tango_backend/intent_routing.py": "fb685d8639d2d8d51fccf8614b98039d81350bb36b738c6979bb62df898e6b57",
+    "backend_py/tango_backend/model_transport.py": "cdabfab176263844e3a1f90eea494a6a4eb115b3779fa18ba11b2b1975300c2c",
+    "backend_py/tango_backend/music_lookup_intent.py": "351722df9cc3f6007c70b9e0e826edd1dbe697618e864dbf6884af98022e195b",
+    "backend_py/tango_backend/release_intent.py": "477e30b9ce0f7a106f0899eb790fb82dd068c1bdf6fde1c2235939fb0e7ebe39",
+    "backend_py/tango_backend/request_understanding.py": "98ab67bc6ed52870e968039c3d070319e98bccb21bde362f9ce9095cfb0e01a3",
+    "backend_py/tango_backend/route_contract.py": "02c4b2163667e96bf6778e49de504d28343a8adf02397c4f42a27334ffaa74df",
+    "backend_py/tango_backend/task_track_count.py": "1eb9eaf04b54fcaa272662f26cee6ff3ae9dfbe379477c84cfbd0180d7982456",
+    "backend_py/tests/helpers/process_fixture.py": "46f0e66612dcf8452b149324f1aa578bbc8b2c446decbc09c5292738928ad98a",
+    "backend_py/tests/test_demo_lookup_intent.py": "7dfa41b40edcd734b92028e02f3722baede9f30cd493994b9df2d4b6259d0439",
+    "backend_py/tests/test_demo_release_intent.py": "eab340a5b98ac18ff5cd0f502db31fb0cbe0b21becca1aea3186fac3a95f5b4a",
+    "backend_py/tests/test_demo_request_control.py": "9fa50ac14dc749308a198048bb16273ca361de05ad529346293f41cf60648e18",
+    "backend_py/tests/test_demo_route_contract.py": "cc76bcf18a420a92d16bbe8abb5fa3dabfd5cd8c0dc5fa49ca8c71990484cd8a",
+    "backend_py/tests/test_demo_stability.py": "ef6a2a17403c02475bb500593f38e7f1971d6049d770242da3d2e2f25a3e73ee",
+    "scripts/check-demo-stability.py": "340639e209753434706357e9b679b325fd2a0d03d6e22b11a03ab407fb212a56",
+    "scripts/verify-harness.py": "207ee90e2d7162a3ce1f1d45dc3fc00a101553c0006b33a265a9fa422d39499d",
+    "tests/music_task_flow_test.cpp": "dbc1edd6bc05da0bc8f6113544b0bec729ee06986e556e67ad03ae3cb9590b00",
+    "backend_py/tango_backend/task_schema.py": "7d7edd2541df612ce86756bc848c494471e49ddd78be76f0de511199d6b8faa7",
+    "backend_py/tango_backend/task_runtime.py": "2bb3534be452a2c24ebb03866899b03e2d8bcf0aef466c4bde6457b3f2463298",
+    "backend_py/tests/test_preview_lock_checks.py": "a231d7ec97e11deb6be52a36e5595c710afd45ba3997e8e1d6d692fa22e3935e",
+    "mainwindowradio.cpp": "ceeaaeb736b46eb52a4b76fd11217c1f33041181bfb0b12f7632061973aec517",
+    "tests/routing_flow_test.cpp": "70b6a3e4ac6ec257801a08d624ed8bd86738102bb82116386b17b32cb62223e5"
+  },
+  "privateEvidenceHashes": {
+    ".local/demo-stability-runs/20261024T121613Z-f1b73f35/demo-checks.json": "13e1ba55aad538f15130601a873e20cd3aa8729335c2549534bf0862f6647652",
+    ".local/demo-stability-runs/20261024T121613Z-f1b73f35/report.json": "8efca52eb2d0dd5601623041d96e8f923a0d81a6e712a201f4d15d3fd7646632",
+    ".local/demo-stability-runs/20261024T121931Z-21b2becd/demo-checks.json": "2c83c328a68447daecd07d35bd8a5485022768f43d5730ec591e2fe7ec606c95",
+    ".local/demo-stability-runs/20261024T121931Z-21b2becd/report.json": "ba3580073d12d3c06eccbb4881fa766f4fdb4b0f6028235c11651725538f0e9f",
+    ".local/harness-runs/20261024T121954-jr1fedht/report.json": "0ec94897137170fa926a4c47c30984a6950b802ddcb5643e487c17da7cd9390b",
+    ".local/harness-runs/20261024T122146-yq4o97x0/report.json": "af20dd3f580bb6ab8c92a4a6f116be1e8d43c787900da52c53a84036035cf29c",
+    ".local/demo-stability/route-contract-first.log": "a762b8fae62b690ea79475a42bc2ae7e71607febc94404880c8a128fce7a92f1",
+    ".local/demo-stability/route-contract-clarify-final.log": "d082133c987bb6a8abf69190114591ad89a6b6209cf13eef77ab30b9a378b718",
+    ".local/demo-stability/request-control-preview-final.log": "ccd06c5e22a3afa0330558ca8008673a6474975439d396d4c54e6eb4d5e88906",
+    ".local/demo-stability/python-qt-integration.log": "9ca0431a9d28c4a8e4298778c5611e8efe69e04e22f6175b3f20383a2bf45704",
+    ".local/demo-stability/backend-restart.json": "420b9739612a7f73d8c6d6cffc05b5b698ede042b96c689b59df90772188f086",
+    ".local/demo-stability/app-build.log": "1fcecdc086e0d9c2299e6db8c3091d56203f9af143653358ac57a10180b6f8a8",
+    ".local/harness-runs/20261024T124459-lbvab0rk/report.json": "8b78afbc07313183dffbf2d8e1d113a3d9c0d70016a359c286c015fc0b452d9d",
+    ".local/harness-runs/20261024T124153-gc3ii37p/report.json": "e4d09125b5e4fb551afd7e72309099ceb365c15a1bec052b5b132fa93222906a",
+    ".local/harness-runs/20261024T124502-kdj2fj6o/report.json": "29e418073cdaa4270e18e4bcb9cd43096b30e14599b29990b96218fe7cd58d4e",
+    ".local/demo-stability-runs/20261024T124852Z-5e38afeb/report.json": "318687cbaa39fe81791916a16259abbf10b2c6fab8a4965d0377c023e51d4ef5",
+    ".local/demo-stability-runs/20261024T124852Z-5e38afeb/demo-checks.json": "2c83c328a68447daecd07d35bd8a5485022768f43d5730ec591e2fe7ec606c95",
+    ".local/demo-stability/vscode-prepare-final.log": "459e4644dec11db6fdeec67054128089c6510152a87457b7596a11046b21dece",
+    ".local/demo-stability/backend-restart-final.json": "72f9a5a1d6fdeb761dd3d7c5f84a197c619f22cd11339a3faedc057643fea156",
+    ".local/demo-stability/app-build-final.log": "4de7f5dd957613385bb23528dead4a4424e5b9cb621cdbe075579974bfe3a79e",
+    ".local/demo-stability-adoption-fix-build/adoption-feedback-before.txt": "5284d48d1f9ac4429f46deb7ec1da38e3162b2873429493ea74a053f80e543ae",
+    ".local/demo-stability-adoption-fix-build/adoption-feedback-fixed.txt": "ed20842b70a17d4b6bb236528641fe26f8b97c8cb0349907a0235c844eaebfdc",
+    ".local/demo-stability-adoption-fix-build/routing-flow-final.txt": "64e147957462cd104281055447cebe336967a364d24b08a4e50e44185e6bf49b",
+    ".local/demo-stability/release-preview-first.log": "72d407d5b5dc4e01e8ca852ac658f0c860e34ff63f40466f015e777cd86dcdc1",
+    ".local/demo-stability/release-preview-final.log": "ef698bf75c9543f4d073b6c6e474b3c58874a8351524ec1bfb6c1cb5afbf7a59",
+    ".local/demo-stability/preview-locks-first.log": "a4d5fe16d99e82031ba481a73bc4bede2cd7f7feab26f4b864766464c754b17d",
+    ".local/demo-stability/preview-locks-products-final.log": "a37a15d200e04f434fee0c74e96866edf5dbc859656f736fc1db967cd612b7e5"
+  },
+  "noCommitOrPush": true,
+  "limitations": [
+    "真实6任务首轮有失败与未核验，最后3补丁仅离线复验",
+    "框架、数据库、工程测试数不当作模型准确率",
+    "当前仅固定前三锁定，任意N锁定未实现",
+    "只读历史限已路由记录",
+    "真实录音室版本依据、主观听感、整首会员播放、全量攻击未验证",
+    "MCP、动态Supervisor、在线Monitor、生产发布验收待实施"
+  ],
+  "laterOfflineFixes": [
+    "完整发行预览附句及新建任务权限",
+    "lock/unlock/undo按真实曲目刷新同一锁检查",
+    "同采用/预览/本机applied与后台adopted终态避免晚unknown覆盖；真unknown不放宽"
+  ]
+}

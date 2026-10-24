@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "tier": "native",
+  "scope": "macOS 原生 Qt 两套流程顺序运行；模拟模型/曲库、临时 SQLite 和生成 WAV，不是会员音乐验收。",
+  "startedAt": "2026-10-21T04:07:27.485216+00:00",
+  "status": "failed",
+  "reason": "command_failed",
+  "commands": [
+    {
+      "id": "repository",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/scripts/check-harness.py"
+      ],
+      "cwd": "<repo>",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.187
+    },
+    {
+      "id": "hosted_flow_test_configure",
+      "command": [
+        "/opt/homebrew/opt/qt@5/bin/qmake",
+        "<repo>/tests/hosted_flow_test.pro"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T040727-fdgynv71/hosted_flow_test",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.71
+    },
+    {
+      "id": "hosted_flow_test_build",
+      "command": [
+        "/usr/bin/make",
+        "-j4"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T040727-fdgynv71/hosted_flow_test",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 19.326
+    },
+    {
+      "id": "hosted_flow_test_run",
+      "command": [
+        "<repo>/.local/harness-runs/20261021T040727-fdgynv71/hosted_flow_test/hosted_flow_test",
+        "-v1"
+      ],
+      "cwd": "<repo>/.local/harness-runs/20261021T040727-fdgynv71/hosted_flow_test",
+      "exitCode": 1,
+      "reason": "command_failed",
+      "seconds": 74.353
+    }
+  ],
+  "finishedAt": "2026-10-21T05:04:06.128116+00:00"
+}

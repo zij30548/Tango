@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "version": "v7",
+  "purpose": "Repair and verify all observed v6 application and artist-alias measurement issues.",
+  "createdAt": "2026-10-19T12:03:52.535138+00:00",
+  "authorization": {
+    "source": "Original user maximum500; current fix request does not reset it.",
+    "alreadyUsed": 492,
+    "maximumCumulativeCalls": 500,
+    "remainingBeforeThisVersion": 8
+  },
+  "allocations": [
+    {
+      "id": "known_repairs",
+      "cases": 2,
+      "turns": 3,
+      "knownRegressionCases": 2,
+      "newHoldoutCases": 0,
+      "selectionReservation": 18,
+      "maximumProviderCalls": 8,
+      "suite": "backend/evaluation/agent-suite-v7-regression.json",
+      "suiteSha256": "d3d14686f4ae22654a4cc1275a0bc0169ef03b153c34d88f45e4629d33bd2158"
+    }
+  ],
+  "maximumAdditionalCalls": 8,
+  "maximumCumulativeAfterAllocation": 500,
+  "policy": {
+    "automaticCaseRetries": 0,
+    "bestOfN": false,
+    "freezeBeforeCalls": true,
+    "noProductionOrGoldChangesDuringRun": true,
+    "allSelectedRemainInDenominator": true,
+    "actualCapVsSelection": "Prepare18 only ensures all2 cases/3 turns are selected. Actual HTTP cap8 is enforced before transmission, failed/uncertain requests still count.",
+    "historicalResults": "All v6 raw1/3 and review evidence remain unchanged.",
+    "identityOracleChange": "New explicitly opted-in gold validates a declared artist identity against accepted current-run/current-generation tool evidence and the frozen catalog. Names alone, model IDs, stale or wrong-ID evidence do not pass.",
+    "knownCasesOnly": true
+  },
+  "previousResult": "docs/agent-new-v6-summary.json",
+  "priorBudgetLedger": "docs/agent-evaluation-cumulative-budget.json",
+  "plannedArtifacts": {
+    "manifest": "docs/agent-repair-v7-manifest.json",
+    "live": "docs/agent-repair-v7-live.json",
+    "faults": "docs/agent-repair-v7-faults.json",
+    "summary": "docs/agent-repair-v7-summary.json",
+    "report": "docs/agent-repair-v7-report.html"
+  },
+  "notMeasured": [
+    "当前最终修复版的独立新题总体完成率/准确率",
+    "真实曲库完整召回、日期截止日全天召回",
+    "实际音频风格与人声、人工听感",
+    "会员播放与长期用户满意度",
+    "新A/B或多Agent对比",
+    "全体生产流量的稳定性"
+  ]
+}

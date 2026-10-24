@@ -1,0 +1,479 @@
+{
+  "version": 1,
+  "scope": "offline same-input full JS runtime reference; synthetic model/catalog only",
+  "now": 1792497600000,
+  "request": {
+    "deviceId": "fixture-device",
+    "requestId": "fixture-request-1",
+    "instruction": "读书20分钟 R&B，不要现场版",
+    "preference": ""
+  },
+  "catalog": {
+    "tracks": [
+      {
+        "id": 1000,
+        "title": "录音室曲目0",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1001,
+        "title": "录音室曲目1",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1002,
+        "title": "录音室曲目2",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1003,
+        "title": "录音室曲目3",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1004,
+        "title": "录音室曲目4",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1005,
+        "title": "录音室曲目5",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1006,
+        "title": "录音室曲目6",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1007,
+        "title": "录音室曲目7",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1008,
+        "title": "录音室曲目8",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      },
+      {
+        "id": 1009,
+        "title": "录音室曲目9",
+        "artist": "陶喆",
+        "album": "专辑",
+        "coverUrl": "",
+        "durationMs": 240000,
+        "sourceId": 77,
+        "sourceKind": "playlist",
+        "sourceName": "读书 R&B",
+        "sourceTags": [
+          "R&B",
+          "华语"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": 77,
+        "name": "读书 R&B",
+        "checkedAt": "2026-10-20T12:00:00.000Z",
+        "sourceKind": "playlist",
+        "tags": []
+      }
+    ],
+    "checkedAt": "2026-10-20T12:00:00.000Z",
+    "artists": []
+  },
+  "expected": {
+    "status": "preview",
+    "brief": {
+      "kind": "research",
+      "title": "阅读时刻",
+      "scene": "读书",
+      "styles": [
+        "R&B"
+      ],
+      "queries": [
+        "读书 R&B"
+      ],
+      "artist": "",
+      "requiredArtist": "",
+      "artistOnly": false,
+      "since": null,
+      "until": null,
+      "targetMinutes": 20,
+      "excludeLive": true,
+      "avoidPrevious": false,
+      "excludedArtists": [],
+      "requireReleases": false,
+      "retainFirst": 0,
+      "removeIds": [],
+      "question": "",
+      "adjustment": "",
+      "catalogLanguage": "unknown"
+    },
+    "preview": {
+      "version": 1,
+      "title": "阅读时刻",
+      "note": "基于真实曲库候选与来源主题编排，风格为软偏好；完整播放需重新检查账号权益。",
+      "tracks": [
+        {
+          "id": 1000,
+          "title": "录音室曲目0",
+          "artist": "陶喆",
+          "album": "专辑",
+          "coverUrl": "",
+          "durationMs": 240000,
+          "sourceName": "读书 R&B",
+          "sourceTags": [
+            "R&B",
+            "华语"
+          ],
+          "sourceId": 77,
+          "sourceKind": "playlist",
+          "sourceQuery": "",
+          "styleEvidence": {
+            "status": "source_matched",
+            "matchedStyles": [
+              "R&B"
+            ],
+            "basis": "playlist_name_or_tags"
+          },
+          "sourceSkill": "scene.research",
+          "reason": "来自「读书 R&B」，陶喆 · 录音室曲目0。"
+        },
+        {
+          "id": 1001,
+          "title": "录音室曲目1",
+          "artist": "陶喆",
+          "album": "专辑",
+          "coverUrl": "",
+          "durationMs": 240000,
+          "sourceName": "读书 R&B",
+          "sourceTags": [
+            "R&B",
+            "华语"
+          ],
+          "sourceId": 77,
+          "sourceKind": "playlist",
+          "sourceQuery": "",
+          "styleEvidence": {
+            "status": "source_matched",
+            "matchedStyles": [
+              "R&B"
+            ],
+            "basis": "playlist_name_or_tags"
+          },
+          "sourceSkill": "scene.research",
+          "reason": "来自「读书 R&B」，陶喆 · 录音室曲目1。"
+        },
+        {
+          "id": 1002,
+          "title": "录音室曲目2",
+          "artist": "陶喆",
+          "album": "专辑",
+          "coverUrl": "",
+          "durationMs": 240000,
+          "sourceName": "读书 R&B",
+          "sourceTags": [
+            "R&B",
+            "华语"
+          ],
+          "sourceId": 77,
+          "sourceKind": "playlist",
+          "sourceQuery": "",
+          "styleEvidence": {
+            "status": "source_matched",
+            "matchedStyles": [
+              "R&B"
+            ],
+            "basis": "playlist_name_or_tags"
+          },
+          "sourceSkill": "scene.research",
+          "reason": "来自「读书 R&B」，陶喆 · 录音室曲目2。"
+        },
+        {
+          "id": 1003,
+          "title": "录音室曲目3",
+          "artist": "陶喆",
+          "album": "专辑",
+          "coverUrl": "",
+          "durationMs": 240000,
+          "sourceName": "读书 R&B",
+          "sourceTags": [
+            "R&B",
+            "华语"
+          ],
+          "sourceId": 77,
+          "sourceKind": "playlist",
+          "sourceQuery": "",
+          "styleEvidence": {
+            "status": "source_matched",
+            "matchedStyles": [
+              "R&B"
+            ],
+            "basis": "playlist_name_or_tags"
+          },
+          "sourceSkill": "scene.research",
+          "reason": "来自「读书 R&B」，陶喆 · 录音室曲目3。"
+        },
+        {
+          "id": 1004,
+          "title": "录音室曲目4",
+          "artist": "陶喆",
+          "album": "专辑",
+          "coverUrl": "",
+          "durationMs": 240000,
+          "sourceName": "读书 R&B",
+          "sourceTags": [
+            "R&B",
+            "华语"
+          ],
+          "sourceId": 77,
+          "sourceKind": "playlist",
+          "sourceQuery": "",
+          "styleEvidence": {
+            "status": "source_matched",
+            "matchedStyles": [
+              "R&B"
+            ],
+            "basis": "playlist_name_or_tags"
+          },
+          "sourceSkill": "scene.research",
+          "reason": "来自「读书 R&B」，陶喆 · 录音室曲目4。"
+        }
+      ],
+      "lockedIds": [],
+      "totalDurationMs": 1200000,
+      "checks": [
+        {
+          "key": "real_ids",
+          "status": "satisfied",
+          "text": "曲目均来自本机曲库查询，未编造歌曲。",
+          "detail": "曲目均来自本机曲库查询，未编造歌曲。"
+        },
+        {
+          "key": "locks",
+          "status": "satisfied",
+          "text": "保留 0 首锁定歌曲及顺序。",
+          "detail": "保留 0 首锁定歌曲及顺序。"
+        },
+        {
+          "key": "duration",
+          "status": "satisfied",
+          "text": "目标约 20 分钟，当前 20.0 分钟。",
+          "detail": "目标约 20 分钟，当前 20.0 分钟。"
+        },
+        {
+          "key": "exclude_live",
+          "status": "unverified",
+          "text": "已排除有现场版标识的候选；标签缺失的版本无法核验。",
+          "detail": "已排除有现场版标识的候选；标签缺失的版本无法核验。"
+        },
+        {
+          "key": "excluded_ids",
+          "status": "satisfied",
+          "text": "检查已排除歌曲、上一批未锁定歌曲与指定移除的歌曲。",
+          "detail": "检查已排除歌曲、上一批未锁定歌曲与指定移除的歌曲。"
+        },
+        {
+          "key": "excluded_artists",
+          "status": "satisfied",
+          "text": "按曲库歌手字段检查明确排除的歌手。",
+          "detail": "按曲库歌手字段检查明确排除的歌手。"
+        },
+        {
+          "key": "required_artist",
+          "status": "not_requested",
+          "text": "未指定必须包含的歌手。",
+          "detail": "未指定必须包含的歌手。"
+        },
+        {
+          "key": "releases",
+          "status": "not_requested",
+          "text": "未要求近期发行。",
+          "detail": "未要求近期发行。"
+        },
+        {
+          "key": "style",
+          "status": "unverified",
+          "text": "风格与场景依据来源标签和文本线索，未进行音频分析。",
+          "detail": "风格与场景依据来源标签和文本线索，未进行音频分析。"
+        },
+        {
+          "key": "catalog_language",
+          "status": "not_requested",
+          "text": "未限定曲库语言来源。",
+          "detail": "未限定曲库语言来源。"
+        },
+        {
+          "key": "ranking",
+          "status": "satisfied",
+          "text": "排序通过真实候选 ID 校验，最终时长与硬约束由程序编排。",
+          "detail": "排序通过真实候选 ID 校验，最终时长与硬约束由程序编排。"
+        }
+      ],
+      "durationSelection": {
+        "algorithm": "bounded_duration_dp",
+        "quantizationMs": 1000,
+        "maximumQuantizationSpreadMs": 10000,
+        "selectionPolicy": "closest_duration",
+        "toleranceMs": 120000
+      },
+      "degradations": [],
+      "ranking": {
+        "status": "model",
+        "source": "model_order",
+        "reasonCounts": {},
+        "orderedIds": [
+          1000,
+          1001,
+          1002,
+          1003,
+          1004,
+          1005,
+          1006,
+          1007,
+          1008,
+          1009
+        ]
+      },
+      "diff": {
+        "addedIds": [
+          1000,
+          1001,
+          1002,
+          1003,
+          1004
+        ],
+        "removedIds": []
+      },
+      "adjustment": null
+    },
+    "budget": {
+      "runCalls": 3,
+      "maxRunCalls": 6,
+      "totalCalls": 3,
+      "maxTaskCalls": 24,
+      "toolCalls": 1,
+      "maxToolCalls": 4,
+      "inputTokens": 9,
+      "outputTokens": 6
+    },
+    "traceNodes": [
+      "created",
+      "understand",
+      "understand",
+      "brief_ready",
+      "research",
+      "shared_research",
+      "shared_planned",
+      "dispatch",
+      "tool_result",
+      "observe",
+      "observation_program_checked",
+      "compose",
+      "compose",
+      "preview"
+    ],
+    "modelCalls": [
+      "plan",
+      "research",
+      "compose"
+    ]
+  },
+  "originalSourceSha256": {
+    "backend/task-runtime.mjs": "afbe396158aa869a03dbb5917c0f277ae54cf9ec6eea8b9cece8499f3bea9f7c",
+    "backend/task-schema.mjs": "0f4b0ecde1c98413ba2eb031474271955556d43b4fe27fbb03a8786f50626855"
+  },
+  "generatorSha256": "3dd11eecba583a8d8f9a07868286ba5cd62ae937cc2e1fe1ce37ccfedf78de6d"
+}

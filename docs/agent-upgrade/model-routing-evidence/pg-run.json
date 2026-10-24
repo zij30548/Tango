@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "tier": "pg",
+  "scope": "独立临时 PostgreSQL/Redis 兼容回归；不能与 MySQL 测试数量相加。",
+  "startedAt": "2026-10-21T12:58:42.908109+00:00",
+  "status": "passed",
+  "reason": "selected_tier_completed",
+  "commands": [
+    {
+      "id": "repository",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "<repo>/scripts/check-harness.py"
+      ],
+      "cwd": "<repo>",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 0.233
+    },
+    {
+      "id": "pg_isolated",
+      "command": [
+        "<repo>/backend_py/.venv/bin/python",
+        "<repo>/backend_py/tests/run_storage_suite.py",
+        "--log",
+        "<repo>/.local/harness-runs/20261021T125842-zkmgsb3q/pg-pytest.log",
+        "--",
+        "tests",
+        "-q",
+        "-ra",
+        "-p",
+        "asyncio"
+      ],
+      "cwd": "<repo>/backend_py",
+      "exitCode": 0,
+      "reason": "passed",
+      "seconds": 25.696
+    }
+  ],
+  "finishedAt": "2026-10-21T12:59:08.837606+00:00"
+}

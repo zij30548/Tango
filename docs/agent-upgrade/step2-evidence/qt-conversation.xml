@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase name="ConversationClientTest">
+<Environment>
+    <QtVersion>5.15.19</QtVersion>
+    <QtBuild>Qt 5.15.19 (arm64&#x002D;little_endian&#x002D;lp64 shared (dynamic) release build; by Clang 21.0.0 (clang&#x002D;2100.0.123.102) (Apple))</QtBuild>
+    <QTestVersion>5.15.19</QTestVersion>
+</Environment>
+<TestFunction name="initTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.049625"/>
+</TestFunction>
+<TestFunction name="durableAckExecutesOnlyOnce">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="248.153"/>
+</TestFunction>
+<TestFunction name="deviceIdentityMatchesMusicTaskAndIsConfinedToFixture">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="4.30033"/>
+</TestFunction>
+<TestFunction name="timeoutReadsCommittedReceiptWithoutSecondPost">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="307.921"/>
+</TestFunction>
+<TestFunction name="unknownSubmissionKeepsDraftAndExplicitRetryUsesSameId">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="359.704"/>
+</TestFunction>
+<TestFunction name="definiteRejectionAllowsEditing">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="250.618"/>
+</TestFunction>
+<TestFunction name="restoreDoesNotExecuteAndDoesNotLoseLocalReplies">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="344.32"/>
+</TestFunction>
+<TestFunction name="replyOutboxUsesSameEventAndDeduplicatesCallbacks">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="724.427"/>
+</TestFunction>
+<TestFunction name="accountSwitchDiscardsLateReceipt">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="425.475"/>
+</TestFunction>
+<TestFunction name="oldVersionCannotOverwriteNewerSnapshot">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="352.098"/>
+</TestFunction>
+<TestFunction name="unknownHintNeverExecutes">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="249.847"/>
+</TestFunction>
+<TestFunction name="createRetryKeepsRequestAndMessageIds">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="347.192"/>
+</TestFunction>
+<TestFunction name="invalidInputDoesNotPost">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="126.243"/>
+</TestFunction>
+<TestFunction name="detachDropsDelayedSnapshot">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="390.546"/>
+</TestFunction>
+<TestFunction name="earlierPagesMergeByStableIdWithoutLosingLoadedHistory">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="354.27"/>
+</TestFunction>
+<TestFunction name="malformedReplacementKeepsExistingMessages">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="234.846"/>
+</TestFunction>
+<TestFunction name="taskSyncDedupeIncludesStateVersion">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="345.186"/>
+</TestFunction>
+<TestFunction name="unacknowledgedReplyRemainsInOutbox">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="617.994"/>
+</TestFunction>
+<TestFunction name="utf16LimitsMatchUiAndTaskProtocol">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="329.629"/>
+</TestFunction>
+<TestFunction name="permanentEventRejectionStopsRetriesAndReleasesOutbox">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="597.431"/>
+</TestFunction>
+<TestFunction name="cleanupTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.020583"/>
+</TestFunction>
+<Duration msecs="6610.89"/>
+</TestCase>

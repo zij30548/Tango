@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "id": "tango-v6-post-run-alias-evidence-review",
+  "generatedAt": "2026-10-19T11:10:42.437Z",
+  "reviewer": {
+    "name": "Codex /root/repair_loop_queries",
+    "role": "独立子代理事后证据复核",
+    "disclosure": "审查者参与过生产runtime/检索实现，但未编写本题gold；不是外部人工裁决、盲评或试听。"
+  },
+  "reviewMethod": "仅使用冻结gold、manifest和已完成运行的原始证据独立核对；不调用模型、曲库、评分器，不修改原报告、gold或生产代码。",
+  "sourceArtifacts": {
+    "run": {
+      "path": "docs/agent-new-v6-live.json",
+      "sha256": "6c87521f11f0b800a553ae502adc8be9f71b1f2255928fbb658520982e4fdf53"
+    },
+    "suite": {
+      "path": "backend/evaluation/agent-suite-v6-holdout.json",
+      "sha256": "37f2fa6dc77885f916b147ae8f08699c7a6a48172984cf440a837ca714a47f3b",
+      "matchesPreparedManifest": true
+    },
+    "manifest": {
+      "path": "docs/agent-new-v6-manifest.json",
+      "sha256": "bf1ce063684046255d2bffd951522a91ddf888190c14033739560adac0c6a8d2",
+      "declaredManifestHash": "c6590f9d23a15d21846d3071ec9345278fd89185068e305ee1eeef5d035c18b0",
+      "matchesRunDeclaration": true
+    },
+    "sourcesUnchangedDuringRun": true
+  },
+  "originalResults": {
+    "caseId": "v6_distinct_artist_roles",
+    "status": "failed",
+    "taskCompleted": false,
+    "counts": {
+      "passed": 24,
+      "failed": 1,
+      "unverified": 0,
+      "not_applicable": 0
+    },
+    "uniqueFailedCriterion": {
+      "id": "round_1.brief.artist",
+      "status": "failed",
+      "expected": "邓紫棋",
+      "actual": "G.E.M."
+    },
+    "overall": {
+      "tasks": 3,
+      "completed": 1,
+      "strictCompletionRate": 0.3333333333333333
+    },
+    "scoresPreserved": true
+  },
+  "finding": {
+    "classification": "gold_exact_string_alias_false_negative",
+    "position": "在此受控曲库证据范围内，业务要求已实现；唯一失败是把已预先允许且已由曲库ID消歧的G.E.M.与邓紫棋作严格字符串比较。此结论是事后审查意见，不是重新评分。",
+    "evidence": [
+      {
+        "path": "docs/agent-new-v6-live.json",
+        "jsonPointer": "/results/1/score/criteria/4",
+        "observation": "唯一失败：expected 邓紫棋，actual G.E.M."
+      },
+      {
+        "path": "backend/evaluation/agent-suite-v6-holdout.json",
+        "jsonPointer": "/cases/0/turns/0/gold/toolQueryConcepts/2",
+        "observation": "冻结前release_gem别名集合已包含邓紫棋、鄧紫棋、G.E.M.、GEM、Gloria Tang。",
+        "aliases": [
+          "邓紫棋",
+          "鄧紫棋",
+          "G.E.M.",
+          "GEM",
+          "Gloria Tang"
+        ]
+      },
+      {
+        "path": "docs/agent-new-v6-live.json",
+        "jsonPointer": "/results/1/rounds/0/branches/releases/result/resolvedArtist",
+        "observation": "实际已接收工具响应确认ID=7763、name=邓紫棋。",
+        "actual": {
+          "id": 7763,
+          "name": "邓紫棋"
+        }
+      },
+      {
+        "path": "docs/agent-new-v6-live.json",
+        "jsonPointer": "/results/1/rounds/0/verifiedArtist",
+        "observation": "任务保存requestedName=G.E.M.与同一已确认ID/中文名的映射。",
+        "actual": {
+          "id": 7763,
+          "name": "邓紫棋",
+          "requestedName": "G.E.M.",
+          "checkedAt": "2026-10-19T01:00:00.000Z"
+        }
+      }
+    ]
+  },
+  "verifiedBusinessEvidence": {
+    "status": {
+      "actual": "preview",
+      "evidence": {
+        "path": "docs/agent-new-v6-live.json",
+        "jsonPointer": "/results/1/rounds/0/status"
+      }
+    },
+    "distinctRoles": {
+      "requiredArtist": "陶喆",
+      "artistOnly": false,
+      "releaseArtistAlias": "G.E.M.",
+      "releaseArtistId": 7763,
+      "excludedArtists": [
+        "陈绮贞"
+      ],
+      "evidence": {
+        "path": "docs/agent-new-v6-live.json",
+        "jsonPointer": "/results/1/rounds/0/brief"
+      }
+    },
+    "realCandidateGrounding": {
+      "selectedIds": [
+        924000001,
+        924000002,
+        910000001
+      ],
+      "allUnique": true,
+      "allObservedInAcceptedToolResults": true,
+      "metadataMatchesFrozenCatalog": true,
+      "evidence": {
+        "path": "docs/agent-new-v6-live.json",
+        "jsonPointer": "/results/1/rounds/0/toolHistory"
+      }
+    },
+    "duration": {
+      "independentlySummedMs": 720000,
+      "reportedMs": 720000,
+      "targetMs": 720000,
+      "evidence": {
+        "path": "docs/agent-new-v6-live.json",
+        "jsonPointer": "/results/1/rounds/0/preview"
+      }
+    },
+    "requiredArtist": {
+      "name": "陶喆",
+      "matchingSelectedIds": [
+        910000001
+      ],
+      "only": false
+    },
+    "exclusions": {
+      "artist": "陈绮贞",
+      "matchingSelectedIds": []
+    },
+    "language": {
+      "frozenGoldLanguages": [
+        "zh",
+        "zh",
+        "zh"
+      ],
+      "scope": "冻结合成曲库的语言标注；未验证音频语种"
+    },
+    "release": {
+      "expectedId": 7763,
+      "resolvedArtist": {
+        "id": 7763,
+        "name": "邓紫棋"
+      },
+      "selectedTracks": [
+        {
+          "id": 924000001,
+          "artist": "邓紫棋",
+          "artistId": 7763,
+          "albumId": 924001000,
+          "publishedAt": "2026-10-01T00:00:00.000Z",
+          "sourceSkill": "releases.research"
+        },
+        {
+          "id": 924000002,
+          "artist": "邓紫棋",
+          "artistId": 7763,
+          "albumId": 924001001,
+          "publishedAt": "2026-10-01T00:00:00.000Z",
+          "sourceSkill": "releases.research"
+        }
+      ],
+      "allSelectedReleaseDatesWithinUserWindow": true,
+      "evidence": {
+        "path": "docs/agent-new-v6-live.json",
+        "jsonPointer": "/results/1/rounds/0/preview/tracks"
+      }
+    },
+    "remainingFrozenCriteria": {
+      "passed": 24,
+      "failedBesidesAlias": 0,
+      "unverified": 0
+    }
+  },
+  "limitations": [
+    "真实模型配合受控合成曲库，不能证明真实网易云召回、完整发行目录或账号播放权益。",
+    "日期结论只针对本次选中曲目及冻结日期容差；两首发行均在10月1日，不能验证10月10日整天的召回。",
+    "没有人工试听、外部人工裁决或新的模型复测；不据此计算新的准确率、完成率或改写原始1/3。",
+    "后续评测应在执行前冻结基于已确认artistId与允许别名的统一判定；不能执行后选择性放宽字符串标准。"
+  ],
+  "changes": {
+    "newReviewArtifactOnly": true,
+    "originalReportModified": false,
+    "goldModified": false,
+    "productionModified": false,
+    "rescored": false,
+    "newProviderCalls": 0,
+    "newCatalogCalls": 0,
+    "newAccuracyComputed": false
+  }
+}

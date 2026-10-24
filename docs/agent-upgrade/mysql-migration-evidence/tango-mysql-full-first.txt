@@ -1,0 +1,105 @@
+........................................................................ [ 10%]
+.............ssss....................................................... [ 21%]
+...............F.........F........................................s..s.. [ 31%]
+s......s.s.s.s.s.sss....s............................................... [ 42%]
+........................................................................ [ 52%]
+........................................................................ [ 63%]
+........................................................................ [ 74%]
+........................................................................ [ 84%]
+........................................................................ [ 95%]
+.........sss.s.s.s.s.s.sss.s.s.s                                         [100%]
+=================================== FAILURES ===================================
+_______ test_real_pg_to_mysql_preserves_all_tables_auth_json_and_ledger ________
+
+pair = namespace(source=<tango_backend.store.PostgresStore object at 0x10e4d7f20>, target=<tango_backend.store.MySQLStore obj...0/backups'), calls=['15ae7163-e17c-49af-b726-2f31adeb0f1e', '58f77f33-3e52-403d-b63e-f7a63366cf5c'], now=1792515738573)
+
+    async def test_real_pg_to_mysql_preserves_all_tables_auth_json_and_ledger(pair):
+        report = pair.backup.parent / 'report.json'
+>       result = await migration.migrate(pair.source_env,pair.target_env,execute=True,backup_directory=pair.backup,report=report)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_mysql_migration.py:121: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tango_backend/migrate_mysql.py:197: in migrate
+    await target.db.execute("SET SESSION sql_mode=CONCAT(@@sql_mode,',STRICT_ALL_TABLES')")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tango_backend.storage_db.Database object at 0x10e9f5550>
+sql = "SET SESSION sql_mode=CONCAT(@@sql_mode,',STRICT_ALL_TABLES')"
+params = ()
+
+    async def execute(self, sql, params=()):
+        await self.initialize()
+        state = self._current()
+        if self.dialect == "mysql" and state:
+            head = re.sub(r"/\*[\s\S]*?\*/|--[^\n]*", "", sql).lstrip().split(None, 1)[0].upper()
+            if head in {"CREATE", "ALTER", "DROP", "TRUNCATE", "RENAME", "GRANT", "REVOKE", "LOCK", "UNLOCK", "SET"}:
+>               raise TypeError("MySQL implicit-commit SQL is forbidden inside a business transaction")
+E               TypeError: MySQL implicit-commit SQL is forbidden inside a business transaction
+
+tango_backend/storage_db.py:165: TypeError
+________ test_digest_failure_rolls_back_every_target_table_and_keeps_pg ________
+
+pair = namespace(source=<tango_backend.store.PostgresStore object at 0x10ea2ca10>, target=<tango_backend.store.MySQLStore obj...0/backups'), calls=['2cc9af82-8d06-4984-a2d2-18281e35fbf6', '397e1452-df0d-453e-9ddb-bb1d4f39a56f'], now=1792515742819)
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x10ea2f500>
+
+    async def test_digest_failure_rolls_back_every_target_table_and_keeps_pg(pair,monkeypatch):
+        original = migration._insert_value
+        def corrupt(column,value):
+            return original(column,value).replace('粤语😀','错误内容') if column=='snapshot_json' else original(column,value)
+        monkeypatch.setattr(migration,'_insert_value',corrupt)
+        with pytest.raises(migration.MigrationError) as error:
+>           await migration.migrate(pair.source_env,pair.target_env,execute=True,backup_directory=pair.backup)
+
+tests/test_mysql_migration.py:176: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tango_backend/migrate_mysql.py:197: in migrate
+    await target.db.execute("SET SESSION sql_mode=CONCAT(@@sql_mode,',STRICT_ALL_TABLES')")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <tango_backend.storage_db.Database object at 0x10ea9c8f0>
+sql = "SET SESSION sql_mode=CONCAT(@@sql_mode,',STRICT_ALL_TABLES')"
+params = ()
+
+    async def execute(self, sql, params=()):
+        await self.initialize()
+        state = self._current()
+        if self.dialect == "mysql" and state:
+            head = re.sub(r"/\*[\s\S]*?\*/|--[^\n]*", "", sql).lstrip().split(None, 1)[0].upper()
+            if head in {"CREATE", "ALTER", "DROP", "TRUNCATE", "RENAME", "GRANT", "REVOKE", "LOCK", "UNLOCK", "SET"}:
+>               raise TypeError("MySQL implicit-commit SQL is forbidden inside a business transaction")
+E               TypeError: MySQL implicit-commit SQL is forbidden inside a business transaction
+
+tango_backend/storage_db.py:165: TypeError
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_conversation_routing_postgres.py:47: 需要本次测试独立持有的 PostgreSQL，不能读取本机用户库
+SKIPPED [1] tests/test_conversation_routing_postgres.py:60: 需要本次测试独立持有的 PostgreSQL，不能读取本机用户库
+SKIPPED [1] tests/test_conversation_routing_postgres.py:75: 需要本次测试独立持有的 PostgreSQL，不能读取本机用户库
+SKIPPED [1] tests/test_conversation_routing_postgres.py:90: 需要本次测试独立持有的 PostgreSQL，不能读取本机用户库
+SKIPPED [1] tests/test_route_reply_atomicity.py:82: 需要本次拥有者临时 PostgreSQL runner
+SKIPPED [1] tests/test_route_reply_atomicity.py:94: 需要本次拥有者临时 PostgreSQL runner
+SKIPPED [1] tests/test_route_reply_atomicity.py:105: 需要本次拥有者临时 PostgreSQL runner
+SKIPPED [1] tests/test_storage.py:101: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:115: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:136: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:164: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:191: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:216: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:235: SQLite 仅支持单进程运行时，不提供 PG 分布式租约
+SKIPPED [1] tests/test_storage.py:232: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage_interop.py:67: 需要显式临时 PostgreSQL 地址
+SKIPPED [3] tests/test_task_runtime_migration.py:109: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:136: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:152: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:160: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:180: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:195: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:208: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:220: 多worker持久租约由 PostgreSQL 验证
+SKIPPED [1] tests/test_task_runtime_migration.py:219: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:236: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:255: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:278: 须通过独立runner显式提供临时 PostgreSQL
+FAILED tests/test_mysql_migration.py::test_real_pg_to_mysql_preserves_all_tables_auth_json_and_ledger
+FAILED tests/test_mysql_migration.py::test_digest_failure_rolls_back_every_target_table_and_keeps_pg
+2 failed, 648 passed, 30 skipped in 26.56s

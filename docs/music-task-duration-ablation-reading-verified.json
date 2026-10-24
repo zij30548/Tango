@@ -1,0 +1,1150 @@
+{
+  "schemaVersion": 1,
+  "kind": "equal_input_duration_component_ablation",
+  "generatedAt": "2026-10-19T05:05:04.284Z",
+  "modelCalls": 0,
+  "catalogRequests": 0,
+  "realUserDataAccessed": false,
+  "input": {
+    "reportName": "tango-verified-reading.json",
+    "reportSha256": "d2077526e56f23dedc8eb80404f7ee9a34ccf3136f66e871e1fe73bbdc47d4c5",
+    "preparedInputSha256": "6fe672451050fae87c4707ee544419ee546695800119e7a67f64d92dd0f51e42",
+    "nativeProbeKind": "native-live-probe-v3",
+    "nativeProbeGoalAcceptancePassed": true,
+    "nativeProbeSourcesUnchanged": true,
+    "nativeCatalogLanguageGold": null,
+    "nativeCatalogLanguageConsistencyPassed": null,
+    "catalogLanguageAcceptanceScope": "Catalog language was not part of the native gold gate. A historical narrow goal=true is not complete task acceptance.",
+    "expectedStyleGold": "轻快",
+    "rankingStatus": "model",
+    "rankingSource": "model_priority_then_catalog",
+    "candidateCount": 17,
+    "lockedCount": 3,
+    "fixedEvaluationAt": "2026-10-19T05:04:35.975Z",
+    "nativeCapturedAlgorithmSha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29"
+  },
+  "algorithm": {
+    "module": "backend/task-duration.mjs",
+    "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+    "comparisonScriptSha256": "2d5d020d5878b1369accdd199c38a09ff7fe40c18e6749a8cfe9fe16d2d6c777",
+    "matchesNativeCapturedAlgorithm": true,
+    "sourcesUnchangedDuringComparison": true
+  },
+  "preparedInput": {
+    "expectedStyle": "轻快",
+    "brief": {
+      "adjustment": "后半段轻快一点",
+      "artist": "",
+      "artistOnly": true,
+      "avoidPrevious": false,
+      "catalogLanguage": "unknown",
+      "excludeLive": false,
+      "excludedArtists": [],
+      "kind": "research",
+      "queries": [
+        "陶喆 轻快"
+      ],
+      "question": "",
+      "removeIds": [],
+      "requireReleases": false,
+      "requiredArtist": "陶喆",
+      "retainFirst": 3,
+      "scene": "读书",
+      "since": null,
+      "styles": [
+        "轻快"
+      ],
+      "targetMinutes": 40,
+      "title": "陶喆阅读时光",
+      "until": null
+    },
+    "targetMs": 2400000,
+    "catalogLanguage": null,
+    "languageFilteredCandidates": [],
+    "fixedEvaluationAt": "2026-10-19T05:04:35.975Z",
+    "locks": [
+      {
+        "album": "Ultrasound 乐之路 1997-2003",
+        "artist": "陶喆",
+        "coverUrl": "https://p4.music.126.net/4uHOznBK63ZOa9vft8qjxQ==/109951164124485287.jpg",
+        "durationMs": 215826,
+        "id": 150524,
+        "reason": "来自「曲库歌曲搜索：陶喆」，陶喆 · 寂寞的季节。",
+        "sourceId": 0,
+        "sourceKind": "artist_search",
+        "sourceName": "曲库歌曲搜索：陶喆",
+        "sourceQuery": "陶喆",
+        "sourceSkill": "scene.research",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "none",
+          "matchedStyles": [],
+          "status": "unverified"
+        },
+        "title": "寂寞的季节"
+      },
+      {
+        "album": "I'm OK",
+        "artist": "陶喆",
+        "coverUrl": "https://p4.music.126.net/tMQXBMTy8pGjGggX1j0YNQ==/109951169389595068.jpg",
+        "durationMs": 255200,
+        "id": 150633,
+        "reason": "来自「曲库歌曲搜索：陶喆」，陶喆 · 天天。",
+        "sourceId": 0,
+        "sourceKind": "artist_search",
+        "sourceName": "曲库歌曲搜索：陶喆",
+        "sourceQuery": "陶喆",
+        "sourceSkill": "scene.research",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "none",
+          "matchedStyles": [],
+          "status": "unverified"
+        },
+        "title": "天天"
+      },
+      {
+        "album": "I'm OK",
+        "artist": "陶喆",
+        "coverUrl": "https://p3.music.126.net/tMQXBMTy8pGjGggX1j0YNQ==/109951169389595068.jpg",
+        "durationMs": 255133,
+        "id": 150623,
+        "reason": "来自「曲库歌曲搜索：陶喆」，陶喆 · 普通朋友。",
+        "sourceId": 0,
+        "sourceKind": "artist_search",
+        "sourceName": "曲库歌曲搜索：陶喆",
+        "sourceQuery": "陶喆",
+        "sourceSkill": "scene.research",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "none",
+          "matchedStyles": [],
+          "status": "unverified"
+        },
+        "title": "普通朋友"
+      }
+    ],
+    "lockedIds": [
+      150524,
+      150633,
+      150623
+    ],
+    "previousUnlockedIds": [
+      150561,
+      150617,
+      150560,
+      150408,
+      150651,
+      26425119
+    ],
+    "ranking": {
+      "status": "model",
+      "source": "model_priority_then_catalog",
+      "reasonCounts": {},
+      "recordedOrder": [
+        150619,
+        150617,
+        150422,
+        26425118,
+        26425119,
+        26145664,
+        150654,
+        150430,
+        150623,
+        150667,
+        150520,
+        150651,
+        150432,
+        150633,
+        150565,
+        150560,
+        150433,
+        150524,
+        150561,
+        150564
+      ],
+      "effectiveOrder": [
+        150619,
+        150617,
+        150422,
+        26425118,
+        26425119,
+        26145664,
+        150654,
+        150430,
+        150667,
+        150520,
+        150651,
+        150432,
+        150565,
+        150560,
+        150433,
+        150561,
+        150564
+      ]
+    },
+    "candidates": [
+      {
+        "album": "I'm OK",
+        "artist": "陶喆",
+        "durationMs": 295666,
+        "id": 150619,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "小镇姑娘",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 1,
+        "flags": 2
+      },
+      {
+        "album": "I'm OK",
+        "artist": "陶喆",
+        "durationMs": 304706,
+        "id": 150617,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "找自己",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 2,
+        "flags": 2
+      },
+      {
+        "album": "太美丽",
+        "artist": "蔡依林 / 陶喆",
+        "durationMs": 272066,
+        "id": 150422,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "今天你要嫁给我",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 3,
+        "flags": 2
+      },
+      {
+        "album": "再见你好吗",
+        "artist": "陶喆 / 关诗敏",
+        "durationMs": 248586,
+        "id": 26425118,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "好好说再见",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 4,
+        "flags": 2
+      },
+      {
+        "album": "再见你好吗",
+        "artist": "陶喆 / 卢广仲",
+        "durationMs": 267333,
+        "id": 26425119,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "那个女孩",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 5,
+        "flags": 2
+      },
+      {
+        "album": "再见你好吗",
+        "artist": "陶喆",
+        "durationMs": 279626,
+        "id": 26145664,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "一念之间",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 6,
+        "flags": 2
+      },
+      {
+        "album": "David Tao",
+        "artist": "陶喆",
+        "durationMs": 269560,
+        "id": 150654,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "爱，很简单",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 7,
+        "flags": 2
+      },
+      {
+        "album": "太平盛世",
+        "artist": "陶喆",
+        "durationMs": 261906,
+        "id": 150430,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "就是爱你",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 8,
+        "flags": 2
+      },
+      {
+        "album": "David Tao",
+        "artist": "陶喆",
+        "durationMs": 242625,
+        "id": 150667,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "流沙",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 9,
+        "flags": 2
+      },
+      {
+        "album": "Ultrasound 乐之路 1997-2003",
+        "artist": "陶喆",
+        "durationMs": 269026,
+        "id": 150520,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Melody",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 10,
+        "flags": 2
+      },
+      {
+        "album": "David Tao",
+        "artist": "陶喆",
+        "durationMs": 280773,
+        "id": 150651,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "飞机场的10:30",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 11,
+        "flags": 2
+      },
+      {
+        "album": "太平盛世",
+        "artist": "陶喆",
+        "durationMs": 292666,
+        "id": 150432,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "爱我还是他",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 12,
+        "flags": 2
+      },
+      {
+        "album": "黑色柳丁",
+        "artist": "陶喆",
+        "durationMs": 261906,
+        "id": 150565,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "二十二",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 13,
+        "flags": 2
+      },
+      {
+        "album": "黑色柳丁",
+        "artist": "陶喆",
+        "durationMs": 242373,
+        "id": 150560,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "讨厌红楼梦",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 14,
+        "flags": 2
+      },
+      {
+        "album": "太平盛世",
+        "artist": "陶喆",
+        "durationMs": 261826,
+        "id": 150433,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Susan 说",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 15,
+        "flags": 2
+      },
+      {
+        "album": "黑色柳丁",
+        "artist": "陶喆",
+        "durationMs": 283200,
+        "id": 150561,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "蝴蝶",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 16,
+        "flags": 2
+      },
+      {
+        "album": "黑色柳丁",
+        "artist": "陶喆",
+        "durationMs": 204986,
+        "id": 150564,
+        "sourceId": 8403072569,
+        "sourceKind": "playlist",
+        "sourceName": "陶喆（轻快版）",
+        "sourceQuery": "陶喆 轻快",
+        "sourceTags": [],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "月亮代表谁的心",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 17,
+        "flags": 2
+      }
+    ],
+    "options": {
+      "targetMs": 2400000,
+      "baseMs": 726159,
+      "maximumTracks": 27,
+      "minimumTracks": 0,
+      "requiredFlags": 0
+    },
+    "lockedHardConflicts": [],
+    "reconstruction": {
+      "hardFilters": [
+        "explicit removes",
+        "previous unlocked IDs when avoidPrevious",
+        "artist-only credits",
+        "excluded artists",
+        "labelled live versions",
+        "dated releases",
+        "unambiguous opposing catalog-language source labels when explicitly retained"
+      ],
+      "externalExcludedIdsExported": false,
+      "externalExcludedIds": [],
+      "assumption": "External excludedIds are absent from the public export; treated as empty. The native probe uses an isolated new account/device and no real listening history.",
+      "durationTolerance": "max(60 seconds, 10% of requested duration)",
+      "styleEvidence": "Explicit gold style joined by real ID/name to actual playlist metadata; ignores production styleEvidence and broad retained styles.",
+      "catalogLanguage": "Explicit native gold or retained brief scope excludes only an unambiguous opposite playlist label. Mixed/unknown labels and 欧美 alone remain unknown. This does not verify sung language.",
+      "duplicateProvenance": "For duplicate real IDs, all actual branch source records may establish style support; both methods receive the same joined evidence."
+    }
+  },
+  "results": [
+    {
+      "method": "closest_duration",
+      "samePreparedInputSha256": "6fe672451050fae87c4707ee544419ee546695800119e7a67f64d92dd0f51e42",
+      "selectionPolicy": "closest_duration",
+      "songCount": 9,
+      "unlockedSongCount": 6,
+      "selectedIds": [
+        150524,
+        150633,
+        150623,
+        150619,
+        26425119,
+        26145664,
+        150654,
+        150520,
+        150432
+      ],
+      "unlockedIds": [
+        150619,
+        26425119,
+        26145664,
+        150654,
+        150520,
+        150432
+      ],
+      "initialLockedIds": [
+        150524,
+        150633,
+        150623
+      ],
+      "locksPreserved": true,
+      "lockedHardConflicts": [],
+      "requiredFlags": 0,
+      "selectedFlags": 2,
+      "mandatoryEvidenceSatisfied": true,
+      "targetDurationMs": 2400000,
+      "totalDurationMs": 2400036,
+      "durationErrorMs": 36,
+      "durationOffsetMs": 36,
+      "toleranceMs": 240000,
+      "allDurationsKnown": true,
+      "withinDurationBand": true,
+      "tailOrderChanged": true,
+      "tailSetChanged": true,
+      "addedUnlockedIds": [
+        150619,
+        26145664,
+        150654,
+        150520,
+        150432
+      ],
+      "removedUnlockedIds": [
+        150561,
+        150617,
+        150560,
+        150408,
+        150651
+      ],
+      "expectedStyle": "轻快",
+      "expectedStyleSupportedUnlockedCount": 6,
+      "expectedStyleSupportedUnlockedCoverage": 1,
+      "expectedStyleEvidence": [
+        {
+          "trackId": 150619,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 26425119,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 26145664,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 150654,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 150520,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 150432,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        }
+      ],
+      "averageSelectedCandidateRank": 6.833333333333333,
+      "durationSelection": {
+        "indices": [
+          0,
+          4,
+          5,
+          6,
+          9,
+          11
+        ],
+        "algorithm": "bounded_duration_dp",
+        "quantizationMs": 1000,
+        "maximumQuantizationSpreadMs": 17000,
+        "selectionPolicy": "closest_duration",
+        "toleranceMs": 240000,
+        "withinTolerance": true
+      },
+      "timing": {
+        "repetitions": 3,
+        "measuredMs": [
+          3.4315419999999968,
+          0.8392499999999998,
+          0.8340829999999997
+        ],
+        "medianMs": 0.8392499999999998,
+        "minimumMs": 0.8340829999999997,
+        "maximumMs": 3.4315419999999968,
+        "scope": "Local selector only; alternating method order, no provider or catalog latency."
+      },
+      "listeningQuality": "not_measured"
+    },
+    {
+      "method": "preference_within_tolerance",
+      "samePreparedInputSha256": "6fe672451050fae87c4707ee544419ee546695800119e7a67f64d92dd0f51e42",
+      "selectionPolicy": "preference_within_tolerance",
+      "songCount": 9,
+      "unlockedSongCount": 6,
+      "selectedIds": [
+        150524,
+        150633,
+        150623,
+        150619,
+        150617,
+        150422,
+        26425118,
+        26425119,
+        26145664
+      ],
+      "unlockedIds": [
+        150619,
+        150617,
+        150422,
+        26425118,
+        26425119,
+        26145664
+      ],
+      "initialLockedIds": [
+        150524,
+        150633,
+        150623
+      ],
+      "locksPreserved": true,
+      "lockedHardConflicts": [],
+      "requiredFlags": 0,
+      "selectedFlags": 2,
+      "mandatoryEvidenceSatisfied": true,
+      "targetDurationMs": 2400000,
+      "totalDurationMs": 2394142,
+      "durationErrorMs": 5858,
+      "durationOffsetMs": -5858,
+      "toleranceMs": 240000,
+      "allDurationsKnown": true,
+      "withinDurationBand": true,
+      "tailOrderChanged": true,
+      "tailSetChanged": true,
+      "addedUnlockedIds": [
+        150619,
+        150422,
+        26425118,
+        26145664
+      ],
+      "removedUnlockedIds": [
+        150561,
+        150560,
+        150408,
+        150651
+      ],
+      "expectedStyle": "轻快",
+      "expectedStyleSupportedUnlockedCount": 6,
+      "expectedStyleSupportedUnlockedCoverage": 1,
+      "expectedStyleEvidence": [
+        {
+          "trackId": 150619,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 150617,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 150422,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 26425118,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 26425119,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 26145664,
+          "sourceId": 8403072569,
+          "sourceName": "陶喆（轻快版）",
+          "sourceTags": [],
+          "checkedAt": "2026-10-19T05:04:30.797Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        }
+      ],
+      "averageSelectedCandidateRank": 3.5,
+      "durationSelection": {
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "algorithm": "bounded_duration_dp",
+        "quantizationMs": 1000,
+        "maximumQuantizationSpreadMs": 17000,
+        "selectionPolicy": "preference_within_tolerance",
+        "toleranceMs": 240000,
+        "withinTolerance": true
+      },
+      "timing": {
+        "repetitions": 3,
+        "measuredMs": [
+          6.7825830000000025,
+          3.5609169999999963,
+          1.3015830000000008
+        ],
+        "medianMs": 3.5609169999999963,
+        "minimumMs": 1.3015830000000008,
+        "maximumMs": 6.7825830000000025,
+        "scope": "Local selector only; alternating method order, no provider or catalog latency."
+      },
+      "listeningQuality": "not_measured"
+    }
+  ],
+  "delta": {
+    "expectedStyleCoverage": 0,
+    "expectedStyleTrackCount": 0,
+    "durationErrorMs": 5822,
+    "bothWithinDurationBand": true,
+    "bothPreserveLocksAndMandatoryEvidence": true,
+    "sourceEvidenceCoverageImproved": false,
+    "selectedSequenceChangedBetweenMethods": true
+  },
+  "scope": "Deterministic duration-selector ablation on one recorded real catalog/ranking/lock snapshot. Both methods receive byte-identical prepared inputs; only preferenceWithinTolerance changes. No new model or catalog calls.",
+  "limitations": [
+    "Not a full fixed-workflow/single-Agent/dual-Agent A/B comparison.",
+    "Recorded degraded ranking remains degraded; selector results cannot repair or validate that model result.",
+    "Historical native reports without an explicit catalog-language gold gate may omit retained language constraints or contain opposing-language source labels; their earlier narrow pass is not complete task acceptance.",
+    "Source-name/tag support measures textual metadata only, not acoustic features, recommendation relevance or listening satisfaction.",
+    "Timing covers this local selector process and candidate snapshot only; it is not production latency or a general speed ranking.",
+    "One fixed candidate snapshot cannot establish general improvement."
+  ],
+  "listeningQuality": "not_measured",
+  "listeningQualityNotMeasured": true
+}

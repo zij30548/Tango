@@ -1,0 +1,2250 @@
+{
+  "schemaVersion": 1,
+  "kind": "tango-agent-fault-evaluation",
+  "startedAt": "2026-10-19T12:06:14.747Z",
+  "suiteId": "tango-agent-balanced-v2-2026-10-19",
+  "actualProviderCalls": 0,
+  "results": [
+    {
+      "id": "fault_http_429",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_http_429",
+        "family": "provider_failure",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "provider_failure",
+          "retry"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.provider_429_bounded",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_http_timeout",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_http_timeout",
+        "family": "provider_failure",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "provider_failure",
+          "recovery"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.uncertain_call_not_replayed",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_malformed_json",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_malformed_json",
+        "family": "provider_output",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "schema_validation",
+          "budget"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.malformed_output_accounted",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_unknown_rank_index",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_unknown_rank_index",
+        "family": "provider_output",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "ranking",
+          "boundary"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.invalid_rank_explicit_degradation",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_duplicate_rank",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_duplicate_rank",
+        "family": "provider_output",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "ranking",
+          "boundary"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.duplicate_rank_rejected",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_string_rank",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_string_rank",
+        "family": "provider_output",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "ranking",
+          "boundary"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.string_rank_rejected",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_stale_tool_lease",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_stale_tool_lease",
+        "family": "tool_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "tool_leases",
+          "recovery"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.stale_lease_rejected",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_revision_race",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_revision_race",
+        "family": "tool_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "revision_isolation",
+          "concurrency"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.old_revision_rejected",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_duplicate_tool_result",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_duplicate_tool_result",
+        "family": "idempotency",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "idempotency",
+          "tool_leases"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.duplicate_result_idempotent",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_create_idempotency",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_create_idempotency",
+        "family": "idempotency",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "idempotency",
+          "accounting"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.duplicate_create_idempotent",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_cross_account_read",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_cross_account_read",
+        "family": "account_isolation",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "ownership",
+          "security"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.cross_account_read_denied",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_cross_account_write",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_cross_account_write",
+        "family": "account_isolation",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "ownership",
+          "security"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.cross_account_write_denied",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_account_parallel",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_account_parallel",
+        "family": "concurrency",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "concurrency",
+          "budget"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.account_parallel_limited",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_global_parallel",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_global_parallel",
+        "family": "concurrency",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "concurrency",
+          "budget"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.global_parallel_limited",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_run_budget",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_run_budget",
+        "family": "budget_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "budget",
+          "recovery"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.run_budget_actionable_recovery",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_task_budget",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_task_budget",
+        "family": "budget_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "budget",
+          "security"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.task_budget_not_reset",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_daily_budget",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_daily_budget",
+        "family": "budget_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "budget",
+          "accounting"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.daily_budget_enforced",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_restart_checkpoint",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_restart_checkpoint",
+        "family": "recovery",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "persistence",
+          "recovery"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.checkpoint_restore_exact",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_cancel_late_result",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_cancel_late_result",
+        "family": "recovery",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "cancellation",
+          "revision_isolation"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.cancelled_late_result_ignored",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_adopt_apply",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_adopt_apply",
+        "family": "adoption",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "adoption",
+          "idempotency"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.adoption_exactly_once",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_unknown_song_id",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_unknown_song_id",
+        "family": "tool_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "catalog_grounding",
+          "security"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.unknown_song_id_denied",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_tool_metadata_size",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_tool_metadata_size",
+        "family": "tool_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "tool_validation",
+          "boundary"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.oversized_tool_result_rejected",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_future_release",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_future_release",
+        "family": "release_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "release_dates",
+          "metadata"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.future_release_excluded",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "fault_artist_id_mismatch",
+      "mode": "deterministic_fault",
+      "score": {
+        "id": "fault_artist_id_mismatch",
+        "family": "release_boundary",
+        "mode": "deterministic_fault",
+        "split": "challenge",
+        "capabilities": [
+          "artist_identity",
+          "metadata"
+        ],
+        "status": "passed",
+        "taskCompleted": true,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.artist_identity_exact",
+            "status": "passed"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 1,
+        "observedAccuracy": 1,
+        "evidenceCoverage": 1
+      }
+    },
+    {
+      "id": "human_scene_relevance",
+      "mode": "human_audio",
+      "score": {
+        "id": "human_scene_relevance",
+        "family": "human_audio",
+        "mode": "human_audio",
+        "split": "manual",
+        "capabilities": [
+          "audio_relevance",
+          "human_preference"
+        ],
+        "status": "unverified",
+        "taskCompleted": false,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.blind_audio_scene_relevance",
+            "status": "unverified"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 0,
+          "failed": 0,
+          "unverified": 1,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 0,
+        "observedAccuracy": null,
+        "evidenceCoverage": 0
+      }
+    },
+    {
+      "id": "human_adjustment_preference",
+      "mode": "human_audio",
+      "score": {
+        "id": "human_adjustment_preference",
+        "family": "human_audio",
+        "mode": "human_audio",
+        "split": "manual",
+        "capabilities": [
+          "audio_relevance",
+          "human_preference"
+        ],
+        "status": "unverified",
+        "taskCompleted": false,
+        "criteria": [
+          {
+            "id": "round_1.status",
+            "status": "not_applicable"
+          },
+          {
+            "id": "round_1.assertion.blind_audio_adjustment_preference",
+            "status": "unverified"
+          }
+        ],
+        "roundScores": [
+          {
+            "round": 1,
+            "completeIntentMatch": {
+              "publicTextOmitted": true
+            },
+            "metricLabel": {
+              "publicTextOmitted": true
+            },
+            "intentCriterionCount": 0,
+            "intentPassed": 0
+          }
+        ],
+        "counts": {
+          "passed": 0,
+          "failed": 0,
+          "unverified": 1,
+          "not_applicable": 1
+        },
+        "criterionCount": 1,
+        "conservativeAccuracy": 0,
+        "observedAccuracy": null,
+        "evidenceCoverage": 0
+      }
+    }
+  ],
+  "scope": {
+    "publicTextOmitted": true
+  },
+  "status": "completed",
+  "summary": {
+    "definition": {
+      "publicTextOmitted": true
+    },
+    "limitation": {
+      "publicTextOmitted": true
+    },
+    "overall": {
+      "tasks": 26,
+      "completed": 24,
+      "strictCompletionRate": 0.9230769230769231,
+      "completionInterval95": {
+        "level": 0.95,
+        "lower": 0.7585844622837095,
+        "upper": 0.9786449115277238,
+        "method": {
+          "publicTextOmitted": true
+        }
+      },
+      "completeIntentMatch": {
+        "metricLabel": {
+          "publicTextOmitted": true
+        },
+        "rounds": 0,
+        "passed": 0,
+        "rate": null,
+        "definition": {
+          "publicTextOmitted": true
+        }
+      },
+      "criterionCounts": {
+        "passed": 24,
+        "failed": 0,
+        "unverified": 2,
+        "not_applicable": 26
+      },
+      "conservativeGoldAccuracy": 0.9230769230769231,
+      "observedGoldAccuracy": 1,
+      "evidenceCoverage": 0.9230769230769231,
+      "caseMacroAccuracy": 0.9230769230769231
+    },
+    "byMode": {
+      "deterministic_fault": {
+        "tasks": 24,
+        "completed": 24,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.8620237953250198,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 24,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 24
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "human_audio": {
+        "tasks": 2,
+        "completed": 0,
+        "strictCompletionRate": 0,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0,
+          "upper": 0.6576197724933469,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 0,
+          "failed": 0,
+          "unverified": 2,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 0,
+        "observedGoldAccuracy": null,
+        "evidenceCoverage": 0,
+        "caseMacroAccuracy": 0
+      }
+    },
+    "byFamily": {
+      "account_isolation": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 2,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "adoption": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 1,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 1
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "budget_boundary": {
+        "tasks": 3,
+        "completed": 3,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.4385029682449546,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 3,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 3
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "concurrency": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 2,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "human_audio": {
+        "tasks": 2,
+        "completed": 0,
+        "strictCompletionRate": 0,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0,
+          "upper": 0.6576197724933469,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 0,
+          "failed": 0,
+          "unverified": 2,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 0,
+        "observedGoldAccuracy": null,
+        "evidenceCoverage": 0,
+        "caseMacroAccuracy": 0
+      },
+      "idempotency": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 2,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "provider_failure": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 2,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "provider_output": {
+        "tasks": 4,
+        "completed": 4,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.5101091635454027,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 4,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 4
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "recovery": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 2,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "release_boundary": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 2,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "tool_boundary": {
+        "tasks": 4,
+        "completed": 4,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.5101091635454027,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 4,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 4
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      }
+    },
+    "bySplit": {
+      "challenge": {
+        "tasks": 24,
+        "completed": 24,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.8620237953250198,
+          "upper": 1,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 24,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 24
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "manual": {
+        "tasks": 2,
+        "completed": 0,
+        "strictCompletionRate": 0,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0,
+          "upper": 0.6576197724933469,
+          "method": {
+            "publicTextOmitted": true
+          }
+        },
+        "completeIntentMatch": {
+          "metricLabel": {
+            "publicTextOmitted": true
+          },
+          "rounds": 0,
+          "passed": 0,
+          "rate": null,
+          "definition": {
+            "publicTextOmitted": true
+          }
+        },
+        "criterionCounts": {
+          "passed": 0,
+          "failed": 0,
+          "unverified": 2,
+          "not_applicable": 2
+        },
+        "conservativeGoldAccuracy": 0,
+        "observedGoldAccuracy": null,
+        "evidenceCoverage": 0,
+        "caseMacroAccuracy": 0
+      }
+    }
+  },
+  "externalNetworkRequests": 0,
+  "generatedSampleCount": 0,
+  "finishedAt": "2026-10-19T12:06:17.406Z",
+  "publicationMetadata": {
+    "sourceKind": "sanitized-public-extract",
+    "notice": "此文件是公开脱敏摘要，不是完整冻结原报告；原始请求响应及运行状态仅保留在本机私有备份中。原成绩、失败、跳过和不确定性未改写。",
+    "privateOriginalSha256": "09469c098ffaede6d834399ce9bdbad526b86d13a7aff04e3e5b4b76b12e1484",
+    "privateOriginalBytes": 297262,
+    "privateOriginalPreserved": true,
+    "originalVerdictsUnchanged": true,
+    "metricScalarValuesVerified": 636,
+    "rawEvidencePrivate": true,
+    "fullReplayAvailableInPublicRepository": false,
+    "redactedJsonPaths": [
+      "/results/0/assertions",
+      "/results/0/observations",
+      "/results/0/rounds",
+      "/results/0/scenario",
+      "/results/0/score/criteria/0/actual",
+      "/results/0/score/criteria/0/detail",
+      "/results/0/score/criteria/0/expected",
+      "/results/0/score/criteria/1/actual",
+      "/results/0/score/criteria/1/detail",
+      "/results/0/score/criteria/1/expected",
+      "/results/0/score/roundScores/0/annotationCoverage",
+      "/results/0/score/roundScores/0/completeIntentMatch",
+      "/results/0/score/roundScores/0/metricLabel",
+      "/results/1/assertions",
+      "/results/1/observations",
+      "/results/1/rounds",
+      "/results/1/scenario",
+      "/results/1/score/criteria/0/actual",
+      "/results/1/score/criteria/0/detail",
+      "/results/1/score/criteria/0/expected",
+      "/results/1/score/criteria/1/actual",
+      "/results/1/score/criteria/1/detail",
+      "/results/1/score/criteria/1/expected",
+      "/results/1/score/roundScores/0/annotationCoverage",
+      "/results/1/score/roundScores/0/completeIntentMatch",
+      "/results/1/score/roundScores/0/metricLabel",
+      "/results/10/assertions",
+      "/results/10/observations",
+      "/results/10/rounds",
+      "/results/10/scenario",
+      "/results/10/score/criteria/0/actual",
+      "/results/10/score/criteria/0/detail",
+      "/results/10/score/criteria/0/expected",
+      "/results/10/score/criteria/1/actual",
+      "/results/10/score/criteria/1/detail",
+      "/results/10/score/criteria/1/expected",
+      "/results/10/score/roundScores/0/annotationCoverage",
+      "/results/10/score/roundScores/0/completeIntentMatch",
+      "/results/10/score/roundScores/0/metricLabel",
+      "/results/11/assertions",
+      "/results/11/observations",
+      "/results/11/rounds",
+      "/results/11/scenario",
+      "/results/11/score/criteria/0/actual",
+      "/results/11/score/criteria/0/detail",
+      "/results/11/score/criteria/0/expected",
+      "/results/11/score/criteria/1/actual",
+      "/results/11/score/criteria/1/detail",
+      "/results/11/score/criteria/1/expected",
+      "/results/11/score/roundScores/0/annotationCoverage",
+      "/results/11/score/roundScores/0/completeIntentMatch",
+      "/results/11/score/roundScores/0/metricLabel",
+      "/results/12/assertions",
+      "/results/12/observations",
+      "/results/12/rounds",
+      "/results/12/scenario",
+      "/results/12/score/criteria/0/actual",
+      "/results/12/score/criteria/0/detail",
+      "/results/12/score/criteria/0/expected",
+      "/results/12/score/criteria/1/actual",
+      "/results/12/score/criteria/1/detail",
+      "/results/12/score/criteria/1/expected",
+      "/results/12/score/roundScores/0/annotationCoverage",
+      "/results/12/score/roundScores/0/completeIntentMatch",
+      "/results/12/score/roundScores/0/metricLabel",
+      "/results/13/assertions",
+      "/results/13/observations",
+      "/results/13/rounds",
+      "/results/13/scenario",
+      "/results/13/score/criteria/0/actual",
+      "/results/13/score/criteria/0/detail",
+      "/results/13/score/criteria/0/expected",
+      "/results/13/score/criteria/1/actual",
+      "/results/13/score/criteria/1/detail",
+      "/results/13/score/criteria/1/expected",
+      "/results/13/score/roundScores/0/annotationCoverage",
+      "/results/13/score/roundScores/0/completeIntentMatch",
+      "/results/13/score/roundScores/0/metricLabel",
+      "/results/14/assertions",
+      "/results/14/observations",
+      "/results/14/rounds",
+      "/results/14/scenario",
+      "/results/14/score/criteria/0/actual",
+      "/results/14/score/criteria/0/detail",
+      "/results/14/score/criteria/0/expected",
+      "/results/14/score/criteria/1/actual",
+      "/results/14/score/criteria/1/detail",
+      "/results/14/score/criteria/1/expected",
+      "/results/14/score/roundScores/0/annotationCoverage",
+      "/results/14/score/roundScores/0/completeIntentMatch",
+      "/results/14/score/roundScores/0/metricLabel",
+      "/results/15/assertions",
+      "/results/15/observations",
+      "/results/15/rounds",
+      "/results/15/scenario",
+      "/results/15/score/criteria/0/actual",
+      "/results/15/score/criteria/0/detail",
+      "/results/15/score/criteria/0/expected",
+      "/results/15/score/criteria/1/actual",
+      "/results/15/score/criteria/1/detail",
+      "/results/15/score/criteria/1/expected",
+      "/results/15/score/roundScores/0/annotationCoverage",
+      "/results/15/score/roundScores/0/completeIntentMatch",
+      "/results/15/score/roundScores/0/metricLabel",
+      "/results/16/assertions",
+      "/results/16/observations",
+      "/results/16/rounds",
+      "/results/16/scenario",
+      "/results/16/score/criteria/0/actual",
+      "/results/16/score/criteria/0/detail",
+      "/results/16/score/criteria/0/expected",
+      "/results/16/score/criteria/1/actual",
+      "/results/16/score/criteria/1/detail",
+      "/results/16/score/criteria/1/expected",
+      "/results/16/score/roundScores/0/annotationCoverage",
+      "/results/16/score/roundScores/0/completeIntentMatch",
+      "/results/16/score/roundScores/0/metricLabel",
+      "/results/17/assertions",
+      "/results/17/observations",
+      "/results/17/rounds",
+      "/results/17/scenario",
+      "/results/17/score/criteria/0/actual",
+      "/results/17/score/criteria/0/detail",
+      "/results/17/score/criteria/0/expected",
+      "/results/17/score/criteria/1/actual",
+      "/results/17/score/criteria/1/detail",
+      "/results/17/score/criteria/1/expected",
+      "/results/17/score/roundScores/0/annotationCoverage",
+      "/results/17/score/roundScores/0/completeIntentMatch",
+      "/results/17/score/roundScores/0/metricLabel",
+      "/results/18/assertions",
+      "/results/18/observations",
+      "/results/18/rounds",
+      "/results/18/scenario",
+      "/results/18/score/criteria/0/actual",
+      "/results/18/score/criteria/0/detail",
+      "/results/18/score/criteria/0/expected",
+      "/results/18/score/criteria/1/actual",
+      "/results/18/score/criteria/1/detail",
+      "/results/18/score/criteria/1/expected",
+      "/results/18/score/roundScores/0/annotationCoverage",
+      "/results/18/score/roundScores/0/completeIntentMatch",
+      "/results/18/score/roundScores/0/metricLabel",
+      "/results/19/assertions",
+      "/results/19/observations",
+      "/results/19/rounds",
+      "/results/19/scenario",
+      "/results/19/score/criteria/0/actual",
+      "/results/19/score/criteria/0/detail",
+      "/results/19/score/criteria/0/expected",
+      "/results/19/score/criteria/1/actual",
+      "/results/19/score/criteria/1/detail",
+      "/results/19/score/criteria/1/expected",
+      "/results/19/score/roundScores/0/annotationCoverage",
+      "/results/19/score/roundScores/0/completeIntentMatch",
+      "/results/19/score/roundScores/0/metricLabel",
+      "/results/2/assertions",
+      "/results/2/observations",
+      "/results/2/rounds",
+      "/results/2/scenario",
+      "/results/2/score/criteria/0/actual",
+      "/results/2/score/criteria/0/detail",
+      "/results/2/score/criteria/0/expected",
+      "/results/2/score/criteria/1/actual",
+      "/results/2/score/criteria/1/detail",
+      "/results/2/score/criteria/1/expected",
+      "/results/2/score/roundScores/0/annotationCoverage",
+      "/results/2/score/roundScores/0/completeIntentMatch",
+      "/results/2/score/roundScores/0/metricLabel",
+      "/results/20/assertions",
+      "/results/20/observations",
+      "/results/20/rounds",
+      "/results/20/scenario",
+      "/results/20/score/criteria/0/actual",
+      "/results/20/score/criteria/0/detail",
+      "/results/20/score/criteria/0/expected",
+      "/results/20/score/criteria/1/actual",
+      "/results/20/score/criteria/1/detail",
+      "/results/20/score/criteria/1/expected",
+      "/results/20/score/roundScores/0/annotationCoverage",
+      "/results/20/score/roundScores/0/completeIntentMatch",
+      "/results/20/score/roundScores/0/metricLabel",
+      "/results/21/assertions",
+      "/results/21/observations",
+      "/results/21/rounds",
+      "/results/21/scenario",
+      "/results/21/score/criteria/0/actual",
+      "/results/21/score/criteria/0/detail",
+      "/results/21/score/criteria/0/expected",
+      "/results/21/score/criteria/1/actual",
+      "/results/21/score/criteria/1/detail",
+      "/results/21/score/criteria/1/expected",
+      "/results/21/score/roundScores/0/annotationCoverage",
+      "/results/21/score/roundScores/0/completeIntentMatch",
+      "/results/21/score/roundScores/0/metricLabel",
+      "/results/22/assertions",
+      "/results/22/observations",
+      "/results/22/rounds",
+      "/results/22/scenario",
+      "/results/22/score/criteria/0/actual",
+      "/results/22/score/criteria/0/detail",
+      "/results/22/score/criteria/0/expected",
+      "/results/22/score/criteria/1/actual",
+      "/results/22/score/criteria/1/detail",
+      "/results/22/score/criteria/1/expected",
+      "/results/22/score/roundScores/0/annotationCoverage",
+      "/results/22/score/roundScores/0/completeIntentMatch",
+      "/results/22/score/roundScores/0/metricLabel",
+      "/results/23/assertions",
+      "/results/23/observations",
+      "/results/23/rounds",
+      "/results/23/scenario",
+      "/results/23/score/criteria/0/actual",
+      "/results/23/score/criteria/0/detail",
+      "/results/23/score/criteria/0/expected",
+      "/results/23/score/criteria/1/actual",
+      "/results/23/score/criteria/1/detail",
+      "/results/23/score/criteria/1/expected",
+      "/results/23/score/roundScores/0/annotationCoverage",
+      "/results/23/score/roundScores/0/completeIntentMatch",
+      "/results/23/score/roundScores/0/metricLabel",
+      "/results/24/assertions",
+      "/results/24/observations",
+      "/results/24/rounds",
+      "/results/24/scenario",
+      "/results/24/score/criteria/0/actual",
+      "/results/24/score/criteria/0/detail",
+      "/results/24/score/criteria/0/expected",
+      "/results/24/score/criteria/1/actual",
+      "/results/24/score/criteria/1/detail",
+      "/results/24/score/criteria/1/expected",
+      "/results/24/score/roundScores/0/annotationCoverage",
+      "/results/24/score/roundScores/0/completeIntentMatch",
+      "/results/24/score/roundScores/0/metricLabel",
+      "/results/25/assertions",
+      "/results/25/observations",
+      "/results/25/rounds",
+      "/results/25/scenario",
+      "/results/25/score/criteria/0/actual",
+      "/results/25/score/criteria/0/detail",
+      "/results/25/score/criteria/0/expected",
+      "/results/25/score/criteria/1/actual",
+      "/results/25/score/criteria/1/detail",
+      "/results/25/score/criteria/1/expected",
+      "/results/25/score/roundScores/0/annotationCoverage",
+      "/results/25/score/roundScores/0/completeIntentMatch",
+      "/results/25/score/roundScores/0/metricLabel",
+      "/results/3/assertions",
+      "/results/3/observations",
+      "/results/3/rounds",
+      "/results/3/scenario",
+      "/results/3/score/criteria/0/actual",
+      "/results/3/score/criteria/0/detail",
+      "/results/3/score/criteria/0/expected",
+      "/results/3/score/criteria/1/actual",
+      "/results/3/score/criteria/1/detail",
+      "/results/3/score/criteria/1/expected",
+      "/results/3/score/roundScores/0/annotationCoverage",
+      "/results/3/score/roundScores/0/completeIntentMatch",
+      "/results/3/score/roundScores/0/metricLabel",
+      "/results/4/assertions",
+      "/results/4/observations",
+      "/results/4/rounds",
+      "/results/4/scenario",
+      "/results/4/score/criteria/0/actual",
+      "/results/4/score/criteria/0/detail",
+      "/results/4/score/criteria/0/expected",
+      "/results/4/score/criteria/1/actual",
+      "/results/4/score/criteria/1/detail",
+      "/results/4/score/criteria/1/expected",
+      "/results/4/score/roundScores/0/annotationCoverage",
+      "/results/4/score/roundScores/0/completeIntentMatch",
+      "/results/4/score/roundScores/0/metricLabel",
+      "/results/5/assertions",
+      "/results/5/observations",
+      "/results/5/rounds",
+      "/results/5/scenario",
+      "/results/5/score/criteria/0/actual",
+      "/results/5/score/criteria/0/detail",
+      "/results/5/score/criteria/0/expected",
+      "/results/5/score/criteria/1/actual",
+      "/results/5/score/criteria/1/detail",
+      "/results/5/score/criteria/1/expected",
+      "/results/5/score/roundScores/0/annotationCoverage",
+      "/results/5/score/roundScores/0/completeIntentMatch",
+      "/results/5/score/roundScores/0/metricLabel",
+      "/results/6/assertions",
+      "/results/6/observations",
+      "/results/6/rounds",
+      "/results/6/scenario",
+      "/results/6/score/criteria/0/actual",
+      "/results/6/score/criteria/0/detail",
+      "/results/6/score/criteria/0/expected",
+      "/results/6/score/criteria/1/actual",
+      "/results/6/score/criteria/1/detail",
+      "/results/6/score/criteria/1/expected",
+      "/results/6/score/roundScores/0/annotationCoverage",
+      "/results/6/score/roundScores/0/completeIntentMatch",
+      "/results/6/score/roundScores/0/metricLabel",
+      "/results/7/assertions",
+      "/results/7/observations",
+      "/results/7/rounds",
+      "/results/7/scenario",
+      "/results/7/score/criteria/0/actual",
+      "/results/7/score/criteria/0/detail",
+      "/results/7/score/criteria/0/expected",
+      "/results/7/score/criteria/1/actual",
+      "/results/7/score/criteria/1/detail",
+      "/results/7/score/criteria/1/expected",
+      "/results/7/score/roundScores/0/annotationCoverage",
+      "/results/7/score/roundScores/0/completeIntentMatch",
+      "/results/7/score/roundScores/0/metricLabel",
+      "/results/8/assertions",
+      "/results/8/observations",
+      "/results/8/rounds",
+      "/results/8/scenario",
+      "/results/8/score/criteria/0/actual",
+      "/results/8/score/criteria/0/detail",
+      "/results/8/score/criteria/0/expected",
+      "/results/8/score/criteria/1/actual",
+      "/results/8/score/criteria/1/detail",
+      "/results/8/score/criteria/1/expected",
+      "/results/8/score/roundScores/0/annotationCoverage",
+      "/results/8/score/roundScores/0/completeIntentMatch",
+      "/results/8/score/roundScores/0/metricLabel",
+      "/results/9/assertions",
+      "/results/9/observations",
+      "/results/9/rounds",
+      "/results/9/scenario",
+      "/results/9/score/criteria/0/actual",
+      "/results/9/score/criteria/0/detail",
+      "/results/9/score/criteria/0/expected",
+      "/results/9/score/criteria/1/actual",
+      "/results/9/score/criteria/1/detail",
+      "/results/9/score/criteria/1/expected",
+      "/results/9/score/roundScores/0/annotationCoverage",
+      "/results/9/score/roundScores/0/completeIntentMatch",
+      "/results/9/score/roundScores/0/metricLabel",
+      "/scope",
+      "/summary/byFamily/account_isolation/completeIntentMatch/definition",
+      "/summary/byFamily/account_isolation/completeIntentMatch/metricLabel",
+      "/summary/byFamily/account_isolation/completionInterval95/method",
+      "/summary/byFamily/adoption/completeIntentMatch/definition",
+      "/summary/byFamily/adoption/completeIntentMatch/metricLabel",
+      "/summary/byFamily/adoption/completionInterval95/method",
+      "/summary/byFamily/budget_boundary/completeIntentMatch/definition",
+      "/summary/byFamily/budget_boundary/completeIntentMatch/metricLabel",
+      "/summary/byFamily/budget_boundary/completionInterval95/method",
+      "/summary/byFamily/concurrency/completeIntentMatch/definition",
+      "/summary/byFamily/concurrency/completeIntentMatch/metricLabel",
+      "/summary/byFamily/concurrency/completionInterval95/method",
+      "/summary/byFamily/human_audio/completeIntentMatch/definition",
+      "/summary/byFamily/human_audio/completeIntentMatch/metricLabel",
+      "/summary/byFamily/human_audio/completionInterval95/method",
+      "/summary/byFamily/idempotency/completeIntentMatch/definition",
+      "/summary/byFamily/idempotency/completeIntentMatch/metricLabel",
+      "/summary/byFamily/idempotency/completionInterval95/method",
+      "/summary/byFamily/provider_failure/completeIntentMatch/definition",
+      "/summary/byFamily/provider_failure/completeIntentMatch/metricLabel",
+      "/summary/byFamily/provider_failure/completionInterval95/method",
+      "/summary/byFamily/provider_output/completeIntentMatch/definition",
+      "/summary/byFamily/provider_output/completeIntentMatch/metricLabel",
+      "/summary/byFamily/provider_output/completionInterval95/method",
+      "/summary/byFamily/recovery/completeIntentMatch/definition",
+      "/summary/byFamily/recovery/completeIntentMatch/metricLabel",
+      "/summary/byFamily/recovery/completionInterval95/method",
+      "/summary/byFamily/release_boundary/completeIntentMatch/definition",
+      "/summary/byFamily/release_boundary/completeIntentMatch/metricLabel",
+      "/summary/byFamily/release_boundary/completionInterval95/method",
+      "/summary/byFamily/tool_boundary/completeIntentMatch/definition",
+      "/summary/byFamily/tool_boundary/completeIntentMatch/metricLabel",
+      "/summary/byFamily/tool_boundary/completionInterval95/method",
+      "/summary/byMode/deterministic_fault/completeIntentMatch/definition",
+      "/summary/byMode/deterministic_fault/completeIntentMatch/metricLabel",
+      "/summary/byMode/deterministic_fault/completionInterval95/method",
+      "/summary/byMode/human_audio/completeIntentMatch/definition",
+      "/summary/byMode/human_audio/completeIntentMatch/metricLabel",
+      "/summary/byMode/human_audio/completionInterval95/method",
+      "/summary/bySplit/challenge/completeIntentMatch/definition",
+      "/summary/bySplit/challenge/completeIntentMatch/metricLabel",
+      "/summary/bySplit/challenge/completionInterval95/method",
+      "/summary/bySplit/manual/completeIntentMatch/definition",
+      "/summary/bySplit/manual/completeIntentMatch/metricLabel",
+      "/summary/bySplit/manual/completionInterval95/method",
+      "/summary/definition",
+      "/summary/limitation",
+      "/summary/overall/completeIntentMatch/definition",
+      "/summary/overall/completeIntentMatch/metricLabel",
+      "/summary/overall/completionInterval95/method"
+    ]
+  }
+}

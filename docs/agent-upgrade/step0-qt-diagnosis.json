@@ -1,0 +1,1092 @@
+{
+  "schemaVersion": 1,
+  "kind": "tango-step0-playback-isolation-diagnosis",
+  "startedAt": "2026-10-20T10:52:12.961243+00:00",
+  "status": "diagnosed_offscreen_native_media_stall",
+  "baselineReport": "docs/agent-upgrade/step0-qt-verification.json",
+  "baselineReportSha256Before": "2f1e29d05a8502b56b6139eab0d4db57aed9f76c220d6ce66c5f9ab215eb5323",
+  "diagnosticOnly": true,
+  "notAddedToRegressionOrModelRates": true,
+  "originalEvidence": {
+    "failedFunction": "MusicTaskFlowTest::compositeTaskModificationRecoveryAndAccountIsolation",
+    "location": "tests/music_task_flow_test.cpp:393",
+    "assertion": "window->p_PlayerObject->position()>50",
+    "noAVFoundationOrCoreAudioErrorInOriginalTextOrXml": true,
+    "earlierAssertionsPassed": [
+      "task.status==adopted",
+      "player.state==PlayingState",
+      "queue count matches preview"
+    ]
+  },
+  "hypothesis": "Distinguish basic Qt/OS playback from application flow by a tiny generated-WAV probe. Local versus loopback HTTP is the only changed media factor; sandbox, cache denial, clean env and audio format remain equal.",
+  "isolation": {
+    "sandboxProfile": "/tmp/tango-step0-qt-cfinbz84/offline.sb",
+    "sandboxProfileSha256": "e4e325e561255b072866a769092fede53d9db3bf8af211a583d79ba01a97fb47",
+    "externalNetwork": "denied; only localhost allowed",
+    "userCache": "read/write denied",
+    "credentialsAndProductionData": "same denied paths as original; synthetic data only",
+    "audio": "60s silent PCM mono 22050Hz 16-bit; muted",
+    "environmentKeys": [
+      "LANG",
+      "MUSICPLAYER_BACKEND_URL",
+      "MUSICPLAYER_DATA_DIR",
+      "MUSICPLAYER_NETEASE_PORT",
+      "MUSICPLAYER_REDIS_PORT",
+      "PATH",
+      "QT_QPA_PLATFORM",
+      "TMPDIR"
+    ]
+  },
+  "probeSourceSha256": "f83d457c1bcbf524546ea4a04ba802833cc008fef2a83b690cada88ba62c8b8b",
+  "commands": [
+    {
+      "stage": "qmake",
+      "argv": [
+        "/opt/homebrew/opt/qt@5/bin/qmake",
+        "/tmp/tango-step0-qt-cfinbz84/diagnosis/playback.pro"
+      ],
+      "cwd": "/tmp/tango-step0-qt-cfinbz84/diagnosis",
+      "startedAt": "2026-10-20T10:52:12.962033+00:00",
+      "finishedAt": "2026-10-20T10:52:13.408552+00:00",
+      "exitCode": 0,
+      "log": "/tmp/tango-step0-qt-cfinbz84/diagnosis/qmake.log",
+      "logSha256": "890e59acca5119e185ea669146be72191325b4bb59adf8570cacf294208b9564"
+    },
+    {
+      "stage": "make",
+      "argv": [
+        "/usr/bin/make",
+        "-j4"
+      ],
+      "cwd": "/tmp/tango-step0-qt-cfinbz84/diagnosis",
+      "startedAt": "2026-10-20T10:52:13.408843+00:00",
+      "finishedAt": "2026-10-20T10:52:14.180524+00:00",
+      "exitCode": 0,
+      "log": "/tmp/tango-step0-qt-cfinbz84/diagnosis/make.log",
+      "logSha256": "641cab672699cb18687a739407ed1998044d571956570bde0881c22172dd6ff2"
+    },
+    {
+      "stage": "local",
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/tmp/tango-step0-qt-cfinbz84/offline.sb",
+        "/tmp/tango-step0-qt-cfinbz84/diagnosis/playback_probe",
+        "local"
+      ],
+      "cwd": "/tmp/tango-step0-qt-cfinbz84/diagnosis",
+      "startedAt": "2026-10-20T10:52:14.180835+00:00",
+      "finishedAt": "2026-10-20T10:52:23.261017+00:00",
+      "exitCode": 2,
+      "log": "/tmp/tango-step0-qt-cfinbz84/diagnosis/local.log",
+      "logSha256": "10b558b3de0dd80a3687b29db9124d4f6f15fd5cb98db95bbb2c7e4c944fcdec"
+    },
+    {
+      "stage": "http",
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/tmp/tango-step0-qt-cfinbz84/offline.sb",
+        "/tmp/tango-step0-qt-cfinbz84/diagnosis/playback_probe",
+        "http"
+      ],
+      "cwd": "/tmp/tango-step0-qt-cfinbz84/diagnosis",
+      "startedAt": "2026-10-20T10:52:23.263035+00:00",
+      "finishedAt": "2026-10-20T10:52:31.275638+00:00",
+      "exitCode": 2,
+      "log": "/tmp/tango-step0-qt-cfinbz84/diagnosis/http.log",
+      "logSha256": "491ba792484cbb1d76f1111e5fdc9bae7d9b26770a9c2bae80d4928de9969ad2"
+    },
+    {
+      "stage": "local-cocoa-single-factor",
+      "factor": "QT_QPA_PLATFORM offscreen -> cocoa; same probe, local WAV, sandbox and other env",
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/tmp/tango-step0-qt-cfinbz84/offline.sb",
+        "/tmp/tango-step0-qt-cfinbz84/diagnosis/playback_probe",
+        "local"
+      ],
+      "cwd": "/tmp/tango-step0-qt-cfinbz84/diagnosis",
+      "startedAt": "2026-10-20T10:53:08.316084+00:00",
+      "finishedAt": "2026-10-20T10:53:16.324269+00:00",
+      "exitCode": 0,
+      "log": "/tmp/tango-step0-qt-cfinbz84/diagnosis/local-cocoa.log",
+      "logSha256": "e0a3528990c9e41359f2acf5996b88aebc72c1c14212d70bebf2c1297c72ce85"
+    },
+    {
+      "stage": "original-failed-function-cocoa",
+      "diagnosticOnly": true,
+      "factor": "QT_QPA_PLATFORM offscreen -> cocoa; same already-built test binary, sandbox and original env/data isolation",
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/tmp/tango-step0-qt-cfinbz84/offline.sb",
+        "/tmp/tango-step0-qt-cfinbz84/builds/music_task_flow/music_task_flow_test",
+        "compositeTaskModificationRecoveryAndAccountIsolation",
+        "-o",
+        "/tmp/tango-step0-qt-cfinbz84/diagnosis/original-function-cocoa.xml,xml",
+        "-o",
+        "-,txt"
+      ],
+      "cwd": "/Users/zijing/projects/fictional-fishstick",
+      "startedAt": "2026-10-20T10:53:49.787142+00:00",
+      "finishedAt": "2026-10-20T10:53:57.219172+00:00",
+      "exitCode": 0,
+      "log": "/tmp/tango-step0-qt-cfinbz84/diagnosis/original-function-cocoa.log",
+      "logSha256": "e8fb03abfde2c3219835a1e8abca8a33e3f5f3c6e8a8d475b73f74d3f20fdc83",
+      "binarySha256": "8a32243feba4892655745290f7f978fd156ff47a2cd5756a3cad86568f801d44",
+      "sourceHashesBefore": {
+        "backend/agent-evaluation-cli.mjs": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2",
+        "backend/agent-event-contract.mjs": "ea180eec1f1481eebe94123792984553696ab80d7ef7ccb3f80f9c602a08d9bf",
+        "backend/app.mjs": "212783b32308523b73adec5667d6677fcfa65a0d57d55e019dbfb87b7979523a",
+        "backend/assistant-model.mjs": "0278e50c27d88bfed272475e35dd9f3bda340803f032dc08897726e0741c4eab",
+        "backend/errors.mjs": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a",
+        "backend/launch-local.mjs": "4ff40fecc3849522c1a51df8129086cb09630b5d64febe13751114abf3bb923d",
+        "backend/model-transport.mjs": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315",
+        "backend/model.mjs": "68cfc9c9d0168f089dce20424f909ed6823734f164b38253f3407520c2a67951",
+        "backend/postgres-store.mjs": "06fb78b5d02b4b667ac651c2a095d0d7f129ab55bd5fec0cc14a4c9e41711a46",
+        "backend/postgres-task-store.mjs": "2c0232c89c7b979cffb4d50da45d24fac2a292b6c157124ff9072724df4c5199",
+        "backend/radio-model.mjs": "109f625c501cb780e386f2736cd906f68b60a6896243ad9ee6e316642243b91e",
+        "backend/redis-limiter.mjs": "c652d8855159310af662708c1027c4a573f09e28abf08a81b2562ba14825d41f",
+        "backend/server.mjs": "63615b1a586f28d21285e01dfb58761451a3b3c6bda8108b54ded13cd9e7a905",
+        "backend/service-config.mjs": "4f3ba589ffd13966d0a40a28c43730a85aca7154bbf7f37529f2878ab3b34638",
+        "backend/storage-auth.mjs": "4283e16cff4c7e4704e43baf9fbe2b1bc2b96dd3a58cb81f82f6510a73350d46",
+        "backend/storage-postgres.mjs": "269e4dab8f809ad99de602155752c79897a1121628219d7d8d6bda8a6ad40181",
+        "backend/storage-task-helpers.mjs": "39454eed18a336b709b0549e275fab0ee212554ef792ddb0742153e74ea338f0",
+        "backend/storage.mjs": "9743f5ea7d5ad86a128c09ca0953674e7a741197ea1decb80bc6d4b31d464dad",
+        "backend/store.mjs": "cf1b0c2c9ce241d66a781f3ec4fb3d60ca59f0ecb1d444f0f34104509e9aca3a",
+        "backend/task-brief-patch.mjs": "c829c661e8826ba0e62c9b8e41c47c7eda9ca108c38ac7cf08814621237379cf",
+        "backend/task-duration.mjs": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+        "backend/task-evaluation-cli.mjs": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d",
+        "backend/task-evaluation.mjs": "be901876fbf90b26acb62179174e5c1c965ac3f69cab58f558757075abb3f9ab",
+        "backend/task-language.mjs": "2849dc86830be7d00233219ca8386ac1d5d232f569ec3cd505462c11c3bb59f8",
+        "backend/task-model.mjs": "c2b6c6d89b0144ab46386482a879159742c4fcfe638faf2b4c14293987233671",
+        "backend/task-pending-request.mjs": "5cf3f3d7fe9b9c8c6587917d222e305fabf560b8a2e7dd98bac6d9023c394bb2",
+        "backend/task-progress.mjs": "ab6a31763b8642eb83c14de196c105e24af1cb1859db1c72ca7dba3fd008065b",
+        "backend/task-query-coverage.mjs": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed",
+        "backend/task-release-intent.mjs": "2b593a723f7ded52cc0dc9840c4e139f40c0700fbedec4bcbb0cd2152b6ad306",
+        "backend/task-runtime.mjs": "ffbbc70deed878603f0807a974b162790058731499701e8939a760ace1fd6eaf",
+        "backend/task-schema.mjs": "18a2dad04efe43033ab6e056177cf405e77e0d98fcd2a37eca0f4bc86338d21c",
+        "backend/task-store.mjs": "dad2b9fd7f436437d749407fb33de313e786f7660bcf73e06e02fad720ba5bd9",
+        "backend/task-style-evidence.mjs": "526768166a781498425b23a42c98d75373afd6931fe91e33665a5417db164aed",
+        "backend/task-tool-cache.mjs": "d18ae70ddda8793d8c84ce1bda5fb1d51d1684bb0989afcc953e7126d7e2d359",
+        "backend/task-tool-evidence.mjs": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48",
+        "tests/music_task_flow_test.cpp": "1175e6774b81f17cd81bfa2dd8a63cc5a82a45eaea7bd3b35d6df0433345223c"
+      },
+      "sourceHashesAfter": {
+        "backend/agent-evaluation-cli.mjs": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2",
+        "backend/agent-event-contract.mjs": "ea180eec1f1481eebe94123792984553696ab80d7ef7ccb3f80f9c602a08d9bf",
+        "backend/app.mjs": "212783b32308523b73adec5667d6677fcfa65a0d57d55e019dbfb87b7979523a",
+        "backend/assistant-model.mjs": "0278e50c27d88bfed272475e35dd9f3bda340803f032dc08897726e0741c4eab",
+        "backend/errors.mjs": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a",
+        "backend/launch-local.mjs": "4ff40fecc3849522c1a51df8129086cb09630b5d64febe13751114abf3bb923d",
+        "backend/model-transport.mjs": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315",
+        "backend/model.mjs": "68cfc9c9d0168f089dce20424f909ed6823734f164b38253f3407520c2a67951",
+        "backend/postgres-store.mjs": "06fb78b5d02b4b667ac651c2a095d0d7f129ab55bd5fec0cc14a4c9e41711a46",
+        "backend/postgres-task-store.mjs": "2c0232c89c7b979cffb4d50da45d24fac2a292b6c157124ff9072724df4c5199",
+        "backend/radio-model.mjs": "109f625c501cb780e386f2736cd906f68b60a6896243ad9ee6e316642243b91e",
+        "backend/redis-limiter.mjs": "c652d8855159310af662708c1027c4a573f09e28abf08a81b2562ba14825d41f",
+        "backend/server.mjs": "63615b1a586f28d21285e01dfb58761451a3b3c6bda8108b54ded13cd9e7a905",
+        "backend/service-config.mjs": "4f3ba589ffd13966d0a40a28c43730a85aca7154bbf7f37529f2878ab3b34638",
+        "backend/storage-auth.mjs": "4283e16cff4c7e4704e43baf9fbe2b1bc2b96dd3a58cb81f82f6510a73350d46",
+        "backend/storage-postgres.mjs": "269e4dab8f809ad99de602155752c79897a1121628219d7d8d6bda8a6ad40181",
+        "backend/storage-task-helpers.mjs": "39454eed18a336b709b0549e275fab0ee212554ef792ddb0742153e74ea338f0",
+        "backend/storage.mjs": "9743f5ea7d5ad86a128c09ca0953674e7a741197ea1decb80bc6d4b31d464dad",
+        "backend/store.mjs": "cf1b0c2c9ce241d66a781f3ec4fb3d60ca59f0ecb1d444f0f34104509e9aca3a",
+        "backend/task-brief-patch.mjs": "c829c661e8826ba0e62c9b8e41c47c7eda9ca108c38ac7cf08814621237379cf",
+        "backend/task-duration.mjs": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+        "backend/task-evaluation-cli.mjs": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d",
+        "backend/task-evaluation.mjs": "be901876fbf90b26acb62179174e5c1c965ac3f69cab58f558757075abb3f9ab",
+        "backend/task-language.mjs": "2849dc86830be7d00233219ca8386ac1d5d232f569ec3cd505462c11c3bb59f8",
+        "backend/task-model.mjs": "c2b6c6d89b0144ab46386482a879159742c4fcfe638faf2b4c14293987233671",
+        "backend/task-pending-request.mjs": "5cf3f3d7fe9b9c8c6587917d222e305fabf560b8a2e7dd98bac6d9023c394bb2",
+        "backend/task-progress.mjs": "ab6a31763b8642eb83c14de196c105e24af1cb1859db1c72ca7dba3fd008065b",
+        "backend/task-query-coverage.mjs": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed",
+        "backend/task-release-intent.mjs": "2b593a723f7ded52cc0dc9840c4e139f40c0700fbedec4bcbb0cd2152b6ad306",
+        "backend/task-runtime.mjs": "ffbbc70deed878603f0807a974b162790058731499701e8939a760ace1fd6eaf",
+        "backend/task-schema.mjs": "18a2dad04efe43033ab6e056177cf405e77e0d98fcd2a37eca0f4bc86338d21c",
+        "backend/task-store.mjs": "dad2b9fd7f436437d749407fb33de313e786f7660bcf73e06e02fad720ba5bd9",
+        "backend/task-style-evidence.mjs": "526768166a781498425b23a42c98d75373afd6931fe91e33665a5417db164aed",
+        "backend/task-tool-cache.mjs": "d18ae70ddda8793d8c84ce1bda5fb1d51d1684bb0989afcc953e7126d7e2d359",
+        "backend/task-tool-evidence.mjs": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48",
+        "tests/music_task_flow_test.cpp": "1175e6774b81f17cd81bfa2dd8a63cc5a82a45eaea7bd3b35d6df0433345223c"
+      },
+      "testSourceMatchesFirstBaseline": true,
+      "sourcesUnchanged": true,
+      "xml": "/tmp/tango-step0-qt-cfinbz84/diagnosis/original-function-cocoa.xml",
+      "xmlSha256": "5c5202072837ad0626bde23efd570bc53893e692ddaa6388318668f2ed95dced",
+      "cases": [
+        {
+          "name": "initTestCase",
+          "incidents": [
+            {
+              "status": "pass",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "compositeTaskModificationRecoveryAndAccountIsolation",
+          "incidents": [
+            {
+              "status": "pass",
+              "description": null
+            }
+          ]
+        },
+        {
+          "name": "cleanupTestCase",
+          "incidents": [
+            {
+              "status": "pass",
+              "description": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "observations": [
+    {
+      "mode": "local",
+      "events": [
+        {
+          "audioOutputDeviceCount": 3,
+          "defaultAudioOutputAvailable": true,
+          "event": "start",
+          "mode": "local"
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 511,
+          "error": 0,
+          "errorText": "",
+          "event": "mediaStatus",
+          "position": 0,
+          "requests": 0,
+          "state": 0,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 512,
+          "error": 0,
+          "errorText": "",
+          "event": "state",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 1017,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 1512,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 2014,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 2513,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 3017,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 3514,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 4015,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 4514,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 5016,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 5514,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 6012,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 6517,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 7016,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 7516,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 8017,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 8515,
+          "error": 0,
+          "errorText": "",
+          "event": "summary",
+          "maximumPosition": 0,
+          "position": 0,
+          "progressedOver50ms": false,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 8516,
+          "error": 0,
+          "errorText": "",
+          "event": "state",
+          "position": 0,
+          "requests": 0,
+          "state": 0,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 8516,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 0,
+          "status": 2
+        }
+      ]
+    },
+    {
+      "mode": "http",
+      "events": [
+        {
+          "audioOutputDeviceCount": 3,
+          "defaultAudioOutputAvailable": true,
+          "event": "start",
+          "mode": "http"
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 91,
+          "error": 0,
+          "errorText": "",
+          "event": "mediaStatus",
+          "position": 0,
+          "requests": 0,
+          "state": 0,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 92,
+          "error": 0,
+          "errorText": "",
+          "event": "state",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "end": 1,
+          "event": "http",
+          "range": true,
+          "requests": 1,
+          "start": 0
+        },
+        {
+          "end": 2646043,
+          "event": "http",
+          "range": true,
+          "requests": 2,
+          "start": 0
+        },
+        {
+          "end": 2646043,
+          "event": "http",
+          "range": true,
+          "requests": 3,
+          "start": 2637824
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 569,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 1047,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 1521,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 1997,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 2469,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 2943,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 3429,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 3928,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 4433,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 4929,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 5433,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 5933,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 6428,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 6929,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 7432,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 7933,
+          "error": 0,
+          "errorText": "",
+          "event": "summary",
+          "maximumPosition": 0,
+          "position": 0,
+          "progressedOver50ms": false,
+          "requests": 3,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 7933,
+          "error": 0,
+          "errorText": "",
+          "event": "state",
+          "position": 0,
+          "requests": 3,
+          "state": 0,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 7933,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 3,
+          "state": 0,
+          "status": 2
+        }
+      ]
+    },
+    {
+      "mode": "local-cocoa",
+      "events": [
+        {
+          "audioOutputDeviceCount": 3,
+          "defaultAudioOutputAvailable": true,
+          "event": "start",
+          "mode": "local"
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 73,
+          "error": 0,
+          "errorText": "",
+          "event": "mediaStatus",
+          "position": 0,
+          "requests": 0,
+          "state": 0,
+          "status": 2
+        },
+        {
+          "duration": 0,
+          "elapsedMs": 74,
+          "error": 0,
+          "errorText": "",
+          "event": "state",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 184,
+          "error": 0,
+          "errorText": "",
+          "event": "duration",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 2
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 210,
+          "error": 0,
+          "errorText": "",
+          "event": "mediaStatus",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 1026,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 1124,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 1649,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 435,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 2174,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 961,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 2700,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 1486,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 3224,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 2010,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 3749,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 2535,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 4275,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 3061,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 4800,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 3586,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 5317,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 4104,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 5817,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 4604,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 6317,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 5103,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 6816,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 5602,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 7316,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 6103,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 7816,
+          "error": 0,
+          "errorText": "",
+          "event": "summary",
+          "maximumPosition": 6603,
+          "position": 6603,
+          "progressedOver50ms": true,
+          "requests": 0,
+          "state": 1,
+          "status": 6
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 7817,
+          "error": 0,
+          "errorText": "",
+          "event": "mediaStatus",
+          "position": 6603,
+          "requests": 0,
+          "state": 1,
+          "status": 3
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 7845,
+          "error": 0,
+          "errorText": "",
+          "event": "state",
+          "position": 0,
+          "requests": 0,
+          "state": 0,
+          "status": 3
+        },
+        {
+          "duration": 60000,
+          "elapsedMs": 7846,
+          "error": 0,
+          "errorText": "",
+          "event": "poll",
+          "position": 0,
+          "requests": 0,
+          "state": 0,
+          "status": 3
+        }
+      ]
+    }
+  ],
+  "baselineReportSha256After": "2f1e29d05a8502b56b6139eab0d4db57aed9f76c220d6ce66c5f9ab215eb5323",
+  "baselineReportUnchanged": true,
+  "finishedAt": "2026-10-20T10:54:19.088453+00:00",
+  "attemptSequence": [
+    {
+      "sequence": 1,
+      "stage": "qmake",
+      "exitCode": 0
+    },
+    {
+      "sequence": 2,
+      "stage": "make",
+      "exitCode": 0
+    },
+    {
+      "sequence": 3,
+      "stage": "local",
+      "exitCode": 2
+    },
+    {
+      "sequence": 4,
+      "stage": "http",
+      "exitCode": 2
+    },
+    {
+      "sequence": 5,
+      "stage": "local-cocoa-single-factor",
+      "exitCode": 0
+    },
+    {
+      "sequence": 6,
+      "stage": "original-failed-function-cocoa",
+      "exitCode": 0
+    }
+  ],
+  "summaryByProbe": {
+    "local": {
+      "duration": 0,
+      "elapsedMs": 8515,
+      "error": 0,
+      "errorText": "",
+      "event": "summary",
+      "maximumPosition": 0,
+      "position": 0,
+      "progressedOver50ms": false,
+      "requests": 0,
+      "state": 1,
+      "status": 2
+    },
+    "http": {
+      "duration": 0,
+      "elapsedMs": 7933,
+      "error": 0,
+      "errorText": "",
+      "event": "summary",
+      "maximumPosition": 0,
+      "position": 0,
+      "progressedOver50ms": false,
+      "requests": 3,
+      "state": 1,
+      "status": 2
+    },
+    "local-cocoa": {
+      "duration": 60000,
+      "elapsedMs": 7816,
+      "error": 0,
+      "errorText": "",
+      "event": "summary",
+      "maximumPosition": 6603,
+      "position": 6603,
+      "progressedOver50ms": true,
+      "requests": 0,
+      "state": 1,
+      "status": 6
+    }
+  },
+  "conclusion": {
+    "finding": "In this macOS/Qt 5.15.19 environment, QT_QPA_PLATFORM=offscreen leaves the AVFoundation-backed QMediaPlayer at LoadingMedia with zero duration and position. Cocoa under the identical network/data sandbox advances the same synthetic local WAV. The original failed composite testfunction also passes once when only the platform changes to cocoa.",
+    "scope": "Isolates the native platform as the actionable test-environment factor for the observed playback assertion; does not establish live model/catalog/audio-quality success or replace the first regression execution.",
+    "probeEvidence": {
+      "offscreen_local_maximumPosition": 0,
+      "offscreen_local_duration": 0,
+      "offscreen_http_maximumPosition": 0,
+      "offscreen_http_requests": 3,
+      "cocoa_local_maximumPosition": 6603,
+      "cocoa_local_duration": 60000
+    },
+    "originalFunctionDiagnosticPassed": true,
+    "firstBaselineRetained": true,
+    "relaxedExternalNetworkOrUserDataAccess": false,
+    "productionOrTestSourceModified": false,
+    "recommendation": "Keep offscreen for non-media widget regressions. On macOS, execute QMediaPlayer integration tests with QT_QPA_PLATFORM=cocoa under the same loopback-only sandbox and temporary data isolation. A later declared baseline run can use that corrected environment; do not replace this first run or combine diagnosis passes into its score.",
+    "remainingLimitations": [
+      "Only this native environment and synthetic silent WAV were tested.",
+      "No real model, real music catalog, production account or human listening test was executed.",
+      "The app source needs no production change for the demonstrated environment factor."
+    ]
+  }
+}

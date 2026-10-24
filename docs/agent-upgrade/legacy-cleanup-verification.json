@@ -1,0 +1,3260 @@
+{
+  "schemaVersion": 1,
+  "at": "2026-10-20T18:00:58.900545+00:00",
+  "scope": "Retire replaced JavaScript AI backend and obsolete tools; retain Qt/C++ app and required Node NetEase bridge.",
+  "cleanup": {
+    "oldPublicPathsRemoved": 644,
+    "byCategory": {
+      "backend": 121,
+      "scripts": 26,
+      "historicalSourceCopies": 495,
+      "oldLiveProbe": 2
+    },
+    "generatedDependencies": {
+      "files": 9696,
+      "logicalBytes": 63824954
+    },
+    "removedPaths": [
+      {
+        "path": "backend/.env.example",
+        "sha256": "fcbcc855d8adac28a6460f5dde8f51c4c74fc80925503b775460619340b21d0c"
+      },
+      {
+        "path": "backend/.gitignore",
+        "sha256": "cbba3e23e571ba628fedf06d98d0308792e677134dc9c51b28126a42593b910a"
+      },
+      {
+        "path": "backend/README.md",
+        "sha256": "3aa3873f8066a71b5a5cc62b787985fc5481184492fe179e519ec9fde20471da"
+      },
+      {
+        "path": "backend/account-quota.mjs",
+        "sha256": "f3ddf913dd82e67450b9f593941e4aa01cd0049018aba57d000f298caf5d4c2c"
+      },
+      {
+        "path": "backend/admin-accounts.mjs",
+        "sha256": "371bbd40d9a005ff4113464c91b5109ed7a08cf8b5f8e6c652eadc8ae66b9eb9"
+      },
+      {
+        "path": "backend/admin-invites.mjs",
+        "sha256": "d402b2e2e759598cf6d4c2b64d6566231c1676165b25974d58bd6882af5e5211"
+      },
+      {
+        "path": "backend/admin-storage.mjs",
+        "sha256": "cca40249c514fa9f941db5d51ff9f319d47302d17ed873fc07c97a226f928fd4"
+      },
+      {
+        "path": "backend/agent-evaluation-cli.mjs",
+        "sha256": "19d2dbce0f6fa80035d5861a8d1d8494f04ce34b9e23126ae7b3904a87f3c1f9"
+      },
+      {
+        "path": "backend/agent-event-contract.mjs",
+        "sha256": "e6412703f64586547852428029b421081b6ba0cd47c17f0c61b04b816ddd2d17"
+      },
+      {
+        "path": "backend/app.mjs",
+        "sha256": "a92be493e96c4c77448829c023a1ae5ae715a25f067a655d808b63b240112a75"
+      },
+      {
+        "path": "backend/assistant-model.mjs",
+        "sha256": "4b5ca0d0f5c81c20e512042967605e6034c69958a14b4adce9222763c6e15e2a"
+      },
+      {
+        "path": "backend/capability-registry.mjs",
+        "sha256": "80e8665dc8351a00942ff58618e650af18db963ca3b51fd604fee5ed3eda66e2"
+      },
+      {
+        "path": "backend/compose.yaml",
+        "sha256": "940417c6759ec6a66f8cf91a6f4fc20060c716581ad1d36bba32fc5267aac8ec"
+      },
+      {
+        "path": "backend/conversation-api.mjs",
+        "sha256": "abd748a86628602a33a6198f79d9099edf6d0d1e0acfc471f79f39cce1863bd2"
+      },
+      {
+        "path": "backend/conversation-route-store.mjs",
+        "sha256": "b36b82f45895d15f0d08da8521ca2ff69919b4a14e4b21ee6a9e0e4e7ee630a5"
+      },
+      {
+        "path": "backend/conversation-router.mjs",
+        "sha256": "5af9c028e424e6d5312fcd45596fc2a749ca5fd0e9a6bb103f4abb1d1dbac634"
+      },
+      {
+        "path": "backend/conversation-store.mjs",
+        "sha256": "988c076523d8fb59d122b98d653acc995ade83adf13ee84b9e2deea64605db8d"
+      },
+      {
+        "path": "backend/development-config.mjs",
+        "sha256": "bbac46d64c5b79897ae591bd654139c537abed782ee99d5a4e9b510619e68ae2"
+      },
+      {
+        "path": "backend/development-session.mjs",
+        "sha256": "e16786876b81d13bb02e6fd163488f8ae1a9463480aeccc5aae78967bd63e648"
+      },
+      {
+        "path": "backend/errors.mjs",
+        "sha256": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a"
+      },
+      {
+        "path": "backend/evaluation/agent-artist-identity.mjs",
+        "sha256": "f49162dda51ae320305f6bc5579ca8a4509582c3c7946643c6b630953ca278d3"
+      },
+      {
+        "path": "backend/evaluation/agent-evaluation-runner.mjs",
+        "sha256": "0578172a8803e664ef8080c984904fcb9dbc7124036f7eb074d7feba52633065"
+      },
+      {
+        "path": "backend/evaluation/agent-fault-checks.mjs",
+        "sha256": "c478a7dcf786968ed612a78130452578d658e9c8d67cae09ba91366281e23942"
+      },
+      {
+        "path": "backend/evaluation/agent-observation-assertions.mjs",
+        "sha256": "e2b329e4dfefc86212b8150e7d394903d54ddde3e02abf73b35c1164e2cec274"
+      },
+      {
+        "path": "backend/evaluation/agent-suite-schema.mjs",
+        "sha256": "17ac224fc0be089fc777629b2ce4b1231a33ae7e44a593baf58ca76747fd9ab7"
+      },
+      {
+        "path": "backend/evaluation/upgrade-protocol.mjs",
+        "sha256": "bf46710e35847cc4e6ce539cfe2f4a304ad7246761f031ee50fcce23b80c9e92"
+      },
+      {
+        "path": "backend/intent-routing.mjs",
+        "sha256": "2ea6441dd8776a8de1ea81c79fd1ac27ba827339ad02864343b1e3ae024302a5"
+      },
+      {
+        "path": "backend/invite-store.mjs",
+        "sha256": "9861187759b047ff3c4d5a94759a43ede3523406855af0e8cc1e0fca80303c6c"
+      },
+      {
+        "path": "backend/launch-local.mjs",
+        "sha256": "e1187275429db1d6d005a2552746e476bb9af3a5eb7208344577d8429ab0f9d0"
+      },
+      {
+        "path": "backend/migrations/001_initial_postgres.sql",
+        "sha256": "22b75c4b27c8db9fff74c1c01a897327b8a29f3e3d4f8ec5d997627170afc5ca"
+      },
+      {
+        "path": "backend/model-transport.mjs",
+        "sha256": "261c81772c2d7427440db8e8d6d480bab8b4f9dc061859687deab44d11494135"
+      },
+      {
+        "path": "backend/model.mjs",
+        "sha256": "7e7b02487ca3659c71ea7b14463638262f468371ba3265a026399978b06f3b9a"
+      },
+      {
+        "path": "backend/package-lock.json",
+        "sha256": "b42c905b0ea63e30d9ec5c2b8ddbb224a7201b4bb87a09ea4791f1e8726987d1"
+      },
+      {
+        "path": "backend/package.json",
+        "sha256": "c7215d0eaa043034cbbd031ea402ede7212ad61aa7dbd8b884f150494099388c"
+      },
+      {
+        "path": "backend/postgres-store.mjs",
+        "sha256": "1adae0e0dd44efcf4d2e7d109c29bdce2a8811d0f4e84ede09500b23419d4958"
+      },
+      {
+        "path": "backend/postgres-task-store.mjs",
+        "sha256": "39097df722ad264f700bc9689b977fdfc47300cdc46b0b5f321b82ed7868511d"
+      },
+      {
+        "path": "backend/radio-model.mjs",
+        "sha256": "597bf8634c562dfb503faf2934d9bac2f736431784700274ec96c6eb07aa3a76"
+      },
+      {
+        "path": "backend/redis-limiter.mjs",
+        "sha256": "5e2ab8c3316cb1ba8abd37702e243f1170f2bbbd1fe8d1c3a6d4981160a7608d"
+      },
+      {
+        "path": "backend/registration-service.mjs",
+        "sha256": "59decb1b0058629d16de62358de8edc67a8a4c9a0ea445e3f40041a26c98c53f"
+      },
+      {
+        "path": "backend/security-config.mjs",
+        "sha256": "613a3991a0793a4011c2438f8a42678e5a2f91738982447a42b513a6e7a8ef6d"
+      },
+      {
+        "path": "backend/server.mjs",
+        "sha256": "c1cca3053ebfe01b86977dd8c918f3634699def4ed24ad18b8e7082c7acf17ae"
+      },
+      {
+        "path": "backend/service-config.mjs",
+        "sha256": "67b4bfa4824f9c6a1882590901aaabe5b742902c9cbb8cb2d0cef064e1e3bf2c"
+      },
+      {
+        "path": "backend/storage-auth.mjs",
+        "sha256": "2a783aea8259bbe5eec7f638a3cc0c69701568cc1acdaa7087c6fdff315b0f4e"
+      },
+      {
+        "path": "backend/storage-postgres.mjs",
+        "sha256": "269e4dab8f809ad99de602155752c79897a1121628219d7d8d6bda8a6ad40181"
+      },
+      {
+        "path": "backend/storage-task-helpers.mjs",
+        "sha256": "39454eed18a336b709b0549e275fab0ee212554ef792ddb0742153e74ea338f0"
+      },
+      {
+        "path": "backend/storage.mjs",
+        "sha256": "9743f5ea7d5ad86a128c09ca0953674e7a741197ea1decb80bc6d4b31d464dad"
+      },
+      {
+        "path": "backend/store.mjs",
+        "sha256": "19e4aed90414530f49d73a4993f0504070531c4d579866afbd13ae5fc309ae79"
+      },
+      {
+        "path": "backend/task-brief-patch.mjs",
+        "sha256": "d7de8124bae574da73cbc5610732677836b72de8f587db82f646ad9671d46ef4"
+      },
+      {
+        "path": "backend/task-duration.mjs",
+        "sha256": "a04c475b146cc3db273ea381cfb296edd3d6eebacd88df271e08b0e7ac5384eb"
+      },
+      {
+        "path": "backend/task-evaluation-cli.mjs",
+        "sha256": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d"
+      },
+      {
+        "path": "backend/task-evaluation.mjs",
+        "sha256": "a3e9e82eff4c3d455c0774b5fe06ea9b9814e0d09078f5a2d8ff6a9beffc6249"
+      },
+      {
+        "path": "backend/task-language.mjs",
+        "sha256": "cdd8388b15fb1e8648789662a19abaa222a232a6fa93844a0d8fc8d081685a1d"
+      },
+      {
+        "path": "backend/task-model.mjs",
+        "sha256": "03bf0bdf007953535c1d0bbeab3f55ee3e5eab0246c28e620f318ab4ce851a94"
+      },
+      {
+        "path": "backend/task-pending-request.mjs",
+        "sha256": "baf362403eb04edc6fc758c7e019726e007500c93e3510f95627b0ae4da1c15c"
+      },
+      {
+        "path": "backend/task-progress.mjs",
+        "sha256": "e2437d511c3a961db98434906b5a474bb0c4ce6e22e739b606853c7d82511dff"
+      },
+      {
+        "path": "backend/task-query-coverage.mjs",
+        "sha256": "1c9049b7278452941108c89a5037826fac63ef40c993fcd41adf1f6e578e1a26"
+      },
+      {
+        "path": "backend/task-release-intent.mjs",
+        "sha256": "8a26fc56f51aed11c3620c4d171210548b99aa8a3d6a06b0f3a5f3b6eaea6f1c"
+      },
+      {
+        "path": "backend/task-runtime.mjs",
+        "sha256": "afbe396158aa869a03dbb5917c0f277ae54cf9ec6eea8b9cece8499f3bea9f7c"
+      },
+      {
+        "path": "backend/task-schema.mjs",
+        "sha256": "0f4b0ecde1c98413ba2eb031474271955556d43b4fe27fbb03a8786f50626855"
+      },
+      {
+        "path": "backend/task-store.mjs",
+        "sha256": "bdef8f6bbd553eb16ced6f4c93b945ad6ab77d67043f929969c9d48d3442e894"
+      },
+      {
+        "path": "backend/task-style-evidence.mjs",
+        "sha256": "2b363b96b2023c9beae5f6b8db70748985494c5dba940a9e706c7b5abc75149e"
+      },
+      {
+        "path": "backend/task-tool-cache.mjs",
+        "sha256": "db31dbc14d18c999eb34af185ea54d982430ff4db0707d8d85ee87db750e8054"
+      },
+      {
+        "path": "backend/task-tool-evidence.mjs",
+        "sha256": "211cc7dcb5f25c00164a01a7e475625956190c5633db32bef5bd04e7f0e9407d"
+      },
+      {
+        "path": "backend/test/account-quota.test.mjs",
+        "sha256": "b167e51b0bcfdddb3650df553ee0cf21b9fd35fc73b1a48cbbd0a60a0caa6d81"
+      },
+      {
+        "path": "backend/test/agent-adversarial-boundaries.test.mjs",
+        "sha256": "a554b1e227db6f6b4a15da6df90048413d8452cc6b99951dfa546104a3768581"
+      },
+      {
+        "path": "backend/test/agent-artist-identity.test.mjs",
+        "sha256": "473b1a87b6a480dece8c4e17361e226bb3c5a04d864efdd7a3a3a16bf5b8c68b"
+      },
+      {
+        "path": "backend/test/agent-evaluation-cli.test.mjs",
+        "sha256": "8c07462bbe405719da7f706e66bd31e848949a91733a3bc25c0724972be1ad14"
+      },
+      {
+        "path": "backend/test/agent-evaluation-runner.test.mjs",
+        "sha256": "a6961cf4453199252e12f6bcdd3f373bab39e431f870451217b7a5a136dc64be"
+      },
+      {
+        "path": "backend/test/agent-event-contract.test.mjs",
+        "sha256": "b8c8d76f3ee9c41b0fbca1125f1aca6435f76b100ab32efc6e33797211705c40"
+      },
+      {
+        "path": "backend/test/agent-observation-assertions.test.mjs",
+        "sha256": "f3d4b496fa57ca7cc966a5ab0b00ab429fd3d7c15c0e5cf863bfb18797a653e6"
+      },
+      {
+        "path": "backend/test/agent-suite-schema.test.mjs",
+        "sha256": "635b4a819c25205a81e4788b9c6df503f1da5dd686a4521891753ba328834130"
+      },
+      {
+        "path": "backend/test/agent-v3-evidence.test.mjs",
+        "sha256": "a887129e6899a0a3ba4c40a366ed34b31c68c0e103fc07235bbfa5d2fc1fd584"
+      },
+      {
+        "path": "backend/test/app-redis.test.mjs",
+        "sha256": "85b1231f423a78e1187bd005e6b77af168b8a4e693f362806e957d8b2798e507"
+      },
+      {
+        "path": "backend/test/app.test.mjs",
+        "sha256": "5273f21bfae445309b8f490cdaa72986b8bc46264200144aa05c33ea9be4aac0"
+      },
+      {
+        "path": "backend/test/assistant.test.mjs",
+        "sha256": "abc810ac025075a82d1b8c4fbb5a7c491847a56a8f91cf79c0e3900c698139b7"
+      },
+      {
+        "path": "backend/test/beta-api.test.mjs",
+        "sha256": "77f30f896fbed70dd8a74596a1423ead2ab1111c69479bbb11c5d922085f8015"
+      },
+      {
+        "path": "backend/test/conversation-route-store.test.mjs",
+        "sha256": "776f3ded234e675ea0239c0c7d5b2ac84e9b4ba7c5204f0f0ace04cd2e41d36c"
+      },
+      {
+        "path": "backend/test/conversation-routing-api.test.mjs",
+        "sha256": "dfb19124287fde1402b4cad734ddac85a8c191ed00bb5297929cf30a6fb31da1"
+      },
+      {
+        "path": "backend/test/conversations.test.mjs",
+        "sha256": "0fee3b287af02dd0676fe53d0606f2c50a67d0b919f726553a5f841bca0a957a"
+      },
+      {
+        "path": "backend/test/development-config.test.mjs",
+        "sha256": "e82e0496d31d1fe8f96a04a7713ecd288c2476d8b4df6e64d03b0b0b958e8787"
+      },
+      {
+        "path": "backend/test/development-server-integration.test.mjs",
+        "sha256": "9b235ad61f058105be431ae3067ef633090720aecb21040e08bd146d3a022021"
+      },
+      {
+        "path": "backend/test/development-session.test.mjs",
+        "sha256": "dc982b5ee0dd20d1b9594b846758736aa0867a650fae16f1745f2cb9d4169554"
+      },
+      {
+        "path": "backend/test/fixtures/tao-reading-duration-2026-10-19.json",
+        "sha256": "ad744e33314c3a4ec6056aa28446d58e2f8fd3ebd798192cdb9f756ada57d833"
+      },
+      {
+        "path": "backend/test/fixtures/task-contract-historical-replay.json",
+        "sha256": "931672582cf40c788621507bd6fd7bf35f69ab562fdaae02b8615c19a62606fe"
+      },
+      {
+        "path": "backend/test/fixtures/task-lock-history-v3.json",
+        "sha256": "ec745f8e427b33507c99319520cf455892ca24d7e4edf7bbd28332dee7223ddc"
+      },
+      {
+        "path": "backend/test/fixtures/task-lock-history-v4.json",
+        "sha256": "2d9b98c943f6d3bbf6b89d8f9438ad479f48bf537d353a9cab8a0991b08db227"
+      },
+      {
+        "path": "backend/test/fixtures/task-remove-history-v2.json",
+        "sha256": "f974fb6a0a3c2b7675d45e873bd447f817da09dfbd27086e1269c1d3446af599"
+      },
+      {
+        "path": "backend/test/helpers/redis-fixture.mjs",
+        "sha256": "3fd40a34b1d6a9b4e37e8cf08ce7d103a92c5b3e1fe582cea17cf1501ccde553"
+      },
+      {
+        "path": "backend/test/intent-routing.test.mjs",
+        "sha256": "c4daae7ed378133b4a1246b9d2a5e418721e549b86f6ce32e9c307ae12fce07a"
+      },
+      {
+        "path": "backend/test/launch-storage-profile.test.mjs",
+        "sha256": "1b5176502f5bc756d91b13d854b6c8beb355299c41b06b9f5d5d43db2887d82a"
+      },
+      {
+        "path": "backend/test/native-catalog-observation.test.mjs",
+        "sha256": "d78d260eba68aff902fa172c9874672e776b95347603edff6143e53dd36435d2"
+      },
+      {
+        "path": "backend/test/postgres-runtime-boundaries.test.mjs",
+        "sha256": "49daacf0cc7af569d03d32f37d37739fbdfd478dcfd7476fe3b2535a045f7b8a"
+      },
+      {
+        "path": "backend/test/postgres-runtime-integration.test.mjs",
+        "sha256": "79cb97df720155a7e69591b9f538fe1ee4284d63a351e7da1d4653c35c749eaf"
+      },
+      {
+        "path": "backend/test/postgres-storage.test.mjs",
+        "sha256": "3791bce89539719ab77de7da0735da04116634b805251b5186b194dca9f13803"
+      },
+      {
+        "path": "backend/test/radio.test.mjs",
+        "sha256": "29500a00ccf7c1e5482a7f9cc886891a9443f2b7c7e60cdde4d94766469ceba7"
+      },
+      {
+        "path": "backend/test/redis-limiter.test.mjs",
+        "sha256": "9088d1260a6495f50392dada13d17f15d1064061a90f8e5293c6888fd49a43b0"
+      },
+      {
+        "path": "backend/test/registration-invites.test.mjs",
+        "sha256": "c83d76c3fa845d792f4a8b5744b88012244ed5febaed0fab9bc155bf193be387"
+      },
+      {
+        "path": "backend/test/router-local-slot-recovery.test.mjs",
+        "sha256": "6dcd90a9789a75b30b7f5446107b366279a21bc637e10c4d3ab2c45f38651a50"
+      },
+      {
+        "path": "backend/test/routing-context-task.test.mjs",
+        "sha256": "d427fac3882fb3cdfb0226ae00f316e887deea4e2c370a52789ff2da4e6a4727"
+      },
+      {
+        "path": "backend/test/routing-task-coordination.test.mjs",
+        "sha256": "473df34fc133d7f735eb2294c019b293ebb765aa1fa3fae6f4cfb2df63977e8f"
+      },
+      {
+        "path": "backend/test/server-storage.test.mjs",
+        "sha256": "25fae6907aed330b5931f37698d1f0fd6b29ffec79d69ba98e425bb62a1ceb2d"
+      },
+      {
+        "path": "backend/test/service-config.test.mjs",
+        "sha256": "d91c12e0440c32710f27a2e0684d344ba9996a91cec1deafb68afb5094c657c0"
+      },
+      {
+        "path": "backend/test/storage-auth.test.mjs",
+        "sha256": "02a7982a5e4426fd15c36918f0f6689bffc8543f8f30174f7aeca789a9a9214f"
+      },
+      {
+        "path": "backend/test/task-brief-patch.test.mjs",
+        "sha256": "2cc201077afb76f5f195a20b0e089dcaff5fcadbc6f71f475473bf0dee4c877f"
+      },
+      {
+        "path": "backend/test/task-cache-integration-review.test.mjs",
+        "sha256": "f838ee17b46cf867db8cda4776b55b3f13e9b7f81294c5d2a963503d225d4e31"
+      },
+      {
+        "path": "backend/test/task-cache-runtime.test.mjs",
+        "sha256": "0cc028e30c13bbe013d7a67685dac6d27aacb5be982928ef90b390e5890e0c95"
+      },
+      {
+        "path": "backend/test/task-clarification-continuation.test.mjs",
+        "sha256": "d3aa2a031c5d13ad029192bbcd412dc119ebaeca1a7bb2686a169426a30fb6e3"
+      },
+      {
+        "path": "backend/test/task-clarification-release-contract.test.mjs",
+        "sha256": "84f96903472d435dfa9f8d06dcf190738b63f40c21126def486d0fdbf21c6f1f"
+      },
+      {
+        "path": "backend/test/task-duration.test.mjs",
+        "sha256": "5d4892230a2f04b47f3e8ab72de8b5b47c4beab1c951beec4ffd2c4610b5c239"
+      },
+      {
+        "path": "backend/test/task-evaluation.test.mjs",
+        "sha256": "8432451316b5c92323cfac8bc7c1e719c8676644699a8a3165550ca150ada4e1"
+      },
+      {
+        "path": "backend/test/task-language.test.mjs",
+        "sha256": "5effa0c16c693ce224b0c331a3566afa9f006ba4a63c1e72cdfd96c130749057"
+      },
+      {
+        "path": "backend/test/task-loop-evidence.test.mjs",
+        "sha256": "e85acaf755bd5093ebdfc381f82c03ad33c650efa23c4db8dbc8fefd20bd0257"
+      },
+      {
+        "path": "backend/test/task-pending-request.test.mjs",
+        "sha256": "ad6ea6593d1cbf10bf073981b73099044aa204be32d5ab6699067c59f57598fb"
+      },
+      {
+        "path": "backend/test/task-progress-integration.test.mjs",
+        "sha256": "a3d34db8163e2ac19cdaee915446c91aca5750e2208b1bbf85c624d368e96d6e"
+      },
+      {
+        "path": "backend/test/task-progress.test.mjs",
+        "sha256": "3200449abf0472b43abe675c03763394206aea4750b93a3395b87bd6d8bd4ed4"
+      },
+      {
+        "path": "backend/test/task-ranking.test.mjs",
+        "sha256": "83d3dde8425e7386e1dbae500ee125b3061750cd4a9a43cd4fc7231f57cc22aa"
+      },
+      {
+        "path": "backend/test/task-runtime-guards.test.mjs",
+        "sha256": "c41130d6429bb3e6d6b9e8fbe1e4e4629a1d1dfcc5e807fd8cb4880c98231990"
+      },
+      {
+        "path": "backend/test/task-style-evidence.test.mjs",
+        "sha256": "56eabe58a8c4b1995a9f8d0cd658655cbab966dde4541a87686f961050f74e08"
+      },
+      {
+        "path": "backend/test/task-tool-cache.test.mjs",
+        "sha256": "36fdaf8fa0860aef9425e2fb84c41cbde41305f98e1e3da68da1e6892a80f293"
+      },
+      {
+        "path": "backend/test/tasks.test.mjs",
+        "sha256": "bf2acbcd1e20c657d1dc94cf2c852bd600527f589497be6358953ad2588f26a0"
+      },
+      {
+        "path": "backend/test/upgrade-protocol.test.mjs",
+        "sha256": "32e6ca6c0eb09aa40e332b3497da54559cb58dd929f31890a65479ec245b54bb"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/app-build.txt",
+        "sha256": "dfe792457777d1a6b7fd071d6e705fc46a3b85bfa9425770e4ab11207afb1862"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-authorization.txt",
+        "sha256": "c235b1cacaf0549d0d3b6fccc33382345c8d716ddb2656474244053b2588c2ca"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-client.txt",
+        "sha256": "35c20bfbf9e185d31940b0c4ba5234f9ecb217c2637e00052c993bb1a9f62c69"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-dialog.txt",
+        "sha256": "3c31f1862be1b14cb988c3f956c22c2914eddc1ac9c068e48163f672c69125b5"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-initial.txt",
+        "sha256": "6847532011d09dfeb6b1a13d981f23e26c8fd908ffb5db58dc9c4d67757f7a3e"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-native-flow.txt",
+        "sha256": "5809eb418dce43e1ab7dc3bfc2778a9b6af3f49a8afddd05e1fef5c7d3765aa8"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/desktop-offscreen-flow.txt",
+        "sha256": "591bfeb49580517acf380cdd277cb1fc1a539a3022be360b98359a78c467d070"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/full-final.txt",
+        "sha256": "99a7120b1a232100ec507c54e711b98fce671fe7f72a623d7851f7e5aa41a062"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/full-initial.txt",
+        "sha256": "99a40cb5171fc2de8a89b6f55751913115ba4fb3a2bd0f5952fc97148df42e0a"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/full-second.txt",
+        "sha256": "f032518be20a9b32236187b93b6730788c92bb110694d89805d354706a61738d"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/full-third.txt",
+        "sha256": "e6574d6fd689973d7dac9678dd39e89fa612662111f1e3d768c3f9909d17b06e"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-checks/progress.png",
+        "sha256": "4af1468456e81ffd7d3f4ed2f0a32f01675c83573953724d4f32bbf4c940ac50"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/MusicPlayer2.pro",
+        "sha256": "118415d5c7b532dfe29d0f589107d39569ea8d0f96094f1e140f8eaebbad65ae"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/README.md",
+        "sha256": "42985d1edc318b3607398ffddab559ec2d448aa215e1420faad9cdca278ce7c5"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/aboutdialog.cpp",
+        "sha256": "6af96e571cf7cc354250580d715ae87832e960510501bedaff2b0e66020a8cb0"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/aboutdialog.h",
+        "sha256": "8ea40d8df464a10b96670bb3ff09e46261ff218a133fff3dbd5c36b39892ad23"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/aboutdialog.ui",
+        "sha256": "7ba0757c5330c21f10cda2d55fe291cc45f0caeb8ee82cc3e917f058002bc828"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/appbackendclient.cpp",
+        "sha256": "501ea4b0bdd715e5dddc88062ac02e7aba547a3c2313ba724753a8551105ecc6"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/appbackendclient.h",
+        "sha256": "4323d886c9a385d4c0513b8bfe091b43023bf7fdf72563efda6145725cf060dd"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/artwork.pri",
+        "sha256": "047041b720d0dae8df3d48f55589a0ab3f0e0a58677ad5d1fa2ea363ca5d0489"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/assistanttypes.h",
+        "sha256": "62a9ef8450724d9890f8a030197b45baa1bfb9ddb3c2a14a2924de9cb656815b"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/README.md",
+        "sha256": "4843f4f9d1be960f8e57aba16127c15c3d28fdf7772e9ae6d7a856e5858bf2d7"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/agent-evaluation-cli.mjs",
+        "sha256": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/app.mjs",
+        "sha256": "212783b32308523b73adec5667d6677fcfa65a0d57d55e019dbfb87b7979523a"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/assistant-model.mjs",
+        "sha256": "0278e50c27d88bfed272475e35dd9f3bda340803f032dc08897726e0741c4eab"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/errors.mjs",
+        "sha256": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/launch-local.mjs",
+        "sha256": "4ff40fecc3849522c1a51df8129086cb09630b5d64febe13751114abf3bb923d"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/model-transport.mjs",
+        "sha256": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/model.mjs",
+        "sha256": "68cfc9c9d0168f089dce20424f909ed6823734f164b38253f3407520c2a67951"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/package-lock.json",
+        "sha256": "b42c905b0ea63e30d9ec5c2b8ddbb224a7201b4bb87a09ea4791f1e8726987d1"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/package.json",
+        "sha256": "c7215d0eaa043034cbbd031ea402ede7212ad61aa7dbd8b884f150494099388c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/postgres-store.mjs",
+        "sha256": "06fb78b5d02b4b667ac651c2a095d0d7f129ab55bd5fec0cc14a4c9e41711a46"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/postgres-task-store.mjs",
+        "sha256": "2c0232c89c7b979cffb4d50da45d24fac2a292b6c157124ff9072724df4c5199"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/radio-model.mjs",
+        "sha256": "109f625c501cb780e386f2736cd906f68b60a6896243ad9ee6e316642243b91e"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/redis-limiter.mjs",
+        "sha256": "c652d8855159310af662708c1027c4a573f09e28abf08a81b2562ba14825d41f"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/server.mjs",
+        "sha256": "63615b1a586f28d21285e01dfb58761451a3b3c6bda8108b54ded13cd9e7a905"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/service-config.mjs",
+        "sha256": "4f3ba589ffd13966d0a40a28c43730a85aca7154bbf7f37529f2878ab3b34638"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/storage-auth.mjs",
+        "sha256": "4283e16cff4c7e4704e43baf9fbe2b1bc2b96dd3a58cb81f82f6510a73350d46"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/storage-postgres.mjs",
+        "sha256": "269e4dab8f809ad99de602155752c79897a1121628219d7d8d6bda8a6ad40181"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/storage-task-helpers.mjs",
+        "sha256": "39454eed18a336b709b0549e275fab0ee212554ef792ddb0742153e74ea338f0"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/storage.mjs",
+        "sha256": "9743f5ea7d5ad86a128c09ca0953674e7a741197ea1decb80bc6d4b31d464dad"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/store.mjs",
+        "sha256": "cf1b0c2c9ce241d66a781f3ec4fb3d60ca59f0ecb1d444f0f34104509e9aca3a"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-brief-patch.mjs",
+        "sha256": "c829c661e8826ba0e62c9b8e41c47c7eda9ca108c38ac7cf08814621237379cf"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-duration.mjs",
+        "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-evaluation-cli.mjs",
+        "sha256": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-evaluation.mjs",
+        "sha256": "be901876fbf90b26acb62179174e5c1c965ac3f69cab58f558757075abb3f9ab"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-language.mjs",
+        "sha256": "2849dc86830be7d00233219ca8386ac1d5d232f569ec3cd505462c11c3bb59f8"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-model.mjs",
+        "sha256": "c2b6c6d89b0144ab46386482a879159742c4fcfe638faf2b4c14293987233671"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-pending-request.mjs",
+        "sha256": "5cf3f3d7fe9b9c8c6587917d222e305fabf560b8a2e7dd98bac6d9023c394bb2"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-progress.mjs",
+        "sha256": "ab6a31763b8642eb83c14de196c105e24af1cb1859db1c72ca7dba3fd008065b"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-query-coverage.mjs",
+        "sha256": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-release-intent.mjs",
+        "sha256": "2b593a723f7ded52cc0dc9840c4e139f40c0700fbedec4bcbb0cd2152b6ad306"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-runtime.mjs",
+        "sha256": "ffbbc70deed878603f0807a974b162790058731499701e8939a760ace1fd6eaf"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-schema.mjs",
+        "sha256": "18a2dad04efe43033ab6e056177cf405e77e0d98fcd2a37eca0f4bc86338d21c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-store.mjs",
+        "sha256": "dad2b9fd7f436437d749407fb33de313e786f7660bcf73e06e02fad720ba5bd9"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-style-evidence.mjs",
+        "sha256": "526768166a781498425b23a42c98d75373afd6931fe91e33665a5417db164aed"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-tool-cache.mjs",
+        "sha256": "d18ae70ddda8793d8c84ce1bda5fb1d51d1684bb0989afcc953e7126d7e2d359"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/task-tool-evidence.mjs",
+        "sha256": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/agent-adversarial-boundaries.test.mjs",
+        "sha256": "6fabcdb23266bfb0c09a182da07fcf7ba60bb0d1c96aeb2057cc7a69dbcf5846"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/agent-artist-identity.test.mjs",
+        "sha256": "473b1a87b6a480dece8c4e17361e226bb3c5a04d864efdd7a3a3a16bf5b8c68b"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/agent-evaluation-cli.test.mjs",
+        "sha256": "8c07462bbe405719da7f706e66bd31e848949a91733a3bc25c0724972be1ad14"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/agent-evaluation-runner.test.mjs",
+        "sha256": "a6961cf4453199252e12f6bcdd3f373bab39e431f870451217b7a5a136dc64be"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/agent-observation-assertions.test.mjs",
+        "sha256": "f3d4b496fa57ca7cc966a5ab0b00ab429fd3d7c15c0e5cf863bfb18797a653e6"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/agent-suite-schema.test.mjs",
+        "sha256": "635b4a819c25205a81e4788b9c6df503f1da5dd686a4521891753ba328834130"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/agent-v3-evidence.test.mjs",
+        "sha256": "a887129e6899a0a3ba4c40a366ed34b31c68c0e103fc07235bbfa5d2fc1fd584"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/app-redis.test.mjs",
+        "sha256": "3c3634091421d522e304175cc4317744546eaa8e54238734f04bfcb923dfbe83"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/app.test.mjs",
+        "sha256": "4b9dd03dc546f912f17c6c8ee68dc078f78edf5cb09371b45be38558764a709c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/assistant.test.mjs",
+        "sha256": "284e115245c7ae8827c15c5d002c283219a6cdbc9409eb53c0d5c5051f83c1e2"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/fixtures/tao-reading-duration-2026-10-19.json",
+        "sha256": "ad744e33314c3a4ec6056aa28446d58e2f8fd3ebd798192cdb9f756ada57d833"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/fixtures/task-contract-historical-replay.json",
+        "sha256": "931672582cf40c788621507bd6fd7bf35f69ab562fdaae02b8615c19a62606fe"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/fixtures/task-lock-history-v3.json",
+        "sha256": "ec745f8e427b33507c99319520cf455892ca24d7e4edf7bbd28332dee7223ddc"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/fixtures/task-lock-history-v4.json",
+        "sha256": "2d9b98c943f6d3bbf6b89d8f9438ad479f48bf537d353a9cab8a0991b08db227"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/fixtures/task-remove-history-v2.json",
+        "sha256": "f974fb6a0a3c2b7675d45e873bd447f817da09dfbd27086e1269c1d3446af599"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/helpers/redis-fixture.mjs",
+        "sha256": "b2ccfca71a41cf3e304e3c16cf72c21bf96111a8701b155a6973e3d259832f36"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/launch-storage-profile.test.mjs",
+        "sha256": "d361c452eb611879ea52f78d5b7624f076d84b9f2ffb2a812aa2ddc8e0916966"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/native-catalog-observation.test.mjs",
+        "sha256": "d78d260eba68aff902fa172c9874672e776b95347603edff6143e53dd36435d2"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/postgres-runtime-boundaries.test.mjs",
+        "sha256": "dc64aa906045d5caa29e4ea6dc8bc06c8ef43b6faa824077a3a663c062906673"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/postgres-runtime-integration.test.mjs",
+        "sha256": "770058b9a3b07804ac2902562ebf2f4ede7687a63c1971015d2875958eced438"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/postgres-storage.test.mjs",
+        "sha256": "4cc34d0bc41df1a86cfccb095bee32b2b4b4be309794f94d4e441f561ec9237c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/radio.test.mjs",
+        "sha256": "9401eb683b1ff166bab02113f8e2c279695293ad31c6406546f03d939e1a4664"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/redis-limiter.test.mjs",
+        "sha256": "9088d1260a6495f50392dada13d17f15d1064061a90f8e5293c6888fd49a43b0"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/server-storage.test.mjs",
+        "sha256": "bb8d2bf80d930e9697fbee3bcd0e59eaaacdb1e2ed9c2b50036afa182cc88c59"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/service-config.test.mjs",
+        "sha256": "d91c12e0440c32710f27a2e0684d344ba9996a91cec1deafb68afb5094c657c0"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-brief-patch.test.mjs",
+        "sha256": "5445306d3d5a9c10b8fd69722791a15bb00c9b47d620fbd69d7360915cfa4a23"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-cache-integration-review.test.mjs",
+        "sha256": "98ada909c277534b51814730b64a3c8796280a1f60baa185f0080e9cc49dca4a"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-cache-runtime.test.mjs",
+        "sha256": "0cc028e30c13bbe013d7a67685dac6d27aacb5be982928ef90b390e5890e0c95"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-clarification-continuation.test.mjs",
+        "sha256": "8dac9e7a8a8033fde844b870d1cf27b8d4f22e6402eea80f4cd09c040ba1540b"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-clarification-release-contract.test.mjs",
+        "sha256": "84f96903472d435dfa9f8d06dcf190738b63f40c21126def486d0fdbf21c6f1f"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-duration.test.mjs",
+        "sha256": "471bc7042719dc3df4e7b72d11d1912834095662840202a0f5c9a037f94814f1"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-evaluation.test.mjs",
+        "sha256": "8432451316b5c92323cfac8bc7c1e719c8676644699a8a3165550ca150ada4e1"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-language.test.mjs",
+        "sha256": "5effa0c16c693ce224b0c331a3566afa9f006ba4a63c1e72cdfd96c130749057"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-loop-evidence.test.mjs",
+        "sha256": "e85acaf755bd5093ebdfc381f82c03ad33c650efa23c4db8dbc8fefd20bd0257"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-pending-request.test.mjs",
+        "sha256": "ad6ea6593d1cbf10bf073981b73099044aa204be32d5ab6699067c59f57598fb"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-progress-integration.test.mjs",
+        "sha256": "5e7c79f460963a43a3baa1e443ffa9c843bac4e55cd52970d92cac5ce8e04fbf"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-progress.test.mjs",
+        "sha256": "1f7859eed1d2b6aa42a8f57164b8c6bd8c34a978ca7125919819817b6f121110"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-ranking.test.mjs",
+        "sha256": "83d3dde8425e7386e1dbae500ee125b3061750cd4a9a43cd4fc7231f57cc22aa"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-runtime-guards.test.mjs",
+        "sha256": "c41130d6429bb3e6d6b9e8fbe1e4e4629a1d1dfcc5e807fd8cb4880c98231990"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-style-evidence.test.mjs",
+        "sha256": "56eabe58a8c4b1995a9f8d0cd658655cbab966dde4541a87686f961050f74e08"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/task-tool-cache.test.mjs",
+        "sha256": "36fdaf8fa0860aef9425e2fb84c41cbde41305f98e1e3da68da1e6892a80f293"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/backend/test/tasks.test.mjs",
+        "sha256": "48ec5f8ca7c3dee7c8b2fbab888ed34f99c0980ebb77037404d49336540df123"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/coverartcache.cpp",
+        "sha256": "f07e91d423c82606b4af5c2d9155cd854f9c929bbf601b3dc0bdc2bb130491de"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/coverartcache.h",
+        "sha256": "b53383f2a3e5389a5725759baf6a328033c88d301537e37b408e555dd09fb431"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/dialogstyle.h",
+        "sha256": "22327544a22518505d60dcf05556aaef2ac8a1db1c210db413eb5262e387f769"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/docs/STORAGE_UPGRADE_V1.md",
+        "sha256": "693730b973ee19779c4eecf22393cd0325c0114009b05fe60bdd0a0d0d3fd660"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focus.pri",
+        "sha256": "b76ad57e6d05c92a151fd9efa063cc30093f7cad41443e9737d97c6b84fa3e66"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focuscore.cpp",
+        "sha256": "bfc0777609d1fac2d21d3e6fff611bb242a457496bae9c5f3797b5dd9dcaa9c3"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focuscore.h",
+        "sha256": "b4e278653bd959b395000359b0d39529b89bcb1341934ac84910867164d8e140"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focusdialog.cpp",
+        "sha256": "7ef35839efa21351053b0e70a8bb4ffe0ea0c304853e23f027ed2b0ce39224f6"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focusdialog.h",
+        "sha256": "4ef5df4e11b92708dc650573b17f47f27cad3b9e6c987db5be53adf8bef8cbd5"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focusmodelclient.cpp",
+        "sha256": "e56bb1e6ecfaf5720fb62fd9dcd9d1f9edc7eacad34426771f95fb6e0c0ad50b"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focusmodelclient.h",
+        "sha256": "5d2e676dd675ec17e900c17975a7507010e4f9f2e7163b7339cc99e611e6f163"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focussession.cpp",
+        "sha256": "19b4a6315705e4394312510f2dea3f16db5d408fe0dc820db6d08c70ca47ff23"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/focussession.h",
+        "sha256": "13100e5d549d98165a401fdbcebf64b2a55e430661296584de0e4064152b4064"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/historysong.cpp",
+        "sha256": "108946a1a9a3aea785a750f71217d98c9db9ee21a28b8e86a542cee9f5fd0941"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/historysong.h",
+        "sha256": "7e1e0a303dc6d14ed5801f4ec844bb7d56e490cd29bcdfb9fac3e766bf09e5ce"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/historysong.ui",
+        "sha256": "012883651ae0b000926244b1cb25d2984297d297872ac3521801a610fba4292c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/likesong.cpp",
+        "sha256": "9d760e2fcca598c60a30efb6d23f8755f6d03205de2c794c9b5baa0345fa014e"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/likesong.h",
+        "sha256": "9c3533464a9c302e3bb0775899ef678760a4c7c5fd7f2fc2a2d732a80e82558d"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/likesong.ui",
+        "sha256": "df3bf91fcde78a85e55845897f32f63a71d38f2a015996a4f293cbe2b934cb69"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/lyricswidget.cpp",
+        "sha256": "e7d4da3fa98b6edb3278c7d0800c0142508a84a4117b1ef5e735eb17a9c8da1b"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/lyricswidget.h",
+        "sha256": "ec5f8f5262d0f8451c55d7f335af7aaeec61c4c464f81b089e2d253286d75229"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/main.cpp",
+        "sha256": "02de01df84df49cf1dc9b170a5edaf2af0856f98dd7d7f9041908adf83dc4281"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/mainwindow.cpp",
+        "sha256": "6fa818850588dc4e8cd44c7e861ca25e1199910220d965f11259b15674666afe"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/mainwindow.h",
+        "sha256": "332fd83c2e8750b74d0d2e2aeeefbce5e18e22cf5270e460439243ded73f330c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/mainwindowfocus.cpp",
+        "sha256": "2488a375dfbad8ba0ed380e85aa30e905d9f5591c5d6086a2ca58d7fc26de2df"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/mainwindowradio.cpp",
+        "sha256": "660d51e5c6e3dd5a45d1897a6c12ef0f6709d1b09af84454e55b385fc8f9b31f"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/manifest.json",
+        "sha256": "7378d452b8175db1e83a082b80cb0f44e75220dcc1512f50678620544255a6a3"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/musictaskclient.cpp",
+        "sha256": "2e9c02fce06b0bcfcd45f3b58a992f40ce0089d25eefac20d4312f4952c1802f"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/musictaskclient.h",
+        "sha256": "873c602fbacbe6cf532fd37ee88df6e41203048c66a1a58a049836d70cfa8fd4"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/neteaseclient.cpp",
+        "sha256": "f890c0788256e0334076ef98b19f515ec327163d2972e7ba1da8152379e2ae1c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/neteaseclient.h",
+        "sha256": "fd8ac465e4a62b8d60274d95db74100b8b9985417bc5e6dbeb6c8e19eacb46ae"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/neteasedialogs.cpp",
+        "sha256": "ea4374cf50620e7f4552ba3275500c0a8786c7970e5708bb648e0ba6aa3b6578"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/neteasedialogs.h",
+        "sha256": "0f8ea93c0c8f6420e764a07e509650b7460e013e84515cedd112867e7b412b86"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/neteasetypes.h",
+        "sha256": "c52873fa3524683de790dc44b94041e1c2792290e1e77028f6e73799cbfe504a"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/playerwindowview.cpp",
+        "sha256": "26c5b52540223d657ec8263870242f7844f86001882b288c261d961059725752"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/playerwindowview.h",
+        "sha256": "4c7e4347285220ca80c65e0c61d4baf5dc86cf9bccb4afbb6b501714e720a0b5"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/radio.pri",
+        "sha256": "4b12f203af91be24462c1534af13e4538982cfbe35f53522154ff605f764d6e9"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/radioclient.cpp",
+        "sha256": "1c47c72ca50df567b7b7057c607df3dfeb6765cab4c8cc9116a663a45cbb0286"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/radioclient.h",
+        "sha256": "a59fcb91fccec9c3092d83b72f37072af9463e367fd55254106ee047eaef78be"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/radiodialog.cpp",
+        "sha256": "69f425fa90725286e971739b989343037365e12c214035df7bcb5fa6fd1cd341"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/radiodialog.h",
+        "sha256": "3882eb1f7c6e360e6e0614e2e283ea75b5d7d1fdad28930e0a91c78e9d5b5d8c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/radiostore.cpp",
+        "sha256": "456b29bb78f0c5210939708f332cbe4cbc48a269946b8f4af3fcbc8a086f3591"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/radiostore.h",
+        "sha256": "f83340ff75d4ec2cb5acd140a98c1303f05783982d7607db99e2f8df0799b145"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/radiotypes.h",
+        "sha256": "dcafe173d2a31ec6c5d7a6c6ee83f70ad30cc21d4c6372a82370154b6e8a3b23"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/ranklist.cpp",
+        "sha256": "444768534cee04c7de52ae658339b031868bb077dfbf5ce099d287633edafd4b"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/ranklist.h",
+        "sha256": "7fbdd481acfa9e862fcf07415993f5e2d6509a06ac8023119c8b61c4538ee9af"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/ranklist.ui",
+        "sha256": "8124b0ee96fac778630685b8b748672aca1b30739e549a28fc52088cd6107952"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/redisconnection.h",
+        "sha256": "9999ed3a6ea3d28bd8fbea659f53a5ee16bdd3c3d7e8c9a067f642b5662afec4"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/scripts/build-macos.sh",
+        "sha256": "6a1f4ae3134d3e4d2c5bce8a9c388eab38c0eccb1db105b94b9534641932d693"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/scripts/ensure-app-backend.sh",
+        "sha256": "345479abb2540c0ee292808dd5abb86f41ec30231e5b07da61c9cc28f3b6702a"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/scripts/storage-infra.mjs",
+        "sha256": "38e464d3c834e48490886c04db742f5ff8e46b42ec8dc4b6222790d452698072"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/scripts/test-storage-v1.mjs",
+        "sha256": "ebf10abf0fa12e1cd68526710f1321a793e632a18ae393d3eeed3f30a8dbc35c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/signin.cpp",
+        "sha256": "284b87fbc4076b84a6fe66047d5a1d9c6bbb905ad489e9d9235fe7b264f1a20d"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/signin.h",
+        "sha256": "32c6958374d016aa086b3912b6b873c0d5ce7135035462e3b9a062f738bdd3e2"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/signin.ui",
+        "sha256": "6b842d90a7abd623bad27de5e47a397ef0f457cde2020e115540b44c714ddcfd"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/signup.cpp",
+        "sha256": "f3e4075730a3cf344a7d77cb5f2def28394e12888ad8bda1b0454100e3997352"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/signup.h",
+        "sha256": "e9d6fd44c523d17437cdd1d87ebe69f25b91d9cc50e5647c25b60da6983b6d24"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/signup.ui",
+        "sha256": "4b05765d046d6191700138b378a54a52e11dd5de90e806ec9703c33d67cea39d"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/songlistdelegate.cpp",
+        "sha256": "3d7a4edcb107f3eff3932b733dd3e91c15e05faf4a9dcc3c40f730fe3b476e0e"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/songlistdelegate.h",
+        "sha256": "ee66dc2799b978edc6fd15ce40f52025aa4dd3300891b0b59f086f3af3755402"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/assistant_flow_test.cpp",
+        "sha256": "2c334ec36232413afcf8ea5d8bcc23381e2742b207499a7007e7b32beb9f52c9"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/assistant_flow_test.pro",
+        "sha256": "7dcf7e768cecb57464095b557101d59df7f7dd091fb3b688e560ab30389d4986"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/coverart_test.cpp",
+        "sha256": "667e57cb2ef2d2ebfd25f996dedf18232fed6a1dcc5845b49db61dee0a7dbff0"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/coverart_test.pro",
+        "sha256": "e67e46993b8ab9978651d42e1c7447432b7ab52371463289d5bb224b348d5917"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/dialogs_test.cpp",
+        "sha256": "83b961288d6857d0dfd7c9d51fc181f3aa28129b4b83bb0f76945727ba43e283"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/dialogs_test.pro",
+        "sha256": "e26cb6a9fc6ae33bd9ddf6ab64b069db9fefa6caced6af2af89a989498443a10"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/focuscore_test.cpp",
+        "sha256": "465a57697a2ce2f5f66fb5aafd8772557e470244e08637b51c24f4f29115f58d"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/focuscore_test.pro",
+        "sha256": "73477dbc4b5bb4ae37d40aeecaeebb89d9888a09f34dd374f9b048bff8fab091"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/focusdialog_test.cpp",
+        "sha256": "b7055ff48f402bd8743d90a49303903b7c3c008f0208bb97d66fd40cc9fdac49"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/focusdialog_test.pro",
+        "sha256": "fceb3cfddd8efbfff9c484f8eb78bb338a47519e64177e75874f668a26931af2"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/focusmodel_test.cpp",
+        "sha256": "98ed5bab8cae654277adad66c6867339b1907826abe035bdea0c875082d0e418"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/focusmodel_test.pro",
+        "sha256": "67e55054cef35ddccfbf5174eb85231e35dd8e1b6e33f65b32e742a508a90f61"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/focussession_test.cpp",
+        "sha256": "a63cb42a815da0b54a663bfe80b169bc8ac0f06542984cdd303b27c3a8492ecd"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/focussession_test.pro",
+        "sha256": "f15ed8da93baf195a2c12f2884eea6683bf79ee906d6bb67c8b5029f1eb0cef2"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/hosted_auth_dialogs_test.cpp",
+        "sha256": "9b11576fed26ba2a6526de30e1c50be71953144465c89f639237342a73605293"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/hosted_auth_dialogs_test.pro",
+        "sha256": "7a4fd2743c432f98b2f6e71c237bbee40fe7a538a40de7f1446627e5b0821e48"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/hosted_flow_test.cpp",
+        "sha256": "3cc6be37ff3e2d3b59412f515e6eb7828348838b69743af3a504df203d689a28"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/hosted_flow_test.pro",
+        "sha256": "bdef90c88158643743d4c8533fe5ced8f6d6524353274640ad723b81aafb23a8"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/lyrics_test.cpp",
+        "sha256": "adefa8c23dc1ea0ef03282b7e19910a721235fd7969d7abd61201dded7cb79e7"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/lyrics_test.pro",
+        "sha256": "05c3180eedcd44f274bf9117d95a6e68f5a2239587c4afb0faaa7e93f7cf3d54"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/macos_smoke.cpp",
+        "sha256": "22f6cb0210b0daf18ae8be8c9a3ccb06821feb3c131fcb82ef0fc6ec1bd43cf9"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/macos_smoke.pro",
+        "sha256": "0945a9ade58ad63736d6323b961d48677f8d02f2a1abeeb6b612ce13a58d0943"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/music_task_dialog_test.cpp",
+        "sha256": "b461420102cc1ffbfec4103214d321eebcdc7a42cb1090c04ccf08d45faa4d4c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/music_task_dialog_test.pro",
+        "sha256": "06621d81910706c59a2179d6cf3f3ae4cdc8cef715e22e01454f753e46d9aa56"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/music_task_flow_test.cpp",
+        "sha256": "1175e6774b81f17cd81bfa2dd8a63cc5a82a45eaea7bd3b35d6df0433345223c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/music_task_flow_test.pro",
+        "sha256": "ec0d3adcd450128bdcbed56297d654b35930b91a86714fb0e4415964da5ce29d"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/music_task_live_probe.cpp",
+        "sha256": "31bc04e358695c1bb232799491714d53b7ed39e8cd71354b9087479113217be7"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/music_task_live_probe.pro",
+        "sha256": "76158281c4fde05c21fc0a8170b37235d8133a7d1a8f5d3be61024711d472e38"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/musictaskclient_test.cpp",
+        "sha256": "7d63f6deb90c0941896b44b05aa9972aea01d9ea2177bbc6cf1c94731eec28f8"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/musictaskclient_test.pro",
+        "sha256": "e433ad4f20cc6883bb215a8b1537214f5eddc7fd0fc713e75aa62109d7a851c0"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/navigation_test.cpp",
+        "sha256": "b4437b17173df7a128b81f43fcd8969f46473d01f1b1104ace005d783d39362f"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/navigation_test.pro",
+        "sha256": "01efc77d5dc6626595c12aa6309418e63f52143e388ff24c85289ea5190f5fae"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/netease_dialogs_test.cpp",
+        "sha256": "2538f17ed88892101dc5c898d715794bb9d97d3cf785ae144bd24f4bd799203b"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/netease_dialogs_test.pro",
+        "sha256": "a4537d0a3393732632010df22822ef1dc572f911212ee947bb98b630abe7fcef"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/netease_integration_test.cpp",
+        "sha256": "4eedcac695e86d1587cc3a60d99e03eed9c261c18edcc45bdfa5f13d30fe2ff6"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/netease_integration_test.pro",
+        "sha256": "bcc3960db2b4db6ed8b46f429a6f36b7af1ed06b9bcf441f186653f2f366b2be"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/netease_profile_test.cpp",
+        "sha256": "f8e08aefe191b5455b5717e766f5dbd227096f8c2cf894029b8c719ca9518af8"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/netease_profile_test.pro",
+        "sha256": "5c00784683b8a55c06342925ba27fdfbc5dbe2a495ad94a457400f09eb68a090"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/preferenceitems_test.cpp",
+        "sha256": "0414ebe09e044b59a32827c5d7dc461506dfd140cc1e8b2186a641cd72f8f5ec"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/preferenceitems_test.pro",
+        "sha256": "b72dca7c19bd1c8cb8c47cad50f338dab56c8d9975367876938b2eb30cfb6ec7"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/radioclient_test.cpp",
+        "sha256": "5465ac0b6651286a953b912980ee8de49d39b50539a0224dad656241435e899c"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/radioclient_test.pro",
+        "sha256": "939ae4c4f8fc8fc313829094b477e2fc4c1487b2509a1a1668b0dad86be8358e"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/radiodialog_test.cpp",
+        "sha256": "ba4d220f1c2c122d5a322305cee26527389d7a8f50bac7b0ed49f49f6a1c21bc"
+      },
+      {
+        "path": "docs/evaluation-versions/redis-agent-v2-source/tests/radiodialog_test.pro",
+        "sha256": "906e85770d994d0da3659affc2776a78fc3522f39431f16e434ec855db1c9ecc"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-checks/backend.txt",
+        "sha256": "7febe865add6b7ea75f2fbcdc1f6aaf4e772a658253d8f38f951b336cd718d48"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-checks/handoff-review.txt",
+        "sha256": "1c685f3687cb9ad749cad4c98e0100b24ea90d99a5ce6e53cb9ffb1c6d8b20f7"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-checks/initial-async-adaptation.txt",
+        "sha256": "af6b8c03ba8ca2a15dc8f6709b2ae15804d18aa7c6cc45c13af9ede49c73dc78"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-checks/initial-concurrency-failure.txt",
+        "sha256": "d32b20fdc5ed43ab81bf433dbf86b333682d4e85d08689b5dfc8ced2f83d2586"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-checks/migration-infra.txt",
+        "sha256": "0d10102d63fdd02a7bb172e1a4d41fd9606c2cf004377372e5364233b7ec8889"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-checks/native-flow.txt",
+        "sha256": "af85233350e460b49ac0e6e12e1c1d0633fa47dd9259c253ce7923dbffbbcc26"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-checks/one-command.txt",
+        "sha256": "46c866679fd7a30dbadcfba8e12d6db45ad309d91de05ed020b934347e42eebc"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-checks/two-server-processes.txt",
+        "sha256": "f83d35e1f3be44948048e8017f52e4fefc0efdf44422fdece507dc1c8a65f4da"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/.gitignore",
+        "sha256": "e692f1cf24b40bd60c6c79db5bdf8a9d612d91598bb869f1d862321343b19ca8"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/README.md",
+        "sha256": "44944f17e96107ca93111f75580cbfab4d54cdb773af473ececef881a588e4b1"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/.env.example",
+        "sha256": "cac94f8ee2ac18515ce28ebd89ecc289c8519d1a981cac54a021278239b8e37f"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/README.md",
+        "sha256": "004a33afb0135057b792de1e14ab64657368e15603962836e64436a161f1e19e"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/app.mjs",
+        "sha256": "7c5f700098749f0624d7d5171b604829cb596613a29a546b25a5df651d98f08b"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/assistant-model.mjs",
+        "sha256": "0278e50c27d88bfed272475e35dd9f3bda340803f032dc08897726e0741c4eab"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/compose.yaml",
+        "sha256": "940417c6759ec6a66f8cf91a6f4fc20060c716581ad1d36bba32fc5267aac8ec"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/evaluation/agent-evaluation-runner.mjs",
+        "sha256": "99e1a8517dca2d9aef0eb05986583d0eccb161f60025c6bfb815f2b4da75c031"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/evaluation/agent-fault-checks.mjs",
+        "sha256": "b3137b1c7d7fbc256ce2ae71400d1bab636c22ffe4e857ec315a893657c65d24"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/launch-local.mjs",
+        "sha256": "e6bbee80ff375ec3c37b666b6b4a43bb6d78e9c8eee2147ea2054d886f27234f"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/migrations/001_initial_postgres.sql",
+        "sha256": "22b75c4b27c8db9fff74c1c01a897327b8a29f3e3d4f8ec5d997627170afc5ca"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/model.mjs",
+        "sha256": "68cfc9c9d0168f089dce20424f909ed6823734f164b38253f3407520c2a67951"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/package-lock.json",
+        "sha256": "b42c905b0ea63e30d9ec5c2b8ddbb224a7201b4bb87a09ea4791f1e8726987d1"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/package.json",
+        "sha256": "c7215d0eaa043034cbbd031ea402ede7212ad61aa7dbd8b884f150494099388c"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/postgres-store.mjs",
+        "sha256": "06fb78b5d02b4b667ac651c2a095d0d7f129ab55bd5fec0cc14a4c9e41711a46"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/postgres-task-store.mjs",
+        "sha256": "2c0232c89c7b979cffb4d50da45d24fac2a292b6c157124ff9072724df4c5199"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/radio-model.mjs",
+        "sha256": "109f625c501cb780e386f2736cd906f68b60a6896243ad9ee6e316642243b91e"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/redis-limiter.mjs",
+        "sha256": "c652d8855159310af662708c1027c4a573f09e28abf08a81b2562ba14825d41f"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/server.mjs",
+        "sha256": "9dbdb06c0337cfad119123a7b99b0b294ad25d41ee0c046851aff9b285c784aa"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/service-config.mjs",
+        "sha256": "4f3ba589ffd13966d0a40a28c43730a85aca7154bbf7f37529f2878ab3b34638"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/storage-auth.mjs",
+        "sha256": "4283e16cff4c7e4704e43baf9fbe2b1bc2b96dd3a58cb81f82f6510a73350d46"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/storage-postgres.mjs",
+        "sha256": "269e4dab8f809ad99de602155752c79897a1121628219d7d8d6bda8a6ad40181"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/storage-task-helpers.mjs",
+        "sha256": "39454eed18a336b709b0549e275fab0ee212554ef792ddb0742153e74ea338f0"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/storage.mjs",
+        "sha256": "9743f5ea7d5ad86a128c09ca0953674e7a741197ea1decb80bc6d4b31d464dad"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/store.mjs",
+        "sha256": "cf1b0c2c9ce241d66a781f3ec4fb3d60ca59f0ecb1d444f0f34104509e9aca3a"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/task-evaluation.mjs",
+        "sha256": "be901876fbf90b26acb62179174e5c1c965ac3f69cab58f558757075abb3f9ab"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/task-runtime.mjs",
+        "sha256": "1a9767e1e40783f8241178ef3f5b1da71f71b883c8d49e2237856cebd2a92fba"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/task-store.mjs",
+        "sha256": "dad2b9fd7f436437d749407fb33de313e786f7660bcf73e06e02fad720ba5bd9"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/agent-adversarial-boundaries.test.mjs",
+        "sha256": "6fabcdb23266bfb0c09a182da07fcf7ba60bb0d1c96aeb2057cc7a69dbcf5846"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/agent-evaluation-cli.test.mjs",
+        "sha256": "8c07462bbe405719da7f706e66bd31e848949a91733a3bc25c0724972be1ad14"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/agent-evaluation-runner.test.mjs",
+        "sha256": "a6961cf4453199252e12f6bcdd3f373bab39e431f870451217b7a5a136dc64be"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/agent-observation-assertions.test.mjs",
+        "sha256": "f3d4b496fa57ca7cc966a5ab0b00ab429fd3d7c15c0e5cf863bfb18797a653e6"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/agent-v3-evidence.test.mjs",
+        "sha256": "a887129e6899a0a3ba4c40a366ed34b31c68c0e103fc07235bbfa5d2fc1fd584"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/app-redis.test.mjs",
+        "sha256": "3c3634091421d522e304175cc4317744546eaa8e54238734f04bfcb923dfbe83"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/app.test.mjs",
+        "sha256": "4b9dd03dc546f912f17c6c8ee68dc078f78edf5cb09371b45be38558764a709c"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/assistant.test.mjs",
+        "sha256": "284e115245c7ae8827c15c5d002c283219a6cdbc9409eb53c0d5c5051f83c1e2"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/helpers/redis-fixture.mjs",
+        "sha256": "b2ccfca71a41cf3e304e3c16cf72c21bf96111a8701b155a6973e3d259832f36"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/launch-storage-profile.test.mjs",
+        "sha256": "9b1d85089d0e18e184a54ae387cc7f10eed6a611e2ac78b9be3d06e3ee3166b8"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/native-catalog-observation.test.mjs",
+        "sha256": "d78d260eba68aff902fa172c9874672e776b95347603edff6143e53dd36435d2"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/postgres-runtime-boundaries.test.mjs",
+        "sha256": "5d1328c944a524ab70f7f3763712384d1997b27812603c6de9c298f1e5bba244"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/postgres-runtime-integration.test.mjs",
+        "sha256": "770058b9a3b07804ac2902562ebf2f4ede7687a63c1971015d2875958eced438"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/postgres-storage.test.mjs",
+        "sha256": "4cc34d0bc41df1a86cfccb095bee32b2b4b4be309794f94d4e441f561ec9237c"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/radio.test.mjs",
+        "sha256": "9401eb683b1ff166bab02113f8e2c279695293ad31c6406546f03d939e1a4664"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/redis-limiter.test.mjs",
+        "sha256": "9088d1260a6495f50392dada13d17f15d1064061a90f8e5293c6888fd49a43b0"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/server-storage.test.mjs",
+        "sha256": "9e21cc0540aa8fc7473d8f20c02e2877022723c4b9caa8525332a7fe5127cbb1"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/service-config.test.mjs",
+        "sha256": "d91c12e0440c32710f27a2e0684d344ba9996a91cec1deafb68afb5094c657c0"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/task-clarification-continuation.test.mjs",
+        "sha256": "8dac9e7a8a8033fde844b870d1cf27b8d4f22e6402eea80f4cd09c040ba1540b"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/task-duration.test.mjs",
+        "sha256": "471bc7042719dc3df4e7b72d11d1912834095662840202a0f5c9a037f94814f1"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/task-evaluation.test.mjs",
+        "sha256": "8432451316b5c92323cfac8bc7c1e719c8676644699a8a3165550ca150ada4e1"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/task-loop-evidence.test.mjs",
+        "sha256": "e85acaf755bd5093ebdfc381f82c03ad33c650efa23c4db8dbc8fefd20bd0257"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/task-ranking.test.mjs",
+        "sha256": "83d3dde8425e7386e1dbae500ee125b3061750cd4a9a43cd4fc7231f57cc22aa"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/task-runtime-guards.test.mjs",
+        "sha256": "c41130d6429bb3e6d6b9e8fbe1e4e4629a1d1dfcc5e807fd8cb4880c98231990"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/backend/test/tasks.test.mjs",
+        "sha256": "48ec5f8ca7c3dee7c8b2fbab888ed34f99c0980ebb77037404d49336540df123"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/docs/STORAGE_UPGRADE_V1.md",
+        "sha256": "00009983491dadf5e3da6f1f2c4bc298454eb2ab24564329c605a1a9ada1ef7b"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/scripts/ensure-app-backend.sh",
+        "sha256": "345479abb2540c0ee292808dd5abb86f41ec30231e5b07da61c9cc28f3b6702a"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/scripts/migrate-storage-sqlite-postgres.mjs",
+        "sha256": "4aa92e3604b3ff8b90d03c63d54ac201f69ddad6258a0f09afdfcef9680ab940"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/scripts/start-app-backend.sh",
+        "sha256": "cd7e8aa716572cc7e6bf0ae1b90d07bfbacaadc1f79a181d054901d4c99df50f"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/scripts/storage-infra.mjs",
+        "sha256": "38e464d3c834e48490886c04db742f5ff8e46b42ec8dc4b6222790d452698072"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/scripts/storage-infra.test.mjs",
+        "sha256": "3ce0479d95015bb4f54999c7d3cf70770640ede81c61043add433b13b201d89b"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/scripts/storage-migration.test.mjs",
+        "sha256": "63ac9e4e1473515307a1367a29f72dfd1572657d27c389af175c68f10a0f2c13"
+      },
+      {
+        "path": "docs/evaluation-versions/storage-v1-source/scripts/test-storage-v1.mjs",
+        "sha256": "ebf10abf0fa12e1cd68526710f1321a793e632a18ae393d3eeed3f30a8dbc35c"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/agent-evaluation-cli.mjs",
+        "sha256": "4885a2a1424f92572958a776b44c772c8f24bdc88be64f5e4c15ba3e158ff64b"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/errors.mjs",
+        "sha256": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/evaluation/agent-evaluation-runner.mjs",
+        "sha256": "859fc6e5314670784bb80f1a6c93cf304171b3bc36f0101f4c6c0008ce32a942"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/evaluation/agent-fault-checks.mjs",
+        "sha256": "2d3277eedf990d1b9113737697abbad2fa0e9ce3e17b33e3888aa42c8e64922d"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/evaluation/agent-observation-assertions.mjs",
+        "sha256": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/evaluation/agent-suite-schema.mjs",
+        "sha256": "7327dc9887843af6a6e4c16950bad4ee6532fbd22f606a210bdf9f1d1e09a674"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/evaluation/agent-suite-v1.json",
+        "sha256": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/evaluation/agent-suite-v2.json",
+        "sha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/model-transport.mjs",
+        "sha256": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/package-lock.json",
+        "sha256": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/package.json",
+        "sha256": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/store.mjs",
+        "sha256": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-brief-patch.mjs",
+        "sha256": "2f815934390b97449611f55e49865c670b7f5947f65d6c7a27d84bdf829f58a5"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-duration.mjs",
+        "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-evaluation-cli.mjs",
+        "sha256": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-evaluation.mjs",
+        "sha256": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-language.mjs",
+        "sha256": "1f383e06813b0bfd7e30c52c6f4b2084817f496fb749faffbb6b0e7f2b4722d7"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-model.mjs",
+        "sha256": "ed280156523f09afead177098d68c1e4ee43cf522ccfd2293fd71cce78c10e58"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-runtime.mjs",
+        "sha256": "ddea7d37f8c03acc57329599c94d4ae0b6e6fc464916793e104e17bf8bad99c2"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-schema.mjs",
+        "sha256": "09d3eb07621e2f769a7e478539898186a45bebbfc38c7ca80ed25c816681a8b5"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-store.mjs",
+        "sha256": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/backend/task-style-evidence.mjs",
+        "sha256": "69fb6abe20cb39cfc7a83611bbe40db475eed299ba76538bbc7856863992e65e"
+      },
+      {
+        "path": "docs/evaluation-versions/v2-source/scripts/evaluate-agent.mjs",
+        "sha256": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/agent-evaluation-cli.mjs",
+        "sha256": "4885a2a1424f92572958a776b44c772c8f24bdc88be64f5e4c15ba3e158ff64b"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/errors.mjs",
+        "sha256": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/evaluation/agent-evaluation-runner.mjs",
+        "sha256": "22baa52e297457e4039a4eb5b6cb61221869981d86ad4c65baf993edae4bd465"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/evaluation/agent-fault-checks.mjs",
+        "sha256": "90509e4faa669526bece35b68e58efdca2bca974558eaa44952f79d6747c73bb"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/evaluation/agent-observation-assertions.mjs",
+        "sha256": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/evaluation/agent-suite-schema.mjs",
+        "sha256": "7c478de409c896794659ed10d334cb44b7fcf1adba631d1afb92bc61ca932972"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/evaluation/agent-suite-v1.json",
+        "sha256": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/evaluation/agent-suite-v2.json",
+        "sha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/evaluation/agent-suite-v3-holdout.json",
+        "sha256": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/model-transport.mjs",
+        "sha256": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/package-lock.json",
+        "sha256": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/package.json",
+        "sha256": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/store.mjs",
+        "sha256": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-brief-patch.mjs",
+        "sha256": "c108d200072875cef895d64dabfbfcb1e8199b2929b41acc13cb120a4a08ee68"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-duration.mjs",
+        "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-evaluation-cli.mjs",
+        "sha256": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-evaluation.mjs",
+        "sha256": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-language.mjs",
+        "sha256": "1f383e06813b0bfd7e30c52c6f4b2084817f496fb749faffbb6b0e7f2b4722d7"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-model.mjs",
+        "sha256": "b3f194fe666d67b170ef0fb0b8e2166385c5afb9d57378f936cddc2097470527"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-query-coverage.mjs",
+        "sha256": "07694aaf261d40326ba8331b60bc5cad5f61881980b474cf54625ced9d100660"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-release-intent.mjs",
+        "sha256": "9fda45f88e3397400fc0ef95d7ade7364fba28287d301877cd7ad1b886e97ba0"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-runtime.mjs",
+        "sha256": "b462765a0edcb75f0129bc9766a60c20c8919b7b25d0a0adb43830afd9c565a0"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-schema.mjs",
+        "sha256": "8aed0ffce9f34537059017b07e2453879058b239eb5b102e8a4646ba454764ee"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-store.mjs",
+        "sha256": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-style-evidence.mjs",
+        "sha256": "69fb6abe20cb39cfc7a83611bbe40db475eed299ba76538bbc7856863992e65e"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/backend/task-tool-evidence.mjs",
+        "sha256": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48"
+      },
+      {
+        "path": "docs/evaluation-versions/v3-source/scripts/evaluate-agent.mjs",
+        "sha256": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/agent-evaluation-cli.mjs",
+        "sha256": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/errors.mjs",
+        "sha256": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/evaluation/agent-evaluation-runner.mjs",
+        "sha256": "22baa52e297457e4039a4eb5b6cb61221869981d86ad4c65baf993edae4bd465"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/evaluation/agent-fault-checks.mjs",
+        "sha256": "90509e4faa669526bece35b68e58efdca2bca974558eaa44952f79d6747c73bb"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/evaluation/agent-observation-assertions.mjs",
+        "sha256": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/evaluation/agent-suite-schema.mjs",
+        "sha256": "7c478de409c896794659ed10d334cb44b7fcf1adba631d1afb92bc61ca932972"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/evaluation/agent-suite-v1.json",
+        "sha256": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/evaluation/agent-suite-v2.json",
+        "sha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/evaluation/agent-suite-v3-holdout.json",
+        "sha256": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/evaluation/agent-suite-v4-holdout.json",
+        "sha256": "31b9e0290087c3deb8b84774ae89473fbdabdc48f3c2dea939926b875e9fae77"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/model-transport.mjs",
+        "sha256": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/package-lock.json",
+        "sha256": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/package.json",
+        "sha256": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/store.mjs",
+        "sha256": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-brief-patch.mjs",
+        "sha256": "24df73315908f4558a95f93038ce9edfa482f75831dd58495e4b04dcd9ed06c4"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-duration.mjs",
+        "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-evaluation-cli.mjs",
+        "sha256": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-evaluation.mjs",
+        "sha256": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-language.mjs",
+        "sha256": "e1f58ba10f8c85dadc40560707af871511f8b0d51af36ef09d2d12fc567ab837"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-model.mjs",
+        "sha256": "b3f194fe666d67b170ef0fb0b8e2166385c5afb9d57378f936cddc2097470527"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-query-coverage.mjs",
+        "sha256": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-release-intent.mjs",
+        "sha256": "9fda45f88e3397400fc0ef95d7ade7364fba28287d301877cd7ad1b886e97ba0"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-runtime.mjs",
+        "sha256": "15d6ff0579645047847ece123acc85a0cf29ae0cad0d7e536c111ed99fd76ffa"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-schema.mjs",
+        "sha256": "8aed0ffce9f34537059017b07e2453879058b239eb5b102e8a4646ba454764ee"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-store.mjs",
+        "sha256": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-style-evidence.mjs",
+        "sha256": "dcac7edd89f40856cce5fb9296bbda1769093da20c813da27d39b4f821f8e833"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/backend/task-tool-evidence.mjs",
+        "sha256": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/scripts/evaluate-agent.mjs",
+        "sha256": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/scripts/music-task-live-catalog-audit.mjs",
+        "sha256": "677d47798978400b799d2adb0cd118373722cc4227d9f7f8d59c0c47e78e50be"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/scripts/music-task-live-music-service.mjs",
+        "sha256": "4cf3b9c8019602e753ac1e4dbf2afb5cf0865d5c3d50ee887f3e3c846029c961"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/scripts/music-task-live-probe-audit.mjs",
+        "sha256": "14f82f9ad5c4b1f9380c11efef664a22a20c0c5d13194c6ac96efb2e05217925"
+      },
+      {
+        "path": "docs/evaluation-versions/v4-source/tests/music_task_live_probe.cpp",
+        "sha256": "31bc04e358695c1bb232799491714d53b7ed39e8cd71354b9087479113217be7"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-checks/app-build.log",
+        "sha256": "4f369c3b5dfb95df8a1b78865e5a8b7f909837ef3ed7636252e29d89c7cf1703"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-checks/backend.log",
+        "sha256": "771187c2e7ae19e0b7625e4d432a7872f5237a4ec236ed0437031c552570128a"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-checks/cumulative-budget-at-v5.json",
+        "sha256": "dcacff07e85455e8f50a19bae9647e72e985e8149cffb4b04246808bf6208cc7"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-checks/initial-cwd-failure.log",
+        "sha256": "256b104beea700fdb6f373cd9172d674c82e642f2a08729571aa31d58bb05cca"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-checks/native-flow.log",
+        "sha256": "4301b21e6d97889cc806f0f3b75335bc67725bdf815b708cfbf84002209bf86a"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-checks/patch-independent-review.log",
+        "sha256": "bd29afbd18b2d4a7128d5cab5a36f8449684f77ad13290d20cde0891e3093272"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-checks/qt-client.log",
+        "sha256": "7de817dbc8fc1fcea53649c21e22a4ed2fd8d6df79e021e60c5861675708db2c"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/aboutdialog.cpp",
+        "sha256": "6af96e571cf7cc354250580d715ae87832e960510501bedaff2b0e66020a8cb0"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/aboutdialog.h",
+        "sha256": "8ea40d8df464a10b96670bb3ff09e46261ff218a133fff3dbd5c36b39892ad23"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/appbackendclient.cpp",
+        "sha256": "ac4be852188c744039870bed1d971899e51ef9dadc20effce3881ec07f827a5e"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/appbackendclient.h",
+        "sha256": "ec8590979b2975dbbc6555b07c09dfa3f58af31300d47c1d0dc620c5322cd689"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/artwork.pri",
+        "sha256": "047041b720d0dae8df3d48f55589a0ab3f0e0a58677ad5d1fa2ea363ca5d0489"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/assistanttypes.h",
+        "sha256": "62a9ef8450724d9890f8a030197b45baa1bfb9ddb3c2a14a2924de9cb656815b"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/agent-evaluation-cli.mjs",
+        "sha256": "800722b134e2c44d922f04c4b77768547b57e753c71450549a09fbc95c9ff9c2"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/errors.mjs",
+        "sha256": "99a6c44e25a1c72c2110e4742ac0ca8da9401e592c68149008b684bb75e5329a"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-evaluation-runner.mjs",
+        "sha256": "22baa52e297457e4039a4eb5b6cb61221869981d86ad4c65baf993edae4bd465"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-fault-checks.mjs",
+        "sha256": "90509e4faa669526bece35b68e58efdca2bca974558eaa44952f79d6747c73bb"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-observation-assertions.mjs",
+        "sha256": "70820e1e0b4f100bd62c21b65c405be095330827c773ce0def550638531a25ad"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-schema.mjs",
+        "sha256": "7c478de409c896794659ed10d334cb44b7fcf1adba631d1afb92bc61ca932972"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v1.json",
+        "sha256": "15d66258947738c317caed5bfb663e5fe1f19ae796108ab74634d184886bd148"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v2.json",
+        "sha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v3-holdout.json",
+        "sha256": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v4-holdout.json",
+        "sha256": "31b9e0290087c3deb8b84774ae89473fbdabdc48f3c2dea939926b875e9fae77"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/evaluation/agent-suite-v5-regression.json",
+        "sha256": "fd9c6680789f8abb09c6037f55f1b7442a86652168604469570e19c1a9679079"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/model-transport.mjs",
+        "sha256": "5e24ddf106d23dd52e90907e8e5ada0910bb95a7b2dc4b4babe47611e6d80315"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/package-lock.json",
+        "sha256": "f223443f5d56419804cbd980eae4e29fe8b38dce9639f764a07e7359af6b350c"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/package.json",
+        "sha256": "ccb35d3cc7d1186303e88197e93fdb22909688b050a5d808cf4e06c378a0a962"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/store.mjs",
+        "sha256": "b53fc78b056b173141511968a9100f4c467ca013e94772e6a8212791e877e564"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-brief-patch.mjs",
+        "sha256": "c829c661e8826ba0e62c9b8e41c47c7eda9ca108c38ac7cf08814621237379cf"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-duration.mjs",
+        "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-evaluation-cli.mjs",
+        "sha256": "04faa2ec98481da59232234e309ed1a9da1b8a0c8d72213a52f53462d3767f7d"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-evaluation.mjs",
+        "sha256": "2e20896e45db80d8326ce9eafbe53474307457432df0846db1867dde8661fb12"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-language.mjs",
+        "sha256": "2849dc86830be7d00233219ca8386ac1d5d232f569ec3cd505462c11c3bb59f8"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-model.mjs",
+        "sha256": "b3f194fe666d67b170ef0fb0b8e2166385c5afb9d57378f936cddc2097470527"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-query-coverage.mjs",
+        "sha256": "bf3e0f50454c464239437c8971ccba9b94e5b558fee5141445fbeeec15b084ed"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-release-intent.mjs",
+        "sha256": "9fda45f88e3397400fc0ef95d7ade7364fba28287d301877cd7ad1b886e97ba0"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-runtime.mjs",
+        "sha256": "15d6ff0579645047847ece123acc85a0cf29ae0cad0d7e536c111ed99fd76ffa"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-schema.mjs",
+        "sha256": "8aed0ffce9f34537059017b07e2453879058b239eb5b102e8a4646ba454764ee"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-store.mjs",
+        "sha256": "1b2574a1d1160d326238148e401b92da950a3f4e5226c0c2b216ac84acb226ed"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-style-evidence.mjs",
+        "sha256": "526768166a781498425b23a42c98d75373afd6931fe91e33665a5417db164aed"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/task-tool-evidence.mjs",
+        "sha256": "fcd98836b948b374609605e905fcd64854d0303986370a2b29ce1689a368cb48"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/test/native-catalog-observation.test.mjs",
+        "sha256": "6034f96ca139b40e59284673b25f9e8b1c31bcc3302f65f3fb730f8964e248de"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/test/task-brief-patch.test.mjs",
+        "sha256": "5445306d3d5a9c10b8fd69722791a15bb00c9b47d620fbd69d7360915cfa4a23"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/test/task-language.test.mjs",
+        "sha256": "5effa0c16c693ce224b0c331a3566afa9f006ba4a63c1e72cdfd96c130749057"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/backend/test/task-style-evidence.test.mjs",
+        "sha256": "56eabe58a8c4b1995a9f8d0cd658655cbab966dde4541a87686f961050f74e08"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/coverartcache.cpp",
+        "sha256": "f07e91d423c82606b4af5c2d9155cd854f9c929bbf601b3dc0bdc2bb130491de"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/coverartcache.h",
+        "sha256": "b53383f2a3e5389a5725759baf6a328033c88d301537e37b408e555dd09fb431"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/dialogstyle.h",
+        "sha256": "22327544a22518505d60dcf05556aaef2ac8a1db1c210db413eb5262e387f769"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focus.pri",
+        "sha256": "b76ad57e6d05c92a151fd9efa063cc30093f7cad41443e9737d97c6b84fa3e66"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focuscore.cpp",
+        "sha256": "bfc0777609d1fac2d21d3e6fff611bb242a457496bae9c5f3797b5dd9dcaa9c3"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focuscore.h",
+        "sha256": "b4e278653bd959b395000359b0d39529b89bcb1341934ac84910867164d8e140"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focusdialog.cpp",
+        "sha256": "7ef35839efa21351053b0e70a8bb4ffe0ea0c304853e23f027ed2b0ce39224f6"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focusdialog.h",
+        "sha256": "4ef5df4e11b92708dc650573b17f47f27cad3b9e6c987db5be53adf8bef8cbd5"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focusmodelclient.cpp",
+        "sha256": "e56bb1e6ecfaf5720fb62fd9dcd9d1f9edc7eacad34426771f95fb6e0c0ad50b"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focusmodelclient.h",
+        "sha256": "5d2e676dd675ec17e900c17975a7507010e4f9f2e7163b7339cc99e611e6f163"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focussession.cpp",
+        "sha256": "19b4a6315705e4394312510f2dea3f16db5d408fe0dc820db6d08c70ca47ff23"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/focussession.h",
+        "sha256": "13100e5d549d98165a401fdbcebf64b2a55e430661296584de0e4064152b4064"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/historysong.cpp",
+        "sha256": "108946a1a9a3aea785a750f71217d98c9db9ee21a28b8e86a542cee9f5fd0941"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/historysong.h",
+        "sha256": "7e1e0a303dc6d14ed5801f4ec844bb7d56e490cd29bcdfb9fac3e766bf09e5ce"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/likesong.cpp",
+        "sha256": "9d760e2fcca598c60a30efb6d23f8755f6d03205de2c794c9b5baa0345fa014e"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/likesong.h",
+        "sha256": "9c3533464a9c302e3bb0775899ef678760a4c7c5fd7f2fc2a2d732a80e82558d"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/lyricswidget.cpp",
+        "sha256": "e7d4da3fa98b6edb3278c7d0800c0142508a84a4117b1ef5e735eb17a9c8da1b"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/lyricswidget.h",
+        "sha256": "ec5f8f5262d0f8451c55d7f335af7aaeec61c4c464f81b089e2d253286d75229"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/main.cpp",
+        "sha256": "02de01df84df49cf1dc9b170a5edaf2af0856f98dd7d7f9041908adf83dc4281"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/mainwindow.cpp",
+        "sha256": "6fa818850588dc4e8cd44c7e861ca25e1199910220d965f11259b15674666afe"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/mainwindow.h",
+        "sha256": "332fd83c2e8750b74d0d2e2aeeefbce5e18e22cf5270e460439243ded73f330c"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/mainwindowfocus.cpp",
+        "sha256": "2488a375dfbad8ba0ed380e85aa30e905d9f5591c5d6086a2ca58d7fc26de2df"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/mainwindowradio.cpp",
+        "sha256": "660d51e5c6e3dd5a45d1897a6c12ef0f6709d1b09af84454e55b385fc8f9b31f"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/musictaskclient.cpp",
+        "sha256": "2c51e057ee852d1465fcdbb30bdca4ad40c5e9f1299b61b690f8a4e49203de38"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/musictaskclient.h",
+        "sha256": "f32871dadd9eb0f693dc2297432197d8d901866f91bb3227f7cc39bbb7dee22a"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/neteaseclient.cpp",
+        "sha256": "6ba82ff5f843dd2f3e340426a715fd5f489244bbfeea15e4936e2ebcdea4aa96"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/neteaseclient.h",
+        "sha256": "ee5c8da7360bf177d3b1b0d456d0feaca82c97a181e5af8a02558fdb248cc1bf"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/neteasedialogs.cpp",
+        "sha256": "ea4374cf50620e7f4552ba3275500c0a8786c7970e5708bb648e0ba6aa3b6578"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/neteasedialogs.h",
+        "sha256": "0f8ea93c0c8f6420e764a07e509650b7460e013e84515cedd112867e7b412b86"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/neteasetypes.h",
+        "sha256": "c52873fa3524683de790dc44b94041e1c2792290e1e77028f6e73799cbfe504a"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/playerwindowview.cpp",
+        "sha256": "26c5b52540223d657ec8263870242f7844f86001882b288c261d961059725752"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/playerwindowview.h",
+        "sha256": "4c7e4347285220ca80c65e0c61d4baf5dc86cf9bccb4afbb6b501714e720a0b5"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/radio.pri",
+        "sha256": "4b12f203af91be24462c1534af13e4538982cfbe35f53522154ff605f764d6e9"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/radioclient.cpp",
+        "sha256": "1c47c72ca50df567b7b7057c607df3dfeb6765cab4c8cc9116a663a45cbb0286"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/radioclient.h",
+        "sha256": "a59fcb91fccec9c3092d83b72f37072af9463e367fd55254106ee047eaef78be"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/radiodialog.cpp",
+        "sha256": "b96d04b1c2572a2521abc43a2a244cc6cbb3569125681394e9c82f947086f5ab"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/radiodialog.h",
+        "sha256": "3882eb1f7c6e360e6e0614e2e283ea75b5d7d1fdad28930e0a91c78e9d5b5d8c"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/radiostore.cpp",
+        "sha256": "456b29bb78f0c5210939708f332cbe4cbc48a269946b8f4af3fcbc8a086f3591"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/radiostore.h",
+        "sha256": "f83340ff75d4ec2cb5acd140a98c1303f05783982d7607db99e2f8df0799b145"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/radiotypes.h",
+        "sha256": "dcafe173d2a31ec6c5d7a6c6ee83f70ad30cc21d4c6372a82370154b6e8a3b23"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/ranklist.cpp",
+        "sha256": "444768534cee04c7de52ae658339b031868bb077dfbf5ce099d287633edafd4b"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/ranklist.h",
+        "sha256": "7fbdd481acfa9e862fcf07415993f5e2d6509a06ac8023119c8b61c4538ee9af"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/redisconnection.h",
+        "sha256": "9999ed3a6ea3d28bd8fbea659f53a5ee16bdd3c3d7e8c9a067f642b5662afec4"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/scripts/evaluate-agent.mjs",
+        "sha256": "38448be1b9dbd3c042d0a66aed5dab715c5f1202eee53342a36d27cd8f2ab1bd"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/scripts/music-task-live-catalog-audit.mjs",
+        "sha256": "677d47798978400b799d2adb0cd118373722cc4227d9f7f8d59c0c47e78e50be"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/scripts/music-task-live-music-service.mjs",
+        "sha256": "4cf3b9c8019602e753ac1e4dbf2afb5cf0865d5c3d50ee887f3e3c846029c961"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/scripts/music-task-live-probe-audit.mjs",
+        "sha256": "fc2201a870b9ccdb3ce2d163bef7c4a87444c9dd927d2f941e60bf2db0ccba0e"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/scripts/render-agent-repair-report.mjs",
+        "sha256": "4a71bdc76f790d872ad468e5f9158030aad351c3ba2c2a0c5c3464c94a36cb70"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/scripts/render-agent-repair-report.test.mjs",
+        "sha256": "3747719134ae07d77adbb707f1e9811e0c071f574c5e7be592bae0367dbd666c"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/service/app.mjs",
+        "sha256": "6a5c3a84d25a4f0da61b5408dbb6afd7c334040b1c56933f12e91775c09d8cb3"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/service/upstream.mjs",
+        "sha256": "a0807f85acab3609414c9b78205f258eeb1e5910a81b3974ef6c9b454ed101cd"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/signin.cpp",
+        "sha256": "284b87fbc4076b84a6fe66047d5a1d9c6bbb905ad489e9d9235fe7b264f1a20d"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/signin.h",
+        "sha256": "32c6958374d016aa086b3912b6b873c0d5ce7135035462e3b9a062f738bdd3e2"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/signup.cpp",
+        "sha256": "f3e4075730a3cf344a7d77cb5f2def28394e12888ad8bda1b0454100e3997352"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/signup.h",
+        "sha256": "e9d6fd44c523d17437cdd1d87ebe69f25b91d9cc50e5647c25b60da6983b6d24"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/songlistdelegate.cpp",
+        "sha256": "3d7a4edcb107f3eff3932b733dd3e91c15e05faf4a9dcc3c40f730fe3b476e0e"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/songlistdelegate.h",
+        "sha256": "ee66dc2799b978edc6fd15ce40f52025aa4dd3300891b0b59f086f3af3755402"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/tests/music_task_live_probe.cpp",
+        "sha256": "31bc04e358695c1bb232799491714d53b7ed39e8cd71354b9087479113217be7"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/tests/music_task_live_probe.pro",
+        "sha256": "76158281c4fde05c21fc0a8170b37235d8133a7d1a8f5d3be61024711d472e38"
+      },
+      {
+        "path": "docs/evaluation-versions/v5-source/tests/musictaskclient_test.cpp",
+        "sha256": "bb513053dcbe4f83002e11577042adc8ffd9a8ade53e4b434295403923140c0c"
+      },
+      {
+        "path": "docs/evaluation-versions/v6-preflight/evaluator-tests.log",
+        "sha256": "5713f65d860347c75341e30eae99faff9c6758b3c349f01c48fa3c0f90b2a0da"
+      },
+      {
+        "path": "docs/evaluation-versions/v6-preflight/initial-suite.json",
+        "sha256": "938921901348fa473388c5afa89ef7d9347dbd3cb9cb0a57af211d1bc56439ee"
+      },
+      {
+        "path": "docs/evaluation-versions/v6-source/backend/evaluation/agent-suite-schema.mjs",
+        "sha256": "aaae1b2bb1669b9502af4b7334fa5acdde663050f5a72739454c659ee379ba18"
+      },
+      {
+        "path": "docs/evaluation-versions/v6-source/backend/evaluation/agent-suite-v6-holdout.json",
+        "sha256": "37f2fa6dc77885f916b147ae8f08699c7a6a48172984cf440a837ca714a47f3b"
+      },
+      {
+        "path": "docs/evaluation-versions/v6-source/backend/test/agent-suite-schema.test.mjs",
+        "sha256": "635b4a819c25205a81e4788b9c6df503f1da5dd686a4521891753ba328834130"
+      },
+      {
+        "path": "docs/evaluation-versions/v6-source/scripts/render-agent-new-report.mjs",
+        "sha256": "08a8292cd31d0b0b22282d15140dc4f1a04a9b9c9b6c50ad4ab3771ab2d97f80"
+      },
+      {
+        "path": "docs/evaluation-versions/v6-source/scripts/render-agent-new-report.test.mjs",
+        "sha256": "067417b35bddcc3d9d291d4256f2f647cee603d60a89a7f2e274667ce3586d33"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/backend.log",
+        "sha256": "b6f1987d80de02b88ab89e3786ff89b331fe218611aa205c0c3efebec034c177"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/clarification-integration.log",
+        "sha256": "6bb943b5fd13ce294884c942366a83883e4e919136c7e109ba39e2f656da40d3"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/cumulative-budget-before-v7.json",
+        "sha256": "b8c81c9d74c3866b1b4d6cde88d08a81defa75622afaeb3f2b39cda49a4be104"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/faults.log",
+        "sha256": "f5783c35b2640f4bdfe4639a65122da5cb4bdaca96e2c34fe4c4a59714f0c558"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/identity-scorer.log",
+        "sha256": "b88c29cf86182ae7f3c6edb4de684d381d1d35792b74eec1782b4c3812686642"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/independent-runtime-review.log",
+        "sha256": "011855609f57077387baceabedff83a29c275c93e2dadaea67e5c1c5c50cec0e"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/initial-contract-integration.log",
+        "sha256": "b3cdf448277b446865caa0ab3d1d56e93cf069a539f2e0adbcc69450413c6369"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/initial-full-sync-rejection.log",
+        "sha256": "8ddb9ce80545265326b197a14c053717c5c1e5231bd36d157337ecd793957e3d"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/native-flow.log",
+        "sha256": "4c123831eb2db4253a098bcfca231902bd113de6e6ee96f938e8f60b77800e16"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/report-desktop.png",
+        "sha256": "4329185094dcdbab97fed572d3334fec69b11dde828cfa191bad098b47888774"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/report-mobile-expanded.png",
+        "sha256": "438028414dbf6cb12458749fd75b5aa5913082c7d55f17597f83cff0af7a767b"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/report-mobile.png",
+        "sha256": "d9afb75f273b173958cc79054b22a69b50088edbb9ca5cb8d7ccea178d15c15a"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/report-tool-history.png",
+        "sha256": "acda5068fb2bd04196132c37dd92beffc141084d64e2baf0069c651da198e88e"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-checks/report.log",
+        "sha256": "c120c0ce2629e4279496e77d5fe008e9a21678ead5fb7f3d2f7731cd654eea40"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/README.md",
+        "sha256": "1ab25dd956b27ce65cfff5328018cd75c8b529507677ee44c268249b9216ef5c"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/evaluation/agent-artist-identity.mjs",
+        "sha256": "582793b2fcee9c143236ed017bd9ba4a6820fbc8591ea854b8d45a785a5ba74f"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/evaluation/agent-suite-schema.mjs",
+        "sha256": "ceb2b049da4f7992f982540ce9bae6da4e29a687ac4d47861b1d447bed0d0438"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/evaluation/agent-suite-v7-regression.json",
+        "sha256": "d3d14686f4ae22654a4cc1275a0bc0169ef03b153c34d88f45e4629d33bd2158"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/task-model.mjs",
+        "sha256": "c2b6c6d89b0144ab46386482a879159742c4fcfe638faf2b4c14293987233671"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/task-pending-request.mjs",
+        "sha256": "5cf3f3d7fe9b9c8c6587917d222e305fabf560b8a2e7dd98bac6d9023c394bb2"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/task-release-intent.mjs",
+        "sha256": "2b593a723f7ded52cc0dc9840c4e139f40c0700fbedec4bcbb0cd2152b6ad306"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/task-runtime.mjs",
+        "sha256": "1c6694e8616c7d0bb1f477ab238328dea9ed996d58482ec7c952e19e776d027e"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/test/agent-artist-identity.test.mjs",
+        "sha256": "473b1a87b6a480dece8c4e17361e226bb3c5a04d864efdd7a3a3a16bf5b8c68b"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/test/task-clarification-continuation.test.mjs",
+        "sha256": "7e93c0609790be804c693a9aa0a389ed70746caeef1f531fcdfaddac93755d5e"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/test/task-clarification-release-contract.test.mjs",
+        "sha256": "84f96903472d435dfa9f8d06dcf190738b63f40c21126def486d0fdbf21c6f1f"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/backend/test/task-pending-request.test.mjs",
+        "sha256": "ad6ea6593d1cbf10bf073981b73099044aa204be32d5ab6699067c59f57598fb"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/scripts/render-agent-repair-v7-report.mjs",
+        "sha256": "61d34870ff7122c1a7fd10cad6966ac2f3ddc27b227c2237debca43f5d41675e"
+      },
+      {
+        "path": "docs/evaluation-versions/v7-source/scripts/render-agent-repair-v7-report.test.mjs",
+        "sha256": "b269bd309313d19457debc4601e0665b41774aec47ba397423d95f2b8e37f579"
+      },
+      {
+        "path": "scripts/agent-upgrade-baseline.mjs",
+        "sha256": "e2ca950553dfb69ac5c06c258c192eed421a3074bc6826e1bd1e4019028c6ef0"
+      },
+      {
+        "path": "scripts/agent-upgrade-baseline.test.mjs",
+        "sha256": "769da12fabeae6b1a04ce05e4a2c9dadeaf7347f65bfdf501c7a50bfc5119db3"
+      },
+      {
+        "path": "scripts/check-assistant-boundaries.mjs",
+        "sha256": "8d15018bbdb028c6449b967171c40f01ab3755c6b6c3c942d6ba3c6189e4dbb2"
+      },
+      {
+        "path": "scripts/check-assistant-planners.mjs",
+        "sha256": "58a8b92e99ad6170b27a32d9240fb3bc3742dbd35490ed3aba0d16de69f5d150"
+      },
+      {
+        "path": "scripts/check-music-assistant.mjs",
+        "sha256": "9886be9739cc9cfc34b6c5a4c7fd6134333d586922bf25b742ac9334e3aae804"
+      },
+      {
+        "path": "scripts/check-music-tasks.mjs",
+        "sha256": "c4a91a3b5a8c206739a9bd95b850df18b705e8205a752d31b9541be450a1cf54"
+      },
+      {
+        "path": "scripts/check-radio.mjs",
+        "sha256": "ceaba0ae72c7112f7745a0e9d1f80f66ed3dab563f4e67aae17f695f2668c562"
+      },
+      {
+        "path": "scripts/compare-music-task-duration.mjs",
+        "sha256": "038cbe3c128c8a5e53d6665b24087a55166ac7a6e7eceb972b737578c1719bde"
+      },
+      {
+        "path": "scripts/evaluate-agent.mjs",
+        "sha256": "a5ddf274bf88ec6a1108429c44da52aea9678f6b294a0f295895381122583d54"
+      },
+      {
+        "path": "scripts/migrate-storage-sqlite-postgres.mjs",
+        "sha256": "54d9d9f788bcae54530e9a1a998292f66412b6c891f29babce55042e598a03f6"
+      },
+      {
+        "path": "scripts/music-task-live-catalog-audit.mjs",
+        "sha256": "1b19c090c495a0760842ac96a9ce90abdfa3480962395783ce2e05c021402050"
+      },
+      {
+        "path": "scripts/music-task-live-music-service.mjs",
+        "sha256": "7e7a05d0d5ca1c75f643c7b0c70b20c08c99ae3da34e691a56ad3c9c1da7b267"
+      },
+      {
+        "path": "scripts/music-task-live-probe-audit.mjs",
+        "sha256": "0a2333e1d9c9bf4b78dcd048f687f2396bcd0a9be868882b7484948c462e45ff"
+      },
+      {
+        "path": "scripts/render-agent-evaluation-report.mjs",
+        "sha256": "8c3b63259a04ae146d1a6a1d8a78dcfe4a4418c7d6aff97df2517b276c780055"
+      },
+      {
+        "path": "scripts/render-agent-new-report.mjs",
+        "sha256": "618270b0bbcd99b49bea4c5086002a156c85c23d7f9e761f8fccfefc2f586366"
+      },
+      {
+        "path": "scripts/render-agent-new-report.test.mjs",
+        "sha256": "067417b35bddcc3d9d291d4256f2f647cee603d60a89a7f2e274667ce3586d33"
+      },
+      {
+        "path": "scripts/render-agent-repair-report.mjs",
+        "sha256": "dc97e5b157dc5120253439f5fc5cc59ef9cf50c0559a0f89fb746a212c8cb6d2"
+      },
+      {
+        "path": "scripts/render-agent-repair-report.test.mjs",
+        "sha256": "3747719134ae07d77adbb707f1e9811e0c071f574c5e7be592bae0367dbd666c"
+      },
+      {
+        "path": "scripts/render-agent-repair-v7-report.mjs",
+        "sha256": "c09f91d5a9441901895ad8cd470a859683634337be91fe8c48b223336796cc80"
+      },
+      {
+        "path": "scripts/render-agent-repair-v7-report.test.mjs",
+        "sha256": "b269bd309313d19457debc4601e0665b41774aec47ba397423d95f2b8e37f579"
+      },
+      {
+        "path": "scripts/start-local-redis.sh",
+        "sha256": "afe6055d0416e713e5f98739df381b2624da2b5a0fca483d58aee641ee955b2c"
+      },
+      {
+        "path": "scripts/storage-infra.mjs",
+        "sha256": "d9d1709a3d2293cd5440b60ce4b4a74ce82c213e84e7c2e9c998052244f630c8"
+      },
+      {
+        "path": "scripts/storage-infra.test.mjs",
+        "sha256": "3ce0479d95015bb4f54999c7d3cf70770640ede81c61043add433b13b201d89b"
+      },
+      {
+        "path": "scripts/storage-migration.test.mjs",
+        "sha256": "c1a462207c6b25926439fc55727c74daaa357b2f0dac03a0059c6669fdce8040"
+      },
+      {
+        "path": "scripts/summarize-agent-evaluation.mjs",
+        "sha256": "60d02977eb2567ec10ecd95727313c6e25a00aeb22326f36bc6c3c72dfe8166c"
+      },
+      {
+        "path": "scripts/test-storage-v1.mjs",
+        "sha256": "eaeaa7b434365d8e5a3f0de7fb9292e82479c7e4494cddc75b7acad557f3c288"
+      },
+      {
+        "path": "tests/music_task_live_probe.cpp",
+        "sha256": "bb50a6fd20a16cd26bce25791dd0138f6076c7b94f0518db2eda3ac4ed3f6951"
+      },
+      {
+        "path": "tests/music_task_live_probe.pro",
+        "sha256": "76158281c4fde05c21fc0a8170b37235d8133a7d1a8f5d3be61024711d472e38"
+      }
+    ],
+    "archive": {
+      "private": true,
+      "files": 661,
+      "sha256": "a169136b29f98b911e4451a93cff5c15089040e74929f0e1288d65479cf68de7",
+      "contentsVerified": true,
+      "containsUserConfigurationDatabaseOrLogs": false
+    },
+    "evaluationDatasetsRetainedUnchanged": [
+      "docs/evaluation-data/agent-suite-v1.json",
+      "docs/evaluation-data/agent-suite-v2.json",
+      "docs/evaluation-data/agent-suite-v3-holdout.json",
+      "docs/evaluation-data/agent-suite-v4-holdout.json",
+      "docs/evaluation-data/agent-suite-v5-regression.json",
+      "docs/evaluation-data/agent-suite-v6-holdout.json",
+      "docs/evaluation-data/agent-suite-v7-regression.json",
+      "docs/evaluation-data/agent-upgrade-dev-v1.json"
+    ],
+    "snapshotManifestsRetainedUnchanged": [
+      "docs/evaluation-versions/storage-v1-source/snapshot-manifest.json",
+      "docs/evaluation-versions/v2-source/snapshot-manifest.json",
+      "docs/evaluation-versions/v3-source/snapshot-manifest.json",
+      "docs/evaluation-versions/v4-source/snapshot-manifest.json",
+      "docs/evaluation-versions/v5-source/snapshot-manifest.json",
+      "docs/evaluation-versions/v6-source/snapshot-manifest.json",
+      "docs/evaluation-versions/v7-source/snapshot-manifest.json"
+    ],
+    "remainingScripts": [
+      "scripts/build-macos.sh",
+      "scripts/check-anonymous-search.mjs",
+      "scripts/development-env.sh",
+      "scripts/development-env.test.mjs",
+      "scripts/ensure-app-backend.sh",
+      "scripts/ensure-music-service.sh",
+      "scripts/ensure-python-backend.sh",
+      "scripts/macos_memory_profile.py",
+      "scripts/prepare-macos.sh",
+      "scripts/run-agent-macos.sh",
+      "scripts/run-macos.sh",
+      "scripts/setup-music-service.sh",
+      "scripts/start-app-backend.sh"
+    ],
+    "modelConfiguration": "backend_py/.env (private, 0600, original bytes retained)",
+    "runtimeLogs": "backend_py/.data/ (private)",
+    "oldPrivateDataRetained": true,
+    "runtimeMemoryBenefitMeasured": false
+  },
+  "tests": {
+    "mysqlFullSuite": {
+      "passed": 659,
+      "failed": 0,
+      "skipped": 30,
+      "seconds": 29.57,
+      "skips": {
+        "postgresCompatibilitySeparateRunner": 28,
+        "sqliteDistributedNotApplicable": 2
+      }
+    },
+    "postgresCompatibility": {
+      "passed": 56,
+      "failed": 0,
+      "skipped": 6,
+      "seconds": 7.27,
+      "skips": {
+        "mysqlCoveredInMainSuite": 4,
+        "sqliteDistributedNotApplicable": 2
+      },
+      "overlapsMainSuite": true
+    },
+    "neteaseBridgeAndDevelopmentEnvironment": {
+      "passed": 53,
+      "failed": 0,
+      "skipped": 0
+    },
+    "nativeQtFlowTargets": {
+      "platform": "native macOS Qt",
+      "hostedFlow": {
+        "passed": 6,
+        "failed": 0,
+        "seconds": 5.714,
+        "businessCases": 4
+      },
+      "musicTaskFlow": {
+        "passed": 4,
+        "failed": 0,
+        "seconds": 13.458,
+        "businessCases": 2
+      },
+      "initialOffscreen": {
+        "hostedFlow": {
+          "passed": 2,
+          "failedAssertions": 5
+        },
+        "musicTaskFlow": {
+          "passed": 3,
+          "failedAssertions": 1
+        },
+        "reason": "Audio/focus-session progress requires native macOS platform in these tests; no product logic or assertions weakened before native run.",
+        "retained": true
+      },
+      "provider": "local mocked Qwen and catalog; generated silent WAV only"
+    },
+    "realModelRequests": 0,
+    "realCatalogRequests": 0,
+    "testOracleChange": "Two runtime JS dependencies replaced by versioned vectors generated by original JS before retirement; current tests verify frozen digest and storage contracts, not live Node/Python round trips.",
+    "fixtureProvenance": "backend_py/tests/fixtures/README.md",
+    "note": "Engineering checks are not Agent task completion or recommendation accuracy. Counts across suites are not added."
+  },
+  "localRuntime": {
+    "ok": true,
+    "endpoints": [
+      {
+        "port": 16382,
+        "language": "python",
+        "storage": "mysql",
+        "rateLimiter": "redis",
+        "development": false,
+        "ready": true
+      },
+      {
+        "port": 16383,
+        "language": "python",
+        "storage": "mysql",
+        "rateLimiter": "redis",
+        "development": true,
+        "ready": true
+      }
+    ],
+    "modelConfigurationLoadedFromNewLocation": true,
+    "protectedDevelopmentBootstrapWorks": true,
+    "existingUsersQuotasAndCallLedgersPreserved": true,
+    "newPaidAttempts": 0,
+    "oldBackendDirectoryAbsent": true
+  },
+  "evidence": [
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/mysql-full.txt",
+      "sha256": "71b0d999ee35ef615d29ff0a85fe63dc220e4400f8cdbdbe11e50ee6babdde24"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/pg-compat.txt",
+      "sha256": "b884069f76cb973e57b201ecb4a31eea963123219c68a3d215dfc2a69cff6ee3"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/service-and-environment.txt",
+      "sha256": "3085e638882c7746e2bceeb840adb8b5cb371ad12230c2b99a308118af2ebc4e"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/hosted-flow-last-python-cleanup-result.txt",
+      "sha256": "f91fefef2b75e1e4f141ab4796c7c15d284db15ff820bc01aa765833447bd518"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/hosted-flow-last-python-cleanup-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/hosted-flow-last-python-cleanup-native-result.txt",
+      "sha256": "87bce4122b027fb39570ab5af9cd0695f767be2c82885e2358e6fec37e565c71"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/hosted-flow-last-python-cleanup-native-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/music-task-flow-last-python-cleanup-result.txt",
+      "sha256": "a8e0d3004c929e1bc7541bd37bb71a46ada4ddf0b9a5e8aa2983767c050f9967"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/music-task-flow-last-python-cleanup-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/music-task-flow-last-python-cleanup-native-result.txt",
+      "sha256": "a4ec7001f423d81a849b5dd09ff545cd82a082c0f8b7fa6a80925f08170483f6"
+    },
+    {
+      "path": "docs/agent-upgrade/legacy-cleanup-evidence/music-task-flow-last-python-cleanup-native-stderr.txt",
+      "sha256": "f6a4443909124b522a9c9bc9ccd1bcf2142ee7553407ddbc3d00f7420d57fce5"
+    }
+  ],
+  "sources": [
+    {
+      "path": ".gitignore",
+      "sha256": "61a352b50b795a1ec6f9d467e8d0ca5204fb3edeb23b38e0da758decc0046157"
+    },
+    {
+      "path": "backend_py/.env.example",
+      "sha256": "b3125d79fa983e16d3b85cae87ce574022d8238781f061a3431a8572901dffdc"
+    },
+    {
+      "path": "backend_py/pyproject.toml",
+      "sha256": "99ec18a59c29e6ebd8835320a48834d0cf853548095df15b99e7cbe7c9b6ab94"
+    },
+    {
+      "path": "backend_py/tango_backend/__init__.py",
+      "sha256": "fa7c26f3d8e27490ec61a2d3900b343f038b0978c645bc67c1e0efa56e6596f1"
+    },
+    {
+      "path": "backend_py/tango_backend/account_quota.py",
+      "sha256": "4da0bafd43b84e7ea759063e122d5b157c18fe459eee6ab528f1fc10f864c4c6"
+    },
+    {
+      "path": "backend_py/tango_backend/admin.py",
+      "sha256": "57f0fa9241ca1f87416e43101289a9dda28a08bc9ddd0ce82c134afd0f791bf7"
+    },
+    {
+      "path": "backend_py/tango_backend/app.py",
+      "sha256": "a887a8003aba7929302ad592f5d597f92178f320969038ffbd95d05b098d9b77"
+    },
+    {
+      "path": "backend_py/tango_backend/assistant_model.py",
+      "sha256": "3394aa55f8854d354b7e50b94679360f5c34030a94339c3408a1209e4c55068c"
+    },
+    {
+      "path": "backend_py/tango_backend/capability_registry.py",
+      "sha256": "03c4239fea3208aabf6ab3447c968bc5aaa2281bb3013fdbbe7fbd59b5cd8386"
+    },
+    {
+      "path": "backend_py/tango_backend/compat.py",
+      "sha256": "8461edfba7ba2d14c16f972f3c6c5ea3664556d5315f4727b6912bbcd7234e06"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_route_store.py",
+      "sha256": "f8941af8310aab705e37a56507accd317c16f6c504e0e88df5fb6817adf1fa21"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_router.py",
+      "sha256": "7779a30cbd6f707f69457aa7d83e96a423c4d87928ca5625ef453db24641d036"
+    },
+    {
+      "path": "backend_py/tango_backend/conversation_store.py",
+      "sha256": "57009b5e45e00a386e382e489964dd6790704c6d023228f89ed8d7c35786d71f"
+    },
+    {
+      "path": "backend_py/tango_backend/development_config.py",
+      "sha256": "7f2cf4d5b8867d8fe2eb866062f0dd15119ef7bfa7f2d39c8cd2b93dcd96e7b2"
+    },
+    {
+      "path": "backend_py/tango_backend/development_session.py",
+      "sha256": "519466529acb7f3ff651ca2fd2912414fe5d6150ac4b457efe88079672d34489"
+    },
+    {
+      "path": "backend_py/tango_backend/ensure_storage.py",
+      "sha256": "3f6e51bcf36c7d2bfa7f9cbcd2a3fc79a7b6babce68ee6947f41e136466c9abd"
+    },
+    {
+      "path": "backend_py/tango_backend/errors.py",
+      "sha256": "1bdf5af4208e1161ec50d971f5e38660c43deae2007c08931cca1347dd087b5e"
+    },
+    {
+      "path": "backend_py/tango_backend/http_protocol.py",
+      "sha256": "2039ca6f46c203f3979c7631d0bfd85e93dbc57874f069db9acd59ee04272213"
+    },
+    {
+      "path": "backend_py/tango_backend/intent_routing.py",
+      "sha256": "fcf5356e8ed7d3a5af9c0a2c348510583463602853f7ee3e6f0d80a4ee42222a"
+    },
+    {
+      "path": "backend_py/tango_backend/invite_store.py",
+      "sha256": "96a63fadb8c03b02a75729c6228290c436166e190b432ad749d7ff7009a0f06c"
+    },
+    {
+      "path": "backend_py/tango_backend/launch_local.py",
+      "sha256": "880bd5113fa85db842b13fe01cc17a17dc985a2e482c26d34b1e4a9488ebd71e"
+    },
+    {
+      "path": "backend_py/tango_backend/migrate_mysql.py",
+      "sha256": "554135a34fd9fc63b94e2ea132590c0e6c620f51d56b9eb461c267359b63592e"
+    },
+    {
+      "path": "backend_py/tango_backend/migrations/001_initial_mysql.sql",
+      "sha256": "ba1af9ef9822c2f0de31dfea3de38bc780255c8fc2d860b024a90658f434e3d5"
+    },
+    {
+      "path": "backend_py/tango_backend/migrations/001_initial_postgres.sql",
+      "sha256": "22b75c4b27c8db9fff74c1c01a897327b8a29f3e3d4f8ec5d997627170afc5ca"
+    },
+    {
+      "path": "backend_py/tango_backend/model.py",
+      "sha256": "0268000794716730985634afb3fde811b67c92d57603fb68199d152e7de8e618"
+    },
+    {
+      "path": "backend_py/tango_backend/model_common.py",
+      "sha256": "164e722476a036fa4a9542e02194bd0a27cfdddc6f054437e8e56ba38cf6ad3b"
+    },
+    {
+      "path": "backend_py/tango_backend/model_transport.py",
+      "sha256": "6d1516b19179b830cf8b29cf903f03d6312e973181c3d593b04205f3780e2e7a"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_infra.py",
+      "sha256": "779c376adf3c1ac4988fb480b75b501298ed303e7cbb47d27bdf49ab949cf8d5"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_store.py",
+      "sha256": "beae11bca12038cbf08e8dcf1d2673f3100dee487a1e90571d9baf3a0dec0e7a"
+    },
+    {
+      "path": "backend_py/tango_backend/mysql_task_store.py",
+      "sha256": "7f8549bdab567e8df5ad9493911e4436ac4377e7a7ef0357cc3bb8780ad82993"
+    },
+    {
+      "path": "backend_py/tango_backend/postgres_store.py",
+      "sha256": "7ec4037819a36479bf798b95c5718ded3a3ba4bb7e0ba65133c3dbf86bd089ee"
+    },
+    {
+      "path": "backend_py/tango_backend/postgres_task_store.py",
+      "sha256": "be6dbe6711102be51bf1f7d16697a666ad7ccfca51dded57a746f742e964b2cf"
+    },
+    {
+      "path": "backend_py/tango_backend/prompts.json",
+      "sha256": "9b9dcb85424a50ee2e138467d9e656ed2dcd3ed20ab86474037ea4be4e52527f"
+    },
+    {
+      "path": "backend_py/tango_backend/radio_model.py",
+      "sha256": "8c1cd7c8b9495f4c17be6b0a92b18196506007d3fa4aa90c0ac01b46ed6ae7dd"
+    },
+    {
+      "path": "backend_py/tango_backend/redis_limiter.py",
+      "sha256": "c1a06ebfdf1418b4ad218ab3779bdb4747713266a49530a95c802191897f5011"
+    },
+    {
+      "path": "backend_py/tango_backend/registration_service.py",
+      "sha256": "2f42c60ce2ec02723a404ded6104b2dfde890694412da389dd5634ce8bec1aed"
+    },
+    {
+      "path": "backend_py/tango_backend/security_config.py",
+      "sha256": "7edbc069aa22116ecd432c00f4d5d32cfcd9a11e61604cea8096e6f3751e9789"
+    },
+    {
+      "path": "backend_py/tango_backend/server.py",
+      "sha256": "eeeb2335e673e3545e087696db25364a2fc699c187cac7294807955b6ff38d0c"
+    },
+    {
+      "path": "backend_py/tango_backend/service_config.py",
+      "sha256": "5e80571910077aa219d1355f3614cb62a4616ab0d912d3bd4339ccccf247857f"
+    },
+    {
+      "path": "backend_py/tango_backend/storage.py",
+      "sha256": "5ed23959a3b59e3dbf4bfd4da1ee4c9a6268d44f6c0cd6d14f811774b3d79db5"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_auth.py",
+      "sha256": "ed9e56c0907945ec2962fc94e1f5468dfc8379be74f08407910a1ed6c2f0e6f9"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_db.py",
+      "sha256": "21f844112f2bd9867275812813eeebae391208a8a675871330cfb95f2de1b1b4"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_postgres.py",
+      "sha256": "93c81a3626f11f22472877ffbea040d617fb8be90d0723f449452126d3a184fe"
+    },
+    {
+      "path": "backend_py/tango_backend/storage_profile.py",
+      "sha256": "a5407e8065ab3e966ac85d0f89f85cf20b72b3915d613846169f277ffc28d582"
+    },
+    {
+      "path": "backend_py/tango_backend/store.py",
+      "sha256": "63e4e5683049ffb85f2903d3efe8ab71de72a2e97f8b4b2e58e8b29b20674c62"
+    },
+    {
+      "path": "backend_py/tango_backend/task_brief_patch.py",
+      "sha256": "4e76a9802a1cb900865d86756fab896d2cb4b5fcb1fa3b54a8615132db76609e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_duration.py",
+      "sha256": "40233800dfab28649d3066ab8c15187a19c6945d32fb0afc5961cb6ef7cb801e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_language.py",
+      "sha256": "8b10cccff9df41817c22731a8f33ce5dafe3ae94a1771e5d7c672494b4e7160f"
+    },
+    {
+      "path": "backend_py/tango_backend/task_model.py",
+      "sha256": "c25c2d45a22acfeaefb2a9d16ece45233d47e009bf6d9c71929f4fa6e03fd2b0"
+    },
+    {
+      "path": "backend_py/tango_backend/task_pending_request.py",
+      "sha256": "75412e266312a5141b056ae7900df91c4519bef50ed982831016be9955442bcb"
+    },
+    {
+      "path": "backend_py/tango_backend/task_progress.py",
+      "sha256": "de4b0a71dacfcc4424649edca527abf8cdaa6ccdfe09d3bdef857ad5accb88b4"
+    },
+    {
+      "path": "backend_py/tango_backend/task_query_coverage.py",
+      "sha256": "6aa7d5481baa1ec9721e78ecbe504225f591176e81bd425836d6d255bd5a1d6e"
+    },
+    {
+      "path": "backend_py/tango_backend/task_release_intent.py",
+      "sha256": "a26cfa83cb5889057daf75d5e488a18e316cb946bfed73ba4befd79a3efc8e18"
+    },
+    {
+      "path": "backend_py/tango_backend/task_runtime.py",
+      "sha256": "4e56a2d164683335ec36982730003b3833a4c7b74c118fdc38a144c690e2df00"
+    },
+    {
+      "path": "backend_py/tango_backend/task_schema.py",
+      "sha256": "bcbe554ddd93f2f59f311c52fbd2c1ca7bfca8f50d02f6010b7425cf717477a6"
+    },
+    {
+      "path": "backend_py/tango_backend/task_store.py",
+      "sha256": "7d04d9eb701e936f1e8364b4c9a7bdd88a30df4fe06cc3bec2225e3a5057bb12"
+    },
+    {
+      "path": "backend_py/tango_backend/task_style_evidence.py",
+      "sha256": "ac092fb97b308314e8e38496854b4f3da03777744ac2ebaa999252fd5e8248f2"
+    },
+    {
+      "path": "backend_py/tango_backend/task_tool_cache.py",
+      "sha256": "d497042451726af0223a34447c1b95f9301b2e46059e79fcf6ceb176a18fb726"
+    },
+    {
+      "path": "backend_py/tango_backend/task_tool_evidence.py",
+      "sha256": "18c21d6bab090d815ac66cb8bed39fe946d2b0230f86f95cfadc414b3744a610"
+    },
+    {
+      "path": "backend_py/tests/fixtures/README.md",
+      "sha256": "a71aa4e9a6eeecafd4e3444f9c9999360d28d8d690179ad600e34640311c4d3e"
+    },
+    {
+      "path": "backend_py/tests/fixtures/digest_js_v1.json",
+      "sha256": "8aa49a316d37c0a077e5e70b66db2b0e460b7bd2b5d7c18c0cca987c0c60d5b3"
+    },
+    {
+      "path": "backend_py/tests/fixtures/routing_contract_cases.json",
+      "sha256": "330c600f4a7b11e13a2f1ef29a7eeb38951bc3a55489d64b6873aa11df16dce1"
+    },
+    {
+      "path": "backend_py/tests/fixtures/routing_js_expected.json",
+      "sha256": "892ccea946f7fe5500ca023edef72c1ebabcdf9705b5ffca95925ff6caf93418"
+    },
+    {
+      "path": "backend_py/tests/fixtures/storage_js_v1.json",
+      "sha256": "0c816758bc5bba120a724262ce540441f75c5acecf8858b0b89e40fe7d0d5eaa"
+    },
+    {
+      "path": "backend_py/tests/fixtures/task_helpers_js_v1.json",
+      "sha256": "f11fc6d88e9c0e00a71d7ecabed34931edfdebeebfdc0b0f56099cb22b2230b9"
+    },
+    {
+      "path": "backend_py/tests/fixtures/task_runtime_js_v1.json",
+      "sha256": "7a19026f079914a9e10827bfdc4a326f8a3010533956934da7982a37bfb5fa32"
+    },
+    {
+      "path": "backend_py/tests/helpers/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "backend_py/tests/helpers/mysql_fixture.py",
+      "sha256": "0edc4509c56a8e0372a43fbdc7e633e7a42cc5ba1323e3670b6c44e98dc5ddac"
+    },
+    {
+      "path": "backend_py/tests/helpers/process_fixture.py",
+      "sha256": "de8e9f3559d6ba6c265ff41b7b58f2cdd4c45553d04f51461be96fe326dd63c1"
+    },
+    {
+      "path": "backend_py/tests/run_mysql_suite.py",
+      "sha256": "20d1b9d62b7bda733789b321b4edeaccdbff5048dc47a1ef1aa1ec25e448d065"
+    },
+    {
+      "path": "backend_py/tests/run_storage_suite.py",
+      "sha256": "9a730fc4146de9bb2df925c602d287104e5d0f537d333cba902fa787e041e5b4"
+    },
+    {
+      "path": "backend_py/tests/test_admin.py",
+      "sha256": "6bbda41b62ebbe5e631b2df37cf66b4031b60badc0e0b6de315fb29107a9132a"
+    },
+    {
+      "path": "backend_py/tests/test_app.py",
+      "sha256": "05b889ffb4e0970f9183649b12966de1e5104d17751c72fb58dac27283a6b337"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing.py",
+      "sha256": "a8ba093eb7213f0df4b2e8de5fb8a8e439a986e2e23eb5df084e0c54e0fe1307"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing_mysql.py",
+      "sha256": "86b16d7676dd0a5f2e404ac302d9ae1b05703d5cdaddbf1143e7bd85d524ea21"
+    },
+    {
+      "path": "backend_py/tests/test_conversation_routing_postgres.py",
+      "sha256": "9e2e4cebf57689eda31176849778bfd9e46cebab22cd3158935b694b3fa0f0c5"
+    },
+    {
+      "path": "backend_py/tests/test_http_protocol.py",
+      "sha256": "27cdbb373b5e8a5d641d3f1e1cc1721393bdc8a25ecfb6e464cf03e61d1c0e03"
+    },
+    {
+      "path": "backend_py/tests/test_launch_local.py",
+      "sha256": "8d9f8ceab945fcb48b9fd4e1c6bb85220f57610d3e9823f00baeaa5fcc710727"
+    },
+    {
+      "path": "backend_py/tests/test_models.py",
+      "sha256": "52aa6b19e7a96aef4e2e41a6b07bb53c041f4d745e0ccaf0d49dc725e63dfd8c"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_app.py",
+      "sha256": "dc95ddcaeceb8c45c949c715fa1cbb7b9caf0e3894436722ae9f1e9f4540641d"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_migration.py",
+      "sha256": "8d7f1cf835b794e154497e094943d86db595408d1496e283682d4a0d4983852c"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_server_process.py",
+      "sha256": "866936cd5671ff2220c6c6e909120f05cdd43586ffe95637da98dba675bb2e73"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_storage.py",
+      "sha256": "4f083b14f595deda359ef5b4efcc7a09b8324518966952218b142ebd5bf49b89"
+    },
+    {
+      "path": "backend_py/tests/test_mysql_task_runtime.py",
+      "sha256": "331eebc08c1aaad1873b1ee2b60e280e88e1581aedf14ffec8bf84508d33f818"
+    },
+    {
+      "path": "backend_py/tests/test_native_integration.py",
+      "sha256": "ad90abe025000be5cdeb6a6f71828926cb4f7a86db3ed8f8b2623550a4d45f74"
+    },
+    {
+      "path": "backend_py/tests/test_redis_features.py",
+      "sha256": "a35bc6f9d445a3ed396e6eac1889cc3ebe831e0866325da5e01a6d66f61380fa"
+    },
+    {
+      "path": "backend_py/tests/test_route_reply_atomicity.py",
+      "sha256": "3297e908cad9ae2d45ce7efa41deede5bf5f181c5fba4e067bec9781010d1788"
+    },
+    {
+      "path": "backend_py/tests/test_server_process.py",
+      "sha256": "a2cf80c596b8fe8aa499e82084652888e59f6fbd0473cf782a1ea71fa3df7605"
+    },
+    {
+      "path": "backend_py/tests/test_storage.py",
+      "sha256": "6a90d487dd72c2caae2f1ac1d74b31d03d19bb14455b588beb757bf8b75f6216"
+    },
+    {
+      "path": "backend_py/tests/test_storage_interop.py",
+      "sha256": "bf89bd36e10bb2f5fdc91af3408345d43e5186e077f9cef2766781a47a143d44"
+    },
+    {
+      "path": "backend_py/tests/test_storage_profile.py",
+      "sha256": "5b361764b8714b207969a96dc9343d991098a88334c29fa547d3200ba588ea45"
+    },
+    {
+      "path": "backend_py/tests/test_task_helper_parity.py",
+      "sha256": "b38ceaf6df7226108a23007f802f3416502c02358a2647088738db4baca2f5b4"
+    },
+    {
+      "path": "backend_py/tests/test_task_runtime_migration.py",
+      "sha256": "bf4abd8a31d4ce5bcdf32655bae61c9ad2d0dbb1763fefda0f9bd2bbbc3caccc"
+    },
+    {
+      "path": "backend_py/uv.lock",
+      "sha256": "a237f7daed2802f3ca5fdd12f817716ce5834471e985f21b1d8067fe6baa563f"
+    },
+    {
+      "path": "scripts/build-macos.sh",
+      "sha256": "6a1f4ae3134d3e4d2c5bce8a9c388eab38c0eccb1db105b94b9534641932d693"
+    },
+    {
+      "path": "scripts/check-anonymous-search.mjs",
+      "sha256": "dd60b76c0724a68043f2299d0678aa99bab755973d0285fa5afb271000a607eb"
+    },
+    {
+      "path": "scripts/development-env.sh",
+      "sha256": "df290391a71aad908874c518125ec2e4e845d51f22b702a8d4c27d3d412f23f3"
+    },
+    {
+      "path": "scripts/development-env.test.mjs",
+      "sha256": "d3dd9c4b177fb06990de8222e902ea3f41e6d1637993e2a3c87646d22ac3460b"
+    },
+    {
+      "path": "scripts/ensure-app-backend.sh",
+      "sha256": "50b80887d800a14d1d88ba421cce9f0198b6cab637fa0fed0d2330e9137e1269"
+    },
+    {
+      "path": "scripts/ensure-music-service.sh",
+      "sha256": "68912cebc0c6c8d7bfd1ab359a439c6bd656ac1a42c1c345469d149dcaff7486"
+    },
+    {
+      "path": "scripts/ensure-python-backend.sh",
+      "sha256": "77d816680887824f33ae5d717fa147f3b33ecb6ec2c7327d1ae71e73ece6c920"
+    },
+    {
+      "path": "scripts/macos_memory_profile.py",
+      "sha256": "dd7977e636a780e79e362184a7559019914b0c3a9a487dd02b4371717a86589a"
+    },
+    {
+      "path": "scripts/prepare-macos.sh",
+      "sha256": "354dd57f92a1932509c0350bc144750ba28c3481a610693f7cb3b0345a31e6f7"
+    },
+    {
+      "path": "scripts/run-agent-macos.sh",
+      "sha256": "1b3045af3e7636825e00cad9b22aa2cdc5e1c097087a8f2f6381b0d16dd5d98d"
+    },
+    {
+      "path": "scripts/run-macos.sh",
+      "sha256": "9a7123bc592d28b0e893536ead3ed7c52d4820af946a49f5b1d0c40a2ab62ca0"
+    },
+    {
+      "path": "scripts/setup-music-service.sh",
+      "sha256": "bed5aa1d756d9f8671c531213f5bb51cecb47dd109207b1311d9a103bbf91fb7"
+    },
+    {
+      "path": "scripts/start-app-backend.sh",
+      "sha256": "26ce8f8b4b1c013e167eef0fae5218075bf7603b3441a65c1fd8423a7a40ac5c"
+    },
+    {
+      "path": "service/app.mjs",
+      "sha256": "0866931a17aecfc56671b3be1237a13e8d94d4285210da6a6ed055b7974b020f"
+    },
+    {
+      "path": "service/credentials.mjs",
+      "sha256": "80f4ccb3e728f11c882fa3f5ecdff7c3afb97da844bce5433b836e34b896a2dc"
+    },
+    {
+      "path": "service/launch.mjs",
+      "sha256": "246594fb995b8891ce93eeb380b190db6ff3dcee293c054cfe0b1c16f97c1c83"
+    },
+    {
+      "path": "service/package-lock.json",
+      "sha256": "2d27cabee20367312012513a1b3a322ee3da328ccac1bbbcd949cea318afd379"
+    },
+    {
+      "path": "service/package.json",
+      "sha256": "df74c8ca8032c632bc306bd8aedad112b532484b06a8b783c623507118cf9d98"
+    },
+    {
+      "path": "service/server.mjs",
+      "sha256": "66c9f2a478b65a9c31e144afd5599df44c9c94b3d9e8d6eda3b8a41cc3593d35"
+    },
+    {
+      "path": "service/test/app.test.mjs",
+      "sha256": "919f827ecb9343b831cf9399cac2a458135bc9135df687a0912b46c4aad7ae0f"
+    },
+    {
+      "path": "service/test/assistant.test.mjs",
+      "sha256": "e717961a84a243e5daa6c8f0ab2a74e8481e0199adbebb18b4b638b53ab05382"
+    },
+    {
+      "path": "service/upstream.mjs",
+      "sha256": "db3e8a3c22934f79f102f95195de7230f9f0a27c29528ba1e937d4e1b053c3cf"
+    },
+    {
+      "path": "tests/hosted_flow_test.cpp",
+      "sha256": "8006f5119b78b7fb16a2042ac816298b4a5cd38776fff5a027ec78b3dc0e166d"
+    },
+    {
+      "path": "tests/hosted_flow_test.pro",
+      "sha256": "bdef90c88158643743d4c8533fe5ced8f6d6524353274640ad723b81aafb23a8"
+    },
+    {
+      "path": "tests/music_task_flow_test.cpp",
+      "sha256": "16313e6d43c1dff5a9454cbfd6797e23d56958a93c884fd27e3ab9c68280592f"
+    },
+    {
+      "path": "tests/music_task_flow_test.pro",
+      "sha256": "ec0d3adcd450128bdcbed56297d654b35930b91a86714fb0e4415964da5ce29d"
+    },
+    {
+      "path": "tests/python_backend_fixture.h",
+      "sha256": "3e16235633b2aca6941fcb6eec19afc0dbc00b5259e73db1b1cce7b32b22aa0a"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "generatedAt": "2026-10-19T08:28:12.145964+00:00",
+  "scope": "Recomputed from saved reports; no new model/network/audio calls. Current tests are tuned regressions, not a held-out benchmark.",
+  "metrics": {
+    "targetedPreviewTaskAcceptance": {
+      "passed": 2,
+      "total": 2,
+      "rate": 1.0,
+      "generalizesToProduction": false
+    },
+    "previewRounds": {
+      "passed": 4,
+      "total": 4
+    },
+    "durationTolerance": {
+      "passed": 4,
+      "total": 4,
+      "policy": "±max(60000ms,10% of requested duration)"
+    },
+    "lockedPrefixFollowups": {
+      "passed": 2,
+      "total": 2
+    },
+    "modelRankingContract": {
+      "passed": 4,
+      "total": 4,
+      "scope": "Valid priority-prefix candidate indices; not recommendation relevance."
+    },
+    "freshStyleSourceSupport": {
+      "supported": 10,
+      "total": 10,
+      "scope": "Actual playlist name/tag evidence only; no listening evaluation."
+    },
+    "providerRequests": {
+      "completed": 16,
+      "total": 16,
+      "callsPerTurn": 4
+    },
+    "metadataRequests": 19,
+    "submissionToBackendPreviewMs": {
+      "n": 4,
+      "values": [
+        7816,
+        11676,
+        8925,
+        10671
+      ],
+      "mean": 9772,
+      "median": 9798.0,
+      "minimum": 7816,
+      "maximum": 11676,
+      "productionP95Established": false
+    },
+    "tokens": {
+      "input": 40742,
+      "output": 1811,
+      "monetaryCostMeasured": false
+    }
+  },
+  "cases": [
+    {
+      "file": "music-task-style-reading-verified.json",
+      "sha256": "d2077526e56f23dedc8eb80404f7ee9a34ccf3136f66e871e1fe73bbdc47d4c5",
+      "tunedRegression": true,
+      "heldOut": false,
+      "taskPassed": true,
+      "previewRounds": 2,
+      "providerCalls": 8,
+      "metadataRequests": 8,
+      "submissionToBackendPreviewMs": [
+        7816,
+        11676
+      ],
+      "twoTurnProbeWallTimeMs": 22016,
+      "durationMs": [
+        2400010,
+        2394142
+      ],
+      "rankingAccepted": 2,
+      "lockPreserved": true,
+      "styleSourceSupportedUnlockedTracks": 6,
+      "unlockedTracks": 6,
+      "languageSourceConsistencyRequested": false,
+      "audioRequested": false
+    },
+    {
+      "file": "music-task-style-commute-verified.json",
+      "sha256": "ff9db5997ca72058003af77acfdb3c6b56d948b05b9b9e78c8027064add84520",
+      "tunedRegression": true,
+      "heldOut": false,
+      "taskPassed": true,
+      "previewRounds": 2,
+      "providerCalls": 8,
+      "metadataRequests": 11,
+      "submissionToBackendPreviewMs": [
+        8925,
+        10671
+      ],
+      "twoTurnProbeWallTimeMs": 21786,
+      "durationMs": [
+        1799999,
+        1678866
+      ],
+      "rankingAccepted": 2,
+      "lockPreserved": true,
+      "styleSourceSupportedUnlockedTracks": 4,
+      "unlockedTracks": 4,
+      "languageSourceConsistencyRequested": true,
+      "audioRequested": false
+    }
+  ],
+  "debugHistory": {
+    "styleFixExecutions": 6,
+    "actualProviderAttempts": 48,
+    "acceptedForStatedScope": 3,
+    "differentVersionsAndGates": true,
+    "notACurrentProductCompletionRate": true,
+    "cumulativeDebugAttemptsIncludingPrevious": 78
+  },
+  "notEstablished": [
+    "Held-out task completion rate",
+    "Overall intent/slot accuracy or F1",
+    "Human recommendation relevance and satisfaction",
+    "Catalog Recall@K or NDCG@K",
+    "Actual audio playback task completion",
+    "Long-term memory quality gain",
+    "Real-provider checkpoint recovery success rate",
+    "Multi-agent quality gain",
+    "Production P95 and error rate"
+  ],
+  "releaseAudit": "release-readiness-audit-2026-10-19.json"
+}

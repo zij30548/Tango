@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "authorizedAtRecordedUTC": "2026-10-19T09:04:14.677819+00:00",
+  "authorization": "用户选择本次最多500次真实模型请求，失败和超时也计数。",
+  "maximumActualProviderTransmissionAttempts": 500,
+  "allocations": [
+    {
+      "id": "primary",
+      "maximumCalls": 408,
+      "scope": "53 frozen live-model cases,68 turns; controlled synthetic catalog"
+    },
+    {
+      "id": "fixed_comparison",
+      "maximumCalls": 72,
+      "scope": "9 preregistered paired cases,12 turns; same gold/catalog"
+    },
+    {
+      "id": "native_reading",
+      "maximumCalls": 8,
+      "scope": "known two-turn regression with anonymous real catalog; no audio"
+    },
+    {
+      "id": "native_commute",
+      "maximumCalls": 8,
+      "scope": "known two-turn regression with anonymous real catalog; no audio"
+    }
+  ],
+  "sumAllocatedMaximumCalls": 496,
+  "unallocatedCalls": 4,
+  "policy": "No automatic case reruns, no tuning on held-out outputs, no best-of-N. Each runner enforces its cap; all started attempts retained. Do not spend unused allocations on extra cases without a new recorded protocol."
+}

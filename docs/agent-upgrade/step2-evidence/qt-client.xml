@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase name="RoutingClientTest">
+<Environment>
+    <QtVersion>5.15.19</QtVersion>
+    <QtBuild>Qt 5.15.19 (arm64&#x002D;little_endian&#x002D;lp64 shared (dynamic) release build; by Clang 21.0.0 (clang&#x002D;2100.0.123.102) (Apple))</QtBuild>
+    <QTestVersion>5.15.19</QTestVersion>
+</Environment>
+<TestFunction name="initTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="2.58379"/>
+</TestFunction>
+<TestFunction name="capabilityRequiresVersion">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="251.179"/>
+</TestFunction>
+<TestFunction name="acceptedRouteDeliveredOnlyOnceAndServerReplyKept">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="342.177"/>
+</TestFunction>
+<TestFunction name="historyNeverAuthorizesRoute">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="292.499"/>
+</TestFunction>
+<TestFunction name="runningUsesGetWithoutAnotherPost">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="1312.88"/>
+</TestFunction>
+<TestFunction name="uncertainNeverFallsBackOrPostsAgain">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="348.567"/>
+</TestFunction>
+<TestFunction name="rejectsInvalidPlan">
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[unknown-capability]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[source-outside-request]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[duplicate-action]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[dependency-cycle]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[missing-dependency]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[two-music]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[bad-memory]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[control-revision]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[reply-overflow]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[bad-slot]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[wrong-turn]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[unknown-intent]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[five-actions]]></DataTag>
+</Incident>
+<Incident type="pass" file="" line="0">
+    <DataTag><![CDATA[missing-slots]]></DataTag>
+</Incident>
+    <Duration msecs="4160.77"/>
+</TestFunction>
+<TestFunction name="authChangeRejectsLateRoute">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="649.326"/>
+</TestFunction>
+<TestFunction name="cleanupTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.014375"/>
+</TestFunction>
+<Duration msecs="7360.82"/>
+</TestCase>

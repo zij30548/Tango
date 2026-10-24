@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-19T09:52:38.413991+00:00",
+  "purpose": "修复后新题验收，不覆盖v2原始成绩，不将不同题集百分点当成配对因果提升。",
+  "authorization": {
+    "source": "用户此前授权最多500次并要求按修复步骤继续；不重置总计数。",
+    "maximumCumulativeCalls": 500,
+    "alreadyUsed": 268,
+    "remainingBeforeThisVersion": 232
+  },
+  "allocations": [
+    {
+      "id": "new_holdout",
+      "maximumProviderCalls": 204,
+      "cases": 26,
+      "turns": 34,
+      "suite": "backend/evaluation/agent-suite-v3-holdout.json",
+      "suiteSha256": "f2ed841d5f0f5ac788c1bdce6ebd96d9d0c6e26d9da4d8ed3b879b4a406b99fd"
+    },
+    {
+      "id": "real_reading_regression",
+      "maximumProviderCalls": 8
+    },
+    {
+      "id": "real_commute_regression",
+      "maximumProviderCalls": 8
+    }
+  ],
+  "maximumAdditionalCalls": 220,
+  "maximumCumulativeAfterAllocation": 488,
+  "unusedReserve": 12,
+  "policy": {
+    "caseRetries": 0,
+    "bestOfN": false,
+    "failuresRetained": true,
+    "freezeBeforeProviderCalls": true,
+    "newPromptEditsAfterInspectingNewGoldOrProviderResponses": false,
+    "finiteDiagnosticNotProductionRate": true
+  },
+  "measured": [
+    "新请求理解、日期范围和必要澄清",
+    "3轮硬条件保留、位置删除、锁定、避重",
+    "所有已验证工具尝试的查询记录",
+    "预览时长/歌手/语言/来源标签/发行范围",
+    "prompt injection权限边界"
+  ],
+  "notMeasured": [
+    "人工听感",
+    "实际音频语言/版本",
+    "长期个性化收益",
+    "真实曲库全量召回",
+    "真实进程或磁盘灾难恢复"
+  ],
+  "plannedArtifacts": {
+    "live": "docs/agent-repair-v3-live.json",
+    "manifest": "docs/agent-repair-v3-manifest.json",
+    "reading": "docs/agent-repair-v3-real-reading.json",
+    "commute": "docs/agent-repair-v3-real-commute.json",
+    "offline": "docs/agent-repair-v3-faults.json"
+  }
+}

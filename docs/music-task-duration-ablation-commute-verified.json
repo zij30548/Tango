@@ -1,0 +1,2363 @@
+{
+  "schemaVersion": 1,
+  "kind": "equal_input_duration_component_ablation",
+  "generatedAt": "2026-10-19T05:05:57.951Z",
+  "modelCalls": 0,
+  "catalogRequests": 0,
+  "realUserDataAccessed": false,
+  "input": {
+    "reportName": "tango-verified-commute.json",
+    "reportSha256": "ff9db5997ca72058003af77acfdb3c6b56d948b05b9b9e78c8027064add84520",
+    "preparedInputSha256": "df156f62c25836f68e82ae15b7a606f3ab54254b0a89d600cf6a13f8509ab89d",
+    "nativeProbeKind": "native-live-probe-v3",
+    "nativeProbeGoalAcceptancePassed": true,
+    "nativeProbeSourcesUnchanged": true,
+    "nativeCatalogLanguageGold": "zh",
+    "nativeCatalogLanguageConsistencyPassed": true,
+    "catalogLanguageAcceptanceScope": "The native explicit catalog-label consistency result is recorded separately; this selector comparison does not verify audio language.",
+    "expectedStyleGold": "轻快",
+    "rankingStatus": "model",
+    "rankingSource": "model_priority_then_catalog",
+    "candidateCount": 40,
+    "lockedCount": 3,
+    "fixedEvaluationAt": "2026-10-19T05:05:16.966Z",
+    "nativeCapturedAlgorithmSha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29"
+  },
+  "algorithm": {
+    "module": "backend/task-duration.mjs",
+    "sha256": "c4a4a4f8e97e598be9c0c7b27d3b102885367b10f5f5a52f1c10648e2aa19d29",
+    "comparisonScriptSha256": "2d5d020d5878b1369accdd199c38a09ff7fe40c18e6749a8cfe9fe16d2d6c777",
+    "matchesNativeCapturedAlgorithm": true,
+    "sourcesUnchangedDuringComparison": true
+  },
+  "preparedInput": {
+    "expectedStyle": "轻快",
+    "brief": {
+      "adjustment": "保留前三首，后半段风格改为轻快",
+      "artist": "",
+      "artistOnly": false,
+      "avoidPrevious": false,
+      "catalogLanguage": "zh",
+      "excludeLive": false,
+      "excludedArtists": [],
+      "kind": "research",
+      "queries": [
+        "下班通勤 轻快 华语",
+        "华语流行 轻松 愉快"
+      ],
+      "question": "",
+      "removeIds": [],
+      "requireReleases": false,
+      "requiredArtist": "",
+      "retainFirst": 3,
+      "scene": "下班通勤",
+      "since": null,
+      "styles": [
+        "轻快"
+      ],
+      "targetMinutes": 30,
+      "title": "轻快通勤华语精选",
+      "until": null
+    },
+    "targetMs": 1800000,
+    "catalogLanguage": "zh",
+    "languageFilteredCandidates": [],
+    "fixedEvaluationAt": "2026-10-19T05:05:16.966Z",
+    "locks": [
+      {
+        "album": "盆地",
+        "artist": "郑兴",
+        "coverUrl": "https://p3.music.126.net/WvjkNRgG4Y8JfezhzfR-Gg==/109951169134864331.jpg",
+        "durationMs": 211440,
+        "id": 2105354788,
+        "reason": "来自「【华语/合集】｜为你精挑细选的华语歌单」，郑兴 · 盆地。",
+        "sourceId": 12981332754,
+        "sourceKind": "playlist",
+        "sourceName": "【华语/合集】｜为你精挑细选的华语歌单",
+        "sourceQuery": "华语精选 轻快 歌单",
+        "sourceSkill": "scene.research",
+        "sourceTags": [
+          "华语",
+          "流行"
+        ],
+        "styleEvidence": {
+          "basis": "none",
+          "matchedStyles": [],
+          "status": "unverified"
+        },
+        "title": "盆地"
+      },
+      {
+        "album": "被动的观众",
+        "artist": "戴佩妮",
+        "coverUrl": "https://p3.music.126.net/cPNb0yaIY0XgvtmKFN7Eow==/109951167704255473.jpg",
+        "durationMs": 237024,
+        "id": 1960052431,
+        "reason": "来自「【华语/合集】｜为你精挑细选的华语歌单」，戴佩妮 · 被动的观众。",
+        "sourceId": 12981332754,
+        "sourceKind": "playlist",
+        "sourceName": "【华语/合集】｜为你精挑细选的华语歌单",
+        "sourceQuery": "华语精选 轻快 歌单",
+        "sourceSkill": "scene.research",
+        "sourceTags": [
+          "华语",
+          "流行"
+        ],
+        "styleEvidence": {
+          "basis": "none",
+          "matchedStyles": [],
+          "status": "unverified"
+        },
+        "title": "被动的观众"
+      },
+      {
+        "album": "水逆",
+        "artist": "郑宜农",
+        "coverUrl": "https://p4.music.126.net/2_bfGl0Z9m91WIrJnH4WSQ==/109951167054111857.jpg",
+        "durationMs": 251386,
+        "id": 1920623030,
+        "reason": "来自「【华语/合集】｜为你精挑细选的华语歌单」，郑宜农 · 天已经要光。",
+        "sourceId": 12981332754,
+        "sourceKind": "playlist",
+        "sourceName": "【华语/合集】｜为你精挑细选的华语歌单",
+        "sourceQuery": "华语精选 轻快 歌单",
+        "sourceSkill": "scene.research",
+        "sourceTags": [
+          "华语",
+          "流行"
+        ],
+        "styleEvidence": {
+          "basis": "none",
+          "matchedStyles": [],
+          "status": "unverified"
+        },
+        "title": "天已经要光"
+      }
+    ],
+    "lockedIds": [
+      2105354788,
+      1960052431,
+      1920623030
+    ],
+    "previousUnlockedIds": [
+      3407952317,
+      3442289671,
+      3326884682,
+      3317921239,
+      1463168014,
+      2042008908
+    ],
+    "ranking": {
+      "status": "model",
+      "source": "model_priority_then_catalog",
+      "reasonCounts": {},
+      "recordedOrder": [
+        208983,
+        223918,
+        209481,
+        210060,
+        27591611,
+        1333352692,
+        4873540,
+        247871,
+        223956,
+        139903,
+        256089,
+        1446828582,
+        185921,
+        382099,
+        185864,
+        300058,
+        209403,
+        26082344,
+        329368,
+        209526,
+        2038203229,
+        2752898270,
+        3347194609,
+        3347193478,
+        2148786274,
+        3339793554,
+        3347172391,
+        3347194233,
+        3347194542,
+        3347194433,
+        3345788468,
+        3346747464,
+        3335458664,
+        3347193459,
+        3339130832,
+        3332724276,
+        3347194491,
+        3347224558,
+        3333076720,
+        3333988321
+      ],
+      "effectiveOrder": [
+        208983,
+        223918,
+        209481,
+        210060,
+        27591611,
+        1333352692,
+        4873540,
+        247871,
+        223956,
+        139903,
+        256089,
+        1446828582,
+        185921,
+        382099,
+        185864,
+        300058,
+        209403,
+        26082344,
+        329368,
+        209526,
+        2038203229,
+        2752898270,
+        3347194609,
+        3347193478,
+        2148786274,
+        3339793554,
+        3347172391,
+        3347194233,
+        3347194542,
+        3347194433,
+        3345788468,
+        3346747464,
+        3335458664,
+        3347193459,
+        3339130832,
+        3332724276,
+        3347194491,
+        3347224558,
+        3333076720,
+        3333988321
+      ]
+    },
+    "candidates": [
+      {
+        "album": "I Love You, John",
+        "artist": "陈珊妮",
+        "durationMs": 221936,
+        "id": 208983,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "爱情",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 1,
+        "flags": 0
+      },
+      {
+        "album": "No Penn, No Gain",
+        "artist": "戴佩妮",
+        "durationMs": 291173,
+        "id": 223918,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "Oh! My God",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 2,
+        "flags": 0
+      },
+      {
+        "album": "还是会寂寞",
+        "artist": "陈绮贞",
+        "durationMs": 270907,
+        "id": 209481,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "下午三点",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 3,
+        "flags": 0
+      },
+      {
+        "album": "看我72变",
+        "artist": "蔡依林",
+        "durationMs": 195000,
+        "id": 210060,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "好东西",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 4,
+        "flags": 0
+      },
+      {
+        "album": "暧昧",
+        "artist": "杨丞琳",
+        "durationMs": 197764,
+        "id": 27591611,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "单眼皮",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 5,
+        "flags": 0
+      },
+      {
+        "album": "沙发海",
+        "artist": "陈绮贞",
+        "durationMs": 229053,
+        "id": 1333352692,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "跳舞吧",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 6,
+        "flags": 0
+      },
+      {
+        "album": "恶作剧2吻",
+        "artist": "林依晨",
+        "durationMs": 282720,
+        "id": 4873540,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "你(吉他甜蜜版)",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 7,
+        "flags": 0
+      },
+      {
+        "album": "那么骄傲",
+        "artist": "金海心",
+        "durationMs": 277267,
+        "id": 247871,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "猫咪森林",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 8,
+        "flags": 0
+      },
+      {
+        "album": "Just Sing It",
+        "artist": "戴佩妮",
+        "durationMs": 273093,
+        "id": 223956,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "时间快转",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 9,
+        "flags": 0
+      },
+      {
+        "album": "壁虎漫步",
+        "artist": "潘玮柏",
+        "durationMs": 222626,
+        "id": 139903,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "我不怕",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 10,
+        "flags": 0
+      },
+      {
+        "album": "午夜11:30的星光",
+        "artist": "林嘉欣",
+        "durationMs": 214293,
+        "id": 256089,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "女明星",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 11,
+        "flags": 0
+      },
+      {
+        "album": "你要的爱",
+        "artist": "焦迈奇",
+        "durationMs": 254757,
+        "id": 1446828582,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "你要的爱",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 12,
+        "flags": 0
+      },
+      {
+        "album": "秘密基地",
+        "artist": "张震岳",
+        "durationMs": 270210,
+        "id": 185921,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "干妹妹",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 13,
+        "flags": 0
+      },
+      {
+        "album": "我想你会变成这样都是我害的",
+        "artist": "Tizzy Bac",
+        "durationMs": 296186,
+        "id": 382099,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "疯狂的猪",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 14,
+        "flags": 0
+      },
+      {
+        "album": "Summer High",
+        "artist": "杨乃文",
+        "durationMs": 243435,
+        "id": 185864,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "太骄傲",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 15,
+        "flags": 0
+      },
+      {
+        "album": "王菲",
+        "artist": "王菲",
+        "durationMs": 251506,
+        "id": 300058,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "闷",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 16,
+        "flags": 0
+      },
+      {
+        "album": "Groupies吉他手",
+        "artist": "陈绮贞",
+        "durationMs": 272653,
+        "id": 209403,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "随便说说",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 17,
+        "flags": 0
+      },
+      {
+        "album": "半熟宣言",
+        "artist": "杨丞琳",
+        "durationMs": 225560,
+        "id": 26082344,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "太烦恼",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 18,
+        "flags": 0
+      },
+      {
+        "album": "张玉华",
+        "artist": "张玉华",
+        "durationMs": 226000,
+        "id": 329368,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "空心吉他",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 19,
+        "flags": 0
+      },
+      {
+        "album": "让我想一想",
+        "artist": "陈绮贞",
+        "durationMs": 228226,
+        "id": 209526,
+        "sourceId": 5439157277,
+        "sourceKind": "playlist",
+        "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "流行",
+          "摇滚"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "让我想一想",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 20,
+        "flags": 0
+      },
+      {
+        "album": "FRIDAY9 II",
+        "artist": "kkluv",
+        "durationMs": 166285,
+        "id": 2038203229,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "FRIDAY9 II",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 21,
+        "flags": 0
+      },
+      {
+        "album": "OHHO",
+        "artist": "UD",
+        "durationMs": 98960,
+        "id": 2752898270,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "OHHO",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 22,
+        "flags": 0
+      },
+      {
+        "album": "县城门面",
+        "artist": "Echo",
+        "durationMs": 160000,
+        "id": 3347194609,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "外五县",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 23,
+        "flags": 0
+      },
+      {
+        "album": "县城门面",
+        "artist": "Echo / YOUNGLEGO",
+        "durationMs": 216986,
+        "id": 3347193478,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "耶昂",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 24,
+        "flags": 0
+      },
+      {
+        "album": "UMBROSKII",
+        "artist": "kkluv / 那奇沃夫 / oz",
+        "durationMs": 138857,
+        "id": 2148786274,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "KASABLANKA",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 25,
+        "flags": 0
+      },
+      {
+        "album": "明知山",
+        "artist": "戴佩妮 / GAI周延",
+        "durationMs": 251175,
+        "id": 3339793554,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "明知山",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 26,
+        "flags": 0
+      },
+      {
+        "album": "摆布",
+        "artist": "满舒克 / 舒灏Orenda",
+        "durationMs": 156785,
+        "id": 3347172391,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "摆布",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 27,
+        "flags": 0
+      },
+      {
+        "album": "县城门面",
+        "artist": "Echo / PONYGO小马",
+        "durationMs": 127200,
+        "id": 3347194233,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "针线",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 28,
+        "flags": 0
+      },
+      {
+        "album": "县城门面",
+        "artist": "Echo / 脏饼干",
+        "durationMs": 193714,
+        "id": 3347194542,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "硬货",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 29,
+        "flags": 0
+      },
+      {
+        "album": "县城门面",
+        "artist": "Echo / 王齐铭WatchMe",
+        "durationMs": 162253,
+        "id": 3347194433,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "咋了你",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 30,
+        "flags": 0
+      },
+      {
+        "album": "吴国强",
+        "artist": "周乘羽 / Akemen",
+        "durationMs": 159448,
+        "id": 3345788468,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "吴国强",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 31,
+        "flags": 0
+      },
+      {
+        "album": "游离线",
+        "artist": "GoldenOcean",
+        "durationMs": 171686,
+        "id": 3346747464,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "游离线",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 32,
+        "flags": 0
+      },
+      {
+        "album": "凡聖Mortal or Gods",
+        "artist": "聖DasZ / Wya乌鸦",
+        "durationMs": 253067,
+        "id": 3335458664,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "人潮人海",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 33,
+        "flags": 0
+      },
+      {
+        "album": "县城门面",
+        "artist": "Echo / 华云龙KLE",
+        "durationMs": 199741,
+        "id": 3347193459,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "还款日",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 34,
+        "flags": 0
+      },
+      {
+        "album": "彩铃",
+        "artist": "陈一豪Clear / 王以太",
+        "durationMs": 212543,
+        "id": 3339130832,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "彩铃",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 35,
+        "flags": 0
+      },
+      {
+        "album": "一半一半",
+        "artist": "有三 / TizzyT",
+        "durationMs": 224883,
+        "id": 3332724276,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "一半一半",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 36,
+        "flags": 0
+      },
+      {
+        "album": "县城门面",
+        "artist": "Echo / 华云龙KLE",
+        "durationMs": 179200,
+        "id": 3347194491,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "黑山羊",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 37,
+        "flags": 0
+      },
+      {
+        "album": "重庆忠勇",
+        "artist": "GAI周延 / 布瑞吉Bridge",
+        "durationMs": 230250,
+        "id": 3347224558,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "重庆忠勇",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 38,
+        "flags": 0
+      },
+      {
+        "album": "77%",
+        "artist": "布瑞吉Bridge",
+        "durationMs": 159926,
+        "id": 3333076720,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "来我敬你",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 39,
+        "flags": 0
+      },
+      {
+        "album": "一半一半",
+        "artist": "Top Barry / INDEcompany",
+        "durationMs": 235285,
+        "id": 3333988321,
+        "sourceId": 2873336061,
+        "sourceKind": "playlist",
+        "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+        "sourceQuery": "华语 轻快",
+        "sourceTags": [
+          "华语",
+          "欧美",
+          "说唱"
+        ],
+        "styleEvidence": {
+          "basis": "playlist_name_or_tags",
+          "matchedStyles": [
+            "轻快"
+          ],
+          "status": "source_matched"
+        },
+        "title": "一半一半",
+        "branch": "scene",
+        "sourceSkill": "scene.research",
+        "styleSourceEvidence": {
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        "releaseEvidence": false,
+        "styleSupport": true,
+        "evaluationRank": 40,
+        "flags": 0
+      }
+    ],
+    "options": {
+      "targetMs": 1800000,
+      "baseMs": 699850,
+      "maximumTracks": 27,
+      "minimumTracks": 0,
+      "requiredFlags": 0
+    },
+    "lockedHardConflicts": [],
+    "reconstruction": {
+      "hardFilters": [
+        "explicit removes",
+        "previous unlocked IDs when avoidPrevious",
+        "artist-only credits",
+        "excluded artists",
+        "labelled live versions",
+        "dated releases",
+        "unambiguous opposing catalog-language source labels when explicitly retained"
+      ],
+      "externalExcludedIdsExported": false,
+      "externalExcludedIds": [],
+      "assumption": "External excludedIds are absent from the public export; treated as empty. The native probe uses an isolated new account/device and no real listening history.",
+      "durationTolerance": "max(60 seconds, 10% of requested duration)",
+      "styleEvidence": "Explicit gold style joined by real ID/name to actual playlist metadata; ignores production styleEvidence and broad retained styles.",
+      "catalogLanguage": "Explicit native gold or retained brief scope excludes only an unambiguous opposite playlist label. Mixed/unknown labels and 欧美 alone remain unknown. This does not verify sung language.",
+      "duplicateProvenance": "For duplicate real IDs, all actual branch source records may establish style support; both methods receive the same joined evidence."
+    }
+  },
+  "results": [
+    {
+      "method": "closest_duration",
+      "samePreparedInputSha256": "df156f62c25836f68e82ae15b7a606f3ab54254b0a89d600cf6a13f8509ab89d",
+      "selectionPolicy": "closest_duration",
+      "songCount": 10,
+      "unlockedSongCount": 7,
+      "selectedIds": [
+        2105354788,
+        1960052431,
+        1920623030,
+        329368,
+        2038203229,
+        2752898270,
+        3347194609,
+        3347194233,
+        3347194433,
+        3345788468
+      ],
+      "unlockedIds": [
+        329368,
+        2038203229,
+        2752898270,
+        3347194609,
+        3347194233,
+        3347194433,
+        3345788468
+      ],
+      "initialLockedIds": [
+        2105354788,
+        1960052431,
+        1920623030
+      ],
+      "locksPreserved": true,
+      "lockedHardConflicts": [],
+      "requiredFlags": 0,
+      "selectedFlags": 0,
+      "mandatoryEvidenceSatisfied": true,
+      "targetDurationMs": 1800000,
+      "totalDurationMs": 1799996,
+      "durationErrorMs": 4,
+      "durationOffsetMs": -4,
+      "toleranceMs": 180000,
+      "allDurationsKnown": true,
+      "withinDurationBand": true,
+      "tailOrderChanged": true,
+      "tailSetChanged": true,
+      "addedUnlockedIds": [
+        329368,
+        2038203229,
+        2752898270,
+        3347194609,
+        3347194233,
+        3347194433,
+        3345788468
+      ],
+      "removedUnlockedIds": [
+        3407952317,
+        3442289671,
+        3326884682,
+        3317921239,
+        1463168014,
+        2042008908
+      ],
+      "expectedStyle": "轻快",
+      "expectedStyleSupportedUnlockedCount": 7,
+      "expectedStyleSupportedUnlockedCoverage": 1,
+      "expectedStyleEvidence": [
+        {
+          "trackId": 329368,
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 2038203229,
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 2752898270,
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 3347194609,
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 3347194233,
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 3347194433,
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 3345788468,
+          "sourceId": 2873336061,
+          "sourceName": "2024华语说唱浪涌：轻快·微醺·带点少",
+          "sourceTags": [
+            "华语",
+            "欧美",
+            "说唱"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.562Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        }
+      ],
+      "averageSelectedCandidateRank": 24.857142857142858,
+      "durationSelection": {
+        "indices": [
+          18,
+          20,
+          21,
+          22,
+          27,
+          29,
+          30
+        ],
+        "algorithm": "bounded_duration_dp",
+        "quantizationMs": 1000,
+        "maximumQuantizationSpreadMs": 27000,
+        "selectionPolicy": "closest_duration",
+        "toleranceMs": 180000,
+        "withinTolerance": true
+      },
+      "timing": {
+        "repetitions": 3,
+        "measuredMs": [
+          13.579625000000004,
+          2.0730000000000004,
+          1.9465000000000003
+        ],
+        "medianMs": 2.0730000000000004,
+        "minimumMs": 1.9465000000000003,
+        "maximumMs": 13.579625000000004,
+        "scope": "Local selector only; alternating method order, no provider or catalog latency."
+      },
+      "listeningQuality": "not_measured"
+    },
+    {
+      "method": "preference_within_tolerance",
+      "samePreparedInputSha256": "df156f62c25836f68e82ae15b7a606f3ab54254b0a89d600cf6a13f8509ab89d",
+      "selectionPolicy": "preference_within_tolerance",
+      "songCount": 7,
+      "unlockedSongCount": 4,
+      "selectedIds": [
+        2105354788,
+        1960052431,
+        1920623030,
+        208983,
+        223918,
+        209481,
+        210060
+      ],
+      "unlockedIds": [
+        208983,
+        223918,
+        209481,
+        210060
+      ],
+      "initialLockedIds": [
+        2105354788,
+        1960052431,
+        1920623030
+      ],
+      "locksPreserved": true,
+      "lockedHardConflicts": [],
+      "requiredFlags": 0,
+      "selectedFlags": 0,
+      "mandatoryEvidenceSatisfied": true,
+      "targetDurationMs": 1800000,
+      "totalDurationMs": 1678866,
+      "durationErrorMs": 121134,
+      "durationOffsetMs": -121134,
+      "toleranceMs": 180000,
+      "allDurationsKnown": true,
+      "withinDurationBand": true,
+      "tailOrderChanged": true,
+      "tailSetChanged": true,
+      "addedUnlockedIds": [
+        208983,
+        223918,
+        209481,
+        210060
+      ],
+      "removedUnlockedIds": [
+        3407952317,
+        3442289671,
+        3326884682,
+        3317921239,
+        1463168014,
+        2042008908
+      ],
+      "expectedStyle": "轻快",
+      "expectedStyleSupportedUnlockedCount": 4,
+      "expectedStyleSupportedUnlockedCoverage": 1,
+      "expectedStyleEvidence": [
+        {
+          "trackId": 208983,
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 223918,
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 209481,
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        },
+        {
+          "trackId": 210060,
+          "sourceId": 5439157277,
+          "sourceName": "[华语4/4] 下午茶时间:一些轻快",
+          "sourceTags": [
+            "华语",
+            "流行",
+            "摇滚"
+          ],
+          "checkedAt": "2026-10-19T05:05:11.224Z",
+          "expectedStyle": "轻快",
+          "matchedLabel": "轻快",
+          "basis": "joined_actual_playlist_name_or_tags",
+          "listeningQuality": "not_measured"
+        }
+      ],
+      "averageSelectedCandidateRank": 2.5,
+      "durationSelection": {
+        "indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "algorithm": "bounded_duration_dp",
+        "quantizationMs": 1000,
+        "maximumQuantizationSpreadMs": 27000,
+        "selectionPolicy": "preference_within_tolerance",
+        "toleranceMs": 180000,
+        "withinTolerance": true
+      },
+      "timing": {
+        "repetitions": 3,
+        "measuredMs": [
+          11.896417,
+          4.484833000000002,
+          3.359708000000012
+        ],
+        "medianMs": 4.484833000000002,
+        "minimumMs": 3.359708000000012,
+        "maximumMs": 11.896417,
+        "scope": "Local selector only; alternating method order, no provider or catalog latency."
+      },
+      "listeningQuality": "not_measured"
+    }
+  ],
+  "delta": {
+    "expectedStyleCoverage": 0,
+    "expectedStyleTrackCount": -3,
+    "durationErrorMs": 121130,
+    "bothWithinDurationBand": true,
+    "bothPreserveLocksAndMandatoryEvidence": true,
+    "sourceEvidenceCoverageImproved": false,
+    "selectedSequenceChangedBetweenMethods": true
+  },
+  "scope": "Deterministic duration-selector ablation on one recorded real catalog/ranking/lock snapshot. Both methods receive byte-identical prepared inputs; only preferenceWithinTolerance changes. No new model or catalog calls.",
+  "limitations": [
+    "Not a full fixed-workflow/single-Agent/dual-Agent A/B comparison.",
+    "Recorded degraded ranking remains degraded; selector results cannot repair or validate that model result.",
+    "Historical native reports without an explicit catalog-language gold gate may omit retained language constraints or contain opposing-language source labels; their earlier narrow pass is not complete task acceptance.",
+    "Source-name/tag support measures textual metadata only, not acoustic features, recommendation relevance or listening satisfaction.",
+    "Timing covers this local selector process and candidate snapshot only; it is not production latency or a general speed ranking.",
+    "One fixed candidate snapshot cannot establish general improvement."
+  ],
+  "listeningQuality": "not_measured",
+  "listeningQualityNotMeasured": true
+}

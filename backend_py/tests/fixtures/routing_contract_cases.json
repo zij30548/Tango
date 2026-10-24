@@ -1,0 +1,1508 @@
+[
+  {
+    "id": "help",
+    "input": {
+      "instruction": "你能做什么？",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "hello",
+    "input": {
+      "instruction": "hello",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "free",
+    "input": {
+      "instruction": "帮助我找读书歌曲。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "pronoun",
+    "input": {
+      "instruction": "为什么推荐这首歌？",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "no_task",
+    "input": {
+      "instruction": "取消任务。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "direct_5",
+    "input": {
+      "instruction": "暂停任务。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "direct_6",
+    "input": {
+      "instruction": "取消任务。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "direct_7",
+    "input": {
+      "instruction": "继续任务。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "direct_8",
+    "input": {
+      "instruction": "撤回刚才的修改。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "deterministic"
+  },
+  {
+    "id": "single_music",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "continue_bound",
+    "input": {
+      "instruction": "改成更轻快。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "改成更轻快。",
+          "parameters": {
+            "mode": "continue"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "continue_missing",
+    "input": {
+      "instruction": "改成更轻快。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "改成更轻快。",
+          "parameters": {
+            "mode": "continue"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "compound",
+    "input": {
+      "instruction": "记住我喜欢粤语 R&B，确认后找四十分钟微醺歌单，加邓紫棋近半年新歌。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_proposal",
+        "scene_research",
+        "release_research"
+      ],
+      "slots": {
+        "artist": "邓紫棋",
+        "targetMinutes": 40
+      },
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "记住我喜欢粤语 R&B",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢粤语 R&B"
+          },
+          "dependsOn": []
+        },
+        {
+          "capability": "music.task",
+          "source": "确认后找四十分钟微醺歌单，加邓紫棋近半年新歌",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": [
+            0
+          ]
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "extra_id",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new",
+            "ids": [
+              123
+            ]
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "artist_id",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new",
+            "artistId": 7763
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unknown_mode",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "multi_agent"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "bad_source_16",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "bad_source_17",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "不在原文中",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "bad_source_18",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "旧轮文字",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "bad_dependency_19",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": [
+            0
+          ]
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "bad_dependency_20",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": [
+            1
+          ]
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "bad_dependency_21",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": [
+            -1
+          ]
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "bad_dependency_22",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": [
+            0,
+            0
+          ]
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unknown_capability",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "shell.exec",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "two_music",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        },
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "duration_25",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": [],
+      "slots": {
+        "artist": "",
+        "targetMinutes": -1
+      }
+    }
+  },
+  {
+    "id": "duration_26",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": [],
+      "slots": {
+        "artist": "",
+        "targetMinutes": 241
+      }
+    }
+  },
+  {
+    "id": "duration_27",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": [],
+      "slots": {
+        "artist": "",
+        "targetMinutes": 1.5
+      }
+    }
+  },
+  {
+    "id": "duration_28",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": [],
+      "slots": {
+        "artist": "",
+        "targetMinutes": "40"
+      }
+    }
+  },
+  {
+    "id": "duration_29",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": [],
+      "slots": {
+        "artist": "",
+        "targetMinutes": true
+      }
+    }
+  },
+  {
+    "id": "duration_30",
+    "input": {
+      "instruction": "读书时听二十分钟纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "music.task",
+          "source": "读书时听二十分钟纯音乐。",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": [],
+      "slots": {
+        "artist": "",
+        "targetMinutes": 40.0
+      }
+    }
+  },
+  {
+    "id": "unauthorized_control_31",
+    "input": {
+      "instruction": "不要取消任务。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "task_control"
+      ],
+      "actions": [
+        {
+          "capability": "task.control",
+          "source": "取消任务",
+          "parameters": {
+            "action": "cancel"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unauthorized_control_32",
+    "input": {
+      "instruction": "能不能取消任务？",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "task_control"
+      ],
+      "actions": [
+        {
+          "capability": "task.control",
+          "source": "取消任务",
+          "parameters": {
+            "action": "cancel"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unauthorized_control_33",
+    "input": {
+      "instruction": "他说取消任务是什么意思。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "task_control"
+      ],
+      "actions": [
+        {
+          "capability": "task.control",
+          "source": "取消任务",
+          "parameters": {
+            "action": "cancel"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unauthorized_control_34",
+    "input": {
+      "instruction": "不是让你取消任务。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "task_control"
+      ],
+      "actions": [
+        {
+          "capability": "task.control",
+          "source": "取消任务",
+          "parameters": {
+            "action": "cancel"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unauthorized_memory_35",
+    "input": {
+      "instruction": "不要记住我喜欢爵士。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_proposal"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "记住我喜欢爵士",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢爵士"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unauthorized_memory_36",
+    "input": {
+      "instruction": "朋友说“记住我喜欢爵士”。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_proposal"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "记住我喜欢爵士",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢爵士"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unauthorized_memory_37",
+    "input": {
+      "instruction": "能不能记住我喜欢爵士？",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_proposal"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "记住我喜欢爵士",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢爵士"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "unauthorized_memory_38",
+    "input": {
+      "instruction": "记住我今晚喝酒喜欢爵士。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_proposal"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "记住我今晚喝酒喜欢爵士。",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢爵士"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "memory_payload_39",
+    "input": {
+      "instruction": "记住我喜欢爵士。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_proposal"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "记住我喜欢爵士。",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢爵士"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "memory_payload_40",
+    "input": {
+      "instruction": "记住我喜欢爵士。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_proposal"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "记住我喜欢爵士。",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢爵士；密码private-fixture"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "memory_payload_41",
+    "input": {
+      "instruction": "记住我喜欢爵士。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_proposal"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "记住我喜欢爵士。",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢爵士；APIKeytest"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "partial_delete_set",
+    "input": {
+      "instruction": "删除爵士偏好，粤语继续保留。",
+      "history": [],
+      "task": null,
+      "preference": "喜欢爵士；喜欢粤语歌曲"
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_deletion"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "删除爵士偏好",
+          "parameters": {
+            "operation": "set",
+            "preference": "喜欢粤语歌曲"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "partial_delete_clear",
+    "input": {
+      "instruction": "删除爵士偏好，粤语继续保留。",
+      "history": [],
+      "task": null,
+      "preference": "喜欢爵士；喜欢粤语歌曲"
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_deletion"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "删除爵士偏好",
+          "parameters": {
+            "operation": "clear",
+            "preference": ""
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "clear_all",
+    "input": {
+      "instruction": "清空全部音乐偏好。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "preference_deletion"
+      ],
+      "actions": [
+        {
+          "capability": "memory.propose",
+          "source": "清空全部音乐偏好。",
+          "parameters": {
+            "operation": "clear",
+            "preference": ""
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "clarify_artist",
+    "input": {
+      "instruction": "最近半年的新专辑。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "release_research",
+        "clarification"
+      ],
+      "actions": [
+        {
+          "capability": "assistant.reply",
+          "source": "最近半年的新专辑。",
+          "parameters": {
+            "kind": "clarify",
+            "text": "想查哪位歌手？"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": [
+        {
+          "intent": "release_research",
+          "slot": "artist",
+          "question": "想查哪位歌手？"
+        }
+      ]
+    }
+  },
+  {
+    "id": "clarify_scope",
+    "input": {
+      "instruction": "读书时听些纯音乐。",
+      "history": [],
+      "task": null,
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "scene_research",
+        "clarification"
+      ],
+      "actions": [
+        {
+          "capability": "assistant.reply",
+          "source": "读书时听些纯音乐。",
+          "parameters": {
+            "kind": "clarify",
+            "text": "还喜欢哪种风格？"
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": [
+        {
+          "intent": "scene_research",
+          "slot": "scope",
+          "question": "还喜欢哪种风格？"
+        }
+      ]
+    }
+  },
+  {
+    "id": "grounded_explanation",
+    "input": {
+      "instruction": "解释当前歌单。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "explain_result"
+      ],
+      "actions": [
+        {
+          "capability": "assistant.reply",
+          "source": "解释当前歌单。",
+          "parameters": {
+            "kind": "explain",
+            "text": "BPM123；保证会员完整播放。",
+            "trackIndex": 1.0
+          },
+          "dependsOn": []
+        }
+      ],
+      "missingSlots": []
+    }
+  },
+  {
+    "id": "cancel_then_new",
+    "input": {
+      "instruction": "取消任务，再找纯音乐。",
+      "history": [],
+      "task": {
+        "id": "owned_task_contract_001",
+        "revision": 7,
+        "status": "preview",
+        "brief": {
+          "artist": "邓紫棋",
+          "scene": "阅读",
+          "styles": [
+            "纯音乐"
+          ]
+        },
+        "preview": {
+          "tracks": [
+            {
+              "id": 1001,
+              "title": "离线曲目一",
+              "artist": "测试演奏者"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "离线来源"
+          }
+        ]
+      },
+      "preference": ""
+    },
+    "kind": "proposal",
+    "proposal": {
+      "intents": [
+        "task_control",
+        "scene_research"
+      ],
+      "actions": [
+        {
+          "capability": "task.control",
+          "source": "取消任务",
+          "parameters": {
+            "action": "cancel"
+          },
+          "dependsOn": []
+        },
+        {
+          "capability": "music.task",
+          "source": "再找纯音乐",
+          "parameters": {
+            "mode": "new"
+          },
+          "dependsOn": [
+            0
+          ]
+        }
+      ],
+      "missingSlots": []
+    }
+  }
+]

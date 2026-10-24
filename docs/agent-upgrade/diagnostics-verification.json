@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "scope": "read_only_maintainer_diagnostic_cli",
+  "status": "passed_with_documented_limits",
+  "source": "backend_py/tango_backend/diagnostics.py",
+  "sqliteTarget": {
+    "passed": 12,
+    "failed": 0,
+    "skipped": 0,
+    "log": ".local/diagnostics-stage/sqlite-first.log",
+    "logSha256": "a69dd84faeb220e2e65bb9619130900b183806be6efd6e361b097c5bcba9af12"
+  },
+  "mysqlTarget": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "log": ".local/diagnostics-stage/mysql-first.log",
+    "logSha256": "2038a3dfdca696465e2ddac167fde1b9ffea555e42f99a02c9dc908d34afefb8"
+  },
+  "actualLocalCommands": {
+    "recent": true,
+    "conversation": true,
+    "task": true,
+    "storage": "mysql",
+    "mutatingQueries": false,
+    "privateOutputs": [
+      ".local/diagnostics-stage/current-recent.json",
+      ".local/diagnostics-stage/current-conversation.json",
+      ".local/diagnostics-stage/current-task.json"
+    ]
+  },
+  "ownedPreviousDesktopEvidence": ".local/diagnostics-stage/example-task-final.json",
+  "newModelRequests": 0,
+  "noAutomaticRemainingBudgetSpend": true,
+  "overallAgentCompletionRate": null,
+  "limitations": [
+    "Maintainer CLI, not a public admin page or online monitoring system",
+    "No full message-route-Qt-action-playback event chain",
+    "Detailed route rejection reason remains in private log, not a separate database column",
+    "Trace and query lists are bounded; missing links do not prove no execution",
+    "Default output omits raw content and credentials; explicit query text is still private local data",
+    "Read-only diagnosis does not retry, repair, confirm, adopt or validate subjective listening quality"
+  ],
+  "quick": {
+    "passedPython": 566,
+    "skippedPython": 19,
+    "passedNode": 53,
+    "failed": 0,
+    "privateReport": ".local/harness-runs/20261023T142949-n24f55fx/report.json",
+    "sha256": "12bcb19938d23507f65161f729fa2a3ca2e82ec5c1fe1f4139fb741c6a34366d"
+  },
+  "mysql": {
+    "passed": 1102,
+    "skipped": 54,
+    "failed": 0,
+    "privateReport": ".local/harness-runs/20261023T142949-u2p59v4l/report.json",
+    "sha256": "2dc3f057b3e9ba5af86e5e33cb98d2ad9b1771827b9b17c825959740a297f0d2"
+  },
+  "sourceHashes": {
+    "backend_py/tango_backend/diagnostics.py": "b287359cf89371c09e5e557864efd0190f5de2d7dcb83f1a6c353b569709968d",
+    "backend_py/tests/test_diagnostics.py": "53792c159ba3b3711b67e46018095c812c6a59c252846efb96f14db830d95ed0",
+    "backend_py/tests/test_diagnostics_mysql.py": "b6c5c4261ccdbd9dbdbf617f5084046919d504a67b1887e59f93a31a74b5e5fd",
+    "scripts/diagnose-agent.sh": "942a2511b20dcbdff1d2186f328673bc0b2b3a70a441d12ca6a0124f81f22f71",
+    "scripts/verify-harness.py": "29577441613cef2ca278ca5f82507d224d1249fa88a475a80d3600c5b043b4b2"
+  },
+  "previousDesktopObservation": {
+    "traceKnownNodes": true,
+    "currentTargetMinutes": 20,
+    "previewTracks": 6,
+    "totalDurationMs": 1200003,
+    "toolAttempts": 2,
+    "trackCounts": [
+      40,
+      40
+    ],
+    "sourceCounts": [
+      2,
+      2
+    ],
+    "callRows": 6,
+    "durationCheck": "satisfied",
+    "styleCheck": "unverified"
+  },
+  "firstIssues": [
+    {
+      "scope": "diagnosticProjection",
+      "finding": "Known previous desktop trace nodes initially mapped to unknown",
+      "resolution": "Included actual checkpoint node whitelist and re-read unchanged owned evidence; no live model rerun"
+    }
+  ],
+  "noNativeRerun": "CLI and database reader only; no Qt product or playback changes in this stage",
+  "finishedAt": "2026-10-23T14:32:57.876121+00:00"
+}

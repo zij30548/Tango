@@ -1,0 +1,129 @@
+{
+  "test": "current_task_plan_with_real_qwen",
+  "paidCallLimit": 2,
+  "actualAttempts": 2,
+  "existingUserDataAccessed": false,
+  "rows": [
+    {
+      "instruction": "我现在在读书，需要40分钟，帮我安排陶喆的歌曲",
+      "httpStatus": 200,
+      "finishReason": "stop",
+      "output": {
+        "kind": "research",
+        "title": "陶喆读书陪伴40分钟歌单",
+        "scene": "用户正在读书，需要40分钟的背景音乐。要求播放陶喆的歌曲，风格建议以适合专注、氛围感强、节奏适中或轻快的作品为主，避免过于激烈或人声过吵干扰阅读。",
+        "styles": [
+          "R&B",
+          "流行",
+          "舒缓",
+          "专注",
+          "经典"
+        ],
+        "queries": [
+          "陶喆 R&B 经典歌曲",
+          "陶喆 适合读书听的歌"
+        ],
+        "artist": "陶喆",
+        "artistId": 0,
+        "since": "",
+        "until": "",
+        "targetMinutes": 40,
+        "excludeLive": false,
+        "avoidPrevious": false,
+        "excludedArtists": [],
+        "requireReleases": true,
+        "retainFirst": 0,
+        "removeIds": [],
+        "question": "",
+        "adjustment": ""
+      },
+      "usage": {
+        "completion_tokens": 253,
+        "prompt_tokens": 611,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 611
+        },
+        "total_tokens": 864
+      },
+      "validated": true,
+      "brief": {
+        "kind": "research",
+        "title": "陶喆读书陪伴40分钟歌单",
+        "scene": "用户正在读书，需要40分钟的背景音乐。要求播放陶喆的歌曲，风格建议以适合专注、氛围感强、节奏适中或轻快的作品为主，避免过于激烈或人声过吵干扰阅读。",
+        "styles": [
+          "R&B",
+          "流行",
+          "舒缓",
+          "专注",
+          "经典"
+        ],
+        "queries": [
+          "陶喆 R&B 经典歌曲",
+          "陶喆 适合读书听的歌"
+        ],
+        "artist": "陶喆",
+        "since": null,
+        "until": null,
+        "targetMinutes": 40,
+        "excludeLive": false,
+        "avoidPrevious": false,
+        "excludedArtists": [],
+        "requireReleases": true,
+        "retainFirst": 0,
+        "removeIds": [],
+        "question": "",
+        "adjustment": ""
+      },
+      "elapsedMs": 3733
+    },
+    {
+      "instruction": "今晚喝酒，约40分钟、华语R&B，加入邓紫棋近半年新作，不重复上一批，先预览。",
+      "httpStatus": 200,
+      "finishReason": "stop",
+      "output": {
+        "kind": "research",
+        "title": "华语R&B微醺夜 (40分钟)",
+        "scene": "今晚喝酒，约40分钟、华语R&B，加入邓紫棋近半年新作，不重复上一批，先预览。",
+        "styles": [
+          "华语 R&B",
+          "邓紫棋"
+        ],
+        "queries": [
+          "G.E.M. 邓紫棋 2026 新专辑 歌曲",
+          "华语 R&B 精选"
+        ],
+        "artist": "",
+        "artistId": 0,
+        "since": "2026-04-19",
+        "until": "",
+        "targetMinutes": 40,
+        "excludeLive": false,
+        "avoidPrevious": true,
+        "excludedArtists": [],
+        "requireReleases": true,
+        "retainFirst": 0,
+        "removeIds": [],
+        "question": "",
+        "adjustment": ""
+      },
+      "usage": {
+        "completion_tokens": 238,
+        "prompt_tokens": 637,
+        "prompt_tokens_details": {
+          "cached_tokens": 256,
+          "text_tokens": 637
+        },
+        "total_tokens": 875
+      },
+      "validated": false,
+      "errorCode": "INVALID_TASK_MODEL",
+      "message": "请先明确要查询的歌手。",
+      "elapsedMs": 3078
+    }
+  ],
+  "observedAt": "2026-10-19T04:21:31.507Z",
+  "scope": "Real configured Qwen, current production planning prompt, two user-visible instructions. No catalog, audio, user database or Cookie was accessed.",
+  "interpretation": "Reading request incorrectly enabled releases; composite request omitted the explicitly named release artist and failed validation. This reproduces a production planning failure and contradicts any claim that the complete user experience was accepted.",
+  "sourceHashRecorded": false
+}

@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "scope": "demo_followup_tests_and_memory_authority_repair",
+  "status": "passed_with_documented_limits",
+  "overallCompletionRate": null,
+  "overallAccuracy": null,
+  "harness": {
+    "quick": {
+      "privateReport": ".local/harness-runs/20261023T140244-av4_ybf2/report.json",
+      "pythonPassed": 554,
+      "pythonSkipped": 19,
+      "nodePassed": 53,
+      "failed": 0,
+      "reportSha256": "b50e190677858a0a5055e573d638987e80739acc0d8281a47cca562499677eac"
+    },
+    "mysql": {
+      "privateReport": ".local/harness-runs/20261023T140244-dtdxy65k/report.json",
+      "passed": 1086,
+      "skipped": 54,
+      "failed": 0,
+      "scope": "owned_temporary_mysql_redis_migration_pg",
+      "reportSha256": "a451466b2b08a41956d8ec7327a2ddc51fe764fbc7dec6c7be468f76772a3245"
+    },
+    "native": {
+      "privateReport": ".local/harness-runs/20261023T140244-vi39s240/report.json",
+      "passed": 11,
+      "businessCases": 7,
+      "lifecycleChecks": 4,
+      "failed": 0,
+      "skipped": 0,
+      "scope": "real_qt_python_fake_models_catalog_generated_wav",
+      "reportSha256": "b46d1abedbc8a7538b26cad1b15b73ac06b0eebd04da7ccdd8083cee58672074"
+    }
+  },
+  "newBoundaries": {
+    "cases": 26,
+    "first19": {
+      "passed": 16,
+      "failed": 3,
+      "log": ".local/demo-followup/route-expanded.log",
+      "logSha256": "62c7b7da7523858e36f2a2ae8fbb864153c26f7dfd0c0b611f1946d4c4c5ecfd"
+    },
+    "additionalScopeBeforeFix": {
+      "passed": 21,
+      "failed": 5,
+      "log": ".local/demo-followup/route-scope-before.log",
+      "logSha256": "6086c9c2e87555d266bfb18d30595104aa565fdf46962baa121092baec5c5b33"
+    },
+    "finalTargetedRegression": {
+      "passed": 185,
+      "failed": 0,
+      "skipped": 0,
+      "log": ".local/demo-followup/route-final.log",
+      "logSha256": "e7ed88b272801e6ffae811dc4138e302de6714dd8c50d2eb0871b0b777212b59"
+    },
+    "changes": [
+      "Complete instruction questions, conditions and metalinguistic examples are checked",
+      "Memory source must end at a valid clause boundary; negation inside a connector is not a new command",
+      "Explicit temporary memory source cannot become long-term memory",
+      "Invalid proposals persist as failures; attempts count, no task is created, no automatic retry"
+    ],
+    "limits": [
+      "Does not prove complete natural language or sensitive attribute understanding",
+      "These cases are now development regressions, not future independent holdout questions"
+    ]
+  },
+  "supplementalQt": {
+    "firstReport": ".local/demo-followup/qt/20261023T135806-a_zbs_9u/report.json",
+    "firstSummary": ".local/demo-followup/qt/20261023T135806-a_zbs_9u/summary.json",
+    "firstChecksPassed": 189,
+    "firstChecksFailed": 0,
+    "firstChecksSkipped": 0,
+    "firstLifecycleChecks": 10,
+    "imageIsolationReport": ".local/demo-followup/qt/after-isolation-20261023T140403-_017vd08/report.json",
+    "imageIsolationSummary": ".local/demo-followup/qt/after-isolation-20261023T140403-_017vd08/summary.json",
+    "finalSelectedTargets": [
+      {
+        "target": "chat_assistant_flow_test",
+        "passed": 14,
+        "businessRows": 12,
+        "lifecycleChecks": 2,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "target": "routing_client_test",
+        "passed": 27,
+        "businessRows": 25,
+        "lifecycleChecks": 2,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "target": "radiodialog_test",
+        "passed": 26,
+        "businessRows": 24,
+        "lifecycleChecks": 2,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "target": "musictaskclient_test",
+        "passed": 100,
+        "businessRows": 98,
+        "lifecycleChecks": 2,
+        "failed": 0,
+        "skipped": 0
+      },
+      {
+        "target": "hosted_auth_dialogs_test",
+        "passed": 23,
+        "businessRows": 21,
+        "lifecycleChecks": 2,
+        "failed": 0,
+        "skipped": 0
+      }
+    ],
+    "doNotAddOriginalAndRetestCounts": true,
+    "limits": [
+      "First matrix did not block artwork CDN requests; zero external image requests is not claimed for that initial run",
+      "Only radiodialog target gained the deny-network in-memory image fixture; not a system-wide egress audit",
+      "Native test rows include lifecycle and parameterized checks and overlap other layers"
+    ],
+    "firstReportSha256": "0c1b3c6829b85d192f7f283e3705c330b1c04d9f7b4238ca6e8f9b68c23639b9",
+    "firstSummarySha256": "ce2ed9b7e5ae031b3dac9abe07b40a743d322578ffd6714c881158cf00d3dee1",
+    "imageIsolationReportSha256": "c67706cf0be64378a00a08f4becc33dddc997f0d1744121fbffa628cee169a3a",
+    "imageIsolationSummarySha256": "030ec9b862c3737f57c54f840b09461a4cc4bd43599b96905bdd019c840c4be2"
+  },
+  "liveModels": {
+    "newRequests": 0,
+    "previousDesktopRequests": 14,
+    "previousEvidence": "docs/agent-upgrade/demo-release-verification.json",
+    "maximum": 80,
+    "started": 61,
+    "remaining": 19,
+    "noAutomaticSpendOfRemaining": true
+  },
+  "previousEvidenceAudit": {
+    "sourceHashesMatchedBeforeCurrentRepair": 64,
+    "privateEvidencePathsExisted": 11,
+    "privateLiveReportHashVerified": true,
+    "oldEvidenceNotRewritten": true,
+    "note": "Previous evidence now describes its original source version"
+  },
+  "remainingGaps": [
+    "Pending Qt preference proposals and action continuations are not durable across restart",
+    "Free-form compound semantics and recommendation relevance need independent frozen evaluation",
+    "Free-text memory sensitive-attribute filters are incomplete; old task and route snapshots remain after current preference clear",
+    "No unified message-route-task-tool-action event and online quality metric loop",
+    "Real MCP, dynamic Supervisor and production launch acceptance remain incomplete"
+  ],
+  "noCommitOrPush": true,
+  "sourceHashes": {
+    "backend_py/tango_backend/intent_routing.py": "1a10b93a755c5b822cd12557f05005f35f36ec1990f24ff5891c3e58cce2ab8d",
+    "backend_py/tests/test_demo_followup_boundaries.py": "0ad3bda8c4b37fa2cd0e1c503365c5cf6ee3a6ae9c05020b5524ec457e921a4e",
+    "scripts/verify-harness.py": "8010d6e7779f14ea9766984f51494931684404955045e4e42e74891939dda996",
+    "tests/radiodialog_test.cpp": "53b711982467904badce975ecba52d3b690f5f1aa122183f11f289c661645bbf"
+  },
+  "backendReadyAfterRepair": {
+    "16382": {
+      "health": true,
+      "ready": true,
+      "pid": 12229,
+      "storage": "mysql"
+    },
+    "16383": {
+      "health": true,
+      "ready": true,
+      "pid": 12242,
+      "storage": "mysql"
+    }
+  },
+  "finishedAt": "2026-10-23T14:07:49.676442+00:00"
+}

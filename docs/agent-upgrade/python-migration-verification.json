@@ -1,0 +1,335 @@
+{
+  "date": "2026-10-21",
+  "scope": "Current application backend migrated to native Python; HTTP/JSON and SSE integration with C++/Qt preserved.",
+  "implementation": "FastAPI + Uvicorn + HTTPX + Python LangGraph StateGraph; PostgreSQL checkpoints/CAS/leases/usage ledger and Redis limits/cache/progress. No JavaScript Agent proxy.",
+  "final": {
+    "passed": 610,
+    "skipped": 2,
+    "failed": 0,
+    "durationSeconds": 17.14,
+    "command": "backend_py/.venv/bin/python backend_py/tests/run_storage_suite.py --log /tmp/tango-python-full-release.log -- tests -q --tb=short -ra --junitxml=/tmp/tango-python-full-release.xml",
+    "byTestModule": {
+      "test_admin": {
+        "passed": 2,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_app": {
+        "passed": 12,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_conversation_routing": {
+        "passed": 66,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_conversation_routing_postgres": {
+        "passed": 4,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_http_protocol": {
+        "passed": 2,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_launch_local": {
+        "passed": 25,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_models": {
+        "passed": 38,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_native_integration": {
+        "passed": 1,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_redis_features": {
+        "passed": 10,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_server_process": {
+        "passed": 2,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_storage": {
+        "passed": 19,
+        "skipped": 1,
+        "failed": 0
+      },
+      "test_storage_interop": {
+        "passed": 2,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_task_helper_parity": {
+        "passed": 402,
+        "skipped": 0,
+        "failed": 0
+      },
+      "test_task_runtime_migration": {
+        "passed": 25,
+        "skipped": 1,
+        "failed": 0
+      }
+    },
+    "skipReasons": [
+      "SQLite has no PostgreSQL distributed task lease; matching PostgreSQL case executed.",
+      "SQLite skips multi-worker lease task test; matching PostgreSQL case executed."
+    ]
+  },
+  "compatibility": {
+    "routingFrozenJsCases": 49,
+    "taskHelperFrozenJsCases": 402,
+    "fullWorkflow": "Old actual JavaScript LangGraph brief/preview/budget/node trace/model call sequence compared against Python SQLite and disposable PostgreSQL.",
+    "bidirectionalStorage": "Old Node account/password/session/request hash/task JSON -> Python -> Node verified for SQLite and PostgreSQL.",
+    "nativeQt": {
+      "businessTests": 5,
+      "lifecycleChecks": 2,
+      "passed": 7,
+      "includedAsOnePytestIntegrationCase": true
+    }
+  },
+  "actualLocalIntegration": {
+    "ordinaryPort": 16382,
+    "developmentPort": 16383,
+    "runtimeLanguage": "python",
+    "runtimeVersion": 2,
+    "storage": "postgres",
+    "rateLimiter": "redis",
+    "ready": true,
+    "protectedDevelopmentSessionAndCapabilityNegotiation": "passed",
+    "modelConfigured": true,
+    "modelCredentialValidityTested": false,
+    "databaseBackupCreated": true,
+    "backupPermissions": "0600",
+    "backupCommitted": false,
+    "afterFinalSourceRestart": true
+  },
+  "testingBoundaries": {
+    "realModelCalls": 0,
+    "realCatalogCalls": 0,
+    "audioPlaybackTested": false,
+    "testDatabases": "Disposable independently owned PostgreSQL/Redis and temporary SQLite; no production data used as test fixtures.",
+    "actualLocalDatabaseUse": "Only authorized runtime switch and protected development capability handshake; private backup created before switch.",
+    "modelQualityClaim": "None. These are engineering and compatibility checks, not recommendation accuracy or overall task completion rate."
+  },
+  "fixesFromReview": [
+    "Forward legacy distributed lease cancellation into active model request.",
+    "Reject NaN/Infinity in upstream envelope and model JSON content.",
+    "Preserve JavaScript truthiness when rejecting empty tool-call objects/arrays.",
+    "Normalize numeric IDs and ASCII digit replacement before model ranking projection.",
+    "Preserve Unicode Han username validation.",
+    "Normalize historical source names to bounded UTF-16 text.",
+    "Preserve new SQLite INTEGER STRICT table definitions without rebuilding existing data.",
+    "Bound health/readiness probes to 4096 bytes, total deadline, no redirects or compression.",
+    "Always release SSE subscriptions and connection slots even when response headers fail before generator start; prevent progress version regression."
+  ],
+  "preservedFailures": [
+    "Native Qt integration first failed linking NeteaseClient; added existing implementation to test build.",
+    "Task restart test incorrectly expected an unexpired PostgreSQL waiting_tools lease to pause immediately; corrected assertion to original semantics, preserving production guards.",
+    "Independent review failures and verified corrected probes retained.",
+    "Launcher first test showed buffered chunk reading delayed bound enforcement; switched to immediate bounded stream consumption.",
+    "SSE blocked-header test originally did not account for normal Starlette ClientDisconnect; corrected fixture while retaining cleanup assertions."
+  ],
+  "remainingJavaScript": [
+    "Third-party Netease adapter service and local infrastructure helpers.",
+    "Legacy backend and evaluation scripts retained as migration oracle/history; default launch no longer executes legacy Agent."
+  ],
+  "limitations": [
+    "No performance comparison between Python and JavaScript was performed.",
+    "No new MCP/dynamic Supervisor/multi-agent capability claimed.",
+    "No new real-model quality evaluation; historical 499/500 budget record unchanged.",
+    "Differential samples are not a proof of equivalence for every possible input."
+  ],
+  "dependencies": {
+    "fastapi": "0.154.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "langgraph": "1.2.16",
+    "asyncpg": "0.32.0",
+    "redis": "7.4.1",
+    "regex": "2026.9.29"
+  },
+  "evidence": {
+    "full-first.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/full-first.log",
+      "sha256": "6eb7ab1535ae5ef11db2dff0b729377e2b2bce344f30686f73bef2d17fdeef96"
+    },
+    "full-before-boundary.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/full-before-boundary.log",
+      "sha256": "214d2670f88b99c86a6380dffa55302ae051f510b5dff7809afef839f2934155"
+    },
+    "full-final.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/full-final.log",
+      "sha256": "67df0ff3f3f1ecfe7b92164dea50936bfa9499b176df5dc2292f38e595809fc9"
+    },
+    "launcher-first.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/launcher-first.log",
+      "sha256": "e1520e6e4c2b80ca34d65f12266c2505db4f44ecc281ddfd5e624b6cf2c24c71"
+    },
+    "launcher-final.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/launcher-final.log",
+      "sha256": "514c0c2f8b12583c82d1ab0eee136d9dd023fe6435e73e4dc59b08a1d5a61c18"
+    },
+    "redis-first.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/redis-first.log",
+      "sha256": "52567c72f51012928f7b2d60b84cfe4e749809d960c5897b5f369d182b6b8ade"
+    },
+    "redis-final.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/redis-final.log",
+      "sha256": "ecb46d02bb17d2f73a1292cb2691c0fae7af1dba0f4e1878e4617216ee1fec1f"
+    },
+    "shell-environment.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/shell-environment.log",
+      "sha256": "ff7cc7de1ce6ce025ea886f9a526de50572261f15fd03fd36a56e792f689678f"
+    },
+    "root-integration-first.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/root-integration-first.log",
+      "sha256": "e5e53c807fc5043ea4af8a72689a99ef9614d9993bd9d4857dc2e6bf4a6ff9af"
+    },
+    "root-review-regression.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/root-review-regression.log",
+      "sha256": "683bac0bd5c1744ccb27a913a3ad8233d649ce6df078862c660038b51be8f8d3"
+    },
+    "http-protocol-first.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/http-protocol-first.log",
+      "sha256": "05969f68db42c0d80b5f203b4c913fe621ff8643af5b714630e061a4653df4b3"
+    },
+    "native-qt-final.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/native-qt-final.log",
+      "sha256": "9e68e14049e991a9540a9629e73732c6c68d2cd228f6c3517c942e1429143c79"
+    },
+    "storage-final.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/storage-final.log",
+      "sha256": "bcb72a6be075c3bdf5879a6336ab785cea1c7d55198ca0e9b509a9ef94a7997a"
+    },
+    "routing-review-first.json": {
+      "path": "docs/agent-upgrade/python-migration-evidence/routing-review-first.json",
+      "sha256": "35caaddfa296dd1d2d4eb54085ecc0ee6a69ba5af8c516ab4f148d11c45c3f61"
+    },
+    "routing-review-verified.json": {
+      "path": "docs/agent-upgrade/python-migration-evidence/routing-review-verified.json",
+      "sha256": "8b29d0b35e389ef05c68f95aee9942bb7409b94d8bea0b9bcbe5f82930b378b8"
+    },
+    "routing-context-final.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/routing-context-final.log",
+      "sha256": "7c84ad7c960b144ed5d51f2e6278e0c9ef448a5c1eae3b17063cdea3c107ca76"
+    },
+    "task-runtime-first.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/task-runtime-first.log",
+      "sha256": "8ea7ef36463f953dc54c0ca889988affe0895448ad78ba22f04964a59dc0374f"
+    },
+    "task-final.log": {
+      "path": "docs/agent-upgrade/python-migration-evidence/task-final.log",
+      "sha256": "183eb053fd87884f8128df79967cb443d8151dac01d961183df6ccab84c08783"
+    },
+    "local-runtime-final.json": {
+      "path": "docs/agent-upgrade/python-migration-evidence/local-runtime-final.json",
+      "sha256": "b44fe91a057df8cb0f64bfa241f6a29792f80197292233cfef2f61420f190534"
+    }
+  },
+  "sourceSha256": {
+    "appbackendclient.cpp": "4ade4feb055a91cb703409f0600a7cd8adc5afdf1fa54587896cab9fff8c8b8d",
+    "appbackendclient.h": "44c804467f05980cd7e02419523ed27e47338d80e16ef67124f0845c80ba3518",
+    "backend_py/pyproject.toml": "b5f8352bb749768b4848d11d92ecb277aa0cd64428566ea1f8da24311f3265d7",
+    "backend_py/tango_backend/__init__.py": "fa7c26f3d8e27490ec61a2d3900b343f038b0978c645bc67c1e0efa56e6596f1",
+    "backend_py/tango_backend/account_quota.py": "ce2612dadae6e88e723f33b96cecda0433e066b94a85b67cba1a357831e86c02",
+    "backend_py/tango_backend/admin.py": "7bba4b231ebcd3b1a135e4529e6b8974e882e2c3fa00844e60e0505f14aade97",
+    "backend_py/tango_backend/app.py": "a887a8003aba7929302ad592f5d597f92178f320969038ffbd95d05b098d9b77",
+    "backend_py/tango_backend/assistant_model.py": "3394aa55f8854d354b7e50b94679360f5c34030a94339c3408a1209e4c55068c",
+    "backend_py/tango_backend/capability_registry.py": "03c4239fea3208aabf6ab3447c968bc5aaa2281bb3013fdbbe7fbd59b5cd8386",
+    "backend_py/tango_backend/compat.py": "8461edfba7ba2d14c16f972f3c6c5ea3664556d5315f4727b6912bbcd7234e06",
+    "backend_py/tango_backend/conversation_route_store.py": "71fd3052d2249e0adbc4fd214d9e0df51ce4aee973b3feabf35ba6923e523c6c",
+    "backend_py/tango_backend/conversation_router.py": "40f01a5429ed61eb12e041b37ad7f06c37e429024c927c49decaa32d946724f4",
+    "backend_py/tango_backend/conversation_store.py": "3bad59218a54b0ca1210840019bc2a1943cf90ff532821e99239f0f1b7795a77",
+    "backend_py/tango_backend/development_config.py": "7f2cf4d5b8867d8fe2eb866062f0dd15119ef7bfa7f2d39c8cd2b93dcd96e7b2",
+    "backend_py/tango_backend/development_session.py": "86db9961de7ed8319e5c3d420d9be38f804c971cf589b05780aed95e11d68b0a",
+    "backend_py/tango_backend/errors.py": "1bdf5af4208e1161ec50d971f5e38660c43deae2007c08931cca1347dd087b5e",
+    "backend_py/tango_backend/http_protocol.py": "2039ca6f46c203f3979c7631d0bfd85e93dbc57874f069db9acd59ee04272213",
+    "backend_py/tango_backend/intent_routing.py": "fcf5356e8ed7d3a5af9c0a2c348510583463602853f7ee3e6f0d80a4ee42222a",
+    "backend_py/tango_backend/invite_store.py": "fc65933727c67da1fa8c52f310489e20e2cf00b255c416e7eace1643475f6544",
+    "backend_py/tango_backend/launch_local.py": "741a522ffb2edd278345b427414259e467fb186dee722bbd097413b8efbb539e",
+    "backend_py/tango_backend/migrations/001_initial_postgres.sql": "22b75c4b27c8db9fff74c1c01a897327b8a29f3e3d4f8ec5d997627170afc5ca",
+    "backend_py/tango_backend/model.py": "0268000794716730985634afb3fde811b67c92d57603fb68199d152e7de8e618",
+    "backend_py/tango_backend/model_common.py": "164e722476a036fa4a9542e02194bd0a27cfdddc6f054437e8e56ba38cf6ad3b",
+    "backend_py/tango_backend/model_transport.py": "6d1516b19179b830cf8b29cf903f03d6312e973181c3d593b04205f3780e2e7a",
+    "backend_py/tango_backend/postgres_store.py": "7ec4037819a36479bf798b95c5718ded3a3ba4bb7e0ba65133c3dbf86bd089ee",
+    "backend_py/tango_backend/postgres_task_store.py": "be6dbe6711102be51bf1f7d16697a666ad7ccfca51dded57a746f742e964b2cf",
+    "backend_py/tango_backend/prompts.json": "9b9dcb85424a50ee2e138467d9e656ed2dcd3ed20ab86474037ea4be4e52527f",
+    "backend_py/tango_backend/radio_model.py": "8c1cd7c8b9495f4c17be6b0a92b18196506007d3fa4aa90c0ac01b46ed6ae7dd",
+    "backend_py/tango_backend/redis_limiter.py": "c1a06ebfdf1418b4ad218ab3779bdb4747713266a49530a95c802191897f5011",
+    "backend_py/tango_backend/registration_service.py": "2f42c60ce2ec02723a404ded6104b2dfde890694412da389dd5634ce8bec1aed",
+    "backend_py/tango_backend/security_config.py": "7edbc069aa22116ecd432c00f4d5d32cfcd9a11e61604cea8096e6f3751e9789",
+    "backend_py/tango_backend/server.py": "a2c36d6536fd44e71eb61728d5016c9753282e39e4a0e2142f07b35f24e27c93",
+    "backend_py/tango_backend/service_config.py": "17a27497a5a8ef070557b27f0a1291a1e2739f98ea5e1145af13caf89babe777",
+    "backend_py/tango_backend/storage.py": "df33527d2c0214002b1736cdd98f747498572fafe35fb29a4a441e6d9dee24d2",
+    "backend_py/tango_backend/storage_auth.py": "ed9e56c0907945ec2962fc94e1f5468dfc8379be74f08407910a1ed6c2f0e6f9",
+    "backend_py/tango_backend/storage_db.py": "2594f9de2d222f4c7e08856b0f18d724f4e86ae60056273e623566a0bb684cad",
+    "backend_py/tango_backend/storage_postgres.py": "93c81a3626f11f22472877ffbea040d617fb8be90d0723f449452126d3a184fe",
+    "backend_py/tango_backend/store.py": "2b8174fdfb4b48bbc6deea14dfd5369d982ed9732e8ca6afc229c85ef8122f17",
+    "backend_py/tango_backend/task_brief_patch.py": "4e76a9802a1cb900865d86756fab896d2cb4b5fcb1fa3b54a8615132db76609e",
+    "backend_py/tango_backend/task_duration.py": "40233800dfab28649d3066ab8c15187a19c6945d32fb0afc5961cb6ef7cb801e",
+    "backend_py/tango_backend/task_language.py": "8b10cccff9df41817c22731a8f33ce5dafe3ae94a1771e5d7c672494b4e7160f",
+    "backend_py/tango_backend/task_model.py": "c25c2d45a22acfeaefb2a9d16ece45233d47e009bf6d9c71929f4fa6e03fd2b0",
+    "backend_py/tango_backend/task_pending_request.py": "75412e266312a5141b056ae7900df91c4519bef50ed982831016be9955442bcb",
+    "backend_py/tango_backend/task_progress.py": "de4b0a71dacfcc4424649edca527abf8cdaa6ccdfe09d3bdef857ad5accb88b4",
+    "backend_py/tango_backend/task_query_coverage.py": "6aa7d5481baa1ec9721e78ecbe504225f591176e81bd425836d6d255bd5a1d6e",
+    "backend_py/tango_backend/task_release_intent.py": "a26cfa83cb5889057daf75d5e488a18e316cb946bfed73ba4befd79a3efc8e18",
+    "backend_py/tango_backend/task_runtime.py": "3ec506e75b9e25bee78f8bc29df0de52b37fa5a426c660c6eb1d3293cf83c307",
+    "backend_py/tango_backend/task_schema.py": "bcbe554ddd93f2f59f311c52fbd2c1ca7bfca8f50d02f6010b7425cf717477a6",
+    "backend_py/tango_backend/task_store.py": "a5384081844e02d714a17d89e18aaf98d83c5aef5258454620689ae0f9279b09",
+    "backend_py/tango_backend/task_style_evidence.py": "ac092fb97b308314e8e38496854b4f3da03777744ac2ebaa999252fd5e8248f2",
+    "backend_py/tango_backend/task_tool_cache.py": "d497042451726af0223a34447c1b95f9301b2e46059e79fcf6ceb176a18fb726",
+    "backend_py/tango_backend/task_tool_evidence.py": "18c21d6bab090d815ac66cb8bed39fe946d2b0230f86f95cfadc414b3744a610",
+    "backend_py/tests/fixtures/routing_contract_cases.json": "330c600f4a7b11e13a2f1ef29a7eeb38951bc3a55489d64b6873aa11df16dce1",
+    "backend_py/tests/fixtures/routing_js_expected.json": "892ccea946f7fe5500ca023edef72c1ebabcdf9705b5ffca95925ff6caf93418",
+    "backend_py/tests/fixtures/task_helpers_js_v1.json": "f11fc6d88e9c0e00a71d7ecabed34931edfdebeebfdc0b0f56099cb22b2230b9",
+    "backend_py/tests/fixtures/task_runtime_js_v1.json": "7a19026f079914a9e10827bfdc4a326f8a3010533956934da7982a37bfb5fa32",
+    "backend_py/tests/helpers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend_py/tests/helpers/process_fixture.py": "de8e9f3559d6ba6c265ff41b7b58f2cdd4c45553d04f51461be96fe326dd63c1",
+    "backend_py/tests/run_storage_suite.py": "9a730fc4146de9bb2df925c602d287104e5d0f537d333cba902fa787e041e5b4",
+    "backend_py/tests/test_admin.py": "6bbda41b62ebbe5e631b2df37cf66b4031b60badc0e0b6de315fb29107a9132a",
+    "backend_py/tests/test_app.py": "05b889ffb4e0970f9183649b12966de1e5104d17751c72fb58dac27283a6b337",
+    "backend_py/tests/test_conversation_routing.py": "a8ba093eb7213f0df4b2e8de5fb8a8e439a986e2e23eb5df084e0c54e0fe1307",
+    "backend_py/tests/test_conversation_routing_postgres.py": "9e2e4cebf57689eda31176849778bfd9e46cebab22cd3158935b694b3fa0f0c5",
+    "backend_py/tests/test_http_protocol.py": "27cdbb373b5e8a5d641d3f1e1cc1721393bdc8a25ecfb6e464cf03e61d1c0e03",
+    "backend_py/tests/test_launch_local.py": "dfabefd908a13466d4cd4569d842182f3028d40d6aa14d1a53f8143f7bb84a46",
+    "backend_py/tests/test_models.py": "6032993fd1fc15eee5476eb5852591480da52d83a10905b4d8d649da62982718",
+    "backend_py/tests/test_native_integration.py": "b3456bb925e2e6e10ab6e484a4e3d4043bedc32a0874681930d3a5ec7cc5f95e",
+    "backend_py/tests/test_redis_features.py": "a35bc6f9d445a3ed396e6eac1889cc3ebe831e0866325da5e01a6d66f61380fa",
+    "backend_py/tests/test_server_process.py": "a2cf80c596b8fe8aa499e82084652888e59f6fbd0473cf782a1ea71fa3df7605",
+    "backend_py/tests/test_storage.py": "6a90d487dd72c2caae2f1ac1d74b31d03d19bb14455b588beb757bf8b75f6216",
+    "backend_py/tests/test_storage_interop.py": "0c22a308108b9f2ef7c8b1167a95da68581eca6cf9c9791d11e0f816f2f8c6c3",
+    "backend_py/tests/test_task_helper_parity.py": "b38ceaf6df7226108a23007f802f3416502c02358a2647088738db4baca2f5b4",
+    "backend_py/tests/test_task_runtime_migration.py": "bf4abd8a31d4ce5bcdf32655bae61c9ad2d0dbb1763fefda0f9bd2bbbc3caccc",
+    "backend_py/uv.lock": "b9112e8a13f54955bbf3559f774e390d9ea861726a1f71827854abd282888ada",
+    "conversationclient.cpp": "536f445af429ef50fa3ee2e97b1d277cb31fa236f0d72ca872ca54cb9fc35eba",
+    "musictaskclient.cpp": "a30f46d85abe9ffd95bfea91423c927c4f939a627a1f29bc133036343462b923",
+    "scripts/ensure-app-backend.sh": "8fd85b16423976658f2dadcee745a2f15330f0d2d518a106742f621ca4b81b2d",
+    "scripts/ensure-python-backend.sh": "77d816680887824f33ae5d717fa147f3b33ecb6ec2c7327d1ae71e73ece6c920",
+    "scripts/prepare-macos.sh": "354dd57f92a1932509c0350bc144750ba28c3481a610693f7cb3b0345a31e6f7",
+    "scripts/run-macos.sh": "9a7123bc592d28b0e893536ead3ed7c52d4820af946a49f5b1d0c40a2ab62ca0",
+    "scripts/start-app-backend.sh": "3d66ab10424359c65cc1be6b4e59f7b10ecd6d1619f0cc5f21a495a3abb469b6",
+    "tests/python_backend_integration_test.cpp": "580339b4d3b8136f0bdd0118ef1f58213e9657303219a636616042dd90cf0484",
+    "tests/python_backend_integration_test.pro": "737ba18b132d3f90cf524cb4fa398651b069ffa5f116240162f35bf3b887fbd3"
+  },
+  "staticVerification": {
+    "compileall": "passed",
+    "ruffUndefinedSymbols": "F821/F822/F823 passed",
+    "formatting": "47 production modules formatted; before/after AST equality verified",
+    "dependencyLock": "uv.lock 56 packages, public PyPI, no embedded credentials; uv pip check passed",
+    "shellEnvironmentTests": {
+      "passed": 4,
+      "failed": 0,
+      "includedInPytestCount": false
+    }
+  }
+}

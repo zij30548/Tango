@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "id": "conversation-calibration-live-v1",
+  "status": "executed_with_failures_human_review_pending",
+  "purpose": "exposed_development_calibration",
+  "holdout": false,
+  "modelStrategy": "flash_only",
+  "configuredModel": "qwen3.7-flash-2026-07-15",
+  "providerMetadata": {
+    "matchingReturnedModelRecords": 38,
+    "note": "供应商自报标识，不独立证明底层权重；Plus未调用。"
+  },
+  "scope": "真实模型、生产FastAPI/ASGI与LangGraph、每任务独立SQLite、固定合成曲库。未操作实际用户库或Qt界面。",
+  "selectedTasks": 10,
+  "selectedTurns": 17,
+  "executedTurns": 17,
+  "backendAcceptance": {
+    "passed": 6,
+    "failed": 4,
+    "unverified": 0,
+    "denominator": 10,
+    "rate": 0.6,
+    "meaning": "有限后台契约按预设规则达标；含故障按预期停止，不是音乐推荐总体完成率。",
+    "byGroup": {
+      "boundary": {
+        "failed": 1,
+        "passed": 2
+      },
+      "fault": {
+        "passed": 1
+      },
+      "routine": {
+        "failed": 3,
+        "passed": 3
+      }
+    }
+  },
+  "intentExactSet": {
+    "verifiedMatches": 14,
+    "denominator": 17,
+    "conservativeRate": 0.8235294117647058,
+    "rejectedWithoutValidatedOutput": 3,
+    "meaning": "14轮的校验后意图集合匹配；3轮无合法计划仍在分母。无法回溯被拒绝提案的语义是否正确，不能声称它们都理解错了。",
+    "byPlanner": {
+      "deterministic": {
+        "selected": 5,
+        "verifiedMatches": 5,
+        "conservativeRate": 1.0
+      },
+      "model": {
+        "selected": 12,
+        "verifiedMatches": 9,
+        "conservativeRate": 0.75
+      }
+    }
+  },
+  "fullyPassedTurns": 12,
+  "overallTaskCompletionRate": null,
+  "overallSemanticAccuracy": null,
+  "recommendationQuality": null,
+  "humanReview": "pending",
+  "budget": {
+    "authorization": "user_reply_2026_10_23_calibration_80",
+    "maximum": 80,
+    "started": 38,
+    "responded": 38,
+    "failedTransport": 0,
+    "uncertain": 0,
+    "remaining": 42,
+    "historical499CallsReused": false,
+    "automaticReruns": 0
+  },
+  "tokens": {
+    "inputTokens": 46953,
+    "knownRequests": 38,
+    "outputTokens": 4696,
+    "unknownRequests": 0,
+    "verifiedCost": null
+  },
+  "latencySeconds": {
+    "observedTurns": 17,
+    "p50": 3.709,
+    "p95": 8.138,
+    "scope": "同机ASGI与固定曲库；不是生产延迟。"
+  },
+  "descriptiveWilson95ForBackendAcceptance": [
+    0.31267376973365824,
+    0.8318196702937638
+  ],
+  "realCatalogRequests": 0,
+  "qtPlaybackObserved": false,
+  "audioListeningReviews": 0,
+  "cases": [
+    {
+      "id": "help",
+      "title": "明确帮助不调用模型",
+      "group": "routine",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "scene",
+      "title": "微醺场景与时长",
+      "group": "routine",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "releases",
+      "title": "指定歌手近期发行",
+      "group": "routine",
+      "status": "failed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "failed",
+          "failedChecks": [
+            "route_completed",
+            "intent_exact_set",
+            "action_exact_set",
+            "slot:artist",
+            "slot:targetMinutes",
+            "task_state",
+            "brief:artist",
+            "brief:requireReleases",
+            "brief:targetMinutes",
+            "duration",
+            "release_window"
+          ],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "compound",
+      "title": "偏好提议与独立找歌",
+      "group": "routine",
+      "status": "failed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "failed",
+          "failedChecks": [
+            "route_completed",
+            "intent_exact_set",
+            "action_exact_set",
+            "task_state",
+            "brief:targetMinutes",
+            "brief_concept:styles:粤语",
+            "duration"
+          ],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "negative",
+      "title": "临时场景不保存偏好",
+      "group": "boundary",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "clarification",
+      "title": "缺歌手追问后承接",
+      "group": "routine",
+      "status": "failed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "failed",
+          "failedChecks": [
+            "action_exact_set",
+            "task_state",
+            "necessary_clarification"
+          ],
+          "unverifiedChecks": []
+        },
+        {
+          "turn": 2,
+          "status": "failed",
+          "failedChecks": [
+            "action_exact_set"
+          ],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "revision",
+      "title": "锁定后连续调整",
+      "group": "routine",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        },
+        {
+          "turn": 2,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        },
+        {
+          "turn": 3,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "quoted",
+      "title": "引用取消不触发控制",
+      "group": "boundary",
+      "status": "failed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        },
+        {
+          "turn": 2,
+          "status": "failed",
+          "failedChecks": [
+            "route_completed",
+            "intent_exact_set",
+            "action_exact_set"
+          ],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "recovery",
+      "title": "暂停重开只读后恢复取消",
+      "group": "boundary",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        },
+        {
+          "turn": 2,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        },
+        {
+          "turn": 3,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        },
+        {
+          "turn": 4,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        }
+      ]
+    },
+    {
+      "id": "catalog_failure",
+      "title": "曲库故障不伪装无结果",
+      "group": "fault",
+      "status": "passed",
+      "turns": [
+        {
+          "turn": 1,
+          "status": "passed",
+          "failedChecks": [],
+          "unverifiedChecks": []
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "invalid_route_proposals",
+      "cases": [
+        "releases",
+        "compound",
+        "quoted"
+      ],
+      "observed": "路由状态failed，错误码INVALID_ROUTE_PLAN。",
+      "rootCause": "当前仅能定位到校验拒绝；原始被拒绝提案未留存，不能判断具体字段。",
+      "next": "补受限拒绝原因码/字段路径及脱敏诊断，保持能力、授权和原文来源守卫。"
+    },
+    {
+      "id": "clarification_location",
+      "cases": [
+        "clarification"
+      ],
+      "observed": "首轮先创建音乐任务，再由任务规划追问歌手；第二轮continue后成功生成预览。",
+      "interpretation": "未符合路由层先澄清不建任务的既定契约，但最终需求承接成功。第二轮continue在已建任务上下文中合理，固定new金标过严；保留原判分，后续标注依赖实际状态。"
+    }
+  ],
+  "limitations": [
+    "开发题已公开且非随机采样，不能代表线上总体",
+    "固定曲库不证明真实新作事实、检索召回或听感",
+    "无动态多Agent或Flash/Plus对照",
+    "引用否定只测本组表达，不覆盖所有攻击",
+    "真实Qt偏好确认、采用和播放器仍需人工走查",
+    "没有修改提示词/金标后取最好值，没有使用剩余额度重跑失败题"
+  ],
+  "frozenManifestSeal": "f369dd1ec2a86cdb6d9589f0e8f183fa6726dea6829a6c02d28bf77754fa774c",
+  "sources": {
+    "backend_py/evaluation/__init__.py": "43618792acb2ebbc9d5d412fecee82d8f202a1127e063a90a39589cfbc158c6c",
+    "backend_py/evaluation/calibration.py": "20b328397689a93cd108b984524ae9e5858fcadb257d410fc8446b2f40637f5c",
+    "backend_py/evaluation/scripted.py": "8be2ee6f6405287a6149d43fa1e1b7c79a759f9cba29c8871f7973e0b177300c",
+    "backend_py/pyproject.toml": "99ec18a59c29e6ebd8835320a48834d0cf853548095df15b99e7cbe7c9b6ab94",
+    "backend_py/tango_backend/__init__.py": "fa7c26f3d8e27490ec61a2d3900b343f038b0978c645bc67c1e0efa56e6596f1",
+    "backend_py/tango_backend/account_quota.py": "4da0bafd43b84e7ea759063e122d5b157c18fe459eee6ab528f1fc10f864c4c6",
+    "backend_py/tango_backend/admin.py": "57f0fa9241ca1f87416e43101289a9dda28a08bc9ddd0ce82c134afd0f791bf7",
+    "backend_py/tango_backend/app.py": "f533d1f06448c5ad659ff731d31b8d306937ff142a214a1c008a7551c9b779de",
+    "backend_py/tango_backend/assistant_model.py": "3394aa55f8854d354b7e50b94679360f5c34030a94339c3408a1209e4c55068c",
+    "backend_py/tango_backend/capability_registry.py": "03c4239fea3208aabf6ab3447c968bc5aaa2281bb3013fdbbe7fbd59b5cd8386",
+    "backend_py/tango_backend/compat.py": "8461edfba7ba2d14c16f972f3c6c5ea3664556d5315f4727b6912bbcd7234e06",
+    "backend_py/tango_backend/conversation_route_store.py": "2a0cc5925cf101e0c42921637d80b5fcd9317237f254f075f5e09f9a58587389",
+    "backend_py/tango_backend/conversation_router.py": "0d573f79525e7d45b1e64a7e71725cd3c40c10ff0cd6514932c7acceb386d646",
+    "backend_py/tango_backend/conversation_store.py": "57009b5e45e00a386e382e489964dd6790704c6d023228f89ed8d7c35786d71f",
+    "backend_py/tango_backend/development_config.py": "7f2cf4d5b8867d8fe2eb866062f0dd15119ef7bfa7f2d39c8cd2b93dcd96e7b2",
+    "backend_py/tango_backend/development_session.py": "519466529acb7f3ff651ca2fd2912414fe5d6150ac4b457efe88079672d34489",
+    "backend_py/tango_backend/ensure_storage.py": "3f6e51bcf36c7d2bfa7f9cbcd2a3fc79a7b6babce68ee6947f41e136466c9abd",
+    "backend_py/tango_backend/errors.py": "1bdf5af4208e1161ec50d971f5e38660c43deae2007c08931cca1347dd087b5e",
+    "backend_py/tango_backend/http_protocol.py": "2039ca6f46c203f3979c7631d0bfd85e93dbc57874f069db9acd59ee04272213",
+    "backend_py/tango_backend/intent_routing.py": "ce405e795056469d1e09dde443e6a6721dedce58f459be75c86761d8c96901f1",
+    "backend_py/tango_backend/invite_store.py": "96a63fadb8c03b02a75729c6228290c436166e190b432ad749d7ff7009a0f06c",
+    "backend_py/tango_backend/launch_local.py": "d003bd85eae2a7f4149e4a4d2ad66ed55e26cdfaf3b4df1312bfc87fdab66a68",
+    "backend_py/tango_backend/migrate_mysql.py": "86429c99215695ffe2ac9fb743d4b9b45e8e6e26fb5a4a0ca4d013c6f312962b",
+    "backend_py/tango_backend/model.py": "0268000794716730985634afb3fde811b67c92d57603fb68199d152e7de8e618",
+    "backend_py/tango_backend/model_common.py": "164e722476a036fa4a9542e02194bd0a27cfdddc6f054437e8e56ba38cf6ad3b",
+    "backend_py/tango_backend/model_profiles.py": "c1d76aeaf7a4282c6bb918b9434768591017ff94e3ce34922f918a50fffa9478",
+    "backend_py/tango_backend/model_transport.py": "0678594674c74dd1cd30d9772b2c819d2adaa51bfabc48929a474ebb0b4bab9a",
+    "backend_py/tango_backend/mysql_infra.py": "779c376adf3c1ac4988fb480b75b501298ed303e7cbb47d27bdf49ab949cf8d5",
+    "backend_py/tango_backend/mysql_store.py": "beae11bca12038cbf08e8dcf1d2673f3100dee487a1e90571d9baf3a0dec0e7a",
+    "backend_py/tango_backend/mysql_task_store.py": "bae0665f25f6cc890a207727c4905e954f1e6148c9b7729211605e284ad1fc7f",
+    "backend_py/tango_backend/postgres_store.py": "7ec4037819a36479bf798b95c5718ded3a3ba4bb7e0ba65133c3dbf86bd089ee",
+    "backend_py/tango_backend/postgres_task_store.py": "c595f7075e5baff800f797948f38e67d53320e8561514e5bd78b189183257869",
+    "backend_py/tango_backend/radio_model.py": "8c1cd7c8b9495f4c17be6b0a92b18196506007d3fa4aa90c0ac01b46ed6ae7dd",
+    "backend_py/tango_backend/redis_limiter.py": "c1a06ebfdf1418b4ad218ab3779bdb4747713266a49530a95c802191897f5011",
+    "backend_py/tango_backend/registration_service.py": "2f42c60ce2ec02723a404ded6104b2dfde890694412da389dd5634ce8bec1aed",
+    "backend_py/tango_backend/security_config.py": "7edbc069aa22116ecd432c00f4d5d32cfcd9a11e61604cea8096e6f3751e9789",
+    "backend_py/tango_backend/server.py": "11c500a318f4965ccf9e1f6f934835af51ce561ad9a8655f3b4b5bd9753b9be9",
+    "backend_py/tango_backend/service_config.py": "5e80571910077aa219d1355f3614cb62a4616ab0d912d3bd4339ccccf247857f",
+    "backend_py/tango_backend/storage.py": "5ed23959a3b59e3dbf4bfd4da1ee4c9a6268d44f6c0cd6d14f811774b3d79db5",
+    "backend_py/tango_backend/storage_auth.py": "ed9e56c0907945ec2962fc94e1f5468dfc8379be74f08407910a1ed6c2f0e6f9",
+    "backend_py/tango_backend/storage_db.py": "21f844112f2bd9867275812813eeebae391208a8a675871330cfb95f2de1b1b4",
+    "backend_py/tango_backend/storage_postgres.py": "93c81a3626f11f22472877ffbea040d617fb8be90d0723f449452126d3a184fe",
+    "backend_py/tango_backend/storage_profile.py": "a5407e8065ab3e966ac85d0f89f85cf20b72b3915d613846169f277ffc28d582",
+    "backend_py/tango_backend/store.py": "dc76199a64f840d6e9ea15b4405e2d99dbba2f3639405bef94e9bb580c4d9c7a",
+    "backend_py/tango_backend/task_brief_patch.py": "4e76a9802a1cb900865d86756fab896d2cb4b5fcb1fa3b54a8615132db76609e",
+    "backend_py/tango_backend/task_duration.py": "40233800dfab28649d3066ab8c15187a19c6945d32fb0afc5961cb6ef7cb801e",
+    "backend_py/tango_backend/task_language.py": "8b10cccff9df41817c22731a8f33ce5dafe3ae94a1771e5d7c672494b4e7160f",
+    "backend_py/tango_backend/task_model.py": "2dede1bd9a353f977541f209f7d7326edb3335ddf05a330e3ec8e7f5efdaece3",
+    "backend_py/tango_backend/task_pending_request.py": "75412e266312a5141b056ae7900df91c4519bef50ed982831016be9955442bcb",
+    "backend_py/tango_backend/task_progress.py": "de4b0a71dacfcc4424649edca527abf8cdaa6ccdfe09d3bdef857ad5accb88b4",
+    "backend_py/tango_backend/task_query_coverage.py": "6aa7d5481baa1ec9721e78ecbe504225f591176e81bd425836d6d255bd5a1d6e",
+    "backend_py/tango_backend/task_release_intent.py": "a26cfa83cb5889057daf75d5e488a18e316cb946bfed73ba4befd79a3efc8e18",
+    "backend_py/tango_backend/task_runtime.py": "5bac912fb512ef96a9b859bd0cf97980c49ddb05a1d866b047cfb9e6a5ea58bf",
+    "backend_py/tango_backend/task_schema.py": "bcbe554ddd93f2f59f311c52fbd2c1ca7bfca8f50d02f6010b7425cf717477a6",
+    "backend_py/tango_backend/task_store.py": "1cc3be9eaf09cc257c66fd1d201f5faa5c00882aed1dc745ed0e2105b056e4b3",
+    "backend_py/tango_backend/task_style_evidence.py": "ac092fb97b308314e8e38496854b4f3da03777744ac2ebaa999252fd5e8248f2",
+    "backend_py/tango_backend/task_tool_cache.py": "d497042451726af0223a34447c1b95f9301b2e46059e79fcf6ceb176a18fb726",
+    "backend_py/tango_backend/task_tool_evidence.py": "18c21d6bab090d815ac66cb8bed39fe946d2b0230f86f95cfadc414b3744a610",
+    "backend_py/uv.lock": "a237f7daed2802f3ca5fdd12f817716ce5834471e985f21b1d8067fe6baa563f",
+    "docs/evaluation-data/conversation-calibration-v1.json": "0874f6e884d3cda66addfd5575ac48abcedc1684c73ef012f98ecbe743d22c00",
+    "scripts/calibrate-agent.py": "3c186609493aed4a58495e8de299eeb77a0b51834e1b3528cb7de25d1d02431a"
+  },
+  "privateEvidence": {
+    "directory": ".local/calibration-runs/20261023T083918Z-325cea1f",
+    "files": {
+      "manifest.json": "3ed5e683f8fd0a82203b9f2b78491f1de450726e86afbb1fab320f1be6d17df8",
+      "suite.json": "765c4ac7227ebd9403c1368c6d18826ecd787d1de5ce38ffc47bf3de36b86edb",
+      "report.json": "8a3068c3e2eb1ff68e1aece7f5c6dc3b2550b08be60e50010947494345f9df3d",
+      "progress.json": "0bfd116ec660e697e6a8bd6c452eeff86efb05311cf292b59ae98844178ed337",
+      "provider-requests.jsonl": "bc57be6f134013a4a5c2ab608c863f4d9972ff2a0b622e05888957b517166658",
+      "model-policy.json": "e0b1e3a0ffba31b2a81ad5c5e663c5dcc9a8106789e9bb051364485762c6e273",
+      "review.html": "b99f1f532c9ba62e5cc502bc5677f689d0b31cb3ad561f780cdce400662acf03",
+      "human-review.blank.csv": "1bf6a31d58d0bb2c2afa99b922d0a27abc9c308456a04af6edea0c33bb1074e4",
+      "human-guide.html": "17862e17b3bcb07a2cfc4d067fd4343a6d94584da623889b609e330f71ace872"
+    },
+    "mutableHumanReviewFile": "human-review.csv"
+  },
+  "publication": {
+    "privateModelConfigurationModified": false,
+    "actualUserDatabaseModified": false,
+    "committed": false,
+    "pushed": false
+  }
+}

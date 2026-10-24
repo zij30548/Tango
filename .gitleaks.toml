@@ -1,0 +1,17 @@
+title = "Tango repository credential checks"
+
+[extend]
+useDefault = true
+
+# This fixed marker is input to an account-isolation test, never a credential.
+# Both the exact value and the exact test path must match. All other values in
+# tests, docs, snapshots and application code retain the default secret rules.
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Fixed account-isolation test canary and its frozen copies"
+condition = "AND"
+regexTarget = "secret"
+regexes = ['''^PRIVATE_SCOPE_MARKER_271$''']
+paths = ['''(?:^|/)(?:backend/test/|docs/evaluation-versions/(?:v7-source|storage-v1-source|redis-agent-v2-source)/backend/test/)task-clarification-continuation\.test\.mjs$''']

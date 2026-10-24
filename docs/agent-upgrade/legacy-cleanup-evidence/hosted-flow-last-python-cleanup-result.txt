@@ -1,0 +1,16 @@
+********* Start testing of HostedFlowTest *********
+Config: Using QtTest library 5.15.19, Qt 5.15.19 (arm64-little_endian-lp64 shared (dynamic) release build; by Clang 21.0.0 (clang-2100.0.123.102) (Apple)), osx 26.6
+PASS   : HostedFlowTest::initTestCase()
+FAIL!  : HostedFlowTest::realBackendAccountsModelPreviewPlaybackAndLogout() 'session->isRunning()' returned FALSE. ()
+   Loc: [../../tests/hosted_flow_test.cpp(411)]
+FAIL!  : HostedFlowTest::realBackendAccountsModelPreviewPlaybackAndLogout() 'dialogVisited && started' returned FALSE. ()
+   Loc: [../../tests/hosted_flow_test.cpp(422)]
+FAIL!  : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(corrupted guest file) 'session->isRunning()' returned FALSE. ()
+   Loc: [../../tests/hosted_flow_test.cpp(586)]
+FAIL!  : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(read-only guest file) 'session->isRunning()' returned FALSE. ()
+   Loc: [../../tests/hosted_flow_test.cpp(586)]
+FAIL!  : HostedFlowTest::logoutWithUnavailableGuestUsesIsolatedTemporarySpace(unavailable data directory) 'session->isRunning()' returned FALSE. ()
+   Loc: [../../tests/hosted_flow_test.cpp(586)]
+PASS   : HostedFlowTest::cleanupTestCase()
+Totals: 2 passed, 5 failed, 0 skipped, 0 blacklisted, 126357ms
+********* Finished testing of HostedFlowTest *********

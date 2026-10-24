@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCase name="MusicTaskFlowTest">
+<Environment>
+    <QtVersion>5.15.19</QtVersion>
+    <QtBuild>Qt 5.15.19 (arm64&#x002D;little_endian&#x002D;lp64 shared (dynamic) release build; by Clang 21.0.0 (clang&#x002D;2100.0.123.102) (Apple))</QtBuild>
+    <QTestVersion>5.15.19</QTestVersion>
+</Environment>
+<TestFunction name="initTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.033458"/>
+</TestFunction>
+<TestFunction name="compositeTaskModificationRecoveryAndAccountIsolation">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="9642.62"/>
+</TestFunction>
+<TestFunction name="expiredLocalLeasesPauseAndResumeWithoutServerRestart">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="1819.22"/>
+</TestFunction>
+<TestFunction name="cleanupTestCase">
+<Incident type="pass" file="" line="0" />
+    <Duration msecs="0.007041"/>
+</TestFunction>
+<Duration msecs="11462.4"/>
+</TestCase>

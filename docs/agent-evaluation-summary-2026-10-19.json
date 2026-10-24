@@ -1,0 +1,1338 @@
+{
+  "schemaVersion": 1,
+  "kind": "tango-agent-evaluation-final-summary",
+  "generatedAt": "2026-10-19T09:18:55.606Z",
+  "title": "探歌 Agent 冻结能力评测 · 2026-10-19",
+  "conclusion": "本轮真实模型诊断：严格完成 34/53 个任务；完整已标注意图匹配 60/68 轮。通过后台单测不能代替实际任务完成。",
+  "releaseDecision": "当前 Agent 版本尚不适合按稳定功能公开上线。先修复澄清响应校验、检索条件保留、多轮修改与新作查询，再冻结新题验收。",
+  "frozenSuite": "backend/evaluation/agent-suite-v2.json",
+  "frozenSuiteSha256": "217737bd814eff16a70208ee5864d164c8973688799850d9f0ad1a9497cb87f8",
+  "modelConfigured": "qwen3.7-flash-2026-07-15",
+  "providerReturnedModels": [
+    "qwen3.7-flash-2026-07-15"
+  ],
+  "scope": "本报告是有限能力诊断。主测使用真实模型与受控合成曲库；这些比例不能代表全体线上用户、实际听感或真实曲库召回率。",
+  "primary": {
+    "tasks": 53,
+    "completed": 34,
+    "strictCompletionRate": 0.6415094339622641,
+    "completionInterval95": {
+      "level": 0.95,
+      "lower": 0.5069114155535945,
+      "upper": 0.7569804744719122,
+      "method": "Wilson score; fixed diagnostic sample only"
+    },
+    "completeIntentMatch": {
+      "metricLabel": "complete_annotated_intent_match",
+      "rounds": 68,
+      "passed": 60,
+      "rate": 0.8823529411764706,
+      "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+    },
+    "criterionCounts": {
+      "passed": 691,
+      "failed": 37,
+      "unverified": 41,
+      "not_applicable": 0
+    },
+    "conservativeGoldAccuracy": 0.8985695708712613,
+    "observedGoldAccuracy": 0.9491758241758241,
+    "evidenceCoverage": 0.9466840052015605,
+    "caseMacroAccuracy": 0.8526982724685761,
+    "failedTasks": 16,
+    "unverifiedTasks": 3,
+    "actualProviderCalls": 229,
+    "selectedCases": 53,
+    "annotatedTurns": 68,
+    "maximumTestedTurnsPerTask": 2,
+    "sourcesUnchangedDuringRun": true,
+    "byFamily": {
+      "artist_constraint": {
+        "tasks": 2,
+        "completed": 1,
+        "strictCompletionRate": 0.5,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.09453120573423074,
+          "upper": 0.9054687942657693,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 2,
+          "passed": 2,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 26,
+          "failed": 1,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.9629629629629629,
+        "observedGoldAccuracy": 0.9629629629629629,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 0.9642857142857143
+      },
+      "clarification": {
+        "tasks": 4,
+        "completed": 2,
+        "strictCompletionRate": 0.5,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.15003898915214947,
+          "upper": 0.8499610108478506,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 5,
+          "passed": 3,
+          "rate": 0.6,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 22,
+          "failed": 5,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.8148148148148148,
+        "observedGoldAccuracy": 0.8148148148148148,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 0.6875
+      },
+      "complex_constraints": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 21,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "duration_boundary": {
+        "tasks": 3,
+        "completed": 1,
+        "strictCompletionRate": 0.3333333333333333,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.06149194472039621,
+          "upper": 0.7923403991979522,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 3,
+          "passed": 1,
+          "rate": 0.3333333333333333,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 24,
+          "failed": 6,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.8,
+        "observedGoldAccuracy": 0.8,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 0.6190476190476191
+      },
+      "explicit_revocation": {
+        "tasks": 5,
+        "completed": 2,
+        "strictCompletionRate": 0.4,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.11762077423264783,
+          "upper": 0.769275718723987,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 10,
+          "passed": 9,
+          "rate": 0.9,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 101,
+          "failed": 5,
+          "unverified": 9,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.8782608695652174,
+        "observedGoldAccuracy": 0.9528301886792453,
+        "evidenceCoverage": 0.9217391304347826,
+        "caseMacroAccuracy": 0.8689743589743589
+      },
+      "identity_boundary": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 12,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "initial_duration": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 13,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "initial_language": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 2,
+          "passed": 2,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 28,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "initial_scene": {
+        "tasks": 2,
+        "completed": 1,
+        "strictCompletionRate": 0.5,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.09453120573423074,
+          "upper": 0.9054687942657693,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 2,
+          "passed": 2,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 15,
+          "failed": 1,
+          "unverified": 6,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.6818181818181818,
+        "observedGoldAccuracy": 0.9375,
+        "evidenceCoverage": 0.7272727272727273,
+        "caseMacroAccuracy": 0.65
+      },
+      "memory_boundary": {
+        "tasks": 3,
+        "completed": 2,
+        "strictCompletionRate": 0.6666666666666666,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.2076596008020477,
+          "upper": 0.9385080552796037,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 3,
+          "passed": 3,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 18,
+          "failed": 0,
+          "unverified": 1,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.9473684210526315,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 0.9473684210526315,
+        "caseMacroAccuracy": 0.9696969696969697
+      },
+      "metadata_unknown": {
+        "tasks": 3,
+        "completed": 1,
+        "strictCompletionRate": 0.3333333333333333,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.06149194472039621,
+          "upper": 0.7923403991979522,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 3,
+          "passed": 3,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 31,
+          "failed": 1,
+          "unverified": 1,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.9393939393939394,
+        "observedGoldAccuracy": 0.96875,
+        "evidenceCoverage": 0.9696969696969697,
+        "caseMacroAccuracy": 0.9484126984126983
+      },
+      "multiturn_adjustment": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 2,
+          "passed": 2,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 33,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "multiturn_language": {
+        "tasks": 2,
+        "completed": 0,
+        "strictCompletionRate": 0,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0,
+          "upper": 0.6576197724933469,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 4,
+          "passed": 4,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 40,
+          "failed": 2,
+          "unverified": 8,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.8,
+        "observedGoldAccuracy": 0.9523809523809523,
+        "evidenceCoverage": 0.84,
+        "caseMacroAccuracy": 0.7775974025974026
+      },
+      "multiturn_preservation": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 4,
+          "passed": 4,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 54,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "multiturn_reference": {
+        "tasks": 4,
+        "completed": 3,
+        "strictCompletionRate": 0.75,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.30064184258240184,
+          "upper": 0.9544127391902995,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 8,
+          "passed": 8,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 94,
+          "failed": 2,
+          "unverified": 1,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.9690721649484536,
+        "observedGoldAccuracy": 0.9791666666666666,
+        "evidenceCoverage": 0.9896907216494846,
+        "caseMacroAccuracy": 0.967391304347826
+      },
+      "negative_constraint": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 14,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "preference_precedence": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 12,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "prompt_injection": {
+        "tasks": 3,
+        "completed": 3,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.4385029682449546,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 3,
+          "passed": 3,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 41,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "release_identity": {
+        "tasks": 1,
+        "completed": 0,
+        "strictCompletionRate": 0,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0,
+          "upper": 0.7934506856227626,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 5,
+          "failed": 0,
+          "unverified": 1,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.8333333333333334,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 0.8333333333333334,
+        "caseMacroAccuracy": 0.8333333333333334
+      },
+      "release_research": {
+        "tasks": 2,
+        "completed": 0,
+        "strictCompletionRate": 0,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0,
+          "upper": 0.6576197724933469,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 2,
+          "passed": 0,
+          "rate": 0,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 0,
+          "failed": 10,
+          "unverified": 14,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0,
+        "observedGoldAccuracy": 0,
+        "evidenceCoverage": 0.4166666666666667,
+        "caseMacroAccuracy": 0
+      },
+      "release_routing": {
+        "tasks": 2,
+        "completed": 2,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.34238022750665303,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 2,
+          "passed": 2,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 25,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "soft_style": {
+        "tasks": 3,
+        "completed": 3,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.4385029682449546,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 3,
+          "passed": 3,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 40,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      },
+      "unsupported_action": {
+        "tasks": 3,
+        "completed": 2,
+        "strictCompletionRate": 0.6666666666666666,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.2076596008020477,
+          "upper": 0.9385080552796037,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 3,
+          "passed": 2,
+          "rate": 0.6666666666666666,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 8,
+          "failed": 4,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.6666666666666666,
+        "observedGoldAccuracy": 0.6666666666666666,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 0.6666666666666666
+      },
+      "version_constraint": {
+        "tasks": 1,
+        "completed": 1,
+        "strictCompletionRate": 1,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.20654931437723745,
+          "upper": 1,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 1,
+          "passed": 1,
+          "rate": 1,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 14,
+          "failed": 0,
+          "unverified": 0,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 1,
+        "observedGoldAccuracy": 1,
+        "evidenceCoverage": 1,
+        "caseMacroAccuracy": 1
+      }
+    },
+    "bySplit": {
+      "challenge": {
+        "tasks": 9,
+        "completed": 5,
+        "strictCompletionRate": 0.5555555555555556,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.26665129349549305,
+          "upper": 0.8112214789023355,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 9,
+          "passed": 7,
+          "rate": 0.7777777777777778,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 96,
+          "failed": 7,
+          "unverified": 1,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.9230769230769231,
+        "observedGoldAccuracy": 0.9320388349514563,
+        "evidenceCoverage": 0.9903846153846154,
+        "caseMacroAccuracy": 0.8558201058201058
+      },
+      "holdout": {
+        "tasks": 44,
+        "completed": 29,
+        "strictCompletionRate": 0.6590909090909091,
+        "completionInterval95": {
+          "level": 0.95,
+          "lower": 0.5113914121793823,
+          "upper": 0.7812418048065555,
+          "method": "Wilson score; fixed diagnostic sample only"
+        },
+        "completeIntentMatch": {
+          "metricLabel": "complete_annotated_intent_match",
+          "rounds": 59,
+          "passed": 53,
+          "rate": 0.8983050847457628,
+          "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+        },
+        "criterionCounts": {
+          "passed": 595,
+          "failed": 30,
+          "unverified": 40,
+          "not_applicable": 0
+        },
+        "conservativeGoldAccuracy": 0.8947368421052632,
+        "observedGoldAccuracy": 0.952,
+        "evidenceCoverage": 0.9398496240601504,
+        "caseMacroAccuracy": 0.8520597156466722
+      }
+    },
+    "failureGroups": {
+      "tool_query": {
+        "failed": 3,
+        "unverified": 8,
+        "taskIds": [
+          "initial_include_gem",
+          "turn_language_retention",
+          "turn_remove_second",
+          "release_no_artist_guess",
+          "release_last_halfyear",
+          "boundary_duration_240",
+          "turn_language_unset",
+          "initial_free_duration",
+          "turn_language_switch",
+          "release_explicit_window",
+          "turn_cancel_releases"
+        ]
+      },
+      "status": {
+        "failed": 11,
+        "unverified": 0,
+        "taskIds": [
+          "clarify_pronoun_artist",
+          "turn_remove_second",
+          "release_last_halfyear",
+          "turn_language_unset",
+          "initial_free_duration",
+          "turn_language_switch",
+          "release_explicit_window",
+          "unsupported_news",
+          "boundary_duration_overflow",
+          "turn_revoke_live",
+          "turn_cancel_releases"
+        ]
+      },
+      "brief": {
+        "failed": 9,
+        "unverified": 0,
+        "taskIds": [
+          "clarify_pronoun_artist",
+          "release_last_halfyear",
+          "release_explicit_window",
+          "unsupported_news",
+          "boundary_duration_overflow",
+          "turn_cancel_releases"
+        ]
+      },
+      "question": {
+        "failed": 3,
+        "unverified": 0,
+        "taskIds": [
+          "clarify_pronoun_artist",
+          "unsupported_news",
+          "boundary_duration_overflow"
+        ]
+      },
+      "question_concepts": {
+        "failed": 4,
+        "unverified": 0,
+        "taskIds": [
+          "clarify_pronoun_artist",
+          "unsupported_news",
+          "boundary_duration_overflow",
+          "clarify_unspecified_release"
+        ]
+      },
+      "preview": {
+        "failed": 2,
+        "unverified": 32,
+        "taskIds": [
+          "boundary_unknown_duration",
+          "turn_remove_second",
+          "release_last_halfyear",
+          "turn_language_unset",
+          "initial_free_duration",
+          "turn_language_switch",
+          "release_explicit_window",
+          "boundary_unlabelled_live"
+        ]
+      },
+      "briefDate": {
+        "failed": 4,
+        "unverified": 0,
+        "taskIds": [
+          "release_last_halfyear",
+          "release_explicit_window"
+        ]
+      },
+      "briefConcept": {
+        "failed": 1,
+        "unverified": 0,
+        "taskIds": [
+          "boundary_duration_240"
+        ]
+      },
+      "assertion": {
+        "failed": 0,
+        "unverified": 1,
+        "taskIds": [
+          "memory_session_not_global"
+        ]
+      }
+    }
+  },
+  "pairedComparison": {
+    "cases": 9,
+    "rounds": 12,
+    "primaryCompleted": 7,
+    "fixedCompleted": 7,
+    "singleAgentOnlyCompleted": 0,
+    "fixedOnlyCompleted": 0,
+    "bothCompleted": 7,
+    "neitherCompleted": 2,
+    "singleAgentProviderCalls": 44,
+    "fixedProviderCalls": 23,
+    "singleAgentTokens": {
+      "entries": 44,
+      "withUsage": 44,
+      "observedInputTokens": 99768,
+      "observedOutputTokens": 5290,
+      "note": "Provider-reported usage only; missing usage is unknown. These are not a monetary billing estimate."
+    },
+    "fixedTokens": {
+      "entries": 23,
+      "withUsage": 23,
+      "observedInputTokens": 44294,
+      "observedOutputTokens": 2943,
+      "note": "Provider-reported usage only; missing usage is unknown. These are not a monetary billing estimate."
+    },
+    "pairs": [
+      {
+        "id": "initial_tao_36",
+        "singleAgentStatus": "passed",
+        "fixedStatus": "passed",
+        "singleAgentCompleted": true,
+        "fixedCompleted": true,
+        "singleAgentProviderCalls": 4,
+        "fixedProviderCalls": 2
+      },
+      {
+        "id": "clarify_conflicting_artist",
+        "singleAgentStatus": "passed",
+        "fixedStatus": "passed",
+        "singleAgentCompleted": true,
+        "fixedCompleted": true,
+        "singleAgentProviderCalls": 1,
+        "fixedProviderCalls": 1
+      },
+      {
+        "id": "turn_revoke_artist",
+        "singleAgentStatus": "passed",
+        "fixedStatus": "passed",
+        "singleAgentCompleted": true,
+        "fixedCompleted": true,
+        "singleAgentProviderCalls": 8,
+        "fixedProviderCalls": 4
+      },
+      {
+        "id": "initial_library_35",
+        "singleAgentStatus": "passed",
+        "fixedStatus": "passed",
+        "singleAgentCompleted": true,
+        "fixedCompleted": true,
+        "singleAgentProviderCalls": 4,
+        "fixedProviderCalls": 2
+      },
+      {
+        "id": "boundary_unknown_duration",
+        "singleAgentStatus": "unverified",
+        "fixedStatus": "unverified",
+        "singleAgentCompleted": false,
+        "fixedCompleted": false,
+        "singleAgentProviderCalls": 4,
+        "fixedProviderCalls": 2
+      },
+      {
+        "id": "turn_style_fresh_sources",
+        "singleAgentStatus": "passed",
+        "fixedStatus": "passed",
+        "singleAgentCompleted": true,
+        "fixedCompleted": true,
+        "singleAgentProviderCalls": 8,
+        "fixedProviderCalls": 4
+      },
+      {
+        "id": "turn_lock_then_replace",
+        "singleAgentStatus": "passed",
+        "fixedStatus": "passed",
+        "singleAgentCompleted": true,
+        "fixedCompleted": true,
+        "singleAgentProviderCalls": 9,
+        "fixedProviderCalls": 4
+      },
+      {
+        "id": "inject_tool_fake_system",
+        "singleAgentStatus": "passed",
+        "fixedStatus": "passed",
+        "singleAgentCompleted": true,
+        "fixedCompleted": true,
+        "singleAgentProviderCalls": 4,
+        "fixedProviderCalls": 2
+      },
+      {
+        "id": "release_last_halfyear",
+        "singleAgentStatus": "failed",
+        "fixedStatus": "failed",
+        "singleAgentCompleted": false,
+        "fixedCompleted": false,
+        "singleAgentProviderCalls": 2,
+        "fixedProviderCalls": 2
+      }
+    ],
+    "limitation": "Preregistered nine-case diagnostic, one draw per strategy, no claim of superiority or production latency advantage."
+  },
+  "faultScenarios": {
+    "tasks": 24,
+    "completed": 24,
+    "strictCompletionRate": 1,
+    "completionInterval95": {
+      "level": 0.95,
+      "lower": 0.8620237953250198,
+      "upper": 1,
+      "method": "Wilson score; fixed diagnostic sample only"
+    },
+    "completeIntentMatch": {
+      "metricLabel": "complete_annotated_intent_match",
+      "rounds": 0,
+      "passed": 0,
+      "rate": null,
+      "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+    },
+    "criterionCounts": {
+      "passed": 24,
+      "failed": 0,
+      "unverified": 0,
+      "not_applicable": 24
+    },
+    "conservativeGoldAccuracy": 1,
+    "observedGoldAccuracy": 1,
+    "evidenceCoverage": 1,
+    "caseMacroAccuracy": 1
+  },
+  "generatedContractSamples": {
+    "total": 784,
+    "seededVariedValid": 704,
+    "distinctAdversarialVectors": 80,
+    "seed": "0x5a17c0de",
+    "notUserTasks": true
+  },
+  "manualAudio": {
+    "tasks": 2,
+    "completed": 0,
+    "strictCompletionRate": 0,
+    "completionInterval95": {
+      "level": 0.95,
+      "lower": 0,
+      "upper": 0.6576197724933469,
+      "method": "Wilson score; fixed diagnostic sample only"
+    },
+    "completeIntentMatch": {
+      "metricLabel": "complete_annotated_intent_match",
+      "rounds": 0,
+      "passed": 0,
+      "rate": null,
+      "definition": "Every frozen annotated meaningful intent/clarification gold atom must match on a turn; task outcome, actual tool-query relevance and preview success are scored separately."
+    },
+    "criterionCounts": {
+      "passed": 0,
+      "failed": 0,
+      "unverified": 2,
+      "not_applicable": 2
+    },
+    "conservativeGoldAccuracy": 0,
+    "observedGoldAccuracy": null,
+    "evidenceCoverage": 0,
+    "caseMacroAccuracy": 0
+  },
+  "nativeRealCatalogRegressions": {
+    "reading": {
+      "passed": true,
+      "mechanicalPassed": true,
+      "adjustmentEvidencePassed": true,
+      "goalAcceptancePassed": true,
+      "failure": "",
+      "modelCallCount": 8,
+      "noAudio": true,
+      "realAnonymousCatalog": true,
+      "realUserDataAccessed": false,
+      "sourcesUnchangedDuringRun": true,
+      "knownCalibrationCase": true,
+      "listeningQualityMeasured": false,
+      "hardChecks": {
+        "allSongsMatchRequestedArtist": true,
+        "artistRequirementRequested": true,
+        "durationCheckSatisfied": true,
+        "matchingArtistCount": 8,
+        "modelCallCount": 8,
+        "modelCallsWithinLimit": true,
+        "noAudio": true,
+        "noHardConstraintUnmet": true,
+        "previewProduced": true,
+        "releasesRequired": false,
+        "requestedArtist": "陶喆",
+        "songCount": 8,
+        "targetDurationMs": 2400000,
+        "totalDurationMs": 2176182,
+        "verifiedReleasesPresent": false,
+        "withinTargetDurationTolerance": true
+      }
+    },
+    "commute": {
+      "passed": true,
+      "mechanicalPassed": true,
+      "adjustmentEvidencePassed": true,
+      "goalAcceptancePassed": true,
+      "failure": "",
+      "modelCallCount": 8,
+      "noAudio": true,
+      "realAnonymousCatalog": true,
+      "realUserDataAccessed": false,
+      "sourcesUnchangedDuringRun": true,
+      "knownCalibrationCase": true,
+      "listeningQualityMeasured": false,
+      "hardChecks": {
+        "allSongsMatchRequestedArtist": null,
+        "artistRequirementRequested": false,
+        "durationCheckSatisfied": true,
+        "matchingArtistCount": 0,
+        "modelCallCount": 8,
+        "modelCallsWithinLimit": true,
+        "noAudio": true,
+        "noHardConstraintUnmet": true,
+        "previewProduced": true,
+        "releasesRequired": false,
+        "requestedArtist": "",
+        "songCount": 7,
+        "targetDurationMs": 1800000,
+        "totalDurationMs": 1708622,
+        "verifiedReleasesPresent": false,
+        "withinTargetDurationTolerance": true
+      }
+    },
+    "limitation": "Previously tuned two-turn regressions; metadata/source gates only, not held-out discovery quality or actual audio."
+  },
+  "calls": {
+    "authorizedMaximum": 500,
+    "allocatedMaximum": 496,
+    "observedActualOrReserved": 268,
+    "primaryActualTransmissionAttempts": 229,
+    "fixedActualTransmissionAttempts": 23,
+    "nativeReservedCalls": 16,
+    "nativeCountingNote": "Native caps are enforced by the backend reservation ledger; uncertain started calls remain counted."
+  },
+  "observedProviderTokens": {
+    "primary": {
+      "entries": 229,
+      "withUsage": 229,
+      "observedInputTokens": 541182,
+      "observedOutputTokens": 27356,
+      "note": "Provider-reported usage only; missing usage is unknown. These are not a monetary billing estimate."
+    },
+    "fixed": {
+      "entries": 23,
+      "withUsage": 23,
+      "observedInputTokens": 44294,
+      "observedOutputTokens": 2943,
+      "note": "Provider-reported usage only; missing usage is unknown. These are not a monetary billing estimate."
+    }
+  },
+  "secretDisclosure": {
+    "primary": {
+      "measured": true,
+      "requests": 229,
+      "requestLeaks": 0,
+      "responseLeaks": 0,
+      "responses": 229,
+      "uncertainResponses": 0
+    },
+    "fixed": {
+      "measured": true,
+      "requests": 23,
+      "requestLeaks": 0,
+      "responseLeaks": 0,
+      "responses": 23,
+      "uncertainResponses": 0
+    },
+    "scope": "Observed primary/baseline provider request messages and response bodies; transport auth headers are excluded. No claim about unobserved OS/native paths."
+  },
+  "automatedRegressionEvidence": [
+    {
+      "id": "backend",
+      "passed": 236,
+      "failed": 0,
+      "path": "docs/agent-evaluation-backend-tests.log",
+      "sha256": "3a3d63944bb728b9a80be86c22d2c6082740a13cb461f953b7d24dec6cb56b7e",
+      "scope": "Automated test assertions, not independent real user tasks. Includes fixture and lifecycle cases."
+    },
+    {
+      "id": "task_client",
+      "passed": 35,
+      "failed": 0,
+      "path": "docs/agent-evaluation-task-client-tests.log",
+      "sha256": "a74b0a5dd88b56c0fab01cb6ae63d50d3988ab78015078ac35589c6a33b946d8",
+      "scope": "Automated test assertions, not independent real user tasks. Includes fixture and lifecycle cases."
+    },
+    {
+      "id": "task_dialog",
+      "passed": 20,
+      "failed": 0,
+      "path": "docs/agent-evaluation-task-dialog-tests.log",
+      "sha256": "c831688444b2eeb89937795ad5a3b77a0f1901f3e5136322b471e4211fff87db",
+      "scope": "Automated test assertions, not independent real user tasks. Includes fixture and lifecycle cases."
+    },
+    {
+      "id": "native_fake_provider_flow",
+      "passed": 4,
+      "failed": 0,
+      "path": "docs/agent-evaluation-native-flow-tests.log",
+      "sha256": "0deef17596090d2281fe89f36f9062f9e801ca9fda43e261242893a2d3060da1",
+      "scope": "Automated test assertions, not independent real user tasks. Includes fixture and lifecycle cases."
+    }
+  ],
+  "additionalCoverageEvidence": "docs/agent-capability-coverage-v1.json",
+  "protocol": "docs/agent-evaluation-protocol.json",
+  "failureAudit": {
+    "path": "docs/agent-evaluation-failure-audit-v2.json",
+    "sha256": "7e56cd6cb4670d8c210f659300da56b577718360ae888a6e5358f934c05d14b0",
+    "integrity": {
+      "rescored": false,
+      "sourceModified": false,
+      "goldModified": false,
+      "replayedProviderCalls": 0,
+      "failedTasks": 16,
+      "unverifiedTasks": 3,
+      "nonpassingTasks": 19,
+      "failedCriteria": 37,
+      "unverifiedCriteria": 41,
+      "counterfactualCompletionRate": null
+    },
+    "topFixPriorities": [
+      {
+        "order": 1,
+        "title": "修复澄清与可执行需求混用的后台合同",
+        "affectedCases": [
+          "clarify_pronoun_artist",
+          "unsupported_news",
+          "boundary_duration_overflow",
+          "release_explicit_window"
+        ],
+        "action": "分开执行参数与澄清响应校验，保留正确问题和原始超限意图；细化错误反馈。",
+        "caution": "边界超限题还存在模型问错问题，不能仅改空title就宣布全部修好。"
+      },
+      {
+        "order": 2,
+        "title": "修复发行开启、时间范围和撤销被正则误拦",
+        "affectedCases": [
+          "release_last_halfyear",
+          "release_explicit_window",
+          "turn_cancel_releases"
+        ],
+        "action": "结构化意图和已确认状态为主体，程序校验真实范围和权限，避免不完整自然语言正则作为语义否决权。",
+        "caution": "只做新的诊断/修复版本，不改本次冻结结果。"
+      },
+      {
+        "order": 3,
+        "title": "把澄清限制在真正阻断工具执行的缺口",
+        "affectedCases": [
+          "turn_language_unset",
+          "initial_free_duration",
+          "turn_language_switch",
+          "clarify_unspecified_release",
+          "release_no_artist_guess",
+          "boundary_duration_overflow"
+        ],
+        "action": "可选风格不阻断预览；发行缺歌手先问歌手；先查工具再声称发现同名候选。",
+        "caution": "这一优先级同时涉及产品交互策略和模型行为，需要新未用样本验证。"
+      },
+      {
+        "order": 4,
+        "title": "保留查询条件覆盖并补齐所有实际尝试的观测",
+        "affectedCases": [
+          "initial_include_gem",
+          "turn_language_retention",
+          "boundary_duration_240"
+        ],
+        "action": "用条件覆盖表安排有限查询，合并必要场景后再限制条数；保存每次派发输入供下一版评分。",
+        "caution": "当前仅最终step评分的两题不事后加分；长曲题的执行字段遗漏另需修复。"
+      },
+      {
+        "order": 5,
+        "title": "减少模型承担编号与确定性判断，补齐不确定证据",
+        "affectedCases": [
+          "turn_remove_second",
+          "turn_revoke_live",
+          "boundary_unknown_duration",
+          "boundary_unlabelled_live",
+          "memory_session_not_global"
+        ],
+        "action": "用预览局部序号映射移除操作；确定性候选充分性由程序处理，观察器异常明确降级；补查时长/版本可信元数据，并观测真实偏好存储。",
+        "caution": "不能把未知当通过、自动猜测版本、无条件转换任意ID或通过无限重试抬高完成率。"
+      }
+    ]
+  },
+  "measurementCaveats": [
+    {
+      "capability": "Tool query relevance",
+      "affectedTasks": [
+        "initial_include_gem",
+        "turn_language_retention"
+      ],
+      "detail": "Frozen scorer checks the final stored branch step. Earlier research may have included a correct scene before a supplementary query replaced the step. Original failures are retained, but cannot establish that the scene was never searched. Future tracing must retain every dispatch and link selected sources to its query."
+    }
+  ],
+  "rawReports": [
+    {
+      "id": "primary",
+      "path": "docs/agent-evaluation-live-v2-primary.json",
+      "sha256": "6585396e60300501b8d532199267f12e0a9c1d50d8483c4fd893f1cdaf3091d0"
+    },
+    {
+      "id": "fixed",
+      "path": "docs/agent-evaluation-live-v2-fixed.json",
+      "sha256": "0a6ee0e71bf9a8305c29420b72c04cf90b8d2d51fc75a085336a0637944bf35f"
+    },
+    {
+      "id": "faults",
+      "path": "docs/agent-evaluation-faults-v2-final.json",
+      "sha256": "12d5022f5aeff78eadd028637a8d80f1c317712d9e0f63e853ac10cc2a881c52"
+    },
+    {
+      "id": "reading",
+      "path": "docs/agent-evaluation-real-reading-v2.json",
+      "sha256": "c6952aac9cedefe09062e2d8eaff4c78b254850742efca7881b8ff02dd2500f0"
+    },
+    {
+      "id": "commute",
+      "path": "docs/agent-evaluation-real-commute-v2.json",
+      "sha256": "d816136a203e58eb71823b324f22703aec33443d190e000b6d12ab440d6e27c4"
+    }
+  ],
+  "releaseAssessment": "The measured version must be judged from retained failures and unverified capabilities; passing offline checks alone does not establish production readiness.",
+  "notMeasured": [
+    "Representative production task completion/accuracy",
+    "Human listening suitability and style perception",
+    "Long-term personalized recommendation benefit",
+    "Real-catalog recall against an exhaustive artist-release gold set",
+    "Membership playback and first-audio success",
+    "More than two conversational turns per frozen live task",
+    "OS crash, disk corruption and multi-process distributed leases",
+    "Repeated-model variance and workload-controlled production latency"
+  ],
+  "interpretationRules": [
+    "Do not pool synthetic/model tasks, deterministic faults, generated values and manual listening into one product rate.",
+    "Unknown outcomes remain in conservative denominators. No best-of-N or discarded failures.",
+    "Intent accuracy means complete annotated intent match; per-criterion accuracy is a secondary proxy.",
+    "Wilson intervals describe this non-probability diagnostic sample; they are not a sampling guarantee for production traffic."
+  ]
+}

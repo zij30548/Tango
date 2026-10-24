@@ -1,0 +1,56 @@
+已启动独立临时 MySQL 8.4 与 Redis；不使用当前应用服务，结束后清理。
+........................................................................ [  9%]
+.............ssss....................................................... [ 18%]
+........................................................................ [ 28%]
+...................................................s..s..s......s.s.s.s. [ 37%]
+s.sss....s.............................................................. [ 46%]
+........................................................................ [ 56%]
+........................................................................ [ 65%]
+........................................................................ [ 75%]
+........................................................................ [ 84%]
+.....................................................................sss [ 93%]
+.s.s.s.s.s.sss.s.s.s..........F................                          [100%]
+=================================== FAILURES ===================================
+_________ test_private_run_base_rejects_public_permissions_and_symlink _________
+
+tmp_path = PosixPath('<temporary-path>')
+
+    def test_private_run_base_rejects_public_permissions_and_symlink(tmp_path):
+        directory = tmp_path / "public"
+        directory.mkdir(mode=0o755)
+>       with pytest.raises(verify.HarnessError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE HarnessError
+
+tests/test_verify_harness.py:124: Failed
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_conversation_routing_postgres.py:47: 需要本次测试独立持有的 PostgreSQL，不能读取本机用户库
+SKIPPED [1] tests/test_conversation_routing_postgres.py:60: 需要本次测试独立持有的 PostgreSQL，不能读取本机用户库
+SKIPPED [1] tests/test_conversation_routing_postgres.py:75: 需要本次测试独立持有的 PostgreSQL，不能读取本机用户库
+SKIPPED [1] tests/test_conversation_routing_postgres.py:90: 需要本次测试独立持有的 PostgreSQL，不能读取本机用户库
+SKIPPED [1] tests/test_route_reply_atomicity.py:82: 需要本次拥有者临时 PostgreSQL runner
+SKIPPED [1] tests/test_route_reply_atomicity.py:94: 需要本次拥有者临时 PostgreSQL runner
+SKIPPED [1] tests/test_route_reply_atomicity.py:105: 需要本次拥有者临时 PostgreSQL runner
+SKIPPED [1] tests/test_storage.py:101: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:115: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:136: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:164: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:191: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:216: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage.py:235: SQLite 仅支持单进程运行时，不提供 PG 分布式租约
+SKIPPED [1] tests/test_storage.py:232: 需要显式的临时 PostgreSQL 测试连接
+SKIPPED [1] tests/test_storage_interop.py:77: 需要显式临时 PostgreSQL 地址
+SKIPPED [3] tests/test_task_runtime_migration.py:109: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:136: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:152: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:160: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:180: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:195: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:208: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:220: 多worker持久租约由 PostgreSQL 验证
+SKIPPED [1] tests/test_task_runtime_migration.py:219: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:236: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:255: 须通过独立runner显式提供临时 PostgreSQL
+SKIPPED [1] tests/test_task_runtime_migration.py:278: 须通过独立runner显式提供临时 PostgreSQL
+FAILED tests/test_verify_harness.py::test_private_run_base_rejects_public_permissions_and_symlink
+1 failed, 736 passed, 30 skipped in 43.77s
